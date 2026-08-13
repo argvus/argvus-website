@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+/* ARGVUS brand fonts */
+:root {
+  --sl-font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --sl-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* ARGVUS accent color (#3590bd, default Dark accent) */
+:root[data-theme='light'] {
+  --sl-color-accent-low: #b7ddf0;
+  --sl-color-accent: #1c7aa8;
+  --sl-color-accent-high: #0f4a66;
+}
+
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #0f4a66;
+  --sl-color-accent: #3590bd;
+  --sl-color-accent-high: #b7ddf0;
+}
+
+.argvus-docs-brand {
+  align-items: center;
+  gap: var(--sl-nav-gap);
+  color: var(--sl-color-text-accent);
+  text-decoration: none;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.argvus-docs-brand:hover {
+  text-decoration: none;
+}
+
+.argvus-docs-brand .brand-logotype {
+  width: calc(var(--sl-nav-height) - 2 * var(--sl-nav-pad-y));
+  height: calc(var(--sl-nav-height) - 2 * var(--sl-nav-pad-y));
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.argvus-docs-brand .brand-wordmark {
+  width: 160px;
+  height: auto;
+  max-width: min(34vw, 148px);
+  flex: 0 1 auto;
+  opacity: 1;
+  margin-left: -22px;
+  margin-top: 5px;
+}
+
+.argvus-docs-footer-brand {
+  display: flex;
+  margin-top: 3rem;
+}
+
+.argvus-docs-footer-brand .brand-logotype {
+  width: 48px;
+  height: 48px;
+}

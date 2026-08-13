@@ -1,0 +1,786 @@
+---
+import { Image } from 'astro:assets'
+import preview1 from '../images/preview-1.png'
+import preview2 from '../images/preview-2.png'
+import '../styles/landing.css'
+
+interface Props {
+  lang: 'en' | 'pt'
+}
+
+const { lang } = Astro.props
+const base = import.meta.env.BASE_URL
+const isPT = lang === 'pt'
+const siteUrl = 'https://argvus.github.io'
+const githubOrgUrl = 'https://github.com/orgs/argvus'
+const logotypeUrl =
+  'https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/logotype.svg'
+const argvusWordmarkUrl =
+  'https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/argvus-text.svg'
+
+const link = (path: string) =>
+  base + (isPT && !path.startsWith('packages/') ? 'pt/' : '') + path
+
+const t = isPT
+  ? {
+      htmlLang: 'pt-BR',
+      title: 'ARGVUS — Desktop completo para Hyprland, empacotado para Arch Linux',
+      description:
+        'ARGVUS é um desktop completo para Hyprland e Wayland, com argvus-storage, Waybar, temas integrados e pacotes assinados para Arch Linux.',
+      keywords:
+        'argvus, argvus linux, hyprland, wayland, arch linux, desktop environment, argvus-storage, waybar, linux desktop, pacman repository',
+      navAria: 'Navegação principal',
+      navDocs: 'Documentação',
+      navArch: 'Repositório Arch',
+      github: 'GitHub',
+      langAria: 'Alterar idioma',
+      langEnglish: 'English',
+      langPortuguese: 'Português',
+      themeAria: 'Alterar tema',
+      themeLight: 'Light',
+      themeDark: 'Dark',
+      themeSystem: 'System',
+      heroTitle1: 'Um desktop completo, pronto para uso.',
+      heroAccent: 'Focado em Hyprland.',
+      heroLead:
+        'O ARGVUS reúne um ambiente Wayland rico e integrado: barra, lançadores, sidebar de sistema, armazenamento removível em Rust e oito famílias de tema — tudo empacotado para Arch Linux.',
+      btnInstall: 'Instalar agora',
+      btnDocs: 'Documentação',
+      carouselPrev: 'Imagem anterior',
+      carouselNext: 'Próxima imagem',
+      carouselDot: (n: number) => `Ir para imagem ${n}`,
+      carouselOpen: 'Abrir imagem em tela cheia',
+      carouselClose: 'Fechar imagem em tela cheia',
+      slideAlt1: 'Desktop ARGVUS — pré-visualização 1',
+      slideAlt2: 'Desktop ARGVUS — pré-visualização 2',
+      componentsEyebrow: 'Componentes',
+      componentsTitle: 'Feito com software que você já conhece',
+      componentsSubtitle:
+        'O ARGVUS integra um ecossistema completo de ferramentas Wayland, todas pré-configuradas e com temas unificados.',
+      componentDesc: {
+        hyprland:
+          'Compositor Wayland que dá vida ao ARGVUS: tiling, workspaces, animações suaves e atalhos completos.',
+        waybar: 'Barra de status com módulos de sistema, mídia, rede, armazenamento e atalhos.',
+        quickshell:
+          'Sidebar de informações em QML com clima, rede, calendário, brilho, volume e notificações.',
+        rofi: 'Lançador de aplicativos, switcher de janelas e menus — tudo com temas unificados.',
+        superfile: 'Gerenciador de arquivos em TUI, rápido e totalmente configurável, com atalhos dedicados.',
+        btop: 'Monitor do sistema com CPU, memória, rede e processos em tempo real.',
+        hyprlock: 'Bloqueador de tela integrado ao ecossistema Hyprland com tema sincronizado.',
+        storage: 'Módulo de armazenamento removível escrito em Rust para a barra do Waybar.',
+      },
+      themesEyebrow: 'Temas',
+      themesTitle: 'Oito famílias, um só sistema',
+      themesSubtitle:
+        'Um sistema compartilhado de cores de destaque que unifica GTK, terminais, rofi, dunst, Waybar e o próprio Hyprland.',
+      themesCopy:
+        'Dark, dark silver, light e slate — cada família também na variante float. A cor de destaque pode ser trocada com SUPER + SHIFT + A ou pelo controle Accent na sidebar, sem substituir o fundo do tema.',
+      paletteLabel: 'Paleta de destaque',
+      archEyebrow: 'Arch Linux',
+      archTitle: 'Instalação em um único pacote',
+      archSubtitle:
+        'O ARGVUS é publicado como pacote para Arch Linux, com repositório pacman e banco de pacotes hospedados no GitHub Pages do projeto packages.',
+      archList: [
+        'Repositório pacman hospedado nas GitHub Pages em /packages/.',
+        'Índices navegáveis para /packages/arch/ e /packages/arch/x86_64/.',
+        'Instalação com sudo pacman -Syu argvus; dependências resolvidas a partir do mesmo repositório.',
+        'Configurações preservadas e reparadas automaticamente a cada login.',
+      ],
+      codeHead: '/bin/sh — instalação',
+      codeComment1: '# Importa a chave GPG',
+      codeComment2: '# Adiciona o repositório',
+      codeComment3: '# Instala',
+      installCmd: 'sudo pacman -Syu argvus',
+      ctaTitle: 'Experimente o ARGVUS',
+      ctaText:
+        'Siga o guia de instalação e tenha um desktop Wayland completo, bonito e integrado rodando em minutos.',
+      ctaPrimary: 'Ver guia de instalação',
+      ctaSecondary: 'Explorar o repositório',
+      footerTagline: 'Ambiente de desktop completo para Hyprland, empacotado para Arch Linux.',
+      footerDocs: 'Documentação',
+      footerDocsLinks: [
+        { label: 'Introdução', href: 'docs/intro/' },
+        { label: 'Instalação', href: 'docs/install/' },
+        { label: 'Temas', href: 'docs/themes/' },
+        { label: 'Sessões', href: 'docs/sessions/gdm/' },
+      ],
+      footerResources: 'Recursos',
+      footerResourcesLinks: [
+        { label: 'Repositório Arch', href: 'packages/arch/' },
+        { label: 'Banco de pacotes', href: 'packages/arch/x86_64/' },
+      ],
+      footerProject: 'Projeto',
+      footerLicense: 'Licença GPL-3.0',
+      bottomLicense: 'Licenciado sob GPL-3.0',
+    }
+  : {
+      htmlLang: 'en',
+      title: 'ARGVUS — A complete desktop for Hyprland, packaged for Arch Linux',
+      description:
+        'ARGVUS is a complete Hyprland and Wayland desktop with argvus-storage, Waybar, integrated themes and signed Arch Linux packages.',
+      keywords:
+        'argvus, argvus linux, hyprland, wayland, arch linux, desktop environment, argvus-storage, waybar, linux desktop, pacman repository',
+      navAria: 'Main navigation',
+      navDocs: 'Documentation',
+      navArch: 'Arch repository',
+      github: 'GitHub',
+      langAria: 'Change language',
+      langEnglish: 'English',
+      langPortuguese: 'Português',
+      themeAria: 'Change theme',
+      themeLight: 'Light',
+      themeDark: 'Dark',
+      themeSystem: 'System',
+      heroTitle1: 'A complete desktop, ready to use.',
+      heroAccent: 'Focused on Hyprland.',
+      heroLead:
+        'ARGVUS bundles a rich, integrated Wayland environment: bar, launchers, system sidebar, Rust-powered removable storage and eight theme families — all packaged for Arch Linux.',
+      btnInstall: 'Install now',
+      btnDocs: 'Documentation',
+      carouselPrev: 'Previous image',
+      carouselNext: 'Next image',
+      carouselDot: (n: number) => `Go to image ${n}`,
+      carouselOpen: 'Open image in fullscreen',
+      carouselClose: 'Close fullscreen image',
+      slideAlt1: 'ARGVUS desktop — preview 1',
+      slideAlt2: 'ARGVUS desktop — preview 2',
+      componentsEyebrow: 'Components',
+      componentsTitle: 'Built with software you already know',
+      componentsSubtitle:
+        'ARGVUS integrates a complete ecosystem of Wayland tools, all pre-configured and unified by shared themes.',
+      componentDesc: {
+        hyprland:
+          'The Wayland compositor that brings ARGVUS to life: tiling, workspaces, smooth animations and full keybindings.',
+        waybar: 'Status bar with system, media, network, storage and shortcut modules.',
+        quickshell:
+          'QML system sidebar with weather, network, calendar, brightness, volume and notifications.',
+        rofi: 'Application launcher, window switcher and menus — all with unified themes.',
+        superfile: 'A fast, fully configurable TUI file manager with dedicated keybindings.',
+        btop: 'System monitor with real-time CPU, memory, network and processes.',
+        hyprlock: 'Lock screen integrated with the Hyprland ecosystem and a synchronized theme.',
+        storage: 'Rust-powered removable storage module for the Waybar bar.',
+      },
+      themesEyebrow: 'Themes',
+      themesTitle: 'Eight families, one system',
+      themesSubtitle:
+        'A shared accent-color system that unifies GTK, terminals, rofi, dunst, Waybar and Hyprland itself.',
+      themesCopy:
+        'Dark, dark silver, light and slate — each family also in a float variant. The accent color can be changed with SUPER + SHIFT + A or the Accent control in the sidebar, without replacing the theme background.',
+      paletteLabel: 'Accent palette',
+      archEyebrow: 'Arch Linux',
+      archTitle: 'Installed from a single package',
+      archSubtitle:
+        'ARGVUS is published as an Arch Linux package, with a pacman repository and package database hosted on the packages project page.',
+      archList: [
+        'pacman repository hosted on GitHub Pages under /packages/.',
+        'Browsable indexes for /packages/arch/ and /packages/arch/x86_64/.',
+        'Installation with sudo pacman -Syu argvus; dependencies are resolved from the same repository.',
+        'Configs preserved and repaired automatically at every login.',
+      ],
+      codeHead: '/bin/sh — installation',
+      codeComment1: '# Import the GPG key',
+      codeComment2: '# Add the repository',
+      codeComment3: '# Install',
+      installCmd: 'sudo pacman -Syu argvus',
+      ctaTitle: 'Try ARGVUS',
+      ctaText:
+        'Follow the installation guide and have a complete, beautiful, integrated Wayland desktop running in minutes.',
+      ctaPrimary: 'View installation guide',
+      ctaSecondary: 'Explore the repository',
+      footerTagline: 'A complete desktop environment for Hyprland, packaged for Arch Linux.',
+      footerDocs: 'Documentation',
+      footerDocsLinks: [
+        { label: 'Introduction', href: 'docs/intro/' },
+        { label: 'Installation', href: 'docs/install/' },
+        { label: 'Themes', href: 'docs/themes/' },
+        { label: 'Sessions', href: 'docs/sessions/gdm/' },
+      ],
+      footerResources: 'Resources',
+      footerResourcesLinks: [
+        { label: 'Arch repository', href: 'packages/arch/' },
+        { label: 'Package database', href: 'packages/arch/x86_64/' },
+      ],
+      footerProject: 'Project',
+      footerLicense: 'GPL-3.0 License',
+      bottomLicense: 'Licensed under GPL-3.0',
+    }
+
+const slides = [
+  { image: preview1, alt: t.slideAlt1 },
+  { image: preview2, alt: t.slideAlt2 },
+]
+
+const components = [
+  { key: 'hyprland', name: 'Hyprland' },
+  { key: 'waybar', name: 'Waybar' },
+  { key: 'quickshell', name: 'Quickshell' },
+  { key: 'rofi', name: 'Rofi' },
+  { key: 'superfile', name: 'superfile' },
+  { key: 'btop', name: 'btop' },
+  { key: 'hyprlock', name: 'hyprlock' },
+  { key: 'storage', name: 'argvus-storage' },
+]
+
+const themes = [
+  { name: 'argvus-dark', variant: 'normal', color: '#16181d' },
+  { name: 'argvus-dark-float', variant: 'float', color: '#16181d' },
+  { name: 'argvus-dark-silver', variant: 'normal', color: '#2b2f37' },
+  { name: 'argvus-dark-silver-float', variant: 'float', color: '#2b2f37' },
+  { name: 'argvus-light', variant: 'normal', color: '#f0f1f3' },
+  { name: 'argvus-light-float', variant: 'float', color: '#f0f1f3' },
+  { name: 'argvus-slate', variant: 'normal', color: '#3b4451' },
+  { name: 'argvus-slate-float', variant: 'float', color: '#3b4451' },
+]
+
+const palette = [
+  '#996548',
+  '#3590bd',
+  '#7391a5',
+  '#17d174',
+  '#cb17d1',
+  '#d1174f',
+  '#d1ce17',
+  '#9617d1',
+  '#595959',
+]
+---
+
+<!doctype html>
+<html lang={t.htmlLang} data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{t.title}</title>
+    <meta name="description" content={t.description} />
+    <meta name="keywords" content={t.keywords} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={`${siteUrl}${base}${isPT ? 'pt/' : ''}`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ARGVUS" />
+    <meta property="og:title" content={t.title} />
+    <meta property="og:description" content={t.description} />
+    <meta property="og:url" content={`${siteUrl}${base}${isPT ? 'pt/' : ''}`} />
+    <meta property="og:image" content={`${siteUrl}${base}favicon.png`} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={t.title} />
+    <meta name="twitter:description" content={t.description} />
+    <meta name="twitter:image" content={`${siteUrl}${base}favicon.png`} />
+    <link rel="icon" type="image/png" href={base + 'favicon.png'} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: 'ARGVUS',
+      applicationCategory: 'DesktopApplication',
+      operatingSystem: 'Arch Linux',
+      url: siteUrl,
+      codeRepository: githubOrgUrl,
+      description: t.description,
+      keywords: t.keywords,
+    })} />
+    <script is:inline>
+      // Aplica o tema antes do primeiro paint, sincronizado com a docs (chave do Starlight).
+      ;(function () {
+        var key = 'starlight-theme'
+        var stored = localStorage.getItem(key)
+        var light = matchMedia('(prefers-color-scheme: light)').matches
+        document.documentElement.dataset.theme =
+          stored === 'light' || stored === 'dark'
+            ? stored
+            : light
+              ? 'light'
+              : 'dark'
+      })()
+    </script>
+  </head>
+  <body data-pagefind-ignore>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href={link('')}>
+          <img class="brand-logotype" src={logotypeUrl} alt="" width={48} height={48} />
+          <img class="brand-wordmark" src={argvusWordmarkUrl} alt="ARGVUS" width={178} height={20} />
+        </a>
+
+        <nav class="site-nav" aria-label={t.navAria}>
+          <div class="nav-links">
+            <a class="nav-link" href={link('docs/intro/')}>{t.navDocs}</a>
+            <a class="nav-link" href={link('packages/arch/')}>{t.navArch}</a>
+            <a class="nav-link" href={githubOrgUrl}>{t.github}</a>
+          </div>
+
+          <div class="lang-toggle" data-lang-toggle>
+            <button
+              class="lang-toggle-btn"
+              type="button"
+              data-lang-current
+              aria-label={t.langAria}
+              aria-haspopup="menu"
+            >
+              <span>{isPT ? 'PT' : 'EN'}</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </button>
+
+            <div class="lang-toggle-menu" data-lang-menu hidden>
+              <a class="lang-option" href={base} aria-current={!isPT ? 'page' : undefined}>{t.langEnglish}</a>
+              <a class="lang-option" href={base + 'pt/'} aria-current={isPT ? 'page' : undefined}>{t.langPortuguese}</a>
+            </div>
+          </div>
+
+          <div class="theme-toggle" data-theme-toggle>
+            <button
+              class="theme-toggle-btn"
+              type="button"
+              data-theme-current
+              aria-label={t.themeAria}
+              aria-haspopup="menu"
+            >
+              <svg class="icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+              </svg>
+              <svg class="icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+              <svg class="icon-system" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                <path d="M8 21h8M12 17v4"></path>
+              </svg>
+            </button>
+
+            <div class="theme-toggle-menu" data-theme-menu hidden>
+              <button class="theme-option" type="button" data-theme-option="light" role="menuitemradio" aria-checked="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+                </svg>
+                {t.themeLight}
+              </button>
+              <button class="theme-option" type="button" data-theme-option="dark" role="menuitemradio" aria-checked="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                {t.themeDark}
+              </button>
+              <button class="theme-option" type="button" data-theme-option="system" role="menuitemradio" aria-checked="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                  <path d="M8 21h8M12 17v4"></path>
+                </svg>
+                {t.themeSystem}
+              </button>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-badges">
+            <span class="hero-badge">Hyprland</span>
+            <span class="hero-badge">Wayland</span>
+            <span class="hero-badge">Arch Linux</span>
+            <!-- <span class="hero-badge">Rust</span>
+            <span class="hero-badge">GPL-3.0</span> -->
+          </div>
+
+          <h1>{t.heroTitle1} <span class="accent">{t.heroAccent}</span></h1>
+
+          <p class="lead">{t.heroLead}</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href={link('docs/install/')}>
+              {t.btnInstall}
+            </a>
+            <a class="btn btn-secondary" href={link('docs/intro/')}>
+              {t.btnDocs}
+            </a>
+            <a class="btn btn-secondary" href={githubOrgUrl}>
+              {t.github}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screenshots -->
+      <section class="screenshot-section">
+        <div class="container">
+          <div class="screenshot">
+            <div class="screenshot-bar">
+              <span class="address">argvus.desktop</span>
+            </div>
+
+            <div class="carousel" data-carousel>
+              <div class="carousel-track">
+                {slides.map((slide) => (
+                  <figure
+                    class="carousel-slide"
+                    tabindex="0"
+                    role="button"
+                    aria-label={t.carouselOpen}
+                    data-carousel-slide
+                  >
+                    <Image src={slide.image} alt={slide.alt} />
+                    <span class="carousel-zoom" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 3h6v6"></path>
+                        <path d="M9 21H3v-6"></path>
+                        <path d="M21 3l-7 7"></path>
+                        <path d="M3 21l7-7"></path>
+                      </svg>
+                    </span>
+                  </figure>
+                ))}
+              </div>
+
+              <button class="carousel-btn prev" type="button" data-carousel-prev aria-label={t.carouselPrev}>
+                ‹
+              </button>
+              <button class="carousel-btn next" type="button" data-carousel-next aria-label={t.carouselNext}>
+                ›
+              </button>
+
+              <div class="carousel-dots">
+                {slides.map((_, i) => (
+                  <button class="carousel-dot" type="button" data-carousel-dot={i} aria-label={t.carouselDot(i + 1)}></button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Components -->
+      <section class="section" id="componentes">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">{t.componentsEyebrow}</span>
+            <h2>{t.componentsTitle}</h2>
+            <p>{t.componentsSubtitle}</p>
+          </div>
+
+          <div class="feature-grid">
+            {components.map((c) => (
+              <article class="feature-card">
+                <span class="mono">{c.name}</span>
+                <h3>{c.name}</h3>
+                <p>{t.componentDesc[c.key]}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Themes -->
+      <section class="section section-alt" id="temas">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">{t.themesEyebrow}</span>
+            <h2>{t.themesTitle}</h2>
+            <p>{t.themesSubtitle}</p>
+          </div>
+
+          <div class="themes-wrap">
+            <div class="theme-families">
+              {themes.map((th) => (
+                <div class="theme-chip">
+                  <span class="swatch" style={`background:${th.color}`}></span>
+                  <span class="name">
+                    {th.name.replace('-float', '')}
+                    <span class="variant">{th.variant}</span>
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div class="themes-copy">
+              <p>{t.themesCopy}</p>
+              <div class="palette">
+                <div class="palette-label">{t.paletteLabel}</div>
+                <div class="palette-swatches">
+                  {palette.map((c) => (
+                    <span class="palette-swatch" style={`background:${c}`}></span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Arch -->
+      <section class="section" id="arch">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">{t.archEyebrow}</span>
+            <h2>{t.archTitle}</h2>
+            <p>{t.archSubtitle}</p>
+          </div>
+
+          <div class="arch-wrap">
+            <div class="arch-copy">
+              <ul>
+                {t.archList.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="code-block">
+              <div class="code-head">{t.codeHead}</div>
+              <pre><code><span class="c">{t.codeComment1}</span>
+curl -fsSLo /tmp/argvus.gpg https://argvus.github.io/packages/arch/argvus.gpg
+sudo pacman-key --add /tmp/argvus.gpg
+ARGVUS_KEY="$(gpg --show-keys --with-colons /tmp/argvus.gpg | grep '^pub:' | head -n1 | cut -d: -f5)"
+sudo pacman-key --lsign-key "$ARGVUS_KEY"
+
+<span class="c">{t.codeComment2}</span>
+curl -fsSL https://argvus.github.io/packages/arch/argvus.conf \
+  | sudo tee /etc/pacman.d/argvus.conf
+echo "Include = /etc/pacman.d/argvus.conf" \
+  | sudo tee -a /etc/pacman.conf
+
+<span class="c">{t.codeComment3}</span>
+{t.installCmd}</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta">
+        <div class="container">
+          <h2>{t.ctaTitle}</h2>
+          <p>{t.ctaText}</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href={link('docs/install/')}>{t.ctaPrimary}</a>
+            <a class="btn btn-secondary" href={link('packages/arch/')}>{t.ctaSecondary}</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <a class="brand" href={link('')}>
+              <img class="brand-logotype" src={logotypeUrl} alt="" width={48} height={48} />
+              <img class="brand-wordmark" src={argvusWordmarkUrl} alt="ARGVUS" width={178} height={20} />
+            </a>
+            <p>{t.footerTagline}</p>
+          </div>
+
+          <div class="footer-col">
+            <h4>{t.footerDocs}</h4>
+            <ul>
+              {t.footerDocsLinks.map((item) => (
+                <li><a href={link(item.href)}>{item.label}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>{t.footerResources}</h4>
+            <ul>
+              {t.footerResourcesLinks.map((item) => (
+                <li><a href={link(item.href)}>{item.label}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>{t.footerProject}</h4>
+            <ul>
+              <li><a href={githubOrgUrl}>{t.github}</a></li>
+              <li><a href="https://github.com/argvus/argvus/blob/main/LICENSE">{t.footerLicense}</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© {new Date().getFullYear()} ARGVUS</span>
+          <span>{t.bottomLicense}</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Fullscreen image modal -->
+    <div
+      class="modal"
+      data-modal
+      hidden
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-label={t.carouselOpen}
+    >
+      <button class="modal-close" type="button" data-modal-close aria-label={t.carouselClose}>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M18 6L6 18M6 6l12 12"></path>
+        </svg>
+      </button>
+      <figure class="modal-figure">
+        <img data-modal-img src="" alt="" />
+      </figure>
+    </div>
+
+    <script>
+      // ── Tema (sincronizado com a docs do Starlight) ─────────────────────────
+      const STORAGE_KEY = 'starlight-theme'
+      const root = document.documentElement
+      const media = window.matchMedia('(prefers-color-scheme: light)')
+      const themeBtn = document.querySelector('[data-theme-current]')
+      const themeMenu = document.querySelector('[data-theme-menu]')
+      const options = Array.from(document.querySelectorAll('[data-theme-option]'))
+      const langBtn = document.querySelector('[data-lang-current]')
+      const langMenu = document.querySelector('[data-lang-menu]')
+
+      const currentTheme = () => {
+        const stored = localStorage.getItem(STORAGE_KEY)
+        return stored === 'light' || stored === 'dark'
+          ? stored
+          : media.matches
+            ? 'light'
+            : 'dark'
+      }
+
+      const render = () => {
+        const theme = currentTheme()
+        root.dataset.theme = theme
+        themeBtn.dataset.mode = localStorage.getItem(STORAGE_KEY) ? theme : 'system'
+        options.forEach((opt) => {
+          opt.setAttribute('aria-checked', String(opt.dataset.themeOption === theme))
+        })
+      }
+
+      const setTheme = (value) => {
+        if (value === 'system') localStorage.removeItem(STORAGE_KEY)
+        else localStorage.setItem(STORAGE_KEY, value)
+        render()
+      }
+
+      themeBtn.addEventListener('click', () => {
+        themeMenu.hidden = !themeMenu.hidden
+        if (langMenu) langMenu.hidden = true
+      })
+
+      options.forEach((opt) => {
+        opt.addEventListener('click', () => {
+          setTheme(opt.dataset.themeOption)
+          themeMenu.hidden = true
+        })
+      })
+
+      langBtn?.addEventListener('click', () => {
+        langMenu.hidden = !langMenu.hidden
+        themeMenu.hidden = true
+      })
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-theme-toggle]')) themeMenu.hidden = true
+        if (!e.target.closest('[data-lang-toggle]') && langMenu) langMenu.hidden = true
+      })
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          themeMenu.hidden = true
+          if (langMenu) langMenu.hidden = true
+        }
+      })
+
+      media.addEventListener('change', render)
+      render()
+
+      // ── Carrossel ──────────────────────────────────────────────────────────
+      const carousel = document.querySelector('[data-carousel]')
+      if (carousel) {
+        const track = carousel.querySelector('.carousel-track')
+        const slides = Array.from(carousel.querySelectorAll('[data-carousel-slide]'))
+        const dots = Array.from(carousel.querySelectorAll('[data-carousel-dot]'))
+        const prev = carousel.querySelector('[data-carousel-prev]')
+        const next = carousel.querySelector('[data-carousel-next]')
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        let index = 0
+        let timer
+
+        const go = (i) => {
+          index = (i + slides.length) % slides.length
+          track.style.transform = `translateX(-${index * 100}%)`
+          dots.forEach((d, n) => d.setAttribute('aria-current', String(n === index)))
+        }
+
+        const stop = () => clearInterval(timer)
+        const play = () => {
+          stop()
+          if (!reduced) timer = setInterval(() => go(index + 1), 5000)
+        }
+
+        prev.addEventListener('click', () => {
+          go(index - 1)
+          play()
+        })
+        next.addEventListener('click', () => {
+          go(index + 1)
+          play()
+        })
+        dots.forEach((d, n) =>
+          d.addEventListener('click', () => {
+            go(n)
+            play()
+          }),
+        )
+        carousel.addEventListener('mouseenter', stop)
+        carousel.addEventListener('mouseleave', play)
+        carousel.addEventListener('focusin', stop)
+        carousel.addEventListener('focusout', play)
+
+        go(0)
+        play()
+      }
+
+      // ── Modal em tela cheia ────────────────────────────────────────────────
+      const modal = document.querySelector('[data-modal]')
+      const modalImg = document.querySelector('[data-modal-img]')
+      const modalClose = document.querySelector('[data-modal-close]')
+      const slidesAll = Array.from(document.querySelectorAll('[data-carousel-slide]'))
+
+      const openModal = (n) => {
+        const img = slidesAll[n].querySelector('img')
+        modalImg.src = img.src
+        modalImg.alt = img.alt
+        modal.hidden = false
+        modal.setAttribute('aria-hidden', 'false')
+        document.body.style.overflow = 'hidden'
+        modalClose.focus()
+      }
+
+      const closeModal = () => {
+        modal.hidden = true
+        modal.setAttribute('aria-hidden', 'true')
+        document.body.style.overflow = ''
+      }
+
+      slidesAll.forEach((slide, n) => {
+        slide.addEventListener('click', () => openModal(n))
+        slide.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault()
+            openModal(n)
+          }
+        })
+      })
+
+      modalClose.addEventListener('click', closeModal)
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal()
+      })
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.hidden) closeModal()
+      })
+    </script>
+  </body>
+</html>

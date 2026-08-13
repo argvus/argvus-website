@@ -1,0 +1,47 @@
+name: Deploy site
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-deploy
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    name: Build Astro and publish to argvus.github.io
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout site source
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Publish dist to argvus.github.io
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.DEPLOY_SSH_KEY }}
+          external_repository: argvus/argvus.github.io
+          publish_branch: main
+          publish_dir: ./dist
+          keep_files: false
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          commit_message: Deploy site from argvus/site-src@${{ github.sha }}

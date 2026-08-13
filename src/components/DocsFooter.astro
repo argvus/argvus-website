@@ -1,0 +1,75 @@
+---
+import { Icon } from '@astrojs/starlight/components'
+import EditLink from 'virtual:starlight/components/EditLink'
+import LastUpdated from 'virtual:starlight/components/LastUpdated'
+import Pagination from 'virtual:starlight/components/Pagination'
+import config from 'virtual:starlight/user-config'
+
+const { siteTitle, siteTitleHref } = Astro.locals.starlightRoute
+const logotypeUrl =
+  'https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/logotype.svg'
+const argvusWordmarkUrl =
+  'https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/argvus-text.svg'
+---
+
+<footer class="sl-flex">
+  <div class="argvus-docs-footer-brand">
+    <a href={siteTitleHref} class="argvus-docs-brand sl-flex">
+      <img class="brand-logotype" src={logotypeUrl} alt="" width={48} height={48} />
+      <img class="brand-wordmark" src={argvusWordmarkUrl} alt={siteTitle} width={178} height={20} />
+      <span class="sr-only" translate="no">{siteTitle}</span>
+    </a>
+  </div>
+
+  <div class="meta sl-flex">
+    <EditLink />
+    <LastUpdated />
+  </div>
+  <Pagination />
+
+  {
+    config.credits && (
+      <a class="kudos sl-flex" href="https://starlight.astro.build">
+        <Icon name={'starlight'} /> {Astro.locals.t('builtWithStarlight.label')}
+      </a>
+    )
+  }
+</footer>
+
+<style>
+  @layer starlight.core {
+    footer {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .meta {
+      gap: 0.75rem 3rem;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+      font-size: var(--sl-text-sm);
+      color: var(--sl-color-gray-3);
+    }
+    .meta > :global(p:only-child) {
+      margin-inline-start: auto;
+    }
+
+    .kudos {
+      align-items: center;
+      gap: 0.5em;
+      margin: 1.5rem auto;
+      font-size: var(--sl-text-xs);
+      text-decoration: none;
+      color: var(--sl-color-gray-3);
+    }
+    .kudos:hover {
+      color: var(--sl-color-white);
+    }
+  }
+
+  @layer starlight.components {
+    .kudos :global(svg) {
+      color: var(--sl-color-orange);
+    }
+  }
+</style>

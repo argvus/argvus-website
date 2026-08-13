@@ -1,0 +1,13 @@
+---
+const { siteTitle, siteTitleHref } = Astro.locals.starlightRoute
+const logotypeUrl =
+  'https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/logotype.svg'
+const argvusWordmarkUrl =
+  'https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/argvus-text.svg'
+---
+
+<a href={siteTitleHref} class="site-title argvus-docs-brand sl-flex">
+  <img class="brand-logotype" src={logotypeUrl} alt="" width={48} height={48} />
+  <img class="brand-wordmark" src={argvusWordmarkUrl} alt={siteTitle} width={178} height={20} />
+  <span class="sr-only" translate="no">{siteTitle}</span>
+</a>

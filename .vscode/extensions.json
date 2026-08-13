@@ -1,0 +1,25 @@
+{
+  "recommendations": [
+    "sumneko.lua",
+    "johnnymorganz.stylua",
+    "delgan.qml-format",
+    "mpmischitelli.gtk-css", // waybar CSS
+    "tamasfe.even-better-toml",
+    "bbenoist.qml", // for Quickshell
+    "ms-vscode.makefile-tools",
+    "chadalen.vscode-jetbrains-icon-theme",
+    "esbenp.prettier-vscode",
+    "wayou.vscode-todo-highlight",
+    "ms-vscode.cmake-tools",
+    "github.vscode-github-actions",
+    "aaron-bond.better-comments",
+    "editorconfig.editorconfig",
+    "ardonplay.vscode-jetbrains-icon-theme",
+    "miguelsolorio.symbols", // Symbols Icons
+    "redhat.vscode-yaml", // Front Matter YAML
+    "yzhang.markdown-all-in-one", // Markdown with shortcuts and preview
+    "davidanson.vscode-markdownlint",
+    "gruntfuggly.todo-tree",
+    "zainchen.json",
+  ]
+}

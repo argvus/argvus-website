@@ -1,0 +1,197 @@
+{
+  // ===== APPEARANCE =====
+  "workbench.colorTheme": "Dark Modern",
+  "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-auto",
+  "workbench.activityBar.location": "default",
+  "workbench.activityBar.compact": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.layoutControl.enabled": true,
+  "workbench.editor.labelFormat": "short",
+  "workbench.editor.enablePreviewFromCodeNavigation": true,
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.editor.editorActionsLocation": "titleBar",
+  "window.commandCenter": true,
+  "explorer.compactFolders": true,
+  "explorer.fileNesting.enabled": true,
+  "breadcrumbs.enabled": false,
+
+  // ===== EDITOR =====
+  "editor.fontFamily": "JetBrains Mono, monospace",
+  "editor.fontSize": 14,
+  "editor.fontWeight": "400",
+  "editor.lineHeight": 1.8,
+  "editor.fontLigatures": true,
+  "editor.wordWrap": "on",
+  "editor.tabSize": 2,
+  "editor.rulers": [80],
+  "editor.minimap.enabled": true,
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.renderControlCharacters": false,
+  "editor.renderLineHighlight": "gutter",
+  "editor.matchBrackets": "always",
+  "editor.guides.indentation": true,
+  "editor.guides.bracketPairs": false,
+  "editor.guides.highlightActiveBracketPair": false,
+  "editor.bracketPairColorization.enabled": false,
+  "editor.showUnused": true,
+  "editor.semanticHighlighting.enabled": false,
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true,
+    "rules": {
+      "*.mutable": {
+        "underline": false,
+        "bold": true
+      }
+    }
+  },
+
+  // ===== HOVER E HINTS =====
+  "editor.hover.delay": 800, // Visual Studio Code diagnostics (popup tips)
+  "editor.hover.sticky": true,
+  "editor.hover.enabled": "on",
+  "editor.inlayHints.enabled": "on", // disable type annotations
+  "editor.inlayHints.fontSize": 12,
+  "editor.inlayHints.padding": true,
+  "editor.inlayHints.fontFamily": "Open Sans Medium",
+
+  // ===== STICKY SCROLL =====
+  "editor.stickyScroll.enabled": false,
+  "editor.stickyScroll.scrollWithEditor": false,
+  "workbench.tree.enableStickyScroll": false,
+  "terminal.integrated.stickyScroll.enabled": false,
+
+  // ===== TERMINAL LINUX =====
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.profiles.linux": {
+    "zsh": {
+      "path": "/usr/bin/zsh",
+      "args": ["-l"]
+    }
+  },
+
+  // ===== GENERAL TERMINAL =====
+  "terminal.integrated.fontFamily": "DejaVuSansMono Nerd Font",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontWeight": "500",
+  "terminal.integrated.cursorStyle": "underline",
+  "terminal.integrated.tabs.enabled": true,
+
+  // ===== FILES =====
+  "files.autoSave": "onFocusChange",
+  "files.autoSaveDelay": 4000,
+  "files.trimTrailingWhitespace": true,
+  "files.associations": {
+    "*.md": "markdown",
+    "LICENSE": "plaintext",
+    "Makefile": "makefile",
+    "config": "cfg",
+    "*.css": "gtk-css"
+  },
+  "files.exclude": {
+    "**/.vscode": false,
+    ".bin": true
+  },
+
+  // ===== CODE ACTIONS =====
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "editor.suggestSelection": "first",
+  "editor.suggest.showSnippets": true,
+
+  // ===== BEHAVIOR =====
+  "diffEditor.ignoreTrimWhitespace": true,
+  "git.autofetch": true,
+  "git.openRepositoryInParentFolders": "never",
+
+  // ===== CONFIGURATION FILES =====
+  "[markdown]": {
+    "editor.rulers": [100],
+    "diffEditor.ignoreTrimWhitespace": true
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+   "makefile.configureOnOpen": true,
+
+  // ===== LUA =====
+  "Lua.diagnostics.globals": ["hl"],
+  "Lua.workspace.library": ["/usr/share/hypr/stubs/"],
+  "Lua.runtime.version": "Lua 5.5",
+  "Lua.diagnostics.enable": true,
+  "Lua.diagnostics.unusedLocalExclude": ["_"],
+  "Lua.format.enable": true,
+  "Lua.hint.enable": true,
+  "Lua.hint.paramName": "All",
+  "Lua.hint.setType": true,
+  "[lua]": {
+    "editor.rulers": [120],
+    "editor.defaultFormatter": "JohnnyMorganz.stylua",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true
+  },
+
+  // ===== TODO TREE =====
+  "todo-tree.highlights.defaultHighlight": {
+    "icon": "alert",
+    "type": "text",
+    "foreground": "#ff1e00",
+    "background": "#ffffff",
+    "opacity": 90,
+    "iconColour": "#ffffff"
+  },
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "icon": "check",
+      "type": "line"
+    },
+    "FIXME": {
+      "foreground": "#000000",
+      "iconColour": "#eeff00",
+      "gutterIcon": true
+    }
+  },
+
+  // ===== AI / COPILOT =====
+  "chat.unifiedAgentsBar.enabled": true,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "txt": false
+  },
+  "github.copilot.nextEditSuggestions.enabled": false,
+
+  // ===== SPELL CHECK =====
+  "cSpell.enabled": false,
+  "cSpell.language": "en,pt_BR",
+  "cSpell.ignorePaths": [
+    "**/.config/Code/User/*.json",
+    "TODO.txt",
+    "settings.json",
+    "extensions.json",
+    "CHANGELOG.md"
+  ],
+  "cSpell.customDictionaries": {
+    "custom-dictionary-workspace": {
+      "name": "custom-dictionary-workspace",
+      "path": "${workspaceFolder}/.cspell/custom-dictionary-workspace.txt",
+      "addWords": true,
+      "scope": "folder"
+    }
+  },
+  "chat.tools.terminal.autoApprove": {
+    "mkdir": true,
+    "/^sh src/environment/config/argvus/sh/theme-switch\\.sh argvus-dark 2>&1 \\| grep -E \"\\(Theme\\|error\\|Error\\|✓\\|✗\\)\" \\| head -20$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "pkill": true,
+    "qs": true,
+    "printf": true,
+    "true": true
+  }
+}

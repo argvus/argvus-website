@@ -1,0 +1,32 @@
+# Linux
+# -------------------------------------------------------------
+*~
+*.bak
+
+# This repo
+# -------------------------------------------------------------
+tmp/
+target/
+/memory
+_pages/
+.jekyll-cache/
+/public/
+tmp-arch/
+tmp-artifacts/
+.bundle-cache/
+vendor/
+
+# Site (Astro)
+# -------------------------------------------------------------
+node_modules/
+dist/
+.astro/
+.DS_Store
+npm-debug.log*
+pnpm-debug.log*
+.env
+.env.production
+# starlight-versions generates the archived docs from the current version.
+src/content/docs/[0-9]*/
+src/content/docs/pt/[0-9]*/
+src/content/versions/[0-9]*.json
