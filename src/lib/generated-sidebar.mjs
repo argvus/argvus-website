@@ -358,6 +358,13 @@ export const sidebarConfig = [
         "collapsed": true,
         "items": [
           {
+            "slug": "docs/argvus-themes",
+            "label": "Overview",
+            "translations": {
+              "pt-BR": "Visão geral"
+            }
+          },
+          {
             "slug": "docs/argvus-themes/user-guide/installing-themes"
           },
           {
@@ -368,9 +375,6 @@ export const sidebarConfig = [
           },
           {
             "slug": "docs/argvus-themes/user-guide/import-and-export"
-          },
-          {
-            "slug": "docs/argvus-themes/user-guide"
           }
         ]
       },
