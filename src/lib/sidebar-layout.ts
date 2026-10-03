@@ -264,7 +264,7 @@ export const COMPONENT_CATEGORIES: ComponentCategorySpec[] = [
       'argvus-terminal',
       'argvus-system-monitor',
       'argvus-tui',
-      'argvus-game-snake',
+      'argvus-games',
     ],
   },
 ]
@@ -305,6 +305,7 @@ export const COMPONENT_PAGE_ORDER: Record<string, string[]> = {
   'argvus-session': ['graphical-session', 'tty-session'],
   'argvus-taskbar': ['taskbar', 'widgets'],
   'argvus-boot-splash': ['installation', 'usage', 'uki-splash', 'troubleshooting', 'reference', 'uninstallation'],
+  'argvus-games': ['snake'],
 }
 
 /** Boot Splash's `developer-guide/*` page order (relPath `''` = the `developer-guide` root page itself). */

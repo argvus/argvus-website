@@ -141,10 +141,10 @@
         "label": "System Monitor"
       },
       {
-        "repository": "argvus-game-snake",
+        "repository": "argvus-games",
         "path": "docs",
         "branch": "main",
-        "label": "Snake Game"
+        "label": "Games"
       },
       {
         "repository": "argvus-removable-devices",

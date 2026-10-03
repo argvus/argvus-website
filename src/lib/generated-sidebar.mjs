@@ -409,8 +409,20 @@ export const sidebarConfig = [
         "label": "TUI"
       },
       {
-        "slug": "docs/argvus-game-snake",
-        "label": "Snake Game"
+        "label": "Games",
+        "collapsed": true,
+        "items": [
+          {
+            "slug": "docs/argvus-games",
+            "label": "Overview",
+            "translations": {
+              "pt-BR": "Visão geral"
+            }
+          },
+          {
+            "slug": "docs/argvus-games/snake"
+          }
+        ]
       }
     ]
   },
