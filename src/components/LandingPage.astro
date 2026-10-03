@@ -1003,6 +1003,7 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
                 <strong>{isPT ? 'Instale do repositório:' : 'Install from the repository:'}</strong>
                 <code>{isPT ? 'sudo pacman -S argvus-theme-nome' : 'sudo pacman -S argvus-theme-name'}</code>
                 <span>{isPT ? 'ou todos os temas com' : 'or all themes with'} <code>pacman -S argvus-themes</code></span>
+                <a class="themes-guide-link" href={link('docs/argvus-themes/')}>{isPT ? 'Guia de temas' : 'Themes guide'}</a>
               </div>
             </div>
           </div>

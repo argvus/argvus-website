@@ -63,6 +63,12 @@
         "label": "Appearance"
       },
       {
+        "repository": "argvus-themes",
+        "path": "docs",
+        "branch": "main",
+        "label": "Themes"
+      },
+      {
         "repository": "argvus-control-center",
         "path": "docs",
         "branch": "main",

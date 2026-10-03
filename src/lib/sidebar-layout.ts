@@ -255,7 +255,7 @@ export const COMPONENT_CATEGORIES: ComponentCategorySpec[] = [
     key: 'appearance-assets',
     label: 'Appearance & Assets',
     translations: { 'pt-BR': 'Aparência e recursos visuais' },
-    repositories: ['argvus-appearance', 'argvus-icons', 'argvus-fonts', 'argvus-wallpapers'],
+    repositories: ['argvus-appearance', 'argvus-themes', 'argvus-icons', 'argvus-fonts', 'argvus-wallpapers'],
   },
   {
     key: 'apps-tools',
@@ -294,7 +294,8 @@ export const DEVELOPER_NOTES_GROUP = {
  */
 export const COMPONENT_PAGE_ORDER: Record<string, string[]> = {
   'argvus-hyprland': ['keyboard-shortcuts', 'input', 'windows-and-layout', 'hyprland-overrides'],
-  'argvus-appearance': ['themes', 'wallpapers', 'fonts-and-icons', 'effects'],
+  'argvus-appearance': ['wallpapers', 'fonts-and-icons', 'effects'],
+  'argvus-themes': ['installing-themes', 'official-themes', 'highlight-color', 'import-and-export'],
   'argvus-session': ['graphical-session', 'tty-session'],
   'argvus-taskbar': ['taskbar', 'widgets'],
   'argvus-boot-splash': ['installation', 'usage', 'uki-splash', 'troubleshooting', 'reference', 'uninstallation'],
