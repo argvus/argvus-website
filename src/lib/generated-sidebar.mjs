@@ -362,16 +362,16 @@ export const sidebarConfig = [
             }
           },
           {
-            "slug": "docs/argvus-themes/user-guide/installing-themes"
+            "slug": "docs/argvus-themes/installing-themes"
           },
           {
-            "slug": "docs/argvus-themes/user-guide/official-themes"
+            "slug": "docs/argvus-themes/official-themes"
           },
           {
-            "slug": "docs/argvus-themes/user-guide/highlight-color"
+            "slug": "docs/argvus-themes/highlight-color"
           },
           {
-            "slug": "docs/argvus-themes/user-guide/import-and-export"
+            "slug": "docs/argvus-themes/import-and-export"
           }
         ]
       },

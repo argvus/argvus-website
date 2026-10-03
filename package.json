@@ -10,7 +10,9 @@
     "generate": "npm run generate:docs && npm run generate:sidebar",
     "dev": "npm run generate && npm run clean:versions && astro dev",
     "stop": "astro dev stop",
-    "build": "npm run generate && npm run clean:versions && astro build && npm run clean:versions",
+    "check:links": "npx tsx scripts/check-doc-links.ts",
+    "test:links": "npx tsx --test scripts/check-doc-links.test.ts",
+    "build": "npm run generate && npm run check:links && npm run clean:versions && astro build && npm run clean:versions",
     "preview": "astro preview",
     "astro": "astro"
   },

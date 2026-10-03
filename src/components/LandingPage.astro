@@ -564,7 +564,7 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
                 </svg>
               </button>
               <div class="nav-dropdown-menu" data-nav-dropdown-menu hidden>
-                <a class="nav-dropdown-item" href={link('packages/arch/')}><i class="fa-brands fa-linux"></i>{t.navArchArch}</a>
+                <a class="nav-dropdown-item" href={link('docs/reference/package-matrix/')}><i class="fa-brands fa-linux"></i>{t.navArchArch}</a>
               </div>
             </div>
             <a class="nav-link" href={githubOrgUrl}><i class="fa-brands fa-github"></i>{t.github}</a>
@@ -659,7 +659,7 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
           <p class="lead">{t.heroLead}</p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href={link('docs/user-guide/installation/')}>
+            <a class="btn btn-primary" href={link('docs/getting-started/installation/')}>
               <i class="fa-solid fa-download"></i>{t.btnInstall}
             </a>
             <a class="btn btn-secondary" href={link('docs/introduction/')}>
@@ -1175,8 +1175,8 @@ echo "Include = /etc/pacman.d/argvus.conf" \
           <h2>{t.ctaTitle}</h2>
           <p>{t.ctaText}</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href={link('docs/user-guide/installation/')}><i class="fa-solid fa-download"></i>{t.ctaPrimary}</a>
-            <a class="btn btn-secondary" href={link('packages/arch/')}><i class="fa-solid fa-cube"></i>{t.ctaSecondary}</a>
+            <a class="btn btn-primary" href={link('docs/getting-started/installation/')}><i class="fa-solid fa-download"></i>{t.ctaPrimary}</a>
+            <a class="btn btn-secondary" href={link('docs/reference/package-matrix/')}><i class="fa-solid fa-cube"></i>{t.ctaSecondary}</a>
           </div>
         </div>
       </section>
