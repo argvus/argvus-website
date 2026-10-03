@@ -2,6 +2,7 @@ import { fileURLToPath } from 'node:url'
 import { resolve, dirname } from 'node:path'
 import { writeFileSync, mkdirSync, existsSync, rmSync, readdirSync } from 'node:fs'
 import { loadDocumentation } from '../src/lib/documentation/loader.ts'
+import { wrapTables } from '../src/lib/documentation/table-scroll.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const projectRoot = resolve(__dirname, '..')
@@ -45,7 +46,7 @@ title: ${yamlString(String(title))}
 description: ${yamlString(String(description))}
 ---
 
-${entry.body}`
+${wrapTables(entry.body)}`
 
       writeFileSync(targetPath, markdown, 'utf-8')
       console.log(`Generated: ${entry.slug}`)
