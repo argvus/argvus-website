@@ -347,9 +347,6 @@ export const sidebarConfig = [
           },
           {
             "slug": "docs/argvus-appearance/effects"
-          },
-          {
-            "slug": "docs/argvus-appearance/themes"
           }
         ]
       },
