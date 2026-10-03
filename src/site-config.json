@@ -1,3 +1,199 @@
 {
-  "maintenance": true
+  "maintenance": false,
+  "contributionLinks": {
+    "enable": true,
+    "mode": "paypal",
+    "stripe": {
+      "1": "STRIPE_PAYMENT_LINK_FOR_1_USD",
+      "5": "STRIPE_PAYMENT_LINK_FOR_5_USD",
+      "10": "STRIPE_PAYMENT_LINK_FOR_10_USD",
+      "20": "STRIPE_PAYMENT_LINK_FOR_20_USD",
+      "50": "STRIPE_PAYMENT_LINK_FOR_50_USD"
+    },
+    "paypal": {
+      "BRL": "https://www.paypal.com/donate/?hosted_button_id=XJKGA4DPNUMPY",
+      "USD": "https://www.paypal.com/donate/?hosted_button_id=RA8D8YAKK6Q2A"
+    },
+    "single": "https://buymeacoffee.com/williamcanin"
+  },
+  "documentation": {
+    "url_base": "https://github.com/argvus",
+    "projects": [
+      {
+        "repository": "argvus",
+        "path": "docs",
+        "branch": "main",
+        "label": "ARGVUS",
+        "root": true
+      },
+      {
+        "repository": "argvus-accounts",
+        "path": "docs",
+        "branch": "main",
+        "label": "Accounts"
+      },
+      {
+        "repository": "argvus-display",
+        "path": "docs",
+        "branch": "main",
+        "label": "Display"
+      },
+      {
+        "repository": "argvus-greeter",
+        "path": "docs",
+        "branch": "main",
+        "label": "Greeter"
+      },
+      {
+        "repository": "argvus-network",
+        "path": "docs",
+        "branch": "main",
+        "label": "Network"
+      },
+      {
+        "repository": "argvus-power",
+        "path": "docs",
+        "branch": "main",
+        "label": "Power"
+      },
+      {
+        "repository": "argvus-appearance",
+        "path": "docs",
+        "branch": "main",
+        "label": "Appearance"
+      },
+      {
+        "repository": "argvus-control-center",
+        "path": "docs",
+        "branch": "main",
+        "label": "Control Center"
+      },
+      {
+        "repository": "argvus-control-panel",
+        "path": "docs",
+        "branch": "main",
+        "label": "Control Panel"
+      },
+      {
+        "repository": "argvus-firewall",
+        "path": "docs",
+        "branch": "main",
+        "label": "Firewall"
+      },
+      {
+        "repository": "argvus-lock",
+        "path": "docs",
+        "branch": "main",
+        "label": "Lock Screen"
+      },
+      {
+        "repository": "argvus-notifications",
+        "path": "docs",
+        "branch": "main",
+        "label": "Notifications"
+      },
+      {
+        "repository": "argvus-portal",
+        "path": "docs",
+        "branch": "main",
+        "label": "Portal"
+      },
+      {
+        "repository": "argvus-session",
+        "path": "docs",
+        "branch": "main",
+        "label": "Session"
+      },
+      {
+        "repository": "argvus-taskbar",
+        "path": "docs",
+        "branch": "main",
+        "label": "Taskbar"
+      },
+      {
+        "repository": "argvus-taskbar-calendar",
+        "path": "docs",
+        "branch": "main",
+        "label": "Taskbar Calendar"
+      },
+      {
+        "repository": "argvus-launcher",
+        "path": "docs",
+        "branch": "main",
+        "label": "Launcher"
+      },
+      {
+        "repository": "argvus-terminal",
+        "path": "docs",
+        "branch": "main",
+        "label": "Terminal"
+      },
+      {
+        "repository": "argvus-system-monitor",
+        "path": "docs",
+        "branch": "main",
+        "label": "System Monitor"
+      },
+      {
+        "repository": "argvus-game-snake",
+        "path": "docs",
+        "branch": "main",
+        "label": "Snake Game"
+      },
+      {
+        "repository": "argvus-removable-devices",
+        "path": "docs",
+        "branch": "main",
+        "label": "Removable Devices"
+      },
+      {
+        "repository": "argvus-hyprland",
+        "path": "docs",
+        "branch": "main",
+        "label": "Hyprland"
+      },
+      {
+        "repository": "argvus-waybar",
+        "path": "docs",
+        "branch": "main",
+        "label": "Waybar"
+      },
+      {
+        "repository": "argvus-icons",
+        "path": "docs",
+        "branch": "main",
+        "label": "Icons"
+      },
+      {
+        "repository": "argvus-fonts",
+        "path": "docs",
+        "branch": "main",
+        "label": "Fonts"
+      },
+      {
+        "repository": "argvus-wallpapers",
+        "path": "docs",
+        "branch": "main",
+        "label": "Wallpapers"
+      },
+      {
+        "repository": "argvus-i18n",
+        "path": "docs",
+        "branch": "main",
+        "label": "Internationalization"
+      },
+      {
+        "repository": "argvus-tui",
+        "path": "docs",
+        "branch": "main",
+        "label": "TUI"
+      },
+      {
+        "repository": "argvus-boot-splash",
+        "path": "docs",
+        "branch": "main",
+        "label": "Boot Splash"
+      }
+    ]
+  }
 }

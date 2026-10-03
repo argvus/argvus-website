@@ -15,7 +15,7 @@ const maintenanceHtml = `<!doctype html>
     <main>
       <img src="/favicon.png" alt="ARGVUS logo" width="112" height="112" />
       <h1>ARGVUS</h1>
-      <p>The site is under maintenance. We'll be back soon.</p>
+      <p>The ARGVUS project is undergoing maintenance. We will be back soon.</p>
     </main>
   </body>
 </html>`

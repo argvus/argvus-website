@@ -1,18 +1,22 @@
 {
   "name": "argvus-site",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.4.0",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
+    "clean:versions": "node ./scripts/clean-generated-versions.mjs",
+    "generate:docs": "npx tsx scripts/generate-docs.ts",
+    "generate:sidebar": "npx tsx scripts/generate-sidebar-config.ts",
+    "generate": "npm run generate:docs && npm run generate:sidebar",
+    "dev": "npm run generate && npm run clean:versions && astro dev",
     "stop": "astro dev stop",
-    "build": "astro build",
+    "build": "npm run generate && npm run clean:versions && astro build && npm run clean:versions",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/starlight": "0.41.7",
-    "astro": "7.2.0",
-    "starlight-versions": "0.9.1"
+    "@astrojs/starlight": "0.42.5",
+    "astro": "7.3.5",
+    "starlight-versions": "0.10.1"
   }
 }

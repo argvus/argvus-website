@@ -2,6 +2,7 @@ import starlight from '@astrojs/starlight'
 import { defineConfig } from 'astro/config'
 import fs from 'node:fs'
 import starlightVersions from 'starlight-versions'
+import { sidebarConfig } from './src/lib/generated-sidebar.mjs'
 
 function getPackageVersion() {
   const { version } = JSON.parse(
@@ -13,18 +14,26 @@ function getPackageVersion() {
   return version
 }
 
+function getDocsRedirects() {
+  return JSON.parse(
+    fs.readFileSync(new URL('./src/lib/docs-redirects.json', import.meta.url), 'utf8'),
+  )
+}
+
 const pkgVersion = getPackageVersion()
+const docsRedirects = getDocsRedirects()
 
 export default defineConfig({
   site: 'https://argvus.github.io',
   base: '/',
   srcDir: './src',
   publicDir: './src/public',
+  redirects: docsRedirects,
   integrations: [
     starlight({
       title: 'ARGVUS',
       description:
-        'ARGVUS is a complete Hyprland and Wayland desktop for Arch Linux, including argvus-storage, Waybar, themes and signed pacman packages.',
+        'ARGVUS is a modular Hyprland and Wayland desktop environment for Arch Linux, with session, shell, settings, appearance and system modules shipped as signed pacman packages.',
       customCss: ['./src/styles/custom.css'],
       favicon: '/favicon.png',
       components: {
@@ -41,44 +50,7 @@ export default defineConfig({
           current: { label: 'Latest' },
         }),
       ],
-      sidebar: [
-        {
-          label: 'Introduction',
-          translations: { pt: 'Introdução' },
-          items: [{ slug: 'docs/intro' }],
-        },
-        {
-          label: 'Installation',
-          translations: { pt: 'Instalação' },
-          items: [{ slug: 'docs/install' }],
-        },
-        {
-          label: 'Environment',
-          translations: { pt: 'Ambiente' },
-          items: [{ slug: 'docs/environment' }],
-        },
-        {
-          label: 'Themes',
-          translations: { pt: 'Temas' },
-          items: [{ slug: 'docs/themes' }],
-        },
-        {
-          label: 'Official Apps',
-          translations: { pt: 'Apps oficiais' },
-          items: [
-            { slug: 'docs/official-apps' },
-            { slug: 'docs/calendar' },
-            { slug: 'docs/storage' },
-          ],
-        },
-        { label: 'Weather', items: [{ slug: 'docs/weather' }] },
-        {
-          label: 'Sessions',
-          translations: { pt: 'Sessões' },
-          items: [{ slug: 'docs/sessions/gdm' }, { slug: 'docs/sessions/tty' }],
-        },
-        { label: 'Packaging', items: [{ slug: 'docs/packaging' }] },
-      ],
+      sidebar: sidebarConfig,
       social: [
         {
           href: 'https://github.com/orgs/argvus',

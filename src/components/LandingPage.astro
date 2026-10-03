@@ -1,8 +1,32 @@
 ---
 import { Image } from 'astro:assets'
-import preview1 from '../images/preview-1.png'
-import preview2 from '../images/preview-2.png'
+import argvusCalendarImage from '../images/apps/argvus-calendar.png'
+import argvusCalendarEventsImage from '../images/apps/argvus-calendar-events.png'
+import argvusRemovableDevicesTaskbarImage from '../images/apps/argvus-removable-devices-taskbar.png'
+import argvusRemovableDevicesRofiImage from '../images/apps/argvus-removable-devices.png'
+import argvusControlCenterImage from '../images/apps/argvus-control-center.png'
+import previewThemeArgvusDarkImage from '../images/desktop/preview-theme-argvus-dark.png'
+import previewThemeDarkFloatImage from '../images/desktop/preview-theme-argvus-dark-float.png'
+import previewThemeArgvusDarkTaskbarBottomImage from '../images/desktop/preview-theme-argvus-dark-taskbar-bottom.png'
+import previewThemeDarkSilverImage from '../images/desktop/preview-theme-dark-silver.png'
+import previewThemeDarkSilverFloatImage from '../images/desktop/preview-theme-dark-silver-float.png'
+import previewThemeArgvusLightImage from '../images/desktop/preview-theme-argvus-light.png'
+import previewThemeArgvusLightFloatImage from '../images/desktop/preview-theme-argvus-light-float.png'
+import previewThemeDarkSlateImage from '../images/desktop/preview-theme-dark-slate.png'
+import previewThemeDarkSlateFloatImage from '../images/desktop/preview-theme-dark-slate-float.png'
+import previewThemeDarkUniverseImage from '../images/desktop/preview-theme-dark-universe.png'
+import previewThemeDarkUniverseFloatImage from '../images/desktop/preview-theme-dark-universe-float.png'
+import argvusPronunciationEn from '../midia/men/argvus-en.mp3'
+import argvusPronunciationPt from '../midia/men/argvus-ptbr.mp3'
 import '../styles/landing.css'
+import fs from 'node:fs'
+import { resolve } from 'node:path'
+import siteConfig from '../site-config.json'
+
+const { version } = JSON.parse(
+  fs.readFileSync(resolve(process.cwd(), 'version.json'), 'utf8'),
+)
+const isBeta = version.startsWith('0.')
 
 interface Props {
   lang: 'en' | 'pt'
@@ -21,17 +45,21 @@ const argvusWordmarkUrl =
 const link = (path: string) =>
   base + (isPT && !path.startsWith('packages/') ? 'pt/' : '') + path
 
+const initialPronunciation = isPT ? argvusPronunciationPt : argvusPronunciationEn
+
 const t = isPT
   ? {
       htmlLang: 'pt-BR',
       title: 'ARGVUS — Desktop completo para Hyprland, empacotado para Arch Linux',
       description:
-        'ARGVUS é um desktop completo para Hyprland e Wayland, com argvus-storage, Waybar, temas integrados e pacotes assinados para Arch Linux.',
+        'ARGVUS é um ambiente de desktop modular para Hyprland e Wayland, com ARGVUS Removable Devices, Waybar, temas integrados e pacotes assinados para Arch Linux.',
       keywords:
-        'argvus, argvus linux, hyprland, wayland, arch linux, desktop environment, argvus-storage, waybar, linux desktop, pacman repository',
+        'argvus, argvus linux, hyprland, wayland, arch linux, desktop environment, argvus removable devices, waybar, linux desktop, pacman repository',
       navAria: 'Navegação principal',
       navDocs: 'Documentação',
-      navArch: 'Repositório Arch',
+      navArch: 'Repositório',
+        navArchArch: 'Arch Linux',
+      navDonate: 'Apoiar',
       github: 'GitHub',
       langAria: 'Alterar idioma',
       langEnglish: 'English',
@@ -40,10 +68,13 @@ const t = isPT
       themeLight: 'Light',
       themeDark: 'Dark',
       themeSystem: 'System',
-      heroTitle1: 'Um desktop completo, pronto para uso.',
+      heroTitle1: 'Um ambiente de desktop modular, pronto para uso.',
       heroAccent: 'Focado em Hyprland.',
+      heroTagline:
+        'Mais do que dotfiles: criado especialmente para desenvolvedores — sem bloatwares; sem firulas. Leve, direto e objetivo.',
       heroLead:
-        'O ARGVUS reúne um ambiente Wayland rico e integrado: barra, lançadores, sidebar de sistema, armazenamento removível em Rust e oito famílias de tema — tudo empacotado para Arch Linux.',
+        'O ARGVUS reúne um ambiente Wayland rico e integrado: sessão supervisionada, shell Quickshell, taskbar Waybar, configurações nativas, módulos de sistema e vinte e duas famílias de tema, cada uma com os modos Sticky e Float — tudo empacotado para Arch Linux.',
+      versionBadge: `ARGVUS v${version}`,
       btnInstall: 'Instalar agora',
       btnDocs: 'Documentação',
       carouselPrev: 'Imagem anterior',
@@ -51,12 +82,15 @@ const t = isPT
       carouselDot: (n: number) => `Ir para imagem ${n}`,
       carouselOpen: 'Abrir imagem em tela cheia',
       carouselClose: 'Fechar imagem em tela cheia',
-      slideAlt1: 'Desktop ARGVUS — pré-visualização 1',
-      slideAlt2: 'Desktop ARGVUS — pré-visualização 2',
+      slideAlt: (theme: string) => `Desktop ARGVUS com o tema ${theme}`,
+      screenshotsEyebrow: 'Pré-visualizações',
+      screenshotsTitle: 'Veja o ARGVUS ganhar novas atmosferas',
+      screenshotsSubtitle:
+        'Uma seleção de capturas para comparar contraste, personalidade e os diferentes modos visuais do desktop antes de escolher sua aparência.',
       componentsEyebrow: 'Componentes',
       componentsTitle: 'Feito com software que você já conhece',
       componentsSubtitle:
-        'O ARGVUS integra um ecossistema completo de ferramentas Wayland, todas pré-configuradas e com temas unificados.',
+        'O ARGVUS 0.4.0 divide a experiência em pacotes oficiais menores, todos pré-configurados e coordenados pelo metapacote argvus.',
       componentDesc: {
         hyprland:
           'Compositor Wayland que dá vida ao ARGVUS: tiling, workspaces, animações suaves e atalhos completos.',
@@ -69,13 +103,74 @@ const t = isPT
         hyprlock: 'Bloqueador de tela integrado ao ecossistema Hyprland com tema sincronizado.',
         storage: 'Módulo de armazenamento removível escrito em Rust para a barra do Waybar.',
       },
+      waybarEyebrow: 'Waybar',
+      waybarTitle: 'Barra de status no topo ou na parte inferior',
+      waybarSubtitle:
+        'A barra principal do ARGVUS combina navegação, mídia, sistema e apps nativos — e pode ficar no topo ou na parte inferior da tela com um clique ou atalho. Posição lembrada entre sessões.',
+      waybarIntro:
+        'Construída sobre o Waybar, a barra agrupa os controles do dia a dia em um só lugar, com um visual unificado por todos os temas:',
+      waybarFeatures: [
+        { icon: 'fa-solid fa-star', text: 'Posição topo/inferior por atalho (SUPER + Alt + ↑/↓) ou pela sidebar.' },
+        { icon: 'fa-solid fa-bars-staggered', text: 'Workspaces navegáveis e contexto da janela em foco.' },
+        { icon: 'fa-solid fa-music', text: 'Controle de mídia (mpris) com player em destaque.' },
+        { icon: 'fa-solid fa-gauge-high', text: 'Status de rede, CPU, memória, temperatura e perfil de energia.' },
+        { icon: 'fa-solid fa-calendar-days', text: 'ARGVUS Taskbar Calendar ao clicar na data.' },
+        { icon: 'fa-solid fa-bolt', text: 'ARGVUS Removable Devices, módulo de armazenamento removível em Rust.' },
+        { icon: 'fa-solid fa-table-cells', text: 'Bandeja do sistema (tray) para apps com ícones de status.' },
+        { icon: 'fa-solid fa-magnifying-glass', text: 'Busca rápida de aplicativos e comandos direto na barra.' },
+      ],
+      appsEyebrow: 'Apps oficiais',
+      appsTitle: 'Ferramentas nativas para o desktop',
+      appsSubtitle:
+        'Além da configuração do ambiente, o ARGVUS inclui apps próprios para fluxos que precisam se integrar melhor à barra, ao painel e à sessão.',
+      appStorageText:
+        'ARGVUS Removable Devices é o app de armazenamento removível do ARGVUS. Ele detecta dispositivos, expõe ações rápidas para montar, desmontar e ejetar unidades, e alimenta o módulo de armazenamento da Waybar com uma experiência consistente.',
+      appCalendarText:
+        'ARGVUS Taskbar Calendar é o calendário nativo usado pelo desktop. Ele oferece uma visualização rápida do mês, navegação simples e integração com eventos para consultar compromissos sem sair do fluxo do Wayland.',
+      appCalendarEventsText:
+        'A visualização de eventos complementa o calendário com uma lista compacta de compromissos, mantendo datas importantes acessíveis direto pelo ecossistema ARGVUS.',
+      appDefaultAppsText:
+        'ARGVUS Control Center é o centro nativo de configuração do ARGVUS. A aba Apps substitui o antigo fluxo argvus-default-apps, enquanto Fontes aplica a tipografia em GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, lock screen e apps oficiais.',
+      controlCenterFeatures: [
+        { title: 'Aparência', text: 'Temas, modos Sticky/Float, acentos, wallpapers, efeitos, layout da taskbar e cards do Control Panel.' },
+        { title: 'Fontes', text: 'Configure a tipografia da taskbar, telemetria, Control Panel, sistema, aplicativos, terminal e navegador.' },
+        { title: 'Aplicativos padrão', text: 'Escolha os aplicativos padrão para as funções reconhecidas pelo ARGVUS.' },
+        { title: 'Hardware e entrada', text: 'Ajuste mouse, touchpad, teclado, atalhos e displays quando os recursos estiverem disponíveis.' },
+        { title: 'Rede, áudio e Bluetooth', text: 'Acesse os módulos de conectividade e áudio fornecidos pela instalação.' },
+        { title: 'Sessão e sistema', text: 'Consulte e configure energia, sessão, serviços, pacotes, armazenamento e diagnósticos.' },
+      ],
+      aboutEyebrow: 'Sobre',
+      aboutTitle: 'Por que ARGVUS?',
+      aboutArgv: 'Argument Vector',
+      aboutUs: 'User System',
+      aboutText:
+        'ARGVUS nasceu de uma ideia simples: um desktop de desenvolvedor não deveria exigir que o usuário interrompesse seu fluxo para procurar controles, navegar por menus ou depender constantemente do mouse. A proposta é construir um ambiente onde o teclado seja uma das principais formas de interação com o sistema — permitindo que ações, aplicações e ferramentas sejam acessadas por atalhos e comandos de maneira rápida e previsível.',
+      aboutText2:
+        'O nome representa essa ideia. ARGV, de argument vector, remete ao mundo dos desenvolvedores e à forma como argumentos são utilizados para controlar programas. US, de User System, representa o objetivo de transformar essa filosofia em um ambiente de desktop centrado no usuário.',
+      aboutPronunciationLabel: 'Ouça a pronúncia',
+      aboutPronunciationHint: 'Selecione o idioma para ouvir como ARGVUS é pronunciado.',
+      aboutPronunciationLanguage: 'Idioma',
+      aboutPronunciationEnglish: 'Inglês',
+      aboutPronunciationPortuguese: 'Português',
+      aboutPronunciationAudio: 'Áudio da pronúncia de ARGVUS',
+      aboutMaintainer: 'Projeto mantido por',
+      aboutMaintainerLink: 'Perfil de William C. Canin no GitHub',
+      aboutSupportPaypal: 'Ao contribuir via PayPal, a conta correta é exibida como',
       themesEyebrow: 'Temas',
-      themesTitle: 'Oito famílias, um só sistema',
+      themesTitle: 'Vinte e dois temas, dois modos, um só sistema',
       themesSubtitle:
-        'Um sistema compartilhado de cores de destaque que unifica GTK, terminais, rofi, dunst, Waybar e o próprio Hyprland.',
+        'Famílias visuais compartilhadas, cada uma com os modos Sticky e Float. Todos disponíveis como pacotes Arch Linux no repositório oficial do ARGVUS.',
       themesCopy:
-        'Dark, dark silver, light e slate — cada família também na variante float. A cor de destaque pode ser trocada com SUPER + SHIFT + A ou pelo controle Accent na sidebar, sem substituir o fundo do tema.',
-      paletteLabel: 'Paleta de destaque',
+        'Explore as famílias oficiais e compare suas paletas diretamente nos previews. Cada família possui os modos Sticky e Float, que alteram a geometria e o tratamento das superfícies sem trocar a identidade visual. Todos os temas estão disponíveis no repositório como pacotes individuais (`pacman -S argvus-theme-<name>`) ou instale todos com `pacman -S argvus-themes`. A cor de destaque é independente e pode ser escolhida em ARGVUS Control Center → Appearance → Highlight color.',
+      themesAccentLabel: 'Acento independente',
+      themesTabsAria: 'Categoria de temas',
+      themesDarkTab: 'Temas Dark',
+      themesLightTab: 'Temas Light',
+      themesCopyText:
+        'Explore as famílias oficiais e compare suas paletas diretamente nos previews. Cada família possui os modos Sticky e Float, que alteram a geometria e o tratamento das superfícies sem trocar a identidade visual. A cor de destaque continua independente e pode ser escolhida em ARGVUS Control Center → Appearance → Highlight color.',
+      themesDefaultLabel: 'Padrão',
+      themeModeSticky: 'Sticky',
+      themeModeFloat: 'Float',
       archEyebrow: 'Arch Linux',
       archTitle: 'Instalação em um único pacote',
       archSubtitle:
@@ -86,43 +181,62 @@ const t = isPT
         'Instalação com sudo pacman -Syu argvus; dependências resolvidas a partir do mesmo repositório.',
         'Configurações preservadas e reparadas automaticamente a cada login.',
       ],
-      codeHead: '/bin/sh — instalação',
+      codeHead: '/bin/sh — instalação avançada',
       codeComment1: '# Importa a chave GPG',
       codeComment2: '# Adiciona o repositório',
       codeComment3: '# Instala',
       installCmd: 'sudo pacman -Syu argvus',
+      supportEyebrow: 'Apoio',
+      supportTitle: 'Apoie o desenvolvimento do ARGVUS',
+      supportText:
+        'Se o Argvus é útil para você, considere apoiar o desenvolvimento do projeto. Sua contribuição ajuda a manter a infraestrutura, manutenção e evolução do projeto — incluindo os custos para futuramente adquirir e manter um domínio próprio para o Argvus.',
+      supportBtn: 'Contribuir',
+      supportAria: 'Valor da contribuição',
+      supportStar:
+        'Gostou do ARGVUS? Ajude o projeto dando uma estrela no GitHub. É rápido e faz toda a diferença!',
+      supportStarBtn: 'Dar estrela no GitHub',
       ctaTitle: 'Experimente o ARGVUS',
       ctaText:
         'Siga o guia de instalação e tenha um desktop Wayland completo, bonito e integrado rodando em minutos.',
       ctaPrimary: 'Ver guia de instalação',
       ctaSecondary: 'Explorar o repositório',
-      footerTagline: 'Ambiente de desktop completo para Hyprland, empacotado para Arch Linux.',
+      footerTagline: 'Um ambiente de desktop modular para Wayland e Arch Linux, construído sobre o Hyprland.',
       footerDocs: 'Documentação',
       footerDocsLinks: [
-        { label: 'Introdução', href: 'docs/intro/' },
-        { label: 'Instalação', href: 'docs/install/' },
-        { label: 'Temas', href: 'docs/themes/' },
-        { label: 'Sessões', href: 'docs/sessions/gdm/' },
+        { label: 'Introdução', href: 'docs/introduction/' },
+        { label: 'Instalação', href: 'docs/user-guide/installation/' },
+        { label: 'Aparência', href: 'docs/user-guide/appearance/' },
+        { label: 'Sessões', href: 'docs/user-guide/sessions/' },
+        { label: 'Perguntas frequentes', href: 'docs/user-guide/faq/' },
       ],
       footerResources: 'Recursos',
       footerResourcesLinks: [
-        { label: 'Repositório Arch', href: 'packages/arch/' },
-        { label: 'Banco de pacotes', href: 'packages/arch/x86_64/' },
+        { label: 'Repositório Arch Linux', href: 'packages/arch/' },
       ],
       footerProject: 'Projeto',
       footerLicense: 'Licença GPL-3.0',
+      footerMaintainer: 'Mantido por',
       bottomLicense: 'Licenciado sob GPL-3.0',
+      feedbackEyebrow: 'Feedback',
+      feedbackTitle: 'Sua opinião ajuda a moldar o ARGVUS',
+      feedbackText:
+        'Encontrou um bug, tem uma ideia ou quer pedir uma funcionalidade? O ARGVUS tem um repositório dedicado para feedback, onde ideias e relatos são acompanhados pela comunidade.',
+      feedbackBtn: 'Enviar feedback',
+      feedbackLink: 'Repositório de feedback do ARGVUS no GitHub',
+      feedbackMade: 'Feito com 💜 para a comunidade open source',
     }
   : {
       htmlLang: 'en',
-      title: 'ARGVUS — A complete desktop for Hyprland, packaged for Arch Linux',
+      title: 'ARGVUS — A modular desktop environment for Wayland and Arch Linux, built on Hyprland.',
       description:
-        'ARGVUS is a complete Hyprland and Wayland desktop with argvus-storage, Waybar, integrated themes and signed Arch Linux packages.',
+        'ARGVUS is a complete Hyprland and Wayland desktop with ARGVUS Removable Devices, Waybar, integrated themes and signed Arch Linux packages.',
       keywords:
-        'argvus, argvus linux, hyprland, wayland, arch linux, desktop environment, argvus-storage, waybar, linux desktop, pacman repository',
+        'argvus, argvus linux, hyprland, wayland, arch linux, desktop environment, argvus removable devices, waybar, linux desktop, pacman repository',
       navAria: 'Main navigation',
       navDocs: 'Documentation',
-      navArch: 'Arch repository',
+      navArch: 'Repository',
+        navArchArch: 'Arch Linux',
+      navDonate: 'Donate',
       github: 'GitHub',
       langAria: 'Change language',
       langEnglish: 'English',
@@ -131,10 +245,13 @@ const t = isPT
       themeLight: 'Light',
       themeDark: 'Dark',
       themeSystem: 'System',
-      heroTitle1: 'A complete desktop, ready to use.',
+      heroTitle1: 'A ready-to-use modular desktop, ready to use.',
       heroAccent: 'Focused on Hyprland.',
+      heroTagline:
+        'More than dotfiles: built especially for developers — no bloatware; no fluff. Lightweight, focused and to the point.',
       heroLead:
-        'ARGVUS bundles a rich, integrated Wayland environment: bar, launchers, system sidebar, Rust-powered removable storage and eight theme families — all packaged for Arch Linux.',
+        'ARGVUS bundles a rich, integrated Wayland environment: supervised session, Quickshell shell, Waybar taskbar, native settings, system modules and twenty-two theme families, each with Sticky and Float modes — all packaged for Arch Linux.',
+      versionBadge: `ARGVUS v${version}`,
       btnInstall: 'Install now',
       btnDocs: 'Documentation',
       carouselPrev: 'Previous image',
@@ -142,12 +259,15 @@ const t = isPT
       carouselDot: (n: number) => `Go to image ${n}`,
       carouselOpen: 'Open image in fullscreen',
       carouselClose: 'Close fullscreen image',
-      slideAlt1: 'ARGVUS desktop — preview 1',
-      slideAlt2: 'ARGVUS desktop — preview 2',
+      slideAlt: (theme: string) => `ARGVUS desktop with the ${theme} theme`,
+      screenshotsEyebrow: 'Previews',
+      screenshotsTitle: 'See ARGVUS take on a new atmosphere',
+      screenshotsSubtitle:
+        'A curated set of screenshots to compare contrast, personality and the desktop’s visual modes before choosing an appearance.',
       componentsEyebrow: 'Components',
       componentsTitle: 'Built with software you already know',
       componentsSubtitle:
-        'ARGVUS integrates a complete ecosystem of Wayland tools, all pre-configured and unified by shared themes.',
+        'ARGVUS 0.4.0 splits the experience into smaller official packages, all pre-configured and coordinated by the argvus metapackage.',
       componentDesc: {
         hyprland:
           'The Wayland compositor that brings ARGVUS to life: tiling, workspaces, smooth animations and full keybindings.',
@@ -160,13 +280,74 @@ const t = isPT
         hyprlock: 'Lock screen integrated with the Hyprland ecosystem and a synchronized theme.',
         storage: 'Rust-powered removable storage module for the Waybar bar.',
       },
+      waybarEyebrow: 'Waybar',
+      waybarTitle: 'Status bar at the top or the bottom',
+      waybarSubtitle:
+        'The ARGVUS main bar combines navigation, media, system state and native apps — and can sit at the top or the bottom of the screen with a click or a shortcut. The position is remembered across sessions.',
+      waybarIntro:
+        'Built on Waybar, the bar groups everyday controls in a single place, with a look unified across every theme:',
+      waybarFeatures: [
+        { icon: 'fa-solid fa-star', text: 'Top/bottom position via shortcut (SUPER + Alt + ↑/↓) or the sidebar.' },
+        { icon: 'fa-solid fa-bars-staggered', text: 'Navigable workspaces with focused-window context.' },
+        { icon: 'fa-solid fa-music', text: 'Media control (mpris) with the active player highlighted.' },
+        { icon: 'fa-solid fa-gauge-high', text: 'Network, CPU, memory, temperature and power-profile status.' },
+        { icon: 'fa-solid fa-calendar-days', text: 'ARGVUS Taskbar Calendar on date click.' },
+        { icon: 'fa-solid fa-bolt', text: 'ARGVUS Removable Devices, a Rust-powered removable-storage module.' },
+        { icon: 'fa-solid fa-table-cells', text: 'System tray for apps with status icons.' },
+        { icon: 'fa-solid fa-magnifying-glass', text: 'Quick app and command search right from the bar.' },
+      ],
+      appsEyebrow: 'Official apps',
+      appsTitle: 'Native tools for the desktop',
+      appsSubtitle:
+        'Beyond environment configuration, ARGVUS includes first-party apps for workflows that need tighter integration with the bar, panel and session.',
+      appStorageText:
+        'ARGVUS Removable Devices is the ARGVUS removable-storage app. It detects devices, exposes quick actions to mount, unmount and eject drives, and powers the Waybar storage module with a consistent experience.',
+      appCalendarText:
+        'ARGVUS Taskbar Calendar is the native calendar used by the desktop. It offers a quick month view, simple navigation and event integration for checking appointments without leaving the Wayland flow.',
+      appCalendarEventsText:
+        'The events view complements the calendar with a compact list of appointments, keeping important dates close at hand inside the ARGVUS ecosystem.',
+      appDefaultAppsText:
+        'ARGVUS Control Center is the native ARGVUS configuration center. Its Apps page replaces the old argvus-default-apps workflow, while Fonts applies typography to GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, the lock screen and official apps.',
+      controlCenterFeatures: [
+        { title: 'Appearance', text: 'Themes, Sticky/Float modes, accents, wallpapers, effects, taskbar layout and Control Panel cards.' },
+        { title: 'Fonts', text: 'Configure typography for the taskbar, telemetry, Control Panel, system, applications, terminal and browser.' },
+        { title: 'Default applications', text: 'Choose default applications for the roles recognized by ARGVUS.' },
+        { title: 'Hardware and input', text: 'Adjust mouse, touchpad, keyboard, shortcuts and displays when the capabilities are available.' },
+        { title: 'Network, audio and Bluetooth', text: 'Access the connectivity and audio modules provided by the installation.' },
+        { title: 'Session and system', text: 'Inspect and configure power, session, services, packages, storage and diagnostics.' },
+      ],
+      aboutEyebrow: 'About',
+      aboutTitle: 'Why ARGVUS?',
+      aboutArgv: 'Argument Vector',
+      aboutUs: 'User System',
+      aboutText:
+        'ARGVUS was born from a simple idea: a developer desktop should not require the user to break their flow to find controls, navigate menus, or constantly depend on the mouse. The goal is to build an environment where the keyboard is a primary form of system interaction — allowing actions, applications and tools to be accessed through shortcuts and commands in a fast and predictable way.',
+      aboutText2:
+        'The name represents this idea. ARGV, from argument vector, refers to the world of developers and how arguments are used to control programs. US, from User System, represents the goal of turning this philosophy into a user-centered desktop environment.',
+      aboutPronunciationLabel: 'Hear the pronunciation',
+      aboutPronunciationHint: 'Choose a language to hear how ARGVUS is pronounced.',
+      aboutPronunciationLanguage: 'Language',
+      aboutPronunciationEnglish: 'English',
+      aboutPronunciationPortuguese: 'Portuguese',
+      aboutPronunciationAudio: 'ARGVUS pronunciation audio',
+      aboutMaintainer: 'Project maintained by',
+      aboutMaintainerLink: 'William C. Canin GitHub profile',
+      aboutSupportPaypal: 'When contributing via PayPal, the correct account is shown as',
       themesEyebrow: 'Themes',
-      themesTitle: 'Eight families, one system',
+      themesTitle: 'Twenty-two themes, two modes, one system',
       themesSubtitle:
-        'A shared accent-color system that unifies GTK, terminals, rofi, dunst, Waybar and Hyprland itself.',
-      themesCopy:
-        'Dark, dark silver, light and slate — each family also in a float variant. The accent color can be changed with SUPER + SHIFT + A or the Accent control in the sidebar, without replacing the theme background.',
-      paletteLabel: 'Accent palette',
+        'Shared visual families, each with Sticky and Float modes. All available as Arch Linux packages from the official ARGVUS repository.',
+      themesCopyLegacy:
+        'ARGVUS Dark, Silver Dark, Slate Dark, Universe, Sunset, Monokai Dark, Catppuccin Latte, ARGVUS Light and Rosé Pine, alongside the other official families. Each family has Sticky and Float modes; the mode changes geometry and surface treatment, not the theme count. Choose the accent color independently in ARGVUS Control Center → Appearance → Highlight color without replacing the theme background.',
+      themesAccentLabel: 'Independent accent',
+      themesTabsAria: 'Theme category',
+      themesDarkTab: 'Dark themes',
+      themesLightTab: 'Light themes',
+      themesCopyText:
+        'Explore the official families and compare their palettes directly in the previews. Every family has Sticky and Float modes, changing geometry and surface treatment without changing its visual identity. All themes are available in the repository as individual packages (`pacman -S argvus-theme-<name>`) or install them all with `pacman -S argvus-themes`. The accent color remains independent and can be chosen at ARGVUS Control Center → Appearance → Highlight color.',
+      themesDefaultLabel: 'Default',
+      themeModeSticky: 'Sticky',
+      themeModeFloat: 'Float',
       archEyebrow: 'Arch Linux',
       archTitle: 'Installed from a single package',
       archSubtitle:
@@ -177,37 +358,69 @@ const t = isPT
         'Installation with sudo pacman -Syu argvus; dependencies are resolved from the same repository.',
         'Configs preserved and repaired automatically at every login.',
       ],
-      codeHead: '/bin/sh — installation',
+      codeHead: '/bin/sh — advanced installation',
       codeComment1: '# Import the GPG key',
       codeComment2: '# Add the repository',
       codeComment3: '# Install',
       installCmd: 'sudo pacman -Syu argvus',
+      supportEyebrow: 'Support',
+      supportTitle: 'Support ARGVUS development',
+      supportText:
+        'If Argvus is useful to you, please consider supporting the project\'s development. Your contribution helps maintain the infrastructure and supports the project\'s ongoing maintenance and evolution—including the costs of eventually acquiring and maintaining a dedicated domain for Argvus.',
+      supportBtn: 'Contribute',
+      supportAria: 'Contribution amount',
+      supportStar:
+        'Enjoying ARGVUS? Help the project by starring it on GitHub. It\'s quick and makes a huge difference!',
+      supportStarBtn: 'Star on GitHub',
       ctaTitle: 'Try ARGVUS',
       ctaText:
         'Follow the installation guide and have a complete, beautiful, integrated Wayland desktop running in minutes.',
       ctaPrimary: 'View installation guide',
       ctaSecondary: 'Explore the repository',
-      footerTagline: 'A complete desktop environment for Hyprland, packaged for Arch Linux.',
+      footerTagline: 'A modular desktop environment for Wayland and Arch Linux, built on Hyprland.',
       footerDocs: 'Documentation',
       footerDocsLinks: [
-        { label: 'Introduction', href: 'docs/intro/' },
-        { label: 'Installation', href: 'docs/install/' },
-        { label: 'Themes', href: 'docs/themes/' },
-        { label: 'Sessions', href: 'docs/sessions/gdm/' },
+        { label: 'Introduction', href: 'docs/introduction/' },
+        { label: 'Installation', href: 'docs/user-guide/installation/' },
+        { label: 'Appearance', href: 'docs/user-guide/appearance/' },
+        { label: 'Sessions', href: 'docs/user-guide/sessions/' },
+        { label: 'FAQ', href: 'docs/user-guide/faq/' },
       ],
       footerResources: 'Resources',
       footerResourcesLinks: [
-        { label: 'Arch repository', href: 'packages/arch/' },
-        { label: 'Package database', href: 'packages/arch/x86_64/' },
+        { label: 'Arch Linux Repository', href: 'packages/arch/' },
       ],
       footerProject: 'Project',
       footerLicense: 'GPL-3.0 License',
+      footerMaintainer: 'Maintained by',
       bottomLicense: 'Licensed under GPL-3.0',
+      feedbackEyebrow: 'Feedback',
+      feedbackTitle: 'Your feedback helps shape ARGVUS',
+      feedbackText:
+        'Found a bug, have an idea, or want to request a feature? ARGVUS has a dedicated feedback repository where ideas and reports are tracked together with the community.',
+      feedbackBtn: 'Send feedback',
+      feedbackLink: 'ARGVUS feedback repository on GitHub',
+      feedbackMade: 'Made with 💜 for the open source community',
     }
 
 const slides = [
-  { image: preview1, alt: t.slideAlt1 },
-  { image: preview2, alt: t.slideAlt2 },
+  { name: 'ARGVUS Dark', image: previewThemeArgvusDarkImage },
+  { name: 'ARGVUS Dark — Float', image: previewThemeDarkFloatImage },
+  { name: 'Silver Dark', image: previewThemeDarkSilverImage },
+  { name: 'Silver Dark — Float', image: previewThemeDarkSilverFloatImage },
+  { name: 'Slate Dark', image: previewThemeDarkSlateImage },
+  { name: 'Slate Dark — Float', image: previewThemeDarkSlateFloatImage },
+  { name: 'Universe', image: previewThemeDarkUniverseImage },
+  { name: 'Universe — Float', image: previewThemeDarkUniverseFloatImage },
+  { name: 'ARGVUS Light', image: previewThemeArgvusLightImage },
+  { name: 'ARGVUS Light — Float', image: previewThemeArgvusLightFloatImage },
+  {
+    name: 'Taskbar at the bottom',
+    image: previewThemeArgvusDarkTaskbarBottomImage,
+    alt: isPT
+      ? 'ARGVUS desktop com a barra de tarefas embaixo'
+      : 'ARGVUS desktop with the taskbar at the bottom',
+  },
 ]
 
 const components = [
@@ -218,31 +431,68 @@ const components = [
   { key: 'superfile', name: 'superfile' },
   { key: 'btop', name: 'btop' },
   { key: 'hyprlock', name: 'hyprlock' },
-  { key: 'storage', name: 'argvus-storage' },
+  { key: 'storage', name: 'ARGVUS Removable Devices' },
 ]
 
 const themes = [
-  { name: 'argvus-dark', variant: 'normal', color: '#16181d' },
-  { name: 'argvus-dark-float', variant: 'float', color: '#16181d' },
-  { name: 'argvus-dark-silver', variant: 'normal', color: '#2b2f37' },
-  { name: 'argvus-dark-silver-float', variant: 'float', color: '#2b2f37' },
-  { name: 'argvus-light', variant: 'normal', color: '#f0f1f3' },
-  { name: 'argvus-light-float', variant: 'float', color: '#f0f1f3' },
-  { name: 'argvus-slate', variant: 'normal', color: '#3b4451' },
-  { name: 'argvus-slate-float', variant: 'float', color: '#3b4451' },
+  { name: 'Dracula', shortName: 'Dracula', id: 'dracula', category: 'dark', foreground: '#BD93F9', background: '#282A36', default: true },
+  { name: 'Gruvbox Dark', shortName: 'Gruvbox Dark', id: 'gruvbox-dark', category: 'dark', foreground: '#D4BE98', background: '#282828' },
+  { name: 'Gruvbox High Dark', shortName: 'Gruvbox High Dark', id: 'gruvbox-high-dark', category: 'dark', foreground: '#D4BE98', background: '#282828' },
+  { name: 'Hackerman', shortName: 'Hackerman', id: 'hackerman', category: 'dark', foreground: '#82FB9C', background: '#0B0C16' },
+  { name: 'Monokai Dark', shortName: 'Monokai Dark', id: 'monokai-dark', category: 'dark', foreground: '#78DCE8', background: '#2D2A2E' },
+  { name: 'One Dark', shortName: 'One Dark', id: 'one-dark', category: 'dark', foreground: '#61AFEF', background: '#282C34' },
+  { name: 'Rosé Pine', shortName: 'Rosé Pine', id: 'rose-pine', category: 'dark', foreground: '#C4A7E7', background: '#191724' },
+  { name: 'Silver Dark', shortName: 'Silver Dark', id: 'silver-dark', category: 'dark', foreground: '#595959', background: '#111316' },
+  { name: 'Slate Dark', shortName: 'Slate Dark', id: 'slate-dark', category: 'dark', foreground: '#7391A5', background: '#2F3541' },
+  { name: 'Solitude', shortName: 'Solitude', id: 'solitude', category: 'dark', foreground: '#798186', background: '#101315' },
+  { name: 'Sunset', shortName: 'Sunset', id: 'sunset', category: 'dark', foreground: '#E2BE8A', background: '#0F0F0F' },
+  { name: 'Tokyo Night', shortName: 'Tokyo Night', id: 'tokyo-night', category: 'dark', foreground: '#7AA2F7', background: '#1A1B26' },
+  { name: 'Universe', shortName: 'Universe', id: 'universe', category: 'dark', foreground: '#EEEEEE', background: '#000000' },
+  { name: 'Catppuccin Latte', shortName: 'Catppuccin Latte', id: 'catppuccin-latte', category: 'light', foreground: '#1E66F5', background: '#EFF1F5' },
+  { name: 'Everforest Light', shortName: 'Everforest Light', id: 'everforest-light', category: 'light', foreground: '#3A94C5', background: '#FDF6E3' },
+  { name: 'GitHub Light', shortName: 'GitHub Light', id: 'github-light', category: 'light', foreground: '#0969DA', background: '#FFFFFF' },
+  { name: 'Gruvbox Light', shortName: 'Gruvbox Light', id: 'gruvbox-light', category: 'light', foreground: '#458588', background: '#FBF1C7' },
+  { name: 'One Light', shortName: 'One Light', id: 'one-light', category: 'light', foreground: '#4078F2', background: '#FAFAFA' },
+  { name: 'Solarized Light', shortName: 'Solarized Light', id: 'solarized-light', category: 'light', foreground: '#268BD2', background: '#FDF6E3' },
 ]
 
-const palette = [
-  '#996548',
-  '#3590bd',
-  '#7391a5',
-  '#17d174',
-  '#cb17d1',
-  '#d1174f',
-  '#d1ce17',
-  '#9617d1',
-  '#595959',
+const darkThemes = themes.filter((theme) => theme.category === 'dark')
+const lightThemes = themes.filter((theme) => theme.category === 'light')
+
+const apps = [
+  {
+    name: 'ARGVUS Removable Devices',
+    image: argvusRemovableDevicesTaskbarImage,
+    alt: 'ARGVUS Removable Devices na taskbar',
+    text: t.appStorageText,
+    carousel: [
+      { image: argvusRemovableDevicesTaskbarImage, alt: 'ARGVUS Removable Devices na taskbar' },
+      { image: argvusRemovableDevicesRofiImage, alt: 'ARGVUS Removable Devices no Rofi' },
+    ],
+  },
+  {
+    name: 'ARGVUS Taskbar Calendar',
+    alt: 'ARGVUS Taskbar Calendar',
+    text: t.appCalendarText,
+    carousel: [
+      { image: argvusCalendarImage, alt: 'ARGVUS Taskbar Calendar' },
+      { image: argvusCalendarEventsImage, alt: 'ARGVUS Taskbar Calendar events' },
+    ],
+  },
+  {
+    name: 'ARGVUS Control Center',
+    image: argvusControlCenterImage,
+    alt: 'ARGVUS Control Center',
+    text: t.appDefaultAppsText,
+    features: t.controlCenterFeatures,
+  },
 ]
+
+const contributionConfig = siteConfig.contributionLinks
+const contributionEnabled = contributionConfig.enable
+const contributionMode = contributionConfig.mode
+const contributionStripeValues = contributionConfig.stripe
+const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
 ---
 
 <!doctype html>
@@ -266,6 +516,7 @@ const palette = [
     <meta name="twitter:description" content={t.description} />
     <meta name="twitter:image" content={`${siteUrl}${base}favicon.png`} />
     <link rel="icon" type="image/png" href={base + 'favicon.png'} />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css" />
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'SoftwareApplication',
@@ -298,13 +549,26 @@ const palette = [
         <a class="brand" href={link('')}>
           <img class="brand-logotype" src={logotypeUrl} alt="" width={48} height={48} />
           <img class="brand-wordmark" src={argvusWordmarkUrl} alt="ARGVUS" width={178} height={20} />
+          {isBeta && <span class="beta-badge">Beta</span>}
         </a>
 
         <nav class="site-nav" aria-label={t.navAria}>
           <div class="nav-links">
-            <a class="nav-link" href={link('docs/intro/')}>{t.navDocs}</a>
-            <a class="nav-link" href={link('packages/arch/')}>{t.navArch}</a>
-            <a class="nav-link" href={githubOrgUrl}>{t.github}</a>
+            <a class="nav-link" href={link('docs/introduction/')}><i class="fa-solid fa-book-open"></i>{t.navDocs}</a>
+            <div class="nav-dropdown" data-nav-dropdown>
+              <button class="nav-link nav-dropdown-trigger" type="button" data-nav-dropdown-trigger>
+                <i class="fa-solid fa-cube"></i>
+                {t.navArch}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
+              </button>
+              <div class="nav-dropdown-menu" data-nav-dropdown-menu hidden>
+                <a class="nav-dropdown-item" href={link('packages/arch/')}><i class="fa-brands fa-linux"></i>{t.navArchArch}</a>
+              </div>
+            </div>
+            <a class="nav-link" href={githubOrgUrl}><i class="fa-brands fa-github"></i>{t.github}</a>
+            {contributionEnabled && <a class="nav-link nav-link-donate" href="#support"><i class="fa-solid fa-heart"></i>{t.navDonate}</a>}
           </div>
 
           <div class="lang-toggle" data-lang-toggle>
@@ -380,6 +644,7 @@ const palette = [
       <section class="hero">
         <div class="container">
           <div class="hero-badges">
+            <span class="hero-badge hero-version-badge">{t.versionBadge}</span>
             <span class="hero-badge">Hyprland</span>
             <span class="hero-badge">Wayland</span>
             <span class="hero-badge">Arch Linux</span>
@@ -389,26 +654,33 @@ const palette = [
 
           <h1>{t.heroTitle1} <span class="accent">{t.heroAccent}</span></h1>
 
+          <p class="tagline">{t.heroTagline}</p>
+
           <p class="lead">{t.heroLead}</p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href={link('docs/install/')}>
-              {t.btnInstall}
+            <a class="btn btn-primary" href={link('docs/user-guide/installation/')}>
+              <i class="fa-solid fa-download"></i>{t.btnInstall}
             </a>
-            <a class="btn btn-secondary" href={link('docs/intro/')}>
-              {t.btnDocs}
+            <a class="btn btn-secondary" href={link('docs/introduction/')}>
+              <i class="fa-solid fa-book-open"></i>{t.btnDocs}
             </a>
             <a class="btn btn-secondary" href={githubOrgUrl}>
-              {t.github}
+              <i class="fa-brands fa-github"></i>{t.github}
             </a>
           </div>
         </div>
       </section>
 
       <!-- Screenshots -->
-      <section class="screenshot-section">
+      <section class="screenshot-section" data-parallax-section>
         <div class="container">
-          <div class="screenshot">
+          <div class="section-head screenshot-head">
+            <span class="eyebrow">{t.screenshotsEyebrow}</span>
+            <h2>{t.screenshotsTitle}</h2>
+            <p>{t.screenshotsSubtitle}</p>
+          </div>
+          <div class="screenshot" data-parallax-card>
             <div class="screenshot-bar">
               <span class="address">argvus.desktop</span>
             </div>
@@ -423,7 +695,8 @@ const palette = [
                     aria-label={t.carouselOpen}
                     data-carousel-slide
                   >
-                    <Image src={slide.image} alt={slide.alt} />
+                    <Image src={slide.image} alt={slide.alt ?? t.slideAlt(slide.name)} />
+                    <figcaption class="carousel-caption">{slide.name}</figcaption>
                     <span class="carousel-zoom" aria-hidden="true">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M15 3h6v6"></path>
@@ -453,6 +726,72 @@ const palette = [
         </div>
       </section>
 
+      <!-- About -->
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">{t.aboutEyebrow}</span>
+            <h2>{t.aboutTitle}</h2>
+          </div>
+
+          <div class="about-composition" data-about-animate>
+            <div class="about-parts">
+              <div class="about-part">
+                <span class="about-code">ARGV</span>
+                <span class="about-label">{t.aboutArgv}</span>
+              </div>
+              <span class="about-plus">+</span>
+              <div class="about-part">
+                <span class="about-code">US</span>
+                <span class="about-label">{t.aboutUs}</span>
+              </div>
+            </div>
+            <div class="about-arrow">
+              <svg viewBox="0 0 24 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="0" x2="12" y2="32"></line>
+                <polyline points="6,26 12,34 18,26"></polyline>
+              </svg>
+            </div>
+            <div class="about-result">
+              <span class="about-name">ARGVUS</span>
+            </div>
+          </div>
+
+          <div class="about-pronunciation" data-pronunciation>
+            <div class="about-pronunciation-copy">
+              <span class="about-pronunciation-label">{t.aboutPronunciationLabel}</span>
+              <p>{t.aboutPronunciationHint}</p>
+            </div>
+            <div class="about-pronunciation-controls">
+              <label for="pronunciation-language">{t.aboutPronunciationLanguage}</label>
+              <select id="pronunciation-language" data-pronunciation-select>
+                <option value={argvusPronunciationEn} selected={!isPT}>{t.aboutPronunciationEnglish}</option>
+                <option value={argvusPronunciationPt} selected={isPT}>{t.aboutPronunciationPortuguese}</option>
+              </select>
+              <audio
+                controls
+                preload="none"
+                src={initialPronunciation}
+                data-pronunciation-audio
+                aria-label={t.aboutPronunciationAudio}
+              ></audio>
+            </div>
+          </div>
+
+          <div class="about-text">
+            <p>{t.aboutText}</p>
+            <p>{t.aboutText2}</p>
+          </div>
+
+          <p class="about-maintainer">
+            {t.aboutMaintainer}{' '}
+            <a href="https://github.com/williamcanin" target="_blank" rel="noopener noreferrer" aria-label={t.aboutMaintainerLink}>
+              William C. Canin
+            </a>
+          </p>
+        </div>
+      </section>
+
       <!-- Components -->
       <section class="section" id="componentes">
         <div class="container">
@@ -474,8 +813,129 @@ const palette = [
         </div>
       </section>
 
+      <!-- Waybar -->
+      <section class="section section-alt" id="waybar">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">{t.waybarEyebrow}</span>
+            <h2>{t.waybarTitle}</h2>
+            <p>{t.waybarSubtitle}</p>
+          </div>
+
+          <div class="waybar-panel">
+            <div class="waybar-visual">
+              <div class="waybar-bar waybar-bar-top">
+                <div class="waybar-mini group-a"></div>
+                <div class="waybar-mini group-b"></div>
+                <div class="waybar-mini group-c"></div>
+              </div>
+              <div class="waybar-screen">
+                <span class="waybar-screen-hint">{t.waybarEyebrow}</span>
+              </div>
+              <div class="waybar-bar waybar-bar-bottom">
+                <div class="waybar-mini group-a"></div>
+                <div class="waybar-mini group-b"></div>
+                <div class="waybar-mini group-c"></div>
+              </div>
+            </div>
+
+            <div class="waybar-copy">
+              <p class="waybar-lead">{t.waybarIntro}</p>
+              <ul class="waybar-features">
+                {t.waybarFeatures.map((f) => (
+                  <li><i class={f.icon}></i><span>{f.text}</span></li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Official apps -->
+      <section class="section section-alt" id="apps">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">{t.appsEyebrow}</span>
+            <h2>{t.appsTitle}</h2>
+            <p>{t.appsSubtitle}</p>
+          </div>
+
+          <div class="app-showcase">
+            {apps.map((app) => (
+              <article class="app-panel">
+                <div class={`app-media${app.carousel ? ' has-carousel' : ''}`}>
+                  {app.carousel ? (
+                    <div class="app-carousel" data-app-carousel>
+                      {app.carousel.map((slide, i) => (
+                        <div
+                          class={`app-carousel-slide${i === 0 ? ' active' : ''}`}
+                          data-preview
+                          tabindex="0"
+                          role="button"
+                          aria-label={t.carouselOpen}
+                        >
+                          <Image src={slide.image} alt={slide.alt} />
+                          <span class="app-zoom" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M15 3h6v6"></path>
+                              <path d="M9 21H3v-6"></path>
+                              <path d="M21 3l-7 7"></path>
+                              <path d="M3 21l7-7"></path>
+                            </svg>
+                          </span>
+                        </div>
+                      ))}
+                      <button class="app-carousel-btn prev" data-app-carousel-prev aria-label="Previous">‹</button>
+                      <button class="app-carousel-btn next" data-app-carousel-next aria-label="Next">›</button>
+                      <div class="app-carousel-dots">
+                        {app.carousel.map((_, i) => (
+                          <button class={`app-carousel-dot${i === 0 ? ' active' : ''}`} data-app-carousel-dot={i} aria-label={`Slide ${i + 1}`} />
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <figure
+                      class="app-media-figure"
+                      data-preview
+                      tabindex="0"
+                      role="button"
+                      aria-label={t.carouselOpen}
+                    >
+                      <Image src={app.image} alt={app.alt} />
+                      <span class="app-zoom" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M15 3h6v6"></path>
+                          <path d="M9 21H3v-6"></path>
+                          <path d="M21 3l-7 7"></path>
+                          <path d="M3 21l7-7"></path>
+                        </svg>
+                      </span>
+                    </figure>
+                  )}
+                </div>
+                <div class="app-copy">
+                  <span class="mono">{app.name}</span>
+                  <h3>{app.name}</h3>
+                  <p>{app.text}</p>
+                  {app.features && (
+                    <div class="app-features">
+                      {app.features.map((feature) => (
+                        <div class="app-feature">
+                          <strong>{feature.title}</strong>
+                          <span>{feature.text}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <!-- Themes -->
-      <section class="section section-alt" id="temas">
+      <section class="section" id="temas">
         <div class="container">
           <div class="section-head">
             <span class="eyebrow">{t.themesEyebrow}</span>
@@ -484,27 +944,65 @@ const palette = [
           </div>
 
           <div class="themes-wrap">
-            <div class="theme-families">
-              {themes.map((th) => (
-                <div class="theme-chip">
-                  <span class="swatch" style={`background:${th.color}`}></span>
-                  <span class="name">
-                    {th.name.replace('-float', '')}
-                    <span class="variant">{th.variant}</span>
-                  </span>
+            <div class="theme-tabs" data-theme-tabs>
+              <div class="theme-tab-list" role="tablist" aria-label={t.themesTabsAria}>
+                <button class="theme-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="themes-dark-panel" id="themes-dark-tab" data-theme-tab="dark">
+                  {t.themesDarkTab}
+                </button>
+                <button class="theme-tab" type="button" role="tab" aria-selected="false" aria-controls="themes-light-panel" id="themes-light-tab" data-theme-tab="light" tabindex="-1">
+                  {t.themesLightTab}
+                </button>
+              </div>
+              <div class="theme-tab-panel is-active" role="tabpanel" id="themes-dark-panel" aria-labelledby="themes-dark-tab" data-theme-panel="dark">
+                <div class="theme-families">
+                  {darkThemes.map((th) => (
+                    <article class="theme-chip" data-theme-id={th.id} style={`--theme-foreground:${th.foreground};--theme-background:${th.background}`}>
+                      <div class="theme-swatch" role="img" aria-label={`${th.name}: foreground ${th.foreground}, background ${th.background}`}>
+                        <span class="theme-swatch-fg" aria-hidden="true"></span>
+                      </div>
+                      <span class="theme-name">{th.shortName}</span>
+                      <span class="theme-modes" aria-label={`${th.shortName} modes`}>
+                        <span class="theme-mode theme-mode-sticky"><svg viewBox="0 0 12 12" aria-hidden="true"><rect x="0" y="0" width="5" height="5"></rect><rect x="7" y="0" width="5" height="5"></rect><rect x="0" y="7" width="5" height="5"></rect><rect x="7" y="7" width="5" height="5"></rect></svg>{t.themeModeSticky}</span>
+                        <span class="theme-mode theme-mode-float"><svg viewBox="0 0 12 12" aria-hidden="true"><rect x="0" y="0" width="8" height="6"></rect></svg>{t.themeModeFloat}</span>
+                      </span>
+                      {th.default && <span class="theme-status">{t.themesDefaultLabel}</span>}
+                    </article>
+                  ))}
                 </div>
-              ))}
+              </div>
+              <div class="theme-tab-panel" role="tabpanel" id="themes-light-panel" aria-labelledby="themes-light-tab" data-theme-panel="light" data-theme-panel-hidden hidden>
+                <div class="theme-families">
+                  {lightThemes.map((th) => (
+                    <article class="theme-chip" data-theme-id={th.id} style={`--theme-foreground:${th.foreground};--theme-background:${th.background}`}>
+                      <div class="theme-swatch" role="img" aria-label={`${th.name}: foreground ${th.foreground}, background ${th.background}`}>
+                        <span class="theme-swatch-fg" aria-hidden="true"></span>
+                      </div>
+                      <span class="theme-name">{th.shortName}</span>
+                      <span class="theme-modes" aria-label={`${th.shortName} modes`}>
+                        <span class="theme-mode theme-mode-sticky"><svg viewBox="0 0 12 12" aria-hidden="true"><rect x="0" y="0" width="5" height="5"></rect><rect x="7" y="0" width="5" height="5"></rect><rect x="0" y="7" width="5" height="5"></rect><rect x="7" y="7" width="5" height="5"></rect></svg>{t.themeModeSticky}</span>
+                        <span class="theme-mode theme-mode-float"><svg viewBox="0 0 12 12" aria-hidden="true"><rect x="0" y="0" width="8" height="6"></rect></svg>{t.themeModeFloat}</span>
+                      </span>
+                    </article>
+                  ))}
+                </div>
+              </div>
             </div>
 
             <div class="themes-copy">
-              <p>{t.themesCopy}</p>
-              <div class="palette">
-                <div class="palette-label">{t.paletteLabel}</div>
-                <div class="palette-swatches">
-                  {palette.map((c) => (
-                    <span class="palette-swatch" style={`background:${c}`}></span>
-                  ))}
-                </div>
+              <div class="themes-copy-terminal" aria-hidden="true">
+                <span>&gt; theme.profile</span>
+                <span class="themes-copy-terminal-status">ACTIVE</span>
+              </div>
+              <p>{t.themesCopyText}</p>
+              <div class="themes-copy-modes" aria-hidden="true">
+                <span>Sticky</span>
+                <span>Float</span>
+                <span>{t.themesAccentLabel}</span>
+              </div>
+              <div class="themes-install-info">
+                <strong>{isPT ? 'Instale do repositório:' : 'Install from the repository:'}</strong>
+                <code>{isPT ? 'sudo pacman -S argvus-theme-nome' : 'sudo pacman -S argvus-theme-name'}</code>
+                <span>{isPT ? 'ou todos os temas com' : 'or all themes with'} <code>pacman -S argvus-themes</code></span>
               </div>
             </div>
           </div>
@@ -550,14 +1048,134 @@ echo "Include = /etc/pacman.d/argvus.conf" \
         </div>
       </section>
 
+      <!-- Support -->
+      {contributionEnabled && (
+      <section class="section section-alt" id="support">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">{t.supportEyebrow}</span>
+            <h2>{t.supportTitle}</h2>
+            <p>{t.supportText}</p>
+          </div>
+
+          <figure class="star-bubble" role="group" aria-label={t.supportStar}>
+            <p class="star-bubble-text">{t.supportStar}</p>
+            <a
+              class="star-bubble-btn"
+              href="https://github.com/argvus/argvus"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t.supportStarBtn}
+            >
+              <i class="fa-solid fa-star"></i><span>Star</span>
+            </a>
+          </figure>
+          {contributionMode === 'stripe' ? (
+            <div class="support-wrap">
+              <fieldset class="support-fieldset" aria-label={t.supportAria}>
+                <legend class="sr-only">{t.supportAria}</legend>
+                <div class="support-amounts">
+                  {contributionAmounts.map((amount) => (
+                    <button
+                      type="button"
+                      class="support-amount"
+                      data-amount={amount}
+                      data-link={contributionStripeValues[amount]}
+                      aria-pressed="false"
+                    >
+                      US$ {amount}
+                    </button>
+                  ))}
+                </div>
+              </fieldset>
+              <button
+                type="button"
+                class="btn btn-primary support-btn"
+                disabled
+                data-support-btn
+              >
+                {t.supportBtn} <i class="fa-solid fa-heart"></i>
+              </button>
+            </div>
+          ) : contributionMode === 'paypal' ? (
+            <div class="support-wrap">
+              <div class="support-toggle" role="radiogroup" aria-label={t.supportAria}>
+                <span class="support-toggle-label" data-currency-label="USD">Dolar (USD)</span>
+                <button
+                  type="button"
+                  class="support-toggle-switch"
+                  role="switch"
+                  aria-checked="false"
+                  aria-label="Currency"
+                  data-currency-toggle
+                  data-usd={contributionConfig.paypal.USD}
+                  data-brl={contributionConfig.paypal.BRL}
+                >
+                  <span class="support-toggle-thumb"></span>
+                </button>
+                <span class="support-toggle-label" data-currency-label="BRL">Real (BRL)</span>
+              </div>
+              <a
+                class="btn btn-primary support-btn"
+                href={contributionConfig.paypal.USD}
+                data-paypal-btn
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t.supportBtn} <i class="fa-solid fa-heart"></i>
+              </a>
+              <p class="support-paypal-note">
+                <i class="fa-brands fa-paypal"></i>
+                {t.aboutSupportPaypal}{' '}
+                <span class="support-paypal-name">William C. Canin</span>
+              </p>
+            </div>
+          ) : (
+            <div class="support-wrap support-wrap-single">
+              <a
+                class="btn btn-primary support-btn"
+                href={contributionConfig.single}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t.supportBtn} <i class="fa-solid fa-heart"></i>
+              </a>
+            </div>
+          )}
+        </div>
+      </section>
+      )}
+
+      <!-- Feedback -->
+      <section class="section" id="feedback">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">{t.feedbackEyebrow}</span>
+            <h2>{t.feedbackTitle}</h2>
+            <p>{t.feedbackText}</p>
+          </div>
+          <div class="feedback-actions">
+            <a
+              class="btn btn-secondary feedback-btn"
+              href="https://github.com/argvus/feedback"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t.feedbackLink}
+            >
+              <i class="fa-solid fa-comment-dots"></i>{t.feedbackBtn}
+            </a>
+          </div>
+        </div>
+      </section>
+
       <!-- CTA -->
       <section class="cta">
         <div class="container">
           <h2>{t.ctaTitle}</h2>
           <p>{t.ctaText}</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href={link('docs/install/')}>{t.ctaPrimary}</a>
-            <a class="btn btn-secondary" href={link('packages/arch/')}>{t.ctaSecondary}</a>
+            <a class="btn btn-primary" href={link('docs/user-guide/installation/')}><i class="fa-solid fa-download"></i>{t.ctaPrimary}</a>
+            <a class="btn btn-secondary" href={link('packages/arch/')}><i class="fa-solid fa-cube"></i>{t.ctaSecondary}</a>
           </div>
         </div>
       </section>
@@ -595,14 +1213,16 @@ echo "Include = /etc/pacman.d/argvus.conf" \
           <div class="footer-col">
             <h4>{t.footerProject}</h4>
             <ul>
-              <li><a href={githubOrgUrl}>{t.github}</a></li>
-              <li><a href="https://github.com/argvus/argvus/blob/main/LICENSE">{t.footerLicense}</a></li>
+              <li><a href={githubOrgUrl}><i class="fa-brands fa-github"></i>{t.github}</a></li>
+              <li><a href="https://github.com/argvus/argvus/blob/main/LICENSE"><i class="fa-solid fa-scale-balanced"></i>{t.footerLicense}</a></li>
+              <li><a href="https://github.com/williamcanin" target="_blank" rel="noopener noreferrer" aria-label={t.aboutMaintainerLink}><i class="fa-solid fa-user"></i>{t.footerMaintainer} William C. Canin</a></li>
             </ul>
           </div>
         </div>
 
         <div class="footer-bottom">
           <span>© {new Date().getFullYear()} ARGVUS</span>
+          <span>{t.feedbackMade}</span>
           <span>{t.bottomLicense}</span>
         </div>
       </div>
@@ -683,19 +1303,65 @@ echo "Include = /etc/pacman.d/argvus.conf" \
       document.addEventListener('click', (e) => {
         if (!e.target.closest('[data-theme-toggle]')) themeMenu.hidden = true
         if (!e.target.closest('[data-lang-toggle]') && langMenu) langMenu.hidden = true
+        if (!e.target.closest('[data-nav-dropdown]')) {
+          document.querySelectorAll('[data-nav-dropdown-menu]').forEach((menu) => {
+            menu.hidden = true
+          })
+        }
       })
 
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
           themeMenu.hidden = true
           if (langMenu) langMenu.hidden = true
+          document.querySelectorAll('[data-nav-dropdown-menu]').forEach((menu) => {
+            menu.hidden = true
+          })
         }
+      })
+
+      document.querySelectorAll('[data-nav-dropdown-trigger]').forEach((trigger) => {
+        trigger.addEventListener('click', (e) => {
+          e.stopPropagation()
+          const menu = trigger.nextElementSibling
+          menu.hidden = !menu.hidden
+        })
       })
 
       media.addEventListener('change', render)
       render()
 
       // ── Carrossel ──────────────────────────────────────────────────────────
+      document.querySelectorAll('[data-theme-tabs]').forEach((tabs) => {
+        const buttons = Array.from(tabs.querySelectorAll('[data-theme-tab]'))
+        const panels = Array.from(tabs.querySelectorAll('[data-theme-panel]'))
+
+        const activate = (category) => {
+          buttons.forEach((button) => {
+            const active = button.dataset.themeTab === category
+            button.classList.toggle('is-active', active)
+            button.setAttribute('aria-selected', String(active))
+            button.tabIndex = active ? 0 : -1
+          })
+          panels.forEach((panel) => {
+            panel.hidden = panel.dataset.themePanel !== category
+            panel.classList.toggle('is-active', !panel.hidden)
+          })
+        }
+
+        buttons.forEach((button, index) => {
+          button.addEventListener('click', () => activate(button.dataset.themeTab))
+          button.addEventListener('keydown', (event) => {
+            if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return
+            event.preventDefault()
+            const offset = event.key === 'ArrowRight' ? 1 : -1
+            const next = buttons[(index + offset + buttons.length) % buttons.length]
+            activate(next.dataset.themeTab)
+            next.focus()
+          })
+        })
+      })
+
       const carousel = document.querySelector('[data-carousel]')
       if (carousel) {
         const track = carousel.querySelector('.carousel-track')
@@ -742,15 +1408,85 @@ echo "Include = /etc/pacman.d/argvus.conf" \
         play()
       }
 
+      // ── Showcase parallax ────────────────────────────────────────────────
+      const parallaxSection = document.querySelector('[data-parallax-section]')
+      const parallaxCard = document.querySelector('[data-parallax-card]')
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+      if (parallaxSection && parallaxCard && !prefersReducedMotion) {
+        let frame
+
+        const updateParallax = () => {
+          frame = undefined
+          const bounds = parallaxSection.getBoundingClientRect()
+          const viewport = window.innerHeight
+
+          if (bounds.bottom < -80 || bounds.top > viewport + 80) return
+
+          const distance = bounds.top + bounds.height / 2 - viewport / 2
+          const offset = Math.max(-12, Math.min(12, distance * -0.018))
+          parallaxCard.style.setProperty('--parallax-y', `${offset.toFixed(2)}px`)
+        }
+
+        const requestParallax = () => {
+          if (!frame) frame = requestAnimationFrame(updateParallax)
+        }
+
+        window.addEventListener('scroll', requestParallax, { passive: true })
+        window.addEventListener('resize', requestParallax)
+        requestParallax()
+      }
+
+      // ── Carrossel de apps ─────────────────────────────────────────────────
+      document.querySelectorAll('[data-app-carousel]').forEach((carousel) => {
+        const slides = Array.from(carousel.querySelectorAll('.app-carousel-slide'))
+        const dots = Array.from(carousel.querySelectorAll('[data-app-carousel-dot]'))
+        const prev = carousel.querySelector('[data-app-carousel-prev]')
+        const next = carousel.querySelector('[data-app-carousel-next]')
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        let index = 0
+        let timer
+
+        const go = (i) => {
+          index = (i + slides.length) % slides.length
+          slides.forEach((s, n) => s.classList.toggle('active', n === index))
+          dots.forEach((d, n) => d.classList.toggle('active', n === index))
+        }
+
+        const stop = () => clearInterval(timer)
+        const play = () => {
+          stop()
+          if (!reduced && slides.length > 1) timer = setInterval(() => go(index + 1), 5000)
+        }
+
+        prev.addEventListener('click', () => {
+          go(index - 1)
+          play()
+        })
+        next.addEventListener('click', () => {
+          go(index + 1)
+          play()
+        })
+        dots.forEach((d, n) =>
+          d.addEventListener('click', () => {
+            go(n)
+            play()
+          }),
+        )
+        carousel.addEventListener('mouseenter', stop)
+        carousel.addEventListener('mouseleave', play)
+
+        go(0)
+        if (slides.length > 1) play()
+      })
+
       // ── Modal em tela cheia ────────────────────────────────────────────────
       const modal = document.querySelector('[data-modal]')
       const modalImg = document.querySelector('[data-modal-img]')
       const modalClose = document.querySelector('[data-modal-close]')
-      const slidesAll = Array.from(document.querySelectorAll('[data-carousel-slide]'))
 
-      const openModal = (n) => {
-        const img = slidesAll[n].querySelector('img')
-        modalImg.src = img.src
+      const openModal = (img) => {
+        modalImg.src = img.currentSrc || img.src
         modalImg.alt = img.alt
         modal.hidden = false
         modal.setAttribute('aria-hidden', 'false')
@@ -764,15 +1500,18 @@ echo "Include = /etc/pacman.d/argvus.conf" \
         document.body.style.overflow = ''
       }
 
-      slidesAll.forEach((slide, n) => {
-        slide.addEventListener('click', () => openModal(n))
-        slide.addEventListener('keydown', (e) => {
+      const bindPreview = (el) => {
+        el.addEventListener('click', () => openModal(el.querySelector('img')))
+        el.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault()
-            openModal(n)
+            openModal(el.querySelector('img'))
           }
         })
-      })
+      }
+
+      document.querySelectorAll('[data-carousel-slide]').forEach(bindPreview)
+      document.querySelectorAll('[data-preview]').forEach(bindPreview)
 
       modalClose.addEventListener('click', closeModal)
       modal.addEventListener('click', (e) => {
@@ -781,6 +1520,87 @@ echo "Include = /etc/pacman.d/argvus.conf" \
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && !modal.hidden) closeModal()
       })
+
+      // ── About animation ──────────────────────────────────────────────────
+      const aboutEl = document.querySelector('[data-about-animate]')
+      if (aboutEl) {
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        if (prefersReduced) {
+          aboutEl.classList.add('is-visible')
+        } else {
+          const observer = new IntersectionObserver(
+            ([entry]) => {
+              if (entry.isIntersecting) {
+                aboutEl.classList.add('is-visible')
+                observer.unobserve(aboutEl)
+              }
+            },
+            { threshold: 0.3 },
+          )
+          observer.observe(aboutEl)
+        }
+      }
+
+      // ── About pronunciation ─────────────────────────────────────────────
+      const pronunciationSelect = document.querySelector('[data-pronunciation-select]')
+      const pronunciationAudio = document.querySelector('[data-pronunciation-audio]')
+      if (pronunciationSelect && pronunciationAudio) {
+        pronunciationSelect.addEventListener('change', () => {
+          const wasPlaying = !pronunciationAudio.paused
+          pronunciationAudio.src = pronunciationSelect.value
+          pronunciationAudio.load()
+          if (wasPlaying) pronunciationAudio.play().catch(() => {})
+        })
+      }
+
+      // ── Support / Contribution ────────────────────────────────────────────
+      const supportAmounts = Array.from(document.querySelectorAll('[data-amount]'))
+      const supportBtn = document.querySelector('[data-support-btn]')
+      let selectedLink = null
+
+      supportAmounts.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          supportAmounts.forEach((b) => {
+            b.classList.remove('is-selected')
+            b.setAttribute('aria-pressed', 'false')
+          })
+          btn.classList.add('is-selected')
+          btn.setAttribute('aria-pressed', 'true')
+          selectedLink = btn.dataset.link
+          supportBtn.disabled = false
+        })
+      })
+
+      supportBtn?.addEventListener('click', () => {
+        if (selectedLink && !selectedLink.startsWith('STRIPE_')) {
+          window.location.href = selectedLink
+        }
+      })
+
+      // ── PayPal currency toggle ──────────────────────────────────────────
+      const currencyToggle = document.querySelector('[data-currency-toggle]')
+      const paypalBtn = document.querySelector('[data-paypal-btn]')
+      const currencyLabels = Array.from(document.querySelectorAll('[data-currency-label]'))
+      let currentCurrency = 'USD'
+
+      const updatePaypalCurrency = () => {
+        if (paypalBtn && currencyToggle) {
+          paypalBtn.href = currentCurrency === 'USD'
+            ? currencyToggle.dataset.usd
+            : currencyToggle.dataset.brl
+        }
+        currencyLabels.forEach((label) => {
+          label.classList.toggle('is-active', label.dataset.currencyLabel === currentCurrency)
+        })
+      }
+
+      currencyToggle?.addEventListener('click', () => {
+        currentCurrency = currentCurrency === 'USD' ? 'BRL' : 'USD'
+        currencyToggle.setAttribute('aria-checked', String(currentCurrency === 'BRL'))
+        updatePaypalCurrency()
+      })
+
+      updatePaypalCurrency()
     </script>
   </body>
 </html>

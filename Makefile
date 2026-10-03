@@ -23,17 +23,25 @@ serve:
 	@npm run dev
 
 clean:
-	@rm -rf dist .astro _pages .jekyll-cache
+	@rm -rf dist node_modules .jekyll-cache
 
-# ----- GIT PUSH (development commands) -----
-push:
+# ----- GIT -----
+commit:
+	@if ! git diff-index --quiet HEAD --; then \
+		git add .; \
+		git commit -m "$$(date +Date:%Y-%m-%d-Time:%H:%M:%S)"; \
+	else \
+		echo "Nothing to commit"; \
+	fi
+
+push: commit
 	@echo "Push normal → branch: $(BRANCH)"
 	@for remote in $(REMOTES); do \
 		echo "  pushing to $$remote..."; \
 		git push $$remote $(BRANCH); \
 	done
 
-push-lease:
+push-lease: commit
 	@echo "Push --force-with-lease → branch: $(BRANCH)"
 	@for remote in $(REMOTES); do \
 		echo "  pushing to $$remote..."; \
