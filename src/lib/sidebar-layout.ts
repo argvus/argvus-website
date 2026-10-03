@@ -233,7 +233,6 @@ export const COMPONENT_CATEGORIES: ComponentCategorySpec[] = [
       'argvus-notifications',
       'argvus-removable-devices',
       'argvus-waybar',
-      'argvus-hyprland',
       'argvus-portal',
     ],
   },
@@ -269,6 +268,13 @@ export const COMPONENT_CATEGORIES: ComponentCategorySpec[] = [
     ],
   },
 ]
+
+/**
+ * Repositories shown as their own top-level sidebar group instead of inside a
+ * component category. Hyprland owns the keyboard shortcuts, which users look
+ * for first, so it sits right after the User Guide.
+ */
+export const TOP_LEVEL_REPOSITORIES: string[] = ['argvus-hyprland']
 
 export const OTHER_COMPONENTS_GROUP = {
   label: 'Other components',

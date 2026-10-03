@@ -39,6 +39,7 @@ export default defineConfig({
       components: {
         SiteTitle: './src/components/DocsSiteTitle.astro',
         Footer: './src/components/DocsFooter.astro',
+        Sidebar: './src/components/Sidebar.astro',
       },
       locales: {
         root: { label: 'English', lang: 'en' },

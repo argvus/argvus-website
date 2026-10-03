@@ -1,0 +1,45 @@
+---
+import DefaultSidebar from '@astrojs/starlight/components/Sidebar.astro'
+
+/*
+ * Starlight recollapses one group at a time. This override adds a single
+ * toggle above the sidebar that collapses every expanded group, or expands
+ * them all again. It only changes the `open` state of the group <details>
+ * elements; nothing is persisted, so it does not interfere with SidebarPersister.
+ */
+const isPT = Astro.locals.starlightRoute.locale === 'pt'
+const labels = isPT
+  ? { collapse: 'Recolher tudo', expand: 'Expandir tudo' }
+  : { collapse: 'Collapse all', expand: 'Expand all' }
+---
+
+<div class="sidebar-tools">
+  <button
+    type="button"
+    class="sidebar-toggle-all"
+    data-collapse-label={labels.collapse}
+    data-expand-label={labels.expand}
+    aria-controls="starlight__sidebar"
+    data-expanded="true"
+  >
+    {labels.collapse}
+  </button>
+</div>
+<DefaultSidebar />
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>('.sidebar-toggle-all')
+  const sidebar = document.getElementById('starlight__sidebar')
+
+  button?.addEventListener('click', () => {
+    if (!sidebar) return
+    const expand = button.dataset.expanded !== 'true'
+
+    sidebar.querySelectorAll<HTMLDetailsElement>('details').forEach((group) => {
+      group.open = expand
+    })
+
+    button.dataset.expanded = String(expand)
+    button.textContent = expand ? button.dataset.collapseLabel ?? '' : button.dataset.expandLabel ?? ''
+  })
+</script>

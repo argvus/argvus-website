@@ -84,6 +84,24 @@ export const sidebarConfig = [
     }
   },
   {
+    "label": "Hyprland",
+    "collapsed": true,
+    "items": [
+      {
+        "slug": "docs/argvus-hyprland/keyboard-shortcuts"
+      },
+      {
+        "slug": "docs/argvus-hyprland/input"
+      },
+      {
+        "slug": "docs/argvus-hyprland/windows-and-layout"
+      },
+      {
+        "slug": "docs/argvus-hyprland/hyprland-overrides"
+      }
+    ]
+  },
+  {
     "label": "Help",
     "items": [
       {
@@ -266,24 +284,6 @@ export const sidebarConfig = [
       {
         "slug": "docs/argvus-waybar",
         "label": "Waybar"
-      },
-      {
-        "label": "Hyprland",
-        "collapsed": true,
-        "items": [
-          {
-            "slug": "docs/argvus-hyprland/keyboard-shortcuts"
-          },
-          {
-            "slug": "docs/argvus-hyprland/input"
-          },
-          {
-            "slug": "docs/argvus-hyprland/windows-and-layout"
-          },
-          {
-            "slug": "docs/argvus-hyprland/hyprland-overrides"
-          }
-        ]
       },
       {
         "slug": "docs/argvus-portal",

@@ -271,6 +271,35 @@ site-search input:focus,
   scrollbar-color: var(--argvus-accent) transparent;
 }
 
+/* Collapse/expand-all toggle above the sidebar groups (src/components/Sidebar.astro). */
+.sidebar-tools {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem 0.75rem 0;
+}
+
+.sidebar-toggle-all {
+  border: 1px solid color-mix(in srgb, var(--argvus-accent) 35%, var(--sl-color-hairline));
+  border-radius: 2px;
+  background: transparent;
+  color: var(--argvus-accent-high);
+  cursor: pointer;
+  font-family: var(--sl-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.6rem;
+  text-transform: uppercase;
+}
+
+.sidebar-toggle-all:hover {
+  background: var(--argvus-accent-soft);
+}
+
+.sidebar-toggle-all:focus-visible {
+  outline: 2px solid var(--argvus-accent);
+  outline-offset: 2px;
+}
+
 #starlight__sidebar a,
 .right-sidebar a {
   border-radius: 1px;

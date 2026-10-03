@@ -7,6 +7,7 @@ import {
   REFERENCE_SECTION,
   DEVELOPER_GUIDE_SECTION,
   COMPONENT_CATEGORIES,
+  TOP_LEVEL_REPOSITORIES,
   OTHER_COMPONENTS_GROUP,
   DEVELOPER_NOTES_GROUP,
   COMPONENT_PAGE_ORDER,
@@ -245,6 +246,7 @@ function buildComponentCategories(
   for (const projectConfig of config.projects) {
     if (projectConfig.root) continue
     if (categorized.has(projectConfig.repository)) continue
+    if (TOP_LEVEL_REPOSITORIES.includes(projectConfig.repository)) continue
     const projectEntries = entriesByProject.get(projectConfig.repository)
     if (!projectEntries || projectEntries.length === 0) continue
     console.warn(
@@ -365,10 +367,19 @@ export async function generateStarlightSidebar(): Promise<SidebarItem[]> {
 
   const categoryGroups = buildComponentCategories(config, entriesByProject)
 
+  const topLevelGroups: SidebarItem[] = []
+  for (const repo of TOP_LEVEL_REPOSITORIES) {
+    const projectConfig = config.projects.find((p) => p.repository === repo)
+    const projectEntries = entriesByProject.get(repo)
+    if (!projectConfig || !projectEntries || projectEntries.length === 0) continue
+    topLevelGroups.push(buildComponentItem(projectConfig, projectEntries))
+  }
+
   return [
     ...topLinks,
     gettingStartedGroup,
     userGuideGroup,
+    ...topLevelGroups,
     helpGroup,
     ...categoryGroups,
     referenceGroup,
