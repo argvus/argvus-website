@@ -340,9 +340,6 @@ export const sidebarConfig = [
         "collapsed": true,
         "items": [
           {
-            "slug": "docs/argvus-appearance/themes"
-          },
-          {
             "slug": "docs/argvus-appearance/wallpapers"
           },
           {
@@ -350,6 +347,30 @@ export const sidebarConfig = [
           },
           {
             "slug": "docs/argvus-appearance/effects"
+          },
+          {
+            "slug": "docs/argvus-appearance/themes"
+          }
+        ]
+      },
+      {
+        "label": "Themes",
+        "collapsed": true,
+        "items": [
+          {
+            "slug": "docs/argvus-themes/user-guide/installing-themes"
+          },
+          {
+            "slug": "docs/argvus-themes/user-guide/official-themes"
+          },
+          {
+            "slug": "docs/argvus-themes/user-guide/highlight-color"
+          },
+          {
+            "slug": "docs/argvus-themes/user-guide/import-and-export"
+          },
+          {
+            "slug": "docs/argvus-themes/user-guide"
           }
         ]
       },
