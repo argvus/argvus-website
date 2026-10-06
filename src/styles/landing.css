@@ -191,6 +191,11 @@ h3 {
   width: 108px;
   height: auto;
   flex: 0 0 auto;
+  margin-left: -8px;
+}
+
+footer .brand-wordmark {
+  margin-left: -4px;
 }
 
 .beta-badge {
@@ -1618,21 +1623,27 @@ h3 {
 
 .theme-tab-list {
   display: flex;
+  align-items: flex-end;
+  align-self: start;
   gap: 6px;
   border-bottom: 1px solid var(--lp-border-strong);
 }
 
 .theme-tab {
-  padding: 8px 12px;
+  flex: 0 0 auto;
+  margin: 0 0 -1px;
+  padding: 10px 14px;
   border: 1px solid var(--lp-border-strong);
-  border-bottom: 0;
+  border-bottom: 1px solid var(--lp-border-strong);
   background: var(--lp-code-bg);
   color: var(--lp-fg-dim);
   font-family: var(--lp-mono);
   font-size: 0.62rem;
   font-weight: 700;
+  line-height: 1.2;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  white-space: nowrap;
   cursor: pointer;
 }
 
@@ -1783,6 +1794,52 @@ h3 {
   color: var(--lp-fg-muted);
   font-size: 0.85rem;
   line-height: 1.75;
+}
+
+.themes-install-info {
+  display: grid;
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--lp-border-strong);
+}
+
+.themes-install-info strong {
+  color: var(--lp-fg);
+  font-family: var(--lp-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.themes-install-info code {
+  display: block;
+  padding: 8px 10px;
+  border: 1px solid var(--lp-border-strong);
+  background: var(--lp-code-bg);
+  color: var(--lp-accent);
+  font-family: var(--lp-mono);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.themes-install-info span {
+  color: var(--lp-fg-muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.themes-guide-link {
+  justify-self: start;
+  margin-top: 4px;
+  color: var(--lp-accent);
+  font-family: var(--lp-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .themes-copy-modes {

@@ -38,9 +38,9 @@ const isPT = lang === 'pt'
 const siteUrl = 'https://argvus.github.io'
 const githubOrgUrl = 'https://github.com/orgs/argvus'
 const logotypeUrl =
-  'https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/logotype.svg'
+  'https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/ARGVUS-logo.svg'
 const argvusWordmarkUrl =
-  'https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/argvus-text.svg'
+  'https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/ARGVUS-wordmark.svg'
 
 const link = (path: string) =>
   base + (isPT && !path.startsWith('packages/') ? 'pt/' : '') + path
@@ -157,11 +157,11 @@ const t = isPT
       aboutMaintainerLink: 'Perfil de William C. Canin no GitHub',
       aboutSupportPaypal: 'Ao contribuir via PayPal, a conta correta é exibida como',
       themesEyebrow: 'Temas',
-      themesTitle: 'Vinte e dois temas, dois modos, um só sistema',
+      themesTitle: 'Vinte e três temas, dois modos, um só sistema',
       themesSubtitle:
         'Famílias visuais compartilhadas, cada uma com os modos Sticky e Float. Todos disponíveis como pacotes Arch Linux no repositório oficial do ARGVUS.',
       themesCopy:
-        'Explore as famílias oficiais e compare suas paletas diretamente nos previews. Cada família possui os modos Sticky e Float, que alteram a geometria e o tratamento das superfícies sem trocar a identidade visual. Todos os temas estão disponíveis no repositório como pacotes individuais (`pacman -S argvus-theme-<name>`) ou instale todos com `pacman -S argvus-themes`. A cor de destaque é independente e pode ser escolhida em ARGVUS Control Center → Appearance → Highlight color.',
+        'Explore as famílias oficiais e compare suas paletas diretamente nos previews. Cada família possui os modos Sticky e Float, que alteram a geometria e o tratamento das superfícies sem trocar a identidade visual. Todos os temas estão disponíveis no repositório como pacotes individuais. A cor de destaque é independente e pode ser escolhida em ARGVUS Control Center → Appearance → Highlight color.',
       themesAccentLabel: 'Acento independente',
       themesTabsAria: 'Categoria de temas',
       themesDarkTab: 'Temas Dark',
@@ -250,7 +250,7 @@ const t = isPT
       heroTagline:
         'More than dotfiles: built especially for developers — no bloatware; no fluff. Lightweight, focused and to the point.',
       heroLead:
-        'ARGVUS bundles a rich, integrated Wayland environment: supervised session, Quickshell shell, Waybar taskbar, native settings, system modules and twenty-two theme families, each with Sticky and Float modes — all packaged for Arch Linux.',
+        'ARGVUS bundles a rich, integrated Wayland environment: supervised session, Quickshell shell, Waybar taskbar, native settings, system modules and twenty-three theme families, each with Sticky and Float modes — all packaged for Arch Linux.',
       versionBadge: `ARGVUS v${version}`,
       btnInstall: 'Install now',
       btnDocs: 'Documentation',
@@ -334,7 +334,7 @@ const t = isPT
       aboutMaintainerLink: 'William C. Canin GitHub profile',
       aboutSupportPaypal: 'When contributing via PayPal, the correct account is shown as',
       themesEyebrow: 'Themes',
-      themesTitle: 'Twenty-two themes, two modes, one system',
+      themesTitle: 'Twenty-three themes, two modes, one system',
       themesSubtitle:
         'Shared visual families, each with Sticky and Float modes. All available as Arch Linux packages from the official ARGVUS repository.',
       themesCopyLegacy:
@@ -344,7 +344,7 @@ const t = isPT
       themesDarkTab: 'Dark themes',
       themesLightTab: 'Light themes',
       themesCopyText:
-        'Explore the official families and compare their palettes directly in the previews. Every family has Sticky and Float modes, changing geometry and surface treatment without changing its visual identity. All themes are available in the repository as individual packages (`pacman -S argvus-theme-<name>`) or install them all with `pacman -S argvus-themes`. The accent color remains independent and can be chosen at ARGVUS Control Center → Appearance → Highlight color.',
+        'Explore the official families and compare their palettes directly in the previews. Every family has Sticky and Float modes, changing geometry and surface treatment without changing its visual identity. All themes are available in the repository as individual packages. The accent color remains independent and can be chosen at ARGVUS Control Center → Appearance → Highlight color.',
       themesDefaultLabel: 'Default',
       themeModeSticky: 'Sticky',
       themeModeFloat: 'Float',
@@ -1000,10 +1000,11 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
                 <span>{t.themesAccentLabel}</span>
               </div>
               <div class="themes-install-info">
-                <strong>{isPT ? 'Instale do repositório:' : 'Install from the repository:'}</strong>
+                <strong>{isPT ? 'Instalar do repositório' : 'Install from the repository'}</strong>
                 <code>{isPT ? 'sudo pacman -S argvus-theme-nome' : 'sudo pacman -S argvus-theme-name'}</code>
-                <span>{isPT ? 'ou todos os temas com' : 'or all themes with'} <code>pacman -S argvus-themes</code></span>
-                <a class="themes-guide-link" href={link('docs/argvus-themes/')}>{isPT ? 'Guia de temas' : 'Themes guide'}</a>
+                <span>{isPT ? 'Ou todos os temas de uma vez' : 'Or all themes at once'}</span>
+                <code>sudo pacman -S argvus-themes</code>
+                <a class="themes-guide-link" href={link('docs/argvus-themes/')}>{isPT ? 'Guia de temas →' : 'Themes guide →'}</a>
               </div>
             </div>
           </div>

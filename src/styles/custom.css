@@ -648,7 +648,7 @@ header.header .argvus-docs-brand {
   align-items: center;
   align-self: center;
   height: 2.5rem;
-  gap: 0.6rem;
+  gap: 1rem;
   padding: 0.2rem 0.5rem 0.2rem 0.2rem;
   line-height: 1;
 }
@@ -662,7 +662,6 @@ header.header .argvus-docs-brand .brand-logotype {
 header.header .argvus-docs-brand .brand-wordmark {
   width: 100px;
   height: auto;
-  margin: 0;
 }
 
 header.header .beta-badge {
