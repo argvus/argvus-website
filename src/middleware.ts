@@ -13,8 +13,16 @@ const maintenanceHtml = `<!doctype html>
   </head>
   <body>
     <main>
-      <img src="/favicon.png" alt="ARGVUS logo" width="112" height="112" />
-      <h1>ARGVUS</h1>
+      <img class="logo" src="/favicon.png" alt="" width="112" height="112" />
+      <h1>
+        <img
+          class="wordmark"
+          src="https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/ARGVUS-wordmark.svg"
+          alt="ARGVUS"
+          width="240"
+          height="32"
+        />
+      </h1>
       <p>The ARGVUS project is undergoing maintenance. We will be back soon.</p>
     </main>
   </body>
