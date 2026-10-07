@@ -488,11 +488,14 @@ const apps = [
   },
 ]
 
-const contributionConfig = siteConfig.contributionLinks
+const homeConfig = siteConfig.page_home
+const contributionConfig = homeConfig.contributionLinks
 const contributionEnabled = contributionConfig.enable
 const contributionMode = contributionConfig.mode
 const contributionStripeValues = contributionConfig.stripe
 const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
+const parallaxEnabled = homeConfig.effects.parallax
+const heroMatrixEnabled = homeConfig.effects.hero.matrix
 ---
 
 <!doctype html>
@@ -542,8 +545,17 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
               : 'dark'
       })()
     </script>
+    <noscript>
+      <style>
+        body[data-parallax-enabled='true'] [data-reveal] {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+      </style>
+    </noscript>
   </head>
-  <body data-pagefind-ignore>
+  <body data-pagefind-ignore data-parallax-enabled={parallaxEnabled ? 'true' : 'false'}>
     <header class="site-header">
       <div class="container">
         <a class="brand" href={link('')}>
@@ -642,6 +654,20 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
     <main>
       <!-- Hero -->
       <section class="hero">
+        {heroMatrixEnabled && (
+        <div class="hero-code-bg matrix-bg" data-matrix-bg>
+          <div class="matrix-column" style="left: 5%"><span>#!/usr/bin</span><span>set -e</span><span>SCRIPT_DIR</span><span>die()</span><span>printf</span><span>exit 1</span></div>
+          <div class="matrix-column" style="left: 15%"><span>bash</span><span>pipefail</span><span>dirname</span><span>error</span><span>message</span><span>function</span></div>
+          <div class="matrix-column" style="left: 25%"><span>ROOT_DIR</span><span>command -v</span><span>require</span><span>makepkg</span><span>shellcheck</span><span>validate</span></div>
+          <div class="matrix-column" style="left: 35%"><span>SCRIPT_DIR</span><span>check</span><span>bash</span><span>make</span><span>tools</span><span>sh</span></div>
+          <div class="matrix-column" style="left: 45%"><span>set -euo</span><span>die function</span><span>printf error</span><span>exit code</span><span>require cmd</span><span>validate</span></div>
+          <div class="matrix-column" style="left: 55%"><span>#!/bin/bash</span><span>pipefail</span><span>dirname path</span><span>printf %s</span><span>command -v</span><span>shellcheck</span></div>
+          <div class="matrix-column" style="left: 65%"><span>cd ROOT_DIR</span><span>SCRIPT_DIR</span><span>die()</span><span>require_command</span><span>makepkg</span><span>exit 1</span></div>
+          <div class="matrix-column" style="left: 75%"><span>set -e</span><span>ROOT_DIR</span><span>bash -n</span><span>shellcheck</span><span>validate</span><span>tools/sh</span></div>
+          <div class="matrix-column" style="left: 85%"><span>BASH_SOURCE</span><span>printf error</span><span>command -v</span><span>makepkg</span><span>shellcheck</span><span>exit</span></div>
+          <div class="matrix-column" style="left: 95%"><span>dirname</span><span>bash</span><span>require</span><span>printf</span><span>tools</span><span>sh</span></div>
+        </div>
+        )}
         <div class="container">
           <div class="hero-badges">
             <span class="hero-badge hero-version-badge">{t.versionBadge}</span>
@@ -673,14 +699,14 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
       </section>
 
       <!-- Screenshots -->
-      <section class="screenshot-section" data-parallax-section>
+      <section class="screenshot-section">
         <div class="container">
-          <div class="section-head screenshot-head">
+          <div class="section-head screenshot-head" data-reveal>
             <span class="eyebrow">{t.screenshotsEyebrow}</span>
             <h2>{t.screenshotsTitle}</h2>
             <p>{t.screenshotsSubtitle}</p>
           </div>
-          <div class="screenshot" data-parallax-card>
+          <div class="screenshot" data-reveal>
             <div class="screenshot-bar">
               <span class="address">argvus.desktop</span>
             </div>
@@ -729,12 +755,12 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
       <!-- About -->
       <section class="section" id="about">
         <div class="container">
-          <div class="section-head">
+          <div class="section-head" data-reveal>
             <span class="eyebrow">{t.aboutEyebrow}</span>
             <h2>{t.aboutTitle}</h2>
           </div>
 
-          <div class="about-composition" data-about-animate>
+          <div class="about-composition" data-about-animate data-reveal>
             <div class="about-parts">
               <div class="about-part">
                 <span class="about-code">ARGV</span>
@@ -757,7 +783,7 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
             </div>
           </div>
 
-          <div class="about-pronunciation" data-pronunciation>
+          <div class="about-pronunciation" data-pronunciation data-reveal>
             <div class="about-pronunciation-copy">
               <span class="about-pronunciation-label">{t.aboutPronunciationLabel}</span>
               <p>{t.aboutPronunciationHint}</p>
@@ -778,12 +804,12 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
             </div>
           </div>
 
-          <div class="about-text">
+          <div class="about-text" data-reveal>
             <p>{t.aboutText}</p>
             <p>{t.aboutText2}</p>
           </div>
 
-          <p class="about-maintainer">
+          <p class="about-maintainer" data-reveal>
             {t.aboutMaintainer}{' '}
             <a href="https://github.com/williamcanin" target="_blank" rel="noopener noreferrer" aria-label={t.aboutMaintainerLink}>
               William C. Canin
@@ -795,7 +821,7 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
       <!-- Components -->
       <section class="section" id="componentes">
         <div class="container">
-          <div class="section-head">
+          <div class="section-head" data-reveal>
             <span class="eyebrow">{t.componentsEyebrow}</span>
             <h2>{t.componentsTitle}</h2>
             <p>{t.componentsSubtitle}</p>
@@ -803,7 +829,7 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
 
           <div class="feature-grid">
             {components.map((c) => (
-              <article class="feature-card">
+              <article class="feature-card" data-reveal>
                 <span class="mono">{c.name}</span>
                 <h3>{c.name}</h3>
                 <p>{t.componentDesc[c.key]}</p>
@@ -816,13 +842,13 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
       <!-- Waybar -->
       <section class="section section-alt" id="waybar">
         <div class="container">
-          <div class="section-head">
+          <div class="section-head" data-reveal>
             <span class="eyebrow">{t.waybarEyebrow}</span>
             <h2>{t.waybarTitle}</h2>
             <p>{t.waybarSubtitle}</p>
           </div>
 
-          <div class="waybar-panel">
+          <div class="waybar-panel" data-reveal>
             <div class="waybar-visual">
               <div class="waybar-bar waybar-bar-top">
                 <div class="waybar-mini group-a"></div>
@@ -843,7 +869,7 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
               <p class="waybar-lead">{t.waybarIntro}</p>
               <ul class="waybar-features">
                 {t.waybarFeatures.map((f) => (
-                  <li><i class={f.icon}></i><span>{f.text}</span></li>
+                  <li data-reveal><i class={f.icon}></i><span>{f.text}</span></li>
                 ))}
               </ul>
             </div>
@@ -854,7 +880,7 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
       <!-- Official apps -->
       <section class="section section-alt" id="apps">
         <div class="container">
-          <div class="section-head">
+          <div class="section-head" data-reveal>
             <span class="eyebrow">{t.appsEyebrow}</span>
             <h2>{t.appsTitle}</h2>
             <p>{t.appsSubtitle}</p>
@@ -862,8 +888,8 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
 
           <div class="app-showcase">
             {apps.map((app) => (
-              <article class="app-panel">
-                <div class={`app-media${app.carousel ? ' has-carousel' : ''}`}>
+              <article class="app-panel" data-reveal>
+                <div class={`app-media${app.carousel ? ' has-carousel' : ''}`} data-reveal>
                   {app.carousel ? (
                     <div class="app-carousel" data-app-carousel>
                       {app.carousel.map((slide, i) => (
@@ -920,7 +946,7 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
                   {app.features && (
                     <div class="app-features">
                       {app.features.map((feature) => (
-                        <div class="app-feature">
+                        <div class="app-feature" data-reveal>
                           <strong>{feature.title}</strong>
                           <span>{feature.text}</span>
                         </div>
@@ -937,7 +963,7 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
       <!-- Themes -->
       <section class="section" id="temas">
         <div class="container">
-          <div class="section-head">
+          <div class="section-head" data-reveal>
             <span class="eyebrow">{t.themesEyebrow}</span>
             <h2>{t.themesTitle}</h2>
             <p>{t.themesSubtitle}</p>
@@ -945,7 +971,7 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
 
           <div class="themes-wrap">
             <div class="theme-tabs" data-theme-tabs>
-              <div class="theme-tab-list" role="tablist" aria-label={t.themesTabsAria}>
+              <div class="theme-tab-list" role="tablist" aria-label={t.themesTabsAria} data-reveal>
                 <button class="theme-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="themes-dark-panel" id="themes-dark-tab" data-theme-tab="dark">
                   {t.themesDarkTab}
                 </button>
@@ -956,7 +982,7 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
               <div class="theme-tab-panel is-active" role="tabpanel" id="themes-dark-panel" aria-labelledby="themes-dark-tab" data-theme-panel="dark">
                 <div class="theme-families">
                   {darkThemes.map((th) => (
-                    <article class="theme-chip" data-theme-id={th.id} style={`--theme-foreground:${th.foreground};--theme-background:${th.background}`}>
+                    <article class="theme-chip" data-theme-id={th.id} data-reveal style={`--theme-foreground:${th.foreground};--theme-background:${th.background}`}>
                       <div class="theme-swatch" role="img" aria-label={`${th.name}: foreground ${th.foreground}, background ${th.background}`}>
                         <span class="theme-swatch-fg" aria-hidden="true"></span>
                       </div>
@@ -973,7 +999,7 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
               <div class="theme-tab-panel" role="tabpanel" id="themes-light-panel" aria-labelledby="themes-light-tab" data-theme-panel="light" data-theme-panel-hidden hidden>
                 <div class="theme-families">
                   {lightThemes.map((th) => (
-                    <article class="theme-chip" data-theme-id={th.id} style={`--theme-foreground:${th.foreground};--theme-background:${th.background}`}>
+                    <article class="theme-chip" data-theme-id={th.id} data-reveal style={`--theme-foreground:${th.foreground};--theme-background:${th.background}`}>
                       <div class="theme-swatch" role="img" aria-label={`${th.name}: foreground ${th.foreground}, background ${th.background}`}>
                         <span class="theme-swatch-fg" aria-hidden="true"></span>
                       </div>
@@ -988,7 +1014,7 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
               </div>
             </div>
 
-            <div class="themes-copy">
+            <div class="themes-copy" data-reveal>
               <div class="themes-copy-terminal" aria-hidden="true">
                 <span>&gt; theme.profile</span>
                 <span class="themes-copy-terminal-status">ACTIVE</span>
@@ -1014,7 +1040,7 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
       <!-- Arch -->
       <section class="section" id="arch">
         <div class="container">
-          <div class="section-head">
+          <div class="section-head" data-reveal>
             <span class="eyebrow">{t.archEyebrow}</span>
             <h2>{t.archTitle}</h2>
             <p>{t.archSubtitle}</p>
@@ -1024,12 +1050,12 @@ const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
             <div class="arch-copy">
               <ul>
                 {t.archList.map((item) => (
-                  <li>{item}</li>
+                  <li data-reveal>{item}</li>
                 ))}
               </ul>
             </div>
 
-            <div class="code-block">
+            <div class="code-block" data-reveal>
               <div class="code-head">{t.codeHead}</div>
               <pre><code><span class="c">{t.codeComment1}</span>
 curl -fsSLo /tmp/argvus.gpg https://argvus.github.io/packages/arch/argvus.gpg
@@ -1054,13 +1080,13 @@ echo "Include = /etc/pacman.d/argvus.conf" \
       {contributionEnabled && (
       <section class="section section-alt" id="support">
         <div class="container">
-          <div class="section-head">
+          <div class="section-head" data-reveal>
             <span class="eyebrow">{t.supportEyebrow}</span>
             <h2>{t.supportTitle}</h2>
             <p>{t.supportText}</p>
           </div>
 
-          <figure class="star-bubble" role="group" aria-label={t.supportStar}>
+          <figure class="star-bubble" role="group" aria-label={t.supportStar} data-reveal>
             <p class="star-bubble-text">{t.supportStar}</p>
             <a
               class="star-bubble-btn"
@@ -1073,7 +1099,7 @@ echo "Include = /etc/pacman.d/argvus.conf" \
             </a>
           </figure>
           {contributionMode === 'stripe' ? (
-            <div class="support-wrap">
+            <div class="support-wrap" data-reveal>
               <fieldset class="support-fieldset" aria-label={t.supportAria}>
                 <legend class="sr-only">{t.supportAria}</legend>
                 <div class="support-amounts">
@@ -1100,7 +1126,7 @@ echo "Include = /etc/pacman.d/argvus.conf" \
               </button>
             </div>
           ) : contributionMode === 'paypal' ? (
-            <div class="support-wrap">
+            <div class="support-wrap" data-reveal>
               <div class="support-toggle" role="radiogroup" aria-label={t.supportAria}>
                 <span class="support-toggle-label" data-currency-label="USD">Dolar (USD)</span>
                 <button
@@ -1133,7 +1159,7 @@ echo "Include = /etc/pacman.d/argvus.conf" \
               </p>
             </div>
           ) : (
-            <div class="support-wrap support-wrap-single">
+            <div class="support-wrap support-wrap-single" data-reveal>
               <a
                 class="btn btn-primary support-btn"
                 href={contributionConfig.single}
@@ -1151,12 +1177,12 @@ echo "Include = /etc/pacman.d/argvus.conf" \
       <!-- Feedback -->
       <section class="section" id="feedback">
         <div class="container">
-          <div class="section-head">
+          <div class="section-head" data-reveal>
             <span class="eyebrow">{t.feedbackEyebrow}</span>
             <h2>{t.feedbackTitle}</h2>
             <p>{t.feedbackText}</p>
           </div>
-          <div class="feedback-actions">
+          <div class="feedback-actions" data-reveal>
             <a
               class="btn btn-secondary feedback-btn"
               href="https://github.com/argvus/feedback"
@@ -1173,9 +1199,9 @@ echo "Include = /etc/pacman.d/argvus.conf" \
       <!-- CTA -->
       <section class="cta">
         <div class="container">
-          <h2>{t.ctaTitle}</h2>
-          <p>{t.ctaText}</p>
-          <div class="hero-actions">
+          <h2 data-reveal>{t.ctaTitle}</h2>
+          <p data-reveal>{t.ctaText}</p>
+          <div class="hero-actions" data-reveal>
             <a class="btn btn-primary" href={link('docs/getting-started/installation/')}><i class="fa-solid fa-download"></i>{t.ctaPrimary}</a>
             <a class="btn btn-secondary" href={link('docs/reference/package-matrix/')}><i class="fa-solid fa-cube"></i>{t.ctaSecondary}</a>
           </div>
@@ -1410,33 +1436,48 @@ echo "Include = /etc/pacman.d/argvus.conf" \
         play()
       }
 
-      // ── Showcase parallax ────────────────────────────────────────────────
-      const parallaxSection = document.querySelector('[data-parallax-section]')
-      const parallaxCard = document.querySelector('[data-parallax-card]')
+      // ── Reveal ao scroll nas seções ───────────────────────────────────────
+      const parallaxEnabled = document.body.dataset.parallaxEnabled === 'true'
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-      if (parallaxSection && parallaxCard && !prefersReducedMotion) {
-        let frame
+      if (parallaxEnabled && !prefersReducedMotion) {
+        const revealElements = Array.from(document.querySelectorAll('[data-reveal]'))
+        const siblingIndex = new Map()
+        const parentCount = new Map()
 
-        const updateParallax = () => {
-          frame = undefined
-          const bounds = parallaxSection.getBoundingClientRect()
-          const viewport = window.innerHeight
+        revealElements.forEach((element) => {
+          const parent = element.parentElement
+          const index = Math.min(parentCount.get(parent) || 0, 5)
+          parentCount.set(parent, (parentCount.get(parent) || 0) + 1)
+          siblingIndex.set(element, index)
+        })
 
-          if (bounds.bottom < -80 || bounds.top > viewport + 80) return
+        const delayOf = new Map()
 
-          const distance = bounds.top + bounds.height / 2 - viewport / 2
-          const offset = Math.max(-12, Math.min(12, distance * -0.018))
-          parallaxCard.style.setProperty('--parallax-y', `${offset.toFixed(2)}px`)
+        revealElements.forEach((element) => {
+          let ancestor = element.parentElement
+          while (ancestor && !delayOf.has(ancestor)) ancestor = ancestor.parentElement
+          const delay = (ancestor ? delayOf.get(ancestor) : 0) + siblingIndex.get(element) * 70
+          delayOf.set(element, delay)
+          element.style.setProperty('--reveal-delay', `${delay}ms`)
+        })
+
+        if (!('IntersectionObserver' in window)) {
+          revealElements.forEach((element) => element.classList.add('is-revealed'))
+        } else {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              for (const entry of entries) {
+                if (!entry.isIntersecting) continue
+                entry.target.classList.add('is-revealed')
+                observer.unobserve(entry.target)
+              }
+            },
+            { rootMargin: '0px 0px -15% 0px', threshold: 0 },
+          )
+
+          revealElements.forEach((element) => observer.observe(element))
         }
-
-        const requestParallax = () => {
-          if (!frame) frame = requestAnimationFrame(updateParallax)
-        }
-
-        window.addEventListener('scroll', requestParallax, { passive: true })
-        window.addEventListener('resize', requestParallax)
-        requestParallax()
       }
 
       // ── Carrossel de apps ─────────────────────────────────────────────────
@@ -1603,6 +1644,196 @@ echo "Include = /etc/pacman.d/argvus.conf" \
       })
 
       updatePaypalCurrency()
+    </script>
+
+    <script is:inline>
+      // Terminal Effects para o Hero
+      class HeroTerminalEffects {
+        constructor() {
+          this.heroSection = document.querySelector('.hero')
+          if (!this.heroSection) return
+
+          this.h1 = this.heroSection.querySelector('h1')
+          this.badges = Array.from(this.heroSection.querySelectorAll('.hero-badge'))
+          this.prefersReducedMotion = window.matchMedia(
+            '(prefers-reduced-motion: reduce)',
+          ).matches
+
+          if (!this.prefersReducedMotion) {
+            this.init()
+          }
+        }
+
+        init() {
+          this.addTypingEffect()
+          this.addBadgeAnimations()
+          this.addHoverEffects()
+        }
+
+        addTypingEffect() {
+          if (!this.h1) return
+
+          const originalText = this.h1.textContent
+          const accentElement = this.h1.querySelector('.accent')
+          const accentText = accentElement ? accentElement.textContent : ''
+          const baseText = originalText.replace(accentText, '').trim()
+
+          this.h1.innerHTML = ''
+          this.h1.style.opacity = '1'
+
+          const cursor = document.createElement('span')
+          cursor.className = 'hero-cursor'
+          cursor.textContent = '_'
+          cursor.style.cssText = `
+            display: inline-block;
+            animation: hero-cursor-blink 0.6s infinite;
+            margin-left: 2px;
+            color: var(--lp-accent);
+          `
+
+          const typeText = async () => {
+            const characters = baseText.split('')
+
+            for (const char of characters) {
+              const span = document.createElement('span')
+              span.textContent = char
+              span.style.cssText = 'opacity: 1; animation: hero-char-appear 0.05s ease-out;'
+              this.h1.insertBefore(span, cursor)
+              await this.delay(40)
+            }
+
+            const br = document.createElement('br')
+            this.h1.insertBefore(br, cursor)
+            await this.delay(200)
+
+            const accentSpan = document.createElement('span')
+            accentSpan.className = 'accent'
+            accentSpan.style.cssText = 'display: block; opacity: 1;'
+
+            const accentChars = accentText.split('')
+            for (const char of accentChars) {
+              const span = document.createElement('span')
+              span.textContent = char
+              span.style.cssText =
+                'opacity: 1; animation: hero-char-appear 0.05s ease-out;'
+              accentSpan.appendChild(span)
+              await this.delay(40)
+            }
+
+            this.h1.insertBefore(accentSpan, cursor)
+            await this.delay(300)
+
+            cursor.style.animation = 'none'
+            cursor.style.opacity = '0'
+          }
+
+          this.h1.appendChild(cursor)
+          typeText()
+        }
+
+        addBadgeAnimations() {
+          if (this.badges.length === 0) return
+
+          this.badges.forEach((badge, index) => {
+            badge.style.cssText = `
+              opacity: 0;
+              transform: translateY(8px) translateX(-2px);
+              animation: hero-badge-appear 0.4s ease-out forwards;
+              animation-delay: ${0.4 + index * 0.08}s;
+            `
+          })
+        }
+
+        addHoverEffects() {
+          const buttons = this.heroSection.querySelectorAll('.btn')
+          buttons.forEach((btn) => {
+            btn.addEventListener('mouseenter', (e) => {
+              const rect = btn.getBoundingClientRect()
+              const x = e.clientX - rect.left
+              const y = e.clientY - rect.top
+
+              btn.style.cssText += `
+                --mouse-x: ${x}px;
+                --mouse-y: ${y}px;
+              `
+
+              btn.classList.add('hero-btn-active')
+            })
+
+            btn.addEventListener('mouseleave', () => {
+              btn.classList.remove('hero-btn-active')
+            })
+          })
+        }
+
+        delay(ms) {
+          return new Promise((resolve) => setTimeout(resolve, ms))
+        }
+      }
+
+
+      // Glitch Effect para H2 das Sections
+      class SectionHeadingsGlitch {
+        constructor() {
+          this.headings = Array.from(document.querySelectorAll('.section-head h2'))
+          this.prefersReducedMotion = window.matchMedia(
+            '(prefers-reduced-motion: reduce)',
+          ).matches
+
+          if (!this.prefersReducedMotion && this.headings.length > 0) {
+            this.init()
+          }
+        }
+
+        init() {
+          this.headings.forEach((heading) => {
+            heading.addEventListener('mouseenter', () => this.glitchHeading(heading))
+          })
+        }
+
+        glitchHeading(heading) {
+          if (heading.dataset.glitching === 'true') return
+
+          heading.dataset.glitching = 'true'
+          const originalText = heading.textContent
+
+          const glitchChars = ['<', '>', '|', '/', '\\', '~', '^', '[', ']', '{', '}']
+          const iterations = 8
+
+          let count = 0
+          const glitchInterval = setInterval(() => {
+            if (count >= iterations) {
+              heading.textContent = originalText
+              heading.dataset.glitching = 'false'
+              clearInterval(glitchInterval)
+              return
+            }
+
+            const randomText = originalText
+              .split('')
+              .map((char) => {
+                if (Math.random() > 0.7) {
+                  return glitchChars[Math.floor(Math.random() * glitchChars.length)]
+                }
+                return char
+              })
+              .join('')
+
+            heading.textContent = randomText
+            count++
+          }, 60)
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          new HeroTerminalEffects()
+          new SectionHeadingsGlitch()
+        })
+      } else {
+        new HeroTerminalEffects()
+        new SectionHeadingsGlitch()
+      }
     </script>
   </body>
 </html>
