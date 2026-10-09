@@ -61,10 +61,13 @@ export const GETTING_STARTED_SECTION: LayoutGroupSpec = {
 }
 
 /**
- * Day-to-day usage, once ARGVUS is installed. FAQ, troubleshooting and
- * "where to configure things" live in `HELP_SECTION` instead: they are
- * reference material you reach for when something's wrong, not a feature you
- * read about while learning the desktop.
+ * Day-to-day usage, once ARGVUS is installed, organized by task rather than by
+ * project. Feature pages live in their component's `docs/` folder and are
+ * linked here too, so a reader finds "how do I..." before "which package...".
+ * Each page appears once inside this section. The same pages also remain in
+ * their component category (see `COMPONENT_CATEGORIES`) as the per-project
+ * reference. FAQ, troubleshooting and "where to configure things" live in
+ * `HELP_SECTION` and at the end of this section.
  */
 export const USER_GUIDE_SECTION: LayoutGroupSpec = {
   group: 'User Guide',
@@ -72,15 +75,102 @@ export const USER_GUIDE_SECTION: LayoutGroupSpec = {
   collapsed: false,
   items: [
     { slug: 'docs/user-guide', label: 'Overview', translations: OVERVIEW },
-    { slug: 'docs/user-guide/desktop' },
-    { slug: 'docs/user-guide/applications' },
-    { slug: 'docs/user-guide/sessions' },
-    { slug: 'docs/user-guide/appearance' },
-    { slug: 'docs/user-guide/localization' },
-    { slug: 'docs/user-guide/hardware' },
-    { slug: 'docs/user-guide/virtual-machines' },
-    { slug: 'docs/user-guide/privacy-and-security' },
-    { slug: 'docs/user-guide/where-to-configure' },
+    {
+      group: 'Desktop',
+      translations: { 'pt-BR': 'Área de trabalho' },
+      collapsed: true,
+      items: [
+        { slug: 'docs/user-guide/desktop', label: 'Desktop overview', translations: { 'pt-BR': 'Visão geral' } },
+        { slug: 'docs/argvus-taskbar/taskbar', label: 'Taskbar', translations: { 'pt-BR': 'Barra de tarefas' } },
+        { slug: 'docs/argvus-taskbar/widgets', label: 'Taskbar widgets', translations: { 'pt-BR': 'Widgets da barra de tarefas' } },
+        { slug: 'docs/argvus-taskbar-calendar', label: 'Calendar', translations: { 'pt-BR': 'Calendário' } },
+        { slug: 'docs/argvus-notifications', label: 'Notifications', translations: { 'pt-BR': 'Notificações' } },
+      ],
+    },
+    {
+      group: 'Input and windows',
+      translations: { 'pt-BR': 'Entrada e janelas' },
+      collapsed: true,
+      items: [
+        { slug: 'docs/argvus-hyprland/keyboard-shortcuts', label: 'Keyboard shortcuts', translations: { 'pt-BR': 'Atalhos de teclado' } },
+        { slug: 'docs/argvus-hyprland/windows-and-layout', label: 'Windows and layout', translations: { 'pt-BR': 'Janelas e layout' } },
+        { slug: 'docs/argvus-hyprland/input', label: 'Mouse and touchpad', translations: { 'pt-BR': 'Mouse e touchpad' } },
+      ],
+    },
+    {
+      group: 'Applications',
+      translations: { 'pt-BR': 'Aplicativos' },
+      collapsed: true,
+      items: [
+        { slug: 'docs/user-guide/applications', label: 'Overview', translations: OVERVIEW },
+        { slug: 'docs/argvus-launcher', label: 'Application launcher', translations: { 'pt-BR': 'Lançador de aplicativos' } },
+        { slug: 'docs/argvus-terminal', label: 'Terminal', translations: { 'pt-BR': 'Terminal' } },
+        { slug: 'docs/argvus-system-monitor', label: 'System monitor', translations: { 'pt-BR': 'Monitor do sistema' } },
+        { slug: 'docs/argvus-games', label: 'Games', translations: { 'pt-BR': 'Jogos' } },
+      ],
+    },
+    {
+      group: 'Sessions and login',
+      translations: { 'pt-BR': 'Sessões e login' },
+      collapsed: true,
+      items: [
+        { slug: 'docs/user-guide/sessions', label: 'Sessions', translations: { 'pt-BR': 'Sessões' } },
+        { slug: 'docs/argvus-greeter', label: 'Greeter', translations: { 'pt-BR': 'Tela de login' } },
+        { slug: 'docs/argvus-lock', label: 'Lock screen', translations: { 'pt-BR': 'Tela de bloqueio' } },
+        { slug: 'docs/argvus-session/graphical-session', label: 'Graphical session', translations: { 'pt-BR': 'Sessão gráfica' } },
+        { slug: 'docs/argvus-session/tty-session', label: 'TTY session', translations: { 'pt-BR': 'Sessão TTY' } },
+      ],
+    },
+    {
+      group: 'Appearance',
+      translations: { 'pt-BR': 'Aparência' },
+      collapsed: true,
+      items: [
+        { slug: 'docs/user-guide/appearance', label: 'Overview', translations: OVERVIEW },
+        {
+          group: 'Themes',
+          translations: { 'pt-BR': 'Temas' },
+          collapsed: true,
+          items: [
+            { slug: 'docs/argvus-themes', label: 'Overview', translations: OVERVIEW },
+            { slug: 'docs/argvus-themes/installing-themes', label: 'Installing themes', translations: { 'pt-BR': 'Instalando temas' } },
+            { slug: 'docs/argvus-themes/official-themes', label: 'Official themes', translations: { 'pt-BR': 'Temas oficiais' } },
+            { slug: 'docs/argvus-themes/highlight-color', label: 'Highlight color', translations: { 'pt-BR': 'Cor de destaque' } },
+            { slug: 'docs/argvus-themes/import-and-export', label: 'Import and export', translations: { 'pt-BR': 'Importar e exportar' } },
+          ],
+        },
+        { slug: 'docs/argvus-appearance/wallpapers', label: 'Wallpapers', translations: { 'pt-BR': 'Papéis de parede' } },
+        { slug: 'docs/argvus-appearance/fonts-and-icons', label: 'Fonts and icons', translations: { 'pt-BR': 'Fontes e ícones' } },
+        { slug: 'docs/argvus-appearance/effects', label: 'Effects', translations: { 'pt-BR': 'Efeitos' } },
+      ],
+    },
+    {
+      group: 'Hardware and network',
+      translations: { 'pt-BR': 'Hardware e rede' },
+      collapsed: true,
+      items: [
+        { slug: 'docs/user-guide/hardware', label: 'Hardware', translations: { 'pt-BR': 'Hardware' } },
+        { slug: 'docs/argvus-display', label: 'Displays', translations: { 'pt-BR': 'Telas' } },
+        { slug: 'docs/argvus-network', label: 'Networking and Bluetooth', translations: { 'pt-BR': 'Rede e Bluetooth' } },
+        { slug: 'docs/argvus-power', label: 'Power', translations: { 'pt-BR': 'Energia' } },
+        { slug: 'docs/argvus-removable-devices', label: 'Removable devices', translations: { 'pt-BR': 'Dispositivos removíveis' } },
+        { slug: 'docs/user-guide/virtual-machines', label: 'Virtual machines', translations: { 'pt-BR': 'Máquinas virtuais' } },
+      ],
+    },
+    {
+      group: 'System and privacy',
+      translations: { 'pt-BR': 'Sistema e privacidade' },
+      collapsed: true,
+      items: [
+        { slug: 'docs/argvus-control-center', label: 'Control Center', translations: { 'pt-BR': 'Control Center' } },
+        { slug: 'docs/argvus-control-panel', label: 'Control Panel', translations: { 'pt-BR': 'Control Panel' } },
+        { slug: 'docs/user-guide/localization', label: 'Localization', translations: { 'pt-BR': 'Idioma e região' } },
+        { slug: 'docs/argvus-accounts', label: 'User accounts', translations: { 'pt-BR': 'Contas de usuário' } },
+        { slug: 'docs/user-guide/privacy-and-security', label: 'Privacy and security', translations: { 'pt-BR': 'Privacidade e segurança' } },
+        { slug: 'docs/argvus-firewall', label: 'Firewall', translations: { 'pt-BR': 'Firewall' } },
+      ],
+    },
+    { slug: 'docs/user-guide/where-to-configure', label: 'Where to configure things', translations: { 'pt-BR': 'Onde configurar' } },
   ],
 }
 
@@ -227,6 +317,7 @@ export const COMPONENT_CATEGORIES: ComponentCategorySpec[] = [
     label: 'Desktop Shell',
     translations: { 'pt-BR': 'Shell do desktop' },
     repositories: [
+      'argvus-hyprland',
       'argvus-taskbar',
       'argvus-taskbar-calendar',
       'argvus-launcher',
@@ -271,10 +362,10 @@ export const COMPONENT_CATEGORIES: ComponentCategorySpec[] = [
 
 /**
  * Repositories shown as their own top-level sidebar group instead of inside a
- * component category. Hyprland owns the keyboard shortcuts, which users look
- * for first, so it sits right after the User Guide.
+ * component category. Empty: every component, Hyprland included, lives in
+ * `COMPONENT_CATEGORIES`, and the User Guide holds the task-oriented pages.
  */
-export const TOP_LEVEL_REPOSITORIES: string[] = ['argvus-hyprland']
+export const TOP_LEVEL_REPOSITORIES: string[] = []
 
 export const OTHER_COMPONENTS_GROUP = {
   label: 'Other components',

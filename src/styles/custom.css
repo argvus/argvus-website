@@ -107,7 +107,7 @@
   --sl-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.24);
   --sl-shadow-md: 0 14px 34px -22px rgba(0, 0, 0, 0.85);
   --sl-shadow-lg: 0 28px 70px -32px rgba(0, 0, 0, 0.95);
-  --sl-sidebar-width: 19rem;
+  --sl-sidebar-width: 23rem;
   --sl-content-width: 48rem;
 }
 
@@ -329,6 +329,8 @@ site-search input:focus,
   font-family: var(--sl-font-mono);
   font-size: 0.7rem;
   letter-spacing: 0.06em;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
   text-transform: uppercase;
 }
 

@@ -722,7 +722,7 @@ footer .brand-wordmark {
   display: block;
   margin: 0 auto 24px;
   color: var(--lp-accent);
-  content: '> argvus --start-desktop_';
+  content: '> argvus --start-desktop';
   font-family: var(--lp-mono);
   font-size: 0.74rem;
   letter-spacing: 0.06em;

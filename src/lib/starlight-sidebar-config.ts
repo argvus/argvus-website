@@ -312,6 +312,10 @@ export async function generateStarlightSidebar(): Promise<SidebarItem[]> {
   const rootProjectConfig = config.projects.find((p) => p.root)
   const rootEntries = rootProjectConfig ? entriesByProject.get(rootProjectConfig.repository) || [] : []
   const bySlug = new Map(rootEntries.map((e) => [e.slug, e]))
+  // Explicit layout specs may point at any project's pages (the User Guide links
+  // to component feature pages), so they resolve against every English entry.
+  // Leftover detection below stays limited to the root project via `bySlug`.
+  const allBySlug = new Map(enEntries.map((e) => [e.slug, e]))
   const used = new Set<string>()
 
   const topLinks: SidebarItem[] = []
@@ -321,12 +325,12 @@ export async function generateStarlightSidebar(): Promise<SidebarItem[]> {
     topLinks.push({ slug })
   }
 
-  const gettingStartedGroup = resolveGroup(GETTING_STARTED_SECTION, bySlug, used)
+  const gettingStartedGroup = resolveGroup(GETTING_STARTED_SECTION, allBySlug, used)
   appendLeftovers(gettingStartedGroup, bySlug, used, 'docs/getting-started')
 
-  const userGuideGroup = resolveGroup(USER_GUIDE_SECTION, bySlug, used)
+  const userGuideGroup = resolveGroup(USER_GUIDE_SECTION, allBySlug, used)
 
-  const helpGroup = resolveGroup(HELP_SECTION, bySlug, used)
+  const helpGroup = resolveGroup(HELP_SECTION, allBySlug, used)
   const troubleshootingSpec = HELP_SECTION.items.find(isLayoutGroup)
   const troubleshootingGroup = troubleshootingSpec
     ? helpGroup.items.find(
@@ -341,10 +345,10 @@ export async function generateStarlightSidebar(): Promise<SidebarItem[]> {
   // and troubleshooting/* (already claimed above) aren't re-appended here.
   appendLeftovers(userGuideGroup, bySlug, used, 'docs/user-guide')
 
-  const referenceGroup = resolveGroup(REFERENCE_SECTION, bySlug, used)
+  const referenceGroup = resolveGroup(REFERENCE_SECTION, allBySlug, used)
   appendLeftovers(referenceGroup, bySlug, used, 'docs/reference')
 
-  const developerGuideGroup = resolveGroup(DEVELOPER_GUIDE_SECTION, bySlug, used)
+  const developerGuideGroup = resolveGroup(DEVELOPER_GUIDE_SECTION, allBySlug, used)
   appendLeftovers(developerGuideGroup, bySlug, used, 'docs/developer-guide')
 
   const licenseSlug = 'docs/license'

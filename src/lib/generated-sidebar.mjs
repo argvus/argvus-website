@@ -51,55 +51,362 @@ export const sidebarConfig = [
         }
       },
       {
-        "slug": "docs/user-guide/desktop"
+        "label": "Desktop",
+        "items": [
+          {
+            "slug": "docs/user-guide/desktop",
+            "label": "Desktop overview",
+            "translations": {
+              "pt-BR": "Visão geral"
+            }
+          },
+          {
+            "slug": "docs/argvus-taskbar/taskbar",
+            "label": "Taskbar",
+            "translations": {
+              "pt-BR": "Barra de tarefas"
+            }
+          },
+          {
+            "slug": "docs/argvus-taskbar/widgets",
+            "label": "Taskbar widgets",
+            "translations": {
+              "pt-BR": "Widgets da barra de tarefas"
+            }
+          },
+          {
+            "slug": "docs/argvus-taskbar-calendar",
+            "label": "Calendar",
+            "translations": {
+              "pt-BR": "Calendário"
+            }
+          },
+          {
+            "slug": "docs/argvus-notifications",
+            "label": "Notifications",
+            "translations": {
+              "pt-BR": "Notificações"
+            }
+          }
+        ],
+        "collapsed": true,
+        "translations": {
+          "pt-BR": "Área de trabalho"
+        }
       },
       {
-        "slug": "docs/user-guide/applications"
+        "label": "Input and windows",
+        "items": [
+          {
+            "slug": "docs/argvus-hyprland/keyboard-shortcuts",
+            "label": "Keyboard shortcuts",
+            "translations": {
+              "pt-BR": "Atalhos de teclado"
+            }
+          },
+          {
+            "slug": "docs/argvus-hyprland/windows-and-layout",
+            "label": "Windows and layout",
+            "translations": {
+              "pt-BR": "Janelas e layout"
+            }
+          },
+          {
+            "slug": "docs/argvus-hyprland/input",
+            "label": "Mouse and touchpad",
+            "translations": {
+              "pt-BR": "Mouse e touchpad"
+            }
+          }
+        ],
+        "collapsed": true,
+        "translations": {
+          "pt-BR": "Entrada e janelas"
+        }
       },
       {
-        "slug": "docs/user-guide/sessions"
+        "label": "Applications",
+        "items": [
+          {
+            "slug": "docs/user-guide/applications",
+            "label": "Overview",
+            "translations": {
+              "pt-BR": "Visão geral"
+            }
+          },
+          {
+            "slug": "docs/argvus-launcher",
+            "label": "Application launcher",
+            "translations": {
+              "pt-BR": "Lançador de aplicativos"
+            }
+          },
+          {
+            "slug": "docs/argvus-terminal",
+            "label": "Terminal",
+            "translations": {
+              "pt-BR": "Terminal"
+            }
+          },
+          {
+            "slug": "docs/argvus-system-monitor",
+            "label": "System monitor",
+            "translations": {
+              "pt-BR": "Monitor do sistema"
+            }
+          },
+          {
+            "slug": "docs/argvus-games",
+            "label": "Games",
+            "translations": {
+              "pt-BR": "Jogos"
+            }
+          }
+        ],
+        "collapsed": true,
+        "translations": {
+          "pt-BR": "Aplicativos"
+        }
       },
       {
-        "slug": "docs/user-guide/appearance"
+        "label": "Sessions and login",
+        "items": [
+          {
+            "slug": "docs/user-guide/sessions",
+            "label": "Sessions",
+            "translations": {
+              "pt-BR": "Sessões"
+            }
+          },
+          {
+            "slug": "docs/argvus-greeter",
+            "label": "Greeter",
+            "translations": {
+              "pt-BR": "Tela de login"
+            }
+          },
+          {
+            "slug": "docs/argvus-lock",
+            "label": "Lock screen",
+            "translations": {
+              "pt-BR": "Tela de bloqueio"
+            }
+          },
+          {
+            "slug": "docs/argvus-session/graphical-session",
+            "label": "Graphical session",
+            "translations": {
+              "pt-BR": "Sessão gráfica"
+            }
+          },
+          {
+            "slug": "docs/argvus-session/tty-session",
+            "label": "TTY session",
+            "translations": {
+              "pt-BR": "Sessão TTY"
+            }
+          }
+        ],
+        "collapsed": true,
+        "translations": {
+          "pt-BR": "Sessões e login"
+        }
       },
       {
-        "slug": "docs/user-guide/localization"
+        "label": "Appearance",
+        "items": [
+          {
+            "slug": "docs/user-guide/appearance",
+            "label": "Overview",
+            "translations": {
+              "pt-BR": "Visão geral"
+            }
+          },
+          {
+            "label": "Themes",
+            "items": [
+              {
+                "slug": "docs/argvus-themes",
+                "label": "Overview",
+                "translations": {
+                  "pt-BR": "Visão geral"
+                }
+              },
+              {
+                "slug": "docs/argvus-themes/installing-themes",
+                "label": "Installing themes",
+                "translations": {
+                  "pt-BR": "Instalando temas"
+                }
+              },
+              {
+                "slug": "docs/argvus-themes/official-themes",
+                "label": "Official themes",
+                "translations": {
+                  "pt-BR": "Temas oficiais"
+                }
+              },
+              {
+                "slug": "docs/argvus-themes/highlight-color",
+                "label": "Highlight color",
+                "translations": {
+                  "pt-BR": "Cor de destaque"
+                }
+              },
+              {
+                "slug": "docs/argvus-themes/import-and-export",
+                "label": "Import and export",
+                "translations": {
+                  "pt-BR": "Importar e exportar"
+                }
+              }
+            ],
+            "collapsed": true,
+            "translations": {
+              "pt-BR": "Temas"
+            }
+          },
+          {
+            "slug": "docs/argvus-appearance/wallpapers",
+            "label": "Wallpapers",
+            "translations": {
+              "pt-BR": "Papéis de parede"
+            }
+          },
+          {
+            "slug": "docs/argvus-appearance/fonts-and-icons",
+            "label": "Fonts and icons",
+            "translations": {
+              "pt-BR": "Fontes e ícones"
+            }
+          },
+          {
+            "slug": "docs/argvus-appearance/effects",
+            "label": "Effects",
+            "translations": {
+              "pt-BR": "Efeitos"
+            }
+          }
+        ],
+        "collapsed": true,
+        "translations": {
+          "pt-BR": "Aparência"
+        }
       },
       {
-        "slug": "docs/user-guide/hardware"
+        "label": "Hardware and network",
+        "items": [
+          {
+            "slug": "docs/user-guide/hardware",
+            "label": "Hardware",
+            "translations": {
+              "pt-BR": "Hardware"
+            }
+          },
+          {
+            "slug": "docs/argvus-display",
+            "label": "Displays",
+            "translations": {
+              "pt-BR": "Telas"
+            }
+          },
+          {
+            "slug": "docs/argvus-network",
+            "label": "Networking and Bluetooth",
+            "translations": {
+              "pt-BR": "Rede e Bluetooth"
+            }
+          },
+          {
+            "slug": "docs/argvus-power",
+            "label": "Power",
+            "translations": {
+              "pt-BR": "Energia"
+            }
+          },
+          {
+            "slug": "docs/argvus-removable-devices",
+            "label": "Removable devices",
+            "translations": {
+              "pt-BR": "Dispositivos removíveis"
+            }
+          },
+          {
+            "slug": "docs/user-guide/virtual-machines",
+            "label": "Virtual machines",
+            "translations": {
+              "pt-BR": "Máquinas virtuais"
+            }
+          }
+        ],
+        "collapsed": true,
+        "translations": {
+          "pt-BR": "Hardware e rede"
+        }
       },
       {
-        "slug": "docs/user-guide/virtual-machines"
+        "label": "System and privacy",
+        "items": [
+          {
+            "slug": "docs/argvus-control-center",
+            "label": "Control Center",
+            "translations": {
+              "pt-BR": "Control Center"
+            }
+          },
+          {
+            "slug": "docs/argvus-control-panel",
+            "label": "Control Panel",
+            "translations": {
+              "pt-BR": "Control Panel"
+            }
+          },
+          {
+            "slug": "docs/user-guide/localization",
+            "label": "Localization",
+            "translations": {
+              "pt-BR": "Idioma e região"
+            }
+          },
+          {
+            "slug": "docs/argvus-accounts",
+            "label": "User accounts",
+            "translations": {
+              "pt-BR": "Contas de usuário"
+            }
+          },
+          {
+            "slug": "docs/user-guide/privacy-and-security",
+            "label": "Privacy and security",
+            "translations": {
+              "pt-BR": "Privacidade e segurança"
+            }
+          },
+          {
+            "slug": "docs/argvus-firewall",
+            "label": "Firewall",
+            "translations": {
+              "pt-BR": "Firewall"
+            }
+          }
+        ],
+        "collapsed": true,
+        "translations": {
+          "pt-BR": "Sistema e privacidade"
+        }
       },
       {
-        "slug": "docs/user-guide/privacy-and-security"
-      },
-      {
-        "slug": "docs/user-guide/where-to-configure"
+        "slug": "docs/user-guide/where-to-configure",
+        "label": "Where to configure things",
+        "translations": {
+          "pt-BR": "Onde configurar"
+        }
       }
     ],
     "collapsed": false,
     "translations": {
       "pt-BR": "Guia do usuário"
     }
-  },
-  {
-    "label": "Hyprland",
-    "collapsed": true,
-    "items": [
-      {
-        "slug": "docs/argvus-hyprland/keyboard-shortcuts"
-      },
-      {
-        "slug": "docs/argvus-hyprland/input"
-      },
-      {
-        "slug": "docs/argvus-hyprland/windows-and-layout"
-      },
-      {
-        "slug": "docs/argvus-hyprland/hyprland-overrides"
-      }
-    ]
   },
   {
     "label": "Help",
@@ -253,6 +560,24 @@ export const sidebarConfig = [
     },
     "collapsed": true,
     "items": [
+      {
+        "label": "Hyprland",
+        "collapsed": true,
+        "items": [
+          {
+            "slug": "docs/argvus-hyprland/keyboard-shortcuts"
+          },
+          {
+            "slug": "docs/argvus-hyprland/input"
+          },
+          {
+            "slug": "docs/argvus-hyprland/windows-and-layout"
+          },
+          {
+            "slug": "docs/argvus-hyprland/hyprland-overrides"
+          }
+        ]
+      },
       {
         "label": "Taskbar",
         "collapsed": true,
