@@ -16,8 +16,8 @@ import { loadDocumentation, type ContentEntry } from '../src/lib/documentation/l
 
 const projectRoot = resolve(fileURLToPath(new URL('..', import.meta.url)))
 
-/** Site routes that are not documentation entries (the landing pages). */
-const SITE_ROUTES = ['/', '/pt/']
+/** Site routes that are not documentation entries (the landing and about pages). */
+const SITE_ROUTES = ['/', '/pt/', '/about/', '/pt/about/']
 
 /** Extensions treated as assets rather than pages. They are not route-checked. */
 const ASSET_EXTENSION = /\.(png|jpe?g|gif|webp|svg|jxl|mp4|mp3|pdf|tar\.gz|zip|sh|conf|lua|json|toml)$/i
