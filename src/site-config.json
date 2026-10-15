@@ -1,5 +1,5 @@
 {
-  "maintenance": true,
+  "maintenance": false,
   "page_home": {
     "effects": {
       "parallax": true,
