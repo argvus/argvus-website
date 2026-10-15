@@ -16,8 +16,6 @@ import previewThemeDarkSlateImage from '../images/desktop/preview-theme-dark-sla
 import previewThemeDarkSlateFloatImage from '../images/desktop/preview-theme-dark-slate-float.png'
 import previewThemeDarkUniverseImage from '../images/desktop/preview-theme-dark-universe.png'
 import previewThemeDarkUniverseFloatImage from '../images/desktop/preview-theme-dark-universe-float.png'
-import argvusPronunciationEn from '../midia/men/argvus-en.mp3'
-import argvusPronunciationPt from '../midia/men/argvus-ptbr.mp3'
 import '../styles/landing.css'
 import fs from 'node:fs'
 import { resolve } from 'node:path'
@@ -44,8 +42,6 @@ const argvusWordmarkUrl =
 
 const link = (path: string) =>
   base + (isPT && !path.startsWith('packages/') ? 'pt/' : '') + path
-
-const initialPronunciation = isPT ? argvusPronunciationPt : argvusPronunciationEn
 
 const t = isPT
   ? {
@@ -139,21 +135,6 @@ const t = isPT
         { title: 'Rede, áudio e Bluetooth', text: 'Acesse os módulos de conectividade e áudio fornecidos pela instalação.' },
         { title: 'Sessão e sistema', text: 'Consulte e configure energia, sessão, serviços, pacotes, armazenamento e diagnósticos.' },
       ],
-      aboutEyebrow: 'Sobre',
-      aboutTitle: 'Por que ARGVUS?',
-      aboutArgv: 'Argument Vector',
-      aboutUs: 'User System',
-      aboutText:
-        'ARGVUS nasceu de uma ideia simples: um desktop de desenvolvedor não deveria exigir que o usuário interrompesse seu fluxo para procurar controles, navegar por menus ou depender constantemente do mouse. A proposta é construir um ambiente onde o teclado seja uma das principais formas de interação com o sistema — permitindo que ações, aplicações e ferramentas sejam acessadas por atalhos e comandos de maneira rápida e previsível.',
-      aboutText2:
-        'O nome representa essa ideia. ARGV, de argument vector, remete ao mundo dos desenvolvedores e à forma como argumentos são utilizados para controlar programas. US, de User System, representa o objetivo de transformar essa filosofia em um ambiente de desktop centrado no usuário.',
-      aboutPronunciationLabel: 'Ouça a pronúncia',
-      aboutPronunciationHint: 'Selecione o idioma para ouvir como ARGVUS é pronunciado.',
-      aboutPronunciationLanguage: 'Idioma',
-      aboutPronunciationEnglish: 'Inglês',
-      aboutPronunciationPortuguese: 'Português',
-      aboutPronunciationAudio: 'Áudio da pronúncia de ARGVUS',
-      aboutMaintainer: 'Projeto mantido por',
       aboutMaintainerLink: 'Perfil de William C. Canin no GitHub',
       aboutSupportPaypal: 'Ao contribuir via PayPal, a conta correta é exibida como',
       themesEyebrow: 'Temas',
@@ -214,6 +195,7 @@ const t = isPT
         { label: 'Repositório Arch Linux', href: 'packages/arch/' },
       ],
       footerProject: 'Projeto',
+      footerAbout: 'Sobre o ARGVUS',
       footerLicense: 'Licença GPL-3.0',
       footerMaintainer: 'Mantido por',
       bottomLicense: 'Licenciado sob GPL-3.0',
@@ -316,21 +298,6 @@ const t = isPT
         { title: 'Network, audio and Bluetooth', text: 'Access the connectivity and audio modules provided by the installation.' },
         { title: 'Session and system', text: 'Inspect and configure power, session, services, packages, storage and diagnostics.' },
       ],
-      aboutEyebrow: 'About',
-      aboutTitle: 'Why ARGVUS?',
-      aboutArgv: 'Argument Vector',
-      aboutUs: 'User System',
-      aboutText:
-        'ARGVUS was born from a simple idea: a developer desktop should not require the user to break their flow to find controls, navigate menus, or constantly depend on the mouse. The goal is to build an environment where the keyboard is a primary form of system interaction — allowing actions, applications and tools to be accessed through shortcuts and commands in a fast and predictable way.',
-      aboutText2:
-        'The name represents this idea. ARGV, from argument vector, refers to the world of developers and how arguments are used to control programs. US, from User System, represents the goal of turning this philosophy into a user-centered desktop environment.',
-      aboutPronunciationLabel: 'Hear the pronunciation',
-      aboutPronunciationHint: 'Choose a language to hear how ARGVUS is pronounced.',
-      aboutPronunciationLanguage: 'Language',
-      aboutPronunciationEnglish: 'English',
-      aboutPronunciationPortuguese: 'Portuguese',
-      aboutPronunciationAudio: 'ARGVUS pronunciation audio',
-      aboutMaintainer: 'Project maintained by',
       aboutMaintainerLink: 'William C. Canin GitHub profile',
       aboutSupportPaypal: 'When contributing via PayPal, the correct account is shown as',
       themesEyebrow: 'Themes',
@@ -391,6 +358,7 @@ const t = isPT
         { label: 'Arch Linux Repository', href: 'packages/arch/' },
       ],
       footerProject: 'Project',
+      footerAbout: 'About ARGVUS',
       footerLicense: 'GPL-3.0 License',
       footerMaintainer: 'Maintained by',
       bottomLicense: 'Licensed under GPL-3.0',
@@ -749,72 +717,6 @@ const heroMatrixEnabled = homeConfig.effects.hero.matrix
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- About -->
-      <section class="section" id="about">
-        <div class="container">
-          <div class="section-head" data-reveal>
-            <span class="eyebrow">{t.aboutEyebrow}</span>
-            <h2>{t.aboutTitle}</h2>
-          </div>
-
-          <div class="about-composition" data-about-animate data-reveal>
-            <div class="about-parts">
-              <div class="about-part">
-                <span class="about-code">ARGV</span>
-                <span class="about-label">{t.aboutArgv}</span>
-              </div>
-              <span class="about-plus">+</span>
-              <div class="about-part">
-                <span class="about-code">US</span>
-                <span class="about-label">{t.aboutUs}</span>
-              </div>
-            </div>
-            <div class="about-arrow">
-              <svg viewBox="0 0 24 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="0" x2="12" y2="32"></line>
-                <polyline points="6,26 12,34 18,26"></polyline>
-              </svg>
-            </div>
-            <div class="about-result">
-              <span class="about-name">ARGVUS</span>
-            </div>
-          </div>
-
-          <div class="about-pronunciation" data-pronunciation data-reveal>
-            <div class="about-pronunciation-copy">
-              <span class="about-pronunciation-label">{t.aboutPronunciationLabel}</span>
-              <p>{t.aboutPronunciationHint}</p>
-            </div>
-            <div class="about-pronunciation-controls">
-              <label for="pronunciation-language">{t.aboutPronunciationLanguage}</label>
-              <select id="pronunciation-language" data-pronunciation-select>
-                <option value={argvusPronunciationEn} selected={!isPT}>{t.aboutPronunciationEnglish}</option>
-                <option value={argvusPronunciationPt} selected={isPT}>{t.aboutPronunciationPortuguese}</option>
-              </select>
-              <audio
-                controls
-                preload="none"
-                src={initialPronunciation}
-                data-pronunciation-audio
-                aria-label={t.aboutPronunciationAudio}
-              ></audio>
-            </div>
-          </div>
-
-          <div class="about-text" data-reveal>
-            <p>{t.aboutText}</p>
-            <p>{t.aboutText2}</p>
-          </div>
-
-          <p class="about-maintainer" data-reveal>
-            {t.aboutMaintainer}{' '}
-            <a href="https://github.com/williamcanin" target="_blank" rel="noopener noreferrer" aria-label={t.aboutMaintainerLink}>
-              William C. Canin
-            </a>
-          </p>
         </div>
       </section>
 
@@ -1241,6 +1143,7 @@ echo "Include = /etc/pacman.d/argvus.conf" \
           <div class="footer-col">
             <h4>{t.footerProject}</h4>
             <ul>
+              <li><a href={link('about/')}><i class="fa-solid fa-circle-info"></i>{t.footerAbout}</a></li>
               <li><a href={githubOrgUrl}><i class="fa-brands fa-github"></i>{t.github}</a></li>
               <li><a href="https://github.com/argvus/argvus/blob/main/LICENSE"><i class="fa-solid fa-scale-balanced"></i>{t.footerLicense}</a></li>
               <li><a href="https://github.com/williamcanin" target="_blank" rel="noopener noreferrer" aria-label={t.aboutMaintainerLink}><i class="fa-solid fa-user"></i>{t.footerMaintainer} William C. Canin</a></li>
@@ -1563,38 +1466,6 @@ echo "Include = /etc/pacman.d/argvus.conf" \
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && !modal.hidden) closeModal()
       })
-
-      // ── About animation ──────────────────────────────────────────────────
-      const aboutEl = document.querySelector('[data-about-animate]')
-      if (aboutEl) {
-        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-        if (prefersReduced) {
-          aboutEl.classList.add('is-visible')
-        } else {
-          const observer = new IntersectionObserver(
-            ([entry]) => {
-              if (entry.isIntersecting) {
-                aboutEl.classList.add('is-visible')
-                observer.unobserve(aboutEl)
-              }
-            },
-            { threshold: 0.3 },
-          )
-          observer.observe(aboutEl)
-        }
-      }
-
-      // ── About pronunciation ─────────────────────────────────────────────
-      const pronunciationSelect = document.querySelector('[data-pronunciation-select]')
-      const pronunciationAudio = document.querySelector('[data-pronunciation-audio]')
-      if (pronunciationSelect && pronunciationAudio) {
-        pronunciationSelect.addEventListener('change', () => {
-          const wasPlaying = !pronunciationAudio.paused
-          pronunciationAudio.src = pronunciationSelect.value
-          pronunciationAudio.load()
-          if (wasPlaying) pronunciationAudio.play().catch(() => {})
-        })
-      }
 
       // ── Support / Contribution ────────────────────────────────────────────
       const supportAmounts = Array.from(document.querySelectorAll('[data-amount]'))

@@ -1164,8 +1164,7 @@ body[data-parallax-enabled='true'] [data-reveal].is-revealed {
 
 .waybar-panel,
 .themes-wrap,
-.arch-wrap,
-.about-composition {
+.arch-wrap {
   border: 1px solid var(--lp-border);
   background: var(--lp-panel);
   box-shadow: var(--lp-shadow);
@@ -1550,208 +1549,6 @@ body[data-parallax-enabled='true'] [data-reveal].is-revealed {
   color: var(--lp-fg-muted);
   font-size: 0.76rem;
   line-height: 1.55;
-}
-
-/* ── About ────────────────────────────────────────────────────────────────── */
-
-.about-composition {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-  margin: 0 auto 48px;
-  max-width: 760px;
-  padding: 36px;
-}
-
-.about-parts {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.about-part {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-
-.about-code {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 28px;
-  border: 1px solid var(--lp-accent);
-  background: var(--lp-code-bg);
-  color: var(--lp-accent);
-  font-family: var(--lp-mono);
-  font-size: clamp(1.4rem, 3vw, 2rem);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  min-width: 150px;
-}
-
-.about-label {
-  font-family: var(--lp-mono);
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: var(--lp-fg-dim);
-  letter-spacing: 0.02em;
-}
-
-.about-plus {
-  font-family: var(--lp-mono);
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--lp-fg-dim);
-  line-height: 1;
-  padding-top: 2px;
-}
-
-.about-arrow {
-  display: flex;
-  justify-content: center;
-  padding: 8px 0;
-  color: var(--lp-fg-dim);
-}
-
-.about-arrow svg {
-  width: 18px;
-  height: 30px;
-}
-
-.about-result {
-  display: flex;
-  justify-content: center;
-}
-
-.about-name {
-  font-family: var(--lp-mono);
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--lp-accent);
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.about-composition.is-visible .about-name {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.about-text {
-  max-width: 66ch;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.about-text p {
-  color: var(--lp-fg-muted);
-  margin: 0 0 16px;
-  line-height: 1.7;
-}
-
-.about-text p:last-child {
-  margin-bottom: 0;
-}
-
-.about-maintainer {
-  margin: 32px 0 0;
-  text-align: center;
-  font-family: var(--lp-mono);
-  font-size: 0.74rem;
-  color: var(--lp-fg-muted);
-}
-
-.about-maintainer a {
-  color: var(--lp-accent);
-  font-weight: 700;
-}
-
-.about-pronunciation {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
-  align-items: center;
-  gap: 20px;
-  max-width: 900px;
-  margin: 26px auto 0;
-  padding: 16px 18px;
-  border: 1px solid var(--lp-border-strong);
-  background: var(--lp-panel);
-  margin-bottom: 40px;
-}
-
-.about-pronunciation-copy {
-  min-width: 0;
-}
-
-.about-pronunciation-label {
-  display: block;
-  color: var(--lp-accent-high);
-  font-family: var(--lp-mono);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.about-pronunciation-label::before {
-  color: var(--lp-accent);
-  content: '> ';
-}
-
-.about-pronunciation-copy p {
-  margin: 5px 0 0;
-  color: var(--lp-fg-muted);
-  font-size: 0.78rem;
-  line-height: 1.55;
-}
-
-.about-pronunciation-controls {
-  display: grid;
-  grid-template-columns: auto minmax(120px, 1fr);
-  align-items: center;
-  gap: 8px 10px;
-}
-
-.about-pronunciation-controls label {
-  color: var(--lp-fg-dim);
-  font-family: var(--lp-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.about-pronunciation-controls select {
-  min-width: 0;
-  height: 32px;
-  padding: 0 9px;
-  border: 1px solid var(--lp-border-strong);
-  border-radius: 0;
-  outline: 0;
-  background: var(--lp-code-bg);
-  color: var(--lp-fg);
-  color-scheme: dark;
-  font-family: var(--lp-mono);
-  font-size: 0.66rem;
-}
-
-:root[data-theme='light'] .about-pronunciation-controls select {
-  color-scheme: light;
-}
-
-.about-pronunciation-controls select:focus-visible {
-  border-color: var(--lp-accent);
-}
-
-.about-pronunciation-controls audio {
-  grid-column: 1 / -1;
-  width: 100%;
-  height: 32px;
-  accent-color: var(--lp-accent);
 }
 
 /* ── Themes ───────────────────────────────────────────────────────────────── */
@@ -2490,14 +2287,8 @@ body[data-parallax-enabled='true'] [data-reveal].is-revealed {
 
   .waybar-panel,
   .themes-wrap,
-  .arch-wrap,
-  .about-composition,
-  .about-pronunciation {
+  .arch-wrap {
     padding: 20px;
-  }
-
-  .about-pronunciation {
-    grid-template-columns: 1fr;
   }
 
   .waybar-panel {
@@ -2594,30 +2385,6 @@ body[data-parallax-enabled='true'] [data-reveal].is-revealed {
     grid-template-columns: 1fr;
   }
 
-  .about-composition {
-    padding: 20px;
-  }
-
-  .about-parts {
-    gap: 8px;
-  }
-
-  .about-code {
-    padding: 10px 14px;
-  }
-
-  .about-pronunciation {
-    padding: 14px;
-  }
-
-  .about-pronunciation-controls {
-    grid-template-columns: 1fr;
-  }
-
-  .about-pronunciation-controls audio {
-    margin-top: 4px;
-  }
-
   .themes-wrap .theme-families .theme-chip {
     padding: 10px;
   }
@@ -2687,11 +2454,6 @@ body[data-parallax-enabled='true'] [data-reveal].is-revealed {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-
-  .about-name {
-    opacity: 1;
-    transform: none;
   }
 
   .app-media-figure:hover img,

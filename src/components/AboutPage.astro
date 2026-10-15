@@ -1,0 +1,270 @@
+---
+import argvusPronunciationEn from '../midia/men/argvus-en.mp3'
+import argvusPronunciationPt from '../midia/men/argvus-ptbr.mp3'
+import '../styles/landing.css'
+import '../styles/about.css'
+
+interface Props {
+  lang: 'en' | 'pt'
+}
+
+const { lang } = Astro.props
+const base = import.meta.env.BASE_URL
+const isPT = lang === 'pt'
+const siteUrl = 'https://argvus.github.io'
+const githubOrgUrl = 'https://github.com/orgs/argvus'
+const logotypeUrl =
+  'https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/ARGVUS-logo.svg'
+const argvusWordmarkUrl =
+  'https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/ARGVUS-wordmark.svg'
+
+const link = (path: string) => base + (isPT ? 'pt/' : '') + path
+const pagePath = isPT ? 'pt/about/' : 'about/'
+const pageUrl = `${siteUrl}${base}${pagePath}`
+const initialPronunciation = isPT ? argvusPronunciationPt : argvusPronunciationEn
+const year = new Date().getFullYear()
+
+const t = isPT
+  ? {
+      htmlLang: 'pt-BR',
+      title: 'Sobre o ARGVUS — ARGVUS',
+      description:
+        'Por que o ARGVUS existe, de onde vem o nome e como ouvir a pronúncia correta.',
+      keywords: 'argvus, sobre argvus, argvus pronúncia, hyprland, wayland, arch linux',
+      navAria: 'Navegação principal',
+      navDocs: 'Documentação',
+      github: 'GitHub',
+      langEnglish: 'Inglês',
+      langPortuguese: 'Português',
+      back: 'Voltar ao início',
+      aboutEyebrow: 'Sobre',
+      aboutTitle: 'Por que ARGVUS?',
+      aboutArgv: 'Argument Vector',
+      aboutUs: 'User System',
+      aboutText:
+        'ARGVUS nasceu de uma ideia simples: um desktop de desenvolvedor não deveria exigir que o usuário interrompesse seu fluxo para procurar controles, navegar por menus ou depender constantemente do mouse. A proposta é construir um ambiente onde o teclado seja uma das principais formas de interação com o sistema — permitindo que ações, aplicações e ferramentas sejam acessadas por atalhos e comandos de maneira rápida e previsível.',
+      aboutText2:
+        'O nome representa essa ideia. ARGV, de argument vector, remete ao mundo dos desenvolvedores e à forma como argumentos são utilizados para controlar programas. US, de User System, representa o objetivo de transformar essa filosofia em um ambiente de desktop centrado no usuário.',
+      aboutPronunciationLabel: 'Ouça a pronúncia',
+      aboutPronunciationHint: 'Selecione o idioma para ouvir como ARGVUS é pronunciado.',
+      aboutPronunciationLanguage: 'Idioma',
+      aboutPronunciationEnglish: 'Inglês',
+      aboutPronunciationPortuguese: 'Português',
+      aboutPronunciationAudio: 'Áudio da pronúncia de ARGVUS',
+      aboutMaintainer: 'Projeto mantido por',
+      aboutMaintainerLink: 'Perfil de William C. Canin no GitHub',
+      footerLicense: 'Licenciado sob GPL-3.0',
+    }
+  : {
+      htmlLang: 'en',
+      title: 'About ARGVUS — ARGVUS',
+      description:
+        'Why ARGVUS exists, where the name comes from, and how to hear the correct pronunciation.',
+      keywords: 'argvus, about argvus, argvus pronunciation, hyprland, wayland, arch linux',
+      navAria: 'Main navigation',
+      navDocs: 'Documentation',
+      github: 'GitHub',
+      langEnglish: 'English',
+      langPortuguese: 'Portuguese',
+      back: 'Back to home',
+      aboutEyebrow: 'About',
+      aboutTitle: 'Why ARGVUS?',
+      aboutArgv: 'Argument Vector',
+      aboutUs: 'User System',
+      aboutText:
+        'ARGVUS was born from a simple idea: a developer desktop should not require the user to break their flow to find controls, navigate menus, or constantly depend on the mouse. The goal is to build an environment where the keyboard is a primary form of system interaction — allowing actions, applications and tools to be accessed through shortcuts and commands in a fast and predictable way.',
+      aboutText2:
+        'The name represents this idea. ARGV, from argument vector, refers to the world of developers and how arguments are used to control programs. US, from User System, represents the goal of turning this philosophy into a user-centered desktop environment.',
+      aboutPronunciationLabel: 'Hear the pronunciation',
+      aboutPronunciationHint: 'Choose a language to hear how ARGVUS is pronounced.',
+      aboutPronunciationLanguage: 'Language',
+      aboutPronunciationEnglish: 'English',
+      aboutPronunciationPortuguese: 'Portuguese',
+      aboutPronunciationAudio: 'ARGVUS pronunciation audio',
+      aboutMaintainer: 'Project maintained by',
+      aboutMaintainerLink: 'William C. Canin GitHub profile',
+      footerLicense: 'Licensed under GPL-3.0',
+    }
+---
+
+<!doctype html>
+<html lang={t.htmlLang} data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{t.title}</title>
+    <meta name="description" content={t.description} />
+    <meta name="keywords" content={t.keywords} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={pageUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ARGVUS" />
+    <meta property="og:title" content={t.title} />
+    <meta property="og:description" content={t.description} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={`${siteUrl}${base}favicon.png`} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={t.title} />
+    <meta name="twitter:description" content={t.description} />
+    <meta name="twitter:image" content={`${siteUrl}${base}favicon.png`} />
+    <link rel="icon" type="image/png" href={base + 'favicon.png'} />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css" />
+    <script is:inline>
+      // Aplica o tema antes do primeiro paint, sincronizado com a docs (chave do Starlight).
+      ;(function () {
+        var key = 'starlight-theme'
+        var stored = localStorage.getItem(key)
+        var light = matchMedia('(prefers-color-scheme: light)').matches
+        document.documentElement.dataset.theme =
+          stored === 'light' || stored === 'dark'
+            ? stored
+            : light
+              ? 'light'
+              : 'dark'
+      })()
+    </script>
+    <noscript>
+      <style>
+        .about-composition .about-name {
+          opacity: 1;
+          transform: none;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href={link('')}>
+          <img class="brand-logotype" src={logotypeUrl} alt="" width={48} height={48} />
+          <img class="brand-wordmark" src={argvusWordmarkUrl} alt="ARGVUS" width={178} height={20} />
+        </a>
+
+        <nav class="site-nav" aria-label={t.navAria}>
+          <div class="nav-links">
+            <a class="nav-link" href={link('docs/introduction/')}><i class="fa-solid fa-book-open"></i>{t.navDocs}</a>
+            <a class="nav-link" href={githubOrgUrl}><i class="fa-brands fa-github"></i>{t.github}</a>
+            <a class="nav-link" href={base + 'about/'} hreflang="en" lang="en" aria-label={t.langEnglish} aria-current={!isPT ? 'page' : undefined}>EN</a>
+            <a class="nav-link" href={base + 'pt/about/'} hreflang="pt-BR" lang="pt-BR" aria-label={t.langPortuguese} aria-current={isPT ? 'page' : undefined}>PT</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section about-page">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">{t.aboutEyebrow}</span>
+            <h1>{t.aboutTitle}</h1>
+          </div>
+
+          <div class="about-composition" data-about-animate>
+            <div class="about-parts">
+              <div class="about-part">
+                <span class="about-code">ARGV</span>
+                <span class="about-label">{t.aboutArgv}</span>
+              </div>
+              <span class="about-plus">+</span>
+              <div class="about-part">
+                <span class="about-code">US</span>
+                <span class="about-label">{t.aboutUs}</span>
+              </div>
+            </div>
+            <div class="about-arrow">
+              <svg viewBox="0 0 24 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="0" x2="12" y2="32"></line>
+                <polyline points="6,26 12,34 18,26"></polyline>
+              </svg>
+            </div>
+            <div class="about-result">
+              <span class="about-name">ARGVUS</span>
+            </div>
+          </div>
+
+          <div class="about-pronunciation">
+            <div class="about-pronunciation-copy">
+              <span class="about-pronunciation-label">{t.aboutPronunciationLabel}</span>
+              <p>{t.aboutPronunciationHint}</p>
+            </div>
+            <div class="about-pronunciation-controls">
+              <label for="pronunciation-language">{t.aboutPronunciationLanguage}</label>
+              <select id="pronunciation-language" data-pronunciation-select>
+                <option value={argvusPronunciationEn} selected={!isPT}>{t.aboutPronunciationEnglish}</option>
+                <option value={argvusPronunciationPt} selected={isPT}>{t.aboutPronunciationPortuguese}</option>
+              </select>
+              <audio
+                controls
+                preload="none"
+                src={initialPronunciation}
+                data-pronunciation-audio
+                aria-label={t.aboutPronunciationAudio}
+              ></audio>
+            </div>
+          </div>
+
+          <div class="about-text">
+            <p>{t.aboutText}</p>
+            <p>{t.aboutText2}</p>
+          </div>
+
+          <p class="about-maintainer">
+            {t.aboutMaintainer}{' '}
+            <a href="https://github.com/williamcanin" target="_blank" rel="noopener noreferrer" aria-label={t.aboutMaintainerLink}>
+              William C. Canin
+            </a>
+          </p>
+
+          <p class="about-back">
+            <a class="btn btn-secondary" href={link('')}>
+              <i class="fa-solid fa-arrow-left"></i>{t.back}
+            </a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <span>© {year} ARGVUS</span>
+          <span>{t.footerLicense}</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // ── Animação ARGV + US → ARGVUS ───────────────────────────────────────
+      const aboutEl = document.querySelector('[data-about-animate]')
+      if (aboutEl) {
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        if (prefersReduced) {
+          aboutEl.classList.add('is-visible')
+        } else {
+          const observer = new IntersectionObserver(
+            ([entry]) => {
+              if (entry.isIntersecting) {
+                aboutEl.classList.add('is-visible')
+                observer.unobserve(aboutEl)
+              }
+            },
+            { threshold: 0.3 },
+          )
+          observer.observe(aboutEl)
+        }
+      }
+
+      // ── Pronúncia: troca o áudio ao trocar o idioma ───────────────────────
+      const pronunciationSelect = document.querySelector('[data-pronunciation-select]')
+      const pronunciationAudio = document.querySelector('[data-pronunciation-audio]')
+      if (pronunciationSelect && pronunciationAudio) {
+        pronunciationSelect.addEventListener('change', () => {
+          const wasPlaying = !pronunciationAudio.paused
+          pronunciationAudio.src = pronunciationSelect.value
+          pronunciationAudio.load()
+          if (wasPlaying) pronunciationAudio.play().catch(() => {})
+        })
+      }
+    </script>
+  </body>
+</html>
