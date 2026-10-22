@@ -75,7 +75,7 @@ export const sidebarConfig = [
             }
           },
           {
-            "slug": "docs/argvus-taskbar-calendar",
+            "slug": "docs/components/argvus-taskbar-calendar",
             "label": "Calendar",
             "translations": {
               "pt-BR": "Calendário"
@@ -142,14 +142,14 @@ export const sidebarConfig = [
             }
           },
           {
-            "slug": "docs/argvus-terminal",
+            "slug": "docs/components/argvus-terminal",
             "label": "Terminal",
             "translations": {
               "pt-BR": "Terminal"
             }
           },
           {
-            "slug": "docs/argvus-system-monitor",
+            "slug": "docs/components/argvus-system-monitor",
             "label": "System monitor",
             "translations": {
               "pt-BR": "Monitor do sistema"
@@ -179,7 +179,7 @@ export const sidebarConfig = [
             }
           },
           {
-            "slug": "docs/argvus-greeter",
+            "slug": "docs/components/argvus-greeter",
             "label": "Greeter",
             "translations": {
               "pt-BR": "Tela de login"
@@ -226,35 +226,35 @@ export const sidebarConfig = [
             "label": "Themes",
             "items": [
               {
-                "slug": "docs/argvus-themes",
+                "slug": "docs/components/argvus-themes",
                 "label": "Overview",
                 "translations": {
                   "pt-BR": "Visão geral"
                 }
               },
               {
-                "slug": "docs/argvus-themes/installing-themes",
+                "slug": "docs/components/argvus-themes/installing-themes",
                 "label": "Installing themes",
                 "translations": {
                   "pt-BR": "Instalando temas"
                 }
               },
               {
-                "slug": "docs/argvus-themes/official-themes",
+                "slug": "docs/components/argvus-themes/official-themes",
                 "label": "Official themes",
                 "translations": {
                   "pt-BR": "Temas oficiais"
                 }
               },
               {
-                "slug": "docs/argvus-themes/highlight-color",
+                "slug": "docs/components/argvus-themes/highlight-color",
                 "label": "Highlight color",
                 "translations": {
                   "pt-BR": "Cor de destaque"
                 }
               },
               {
-                "slug": "docs/argvus-themes/import-and-export",
+                "slug": "docs/components/argvus-themes/import-and-export",
                 "label": "Import and export",
                 "translations": {
                   "pt-BR": "Importar e exportar"
@@ -311,7 +311,7 @@ export const sidebarConfig = [
             }
           },
           {
-            "slug": "docs/argvus-network",
+            "slug": "docs/components/argvus-network",
             "label": "Networking and Bluetooth",
             "translations": {
               "pt-BR": "Rede e Bluetooth"
@@ -325,7 +325,7 @@ export const sidebarConfig = [
             }
           },
           {
-            "slug": "docs/argvus-removable-devices",
+            "slug": "docs/components/argvus-removable-devices",
             "label": "Removable devices",
             "translations": {
               "pt-BR": "Dispositivos removíveis"
@@ -348,7 +348,7 @@ export const sidebarConfig = [
         "label": "System and privacy",
         "items": [
           {
-            "slug": "docs/argvus-control-center",
+            "slug": "docs/components/argvus-control-center",
             "label": "Control Center",
             "translations": {
               "pt-BR": "Control Center"
@@ -369,7 +369,7 @@ export const sidebarConfig = [
             }
           },
           {
-            "slug": "docs/argvus-accounts",
+            "slug": "docs/components/argvus-accounts",
             "label": "User accounts",
             "translations": {
               "pt-BR": "Contas de usuário"
@@ -467,16 +467,163 @@ export const sidebarConfig = [
     }
   },
   {
+    "label": "Components",
+    "items": [
+      {
+        "slug": "docs/components",
+        "label": "Overview",
+        "translations": {
+          "pt-BR": "Visão geral"
+        }
+      },
+      {
+        "slug": "docs/components/argvus-accounts",
+        "label": "User accounts",
+        "translations": {
+          "pt-BR": "Contas de usuário"
+        }
+      },
+      {
+        "slug": "docs/components/argvus-control-center",
+        "label": "Control Center",
+        "translations": {
+          "pt-BR": "Control Center"
+        }
+      },
+      {
+        "slug": "docs/components/argvus-greeter",
+        "label": "Greeter",
+        "translations": {
+          "pt-BR": "Tela de login"
+        }
+      },
+      {
+        "slug": "docs/components/argvus-i18n",
+        "label": "Internationalization",
+        "translations": {
+          "pt-BR": "Internacionalização"
+        }
+      },
+      {
+        "slug": "docs/components/argvus-keys",
+        "label": "Keys",
+        "translations": {
+          "pt-BR": "Chaves"
+        }
+      },
+      {
+        "slug": "docs/components/argvus-loading-theme",
+        "label": "Loading overlay",
+        "translations": {
+          "pt-BR": "Tela de carregamento"
+        }
+      },
+      {
+        "slug": "docs/components/argvus-network",
+        "label": "Networking and Bluetooth",
+        "translations": {
+          "pt-BR": "Rede e Bluetooth"
+        }
+      },
+      {
+        "slug": "docs/components/argvus-projects",
+        "label": "Projects",
+        "translations": {
+          "pt-BR": "Projetos"
+        }
+      },
+      {
+        "slug": "docs/components/argvus-removable-devices",
+        "label": "Removable devices",
+        "translations": {
+          "pt-BR": "Dispositivos removíveis"
+        }
+      },
+      {
+        "slug": "docs/components/argvus-system-monitor",
+        "label": "System monitor",
+        "translations": {
+          "pt-BR": "Monitor do sistema"
+        }
+      },
+      {
+        "slug": "docs/components/argvus-taskbar-calendar",
+        "label": "Calendar",
+        "translations": {
+          "pt-BR": "Calendário"
+        }
+      },
+      {
+        "slug": "docs/components/argvus-terminal",
+        "label": "Terminal",
+        "translations": {
+          "pt-BR": "Terminal"
+        }
+      },
+      {
+        "slug": "docs/components/argvus-widget-telemetry",
+        "label": "Widget telemetry",
+        "translations": {
+          "pt-BR": "Telemetria de widgets"
+        }
+      },
+      {
+        "label": "Themes",
+        "items": [
+          {
+            "slug": "docs/components/argvus-themes",
+            "label": "Overview",
+            "translations": {
+              "pt-BR": "Visão geral"
+            }
+          },
+          {
+            "slug": "docs/components/argvus-themes/installing-themes",
+            "label": "Installing themes",
+            "translations": {
+              "pt-BR": "Instalando temas"
+            }
+          },
+          {
+            "slug": "docs/components/argvus-themes/official-themes",
+            "label": "Official themes",
+            "translations": {
+              "pt-BR": "Temas oficiais"
+            }
+          },
+          {
+            "slug": "docs/components/argvus-themes/highlight-color",
+            "label": "Highlight color",
+            "translations": {
+              "pt-BR": "Cor de destaque"
+            }
+          },
+          {
+            "slug": "docs/components/argvus-themes/import-and-export",
+            "label": "Import and export",
+            "translations": {
+              "pt-BR": "Importar e exportar"
+            }
+          }
+        ],
+        "collapsed": true,
+        "translations": {
+          "pt-BR": "Temas"
+        }
+      }
+    ],
+    "collapsed": true,
+    "translations": {
+      "pt-BR": "Componentes"
+    }
+  },
+  {
     "label": "Session & Login",
     "translations": {
       "pt-BR": "Sessão e login"
     },
     "collapsed": true,
     "items": [
-      {
-        "slug": "docs/argvus-greeter",
-        "label": "Greeter"
-      },
       {
         "slug": "docs/argvus-lock",
         "label": "Lock Screen"
@@ -546,10 +693,6 @@ export const sidebarConfig = [
             ]
           }
         ]
-      },
-      {
-        "slug": "docs/argvus-accounts",
-        "label": "Accounts"
       }
     ]
   },
@@ -591,20 +734,12 @@ export const sidebarConfig = [
         ]
       },
       {
-        "slug": "docs/argvus-taskbar-calendar",
-        "label": "Taskbar Calendar"
-      },
-      {
         "slug": "docs/argvus-launcher",
         "label": "Launcher"
       },
       {
         "slug": "docs/argvus-notifications",
         "label": "Notifications"
-      },
-      {
-        "slug": "docs/argvus-removable-devices",
-        "label": "Removable Devices"
       },
       {
         "slug": "docs/argvus-waybar",
@@ -624,10 +759,6 @@ export const sidebarConfig = [
     "collapsed": true,
     "items": [
       {
-        "slug": "docs/argvus-control-center",
-        "label": "Control Center"
-      },
-      {
         "slug": "docs/argvus-control-panel",
         "label": "Control Panel"
       },
@@ -636,20 +767,12 @@ export const sidebarConfig = [
         "label": "Display"
       },
       {
-        "slug": "docs/argvus-network",
-        "label": "Network"
-      },
-      {
         "slug": "docs/argvus-power",
         "label": "Power"
       },
       {
         "slug": "docs/argvus-firewall",
         "label": "Firewall"
-      },
-      {
-        "slug": "docs/argvus-i18n",
-        "label": "Internationalization"
       }
     ]
   },
@@ -676,31 +799,6 @@ export const sidebarConfig = [
         ]
       },
       {
-        "label": "Themes",
-        "collapsed": true,
-        "items": [
-          {
-            "slug": "docs/argvus-themes",
-            "label": "Overview",
-            "translations": {
-              "pt-BR": "Visão geral"
-            }
-          },
-          {
-            "slug": "docs/argvus-themes/installing-themes"
-          },
-          {
-            "slug": "docs/argvus-themes/official-themes"
-          },
-          {
-            "slug": "docs/argvus-themes/highlight-color"
-          },
-          {
-            "slug": "docs/argvus-themes/import-and-export"
-          }
-        ]
-      },
-      {
         "slug": "docs/argvus-icons",
         "label": "Icons"
       },
@@ -721,18 +819,6 @@ export const sidebarConfig = [
     },
     "collapsed": true,
     "items": [
-      {
-        "slug": "docs/argvus-terminal",
-        "label": "Terminal"
-      },
-      {
-        "slug": "docs/argvus-system-monitor",
-        "label": "System Monitor"
-      },
-      {
-        "slug": "docs/argvus-tui",
-        "label": "TUI"
-      },
       {
         "label": "Games",
         "collapsed": true,

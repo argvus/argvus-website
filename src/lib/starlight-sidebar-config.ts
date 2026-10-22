@@ -3,6 +3,7 @@ import { getDocumentationConfig, type ProjectConfig } from './documentation/conf
 import {
   GETTING_STARTED_SECTION,
   USER_GUIDE_SECTION,
+  COMPONENTS_SECTION,
   HELP_SECTION,
   REFERENCE_SECTION,
   DEVELOPER_GUIDE_SECTION,
@@ -284,12 +285,14 @@ function buildComponentCategories(
  *   2. Getting Started (install flow) and User Guide (day-to-day usage),
  *      both expanded by default.
  *   3. Help (FAQ + Troubleshooting), collapsed.
- *   4. One collapsed group per component category (`COMPONENT_CATEGORIES` in
+ *   4. Components, collapsed: the component pages of the consolidated `argvus`
+ *      workspace (`docs/components/*`, `COMPONENTS_SECTION` in `sidebar-layout.ts`).
+ *   5. One collapsed group per component category (`COMPONENT_CATEGORIES` in
  *      `sidebar-layout.ts`), each containing one entry per project in that
  *      category — a direct link for a single-page project, a subgroup for a
  *      multi-page one.
- *   5. Reference, then Developer Guide, both collapsed.
- *   6. License, as the very last link.
+ *   6. Reference, then Developer Guide, both collapsed.
+ *   7. License, as the very last link.
  *
  * Any loaded page that no explicit layout entry accounts for is still
  * appended (alphabetically, with a `console.warn`) to the closest matching
@@ -329,6 +332,9 @@ export async function generateStarlightSidebar(): Promise<SidebarItem[]> {
   appendLeftovers(gettingStartedGroup, bySlug, used, 'docs/getting-started')
 
   const userGuideGroup = resolveGroup(USER_GUIDE_SECTION, allBySlug, used)
+
+  const componentsGroup = resolveGroup(COMPONENTS_SECTION, allBySlug, used)
+  appendLeftovers(componentsGroup, bySlug, used, 'docs/components')
 
   const helpGroup = resolveGroup(HELP_SECTION, allBySlug, used)
   const troubleshootingSpec = HELP_SECTION.items.find(isLayoutGroup)
@@ -385,6 +391,7 @@ export async function generateStarlightSidebar(): Promise<SidebarItem[]> {
     userGuideGroup,
     ...topLevelGroups,
     helpGroup,
+    componentsGroup,
     ...categoryGroups,
     referenceGroup,
     developerGuideGroup,

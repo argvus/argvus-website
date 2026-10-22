@@ -22,7 +22,7 @@ test('a relative link resolves from the rendered page URL', () => {
 })
 
 test('absolute site routes are kept and normalized', () => {
-  assert.equal(resolveLink('/docs/argvus-themes/installing-themes/', '/docs/argvus-appearance/wallpapers/'), '/docs/argvus-themes/installing-themes')
+  assert.equal(resolveLink('/docs/components/argvus-themes/installing-themes/', '/docs/argvus-appearance/wallpapers/'), '/docs/components/argvus-themes/installing-themes')
   assert.equal(resolveLink('/pt/docs/getting-started/installation/', '/pt/docs/x/'), '/pt/docs/getting-started/installation')
 })
 

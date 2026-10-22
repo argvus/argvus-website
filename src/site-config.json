@@ -35,28 +35,10 @@
         "root": true
       },
       {
-        "repository": "argvus-accounts",
-        "path": "docs",
-        "branch": "main",
-        "label": "Accounts"
-      },
-      {
         "repository": "argvus-display",
         "path": "docs",
         "branch": "main",
         "label": "Display"
-      },
-      {
-        "repository": "argvus-greeter",
-        "path": "docs",
-        "branch": "main",
-        "label": "Greeter"
-      },
-      {
-        "repository": "argvus-network",
-        "path": "docs",
-        "branch": "main",
-        "label": "Network"
       },
       {
         "repository": "argvus-power",
@@ -69,18 +51,6 @@
         "path": "docs",
         "branch": "main",
         "label": "Appearance"
-      },
-      {
-        "repository": "argvus-themes",
-        "path": "docs",
-        "branch": "main",
-        "label": "Themes"
-      },
-      {
-        "repository": "argvus-control-center",
-        "path": "docs",
-        "branch": "main",
-        "label": "Control Center"
       },
       {
         "repository": "argvus-control-panel",
@@ -125,40 +95,16 @@
         "label": "Taskbar"
       },
       {
-        "repository": "argvus-taskbar-calendar",
-        "path": "docs",
-        "branch": "main",
-        "label": "Taskbar Calendar"
-      },
-      {
         "repository": "argvus-launcher",
         "path": "docs",
         "branch": "main",
         "label": "Launcher"
       },
       {
-        "repository": "argvus-terminal",
-        "path": "docs",
-        "branch": "main",
-        "label": "Terminal"
-      },
-      {
-        "repository": "argvus-system-monitor",
-        "path": "docs",
-        "branch": "main",
-        "label": "System Monitor"
-      },
-      {
         "repository": "argvus-games",
         "path": "docs",
         "branch": "main",
         "label": "Games"
-      },
-      {
-        "repository": "argvus-removable-devices",
-        "path": "docs",
-        "branch": "main",
-        "label": "Removable Devices"
       },
       {
         "repository": "argvus-hyprland",
@@ -189,18 +135,6 @@
         "path": "docs",
         "branch": "main",
         "label": "Wallpapers"
-      },
-      {
-        "repository": "argvus-i18n",
-        "path": "docs",
-        "branch": "main",
-        "label": "Internationalization"
-      },
-      {
-        "repository": "argvus-tui",
-        "path": "docs",
-        "branch": "main",
-        "label": "TUI"
       },
       {
         "repository": "argvus-boot-splash",

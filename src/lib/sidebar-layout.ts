@@ -83,7 +83,7 @@ export const USER_GUIDE_SECTION: LayoutGroupSpec = {
         { slug: 'docs/user-guide/desktop', label: 'Desktop overview', translations: { 'pt-BR': 'Visão geral' } },
         { slug: 'docs/argvus-taskbar/taskbar', label: 'Taskbar', translations: { 'pt-BR': 'Barra de tarefas' } },
         { slug: 'docs/argvus-taskbar/widgets', label: 'Taskbar widgets', translations: { 'pt-BR': 'Widgets da barra de tarefas' } },
-        { slug: 'docs/argvus-taskbar-calendar', label: 'Calendar', translations: { 'pt-BR': 'Calendário' } },
+        { slug: 'docs/components/argvus-taskbar-calendar', label: 'Calendar', translations: { 'pt-BR': 'Calendário' } },
         { slug: 'docs/argvus-notifications', label: 'Notifications', translations: { 'pt-BR': 'Notificações' } },
       ],
     },
@@ -104,8 +104,8 @@ export const USER_GUIDE_SECTION: LayoutGroupSpec = {
       items: [
         { slug: 'docs/user-guide/applications', label: 'Overview', translations: OVERVIEW },
         { slug: 'docs/argvus-launcher', label: 'Application launcher', translations: { 'pt-BR': 'Lançador de aplicativos' } },
-        { slug: 'docs/argvus-terminal', label: 'Terminal', translations: { 'pt-BR': 'Terminal' } },
-        { slug: 'docs/argvus-system-monitor', label: 'System monitor', translations: { 'pt-BR': 'Monitor do sistema' } },
+        { slug: 'docs/components/argvus-terminal', label: 'Terminal', translations: { 'pt-BR': 'Terminal' } },
+        { slug: 'docs/components/argvus-system-monitor', label: 'System monitor', translations: { 'pt-BR': 'Monitor do sistema' } },
         { slug: 'docs/argvus-games', label: 'Games', translations: { 'pt-BR': 'Jogos' } },
       ],
     },
@@ -115,7 +115,7 @@ export const USER_GUIDE_SECTION: LayoutGroupSpec = {
       collapsed: true,
       items: [
         { slug: 'docs/user-guide/sessions', label: 'Sessions', translations: { 'pt-BR': 'Sessões' } },
-        { slug: 'docs/argvus-greeter', label: 'Greeter', translations: { 'pt-BR': 'Tela de login' } },
+        { slug: 'docs/components/argvus-greeter', label: 'Greeter', translations: { 'pt-BR': 'Tela de login' } },
         { slug: 'docs/argvus-lock', label: 'Lock screen', translations: { 'pt-BR': 'Tela de bloqueio' } },
         { slug: 'docs/argvus-session/graphical-session', label: 'Graphical session', translations: { 'pt-BR': 'Sessão gráfica' } },
         { slug: 'docs/argvus-session/tty-session', label: 'TTY session', translations: { 'pt-BR': 'Sessão TTY' } },
@@ -132,11 +132,11 @@ export const USER_GUIDE_SECTION: LayoutGroupSpec = {
           translations: { 'pt-BR': 'Temas' },
           collapsed: true,
           items: [
-            { slug: 'docs/argvus-themes', label: 'Overview', translations: OVERVIEW },
-            { slug: 'docs/argvus-themes/installing-themes', label: 'Installing themes', translations: { 'pt-BR': 'Instalando temas' } },
-            { slug: 'docs/argvus-themes/official-themes', label: 'Official themes', translations: { 'pt-BR': 'Temas oficiais' } },
-            { slug: 'docs/argvus-themes/highlight-color', label: 'Highlight color', translations: { 'pt-BR': 'Cor de destaque' } },
-            { slug: 'docs/argvus-themes/import-and-export', label: 'Import and export', translations: { 'pt-BR': 'Importar e exportar' } },
+            { slug: 'docs/components/argvus-themes', label: 'Overview', translations: OVERVIEW },
+            { slug: 'docs/components/argvus-themes/installing-themes', label: 'Installing themes', translations: { 'pt-BR': 'Instalando temas' } },
+            { slug: 'docs/components/argvus-themes/official-themes', label: 'Official themes', translations: { 'pt-BR': 'Temas oficiais' } },
+            { slug: 'docs/components/argvus-themes/highlight-color', label: 'Highlight color', translations: { 'pt-BR': 'Cor de destaque' } },
+            { slug: 'docs/components/argvus-themes/import-and-export', label: 'Import and export', translations: { 'pt-BR': 'Importar e exportar' } },
           ],
         },
         { slug: 'docs/argvus-appearance/wallpapers', label: 'Wallpapers', translations: { 'pt-BR': 'Papéis de parede' } },
@@ -151,9 +151,9 @@ export const USER_GUIDE_SECTION: LayoutGroupSpec = {
       items: [
         { slug: 'docs/user-guide/hardware', label: 'Hardware', translations: { 'pt-BR': 'Hardware' } },
         { slug: 'docs/argvus-display', label: 'Displays', translations: { 'pt-BR': 'Telas' } },
-        { slug: 'docs/argvus-network', label: 'Networking and Bluetooth', translations: { 'pt-BR': 'Rede e Bluetooth' } },
+        { slug: 'docs/components/argvus-network', label: 'Networking and Bluetooth', translations: { 'pt-BR': 'Rede e Bluetooth' } },
         { slug: 'docs/argvus-power', label: 'Power', translations: { 'pt-BR': 'Energia' } },
-        { slug: 'docs/argvus-removable-devices', label: 'Removable devices', translations: { 'pt-BR': 'Dispositivos removíveis' } },
+        { slug: 'docs/components/argvus-removable-devices', label: 'Removable devices', translations: { 'pt-BR': 'Dispositivos removíveis' } },
         { slug: 'docs/user-guide/virtual-machines', label: 'Virtual machines', translations: { 'pt-BR': 'Máquinas virtuais' } },
       ],
     },
@@ -162,15 +162,55 @@ export const USER_GUIDE_SECTION: LayoutGroupSpec = {
       translations: { 'pt-BR': 'Sistema e privacidade' },
       collapsed: true,
       items: [
-        { slug: 'docs/argvus-control-center', label: 'Control Center', translations: { 'pt-BR': 'Control Center' } },
+        { slug: 'docs/components/argvus-control-center', label: 'Control Center', translations: { 'pt-BR': 'Control Center' } },
         { slug: 'docs/argvus-control-panel', label: 'Control Panel', translations: { 'pt-BR': 'Control Panel' } },
         { slug: 'docs/user-guide/localization', label: 'Localization', translations: { 'pt-BR': 'Idioma e região' } },
-        { slug: 'docs/argvus-accounts', label: 'User accounts', translations: { 'pt-BR': 'Contas de usuário' } },
+        { slug: 'docs/components/argvus-accounts', label: 'User accounts', translations: { 'pt-BR': 'Contas de usuário' } },
         { slug: 'docs/user-guide/privacy-and-security', label: 'Privacy and security', translations: { 'pt-BR': 'Privacidade e segurança' } },
         { slug: 'docs/argvus-firewall', label: 'Firewall', translations: { 'pt-BR': 'Firewall' } },
       ],
     },
     { slug: 'docs/user-guide/where-to-configure', label: 'Where to configure things', translations: { 'pt-BR': 'Onde configurar' } },
+  ],
+}
+
+/**
+ * The component pages of the consolidated `argvus` workspace
+ * (`de/argvus/docs/<idioma>/components/`). They belong to the root project, so each
+ * one is listed here explicitly. Shown after Help and before the per-repository
+ * categories.
+ */
+export const COMPONENTS_SECTION: LayoutGroupSpec = {
+  group: 'Components',
+  translations: { 'pt-BR': 'Componentes' },
+  collapsed: true,
+  items: [
+    { slug: 'docs/components', label: 'Overview', translations: OVERVIEW },
+    { slug: 'docs/components/argvus-accounts', label: 'User accounts', translations: { 'pt-BR': 'Contas de usuário' } },
+    { slug: 'docs/components/argvus-control-center', label: 'Control Center', translations: { 'pt-BR': 'Control Center' } },
+    { slug: 'docs/components/argvus-greeter', label: 'Greeter', translations: { 'pt-BR': 'Tela de login' } },
+    { slug: 'docs/components/argvus-i18n', label: 'Internationalization', translations: { 'pt-BR': 'Internacionalização' } },
+    { slug: 'docs/components/argvus-keys', label: 'Keys', translations: { 'pt-BR': 'Chaves' } },
+    { slug: 'docs/components/argvus-loading-theme', label: 'Loading overlay', translations: { 'pt-BR': 'Tela de carregamento' } },
+    { slug: 'docs/components/argvus-network', label: 'Networking and Bluetooth', translations: { 'pt-BR': 'Rede e Bluetooth' } },
+    { slug: 'docs/components/argvus-projects', label: 'Projects', translations: { 'pt-BR': 'Projetos' } },
+    { slug: 'docs/components/argvus-removable-devices', label: 'Removable devices', translations: { 'pt-BR': 'Dispositivos removíveis' } },
+    { slug: 'docs/components/argvus-system-monitor', label: 'System monitor', translations: { 'pt-BR': 'Monitor do sistema' } },
+    { slug: 'docs/components/argvus-taskbar-calendar', label: 'Calendar', translations: { 'pt-BR': 'Calendário' } },
+    { slug: 'docs/components/argvus-terminal', label: 'Terminal', translations: { 'pt-BR': 'Terminal' } },
+    { slug: 'docs/components/argvus-widget-telemetry', label: 'Widget telemetry', translations: { 'pt-BR': 'Telemetria de widgets' } },
+    {
+      group: 'Themes',
+      translations: { 'pt-BR': 'Temas' },
+      collapsed: true,
+      items: [
+        { slug: 'docs/components/argvus-themes', label: 'Overview', translations: OVERVIEW },
+        { slug: 'docs/components/argvus-themes/installing-themes', label: 'Installing themes', translations: { 'pt-BR': 'Instalando temas' } },
+        { slug: 'docs/components/argvus-themes/official-themes', label: 'Official themes', translations: { 'pt-BR': 'Temas oficiais' } },
+        { slug: 'docs/components/argvus-themes/highlight-color', label: 'Highlight color', translations: { 'pt-BR': 'Cor de destaque' } },
+        { slug: 'docs/components/argvus-themes/import-and-export', label: 'Import and export', translations: { 'pt-BR': 'Importar e exportar' } },
+      ],
+    },
   ],
 }
 
@@ -305,11 +345,9 @@ export const COMPONENT_CATEGORIES: ComponentCategorySpec[] = [
     label: 'Session & Login',
     translations: { 'pt-BR': 'Sessão e login' },
     repositories: [
-      'argvus-greeter',
       'argvus-lock',
       'argvus-session',
       'argvus-boot-splash',
-      'argvus-accounts',
     ],
   },
   {
@@ -319,10 +357,8 @@ export const COMPONENT_CATEGORIES: ComponentCategorySpec[] = [
     repositories: [
       'argvus-hyprland',
       'argvus-taskbar',
-      'argvus-taskbar-calendar',
       'argvus-launcher',
       'argvus-notifications',
-      'argvus-removable-devices',
       'argvus-waybar',
       'argvus-portal',
     ],
@@ -332,29 +368,23 @@ export const COMPONENT_CATEGORIES: ComponentCategorySpec[] = [
     label: 'System & Settings',
     translations: { 'pt-BR': 'Sistema e configurações' },
     repositories: [
-      'argvus-control-center',
       'argvus-control-panel',
       'argvus-display',
-      'argvus-network',
       'argvus-power',
       'argvus-firewall',
-      'argvus-i18n',
     ],
   },
   {
     key: 'appearance-assets',
     label: 'Appearance & Assets',
     translations: { 'pt-BR': 'Aparência e recursos visuais' },
-    repositories: ['argvus-appearance', 'argvus-themes', 'argvus-icons', 'argvus-fonts', 'argvus-wallpapers'],
+    repositories: ['argvus-appearance', 'argvus-icons', 'argvus-fonts', 'argvus-wallpapers'],
   },
   {
     key: 'apps-tools',
     label: 'Apps & Tools',
     translations: { 'pt-BR': 'Aplicativos e ferramentas' },
     repositories: [
-      'argvus-terminal',
-      'argvus-system-monitor',
-      'argvus-tui',
       'argvus-games',
     ],
   },
@@ -392,7 +422,6 @@ export const DEVELOPER_NOTES_GROUP = {
 export const COMPONENT_PAGE_ORDER: Record<string, string[]> = {
   'argvus-hyprland': ['keyboard-shortcuts', 'input', 'windows-and-layout', 'hyprland-overrides'],
   'argvus-appearance': ['wallpapers', 'fonts-and-icons', 'effects'],
-  'argvus-themes': ['installing-themes', 'official-themes', 'highlight-color', 'import-and-export'],
   'argvus-session': ['graphical-session', 'tty-session'],
   'argvus-taskbar': ['taskbar', 'widgets'],
   'argvus-boot-splash': ['installation', 'usage', 'uki-splash', 'troubleshooting', 'reference', 'uninstallation'],
