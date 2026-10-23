@@ -4,8 +4,16 @@
     "effects": {
       "parallax": true,
       "hero": {
-        "matrix": true
-      }
+        "matrix": true,
+        "keycaps": true,
+        "windows": true,
+        "abstract": true,
+        "fullscreen": true,
+        "keycapsNav": true
+      },
+      "sideRails": true,
+      "keyboardEasterEgg": true,
+      "tilt": true
     },
     "contributionLinks": {
       "enable": true,
