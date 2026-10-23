@@ -2651,3 +2651,250 @@ body[data-parallax-enabled='true'] [data-reveal].is-revealed {
   border-color: var(--lp-accent) !important;
   text-shadow: 0 0 8px rgba(53, 144, 189, 0.6) !important;
 }
+
+/* ═══ DNA: keycaps, janelas Hyprland, tilt ════════════════════════════════ */
+
+.hero-windows {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: min(22vw, 300px);
+  pointer-events: none;
+  transform: translate3d(calc(var(--mx, 0) * 14px), calc(var(--rail-shift, 0px) * -1 + var(--my, 0) * 10px), 0);
+  transition: transform 0.25s ease-out;
+}
+
+.hero-windows { left: 2%; }
+
+.keycap {
+  position: relative;
+  display: grid;
+  min-width: 64px;
+  height: 58px;
+  padding: 0 12px;
+  place-items: center;
+  border: 1px solid var(--lp-border-strong);
+  border-radius: 8px;
+  background: var(--lp-panel-raised);
+  box-shadow: 0 6px 0 var(--lp-border-strong), 0 14px 22px -12px rgba(0, 0, 0, 0.6);
+  color: var(--lp-fg);
+  font-family: var(--lp-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: box-shadow 0.12s, translate 0.12s, border-color 0.12s;
+}
+
+.keycap-face { color: var(--lp-accent-high); }
+
+.keycap.is-pressed {
+  translate: 0 5px;
+  border-color: var(--lp-accent);
+  box-shadow: 0 1px 0 var(--lp-border-strong), 0 4px 10px -6px var(--lp-accent);
+}
+
+
+
+.hw-win {
+  position: absolute;
+  width: 58%;
+  border: 1px solid var(--lp-border-strong);
+  border-radius: 8px;
+  background: var(--lp-panel);
+  box-shadow: var(--lp-shadow);
+  overflow: hidden;
+  animation: hw-tile 12s ease-in-out infinite;
+}
+
+.hw-a { top: 14%; left: 0; border-color: var(--lp-accent); animation-delay: 0s; }
+.hw-b { top: 40%; left: 34%; animation-delay: -4s; }
+.hw-c { top: 66%; left: 6%; animation-delay: -8s; }
+
+.hw-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--lp-border);
+  color: var(--lp-fg-dim);
+  font-family: var(--lp-mono);
+  font-size: 0.62rem;
+}
+
+.hw-bar i { width: 6px; height: 6px; border-radius: 50%; background: var(--lp-border-strong); }
+.hw-bar span { margin-left: auto; }
+.hw-body { display: grid; gap: 5px; padding: 8px; }
+.hw-body b { height: 5px; border-radius: 3px; background: var(--lp-accent-soft); }
+.hw-body b:nth-child(odd) { width: 70%; }
+
+@keyframes hw-tile {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(14px, -10px) scale(1.04); }
+  66% { transform: translate(-8px, 8px) scale(0.98); }
+}
+
+.hero .container { position: relative; }
+
+.has-tilt {
+  transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform 0.2s ease-out;
+}
+
+.btn.is-pulsing { animation: btn-pulse 0.6s ease-out; }
+
+@keyframes btn-pulse {
+  0% { box-shadow: 0 0 0 0 var(--lp-accent); }
+  100% { box-shadow: 0 0 0 16px transparent; }
+}
+
+@media (max-width: 1100px) {
+  .hero-windows { display: none; }
+}
+
+@media (max-width: 720px) {
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .keycap, .hw-win { animation: none; }
+  .hero-windows, .hero-keycaps, .has-tilt { transform: none; transition: none; }
+}
+
+/* ═══ Hero fullscreen, fundo abstrato, dock de keycaps ═══════════════════ */
+
+html { scroll-padding-top: 120px; }
+
+body[data-hero-fullscreen='true'] .hero {
+  display: flex;
+  min-height: calc(100svh - 67px);
+  align-items: center;
+  justify-content: center;
+  padding: 48px 0 64px;
+}
+
+body[data-hero-fullscreen='true'] .hero .container { width: 100%; }
+
+.hero-abstract {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ha-orb {
+  position: absolute;
+  border-radius: 22%;
+  background: radial-gradient(closest-side, var(--lp-accent) 0%, transparent 100%);
+  filter: blur(40px);
+  opacity: 0.18;
+  animation: ha-drift 22s ease-in-out infinite;
+}
+
+.ha-o1 { top: -10%; left: 18%; width: 46vmin; height: 46vmin; }
+.ha-o2 { right: 10%; bottom: -14%; width: 56vmin; height: 56vmin; animation-delay: -8s; opacity: 0.14; }
+.ha-o3 { top: 40%; left: 46%; width: 30vmin; height: 30vmin; animation-delay: -14s; opacity: 0.12; }
+
+@keyframes ha-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(4vmin, -3vmin) scale(1.12); }
+}
+
+.ha-grid {
+  position: absolute;
+  inset: auto -20% -10% -20%;
+  height: 60%;
+  background-image:
+    linear-gradient(var(--lp-accent-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--lp-accent-soft) 1px, transparent 1px);
+  background-size: 56px 56px;
+  transform: perspective(520px) rotateX(62deg);
+  transform-origin: bottom;
+  mask-image: linear-gradient(to top, #000 10%, transparent 90%);
+  animation: ha-grid 6s linear infinite;
+}
+
+@keyframes ha-grid { to { background-position: 0 56px, 56px 0; } }
+
+.ha-rings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(130vmin, 1300px);
+  color: var(--lp-accent);
+  opacity: 0.16;
+  stroke-width: 1;
+  transform: translate(-50%, -50%);
+  animation: ha-breathe 14s ease-in-out infinite;
+}
+
+@keyframes ha-breathe {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.05); }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .ha-orb, .ha-grid, .ha-rings { animation: none; }
+}
+
+/* ═══ Keycaps: embaralhadas no hero; descem ao topo direito da sua seção ═ */
+
+.hero-keycaps {
+  --kw: min(22vw, 300px);
+  position: absolute;
+  top: 67px;
+  right: 0;
+  left: 0;
+  height: calc(100svh - 67px);
+  z-index: 40;
+  pointer-events: none;
+}
+
+.hero-keycaps .keycap {
+  position: absolute;
+  min-width: 96px;
+  pointer-events: auto;
+  text-decoration: none;
+  cursor: pointer;
+  animation: keycap-float 6s ease-in-out infinite;
+  transition: top 1s cubic-bezier(0.2, 0.9, 0.25, 1), right 1s cubic-bezier(0.2, 0.9, 0.25, 1),
+    rotate 0.8s, scale 0.8s, translate 0.12s, border-color 0.12s, box-shadow 0.12s;
+}
+
+.hero-keycaps .keycap:hover { border-color: var(--lp-accent); }
+.hero-keycaps .keycap:focus-visible { outline: 2px solid var(--lp-accent); outline-offset: 3px; }
+.keycap.k1 { top: 14%; right: calc(2vw + var(--kw) * 0.40); animation-delay: 0s; }
+.keycap.k2 { top: 24%; right: calc(2vw + var(--kw) * 0.06); animation-delay: -1.2s; }
+.keycap.k3 { top: 42%; right: calc(2vw + var(--kw) * 0.52); animation-delay: -2.4s; }
+.keycap.k4 { top: 56%; right: calc(2vw + var(--kw) * 0.08); animation-delay: -3.1s; }
+.keycap.k5 { top: 70%; right: calc(2vw + var(--kw) * 0.46); animation-delay: -4s; }
+.keycap.k6 { top: 82%; right: calc(2vw + var(--kw) * 0.12); animation-delay: -5s; }
+
+@keyframes keycap-float {
+  0%, 100% { rotate: -1.5deg; scale: 1; }
+  50% { rotate: 1.5deg; scale: 1.03; }
+}
+
+/* Posicionada: canto superior direito da seção (top definido via JS) */
+.hero-keycaps .keycap.is-placed {
+  right: max(16px, calc((100vw - min(1120px, 100vw - 48px)) / 2));
+  scale: 0.8;
+  rotate: 0deg;
+  animation: none;
+}
+
+.hero-keycaps .keycap.is-active {
+  border-color: var(--lp-accent);
+  box-shadow: 0 1px 0 var(--lp-border-strong), 0 4px 10px -6px var(--lp-accent);
+}
+
+@media (max-width: 900px) {
+  .hero-keycaps { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-keycaps .keycap { animation: none; }
+}
+
+/* Evita barra de rolagem horizontal em telas estreitas */
+html, body { overflow-x: clip; }

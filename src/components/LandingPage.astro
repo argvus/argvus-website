@@ -99,7 +99,9 @@ const t = isPT
         hyprlock: 'Bloqueador de tela integrado ao ecossistema Hyprland com tema sincronizado.',
         storage: 'Módulo de armazenamento removível escrito em Rust para a barra do Waybar.',
       },
-      waybarEyebrow: 'Waybar',
+      keyLabels: ['Prévias', 'Componentes', 'Taskbar', 'Apps', 'Temas', 'Instalar'],
+      keysAria: 'Navegação por seções',
+      waybarEyebrow: 'Taskbar',
       waybarTitle: 'Barra de status no topo ou na parte inferior',
       waybarSubtitle:
         'A barra principal do ARGVUS combina navegação, mídia, sistema e apps nativos — e pode ficar no topo ou na parte inferior da tela com um clique ou atalho. Posição lembrada entre sessões.',
@@ -115,7 +117,7 @@ const t = isPT
         { icon: 'fa-solid fa-table-cells', text: 'Bandeja do sistema (tray) para apps com ícones de status.' },
         { icon: 'fa-solid fa-magnifying-glass', text: 'Busca rápida de aplicativos e comandos direto na barra.' },
       ],
-      appsEyebrow: 'Apps oficiais',
+      appsEyebrow: 'Apps',
       appsTitle: 'Ferramentas nativas para o desktop',
       appsSubtitle:
         'Além da configuração do ambiente, o ARGVUS inclui apps próprios para fluxos que precisam se integrar melhor à barra, ao painel e à sessão.',
@@ -262,7 +264,9 @@ const t = isPT
         hyprlock: 'Lock screen integrated with the Hyprland ecosystem and a synchronized theme.',
         storage: 'Rust-powered removable storage module for the Waybar bar.',
       },
-      waybarEyebrow: 'Waybar',
+      keyLabels: ['Previews', 'Components', 'Taskbar', 'Apps', 'Themes', 'Install'],
+      keysAria: 'Section navigation',
+      waybarEyebrow: 'Taskbar',
       waybarTitle: 'Status bar at the top or the bottom',
       waybarSubtitle:
         'The ARGVUS main bar combines navigation, media, system state and native apps — and can sit at the top or the bottom of the screen with a click or a shortcut. The position is remembered across sessions.',
@@ -278,7 +282,7 @@ const t = isPT
         { icon: 'fa-solid fa-table-cells', text: 'System tray for apps with status icons.' },
         { icon: 'fa-solid fa-magnifying-glass', text: 'Quick app and command search right from the bar.' },
       ],
-      appsEyebrow: 'Official apps',
+      appsEyebrow: 'Apps',
       appsTitle: 'Native tools for the desktop',
       appsSubtitle:
         'Beyond environment configuration, ARGVUS includes first-party apps for workflows that need tighter integration with the bar, panel and session.',
@@ -464,6 +468,22 @@ const contributionStripeValues = contributionConfig.stripe
 const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
 const parallaxEnabled = homeConfig.effects.parallax
 const heroMatrixEnabled = homeConfig.effects.hero.matrix
+const heroKeycapsEnabled = homeConfig.effects.hero.keycaps
+const heroWindowsEnabled = homeConfig.effects.hero.windows
+const sideRailsEnabled = homeConfig.effects.sideRails
+const keyboardEasterEggEnabled = homeConfig.effects.keyboardEasterEgg
+const tiltEnabled = homeConfig.effects.tilt
+const heroFullscreen = homeConfig.effects.hero.fullscreen
+const heroAbstractEnabled = homeConfig.effects.hero.abstract
+const keycapsNavEnabled = homeConfig.effects.hero.keycapsNav
+const keycapTargets = ['previews', 'componentes', 'waybar', 'apps', 'temas', 'arch']
+const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
+  label,
+  href: `#${keycapTargets[i]}`,
+  target: keycapTargets[i],
+  key: String(i + 1),
+  pos: `k${i + 1}`,
+}))
 ---
 
 <!doctype html>
@@ -523,7 +543,14 @@ const heroMatrixEnabled = homeConfig.effects.hero.matrix
       </style>
     </noscript>
   </head>
-  <body data-pagefind-ignore data-parallax-enabled={parallaxEnabled ? 'true' : 'false'}>
+  <body
+    data-pagefind-ignore
+    data-parallax-enabled={parallaxEnabled ? 'true' : 'false'}
+    data-keyboard-enabled={keyboardEasterEggEnabled ? 'true' : 'false'}
+    data-tilt-enabled={tiltEnabled ? 'true' : 'false'}
+    data-rails-enabled={sideRailsEnabled ? 'true' : 'false'}
+    data-hero-fullscreen={heroFullscreen ? 'true' : 'false'}
+  >
     <header class="site-header">
       <div class="container">
         <a class="brand" href={link('')}>
@@ -619,6 +646,15 @@ const heroMatrixEnabled = homeConfig.effects.hero.matrix
       </div>
     </header>
 
+    {heroKeycapsEnabled && (
+    <nav class="hero-keycaps" aria-label={t.keysAria} data-hero-keycaps>
+      {heroKeycaps.map((k) => (
+        <a class={`keycap ${k.pos}`} href={k.href} data-key={k.key} data-target={k.target} style={`--i:${Number(k.pos.slice(1)) - 1}`}><span class="keycap-face">{k.label}</span></a>
+      ))}
+    </nav>
+    )}
+
+
     <main>
       <!-- Hero -->
       <section class="hero">
@@ -634,6 +670,27 @@ const heroMatrixEnabled = homeConfig.effects.hero.matrix
           <div class="matrix-column" style="left: 75%"><span>set -e</span><span>ROOT_DIR</span><span>bash -n</span><span>shellcheck</span><span>validate</span><span>tools/sh</span></div>
           <div class="matrix-column" style="left: 85%"><span>BASH_SOURCE</span><span>printf error</span><span>command -v</span><span>makepkg</span><span>shellcheck</span><span>exit</span></div>
           <div class="matrix-column" style="left: 95%"><span>dirname</span><span>bash</span><span>require</span><span>printf</span><span>tools</span><span>sh</span></div>
+        </div>
+        )}
+        {heroWindowsEnabled && (
+        <div class="hero-windows" aria-hidden="true" data-hero-windows>
+          <div class="hw-win hw-a"><div class="hw-bar"><i></i><i></i><i></i><span>terminal</span></div><div class="hw-body"><b></b><b></b><b></b></div></div>
+          <div class="hw-win hw-b"><div class="hw-bar"><i></i><i></i><i></i><span>files</span></div><div class="hw-body"><b></b><b></b></div></div>
+          <div class="hw-win hw-c"><div class="hw-bar"><i></i><i></i><i></i><span>editor</span></div><div class="hw-body"><b></b><b></b><b></b><b></b></div></div>
+        </div>
+        )}
+        {heroAbstractEnabled && (
+        <div class="hero-abstract" aria-hidden="true">
+          <span class="ha-orb ha-o1"></span>
+          <span class="ha-orb ha-o2"></span>
+          <span class="ha-orb ha-o3"></span>
+          <div class="ha-grid"></div>
+          <svg class="ha-rings" viewBox="0 0 900 600" fill="none" stroke="currentColor">
+            <g><rect x="300" y="200" width="300" height="200" rx="10"></rect><path d="M300 224h300"></path></g>
+            <g><rect x="200" y="130" width="500" height="340" rx="12" stroke-dasharray="4 10"></rect><path d="M200 158h500"></path></g>
+            <g><rect x="90" y="50" width="720" height="500" rx="14"></rect><path d="M90 82h720"></path></g>
+            <g><rect x="10" y="4" width="880" height="592" rx="16" stroke-dasharray="2 14"></rect></g>
+          </svg>
         </div>
         )}
         <div class="container">
@@ -667,7 +724,7 @@ const heroMatrixEnabled = homeConfig.effects.hero.matrix
       </section>
 
       <!-- Screenshots -->
-      <section class="screenshot-section">
+      <section class="screenshot-section" id="previews">
         <div class="container">
           <div class="section-head screenshot-head" data-reveal>
             <span class="eyebrow">{t.screenshotsEyebrow}</span>
@@ -1337,6 +1394,119 @@ echo "Include = /etc/pacman.d/argvus.conf" \
 
         go(0)
         play()
+      }
+
+      // ── Efeitos de DNA: teclado, tilt e trilhos laterais ──────────────────
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const body = document.body
+        const caps = Array.from(document.querySelectorAll('.keycap[data-key]'))
+
+        if (body.dataset.keyboardEnabled === 'true' && caps.length) {
+          const press = (key) => {
+            caps.forEach((cap) => {
+              if (cap.dataset.key.toLowerCase() === key.toLowerCase()) {
+                cap.classList.add('is-pressed')
+                setTimeout(() => cap.classList.remove('is-pressed'), 160)
+              }
+            })
+          }
+          window.addEventListener('keydown', (event) => {
+            if (event.metaKey || event.ctrlKey || event.altKey) return
+            press(event.key)
+            if (event.metaKey && event.key === 'Enter') {
+              const cta = document.querySelector('.hero-actions .btn-primary')
+              if (cta) {
+                cta.classList.add('is-pulsing')
+                setTimeout(() => cta.classList.remove('is-pulsing'), 600)
+              }
+            }
+          })
+        }
+
+        if (body.dataset.tiltEnabled === 'true' && window.matchMedia('(hover: hover)').matches) {
+          document.querySelectorAll('.feature-card, .screenshot').forEach((el) => {
+            el.classList.add('has-tilt')
+            el.addEventListener('pointermove', (event) => {
+              const r = el.getBoundingClientRect()
+              const x = (event.clientX - r.left) / r.width - 0.5
+              const y = (event.clientY - r.top) / r.height - 0.5
+              el.style.setProperty('--tilt-x', `${(-y * 3).toFixed(2)}deg`)
+              el.style.setProperty('--tilt-y', `${(x * 3).toFixed(2)}deg`)
+            })
+            el.addEventListener('pointerleave', () => {
+              el.style.setProperty('--tilt-x', '0deg')
+              el.style.setProperty('--tilt-y', '0deg')
+            })
+          })
+        }
+
+        const keyRail = document.querySelector('[data-hero-keycaps]')
+        if (keyRail) {
+          const railCaps = Array.from(keyRail.querySelectorAll('.keycap[data-target]'))
+          const wrapTop = () => keyRail.getBoundingClientRect().top + window.scrollY
+          let ticking = false
+          const place = () => {
+            ticking = false
+            const base = wrapTop()
+            railCaps.forEach((cap) => {
+              const sec = document.getElementById(cap.dataset.target)
+              if (!sec) return
+              const top = sec.getBoundingClientRect().top + window.scrollY
+              // A keycap desce ao topo (direita) da sua seção quando a seção alcança o centro da tela.
+              const reached = top <= window.scrollY + window.innerHeight * 0.5
+              cap.classList.toggle('is-placed', reached)
+              if (reached) cap.style.top = `${Math.round(top - base + 20)}px`
+              else cap.style.removeProperty('top')
+            })
+          }
+          const schedule = () => {
+            if (!ticking) {
+              ticking = true
+              requestAnimationFrame(place)
+            }
+          }
+          window.addEventListener('scroll', schedule, { passive: true })
+          window.addEventListener('resize', schedule)
+          place()
+        }
+
+        const navCaps = Array.from(document.querySelectorAll('.hero-keycaps .keycap[data-target]'))
+        if (navCaps.length && 'IntersectionObserver' in window) {
+          const secObs = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (!entry.isIntersecting) return
+                navCaps.forEach((cap) => cap.classList.toggle('is-active', cap.dataset.target === entry.target.id))
+              })
+            },
+            { rootMargin: '-40% 0px -55% 0px' },
+          )
+          navCaps.forEach((cap) => {
+            const sec = document.getElementById(cap.dataset.target)
+            if (sec) secObs.observe(sec)
+          })
+        }
+
+        const heroEl = document.querySelector('.hero')
+        if (heroEl && body.dataset.railsEnabled === 'true') {
+          let ticking = false
+          const update = () => {
+            ticking = false
+            const y = Math.min(window.scrollY, 900)
+            heroEl.style.setProperty('--rail-shift', `${(y * 0.12).toFixed(1)}px`)
+          }
+          window.addEventListener('scroll', () => {
+            if (!ticking) {
+              ticking = true
+              requestAnimationFrame(update)
+            }
+          }, { passive: true })
+          heroEl.addEventListener('pointermove', (event) => {
+            const r = heroEl.getBoundingClientRect()
+            heroEl.style.setProperty('--mx', ((event.clientX - r.left) / r.width - 0.5).toFixed(3))
+            heroEl.style.setProperty('--my', ((event.clientY - r.top) / r.height - 0.5).toFixed(3))
+          })
+        }
       }
 
       // ── Reveal ao scroll nas seções ───────────────────────────────────────
