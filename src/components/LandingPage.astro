@@ -477,6 +477,8 @@ const heroFullscreen = homeConfig.effects.hero.fullscreen
 const heroAbstractEnabled = homeConfig.effects.hero.abstract
 const keycapsNavEnabled = homeConfig.effects.hero.keycapsNav
 const keycapTargets = ['previews', 'componentes', 'waybar', 'apps', 'temas', 'arch']
+// Com a navegação ativa, o eyebrow das seções vira um espaço reservado para a keycap.
+const keycapSlots = heroKeycapsEnabled && keycapsNavEnabled
 const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
   label,
   href: `#${keycapTargets[i]}`,
@@ -727,7 +729,7 @@ const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
       <section class="screenshot-section" id="previews">
         <div class="container">
           <div class="section-head screenshot-head" data-reveal>
-            <span class="eyebrow">{t.screenshotsEyebrow}</span>
+            {keycapSlots ? <span class="keycap-slot" data-keycap-slot="previews" /> : <span class="eyebrow">{t.screenshotsEyebrow}</span>}
             <h2>{t.screenshotsTitle}</h2>
             <p>{t.screenshotsSubtitle}</p>
           </div>
@@ -781,7 +783,7 @@ const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
       <section class="section" id="componentes">
         <div class="container">
           <div class="section-head" data-reveal>
-            <span class="eyebrow">{t.componentsEyebrow}</span>
+            {keycapSlots ? <span class="keycap-slot" data-keycap-slot="componentes" /> : <span class="eyebrow">{t.componentsEyebrow}</span>}
             <h2>{t.componentsTitle}</h2>
             <p>{t.componentsSubtitle}</p>
           </div>
@@ -802,7 +804,7 @@ const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
       <section class="section section-alt" id="waybar">
         <div class="container">
           <div class="section-head" data-reveal>
-            <span class="eyebrow">{t.waybarEyebrow}</span>
+            {keycapSlots ? <span class="keycap-slot" data-keycap-slot="waybar" /> : <span class="eyebrow">{t.waybarEyebrow}</span>}
             <h2>{t.waybarTitle}</h2>
             <p>{t.waybarSubtitle}</p>
           </div>
@@ -840,7 +842,7 @@ const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
       <section class="section section-alt" id="apps">
         <div class="container">
           <div class="section-head" data-reveal>
-            <span class="eyebrow">{t.appsEyebrow}</span>
+            {keycapSlots ? <span class="keycap-slot" data-keycap-slot="apps" /> : <span class="eyebrow">{t.appsEyebrow}</span>}
             <h2>{t.appsTitle}</h2>
             <p>{t.appsSubtitle}</p>
           </div>
@@ -923,7 +925,7 @@ const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
       <section class="section" id="temas">
         <div class="container">
           <div class="section-head" data-reveal>
-            <span class="eyebrow">{t.themesEyebrow}</span>
+            {keycapSlots ? <span class="keycap-slot" data-keycap-slot="temas" /> : <span class="eyebrow">{t.themesEyebrow}</span>}
             <h2>{t.themesTitle}</h2>
             <p>{t.themesSubtitle}</p>
           </div>
@@ -1000,7 +1002,7 @@ const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
       <section class="section" id="arch">
         <div class="container">
           <div class="section-head" data-reveal>
-            <span class="eyebrow">{t.archEyebrow}</span>
+            {keycapSlots ? <span class="keycap-slot" data-keycap-slot="arch" /> : <span class="eyebrow">{t.archEyebrow}</span>}
             <h2>{t.archTitle}</h2>
             <p>{t.archSubtitle}</p>
           </div>
@@ -1396,6 +1398,57 @@ echo "Include = /etc/pacman.d/argvus.conf" \
         play()
       }
 
+      // ── Keycaps: fixas no trilho direito; ao chegar na seção, ocupam o eyebrow ──
+      const keyRail = document.querySelector('[data-hero-keycaps]')
+      const keySlots = document.querySelectorAll('[data-keycap-slot]')
+      if (keyRail && keySlots.length) {
+        const railCaps = Array.from(keyRail.querySelectorAll('.keycap[data-target]'))
+        // Abaixo desta largura não há margem livre: cada tecla fica direto no seu eyebrow.
+        const narrow = window.matchMedia('(max-width: 1399px)')
+        const still = window.matchMedia('(prefers-reduced-motion: reduce)')
+        const slotOf = (cap) => document.querySelector(`[data-keycap-slot="${cap.dataset.target}"]`)
+
+        // FLIP: mede antes, troca de pai e anima do ponto antigo até o novo.
+        const move = (cap, parent, before = null) => {
+          const first = cap.getBoundingClientRect()
+          parent.insertBefore(cap, before)
+          if (still.matches || !first.width) return
+          const last = cap.getBoundingClientRect()
+          cap.animate(
+            [{ translate: `${first.left - last.left}px ${first.top - last.top}px` }, { translate: '0 0' }],
+            { duration: 650, easing: 'cubic-bezier(0.2, 0.9, 0.25, 1)' },
+          )
+        }
+
+        let ticking = false
+        const place = () => {
+          ticking = false
+          railCaps.forEach((cap, i) => {
+            const slot = slotOf(cap)
+            const sec = document.getElementById(cap.dataset.target)
+            if (!slot || !sec) return
+            const reached = narrow.matches || sec.getBoundingClientRect().top <= window.innerHeight * 0.5
+            if (reached && cap.parentElement !== slot) {
+              move(cap, slot)
+            } else if (!reached && cap.parentElement !== keyRail) {
+              // Volta ao trilho mantendo a ordem original (ordem de tabulação).
+              const next = railCaps.slice(i + 1).find((c) => c.parentElement === keyRail) || null
+              move(cap, keyRail, next)
+            }
+          })
+        }
+        const schedule = () => {
+          if (!ticking) {
+            ticking = true
+            requestAnimationFrame(place)
+          }
+        }
+        window.addEventListener('scroll', schedule, { passive: true })
+        window.addEventListener('resize', schedule)
+        narrow.addEventListener('change', schedule)
+        place()
+      }
+
       // ── Efeitos de DNA: teclado, tilt e trilhos laterais ──────────────────
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const body = document.body
@@ -1440,37 +1493,7 @@ echo "Include = /etc/pacman.d/argvus.conf" \
           })
         }
 
-        const keyRail = document.querySelector('[data-hero-keycaps]')
-        if (keyRail) {
-          const railCaps = Array.from(keyRail.querySelectorAll('.keycap[data-target]'))
-          const wrapTop = () => keyRail.getBoundingClientRect().top + window.scrollY
-          let ticking = false
-          const place = () => {
-            ticking = false
-            const base = wrapTop()
-            railCaps.forEach((cap) => {
-              const sec = document.getElementById(cap.dataset.target)
-              if (!sec) return
-              const top = sec.getBoundingClientRect().top + window.scrollY
-              // A keycap desce ao topo (direita) da sua seção quando a seção alcança o centro da tela.
-              const reached = top <= window.scrollY + window.innerHeight * 0.5
-              cap.classList.toggle('is-placed', reached)
-              if (reached) cap.style.top = `${Math.round(top - base + 20)}px`
-              else cap.style.removeProperty('top')
-            })
-          }
-          const schedule = () => {
-            if (!ticking) {
-              ticking = true
-              requestAnimationFrame(place)
-            }
-          }
-          window.addEventListener('scroll', schedule, { passive: true })
-          window.addEventListener('resize', schedule)
-          place()
-        }
-
-        const navCaps = Array.from(document.querySelectorAll('.hero-keycaps .keycap[data-target]'))
+        const navCaps = Array.from(document.querySelectorAll('.keycap[data-target]'))
         if (navCaps.length && 'IntersectionObserver' in window) {
           const secObs = new IntersectionObserver(
             (entries) => {

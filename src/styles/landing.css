@@ -2857,58 +2857,61 @@ body[data-hero-fullscreen='true'] .hero .container { width: 100%; }
   .ha-orb, .ha-grid, .ha-rings { animation: none; }
 }
 
-/* ═══ Keycaps: embaralhadas no hero; descem ao topo direito da sua seção ═ */
+/* ═══ Keycaps: fixas na margem direita; ao chegar na seção, ocupam o eyebrow ═ */
 
+/* Trilho fixo na margem livre à direita do container (1120px) */
 .hero-keycaps {
-  --kw: min(22vw, 300px);
-  position: absolute;
+  position: fixed;
   top: 67px;
   right: 0;
-  left: 0;
-  height: calc(100svh - 67px);
+  bottom: 0;
+  width: max(16px, calc((100vw - min(1120px, 100vw - 48px)) / 2));
   z-index: 40;
   pointer-events: none;
 }
 
-.hero-keycaps .keycap {
-  position: absolute;
+.keycap[data-target] {
   min-width: 96px;
   pointer-events: auto;
   text-decoration: none;
   cursor: pointer;
-  animation: keycap-float 6s ease-in-out infinite;
-  transition: top 1s cubic-bezier(0.2, 0.9, 0.25, 1), right 1s cubic-bezier(0.2, 0.9, 0.25, 1),
-    rotate 0.8s, scale 0.8s, translate 0.12s, border-color 0.12s, box-shadow 0.12s;
 }
 
-.hero-keycaps .keycap:hover { border-color: var(--lp-accent); }
-.hero-keycaps .keycap:focus-visible { outline: 2px solid var(--lp-accent); outline-offset: 3px; }
-.keycap.k1 { top: 14%; right: calc(2vw + var(--kw) * 0.40); animation-delay: 0s; }
-.keycap.k2 { top: 24%; right: calc(2vw + var(--kw) * 0.06); animation-delay: -1.2s; }
-.keycap.k3 { top: 42%; right: calc(2vw + var(--kw) * 0.52); animation-delay: -2.4s; }
-.keycap.k4 { top: 56%; right: calc(2vw + var(--kw) * 0.08); animation-delay: -3.1s; }
-.keycap.k5 { top: 70%; right: calc(2vw + var(--kw) * 0.46); animation-delay: -4s; }
-.keycap.k6 { top: 82%; right: calc(2vw + var(--kw) * 0.12); animation-delay: -5s; }
+.hero-keycaps .keycap {
+  position: absolute;
+  right: calc(50% - 56px + var(--zig, 0px));
+  animation: keycap-float 6s ease-in-out infinite;
+  transition: rotate 0.8s, scale 0.8s, translate 0.12s, border-color 0.12s, box-shadow 0.12s;
+}
+
+.keycap[data-target]:hover { border-color: var(--lp-accent); }
+.keycap[data-target]:focus-visible { outline: 2px solid var(--lp-accent); outline-offset: 3px; }
+.hero-keycaps .keycap.k1 { top: 10%; --zig: 12px; animation-delay: 0s; }
+.hero-keycaps .keycap.k2 { top: 24%; --zig: -12px; animation-delay: -1.2s; }
+.hero-keycaps .keycap.k3 { top: 38%; --zig: 12px; animation-delay: -2.4s; }
+.hero-keycaps .keycap.k4 { top: 52%; --zig: -12px; animation-delay: -3.1s; }
+.hero-keycaps .keycap.k5 { top: 66%; --zig: 12px; animation-delay: -4s; }
+.hero-keycaps .keycap.k6 { top: 80%; --zig: -12px; animation-delay: -5s; }
 
 @keyframes keycap-float {
   0%, 100% { rotate: -1.5deg; scale: 1; }
   50% { rotate: 1.5deg; scale: 1.03; }
 }
 
-/* Posicionada: canto superior direito da seção (top definido via JS) */
-.hero-keycaps .keycap.is-placed {
-  right: max(16px, calc((100vw - min(1120px, 100vw - 48px)) / 2));
-  scale: 0.8;
-  rotate: 0deg;
-  animation: none;
+/* Espaço reservado no lugar do eyebrow da seção; a keycap é movida para cá via JS */
+.keycap-slot {
+  display: flex;
+  min-height: 64px;
+  margin-bottom: 16px;
+  align-items: flex-start;
 }
 
-.hero-keycaps .keycap.is-active {
-  border-color: var(--lp-accent);
-  box-shadow: 0 1px 0 var(--lp-border-strong), 0 4px 10px -6px var(--lp-accent);
-}
+.keycap-slot .keycap { position: relative; }
 
-@media (max-width: 900px) {
+.keycap[data-target].is-active { border-color: var(--lp-accent); }
+
+/* Sem margem livre: o trilho some e cada keycap fica direto no seu eyebrow */
+@media (max-width: 1399px) {
   .hero-keycaps { display: none; }
 }
 
