@@ -676,7 +676,7 @@ const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
         )}
         {heroWindowsEnabled && (
         <div class="hero-windows" aria-hidden="true" data-hero-windows>
-          <div class="hw-win hw-a"><div class="hw-bar"><i></i><i></i><i></i><span>terminal</span></div><div class="hw-body"><b></b><b></b><b></b></div></div>
+          <div class="hw-win hw-a is-focused"><div class="hw-bar"><i></i><i></i><i></i><span>terminal</span></div><div class="hw-body"><b></b><b></b><b></b></div></div>
           <div class="hw-win hw-b"><div class="hw-bar"><i></i><i></i><i></i><span>files</span></div><div class="hw-body"><b></b><b></b></div></div>
           <div class="hw-win hw-c"><div class="hw-bar"><i></i><i></i><i></i><span>editor</span></div><div class="hw-body"><b></b><b></b><b></b><b></b></div></div>
         </div>
@@ -1447,6 +1447,58 @@ echo "Include = /etc/pacman.d/argvus.conf" \
         window.addEventListener('resize', schedule)
         narrow.addEventListener('change', schedule)
         place()
+      }
+
+      // ── Janelas do hero: clicar foca a janela (borda ativa, popin e linhas redesenhadas) ──
+      const heroWindows = document.querySelector('[data-hero-windows]')
+      if (heroWindows) {
+        const wins = Array.from(heroWindows.querySelectorAll('.hw-win'))
+        const calm = window.matchMedia('(prefers-reduced-motion: reduce)')
+        const hero = heroWindows.closest('.hero')
+        // O conteúdo do hero fica acima das janelas: procura a janela sob o ponteiro,
+        // ignorando links, botões e campos para não roubar cliques deles.
+        const windowAt = (event) => {
+          if (event.target.closest('a, button, input, select, textarea, label, summary')) return null
+          return document.elementsFromPoint(event.clientX, event.clientY).find((el) => el.classList.contains('hw-win')) || null
+        }
+        let hovered = null
+        hero.addEventListener('pointermove', (event) => {
+          const win = windowAt(event)
+          if (win === hovered) return
+          hovered?.classList.remove('is-hover')
+          win?.classList.add('is-hover')
+          hero.classList.toggle('is-over-window', Boolean(win))
+          hovered = win
+        })
+        hero.addEventListener('pointerleave', () => {
+          hovered?.classList.remove('is-hover')
+          hero.classList.remove('is-over-window')
+          hovered = null
+        })
+        hero.addEventListener('click', (event) => {
+          const win = windowAt(event)
+          if (!win) return
+          heroWindows.dataset.dim = ''
+          wins.forEach((w) => w.classList.toggle('is-focused', w === win))
+          if (calm.matches) return
+          const accent = getComputedStyle(document.body).getPropertyValue('--lp-accent').trim()
+          win.animate([{ scale: 0.92 }, { scale: 1.06 }, { scale: 1 }], {
+            duration: 420,
+            easing: 'cubic-bezier(0.2, 0.9, 0.25, 1)',
+          })
+          win.animate([{ boxShadow: `0 0 0 0 ${accent}` }, { boxShadow: '0 0 0 14px transparent' }], {
+            duration: 600,
+            easing: 'ease-out',
+          })
+          win.querySelectorAll('.hw-body b').forEach((line, i) => {
+            line.animate([{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], {
+              duration: 380,
+              delay: 120 + i * 90,
+              easing: 'cubic-bezier(0.2, 0.9, 0.25, 1)',
+              fill: 'backwards',
+            })
+          })
+        })
       }
 
       // ── Efeitos de DNA: teclado, tilt e trilhos laterais ──────────────────

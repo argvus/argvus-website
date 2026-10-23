@@ -2726,7 +2726,7 @@ body[data-parallax-enabled='true'] [data-reveal].is-revealed {
   animation: hw-tile 12s ease-in-out infinite;
 }
 
-.hw-a { top: 14%; left: 0; border-color: var(--lp-accent); animation-delay: 0s; }
+.hw-a { top: 14%; left: 0; animation-delay: 0s; }
 .hw-b { top: 40%; left: 34%; animation-delay: -4s; }
 .hw-c { top: 66%; left: 6%; animation-delay: -8s; }
 
@@ -2746,6 +2746,23 @@ body[data-parallax-enabled='true'] [data-reveal].is-revealed {
 .hw-body { display: grid; gap: 5px; padding: 8px; }
 .hw-body b { height: 5px; border-radius: 3px; background: var(--lp-accent-soft); }
 .hw-body b:nth-child(odd) { width: 70%; }
+
+/* Interação: clicar foca a janela, como no Hyprland (borda ativa, popin, dim_inactive).
+   O conteúdo do hero fica por cima; o JS acha a janela sob o ponteiro e aplica .is-hover. */
+.hw-win {
+  z-index: 1;
+  pointer-events: auto;
+  transition: border-color 0.2s, opacity 0.25s;
+}
+
+.hero.is-over-window { cursor: pointer; }
+.hw-win.is-hover { border-color: var(--lp-fg-dim); }
+.hw-win.is-focused { z-index: 2; border-color: var(--lp-accent); }
+.hw-win.is-focused .hw-bar { color: var(--lp-accent); }
+.hw-win.is-focused .hw-bar i { background: var(--lp-accent); }
+.hw-body b { transform-origin: left center; }
+.hero-windows[data-dim] .hw-win:not(.is-focused) { opacity: 0.55; }
+.hero-windows[data-dim] .hw-win:not(.is-focused).is-hover { opacity: 0.85; }
 
 @keyframes hw-tile {
   0%, 100% { transform: translate(0, 0) scale(1); }
