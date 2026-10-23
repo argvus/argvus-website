@@ -2667,25 +2667,45 @@ body[data-parallax-enabled='true'] [data-reveal].is-revealed {
 
 .hero-windows { left: 2%; }
 
+/* Keycap flat em perspectiva: saia (laterais inclinadas) + topo recuado, cores sólidas */
 .keycap {
+  --kc-skirt: var(--lp-panel);
   position: relative;
-  display: grid;
+  display: block;
   min-width: 64px;
   height: 58px;
-  padding: 0 12px;
-  place-items: center;
+  padding: 3px 6px 9px;
   border: 1px solid var(--lp-border-strong);
   border-radius: 8px;
-  background: var(--lp-panel-raised);
+  background: var(--kc-skirt);
   box-shadow: 0 6px 0 var(--lp-border-strong), 0 14px 22px -12px rgba(0, 0, 0, 0.6);
   color: var(--lp-fg);
   font-family: var(--lp-mono);
   font-size: 0.85rem;
   font-weight: 600;
+  transform: perspective(420px) rotateX(18deg);
+  transform-origin: center bottom;
   transition: box-shadow 0.12s, translate 0.12s, border-color 0.12s;
 }
 
-.keycap-face { color: var(--lp-accent-high); }
+:root[data-theme='light'] .keycap { --kc-skirt: var(--lp-bg); }
+
+.keycap-face {
+  display: grid;
+  height: 100%;
+  padding: 0 10px;
+  place-items: center;
+  border: 1px solid var(--lp-border-strong);
+  border-radius: 5px;
+  background: var(--lp-panel-raised);
+  color: var(--lp-accent-high);
+  white-space: nowrap;
+  transition: border-color 0.12s;
+}
+
+.keycap[data-target]:hover .keycap-face,
+.keycap[data-target].is-active .keycap-face,
+.keycap.is-pressed .keycap-face { border-color: var(--lp-accent); }
 
 .keycap.is-pressed {
   translate: 0 5px;
