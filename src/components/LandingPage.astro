@@ -677,7 +677,10 @@ const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
         {heroWindowsEnabled && (
         <div class="hero-windows" aria-hidden="true" data-hero-windows>
           <div class="hw-win hw-a is-focused"><div class="hw-bar"><i></i><i></i><i></i><span>terminal</span></div><div class="hw-body"><b></b><b></b><b></b></div></div>
-          <div class="hw-win hw-b"><div class="hw-bar"><i></i><i></i><i></i><span>files</span></div><div class="hw-body"><b></b><b></b></div></div>
+          <div class="hw-pair hw-b">
+            <div class="hw-win"><div class="hw-bar"><i></i><i></i><i></i><span>files</span></div><div class="hw-body"><b></b><b></b><b></b></div></div>
+            <div class="hw-win"><div class="hw-bar"><i></i><i></i><i></i><span>web</span></div><div class="hw-body"><b></b><b></b></div></div>
+          </div>
           <div class="hw-win hw-c"><div class="hw-bar"><i></i><i></i><i></i><span>editor</span></div><div class="hw-body"><b></b><b></b><b></b><b></b></div></div>
         </div>
         )}

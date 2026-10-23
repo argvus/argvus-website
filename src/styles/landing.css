@@ -2725,8 +2725,25 @@ body[data-parallax-enabled='true'] [data-reveal].is-revealed {
 
 .hw-a { top: 14%; left: 0; animation-delay: 0s; }
 
-.hw-b { top: 40%; left: 34%; animation-delay: -4s; }
+/* Duas janelas lado a lado, como um tiling do Hyprland: o grupo anima como uma unidade */
+.hw-pair {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  display: flex;
+  width: 100%;
+  gap: 8px;
+  animation: hw-tile 12s ease-in-out infinite;
+  animation-delay: -4s;
+}
 
+.hw-pair .hw-win {
+  position: relative;
+  flex: 1 1 0;
+  width: auto;
+  min-width: 0;
+  animation: none;
+}
 .hw-c { top: 66%; left: 6%; animation-delay: -8s; }
 
 .hw-bar {
@@ -2791,7 +2808,7 @@ body[data-parallax-enabled='true'] [data-reveal].is-revealed {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .keycap, .hw-win { animation: none; }
+  .keycap, .hw-win, .hw-pair { animation: none; }
   .hero-windows, .hero-keycaps, .has-tilt { transform: none; transition: none; }
 }
 
