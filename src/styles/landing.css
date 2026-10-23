@@ -2058,11 +2058,6 @@ body[data-parallax-enabled='true'] [data-reveal].is-revealed {
   text-transform: uppercase;
   color: var(--lp-fg-dim);
   user-select: none;
-  transition: color 0.2s ease;
-}
-
-.support-toggle-label.is-active {
-  color: var(--lp-accent);
 }
 
 .support-toggle-switch {
@@ -2088,20 +2083,22 @@ body[data-parallax-enabled='true'] [data-reveal].is-revealed {
   position: absolute;
   top: 3px;
   left: 3px;
+  display: grid;
   width: 20px;
   height: 20px;
-  background: var(--lp-fg-muted);
-  transition: transform 0.2s ease, background 0.2s ease;
+  place-items: center;
+  background: var(--lp-accent);
+  color: var(--lp-accent-strong);
+  font-family: var(--lp-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 0.2s ease;
 }
 
-.support-toggle-switch[aria-checked='true'] {
-  border-color: var(--lp-accent);
-  background: var(--lp-accent-soft);
-}
-
+/* Só o botão se move; cores fixas e o símbolo dentro dele indicam a moeda */
 .support-toggle-switch[aria-checked='true'] .support-toggle-thumb {
   transform: translateX(22px);
-  background: var(--lp-accent);
 }
 
 .support-btn {
@@ -2727,7 +2724,9 @@ body[data-parallax-enabled='true'] [data-reveal].is-revealed {
 }
 
 .hw-a { top: 14%; left: 0; animation-delay: 0s; }
+
 .hw-b { top: 40%; left: 34%; animation-delay: -4s; }
+
 .hw-c { top: 66%; left: 6%; animation-delay: -8s; }
 
 .hw-bar {

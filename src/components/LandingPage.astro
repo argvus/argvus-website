@@ -1089,7 +1089,7 @@ echo "Include = /etc/pacman.d/argvus.conf" \
           ) : contributionMode === 'paypal' ? (
             <div class="support-wrap" data-reveal>
               <div class="support-toggle" role="radiogroup" aria-label={t.supportAria}>
-                <span class="support-toggle-label" data-currency-label="USD">Dolar (USD)</span>
+                <span class="support-toggle-label">Dolar (USD)</span>
                 <button
                   type="button"
                   class="support-toggle-switch"
@@ -1100,9 +1100,9 @@ echo "Include = /etc/pacman.d/argvus.conf" \
                   data-usd={contributionConfig.paypal.USD}
                   data-brl={contributionConfig.paypal.BRL}
                 >
-                  <span class="support-toggle-thumb"></span>
+                  <span class="support-toggle-thumb" data-currency-symbol aria-hidden="true">$</span>
                 </button>
-                <span class="support-toggle-label" data-currency-label="BRL">Real (BRL)</span>
+                <span class="support-toggle-label">Real (BRL)</span>
               </div>
               <a
                 class="btn btn-primary support-btn"
@@ -1739,7 +1739,6 @@ echo "Include = /etc/pacman.d/argvus.conf" \
       // ── PayPal currency toggle ──────────────────────────────────────────
       const currencyToggle = document.querySelector('[data-currency-toggle]')
       const paypalBtn = document.querySelector('[data-paypal-btn]')
-      const currencyLabels = Array.from(document.querySelectorAll('[data-currency-label]'))
       let currentCurrency = 'USD'
 
       const updatePaypalCurrency = () => {
@@ -1748,9 +1747,9 @@ echo "Include = /etc/pacman.d/argvus.conf" \
             ? currencyToggle.dataset.usd
             : currencyToggle.dataset.brl
         }
-        currencyLabels.forEach((label) => {
-          label.classList.toggle('is-active', label.dataset.currencyLabel === currentCurrency)
-        })
+        if (currencyToggle) {
+          currencyToggle.querySelector('[data-currency-symbol]').textContent = currentCurrency === 'USD' ? '$' : 'R$'
+        }
       }
 
       currencyToggle?.addEventListener('click', () => {
