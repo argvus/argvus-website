@@ -34,7 +34,16 @@ export default defineConfig({
       title: 'ARGVUS',
       description:
         'ARGVUS is a modular Hyprland and Wayland desktop environment for Arch Linux, with session, shell, settings, appearance and system modules shipped as signed pacman packages.',
-      customCss: ['./src/styles/custom.css'],
+      customCss: [
+        '@fontsource/inter/400.css',
+        '@fontsource/inter/500.css',
+        '@fontsource/inter/600.css',
+        '@fontsource/inter/700.css',
+        '@fontsource/inter/800.css',
+        '@fontsource/jetbrains-mono/400.css',
+        '@fontsource/jetbrains-mono/600.css',
+        './src/styles/custom.css',
+      ],
       favicon: '/favicon.png',
       components: {
         SiteTitle: './src/components/DocsSiteTitle.astro',

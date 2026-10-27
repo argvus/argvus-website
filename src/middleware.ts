@@ -17,7 +17,7 @@ const maintenanceHtml = `<!doctype html>
       <h1>
         <img
           class="wordmark"
-          src="https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/ARGVUS-wordmark.svg"
+          src="/brand/argvus-wordmark.svg"
           alt="ARGVUS"
           width="240"
           height="32"

@@ -1,6 +1,15 @@
 ---
 import argvusPronunciationEn from '../midia/men/argvus-en.mp3'
 import argvusPronunciationPt from '../midia/men/argvus-ptbr.mp3'
+import '@fontsource/ibm-plex-sans/400.css'
+import '@fontsource/ibm-plex-sans/500.css'
+import '@fontsource/ibm-plex-sans/600.css'
+import '@fontsource/ibm-plex-sans/700.css'
+import '@fontsource/ibm-plex-mono/400.css'
+import '@fontsource/ibm-plex-mono/500.css'
+import '@fontsource/ibm-plex-mono/600.css'
+import '@fontsource/ibm-plex-mono/700.css'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 import '../styles/landing.css'
 import '../styles/about.css'
 
@@ -13,10 +22,9 @@ const base = import.meta.env.BASE_URL
 const isPT = lang === 'pt'
 const siteUrl = 'https://argvus.github.io'
 const githubOrgUrl = 'https://github.com/orgs/argvus'
-const logotypeUrl =
-  'https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/ARGVUS-logo.svg'
-const argvusWordmarkUrl =
-  'https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/ARGVUS-wordmark.svg'
+// Logo servido pelo próprio site (cópia de argvus-logo/svg, em src/public/brand).
+const logotypeUrl = `${import.meta.env.BASE_URL}brand/argvus-logo.svg`
+const argvusWordmarkUrl = `${import.meta.env.BASE_URL}brand/argvus-wordmark.svg`
 
 const link = (path: string) => base + (isPT ? 'pt/' : '') + path
 const pagePath = isPT ? 'pt/about/' : 'about/'
@@ -108,7 +116,6 @@ const t = isPT
     <meta name="twitter:description" content={t.description} />
     <meta name="twitter:image" content={`${siteUrl}${base}favicon.png`} />
     <link rel="icon" type="image/png" href={base + 'favicon.png'} />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css" />
     <script is:inline>
       // Aplica o tema antes do primeiro paint, sincronizado com a docs (chave do Starlight).
       ;(function () {

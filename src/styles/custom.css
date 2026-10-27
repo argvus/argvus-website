@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
-
-/* ARGVUS brand fonts */
+/* ARGVUS brand fonts (self-hosted via @fontsource, loaded in astro.config.mjs customCss) */
 :root {
   --sl-font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --sl-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;

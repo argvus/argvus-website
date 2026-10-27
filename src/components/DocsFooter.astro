@@ -6,10 +6,9 @@ import Pagination from 'virtual:starlight/components/Pagination'
 import config from 'virtual:starlight/user-config'
 
 const { siteTitle, siteTitleHref } = Astro.locals.starlightRoute
-const logotypeUrl =
-  'https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/ARGVUS-logo.svg'
-const argvusWordmarkUrl =
-  'https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/ARGVUS-wordmark.svg'
+// Logo servido pelo próprio site (cópia de argvus-logo/svg, em src/public/brand).
+const logotypeUrl = `${import.meta.env.BASE_URL}brand/argvus-logo.svg`
+const argvusWordmarkUrl = `${import.meta.env.BASE_URL}brand/argvus-wordmark.svg`
 ---
 
 <footer class="sl-flex">
