@@ -23,7 +23,8 @@ const maintenanceHtml = `<!doctype html>
           height="32"
         />
       </h1>
-      <p>The ARGVUS project is undergoing maintenance. We will be back soon.</p>
+      <p style="margin-bottom: 20px; color: white; opacity: 0.82;">A modular desktop environment for Wayland and Arch Linux, built on Hyprland.</p>
+      <p><small>ARGVUS 0.1.0 will be released soon! <br/>Follow the development on our <a href="https://github.com/argvus/">GitHub</a></small></p>
     </main>
   </body>
 </html>`
