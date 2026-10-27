@@ -1,21 +1,22 @@
 ---
-import { Image } from 'astro:assets'
+import { Image, getImage } from 'astro:assets'
 import argvusCalendarImage from '../images/apps/argvus-calendar.png'
 import argvusCalendarEventsImage from '../images/apps/argvus-calendar-events.png'
 import argvusRemovableDevicesTaskbarImage from '../images/apps/argvus-removable-devices-taskbar.png'
 import argvusRemovableDevicesRofiImage from '../images/apps/argvus-removable-devices.png'
 import argvusControlCenterImage from '../images/apps/argvus-control-center.png'
 import previewThemeArgvusDarkImage from '../images/desktop/preview-theme-argvus-dark.png'
-import previewThemeDarkFloatImage from '../images/desktop/preview-theme-argvus-dark-float.png'
-import previewThemeArgvusDarkTaskbarBottomImage from '../images/desktop/preview-theme-argvus-dark-taskbar-bottom.png'
-import previewThemeDarkSilverImage from '../images/desktop/preview-theme-dark-silver.png'
-import previewThemeDarkSilverFloatImage from '../images/desktop/preview-theme-dark-silver-float.png'
+import videoThumbImage from '../images/video/video-thumb.png'
 import previewThemeArgvusLightImage from '../images/desktop/preview-theme-argvus-light.png'
-import previewThemeArgvusLightFloatImage from '../images/desktop/preview-theme-argvus-light-float.png'
-import previewThemeDarkSlateImage from '../images/desktop/preview-theme-dark-slate.png'
-import previewThemeDarkSlateFloatImage from '../images/desktop/preview-theme-dark-slate-float.png'
-import previewThemeDarkUniverseImage from '../images/desktop/preview-theme-dark-universe.png'
-import previewThemeDarkUniverseFloatImage from '../images/desktop/preview-theme-dark-universe-float.png'
+import '@fontsource/ibm-plex-sans/400.css'
+import '@fontsource/ibm-plex-sans/500.css'
+import '@fontsource/ibm-plex-sans/600.css'
+import '@fontsource/ibm-plex-sans/700.css'
+import '@fontsource/ibm-plex-mono/400.css'
+import '@fontsource/ibm-plex-mono/500.css'
+import '@fontsource/ibm-plex-mono/600.css'
+import '@fontsource/ibm-plex-mono/700.css'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 import '../styles/landing.css'
 import fs from 'node:fs'
 import { resolve } from 'node:path'
@@ -35,10 +36,9 @@ const base = import.meta.env.BASE_URL
 const isPT = lang === 'pt'
 const siteUrl = 'https://argvus.github.io'
 const githubOrgUrl = 'https://github.com/orgs/argvus'
-const logotypeUrl =
-  'https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/ARGVUS-logo.svg'
-const argvusWordmarkUrl =
-  'https://raw.githubusercontent.com/argvus/argvus-logo/refs/heads/main/svg/ARGVUS-wordmark.svg'
+// Logo servido pelo próprio site (cópia de argvus-logo/svg, em src/public/brand).
+const logotypeUrl = `${import.meta.env.BASE_URL}brand/argvus-logo.svg`
+const argvusWordmarkUrl = `${import.meta.env.BASE_URL}brand/argvus-wordmark.svg`
 
 const link = (path: string) =>
   base + (isPT && !path.startsWith('packages/') ? 'pt/' : '') + path
@@ -52,6 +52,7 @@ const t = isPT
       keywords:
         'argvus, argvus linux, hyprland, wayland, arch linux, desktop environment, argvus removable devices, waybar, linux desktop, pacman repository',
       navAria: 'Navegação principal',
+      navMenu: 'Menu',
       navDocs: 'Documentação',
       navArch: 'Repositório',
         navArchArch: 'Arch Linux',
@@ -66,23 +67,29 @@ const t = isPT
       themeSystem: 'System',
       heroTitle1: 'Um ambiente de desktop modular, pronto para uso.',
       heroAccent: 'Focado em Hyprland.',
-      heroTagline:
-        'Mais do que dotfiles: criado especialmente para desenvolvedores — sem bloatwares. Leve, direto e objetivo.',
       heroLead:
-        'O ARGVUS reúne um ambiente Wayland rico e integrado: sessão supervisionada, shell Quickshell, taskbar Waybar, configurações nativas, módulos de sistema e vinte e três famílias de tema, cada uma com os modos Sticky e Float — tudo empacotado para Arch Linux.',
+        'Mais do que dotfiles: sessão supervisionada, shell Quickshell, taskbar Waybar, configurações nativas e temas oficiais — integrados, leves e empacotados para Arch Linux. Feito para desenvolvedores, sem bloatware.',
       versionBadge: `ARGVUS v${version}`,
+      heroPillLabel: 'pacotes assinados para Arch Linux',
       btnInstall: 'Instalar agora',
       btnDocs: 'Documentação',
-      carouselPrev: 'Imagem anterior',
-      carouselNext: 'Próxima imagem',
-      carouselDot: (n: number) => `Ir para imagem ${n}`,
+      heroCopy: 'Copiar comando',
+      heroCopied: 'Copiado',
+      heroInstallHint: 'Instalação rápida. Prefere passo a passo?',
+      heroInstallLink: 'Instalação avançada',
+      heroShotAlt: 'Desktop ARGVUS com o tema ARGVUS',
+      heroStackLabel: 'Construído com',
       carouselOpen: 'Abrir imagem em tela cheia',
       carouselClose: 'Fechar imagem em tela cheia',
-      slideAlt: (theme: string) => `Desktop ARGVUS com o tema ${theme}`,
       screenshotsEyebrow: 'Pré-visualizações',
       screenshotsTitle: 'Veja o ARGVUS ganhar novas atmosferas',
       screenshotsSubtitle:
-        'Uma seleção de capturas para comparar contraste, personalidade e os diferentes modos visuais do desktop antes de escolher sua aparência.',
+        'Veja o desktop em movimento — temas, modos e apps nativos funcionando juntos — antes de escolher sua aparência.',
+      videoPlay: 'Assistir ao vídeo',
+      videoTitle: 'Vídeo de apresentação do ARGVUS',
+      screenshotsSubtitleStatic:
+        'Uma captura real do ARGVUS Dark no modo Float, com a taskbar, o painel lateral e o lançador abertos.',
+      videoPosterAlt: 'Logotipo do ARGVUS com o comando argvus --start-desktop',
       componentsEyebrow: 'Componentes',
       componentsTitle: 'Feito com software que você já conhece',
       componentsSubtitle:
@@ -99,7 +106,7 @@ const t = isPT
         hyprlock: 'Bloqueador de tela integrado ao ecossistema Hyprland com tema sincronizado.',
         storage: 'Módulo de armazenamento removível escrito em Rust para a barra do Waybar.',
       },
-      keyLabels: ['Prévias', 'Componentes', 'Taskbar', 'Apps', 'Temas', 'Instalar'],
+      keyLabels: ['Prévias', 'Componentes', 'Taskbar', 'Apps', 'Temas'],
       keysAria: 'Navegação por seções',
       waybarEyebrow: 'Taskbar',
       waybarTitle: 'Barra de status no topo ou na parte inferior',
@@ -128,7 +135,7 @@ const t = isPT
       appCalendarEventsText:
         'A visualização de eventos complementa o calendário com uma lista compacta de compromissos, mantendo datas importantes acessíveis direto pelo ecossistema ARGVUS.',
       appDefaultAppsText:
-        'ARGVUS Control Center é o centro nativo de configuração do ARGVUS. A aba Apps substitui o antigo fluxo argvus-default-apps, enquanto Fontes aplica a tipografia em GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, lock screen e apps oficiais.',
+        'ARGVUS Control Center é o centro nativo de configuração do ARGVUS. Em Apps você escolhe os aplicativos padrão, e em Fontes a tipografia é aplicada em GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, tela de bloqueio e apps oficiais.',
       controlCenterFeatures: [
         { title: 'Aparência', text: 'Temas, modos Sticky/Float, acentos, wallpapers, efeitos, layout da taskbar e cards do Control Panel.' },
         { title: 'Fontes', text: 'Configure a tipografia da taskbar, telemetria, Control Panel, sistema, aplicativos, terminal e navegador.' },
@@ -140,11 +147,9 @@ const t = isPT
       aboutMaintainerLink: 'Perfil de William C. Canin no GitHub',
       aboutSupportPaypal: 'Ao contribuir via PayPal, a conta correta é exibida como',
       themesEyebrow: 'Temas',
-      themesTitle: 'Vinte e três temas, dois modos, um só sistema',
+      themesTitle: 'Vinte e um temas, dois modos, um só sistema',
       themesSubtitle:
         'Famílias visuais compartilhadas, cada uma com os modos Sticky e Float. Todos disponíveis como pacotes Arch Linux no repositório oficial do ARGVUS.',
-      themesCopy:
-        'Explore as famílias oficiais e compare suas paletas diretamente nos previews. Cada família possui os modos Sticky e Float, que alteram a geometria e o tratamento das superfícies sem trocar a identidade visual. Todos os temas estão disponíveis no repositório como pacotes individuais. A cor de destaque é independente e pode ser escolhida em ARGVUS Control Center → Appearance → Highlight color.',
       themesAccentLabel: 'Acento independente',
       themesTabsAria: 'Categoria de temas',
       themesDarkTab: 'Temas Dark',
@@ -154,29 +159,56 @@ const t = isPT
       themesDefaultLabel: 'Padrão',
       themeModeSticky: 'Sticky',
       themeModeFloat: 'Float',
-      archEyebrow: 'Arch Linux',
-      archTitle: 'Instalação em um único pacote',
+      archTitle: 'Cada passo, à vista',
       archSubtitle:
-        'O ARGVUS é publicado como pacote para Arch Linux, com repositório pacman e banco de pacotes hospedados no GitHub Pages do projeto packages.',
-      archList: [
-        'Repositório pacman hospedado nas GitHub Pages em /packages/.',
-        'Índices navegáveis para /packages/arch/ e /packages/arch/x86_64/.',
-        'Instalação com sudo pacman -Syu argvus; dependências resolvidas a partir do mesmo repositório.',
-        'Configurações preservadas e reparadas automaticamente a cada login.',
-      ],
-      codeHead: '/bin/sh — instalação avançada',
-      codeComment1: '# Importa a chave GPG',
-      codeComment2: '# Adiciona o repositório',
-      codeComment3: '# Instala',
+        'O comando do topo da página faz tudo isso sozinho. Se você prefere ver e executar cada comando, siga os três passos abaixo: eles adicionam o repositório assinado do ARGVUS ao pacman e instalam o metapacote argvus. Navegue como no Control Center — setas para escolher, Enter para copiar.',
+      ccTitle: 'Instalação avançada',
+      ccSubtitle: 'Repositório assinado + metapacote argvus, passo a passo',
+      ccRepository: 'Repositório',
+      ccCommand: 'comando',
+      ccCopy: 'Copiar',
+      ccCopyAll: 'Tudo',
+      ccCopied: 'Comando copiado',
+      ccCopiedAll: 'Todos os comandos copiados',
+      ccNoCommand: 'Sem comando — ação na tela de login',
+      ccHelp: '↑/↓ Itens  ←/→ Passos  Enter Copiar  c Copiar tudo',
+      ccGridAria: 'Passos da instalação avançada',
+      ccSteps: {
+        key: { title: 'Chave de assinatura', description: 'Confie na chave do empacotador' },
+        repo: { title: 'Repositório', description: 'Habilite argvus e argvus-extras' },
+        install: { title: 'Instalar', description: 'Sincronize e instale o desktop' },
+      },
+      ccItems: {
+        download: { label: 'Baixar a chave', note: 'Salva a chave pública de assinatura do ARGVUS em /tmp/argvus.gpg.' },
+        import: { label: 'Importar no pacman', note: 'Adiciona a chave ao chaveiro do pacman.' },
+        keyId: { label: 'Ler o ID da chave', note: 'Extrai o ID da chave para a variável ARGVUS_KEY.' },
+        sign: { label: 'Assinar localmente', note: 'Marca a chave do ARGVUS como confiável nesta máquina.' },
+        conf: { label: 'Instalar argvus.conf', note: 'Baixa a definição dos repositórios para /etc/pacman.d/argvus.conf.' },
+        include: { label: 'Incluir no pacman.conf', note: 'Adiciona a linha Include ao /etc/pacman.conf. Execute uma única vez.' },
+        pacman: { label: 'Instalar o ARGVUS', note: 'Sincroniza as bases e instala o metapacote argvus; as dependências vêm do mesmo repositório.' },
+        session: { label: 'Iniciar a sessão', note: 'Saia da sessão atual e escolha a sessão ARGVUS na tela de login.' },
+      },
+      installGuide: 'Guia de instalação',
+      installRequirements: 'Requisitos',
+      installRequirementsList: ['Arch Linux x86_64', 'Hyprland 0.56.2 (Wayland)', 'GPU com suporte a Wayland/KMS'],
+      installVm: 'Máquinas virtuais',
+      installChanges:
+        'O que muda no sistema: a chave do ARGVUS entra no chaveiro do pacman, /etc/pacman.d/argvus.conf é criado e o pacman.conf ganha uma linha Include. A instalação não grava nada no seu $HOME.',
+      installVerify: 'Verifique a chave de assinatura',
+      installVerifyHint: 'Compare com a saída de pacman-key --finger antes de assinar localmente.',
+      installSource: 'Código-fonte dos pacotes',
+      installPrivacy: 'Privacidade e segurança',
+      installCopyFingerprint: 'Copiar impressão digital',
+      installScript: 'o script do instalador rápido, para ler antes de executar',
       installCmd: 'sudo pacman -Syu argvus',
       supportEyebrow: 'Apoio',
       supportTitle: 'Apoie o desenvolvimento do ARGVUS',
       supportText:
-        'Se o Argvus é útil para você, considere apoiar o desenvolvimento do projeto. Sua contribuição ajuda a manter a infraestrutura, manutenção e evolução do projeto — incluindo os custos para futuramente adquirir e manter um domínio próprio para o Argvus.',
+        'O ARGVUS é mantido de forma independente. Contribuições ajudam a cobrir infraestrutura, manutenção e evolução do projeto — incluindo, no futuro, um domínio próprio para o ARGVUS.',
       supportBtn: 'Contribuir',
       supportAria: 'Valor da contribuição',
       supportStar:
-        'Gostou do ARGVUS? Ajude o projeto dando uma estrela no GitHub. É rápido e faz toda a diferença!',
+        'Uma estrela no GitHub ajuda outras pessoas a encontrarem o ARGVUS.',
       supportStarBtn: 'Dar estrela no GitHub',
       ctaTitle: 'Experimente o ARGVUS',
       ctaText:
@@ -187,7 +219,7 @@ const t = isPT
       footerDocs: 'Documentação',
       footerDocsLinks: [
         { label: 'Introdução', href: 'docs/introduction/' },
-        { label: 'Instalação', href: 'docs/user-guide/installation/' },
+        { label: 'Instalação', href: 'docs/getting-started/installation/install/' },
         { label: 'Aparência', href: 'docs/user-guide/appearance/' },
         { label: 'Sessões', href: 'docs/user-guide/sessions/' },
         { label: 'Perguntas frequentes', href: 'docs/user-guide/faq/' },
@@ -206,8 +238,12 @@ const t = isPT
       feedbackText:
         'Encontrou um bug, tem uma ideia ou quer pedir uma funcionalidade? O ARGVUS tem um repositório dedicado para feedback, onde ideias e relatos são acompanhados pela comunidade.',
       feedbackBtn: 'Enviar feedback',
+      statusTitle: 'status',
+      statusLabel: 'Estado do projeto',
+      statusText:
+        'Todos os recursos apresentados nesta página estão funcionando. O selo Beta existe porque ainda podem aparecer bugs que não foram encontrados nos testes — se você encontrar um, relate no repositório de feedback.',
       feedbackLink: 'Repositório de feedback do ARGVUS no GitHub',
-      feedbackMade: 'Feito com 💜 para a comunidade open source',
+      feedbackMade: 'Feito para a comunidade open source',
     }
   : {
       htmlLang: 'en',
@@ -217,6 +253,7 @@ const t = isPT
       keywords:
         'argvus, argvus linux, hyprland, wayland, arch linux, desktop environment, argvus removable devices, waybar, linux desktop, pacman repository',
       navAria: 'Main navigation',
+      navMenu: 'Menu',
       navDocs: 'Documentation',
       navArch: 'Repository',
         navArchArch: 'Arch Linux',
@@ -229,25 +266,31 @@ const t = isPT
       themeLight: 'Light',
       themeDark: 'Dark',
       themeSystem: 'System',
-      heroTitle1: 'A ready-to-use modular desktop, ready to use.',
+      heroTitle1: 'A modular desktop environment, ready to use.',
       heroAccent: 'Focused on Hyprland.',
-      heroTagline:
-        'More than dotfiles: built especially for developers — no bloatware. Lightweight, focused and to the point.',
       heroLead:
-        'ARGVUS bundles a rich, integrated Wayland environment: supervised session, Quickshell shell, Waybar taskbar, native settings, system modules and twenty-three theme families, each with Sticky and Float modes — all packaged for Arch Linux.',
+        'More than dotfiles: a supervised session, Quickshell shell, Waybar taskbar, native settings and official themes — integrated, lightweight and packaged for Arch Linux. Built for developers, with no bloatware.',
       versionBadge: `ARGVUS v${version}`,
+      heroPillLabel: 'signed packages for Arch Linux',
       btnInstall: 'Install now',
       btnDocs: 'Documentation',
-      carouselPrev: 'Previous image',
-      carouselNext: 'Next image',
-      carouselDot: (n: number) => `Go to image ${n}`,
+      heroCopy: 'Copy command',
+      heroCopied: 'Copied',
+      heroInstallHint: 'Quick install. Prefer step by step?',
+      heroInstallLink: 'Advanced install',
+      heroShotAlt: 'ARGVUS desktop with the ARGVUS theme',
+      heroStackLabel: 'Built with',
       carouselOpen: 'Open image in fullscreen',
       carouselClose: 'Close fullscreen image',
-      slideAlt: (theme: string) => `ARGVUS desktop with the ${theme} theme`,
       screenshotsEyebrow: 'Previews',
       screenshotsTitle: 'See ARGVUS take on a new atmosphere',
       screenshotsSubtitle:
-        'A curated set of screenshots to compare contrast, personality and the desktop’s visual modes before choosing an appearance.',
+        'Watch the desktop in motion — themes, modes and native apps working together — before choosing an appearance.',
+      videoPlay: 'Watch the video',
+      videoTitle: 'ARGVUS introduction video',
+      screenshotsSubtitleStatic:
+        'A real capture of ARGVUS Dark in Float mode, with the taskbar, the side panel and the launcher open.',
+      videoPosterAlt: 'ARGVUS logo with the argvus --start-desktop command',
       componentsEyebrow: 'Components',
       componentsTitle: 'Built with software you already know',
       componentsSubtitle:
@@ -264,7 +307,7 @@ const t = isPT
         hyprlock: 'Lock screen integrated with the Hyprland ecosystem and a synchronized theme.',
         storage: 'Rust-powered removable storage module for the Waybar bar.',
       },
-      keyLabels: ['Previews', 'Components', 'Taskbar', 'Apps', 'Themes', 'Install'],
+      keyLabels: ['Previews', 'Components', 'Taskbar', 'Apps', 'Themes'],
       keysAria: 'Section navigation',
       waybarEyebrow: 'Taskbar',
       waybarTitle: 'Status bar at the top or the bottom',
@@ -293,7 +336,7 @@ const t = isPT
       appCalendarEventsText:
         'The events view complements the calendar with a compact list of appointments, keeping important dates close at hand inside the ARGVUS ecosystem.',
       appDefaultAppsText:
-        'ARGVUS Control Center is the native ARGVUS configuration center. Its Apps page replaces the old argvus-default-apps workflow, while Fonts applies typography to GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, the lock screen and official apps.',
+        'ARGVUS Control Center is the native ARGVUS configuration center. Apps sets the default applications, and Fonts applies typography to GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, the lock screen and official apps.',
       controlCenterFeatures: [
         { title: 'Appearance', text: 'Themes, Sticky/Float modes, accents, wallpapers, effects, taskbar layout and Control Panel cards.' },
         { title: 'Fonts', text: 'Configure typography for the taskbar, telemetry, Control Panel, system, applications, terminal and browser.' },
@@ -305,11 +348,9 @@ const t = isPT
       aboutMaintainerLink: 'William C. Canin GitHub profile',
       aboutSupportPaypal: 'When contributing via PayPal, the correct account is shown as',
       themesEyebrow: 'Themes',
-      themesTitle: 'Twenty-three themes, two modes, one system',
+      themesTitle: 'Twenty-one themes, two modes, one system',
       themesSubtitle:
         'Shared visual families, each with Sticky and Float modes. All available as Arch Linux packages from the official ARGVUS repository.',
-      themesCopyLegacy:
-        'ARGVUS Dark, Silver Dark, Slate Dark, Universe, Sunset, Monokai Dark, Catppuccin Latte, ARGVUS Light and Rosé Pine, alongside the other official families. Each family has Sticky and Float modes; the mode changes geometry and surface treatment, not the theme count. Choose the accent color independently in ARGVUS Control Center → Appearance → Highlight color without replacing the theme background.',
       themesAccentLabel: 'Independent accent',
       themesTabsAria: 'Theme category',
       themesDarkTab: 'Dark themes',
@@ -319,29 +360,56 @@ const t = isPT
       themesDefaultLabel: 'Default',
       themeModeSticky: 'Sticky',
       themeModeFloat: 'Float',
-      archEyebrow: 'Arch Linux',
-      archTitle: 'Installed from a single package',
+      archTitle: 'Every step, in plain sight',
       archSubtitle:
-        'ARGVUS is published as an Arch Linux package, with a pacman repository and package database hosted on the packages project page.',
-      archList: [
-        'pacman repository hosted on GitHub Pages under /packages/.',
-        'Browsable indexes for /packages/arch/ and /packages/arch/x86_64/.',
-        'Installation with sudo pacman -Syu argvus; dependencies are resolved from the same repository.',
-        'Configs preserved and repaired automatically at every login.',
-      ],
-      codeHead: '/bin/sh — advanced installation',
-      codeComment1: '# Import the GPG key',
-      codeComment2: '# Add the repository',
-      codeComment3: '# Install',
+        'The command at the top of the page does all of this for you. If you would rather see and run each command yourself, follow the three steps below: they add the signed ARGVUS repository to pacman and install the argvus metapackage. Browse it like the Control Center — arrow keys to choose, Enter to copy.',
+      ccTitle: 'Advanced installation',
+      ccSubtitle: 'Signed repository + argvus metapackage, step by step',
+      ccRepository: 'Repository',
+      ccCommand: 'command',
+      ccCopy: 'Copy',
+      ccCopyAll: 'All',
+      ccCopied: 'Command copied',
+      ccCopiedAll: 'All commands copied',
+      ccNoCommand: 'No command — this happens on the login screen',
+      ccHelp: '↑/↓ Items  ←/→ Steps  Enter Copy  c Copy all',
+      ccGridAria: 'Advanced installation steps',
+      ccSteps: {
+        key: { title: 'Signing key', description: 'Trust the packager key' },
+        repo: { title: 'Repository', description: 'Enable argvus and argvus-extras' },
+        install: { title: 'Install', description: 'Sync and install the desktop' },
+      },
+      ccItems: {
+        download: { label: 'Download the key', note: 'Saves the ARGVUS public signing key to /tmp/argvus.gpg.' },
+        import: { label: 'Import into pacman', note: 'Adds the key to the pacman keyring.' },
+        keyId: { label: 'Read the key ID', note: 'Extracts the key ID into the ARGVUS_KEY variable.' },
+        sign: { label: 'Sign it locally', note: 'Marks the ARGVUS key as trusted on this machine.' },
+        conf: { label: 'Install argvus.conf', note: 'Downloads the repository definition to /etc/pacman.d/argvus.conf.' },
+        include: { label: 'Include in pacman.conf', note: 'Adds the Include line to /etc/pacman.conf. Run it only once.' },
+        pacman: { label: 'Install ARGVUS', note: 'Syncs the databases and installs the argvus metapackage; dependencies come from the same repository.' },
+        session: { label: 'Start the session', note: 'Log out of the current session and pick the ARGVUS session on the login screen.' },
+      },
+      installGuide: 'Installation guide',
+      installRequirements: 'Requirements',
+      installRequirementsList: ['Arch Linux x86_64', 'Hyprland 0.56.2 (Wayland)', 'A GPU with Wayland/KMS support'],
+      installVm: 'Virtual machines',
+      installChanges:
+        'What changes on your system: the ARGVUS key is added to the pacman keyring, /etc/pacman.d/argvus.conf is created and pacman.conf gets one Include line. Installation writes nothing to your $HOME.',
+      installVerify: 'Verify the signing key',
+      installVerifyHint: 'Compare it with the output of pacman-key --finger before signing it locally.',
+      installSource: 'Package source code',
+      installPrivacy: 'Privacy and security',
+      installCopyFingerprint: 'Copy fingerprint',
+      installScript: 'the quick installer script, to read before running it',
       installCmd: 'sudo pacman -Syu argvus',
       supportEyebrow: 'Support',
       supportTitle: 'Support ARGVUS development',
       supportText:
-        'If Argvus is useful to you, please consider supporting the project\'s development. Your contribution helps maintain the infrastructure and supports the project\'s ongoing maintenance and evolution—including the costs of eventually acquiring and maintaining a dedicated domain for Argvus.',
+        'ARGVUS is maintained independently. Contributions help cover infrastructure, maintenance and the project\'s evolution — including, in the future, a dedicated domain for ARGVUS.',
       supportBtn: 'Contribute',
       supportAria: 'Contribution amount',
       supportStar:
-        'Enjoying ARGVUS? Help the project by starring it on GitHub. It\'s quick and makes a huge difference!',
+        'A star on GitHub helps other people find ARGVUS.',
       supportStarBtn: 'Star on GitHub',
       ctaTitle: 'Try ARGVUS',
       ctaText:
@@ -352,7 +420,7 @@ const t = isPT
       footerDocs: 'Documentation',
       footerDocsLinks: [
         { label: 'Introduction', href: 'docs/introduction/' },
-        { label: 'Installation', href: 'docs/user-guide/installation/' },
+        { label: 'Installation', href: 'docs/getting-started/installation/install/' },
         { label: 'Appearance', href: 'docs/user-guide/appearance/' },
         { label: 'Sessions', href: 'docs/user-guide/sessions/' },
         { label: 'FAQ', href: 'docs/user-guide/faq/' },
@@ -371,29 +439,23 @@ const t = isPT
       feedbackText:
         'Found a bug, have an idea, or want to request a feature? ARGVUS has a dedicated feedback repository where ideas and reports are tracked together with the community.',
       feedbackBtn: 'Send feedback',
+      statusTitle: 'status',
+      statusLabel: 'Project status',
+      statusText:
+        'Every feature shown on this page is working. The Beta label is there because bugs that testing has not caught may still show up — if you find one, report it in the feedback repository.',
       feedbackLink: 'ARGVUS feedback repository on GitHub',
-      feedbackMade: 'Made with 💜 for the open source community',
+      feedbackMade: 'Built for the open source community',
     }
 
-const slides = [
-  { name: 'ARGVUS Dark', image: previewThemeArgvusDarkImage },
-  { name: 'ARGVUS Dark — Float', image: previewThemeDarkFloatImage },
-  { name: 'Silver Dark', image: previewThemeDarkSilverImage },
-  { name: 'Silver Dark — Float', image: previewThemeDarkSilverFloatImage },
-  { name: 'Slate Dark', image: previewThemeDarkSlateImage },
-  { name: 'Slate Dark — Float', image: previewThemeDarkSlateFloatImage },
-  { name: 'Universe', image: previewThemeDarkUniverseImage },
-  { name: 'Universe — Float', image: previewThemeDarkUniverseFloatImage },
-  { name: 'ARGVUS Light', image: previewThemeArgvusLightImage },
-  { name: 'ARGVUS Light — Float', image: previewThemeArgvusLightFloatImage },
-  {
-    name: 'Taskbar at the bottom',
-    image: previewThemeArgvusDarkTaskbarBottomImage,
-    alt: isPT
-      ? 'ARGVUS desktop com a barra de tarefas embaixo'
-      : 'ARGVUS desktop with the taskbar at the bottom',
-  },
-]
+// Vídeo da seção de prévias: `page_home.video.youtube` aceita a URL (watch, youtu.be, embed,
+// shorts) ou o ID. Sem ID válido, a seção mostra a capa com o aviso de "em breve".
+const youtubeIdOf = (value: string) => {
+  const raw = value.trim()
+  if (/^[\w-]{11}$/.test(raw)) return raw
+  const match = raw.match(/(?:v=|youtu\.be\/|\/embed\/|\/shorts\/|\/live\/)([\w-]{11})/)
+  return match ? match[1] : ''
+}
+const videoId = youtubeIdOf(siteConfig.page_home.video?.youtube ?? '')
 
 const components = [
   { key: 'hyprland', name: 'Hyprland' },
@@ -424,6 +486,7 @@ const themes = [
   { name: 'Everforest Light', shortName: 'Everforest Light', id: 'everforest-light', category: 'light', foreground: '#3A94C5', background: '#FDF6E3' },
   { name: 'GitHub Light', shortName: 'GitHub Light', id: 'github-light', category: 'light', foreground: '#0969DA', background: '#FFFFFF' },
   { name: 'Gruvbox Light', shortName: 'Gruvbox Light', id: 'gruvbox-light', category: 'light', foreground: '#458588', background: '#FBF1C7' },
+  { name: 'Nord Light', shortName: 'Nord Light', id: 'nord-light', category: 'light', foreground: '#5E81AC', background: '#ECEFF4' },
   { name: 'One Light', shortName: 'One Light', id: 'one-light', category: 'light', foreground: '#4078F2', background: '#FAFAFA' },
   { name: 'Solarized Light', shortName: 'Solarized Light', id: 'solarized-light', category: 'light', foreground: '#268BD2', background: '#FDF6E3' },
   { name: 'Watercolor', shortName: 'Watercolor', id: 'watercolor', category: 'light', foreground: '#1A639C', background: '#E9E3D3' },
@@ -435,6 +498,7 @@ const lightThemes = themes.filter((theme) => theme.category === 'light')
 const apps = [
   {
     name: 'ARGVUS Removable Devices',
+    command: 'removable-devices',
     image: argvusRemovableDevicesTaskbarImage,
     alt: 'ARGVUS Removable Devices na taskbar',
     text: t.appStorageText,
@@ -445,6 +509,7 @@ const apps = [
   },
   {
     name: 'ARGVUS Taskbar Calendar',
+    command: 'taskbar-calendar',
     alt: 'ARGVUS Taskbar Calendar',
     text: t.appCalendarText,
     carousel: [
@@ -454,6 +519,7 @@ const apps = [
   },
   {
     name: 'ARGVUS Control Center',
+    command: 'control-center',
     image: argvusControlCenterImage,
     alt: 'ARGVUS Control Center',
     text: t.appDefaultAppsText,
@@ -468,16 +534,11 @@ const contributionMode = contributionConfig.mode
 const contributionStripeValues = contributionConfig.stripe
 const contributionAmounts = Object.keys(contributionStripeValues).map(Number)
 const parallaxEnabled = homeConfig.effects.parallax
-const heroMatrixEnabled = homeConfig.effects.hero.matrix
 const heroKeycapsEnabled = homeConfig.effects.hero.keycaps
-const heroWindowsEnabled = homeConfig.effects.hero.windows
-const sideRailsEnabled = homeConfig.effects.sideRails
 const keyboardEasterEggEnabled = homeConfig.effects.keyboardEasterEgg
 const tiltEnabled = homeConfig.effects.tilt
-const heroFullscreen = homeConfig.effects.hero.fullscreen
-const heroAbstractEnabled = homeConfig.effects.hero.abstract
 const keycapsNavEnabled = homeConfig.effects.hero.keycapsNav
-const keycapTargets = ['previews', 'componentes', 'waybar', 'apps', 'temas', 'arch']
+const keycapTargets = ['previews', 'components', 'waybar', 'apps', 'themes']
 // Com a navegação ativa, o eyebrow das seções vira um espaço reservado para a keycap.
 const keycapSlots = heroKeycapsEnabled && keycapsNavEnabled
 const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
@@ -487,6 +548,57 @@ const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
   key: String(i + 1),
   pos: `k${i + 1}`,
 }))
+const heroStack = ['Hyprland', 'Wayland', 'Waybar', 'Quickshell', 'Rust', 'Arch Linux']
+// O accent do título é "digitado" letra a letra só com CSS (atraso por índice).
+const heroAccentChars = Array.from(t.heroAccent)
+const quickInstallCmd = 'curl -fsSL https://argvus.github.io/install.sh | sh'
+
+// Chave pública publicada em https://argvus.github.io/packages/arch/argvus.gpg
+// (`gpg --show-keys --with-fingerprint`); atualizar aqui se a chave for trocada.
+const signingKey = {
+  fingerprint: 'D184 1B51 1196 2DF1 EA31  249F 3B2A 7830 46E0 6762',
+  uid: 'William da Costa Canin <hello.williamcanin@gmail.com>',
+  type: 'RSA 4096',
+}
+
+// Prévia social (Open Graph/Twitter) em 1200×630 a partir da captura real do desktop.
+const socialImage = await getImage({ src: previewThemeArgvusDarkImage, width: 1200, height: 630, fit: 'cover', format: 'png' })
+
+// Instalação avançada na réplica do Control Center: passos (cards) e itens com o comando literal.
+// Os comandos são os mesmos de repo-install.sh/install.sh, escritos para execução manual.
+const ccSteps = [
+  {
+    id: 'key',
+    icon: 'fa-solid fa-key',
+    items: [
+      { id: 'download', command: 'curl -fsSLo /tmp/argvus.gpg https://argvus.github.io/packages/arch/argvus.gpg' },
+      { id: 'import', command: 'sudo pacman-key --add /tmp/argvus.gpg' },
+      { id: 'keyId', command: `ARGVUS_KEY="$(gpg --show-keys --with-colons /tmp/argvus.gpg | grep '^pub:' | head -n1 | cut -d: -f5)"` },
+      { id: 'sign', command: 'sudo pacman-key --lsign-key "$ARGVUS_KEY"' },
+    ],
+  },
+  {
+    id: 'repo',
+    icon: 'fa-solid fa-box-archive',
+    items: [
+      { id: 'conf', command: 'curl -fsSL https://argvus.github.io/packages/arch/argvus.conf | sudo tee /etc/pacman.d/argvus.conf' },
+      { id: 'include', command: 'echo "Include = /etc/pacman.d/argvus.conf" | sudo tee -a /etc/pacman.conf' },
+    ],
+  },
+  {
+    id: 'install',
+    icon: 'fa-solid fa-download',
+    items: [
+      { id: 'pacman', command: t.installCmd },
+      { id: 'session', command: '' },
+    ],
+  },
+] as const
+const ccAllCommands = ccSteps
+  .flatMap((step) => step.items.map((item) => item.command))
+  .filter(Boolean)
+  .join('\n')
+const ccFirst = ccSteps[0].items[0]
 ---
 
 <!doctype html>
@@ -504,13 +616,15 @@ const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
     <meta property="og:title" content={t.title} />
     <meta property="og:description" content={t.description} />
     <meta property="og:url" content={`${siteUrl}${base}${isPT ? 'pt/' : ''}`} />
-    <meta property="og:image" content={`${siteUrl}${base}favicon.png`} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={new URL(socialImage.src, siteUrl).href} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={t.heroShotAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={t.title} />
     <meta name="twitter:description" content={t.description} />
-    <meta name="twitter:image" content={`${siteUrl}${base}favicon.png`} />
+    <meta name="twitter:image" content={new URL(socialImage.src, siteUrl).href} />
     <link rel="icon" type="image/png" href={base + 'favicon.png'} />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css" />
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'SoftwareApplication',
@@ -551,8 +665,6 @@ const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
     data-parallax-enabled={parallaxEnabled ? 'true' : 'false'}
     data-keyboard-enabled={keyboardEasterEggEnabled ? 'true' : 'false'}
     data-tilt-enabled={tiltEnabled ? 'true' : 'false'}
-    data-rails-enabled={sideRailsEnabled ? 'true' : 'false'}
-    data-hero-fullscreen={heroFullscreen ? 'true' : 'false'}
   >
     <header class="site-header">
       <div class="container">
@@ -562,8 +674,8 @@ const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
           {isBeta && <span class="beta-badge">Beta</span>}
         </a>
 
-        <nav class="site-nav" aria-label={t.navAria}>
-          <div class="nav-links">
+        <nav class="site-nav" aria-label={t.navAria} data-site-nav>
+          <div class="nav-links" id="site-nav-links">
             <a class="nav-link" href={link('docs/introduction/')}><i class="fa-solid fa-book-open"></i>{t.navDocs}</a>
             <div class="nav-dropdown" data-nav-dropdown>
               <button class="nav-link nav-dropdown-trigger" type="button" data-nav-dropdown-trigger>
@@ -645,6 +757,12 @@ const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
               </button>
             </div>
           </div>
+
+          <button class="nav-menu-btn" type="button" aria-controls="site-nav-links" aria-expanded="false" aria-label={t.navMenu} data-nav-menu>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16"></path>
+            </svg>
+          </button>
         </nav>
       </div>
     </header>
@@ -660,60 +778,26 @@ const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
 
     <main>
       <!-- Hero -->
-      <section class="hero">
-        {heroMatrixEnabled && (
-        <div class="hero-code-bg matrix-bg" data-matrix-bg>
-          <div class="matrix-column" style="left: 5%"><span>#!/usr/bin</span><span>set -e</span><span>SCRIPT_DIR</span><span>die()</span><span>printf</span><span>exit 1</span></div>
-          <div class="matrix-column" style="left: 15%"><span>bash</span><span>pipefail</span><span>dirname</span><span>error</span><span>message</span><span>function</span></div>
-          <div class="matrix-column" style="left: 25%"><span>ROOT_DIR</span><span>command -v</span><span>require</span><span>makepkg</span><span>shellcheck</span><span>validate</span></div>
-          <div class="matrix-column" style="left: 35%"><span>SCRIPT_DIR</span><span>check</span><span>bash</span><span>make</span><span>tools</span><span>sh</span></div>
-          <div class="matrix-column" style="left: 45%"><span>set -euo</span><span>die function</span><span>printf error</span><span>exit code</span><span>require cmd</span><span>validate</span></div>
-          <div class="matrix-column" style="left: 55%"><span>#!/bin/bash</span><span>pipefail</span><span>dirname path</span><span>printf %s</span><span>command -v</span><span>shellcheck</span></div>
-          <div class="matrix-column" style="left: 65%"><span>cd ROOT_DIR</span><span>SCRIPT_DIR</span><span>die()</span><span>require_command</span><span>makepkg</span><span>exit 1</span></div>
-          <div class="matrix-column" style="left: 75%"><span>set -e</span><span>ROOT_DIR</span><span>bash -n</span><span>shellcheck</span><span>validate</span><span>tools/sh</span></div>
-          <div class="matrix-column" style="left: 85%"><span>BASH_SOURCE</span><span>printf error</span><span>command -v</span><span>makepkg</span><span>shellcheck</span><span>exit</span></div>
-          <div class="matrix-column" style="left: 95%"><span>dirname</span><span>bash</span><span>require</span><span>printf</span><span>tools</span><span>sh</span></div>
-        </div>
-        )}
-        {heroWindowsEnabled && (
-        <div class="hero-windows" aria-hidden="true" data-hero-windows>
-          <div class="hw-win hw-a is-focused"><div class="hw-bar"><i></i><i></i><i></i><span>terminal</span></div><div class="hw-body"><b></b><b></b><b></b></div></div>
-          <div class="hw-pair hw-b">
-            <div class="hw-win"><div class="hw-bar"><i></i><i></i><i></i><span>files</span></div><div class="hw-body"><b></b><b></b><b></b></div></div>
-            <div class="hw-win"><div class="hw-bar"><i></i><i></i><i></i><span>web</span></div><div class="hw-body"><b></b><b></b></div></div>
-          </div>
-          <div class="hw-win hw-c"><div class="hw-bar"><i></i><i></i><i></i><span>editor</span></div><div class="hw-body"><b></b><b></b><b></b><b></b></div></div>
-        </div>
-        )}
-        {heroAbstractEnabled && (
-        <div class="hero-abstract" aria-hidden="true">
-          <span class="ha-orb ha-o1"></span>
-          <span class="ha-orb ha-o2"></span>
-          <span class="ha-orb ha-o3"></span>
-          <div class="ha-grid"></div>
-          <svg class="ha-rings" viewBox="0 0 900 600" fill="none" stroke="currentColor">
-            <g><rect x="300" y="200" width="300" height="200" rx="10"></rect><path d="M300 224h300"></path></g>
-            <g><rect x="200" y="130" width="500" height="340" rx="12" stroke-dasharray="4 10"></rect><path d="M200 158h500"></path></g>
-            <g><rect x="90" y="50" width="720" height="500" rx="14"></rect><path d="M90 82h720"></path></g>
-            <g><rect x="10" y="4" width="880" height="592" rx="16" stroke-dasharray="2 14"></rect></g>
-          </svg>
-        </div>
-        )}
-        <div class="container">
-          <div class="hero-badges">
-            <span class="hero-badge hero-version-badge">{t.versionBadge}</span>
-            <span class="hero-badge">Hyprland</span>
-            <span class="hero-badge">Wayland</span>
-            <span class="hero-badge">Arch Linux</span>
-            <!-- <span class="hero-badge">Rust</span>
-            <span class="hero-badge">GPL-3.0</span> -->
-          </div>
+      <section class="hero" data-hero>
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="container hero-inner">
+          <a class="hero-pill" href="#install">
+            {isBeta && <span class="hero-pill-tag">Beta</span>}
+            <span class="hero-pill-text">{t.versionBadge}<span class="hero-pill-sep" aria-hidden="true"></span><span class="hero-pill-label">{t.heroPillLabel}</span></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"></path>
+            </svg>
+          </a>
 
-          <h1>{t.heroTitle1} <span class="accent">{t.heroAccent}</span></h1>
+          <h1>
+            {t.heroTitle1}
+            <span class="accent" style={`--n:${heroAccentChars.length}`}>
+              <span class="sr-only">{t.heroAccent}</span>
+              <span class="accent-chars" aria-hidden="true">{heroAccentChars.map((char, i) => <span class="ch" style={`--i:${i}`}>{char}</span>)}</span>
+            </span>
+          </h1>
 
-          <p class="tagline">{t.heroTagline}</p>
-
-          <p class="lead">{t.heroLead}</p>
+          <p class="hero-lead">{t.heroLead}</p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href={link('docs/getting-started/installation/')}>
@@ -722,10 +806,35 @@ const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
             <a class="btn btn-secondary" href={link('docs/introduction/')}>
               <i class="fa-solid fa-book-open"></i>{t.btnDocs}
             </a>
-            <a class="btn btn-secondary" href={githubOrgUrl}>
-              <i class="fa-brands fa-github"></i>{t.github}
-            </a>
           </div>
+
+          <div class="hero-install">
+            <div class="hero-install-cmd">
+              <code><span class="hero-install-prompt" aria-hidden="true">$</span>{quickInstallCmd}</code>
+              <button class="copy-btn" type="button" data-copy={quickInstallCmd} data-copied-label={t.heroCopied} aria-label={t.heroCopy} title={t.heroCopy}>
+                <i class="fa-regular fa-copy" aria-hidden="true"></i>
+              </button>
+            </div>
+            <p class="hero-install-hint">{t.heroInstallHint} <a href="#install">{t.heroInstallLink} →</a></p>
+          </div>
+        </div>
+
+        <div class="container hero-shot">
+          <figure class="hero-frame">
+            <div class="hero-frame-bar" aria-hidden="true">
+              <span class="win-dots"><i></i><i></i><i></i></span>
+              <span class="hero-frame-title">argvus.desktop</span>
+            </div>
+            <Image class="hero-img hero-img-dark" src={previewThemeArgvusDarkImage} alt={t.heroShotAlt} widths={[960, 1440, 1920]} sizes="(max-width: 1120px) 100vw, 1120px" />
+            <Image class="hero-img hero-img-light" src={previewThemeArgvusLightImage} alt={t.heroShotAlt} widths={[960, 1440, 1920]} sizes="(max-width: 1120px) 100vw, 1120px" />
+          </figure>
+        </div>
+
+        <div class="container hero-stack">
+          <span class="hero-stack-label">{t.heroStackLabel}</span>
+          <ul>
+            {heroStack.map((name) => <li>{name}</li>)}
+          </ul>
         </div>
       </section>
 
@@ -735,67 +844,41 @@ const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
           <div class="section-head screenshot-head" data-reveal>
             {keycapSlots ? <span class="keycap-slot" data-keycap-slot="previews" /> : <span class="eyebrow">{t.screenshotsEyebrow}</span>}
             <h2>{t.screenshotsTitle}</h2>
-            <p>{t.screenshotsSubtitle}</p>
+            <p>{videoId ? t.screenshotsSubtitle : t.screenshotsSubtitleStatic}</p>
           </div>
           <div class="screenshot" data-reveal>
             <div class="screenshot-bar">
               <span class="address">argvus.desktop</span>
             </div>
 
-            <div class="carousel" data-carousel>
-              <div class="carousel-track">
-                {slides.map((slide) => (
-                  <figure
-                    class="carousel-slide"
-                    tabindex="0"
-                    role="button"
-                    aria-label={t.carouselOpen}
-                    data-carousel-slide
-                  >
-                    <Image src={slide.image} alt={slide.alt ?? t.slideAlt(slide.name)} />
-                    <figcaption class="carousel-caption">{slide.name}</figcaption>
-                    <span class="carousel-zoom" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M15 3h6v6"></path>
-                        <path d="M9 21H3v-6"></path>
-                        <path d="M21 3l-7 7"></path>
-                        <path d="M3 21l7-7"></path>
-                      </svg>
-                    </span>
-                  </figure>
-                ))}
-              </div>
-
-              <button class="carousel-btn prev" type="button" data-carousel-prev aria-label={t.carouselPrev}>
-                ‹
-              </button>
-              <button class="carousel-btn next" type="button" data-carousel-next aria-label={t.carouselNext}>
-                ›
-              </button>
-
-              <div class="carousel-dots">
-                {slides.map((_, i) => (
-                  <button class="carousel-dot" type="button" data-carousel-dot={i} aria-label={t.carouselDot(i + 1)}></button>
-                ))}
-              </div>
+            <!-- Capa local; o player do YouTube só é carregado ao clicar (sem chamadas antes disso).
+                 Sem `video.youtube` configurado, a seção mostra apenas a captura. -->
+            <div class={`video-frame${videoId ? '' : ' is-static'}`} data-video={videoId || undefined} data-video-title={t.videoTitle}>
+              <Image class="video-poster" src={videoThumbImage} alt={t.videoPosterAlt} widths={[960, 1440, 1920]} sizes="(max-width: 1120px) 100vw, 1120px" />
+              {videoId ? (
+                <a class="video-play" href={`https://www.youtube.com/watch?v=${videoId}`} data-video-play>
+                  <span class="video-play-icon" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                  <span class="video-play-label">{t.videoPlay}</span>
+                </a>
+              ) : null}
             </div>
           </div>
         </div>
       </section>
 
       <!-- Components -->
-      <section class="section" id="componentes">
+      <section class="section" id="components">
         <div class="container">
           <div class="section-head" data-reveal>
-            {keycapSlots ? <span class="keycap-slot" data-keycap-slot="componentes" /> : <span class="eyebrow">{t.componentsEyebrow}</span>}
+            {keycapSlots ? <span class="keycap-slot" data-keycap-slot="components" /> : <span class="eyebrow">{t.componentsEyebrow}</span>}
             <h2>{t.componentsTitle}</h2>
             <p>{t.componentsSubtitle}</p>
           </div>
 
           <div class="feature-grid">
-            {components.map((c) => (
+            {components.map((c, i) => (
               <article class="feature-card" data-reveal>
-                <span class="mono">{c.name}</span>
+                <span class="mono">{String(i + 1).padStart(2, '0')}</span>
                 <h3>{c.name}</h3>
                 <p>{t.componentDesc[c.key]}</p>
               </article>
@@ -813,7 +896,7 @@ const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
             <p>{t.waybarSubtitle}</p>
           </div>
 
-          <div class="waybar-panel" data-reveal>
+          <div class="waybar-panel" data-panel-title="taskbar" data-reveal>
             <div class="waybar-visual">
               <div class="waybar-bar waybar-bar-top">
                 <div class="waybar-mini group-a"></div>
@@ -852,8 +935,8 @@ const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
           </div>
 
           <div class="app-showcase">
-            {apps.map((app) => (
-              <article class="app-panel" data-reveal>
+            {apps.map((app, i) => (
+              <article class="app-panel" data-panel-title={app.command} data-reveal>
                 <div class={`app-media${app.carousel ? ' has-carousel' : ''}`} data-reveal>
                   {app.carousel ? (
                     <div class="app-carousel" data-app-carousel>
@@ -905,7 +988,7 @@ const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
                   )}
                 </div>
                 <div class="app-copy">
-                  <span class="mono">{app.name}</span>
+                  <span class="mono">{String(i + 1).padStart(2, '0')}</span>
                   <h3>{app.name}</h3>
                   <p>{app.text}</p>
                   {app.features && (
@@ -926,15 +1009,15 @@ const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
       </section>
 
       <!-- Themes -->
-      <section class="section" id="temas">
+      <section class="section" id="themes">
         <div class="container">
           <div class="section-head" data-reveal>
-            {keycapSlots ? <span class="keycap-slot" data-keycap-slot="temas" /> : <span class="eyebrow">{t.themesEyebrow}</span>}
+            {keycapSlots ? <span class="keycap-slot" data-keycap-slot="themes" /> : <span class="eyebrow">{t.themesEyebrow}</span>}
             <h2>{t.themesTitle}</h2>
             <p>{t.themesSubtitle}</p>
           </div>
 
-          <div class="themes-wrap">
+          <div class="themes-wrap" data-panel-title="themes">
             <div class="theme-tabs" data-theme-tabs>
               <div class="theme-tab-list" role="tablist" aria-label={t.themesTabsAria} data-reveal>
                 <button class="theme-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="themes-dark-panel" id="themes-dark-tab" data-theme-tab="dark">
@@ -1002,40 +1085,102 @@ const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
         </div>
       </section>
 
-      <!-- Arch -->
-      <section class="section" id="arch">
+      <!-- Install -->
+      <section class="section" id="install">
         <div class="container">
           <div class="section-head" data-reveal>
-            {keycapSlots ? <span class="keycap-slot" data-keycap-slot="arch" /> : <span class="eyebrow">{t.archEyebrow}</span>}
             <h2>{t.archTitle}</h2>
             <p>{t.archSubtitle}</p>
           </div>
 
-          <div class="arch-wrap">
-            <div class="arch-copy">
-              <ul>
-                {t.archList.map((item) => (
-                  <li data-reveal>{item}</li>
-                ))}
-              </ul>
+          <div class="install-reqs" data-reveal>
+            <span class="install-reqs-label">{t.installRequirements}</span>
+            <ul>
+              {t.installRequirementsList.map((item: string) => <li>{item}</li>)}
+            </ul>
+            <a href={link('docs/user-guide/virtual-machines/')}>{t.installVm} →</a>
+          </div>
+
+          <!-- Réplica do ARGVUS Control Center (Home: header, busca, cards, rodapé) -->
+          <div
+            class="cc"
+            data-cc
+            data-reveal
+            data-all-commands={ccAllCommands}
+            data-no-command={t.ccNoCommand}
+            data-copied={t.ccCopied}
+            data-copied-all={t.ccCopiedAll}
+          >
+            <div class="cc-header"><b>ARGVUS</b><span>{t.ccTitle}</span></div>
+            <p class="cc-subtitle">{t.ccSubtitle}</p>
+            <div class="cc-search">
+              <span class="cc-search-label">{t.ccRepository}:</span>
+              <span class="cc-search-value">https://argvus.github.io/packages/arch</span>
             </div>
+            <div class="cc-grid" role="group" aria-label={t.ccGridAria}>
+              {ccSteps.map((step, stepIndex) => (
+                <div class={`cc-card${stepIndex === 0 ? ' is-active' : ''}`} data-cc-card>
+                  <h3 class="cc-card-title"><i class={step.icon} aria-hidden="true"></i><span class="cc-num">{stepIndex + 1}</span>{t.ccSteps[step.id].title}</h3>
+                  <p class="cc-card-desc">{t.ccSteps[step.id].description}</p>
+                  <ul class="cc-items">
+                    {step.items.map((item, itemIndex) => {
+                      const first = stepIndex === 0 && itemIndex === 0
+                      return (
+                        <li>
+                          <button
+                            class="cc-item"
+                            type="button"
+                            tabindex={first ? '0' : '-1'}
+                            aria-current={first ? 'true' : undefined}
+                            title={item.command || undefined}
+                            data-cc-item
+                            data-command={item.command}
+                            data-note={t.ccItems[item.id].note}
+                          >
+                            <span class="cc-caret" aria-hidden="true">&gt;</span>{t.ccItems[item.id].label}
+                          </button>
+                        </li>
+                      )
+                    })}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <div class="cc-detail" data-panel-title={t.ccCommand}>
+              <code class="cc-command"><span class="cc-prompt" aria-hidden="true">$</span><span data-cc-command>{ccFirst.command}</span></code>
+              <div class="cc-detail-row">
+                <p class="cc-note" data-cc-note>{t.ccItems[ccFirst.id].note}</p>
+                <div class="cc-actions">
+                  <button class="cc-btn" type="button" data-cc-copy><kbd>Enter</kbd>{t.ccCopy}</button>
+                  <button class="cc-btn" type="button" data-cc-copy-all><kbd>c</kbd>{t.ccCopyAll}</button>
+                </div>
+              </div>
+            </div>
+            <div class="cc-footer">
+              <span class="cc-status" data-cc-status aria-live="polite"></span>
+              <span class="cc-help" aria-hidden="true">{t.ccHelp}</span>
+            </div>
+          </div>
 
-            <div class="code-block" data-reveal>
-              <div class="code-head">{t.codeHead}</div>
-              <pre><code><span class="c">{t.codeComment1}</span>
-curl -fsSLo /tmp/argvus.gpg https://argvus.github.io/packages/arch/argvus.gpg
-sudo pacman-key --add /tmp/argvus.gpg
-ARGVUS_KEY="$(gpg --show-keys --with-colons /tmp/argvus.gpg | grep '^pub:' | head -n1 | cut -d: -f5)"
-sudo pacman-key --lsign-key "$ARGVUS_KEY"
-
-<span class="c">{t.codeComment2}</span>
-curl -fsSL https://argvus.github.io/packages/arch/argvus.conf \
-  | sudo tee /etc/pacman.d/argvus.conf
-echo "Include = /etc/pacman.d/argvus.conf" \
-  | sudo tee -a /etc/pacman.conf
-
-<span class="c">{t.codeComment3}</span>
-{t.installCmd}</code></pre>
+          <div class="install-trust" data-reveal>
+            <div class="install-key" data-panel-title={t.installVerify}>
+              <div class="install-key-row">
+                <code class="install-key-fpr">{signingKey.fingerprint}</code>
+                <button class="copy-btn" type="button" data-copy={signingKey.fingerprint.replace(/\s+/g, '')} data-copied-label={t.heroCopied} aria-label={t.installCopyFingerprint} title={t.installCopyFingerprint}>
+                  <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                </button>
+              </div>
+              <p class="install-key-meta">{signingKey.type} · {signingKey.uid}</p>
+              <p class="install-key-hint">{t.installVerifyHint}</p>
+            </div>
+            <div class="install-notes">
+              <p>{t.installChanges}</p>
+              <ul class="install-links">
+                <li><a href={base + 'install.sh'}>install.sh</a> <span>— {t.installScript}</span></li>
+                <li><a href={link('docs/getting-started/installation/')}>{t.installGuide} →</a></li>
+                <li><a href={githubOrgUrl}>{t.installSource} →</a></li>
+                <li><a href={link('docs/user-guide/privacy-and-security/')}>{t.installPrivacy} →</a></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -1146,6 +1291,13 @@ echo "Include = /etc/pacman.d/argvus.conf" \
             <span class="eyebrow">{t.feedbackEyebrow}</span>
             <h2>{t.feedbackTitle}</h2>
             <p>{t.feedbackText}</p>
+          </div>
+          <div class="project-status" data-panel-title={t.statusTitle} data-reveal>
+            <p class="project-status-line">
+              <span class="project-status-label">{t.statusLabel}</span>
+              <span class="project-status-value">{isBeta ? 'Beta' : 'Stable'} · v{version}</span>
+            </p>
+            <p class="project-status-text">{t.statusText}</p>
           </div>
           <div class="feedback-actions" data-reveal>
             <a
@@ -1325,7 +1477,184 @@ echo "Include = /etc/pacman.d/argvus.conf" \
       media.addEventListener('change', render)
       render()
 
-      // ── Carrossel ──────────────────────────────────────────────────────────
+      // ── Menu móvel: abaixo de 860px os links viram um painel sob o header ──
+      const siteNav = document.querySelector('[data-site-nav]')
+      const navMenuButton = document.querySelector('[data-nav-menu]')
+      const setNavMenu = (open) => {
+        siteNav.toggleAttribute('data-menu-open', open)
+        navMenuButton.setAttribute('aria-expanded', String(open))
+      }
+      navMenuButton.addEventListener('click', (event) => {
+        event.stopPropagation()
+        setNavMenu(!siteNav.hasAttribute('data-menu-open'))
+      })
+      siteNav.querySelectorAll('.nav-links a').forEach((anchor) => anchor.addEventListener('click', () => setNavMenu(false)))
+      document.addEventListener('click', (event) => {
+        if (!event.target.closest('#site-nav-links')) setNavMenu(false)
+      })
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && siteNav.hasAttribute('data-menu-open')) {
+          setNavMenu(false)
+          navMenuButton.focus()
+        }
+      })
+
+      // ── Header: borda e fundo sólido só depois de rolar ────────────────────
+      const siteHeader = document.querySelector('.site-header')
+      const markScrolled = () => siteHeader.toggleAttribute('data-scrolled', window.scrollY > 8)
+      window.addEventListener('scroll', markScrolled, { passive: true })
+      markScrolled()
+
+      // ── Copiar o comando de instalação do hero ────────────────────────────
+      document.querySelectorAll('[data-copy]').forEach((button) => {
+        const label = button.getAttribute('aria-label')
+        const icon = button.querySelector('i')
+        const setIcon = (copied) => {
+          icon.classList.toggle('fa-regular', !copied)
+          icon.classList.toggle('fa-copy', !copied)
+          icon.classList.toggle('fa-solid', copied)
+          icon.classList.toggle('fa-check', copied)
+        }
+        let reset
+        button.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(button.dataset.copy)
+          } catch {
+            return
+          }
+          clearTimeout(reset)
+          button.classList.add('is-copied')
+          setIcon(true)
+          button.setAttribute('aria-label', button.dataset.copiedLabel)
+          button.title = button.dataset.copiedLabel
+          reset = setTimeout(() => {
+            button.classList.remove('is-copied')
+            setIcon(false)
+            button.setAttribute('aria-label', label)
+            button.title = label
+          }, 1600)
+        })
+      })
+
+      // ── Réplica do Control Center: navegação dos passos da instalação avançada ──
+      const cc = document.querySelector('[data-cc]')
+      if (cc) {
+        const columns = Array.from(cc.querySelectorAll('[data-cc-card]'), (card) =>
+          Array.from(card.querySelectorAll('[data-cc-item]')),
+        )
+        const items = columns.flat()
+        const commandEl = cc.querySelector('[data-cc-command]')
+        const noteEl = cc.querySelector('[data-cc-note]')
+        const statusEl = cc.querySelector('[data-cc-status]')
+        const copyButton = cc.querySelector('[data-cc-copy]')
+        const copyAllButton = cc.querySelector('[data-cc-copy-all]')
+        let current = items[0]
+        let statusTimer
+        let demo
+
+        const select = (item, focus = false) => {
+          current = item
+          items.forEach((el) => {
+            el.tabIndex = el === item ? 0 : -1
+            if (el === item) el.setAttribute('aria-current', 'true')
+            else el.removeAttribute('aria-current')
+          })
+          cc.querySelectorAll('[data-cc-card]').forEach((card) => card.classList.toggle('is-active', card.contains(item)))
+          const command = item.dataset.command
+          commandEl.textContent = command || cc.dataset.noCommand
+          commandEl.parentElement.classList.toggle('is-empty', !command)
+          noteEl.textContent = item.dataset.note
+          copyButton.disabled = !command
+          if (focus) item.focus()
+        }
+
+        // Status à esquerda do rodapé, como o draw_footer do Control Center.
+        const copy = async (text, message) => {
+          if (!text) return
+          try {
+            await navigator.clipboard.writeText(text)
+          } catch {
+            return
+          }
+          clearTimeout(statusTimer)
+          statusEl.textContent = `✓ ${message}`
+          statusTimer = setTimeout(() => {
+            statusEl.textContent = ''
+          }, 1600)
+        }
+        const copyCurrent = () => copy(current.dataset.command, cc.dataset.copied)
+        const copyAll = () => copy(cc.dataset.allCommands, cc.dataset.copiedAll)
+        const stopDemo = () => clearInterval(demo)
+
+        items.forEach((item) =>
+          item.addEventListener('click', () => {
+            stopDemo()
+            select(item)
+          }),
+        )
+        copyButton.addEventListener('click', copyCurrent)
+        copyAllButton.addEventListener('click', copyAll)
+
+        // ↑/↓ itens do passo, ←/→ passos, Home/End, Enter copia, c copia tudo.
+        cc.addEventListener('keydown', (event) => {
+          if (!event.target.matches('[data-cc-item]') || event.metaKey || event.ctrlKey || event.altKey) return
+          let col = columns.findIndex((column) => column.includes(current))
+          let row = columns[col].indexOf(current)
+          switch (event.key) {
+            case 'ArrowDown':
+              row = Math.min(row + 1, columns[col].length - 1)
+              break
+            case 'ArrowUp':
+              row = Math.max(row - 1, 0)
+              break
+            case 'ArrowRight':
+              col = Math.min(col + 1, columns.length - 1)
+              row = Math.min(row, columns[col].length - 1)
+              break
+            case 'ArrowLeft':
+              col = Math.max(col - 1, 0)
+              row = Math.min(row, columns[col].length - 1)
+              break
+            case 'Home':
+              col = 0
+              row = 0
+              break
+            case 'End':
+              col = columns.length - 1
+              row = columns[col].length - 1
+              break
+            case 'Enter':
+              event.preventDefault()
+              copyCurrent()
+              return
+            case 'c':
+            case 'C':
+              event.preventDefault()
+              copyAll()
+              return
+            default:
+              return
+          }
+          event.preventDefault()
+          stopDemo()
+          select(columns[col][row], true)
+        })
+
+        // Demonstração: a seleção percorre os itens enquanto ninguém interage com a réplica.
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+          let visible = false
+          new IntersectionObserver(([entry]) => {
+            visible = entry.isIntersecting
+          }, { threshold: 0.4 }).observe(cc)
+          demo = setInterval(() => {
+            if (visible) select(items[(items.indexOf(current) + 1) % items.length])
+          }, 2800)
+          cc.addEventListener('pointerenter', stopDemo, { once: true })
+          cc.addEventListener('focusin', stopDemo, { once: true })
+        }
+      }
+
+      // ── Abas de temas (Dark/Light) ─────────────────────────────────────────
       document.querySelectorAll('[data-theme-tabs]').forEach((tabs) => {
         const buttons = Array.from(tabs.querySelectorAll('[data-theme-tab]'))
         const panels = Array.from(tabs.querySelectorAll('[data-theme-panel]'))
@@ -1356,51 +1685,20 @@ echo "Include = /etc/pacman.d/argvus.conf" \
         })
       })
 
-      const carousel = document.querySelector('[data-carousel]')
-      if (carousel) {
-        const track = carousel.querySelector('.carousel-track')
-        const slides = Array.from(carousel.querySelectorAll('[data-carousel-slide]'))
-        const dots = Array.from(carousel.querySelectorAll('[data-carousel-dot]'))
-        const prev = carousel.querySelector('[data-carousel-prev]')
-        const next = carousel.querySelector('[data-carousel-next]')
-        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-        let index = 0
-        let timer
-
-        const go = (i) => {
-          index = (i + slides.length) % slides.length
-          track.style.transform = `translateX(-${index * 100}%)`
-          dots.forEach((d, n) => d.setAttribute('aria-current', String(n === index)))
-        }
-
-        const stop = () => clearInterval(timer)
-        const play = () => {
-          stop()
-          if (!reduced) timer = setInterval(() => go(index + 1), 5000)
-        }
-
-        prev.addEventListener('click', () => {
-          go(index - 1)
-          play()
+      // ── Vídeo: troca a capa pelo player do YouTube (youtube-nocookie) no clique ──
+      document.querySelectorAll('[data-video]').forEach((frame) => {
+        frame.querySelector('[data-video-play]')?.addEventListener('click', (event) => {
+          event.preventDefault()
+          const player = document.createElement('iframe')
+          player.src = `https://www.youtube-nocookie.com/embed/${frame.dataset.video}?autoplay=1&rel=0`
+          player.title = frame.dataset.videoTitle
+          player.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+          player.allowFullscreen = true
+          player.referrerPolicy = 'strict-origin-when-cross-origin'
+          frame.replaceChildren(player)
+          player.focus()
         })
-        next.addEventListener('click', () => {
-          go(index + 1)
-          play()
-        })
-        dots.forEach((d, n) =>
-          d.addEventListener('click', () => {
-            go(n)
-            play()
-          }),
-        )
-        carousel.addEventListener('mouseenter', stop)
-        carousel.addEventListener('mouseleave', play)
-        carousel.addEventListener('focusin', stop)
-        carousel.addEventListener('focusout', play)
-
-        go(0)
-        play()
-      }
+      })
 
       // ── Keycaps: fixas no trilho direito; ao chegar na seção, ocupam o eyebrow ──
       const keyRail = document.querySelector('[data-hero-keycaps]')
@@ -1453,59 +1751,7 @@ echo "Include = /etc/pacman.d/argvus.conf" \
         place()
       }
 
-      // ── Janelas do hero: clicar foca a janela (borda ativa, popin e linhas redesenhadas) ──
-      const heroWindows = document.querySelector('[data-hero-windows]')
-      if (heroWindows) {
-        const wins = Array.from(heroWindows.querySelectorAll('.hw-win'))
-        const calm = window.matchMedia('(prefers-reduced-motion: reduce)')
-        const hero = heroWindows.closest('.hero')
-        // O conteúdo do hero fica acima das janelas: procura a janela sob o ponteiro,
-        // ignorando links, botões e campos para não roubar cliques deles.
-        const windowAt = (event) => {
-          if (event.target.closest('a, button, input, select, textarea, label, summary')) return null
-          return document.elementsFromPoint(event.clientX, event.clientY).find((el) => el.classList.contains('hw-win')) || null
-        }
-        let hovered = null
-        hero.addEventListener('pointermove', (event) => {
-          const win = windowAt(event)
-          if (win === hovered) return
-          hovered?.classList.remove('is-hover')
-          win?.classList.add('is-hover')
-          hero.classList.toggle('is-over-window', Boolean(win))
-          hovered = win
-        })
-        hero.addEventListener('pointerleave', () => {
-          hovered?.classList.remove('is-hover')
-          hero.classList.remove('is-over-window')
-          hovered = null
-        })
-        hero.addEventListener('click', (event) => {
-          const win = windowAt(event)
-          if (!win) return
-          heroWindows.dataset.dim = ''
-          wins.forEach((w) => w.classList.toggle('is-focused', w === win))
-          if (calm.matches) return
-          const accent = getComputedStyle(document.body).getPropertyValue('--lp-accent').trim()
-          win.animate([{ scale: 0.92 }, { scale: 1.06 }, { scale: 1 }], {
-            duration: 420,
-            easing: 'cubic-bezier(0.2, 0.9, 0.25, 1)',
-          })
-          win.animate([{ boxShadow: `0 0 0 0 ${accent}` }, { boxShadow: '0 0 0 14px transparent' }], {
-            duration: 600,
-            easing: 'ease-out',
-          })
-          win.querySelectorAll('.hw-body b').forEach((line, i) => {
-            line.animate([{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], {
-              duration: 380,
-              delay: 120 + i * 90,
-              easing: 'cubic-bezier(0.2, 0.9, 0.25, 1)',
-              fill: 'backwards',
-            })
-          })
-        })
-      }
-
-      // ── Efeitos de DNA: teclado, tilt e trilhos laterais ──────────────────
+      // ── Efeitos de DNA: teclado, tilt + spotlight, scramble e spotlight do hero ──
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const body = document.body
         const caps = Array.from(document.querySelectorAll('.keycap[data-key]'))
@@ -1522,18 +1768,11 @@ echo "Include = /etc/pacman.d/argvus.conf" \
           window.addEventListener('keydown', (event) => {
             if (event.metaKey || event.ctrlKey || event.altKey) return
             press(event.key)
-            if (event.metaKey && event.key === 'Enter') {
-              const cta = document.querySelector('.hero-actions .btn-primary')
-              if (cta) {
-                cta.classList.add('is-pulsing')
-                setTimeout(() => cta.classList.remove('is-pulsing'), 600)
-              }
-            }
           })
         }
 
         if (body.dataset.tiltEnabled === 'true' && window.matchMedia('(hover: hover)').matches) {
-          document.querySelectorAll('.feature-card, .screenshot').forEach((el) => {
+          document.querySelectorAll('.feature-card').forEach((el) => {
             el.classList.add('has-tilt')
             el.addEventListener('pointermove', (event) => {
               const r = el.getBoundingClientRect()
@@ -1541,6 +1780,9 @@ echo "Include = /etc/pacman.d/argvus.conf" \
               const y = (event.clientY - r.top) / r.height - 0.5
               el.style.setProperty('--tilt-x', `${(-y * 3).toFixed(2)}deg`)
               el.style.setProperty('--tilt-y', `${(x * 3).toFixed(2)}deg`)
+              // Posição do ponteiro para o spotlight radial do card.
+              el.style.setProperty('--px', `${(event.clientX - r.left).toFixed(0)}px`)
+              el.style.setProperty('--py', `${(event.clientY - r.top).toFixed(0)}px`)
             })
             el.addEventListener('pointerleave', () => {
               el.style.setProperty('--tilt-x', '0deg')
@@ -1566,20 +1808,37 @@ echo "Include = /etc/pacman.d/argvus.conf" \
           })
         }
 
-        const heroEl = document.querySelector('.hero')
-        if (heroEl && body.dataset.railsEnabled === 'true') {
-          let ticking = false
-          const update = () => {
-            ticking = false
-            const y = Math.min(window.scrollY, 900)
-            heroEl.style.setProperty('--rail-shift', `${(y * 0.12).toFixed(1)}px`)
-          }
-          window.addEventListener('scroll', () => {
-            if (!ticking) {
-              ticking = true
-              requestAnimationFrame(update)
+        // Títulos de seção: no hover os caracteres se resolvem da esquerda para a direita.
+        const glyphs = '<>/\\|[]{}_=+*#'
+        document.querySelectorAll('.section-head h2').forEach((heading) => {
+          const text = heading.textContent
+          let running = false
+          heading.addEventListener('mouseenter', () => {
+            if (running) return
+            running = true
+            heading.style.minHeight = `${heading.offsetHeight}px`
+            const start = performance.now()
+            const frame = (now) => {
+              const progress = Math.min((now - start) / 450, 1)
+              const resolved = Math.floor(progress * text.length)
+              heading.textContent = Array.from(text, (char, i) =>
+                i < resolved || char === ' ' ? char : glyphs[Math.floor(Math.random() * glyphs.length)],
+              ).join('')
+              if (progress < 1) {
+                requestAnimationFrame(frame)
+                return
+              }
+              heading.textContent = text
+              heading.style.minHeight = ''
+              running = false
             }
-          }, { passive: true })
+            requestAnimationFrame(frame)
+          })
+        })
+
+        // Hero: o brilho de fundo acompanha o ponteiro.
+        const heroEl = document.querySelector('[data-hero]')
+        if (heroEl && window.matchMedia('(hover: hover)').matches) {
           heroEl.addEventListener('pointermove', (event) => {
             const r = heroEl.getBoundingClientRect()
             heroEl.style.setProperty('--mx', ((event.clientX - r.left) / r.width - 0.5).toFixed(3))
@@ -1705,7 +1964,6 @@ echo "Include = /etc/pacman.d/argvus.conf" \
         })
       }
 
-      document.querySelectorAll('[data-carousel-slide]').forEach(bindPreview)
       document.querySelectorAll('[data-preview]').forEach(bindPreview)
 
       modalClose.addEventListener('click', closeModal)
@@ -1763,196 +2021,6 @@ echo "Include = /etc/pacman.d/argvus.conf" \
       })
 
       updatePaypalCurrency()
-    </script>
-
-    <script is:inline>
-      // Terminal Effects para o Hero
-      class HeroTerminalEffects {
-        constructor() {
-          this.heroSection = document.querySelector('.hero')
-          if (!this.heroSection) return
-
-          this.h1 = this.heroSection.querySelector('h1')
-          this.badges = Array.from(this.heroSection.querySelectorAll('.hero-badge'))
-          this.prefersReducedMotion = window.matchMedia(
-            '(prefers-reduced-motion: reduce)',
-          ).matches
-
-          if (!this.prefersReducedMotion) {
-            this.init()
-          }
-        }
-
-        init() {
-          this.addTypingEffect()
-          this.addBadgeAnimations()
-          this.addHoverEffects()
-        }
-
-        addTypingEffect() {
-          if (!this.h1) return
-
-          const originalText = this.h1.textContent
-          const accentElement = this.h1.querySelector('.accent')
-          const accentText = accentElement ? accentElement.textContent : ''
-          const baseText = originalText.replace(accentText, '').trim()
-
-          this.h1.innerHTML = ''
-          this.h1.style.opacity = '1'
-
-          const cursor = document.createElement('span')
-          cursor.className = 'hero-cursor'
-          cursor.textContent = '_'
-          cursor.style.cssText = `
-            display: inline-block;
-            animation: hero-cursor-blink 0.6s infinite;
-            margin-left: 2px;
-            color: var(--lp-accent);
-          `
-
-          const typeText = async () => {
-            const characters = baseText.split('')
-
-            for (const char of characters) {
-              const span = document.createElement('span')
-              span.textContent = char
-              span.style.cssText = 'opacity: 1; animation: hero-char-appear 0.05s ease-out;'
-              this.h1.insertBefore(span, cursor)
-              await this.delay(40)
-            }
-
-            const br = document.createElement('br')
-            this.h1.insertBefore(br, cursor)
-            await this.delay(200)
-
-            const accentSpan = document.createElement('span')
-            accentSpan.className = 'accent'
-            accentSpan.style.cssText = 'display: block; opacity: 1;'
-
-            const accentChars = accentText.split('')
-            for (const char of accentChars) {
-              const span = document.createElement('span')
-              span.textContent = char
-              span.style.cssText =
-                'opacity: 1; animation: hero-char-appear 0.05s ease-out;'
-              accentSpan.appendChild(span)
-              await this.delay(40)
-            }
-
-            this.h1.insertBefore(accentSpan, cursor)
-            await this.delay(300)
-
-            cursor.style.animation = 'none'
-            cursor.style.opacity = '0'
-          }
-
-          this.h1.appendChild(cursor)
-          typeText()
-        }
-
-        addBadgeAnimations() {
-          if (this.badges.length === 0) return
-
-          this.badges.forEach((badge, index) => {
-            badge.style.cssText = `
-              opacity: 0;
-              transform: translateY(8px) translateX(-2px);
-              animation: hero-badge-appear 0.4s ease-out forwards;
-              animation-delay: ${0.4 + index * 0.08}s;
-            `
-          })
-        }
-
-        addHoverEffects() {
-          const buttons = this.heroSection.querySelectorAll('.btn')
-          buttons.forEach((btn) => {
-            btn.addEventListener('mouseenter', (e) => {
-              const rect = btn.getBoundingClientRect()
-              const x = e.clientX - rect.left
-              const y = e.clientY - rect.top
-
-              btn.style.cssText += `
-                --mouse-x: ${x}px;
-                --mouse-y: ${y}px;
-              `
-
-              btn.classList.add('hero-btn-active')
-            })
-
-            btn.addEventListener('mouseleave', () => {
-              btn.classList.remove('hero-btn-active')
-            })
-          })
-        }
-
-        delay(ms) {
-          return new Promise((resolve) => setTimeout(resolve, ms))
-        }
-      }
-
-
-      // Glitch Effect para H2 das Sections
-      class SectionHeadingsGlitch {
-        constructor() {
-          this.headings = Array.from(document.querySelectorAll('.section-head h2'))
-          this.prefersReducedMotion = window.matchMedia(
-            '(prefers-reduced-motion: reduce)',
-          ).matches
-
-          if (!this.prefersReducedMotion && this.headings.length > 0) {
-            this.init()
-          }
-        }
-
-        init() {
-          this.headings.forEach((heading) => {
-            heading.addEventListener('mouseenter', () => this.glitchHeading(heading))
-          })
-        }
-
-        glitchHeading(heading) {
-          if (heading.dataset.glitching === 'true') return
-
-          heading.dataset.glitching = 'true'
-          const originalText = heading.textContent
-
-          const glitchChars = ['<', '>', '|', '/', '\\', '~', '^', '[', ']', '{', '}']
-          const iterations = 8
-
-          let count = 0
-          const glitchInterval = setInterval(() => {
-            if (count >= iterations) {
-              heading.textContent = originalText
-              heading.dataset.glitching = 'false'
-              clearInterval(glitchInterval)
-              return
-            }
-
-            const randomText = originalText
-              .split('')
-              .map((char) => {
-                if (Math.random() > 0.7) {
-                  return glitchChars[Math.floor(Math.random() * glitchChars.length)]
-                }
-                return char
-              })
-              .join('')
-
-            heading.textContent = randomText
-            count++
-          }, 60)
-        }
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-          new HeroTerminalEffects()
-          new SectionHeadingsGlitch()
-        })
-      } else {
-        new HeroTerminalEffects()
-        new SectionHeadingsGlitch()
-      }
     </script>
   </body>
 </html>
