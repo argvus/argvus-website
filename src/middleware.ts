@@ -7,7 +7,7 @@ const maintenanceHtml = `<!doctype html>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>ARGVUS - Maintenance</title>
+    <title>ARGVUS - A modular desktop environment for Wayland and Arch Linux, built on Hyprland.</title>
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="stylesheet" href="/maintenance.css" />
   </head>
