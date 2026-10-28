@@ -11,7 +11,8 @@
       "tilt": true
     },
     "video": {
-      "youtube": ""
+      "youtube": "",
+      "local": ""
     },
     "contributionLinks": {
       "enable": true,

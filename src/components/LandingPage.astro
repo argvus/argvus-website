@@ -457,6 +457,17 @@ const youtubeIdOf = (value: string) => {
 }
 const videoId = youtubeIdOf(siteConfig.page_home.video?.youtube ?? '')
 
+// `page_home.video.local` recebe apenas o nome do arquivo em `src/midia/video/` (ex.: `preview.mp4`).
+// Só é usado quando `video.youtube` não tem um ID válido.
+const localVideoFiles = import.meta.glob('../midia/video/*', { eager: true, query: '?url&no-inline', import: 'default' }) as Record<string, string>
+const localVideoName = (siteConfig.page_home.video?.local ?? '').trim()
+const localVideoSrc = localVideoName ? (localVideoFiles[`../midia/video/${localVideoName}`] ?? '') : ''
+if (localVideoName && !localVideoSrc) {
+  console.warn(`[site-config] page_home.video.local "${localVideoName}" não encontrado em src/midia/video/`)
+}
+const videoProvider = videoId ? 'youtube' : localVideoSrc ? 'local' : ''
+const videoSource = videoId || localVideoSrc
+
 const components = [
   { key: 'hyprland', name: 'Hyprland' },
   { key: 'waybar', name: 'Waybar' },
@@ -846,19 +857,20 @@ const ccFirst = ccSteps[0].items[0]
           <div class="section-head screenshot-head" data-reveal>
             {keycapSlots ? <span class="keycap-slot" data-keycap-slot="previews" /> : <span class="eyebrow">{t.screenshotsEyebrow}</span>}
             <h2>{t.screenshotsTitle}</h2>
-            <p>{videoId ? t.screenshotsSubtitle : t.screenshotsSubtitleStatic}</p>
+            <p>{videoProvider ? t.screenshotsSubtitle : t.screenshotsSubtitleStatic}</p>
           </div>
           <div class="screenshot" data-reveal>
             <div class="screenshot-bar">
               <span class="address">argvus.desktop</span>
             </div>
 
-            <!-- Capa local; o player do YouTube só é carregado ao clicar (sem chamadas antes disso).
-                 Sem `video.youtube` configurado, a seção mostra apenas a captura. -->
-            <div class={`video-frame${videoId ? '' : ' is-static'}`} data-video={videoId || undefined} data-video-title={t.videoTitle}>
+            <!-- Capa local; o player só é carregado ao clicar (sem chamadas antes disso).
+                 Com `video.youtube` usa o YouTube; senão, com `video.local` usa o arquivo em src/midia/video/.
+                 Sem nenhum dos dois, a seção mostra apenas a captura. -->
+            <div class={`video-frame${videoProvider ? '' : ' is-static'}`} data-video-provider={videoProvider || undefined} data-video-source={videoSource || undefined} data-video-title={t.videoTitle}>
               <Image class="video-poster" src={videoThumbImage} alt={t.videoPosterAlt} widths={[960, 1440, 1920]} sizes="(max-width: 1120px) 100vw, 1120px" />
-              {videoId ? (
-                <a class="video-play" href={`https://www.youtube.com/watch?v=${videoId}`} data-video-play>
+              {videoProvider ? (
+                <a class="video-play" href={videoProvider === 'youtube' ? `https://www.youtube.com/watch?v=${videoId}` : videoSource} data-video-play>
                   <span class="video-play-icon" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
                   <span class="video-play-label">{t.videoPlay}</span>
                 </a>
@@ -1687,16 +1699,27 @@ const ccFirst = ccSteps[0].items[0]
         })
       })
 
-      // ── Vídeo: troca a capa pelo player do YouTube (youtube-nocookie) no clique ──
-      document.querySelectorAll('[data-video]').forEach((frame) => {
+      // ── Vídeo: troca a capa pelo player no clique (YouTube via youtube-nocookie, ou arquivo local) ──
+      document.querySelectorAll('[data-video-provider]').forEach((frame) => {
         frame.querySelector('[data-video-play]')?.addEventListener('click', (event) => {
           event.preventDefault()
-          const player = document.createElement('iframe')
-          player.src = `https://www.youtube-nocookie.com/embed/${frame.dataset.video}?autoplay=1&rel=0`
-          player.title = frame.dataset.videoTitle
-          player.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-          player.allowFullscreen = true
-          player.referrerPolicy = 'strict-origin-when-cross-origin'
+          let player
+          if (frame.dataset.videoProvider === 'local') {
+            player = document.createElement('video')
+            player.src = frame.dataset.videoSource
+            player.controls = true
+            player.autoplay = true
+            player.playsInline = true
+            player.setAttribute('aria-label', frame.dataset.videoTitle)
+          } else {
+            player = document.createElement('iframe')
+            player.src = `https://www.youtube-nocookie.com/embed/${frame.dataset.videoSource}?autoplay=1&rel=0`
+            player.title = frame.dataset.videoTitle
+            player.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+            player.allowFullscreen = true
+            player.referrerPolicy = 'strict-origin-when-cross-origin'
+          }
+          frame.classList.add('is-playing')
           frame.replaceChildren(player)
           player.focus()
         })

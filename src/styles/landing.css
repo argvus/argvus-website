@@ -1081,6 +1081,7 @@ footer .brand-wordmark {
 }
 
 .video-frame iframe,
+.video-frame video,
 .video-poster {
   position: absolute;
   inset: 0;
@@ -1161,7 +1162,8 @@ footer .brand-wordmark {
   outline-offset: -6px;
 }
 
-.video-frame.is-static::after {
+.video-frame.is-static::after,
+.video-frame.is-playing::after {
   display: none;
 }
 
