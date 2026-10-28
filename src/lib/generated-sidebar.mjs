@@ -156,6 +156,20 @@ export const sidebarConfig = [
             }
           },
           {
+            "slug": "docs/components/argvus-focus",
+            "label": "ARGVUS Focus",
+            "translations": {
+              "pt-BR": "ARGVUS Focus"
+            }
+          },
+          {
+            "slug": "docs/components/argvus-clock",
+            "label": "ARGVUS Clock",
+            "translations": {
+              "pt-BR": "ARGVUS Clock"
+            }
+          },
+          {
             "slug": "docs/argvus-games",
             "label": "Games",
             "translations": {
@@ -355,6 +369,13 @@ export const sidebarConfig = [
             }
           },
           {
+            "slug": "docs/components/argvus-focus",
+            "label": "ARGVUS Focus",
+            "translations": {
+              "pt-BR": "ARGVUS Focus"
+            }
+          },
+          {
             "slug": "docs/argvus-control-panel",
             "label": "Control Panel",
             "translations": {
@@ -373,6 +394,13 @@ export const sidebarConfig = [
             "label": "User accounts",
             "translations": {
               "pt-BR": "Contas de usuário"
+            }
+          },
+          {
+            "slug": "docs/components/argvus-clock",
+            "label": "ARGVUS Clock",
+            "translations": {
+              "pt-BR": "ARGVUS Clock"
             }
           },
           {
