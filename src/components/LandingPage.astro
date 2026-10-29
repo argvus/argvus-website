@@ -5,6 +5,8 @@ import argvusCalendarEventsImage from '../images/apps/argvus-calendar-events.png
 import argvusRemovableDevicesTaskbarImage from '../images/apps/argvus-removable-devices-taskbar.png'
 import argvusRemovableDevicesRofiImage from '../images/apps/argvus-removable-devices.png'
 import argvusControlCenterImage from '../images/apps/argvus-control-center.png'
+import argvusFocusImage from '../images/apps/argvus-focus.png'
+import argvusClockImage from '../images/apps/argvus-clock.png'
 import previewThemeArgvusDarkImage from '../images/desktop/preview-theme-argvus-dark.png'
 import videoThumbImage from '../images/video/video-thumb.png'
 import previewThemeArgvusLightImage from '../images/desktop/preview-theme-argvus-light.png'
@@ -134,6 +136,10 @@ const t = isPT
         'ARGVUS Taskbar Calendar é o calendário nativo usado pelo desktop. Ele oferece uma visualização rápida do mês, navegação simples e integração com eventos para consultar compromissos sem sair do fluxo do Wayland.',
       appCalendarEventsText:
         'A visualização de eventos complementa o calendário com uma lista compacta de compromissos, mantendo datas importantes acessíveis direto pelo ecossistema ARGVUS.',
+      appFocusText:
+        'ARGVUS Focus ajuda você a manter a atenção em uma tarefa, com sessões de foco e pausas acessíveis diretamente no desktop.',
+      appClockText:
+        'ARGVUS Clock reúne relógio e temporizadores em uma ferramenta nativa para acompanhar o tempo sem sair do fluxo de trabalho.',
       appDefaultAppsText:
         'ARGVUS Control Center é o centro nativo de configuração do ARGVUS. Em Apps você escolhe os aplicativos padrão, e em Fontes a tipografia é aplicada em GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, tela de bloqueio e apps oficiais.',
       controlCenterFeatures: [
@@ -335,6 +341,10 @@ const t = isPT
         'ARGVUS Taskbar Calendar is the native calendar used by the desktop. It offers a quick month view, simple navigation and event integration for checking appointments without leaving the Wayland flow.',
       appCalendarEventsText:
         'The events view complements the calendar with a compact list of appointments, keeping important dates close at hand inside the ARGVUS ecosystem.',
+      appFocusText:
+        'ARGVUS Focus helps you stay on task with focus sessions and breaks available directly from the desktop.',
+      appClockText:
+        'ARGVUS Clock brings a clock and timers together in a native tool, so you can keep track of time without leaving your workflow.',
       appDefaultAppsText:
         'ARGVUS Control Center is the native ARGVUS configuration center. Apps sets the default applications, and Fonts applies typography to GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, the lock screen and official apps.',
       controlCenterFeatures: [
@@ -529,6 +539,20 @@ const apps = [
       { image: argvusCalendarImage, alt: 'ARGVUS Taskbar Calendar' },
       { image: argvusCalendarEventsImage, alt: 'ARGVUS Taskbar Calendar events' },
     ],
+  },
+  {
+    name: 'ARGVUS Focus',
+    command: 'focus',
+    image: argvusFocusImage,
+    alt: 'ARGVUS Focus',
+    text: t.appFocusText,
+  },
+  {
+    name: 'ARGVUS Clock',
+    command: 'clock',
+    image: argvusClockImage,
+    alt: 'ARGVUS Clock',
+    text: t.appClockText,
   },
   {
     name: 'ARGVUS Control Center',
