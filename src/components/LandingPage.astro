@@ -23,6 +23,8 @@ import '../styles/landing.css'
 import fs from 'node:fs'
 import { resolve } from 'node:path'
 import siteConfig from '../site-config.json'
+import SiteHeader from './SiteHeader.astro'
+import SiteFooter from './SiteFooter.astro'
 
 const { version } = JSON.parse(
   fs.readFileSync(resolve(process.cwd(), 'version.json'), 'utf8'),
@@ -72,7 +74,6 @@ const t = isPT
       heroLead:
         'Mais do que dotfiles: sessão supervisionada, shell Quickshell, taskbar Waybar, configurações nativas e temas oficiais — integrados, leves e empacotados para Arch Linux. Feito para desenvolvedores, sem bloatware.',
       versionBadge: `ARGVUS v${version}`,
-      heroPillLabel: 'pacotes assinados para Arch Linux',
       btnInstall: 'Instalar agora',
       btnDocs: 'Documentação',
       heroCopy: 'Copiar comando',
@@ -244,6 +245,15 @@ const t = isPT
       feedbackText:
         'Encontrou um bug, tem uma ideia ou quer pedir uma funcionalidade? O ARGVUS tem um repositório dedicado para feedback, onde ideias e relatos são acompanhados pela comunidade.',
       feedbackBtn: 'Enviar feedback',
+      communityEyebrow: 'Comunidade',
+      communityTitle: 'Conecte-se com a comunidade ARGVUS',
+      communityText: 'Acompanhe os anúncios do projeto ou converse com outros usuários nos nossos canais do Telegram.',
+      communityChannels: [
+        { title: 'Canal oficial', handle: '@argvusdesktop', href: 'https://t.me/argvusdesktop', description: 'Anúncios e novidades do ARGVUS.' },
+        { title: 'Comunidade global', handle: '@argvuscommunity', href: 'https://t.me/argvuscommunity', description: 'Converse com a comunidade ARGVUS.' },
+        { title: 'Comunidade brasileira', handle: '@argvuscommunity_br', href: 'https://t.me/argvuscommunity_br', description: 'Converse com a comunidade ARGVUS em português.' },
+      ],
+      footerCommunity: 'Comunidade',
       statusTitle: 'status',
       statusLabel: 'Estado do projeto',
       statusText:
@@ -277,7 +287,6 @@ const t = isPT
       heroLead:
         'More than dotfiles: a supervised session, Quickshell shell, Waybar taskbar, native settings and official themes — integrated, lightweight and packaged for Arch Linux. Built for developers, with no bloatware.',
       versionBadge: `ARGVUS v${version}`,
-      heroPillLabel: 'signed packages for Arch Linux',
       btnInstall: 'Install now',
       btnDocs: 'Documentation',
       heroCopy: 'Copy command',
@@ -449,6 +458,15 @@ const t = isPT
       feedbackText:
         'Found a bug, have an idea, or want to request a feature? ARGVUS has a dedicated feedback repository where ideas and reports are tracked together with the community.',
       feedbackBtn: 'Send feedback',
+      communityEyebrow: 'Community',
+      communityTitle: 'Connect with the ARGVUS community',
+      communityText: 'Follow project announcements or chat with other users in our Telegram channels.',
+      communityChannels: [
+        { title: 'Official channel', handle: '@argvusdesktop', href: 'https://t.me/argvusdesktop', description: 'ARGVUS announcements and news.' },
+        { title: 'Global community', handle: '@argvuscommunity', href: 'https://t.me/argvuscommunity', description: 'Chat with the ARGVUS community.' },
+        { title: 'Brazilian community', handle: '@argvuscommunity_br', href: 'https://t.me/argvuscommunity_br', description: 'Chat with the ARGVUS community in Portuguese.' },
+      ],
+      footerCommunity: 'Community',
       statusTitle: 'status',
       statusLabel: 'Project status',
       statusText:
@@ -703,106 +721,7 @@ const ccFirst = ccSteps[0].items[0]
     data-keyboard-enabled={keyboardEasterEggEnabled ? 'true' : 'false'}
     data-tilt-enabled={tiltEnabled ? 'true' : 'false'}
   >
-    <header class="site-header">
-      <div class="container">
-        <a class="brand" href={link('')}>
-          <img class="brand-logotype" src={logotypeUrl} alt="" width={48} height={48} />
-          <img class="brand-wordmark" src={argvusWordmarkUrl} alt="ARGVUS" width={178} height={20} />
-          {isBeta && <span class="beta-badge">Beta</span>}
-        </a>
-
-        <nav class="site-nav" aria-label={t.navAria} data-site-nav>
-          <div class="nav-links" id="site-nav-links">
-            <a class="nav-link" href={link('docs/introduction/')}><i class="fa-solid fa-book-open"></i>{t.navDocs}</a>
-            <div class="nav-dropdown" data-nav-dropdown>
-              <button class="nav-link nav-dropdown-trigger" type="button" data-nav-dropdown-trigger>
-                <i class="fa-solid fa-cube"></i>
-                {t.navArch}
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="m6 9 6 6 6-6"></path>
-                </svg>
-              </button>
-              <div class="nav-dropdown-menu" data-nav-dropdown-menu hidden>
-                <a class="nav-dropdown-item" href={link('docs/reference/package-matrix/')}><i class="fa-brands fa-linux"></i>{t.navArchArch}</a>
-              </div>
-            </div>
-            <a class="nav-link" href={githubOrgUrl}><i class="fa-brands fa-github"></i>{t.github}</a>
-            {contributionEnabled && <a class="nav-link nav-link-donate" href="#support"><i class="fa-solid fa-heart"></i>{t.navDonate}</a>}
-          </div>
-
-          <div class="lang-toggle" data-lang-toggle>
-            <button
-              class="lang-toggle-btn"
-              type="button"
-              data-lang-current
-              aria-label={t.langAria}
-              aria-haspopup="menu"
-            >
-              <span>{isPT ? 'PT' : 'EN'}</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m6 9 6 6 6-6"></path>
-              </svg>
-            </button>
-
-            <div class="lang-toggle-menu" data-lang-menu hidden>
-              <a class="lang-option" href={base} aria-current={!isPT ? 'page' : undefined}>{t.langEnglish}</a>
-              <a class="lang-option" href={base + 'pt/'} aria-current={isPT ? 'page' : undefined}>{t.langPortuguese}</a>
-            </div>
-          </div>
-
-          <div class="theme-toggle" data-theme-toggle>
-            <button
-              class="theme-toggle-btn"
-              type="button"
-              data-theme-current
-              aria-label={t.themeAria}
-              aria-haspopup="menu"
-            >
-              <svg class="icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <circle cx="12" cy="12" r="4"></circle>
-                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
-              </svg>
-              <svg class="icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-              </svg>
-              <svg class="icon-system" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="3" width="20" height="14" rx="2"></rect>
-                <path d="M8 21h8M12 17v4"></path>
-              </svg>
-            </button>
-
-            <div class="theme-toggle-menu" data-theme-menu hidden>
-              <button class="theme-option" type="button" data-theme-option="light" role="menuitemradio" aria-checked="false">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                  <circle cx="12" cy="12" r="4"></circle>
-                  <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
-                </svg>
-                {t.themeLight}
-              </button>
-              <button class="theme-option" type="button" data-theme-option="dark" role="menuitemradio" aria-checked="false">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-                {t.themeDark}
-              </button>
-              <button class="theme-option" type="button" data-theme-option="system" role="menuitemradio" aria-checked="false">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="3" width="20" height="14" rx="2"></rect>
-                  <path d="M8 21h8M12 17v4"></path>
-                </svg>
-                {t.themeSystem}
-              </button>
-            </div>
-          </div>
-
-          <button class="nav-menu-btn" type="button" aria-controls="site-nav-links" aria-expanded="false" aria-label={t.navMenu} data-nav-menu>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-              <path d="M4 7h16M4 12h16M4 17h16"></path>
-            </svg>
-          </button>
-        </nav>
-      </div>
-    </header>
+    <SiteHeader lang={lang} page="home" isBeta={isBeta} contributionEnabled={contributionEnabled} />
 
     {heroKeycapsEnabled && (
     <nav class="hero-keycaps" aria-label={t.keysAria} data-hero-keycaps>
@@ -818,13 +737,9 @@ const ccFirst = ccSteps[0].items[0]
       <section class="hero" data-hero>
         <div class="hero-bg" aria-hidden="true"></div>
         <div class="container hero-inner">
-          <a class="hero-pill" href="#install">
-            {isBeta && <span class="hero-pill-tag">Beta</span>}
-            <span class="hero-pill-text">{t.versionBadge}<span class="hero-pill-sep" aria-hidden="true"></span><span class="hero-pill-label">{t.heroPillLabel}</span></span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6"></path>
-            </svg>
-          </a>
+          <div class="hero-pill" aria-label={t.versionBadge}>
+            <span class="hero-pill-version">{t.versionBadge}</span>
+          </div>
 
           <h1>
             {t.heroTitle1}
@@ -1351,6 +1266,29 @@ const ccFirst = ccSteps[0].items[0]
         </div>
       </section>
 
+      <!-- Community -->
+      <section class="section section-alt" id="community">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="eyebrow">{t.communityEyebrow}</span>
+            <h2>{t.communityTitle}</h2>
+            <p>{t.communityText}</p>
+          </div>
+          <div class="feature-grid community-grid">
+            {t.communityChannels.map((channel) => (
+              <article class="feature-card community-card" data-reveal>
+                <span class="mono"><i class="fa-brands fa-telegram"></i> TELEGRAM</span>
+                <h3>{channel.title}</h3>
+                <p>{channel.description}</p>
+                <a href={channel.href} target="_blank" rel="noopener noreferrer">
+                  {channel.handle}<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <!-- CTA -->
       <section class="cta">
         <div class="container">
@@ -1364,53 +1302,7 @@ const ccFirst = ccSteps[0].items[0]
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-col">
-            <a class="brand" href={link('')}>
-              <img class="brand-logotype" src={logotypeUrl} alt="" width={48} height={48} />
-              <img class="brand-wordmark" src={argvusWordmarkUrl} alt="ARGVUS" width={178} height={20} />
-            </a>
-            <p>{t.footerTagline}</p>
-          </div>
-
-          <div class="footer-col">
-            <h4>{t.footerDocs}</h4>
-            <ul>
-              {t.footerDocsLinks.map((item) => (
-                <li><a href={link(item.href)}>{item.label}</a></li>
-              ))}
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h4>{t.footerResources}</h4>
-            <ul>
-              {t.footerResourcesLinks.map((item) => (
-                <li><a href={link(item.href)}>{item.label}</a></li>
-              ))}
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h4>{t.footerProject}</h4>
-            <ul>
-              <li><a href={link('about/')}><i class="fa-solid fa-circle-info"></i>{t.footerAbout}</a></li>
-              <li><a href={githubOrgUrl}><i class="fa-brands fa-github"></i>{t.github}</a></li>
-              <li><a href="https://github.com/argvus/argvus/blob/main/LICENSE"><i class="fa-solid fa-scale-balanced"></i>{t.footerLicense}</a></li>
-              <li><a href="https://github.com/williamcanin" target="_blank" rel="noopener noreferrer" aria-label={t.aboutMaintainerLink}><i class="fa-solid fa-user"></i>{t.footerMaintainer} William C. Canin</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <span>© {new Date().getFullYear()} ARGVUS</span>
-          <span>{t.feedbackMade}</span>
-          <span>{t.bottomLicense}</span>
-        </div>
-      </div>
-    </footer>
+    <SiteFooter lang={lang} />
 
     <!-- Fullscreen image modal -->
     <div
@@ -1433,116 +1325,6 @@ const ccFirst = ccSteps[0].items[0]
     </div>
 
     <script>
-      // ── Tema (sincronizado com a docs do Starlight) ─────────────────────────
-      const STORAGE_KEY = 'starlight-theme'
-      const root = document.documentElement
-      const media = window.matchMedia('(prefers-color-scheme: light)')
-      const themeBtn = document.querySelector('[data-theme-current]')
-      const themeMenu = document.querySelector('[data-theme-menu]')
-      const options = Array.from(document.querySelectorAll('[data-theme-option]'))
-      const langBtn = document.querySelector('[data-lang-current]')
-      const langMenu = document.querySelector('[data-lang-menu]')
-
-      const currentTheme = () => {
-        const stored = localStorage.getItem(STORAGE_KEY)
-        return stored === 'light' || stored === 'dark'
-          ? stored
-          : media.matches
-            ? 'light'
-            : 'dark'
-      }
-
-      const render = () => {
-        const theme = currentTheme()
-        root.dataset.theme = theme
-        themeBtn.dataset.mode = localStorage.getItem(STORAGE_KEY) ? theme : 'system'
-        options.forEach((opt) => {
-          opt.setAttribute('aria-checked', String(opt.dataset.themeOption === theme))
-        })
-      }
-
-      const setTheme = (value) => {
-        if (value === 'system') localStorage.removeItem(STORAGE_KEY)
-        else localStorage.setItem(STORAGE_KEY, value)
-        render()
-      }
-
-      themeBtn.addEventListener('click', () => {
-        themeMenu.hidden = !themeMenu.hidden
-        if (langMenu) langMenu.hidden = true
-      })
-
-      options.forEach((opt) => {
-        opt.addEventListener('click', () => {
-          setTheme(opt.dataset.themeOption)
-          themeMenu.hidden = true
-        })
-      })
-
-      langBtn?.addEventListener('click', () => {
-        langMenu.hidden = !langMenu.hidden
-        themeMenu.hidden = true
-      })
-
-      document.addEventListener('click', (e) => {
-        if (!e.target.closest('[data-theme-toggle]')) themeMenu.hidden = true
-        if (!e.target.closest('[data-lang-toggle]') && langMenu) langMenu.hidden = true
-        if (!e.target.closest('[data-nav-dropdown]')) {
-          document.querySelectorAll('[data-nav-dropdown-menu]').forEach((menu) => {
-            menu.hidden = true
-          })
-        }
-      })
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          themeMenu.hidden = true
-          if (langMenu) langMenu.hidden = true
-          document.querySelectorAll('[data-nav-dropdown-menu]').forEach((menu) => {
-            menu.hidden = true
-          })
-        }
-      })
-
-      document.querySelectorAll('[data-nav-dropdown-trigger]').forEach((trigger) => {
-        trigger.addEventListener('click', (e) => {
-          e.stopPropagation()
-          const menu = trigger.nextElementSibling
-          menu.hidden = !menu.hidden
-        })
-      })
-
-      media.addEventListener('change', render)
-      render()
-
-      // ── Menu móvel: abaixo de 860px os links viram um painel sob o header ──
-      const siteNav = document.querySelector('[data-site-nav]')
-      const navMenuButton = document.querySelector('[data-nav-menu]')
-      const setNavMenu = (open) => {
-        siteNav.toggleAttribute('data-menu-open', open)
-        navMenuButton.setAttribute('aria-expanded', String(open))
-      }
-      navMenuButton.addEventListener('click', (event) => {
-        event.stopPropagation()
-        setNavMenu(!siteNav.hasAttribute('data-menu-open'))
-      })
-      siteNav.querySelectorAll('.nav-links a').forEach((anchor) => anchor.addEventListener('click', () => setNavMenu(false)))
-      document.addEventListener('click', (event) => {
-        if (!event.target.closest('#site-nav-links')) setNavMenu(false)
-      })
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && siteNav.hasAttribute('data-menu-open')) {
-          setNavMenu(false)
-          navMenuButton.focus()
-        }
-      })
-
-      // ── Header: borda e fundo sólido só depois de rolar ────────────────────
-      const siteHeader = document.querySelector('.site-header')
-      const markScrolled = () => siteHeader.toggleAttribute('data-scrolled', window.scrollY > 8)
-      window.addEventListener('scroll', markScrolled, { passive: true })
-      markScrolled()
-
       // ── Copiar o comando de instalação do hero ────────────────────────────
       document.querySelectorAll('[data-copy]').forEach((button) => {
         const label = button.getAttribute('aria-label')

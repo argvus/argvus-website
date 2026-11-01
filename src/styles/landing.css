@@ -657,52 +657,21 @@ footer .brand-wordmark {
 .hero-pill {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
   margin-bottom: 28px;
-  padding: 5px 12px 5px 5px;
-  border: 1px solid var(--lp-border-strong);
-  background: color-mix(in srgb, var(--lp-panel) 80%, transparent);
-  color: var(--lp-fg-muted);
+  padding: 8px 16px;
+  border: 1px solid color-mix(in srgb, var(--lp-accent) 65%, var(--lp-border-strong));
+  background: color-mix(in srgb, var(--lp-accent-soft) 72%, var(--lp-panel));
+  box-shadow: 0 0 24px color-mix(in srgb, var(--lp-accent) 18%, transparent), inset 0 0 16px color-mix(in srgb, var(--lp-accent) 8%, transparent);
+  color: var(--lp-accent-high);
   font-family: var(--lp-mono);
-  font-size: 0.72rem;
-  text-decoration: none;
-  transition: border-color 0.15s ease, color 0.15s ease;
-}
-
-.hero-pill:hover {
-  border-color: var(--lp-accent);
-  color: var(--lp-fg);
-}
-
-.hero-pill-tag {
-  padding: 2px 9px;
-  background: var(--lp-accent-soft);
-  color: var(--lp-accent);
-  font-weight: 600;
+  font-size: 0.76rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.hero-pill-text {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.hero-pill-sep {
-  width: 3px;
-  height: 3px;
-  background: var(--lp-fg-dim);
-}
-
-.hero-pill svg {
-  width: 14px;
-  height: 14px;
-  transition: transform 0.2s var(--lp-ease);
-}
-
-.hero-pill:hover svg {
-  transform: translateX(3px);
+.hero-pill-version {
+  font-weight: 700;
 }
 
 .hero h1 {
@@ -1405,6 +1374,24 @@ body[data-parallax-enabled='true'] [data-reveal].is-revealed {
   color: var(--lp-fg-muted);
   font-size: 0.93rem;
   line-height: 1.62;
+}
+
+.community-card > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 18px;
+  color: var(--lp-accent);
+  font-family: var(--lp-mono);
+  font-size: 0.82rem;
+  text-decoration: none;
+}
+
+.community-card > a:hover,
+.community-card > a:focus-visible {
+  color: var(--lp-fg);
+  text-decoration: underline;
 }
 
 /* ── Waybar ───────────────────────────────────────────────────────────────── */
@@ -2767,7 +2754,7 @@ body[data-parallax-enabled='true'] [data-reveal].is-revealed {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+  grid-template-columns: 1.4fr repeat(3, 1fr);
   gap: 40px;
 }
 
@@ -2815,18 +2802,36 @@ body[data-parallax-enabled='true'] [data-reveal].is-revealed {
   color: var(--lp-fg);
 }
 
-.footer-bottom {
+.footer-meta {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 48px;
-  padding-top: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 12px;
+  margin-top: 40px;
+  padding-top: 22px;
   border-top: 1px dashed var(--lp-border-strong);
   color: var(--lp-fg-dim);
   font-family: var(--lp-mono);
   font-size: 0.7rem;
   letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.footer-meta a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-meta a:hover,
+.footer-meta a:focus-visible {
+  color: var(--lp-fg);
+  text-decoration: underline;
+}
+
+.footer-feedback {
+  flex-basis: 100%;
+  color: var(--lp-fg-dim);
 }
 
 /* ── DNA: keycaps de navegação ────────────────────────────────────────────── */
@@ -3085,11 +3090,6 @@ body[data-parallax-enabled='true'] [data-reveal].is-revealed {
 
   .hero-pill {
     font-size: 0.66rem;
-  }
-
-  .hero-pill-sep,
-  .hero-pill-label {
-    display: none;
   }
 
   .hero h1 {

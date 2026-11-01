@@ -4,7 +4,33 @@
 
 /* ── About ────────────────────────────────────────────────────────────────── */
 
+.about-site {
+  background-image:
+    radial-gradient(var(--lp-grid-dot) 1px, transparent 1.2px),
+    radial-gradient(
+      520px circle at var(--pointer-x, 50vw) var(--pointer-y, 25vh),
+      var(--lp-accent-soft),
+      transparent 70%
+    ),
+    radial-gradient(ellipse 70% 46% at 50% 0%, var(--lp-glow), transparent 72%);
+  background-size: 26px 26px, auto, auto;
+  background-position: 0 0, center, center top;
+  background-attachment: fixed;
+  background-repeat: repeat, no-repeat, no-repeat;
+}
+
+.about-intro {
+  padding-bottom: 56px;
+}
+
+.about-page {
+  padding-top: 56px;
+}
+
 .about-composition {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   border: 1px solid var(--lp-border);
   background: var(--lp-panel);
   box-shadow: var(--lp-shadow);
@@ -15,6 +41,24 @@
   margin: 0 auto 48px;
   max-width: 760px;
   padding: 36px;
+}
+
+.about-composition::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    360px circle at var(--px, 50%) var(--py, 0%),
+    var(--lp-accent-soft),
+    transparent 65%
+  );
+  content: '';
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.about-composition:hover::before {
+  opacity: 1;
 }
 
 .about-parts {

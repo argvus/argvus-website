@@ -1,0 +1,178 @@
+---
+interface Props {
+  lang: 'en' | 'pt'
+  page: 'home' | 'about'
+  isBeta: boolean
+  contributionEnabled: boolean
+}
+
+const { lang, page, isBeta, contributionEnabled } = Astro.props
+const isPT = lang === 'pt'
+const base = import.meta.env.BASE_URL
+const link = (path: string) => base + (isPT && !path.startsWith('packages/') ? 'pt/' : '') + path
+const languageBase = page === 'about' ? 'about/' : ''
+const t = isPT
+  ? {
+      navAria: 'Navegação principal', navDocs: 'Documentação', navArch: 'Repositório', navArchArch: 'Arch Linux',
+      github: 'GitHub', navDonate: 'Apoiar', langAria: 'Alterar idioma', langEnglish: 'English', langPortuguese: 'Português',
+      themeAria: 'Alterar tema', themeLight: 'Light', themeDark: 'Dark', themeSystem: 'System', navMenu: 'Menu',
+    }
+  : {
+      navAria: 'Main navigation', navDocs: 'Documentation', navArch: 'Repository', navArchArch: 'Arch Linux',
+      github: 'GitHub', navDonate: 'Donate', langAria: 'Change language', langEnglish: 'English', langPortuguese: 'Português',
+      themeAria: 'Change theme', themeLight: 'Light', themeDark: 'Dark', themeSystem: 'System', navMenu: 'Menu',
+    }
+const logoUrl = `${base}brand/argvus-logo.svg`
+const wordmarkUrl = `${base}brand/argvus-wordmark.svg`
+const githubOrgUrl = 'https://github.com/orgs/argvus'
+---
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href={link('')}>
+      <img class="brand-logotype" src={logoUrl} alt="" width="48" height="48" />
+      <img class="brand-wordmark" src={wordmarkUrl} alt="ARGVUS" width="178" height="20" />
+      {isBeta && <span class="beta-badge">Beta</span>}
+    </a>
+    <nav class="site-nav" aria-label={t.navAria} data-site-nav>
+      <div class="nav-links" id="site-nav-links">
+        <a class="nav-link" href={link('docs/introduction/')}><i class="fa-solid fa-book-open"></i>{t.navDocs}</a>
+        <div class="nav-dropdown" data-nav-dropdown>
+          <button class="nav-link nav-dropdown-trigger" type="button" data-nav-dropdown-trigger>
+            <i class="fa-solid fa-cube"></i>{t.navArch}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+          </button>
+          <div class="nav-dropdown-menu" data-nav-dropdown-menu hidden>
+            <a class="nav-dropdown-item" href={link('packages/arch/')}><i class="fa-brands fa-linux"></i>{t.navArchArch}</a>
+          </div>
+        </div>
+        <a class="nav-link" href={githubOrgUrl}><i class="fa-brands fa-github"></i>{t.github}</a>
+        {contributionEnabled && <a class="nav-link nav-link-donate" href={page === 'about' ? link('') + '#support' : '#support'}><i class="fa-solid fa-heart"></i>{t.navDonate}</a>}
+      </div>
+      <div class="lang-toggle" data-lang-toggle>
+        <button class="lang-toggle-btn" type="button" data-lang-current aria-label={t.langAria} aria-haspopup="menu">
+          <span>{isPT ? 'PT' : 'EN'}</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+        </button>
+        <div class="lang-toggle-menu" data-lang-menu hidden>
+          <a class="lang-option" href={base + languageBase} aria-current={!isPT ? 'page' : undefined}>{t.langEnglish}</a>
+          <a class="lang-option" href={base + 'pt/' + languageBase} aria-current={isPT ? 'page' : undefined}>{t.langPortuguese}</a>
+        </div>
+      </div>
+      <div class="theme-toggle" data-theme-toggle>
+        <button class="theme-toggle-btn" type="button" data-theme-current aria-label={t.themeAria} aria-haspopup="menu">
+          <svg class="icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+          <svg class="icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <svg class="icon-system" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg>
+        </button>
+        <div class="theme-toggle-menu" data-theme-menu hidden>
+          <button class="theme-option" type="button" data-theme-option="light" role="menuitemradio" aria-checked="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+            {t.themeLight}
+          </button>
+          <button class="theme-option" type="button" data-theme-option="dark" role="menuitemradio" aria-checked="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            {t.themeDark}
+          </button>
+          <button class="theme-option" type="button" data-theme-option="system" role="menuitemradio" aria-checked="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg>
+            {t.themeSystem}
+          </button>
+        </div>
+      </div>
+      <button class="nav-menu-btn" type="button" aria-controls="site-nav-links" aria-expanded="false" aria-label={t.navMenu} data-nav-menu>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const siteNav = document.querySelector('[data-site-nav]')
+  const themeButton = document.querySelector('[data-theme-current]')
+  const themeMenu = document.querySelector('[data-theme-menu]')
+  const themeOptions = Array.from(document.querySelectorAll('[data-theme-option]'))
+  const languageButton = document.querySelector('[data-lang-current]')
+  const languageMenu = document.querySelector('[data-lang-menu]')
+  const mobileButton = document.querySelector('[data-nav-menu]')
+  const colorScheme = window.matchMedia('(prefers-color-scheme: light)')
+
+  if (siteNav && themeButton && themeMenu && mobileButton) {
+    const selectedTheme = () => {
+      const stored = localStorage.getItem('starlight-theme')
+      return stored === 'light' || stored === 'dark' ? stored : colorScheme.matches ? 'light' : 'dark'
+    }
+
+    const renderTheme = () => {
+      const theme = selectedTheme()
+      document.documentElement.dataset.theme = theme
+      themeButton.dataset.mode = localStorage.getItem('starlight-theme') ? theme : 'system'
+      themeOptions.forEach((option) => {
+        option.setAttribute('aria-checked', String(option.dataset.themeOption === theme))
+      })
+    }
+
+    themeButton.addEventListener('click', () => {
+      themeMenu.hidden = !themeMenu.hidden
+      if (languageMenu) languageMenu.hidden = true
+    })
+    themeOptions.forEach((option) => {
+      option.addEventListener('click', () => {
+        if (option.dataset.themeOption === 'system') localStorage.removeItem('starlight-theme')
+        else localStorage.setItem('starlight-theme', option.dataset.themeOption)
+        renderTheme()
+        themeMenu.hidden = true
+      })
+    })
+    languageButton?.addEventListener('click', () => {
+      if (languageMenu) languageMenu.hidden = !languageMenu.hidden
+      themeMenu.hidden = true
+    })
+
+    document.querySelectorAll('[data-nav-dropdown-trigger]').forEach((trigger) => {
+      trigger.addEventListener('click', (event) => {
+        event.stopPropagation()
+        const menu = trigger.nextElementSibling
+        if (menu) menu.hidden = !menu.hidden
+      })
+    })
+
+    const setMobileMenu = (open: boolean) => {
+      siteNav.toggleAttribute('data-menu-open', open)
+      mobileButton.setAttribute('aria-expanded', String(open))
+    }
+    mobileButton.addEventListener('click', (event) => {
+      event.stopPropagation()
+      setMobileMenu(!siteNav.hasAttribute('data-menu-open'))
+    })
+    siteNav.querySelectorAll('.nav-links a').forEach((anchor) => anchor.addEventListener('click', () => setMobileMenu(false)))
+
+    document.addEventListener('click', (event) => {
+      const target = event.target
+      if (!(target instanceof Element)) return
+      if (!target.closest('[data-theme-toggle]')) themeMenu.hidden = true
+      if (!target.closest('[data-lang-toggle]') && languageMenu) languageMenu.hidden = true
+      if (!target.closest('[data-nav-dropdown]')) {
+        document.querySelectorAll('[data-nav-dropdown-menu]').forEach((menu) => { menu.hidden = true })
+      }
+      if (!target.closest('#site-nav-links')) setMobileMenu(false)
+    })
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return
+      themeMenu.hidden = true
+      if (languageMenu) languageMenu.hidden = true
+      document.querySelectorAll('[data-nav-dropdown-menu]').forEach((menu) => { menu.hidden = true })
+      if (siteNav.hasAttribute('data-menu-open')) {
+        setMobileMenu(false)
+        mobileButton.focus()
+      }
+    })
+
+    colorScheme.addEventListener('change', renderTheme)
+    renderTheme()
+    const header = document.querySelector('.site-header')
+    const markScrolled = () => header?.toggleAttribute('data-scrolled', window.scrollY > 8)
+    window.addEventListener('scroll', markScrolled, { passive: true })
+    markScrolled()
+  }
+</script>

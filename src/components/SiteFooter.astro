@@ -1,0 +1,78 @@
+---
+interface Props { lang: 'en' | 'pt' }
+
+const { lang } = Astro.props
+const isPT = lang === 'pt'
+const base = import.meta.env.BASE_URL
+const link = (path: string) => path.startsWith('/') ? path : base + (isPT && !path.startsWith('packages/') ? 'pt/' : '') + path
+const t = isPT
+  ? {
+      tagline: 'Um ambiente de desktop modular para Wayland e Arch Linux, construído sobre o Hyprland.',
+      docs: 'Documentação', docsLinks: [
+        ['Introdução', 'docs/introduction/'], ['Instalação', 'docs/getting-started/installation/install/'],
+        ['Aparência', 'docs/user-guide/appearance/'], ['Sessões', 'docs/user-guide/sessions/'], ['Perguntas frequentes', 'docs/user-guide/faq/'],
+      ], resources: 'Recursos', resourceLinks: [
+        ['Sobre o ARGVUS', 'about/'], ['GitHub', 'https://github.com/orgs/argvus'], ['Repositório Arch Linux', '/packages/arch/'],
+      ], community: 'Comunidade', feedback: 'Feito para a comunidade open source',
+      license: 'Licenciado sob GPL-3.0', maintainer: 'Mantido por William C. Canin',
+    }
+  : {
+      tagline: 'A modular desktop environment for Wayland and Arch Linux, built on Hyprland.',
+      docs: 'Documentation', docsLinks: [
+        ['Introduction', 'docs/introduction/'], ['Installation', 'docs/getting-started/installation/install/'],
+        ['Appearance', 'docs/user-guide/appearance/'], ['Sessions', 'docs/user-guide/sessions/'], ['FAQ', 'docs/user-guide/faq/'],
+      ], resources: 'Resources', resourceLinks: [
+        ['About ARGVUS', 'about/'], ['GitHub', 'https://github.com/orgs/argvus'], ['Arch Linux Repository', '/packages/arch/'],
+      ], community: 'Community', feedback: 'Built for the open source community',
+      license: 'Licensed under GPL-3.0', maintainer: 'Maintained by William C. Canin',
+    }
+const channels = isPT
+  ? [
+      ['Canal oficial', 'https://t.me/argvusdesktop'],
+      ['Comunidade global', 'https://t.me/argvuscommunity'],
+      ['Comunidade brasileira', 'https://t.me/argvuscommunity_br'],
+    ]
+  : [
+      ['Official channel', 'https://t.me/argvusdesktop'],
+      ['Global community', 'https://t.me/argvuscommunity'],
+      ['Brazilian community', 'https://t.me/argvuscommunity_br'],
+    ]
+const logoUrl = `${base}brand/argvus-logo.svg`
+const wordmarkUrl = `${base}brand/argvus-wordmark.svg`
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a class="brand" href={link('')}>
+          <img class="brand-logotype" src={logoUrl} alt="" width="48" height="48" />
+          <img class="brand-wordmark" src={wordmarkUrl} alt="ARGVUS" width="178" height="20" />
+        </a>
+        <p>{t.tagline}</p>
+      </div>
+      <div class="footer-col">
+        <h4>{t.docs}</h4>
+        <ul>{t.docsLinks.map(([label, href]) => <li><a href={link(href)}>{label}</a></li>)}</ul>
+      </div>
+      <div class="footer-col">
+        <h4>{t.resources}</h4>
+        <ul>{t.resourceLinks.map(([label, href]) => (
+          <li><a href={href.startsWith('http') ? href : link(href)}>{label}</a></li>
+        ))}</ul>
+      </div>
+      <div class="footer-col">
+        <h4>{t.community}</h4>
+        <ul>{channels.map(([label, href]) => <li><a href={href} target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i>{label}</a></li>)}</ul>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>© {new Date().getFullYear()} ARGVUS</span>
+      <span aria-hidden="true">·</span>
+      <a href="https://github.com/argvus/argvus/blob/main/LICENSE">{t.license}</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://github.com/williamcanin" target="_blank" rel="noopener noreferrer">{t.maintainer}</a>
+      <span class="footer-feedback">{t.feedback}</span>
+    </div>
+  </div>
+</footer>

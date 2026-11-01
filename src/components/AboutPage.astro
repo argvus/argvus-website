@@ -12,6 +12,11 @@ import '@fontsource/ibm-plex-mono/700.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import '../styles/landing.css'
 import '../styles/about.css'
+import SiteHeader from './SiteHeader.astro'
+import SiteFooter from './SiteFooter.astro'
+import fs from 'node:fs'
+import { resolve } from 'node:path'
+import siteConfig from '../site-config.json'
 
 interface Props {
   lang: 'en' | 'pt'
@@ -21,16 +26,13 @@ const { lang } = Astro.props
 const base = import.meta.env.BASE_URL
 const isPT = lang === 'pt'
 const siteUrl = 'https://argvus.github.io'
-const githubOrgUrl = 'https://github.com/orgs/argvus'
-// Logo servido pelo próprio site (cópia de argvus-logo/svg, em src/public/brand).
-const logotypeUrl = `${import.meta.env.BASE_URL}brand/argvus-logo.svg`
-const argvusWordmarkUrl = `${import.meta.env.BASE_URL}brand/argvus-wordmark.svg`
-
 const link = (path: string) => base + (isPT ? 'pt/' : '') + path
 const pagePath = isPT ? 'pt/about/' : 'about/'
 const pageUrl = `${siteUrl}${base}${pagePath}`
 const initialPronunciation = isPT ? argvusPronunciationPt : argvusPronunciationEn
-const year = new Date().getFullYear()
+const version = JSON.parse(fs.readFileSync(resolve(process.cwd(), 'version.json'), 'utf8')).version
+const isBeta = version.startsWith('0.')
+const contributionEnabled = siteConfig.page_home.contributionLinks.enable
 
 const t = isPT
   ? {
@@ -46,6 +48,9 @@ const t = isPT
       langPortuguese: 'Português',
       back: 'Voltar ao início',
       aboutEyebrow: 'Sobre',
+      aboutIntroTitle: 'O que é ARGVUS?',
+      aboutIntroText:
+        'ARGVUS é um ambiente de desktop modular para Arch Linux, baseado em Wayland e Hyprland. Ele reúne sessão, barra de tarefas, painel de controles, configurações e integrações do sistema em uma experiência coesa. Seus componentes são distribuídos em pacotes que trabalham juntos, com os comandos e aplicações Rust concentrados no workspace principal. O projeto prioriza uma interação rápida e previsível, com o teclado como parte central do fluxo de trabalho.',
       aboutTitle: 'Por que ARGVUS?',
       aboutArgv: 'Argument Vector',
       aboutUs: 'User System',
@@ -76,6 +81,9 @@ const t = isPT
       langPortuguese: 'Portuguese',
       back: 'Back to home',
       aboutEyebrow: 'About',
+      aboutIntroTitle: 'What is ARGVUS?',
+      aboutIntroText:
+        'ARGVUS is a modular desktop environment for Arch Linux, built on Wayland and Hyprland. It brings the session, taskbar, control panel, settings and system integrations together as one cohesive experience. Its components are distributed across packages that work together, while Rust commands and applications live in the main workspace. The project focuses on fast, predictable interaction, with the keyboard at the center of the workflow.',
       aboutTitle: 'Why ARGVUS?',
       aboutArgv: 'Argument Vector',
       aboutUs: 'User System',
@@ -139,31 +147,23 @@ const t = isPT
       </style>
     </noscript>
   </head>
-  <body>
-    <header class="site-header">
-      <div class="container">
-        <a class="brand" href={link('')}>
-          <img class="brand-logotype" src={logotypeUrl} alt="" width={48} height={48} />
-          <img class="brand-wordmark" src={argvusWordmarkUrl} alt="ARGVUS" width={178} height={20} />
-        </a>
-
-        <nav class="site-nav" aria-label={t.navAria}>
-          <div class="nav-links">
-            <a class="nav-link" href={link('docs/introduction/')}><i class="fa-solid fa-book-open"></i>{t.navDocs}</a>
-            <a class="nav-link" href={githubOrgUrl}><i class="fa-brands fa-github"></i>{t.github}</a>
-            <a class="nav-link" href={base + 'about/'} hreflang="en" lang="en" aria-label={t.langEnglish} aria-current={!isPT ? 'page' : undefined}>EN</a>
-            <a class="nav-link" href={base + 'pt/about/'} hreflang="pt-BR" lang="pt-BR" aria-label={t.langPortuguese} aria-current={isPT ? 'page' : undefined}>PT</a>
-          </div>
-        </nav>
-      </div>
-    </header>
+  <body class="about-site" data-tilt-enabled={siteConfig.page_home.effects.tilt ? 'true' : 'false'}>
+    <SiteHeader lang={lang} page="about" isBeta={isBeta} contributionEnabled={contributionEnabled} />
 
     <main>
-      <section class="section about-page">
+      <section class="section about-intro">
         <div class="container">
           <div class="section-head">
             <span class="eyebrow">{t.aboutEyebrow}</span>
-            <h1>{t.aboutTitle}</h1>
+            <h1>{t.aboutIntroTitle}</h1>
+            <p>{t.aboutIntroText}</p>
+          </div>
+        </div>
+      </section>
+      <section class="section about-page">
+        <div class="container">
+          <div class="section-head">
+            <h2>{t.aboutTitle}</h2>
           </div>
 
           <div class="about-composition" data-about-animate>
@@ -231,14 +231,7 @@ const t = isPT
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-bottom">
-          <span>© {year} ARGVUS</span>
-          <span>{t.footerLicense}</span>
-        </div>
-      </div>
-    </footer>
+    <SiteFooter lang={lang} />
 
     <script>
       // ── Animação ARGV + US → ARGVUS ───────────────────────────────────────
@@ -270,6 +263,40 @@ const t = isPT
           pronunciationAudio.src = pronunciationSelect.value
           pronunciationAudio.load()
           if (wasPlaying) pronunciationAudio.play().catch(() => {})
+        })
+      }
+
+      // Brilho do ponteiro na introdução e tilt/spotlight na composição ARGV + US.
+      const aboutComposition = document.querySelector('.about-composition')
+      const hasHoverPointer = window.matchMedia('(hover: hover)').matches
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+      if (hasHoverPointer && !reduceMotion) {
+        document.body.addEventListener('pointermove', (event) => {
+          document.body.style.setProperty('--pointer-x', `${event.clientX}px`)
+          document.body.style.setProperty('--pointer-y', `${event.clientY}px`)
+        })
+      }
+
+      if (
+        aboutComposition &&
+        document.body.dataset.tiltEnabled === 'true' &&
+        hasHoverPointer &&
+        !reduceMotion
+      ) {
+        aboutComposition.classList.add('has-tilt')
+        aboutComposition.addEventListener('pointermove', (event) => {
+          const rect = aboutComposition.getBoundingClientRect()
+          const x = (event.clientX - rect.left) / rect.width - 0.5
+          const y = (event.clientY - rect.top) / rect.height - 0.5
+          aboutComposition.style.setProperty('--tilt-x', `${(-y * 3).toFixed(2)}deg`)
+          aboutComposition.style.setProperty('--tilt-y', `${(x * 3).toFixed(2)}deg`)
+          aboutComposition.style.setProperty('--px', `${(event.clientX - rect.left).toFixed(0)}px`)
+          aboutComposition.style.setProperty('--py', `${(event.clientY - rect.top).toFixed(0)}px`)
+        })
+        aboutComposition.addEventListener('pointerleave', () => {
+          aboutComposition.style.setProperty('--tilt-x', '0deg')
+          aboutComposition.style.setProperty('--tilt-y', '0deg')
         })
       }
     </script>
