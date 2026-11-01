@@ -429,6 +429,9 @@ export const sidebarConfig = [
         "translations": {
           "pt-BR": "Onde configurar"
         }
+      },
+      {
+        "slug": "docs/user-guide/night-light"
       }
     ],
     "collapsed": false,
@@ -638,6 +641,9 @@ export const sidebarConfig = [
         "translations": {
           "pt-BR": "Temas"
         }
+      },
+      {
+        "slug": "docs/components/argvus-sensors"
       }
     ],
     "collapsed": true,
