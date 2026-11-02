@@ -1,0 +1,162 @@
+---
+import { Image } from 'astro:assets'
+import codexImage from '../images/ai-agents/codex.png'
+import claudeImage from '../images/ai-agents/claude.svg'
+import opencodeImage from '../images/ai-agents/opencode.svg'
+
+interface Props { lang: 'en' | 'pt' }
+const { lang } = Astro.props
+const isPT = lang === 'pt'
+const docs = `${import.meta.env.BASE_URL}${isPT ? 'pt/' : ''}docs/argvus-ai/`
+const copy = isPT ? {
+  eyebrow: 'AI Agents',
+  title: 'Seus agentes.',
+  accent: 'Um só atalho.',
+  lead: 'Do primeiro prompt à próxima mudança no código. Abra Codex, Claude Code ou OpenCode pelo mesmo seletor, direto no terminal ARGVUS.',
+  shortcutLabel: 'Comece pelo teclado',
+  shortcutHint: 'Abra o seletor. Escolha seu agente.',
+  sectionLabel: 'Agentes de programação integrados ao ARGVUS',
+  codex: 'O agente de programação da OpenAI, acessível pelo lançador e pronto para abrir no terminal do seu desktop.',
+  claude: 'O agente da Anthropic, com instalação no seu usuário pelo mise quando você o abrir pela primeira vez.',
+  opencode: 'O agente de código aberto, integrado ao mesmo fluxo de seleção e abertura dos demais agentes.',
+  packaged: 'Instalado com argvus-ai',
+  onDemand: 'Instalação no primeiro uso',
+  upstream: 'Conheça o agente',
+  workflowTitle: 'Escolha a ferramenta. Mantenha seu fluxo.',
+  workflowText: 'Atalho, robô na taskbar ou lançador de aplicativos: todos levam ao mesmo terminal nativo. A escolha do agente continua sendo sua.',
+  cta: 'Conheça o ARGVUS AI',
+  install: 'Instalação e primeiro uso',
+  codexAlt: 'Marca da OpenAI, criadora do Codex',
+  claudeAlt: 'Marca do Claude',
+  opencodeAlt: 'Marca do OpenCode',
+} : {
+  eyebrow: 'AI Agents',
+  title: 'Your agents.',
+  accent: 'One shortcut.',
+  lead: 'From the first prompt to the next code change. Open Codex, Claude Code or OpenCode from one selector, right in your ARGVUS terminal.',
+  shortcutLabel: 'Start at the keyboard',
+  shortcutHint: 'Open the selector. Choose your agent.',
+  sectionLabel: 'Coding agents integrated with ARGVUS',
+  codex: 'OpenAI’s coding agent, available from the launcher and ready to open in your desktop’s native terminal.',
+  claude: 'Anthropic’s coding agent, installed in your user profile through mise when you open it for the first time.',
+  opencode: 'The open-source coding agent, integrated with the same selection and launch flow as your other agents.',
+  packaged: 'Installed with argvus-ai',
+  onDemand: 'Installed on first launch',
+  upstream: 'Explore the agent',
+  workflowTitle: 'Choose your tool. Keep your flow.',
+  workflowText: 'Keyboard shortcut, taskbar robot or application launcher: every entry point opens the native terminal. The agent is your choice.',
+  cta: 'Explore ARGVUS AI',
+  install: 'Installation and first use',
+  codexAlt: 'OpenAI mark, the creators of Codex',
+  claudeAlt: 'Claude mark',
+  opencodeAlt: 'OpenCode mark',
+}
+const agents = [
+  { id: 'codex', name: 'Codex', provider: 'OpenAI', image: codexImage, alt: copy.codexAlt, text: copy.codex, status: copy.packaged, url: 'https://openai.com/codex/' },
+  { id: 'claude', name: 'Claude Code', provider: 'Anthropic', image: claudeImage, alt: copy.claudeAlt, text: copy.claude, status: copy.onDemand, url: 'https://code.claude.com/docs/en/overview' },
+  { id: 'opencode', name: 'OpenCode', provider: isPT ? 'Código aberto' : 'Open source', image: opencodeImage, alt: copy.opencodeAlt, text: copy.opencode, status: copy.packaged, url: 'https://opencode.ai/' },
+]
+---
+
+<section class="section ai-section" id="ai-agents" aria-labelledby="ai-agents-title">
+  <div class="container">
+    <div class="ai-heading" data-reveal>
+      <div class="section-head ai-intro">
+        <span class="eyebrow">{copy.eyebrow}</span>
+        <h2 id="ai-agents-title">{copy.title}<br /><span>{copy.accent}</span></h2>
+        <p>{copy.lead}</p>
+      </div>
+      <div class="ai-shortcut" aria-label={copy.shortcutLabel}>
+        <span class="ai-shortcut-label">{copy.shortcutLabel}</span>
+        <div class="ai-keys"><kbd>SUPER</kbd><span aria-hidden="true">+</span><kbd>A</kbd></div>
+        <p>{copy.shortcutHint}</p>
+      </div>
+    </div>
+
+    <div class="ai-grid" role="group" aria-label={copy.sectionLabel}>
+      {agents.map((agent, index) => (
+        <article class={`ai-card ai-card-${agent.id}`} data-reveal>
+          <div class="ai-artwork">
+            <span class="ai-card-index" aria-hidden="true">0{index + 1}</span>
+            <Image src={agent.image} alt={agent.alt} width={112} height={112} loading="lazy" decoding="async" />
+            <span class="ai-provider">{agent.provider}</span>
+          </div>
+          <div class="ai-card-body">
+            <span class="ai-status"><span aria-hidden="true"></span>{agent.status}</span>
+            <h3>{agent.name}</h3>
+            <p>{agent.text}</p>
+            <a class="ai-upstream" href={agent.url}>{copy.upstream}<span class="sr-only"> — {agent.name}</span><span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="ai-workflow" data-reveal>
+      <div>
+        <h3>{copy.workflowTitle}</h3>
+        <p>{copy.workflowText}</p>
+      </div>
+      <div class="ai-actions">
+        <a class="btn btn-primary" href={docs}>{copy.cta}<span aria-hidden="true">→</span></a>
+        <a class="ai-install-link" href={`${docs}installation/`}>{copy.install}<span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ai-section { border-top: 1px solid var(--lp-border); position: relative; }
+  .ai-heading { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 3rem; margin-bottom: 3rem; }
+  .ai-intro { margin-bottom: 0; }
+  .ai-intro h2 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.06; letter-spacing: -0.045em; margin-bottom: 1.5rem; }
+  .ai-intro h2 span { color: var(--lp-accent); }
+  .ai-intro p { max-width: 57ch; }
+  .ai-shortcut { border: 1px solid var(--lp-border-strong); background: var(--lp-bg-soft); padding: 1.75rem 2rem; text-align: center; min-width: 260px; }
+  .ai-shortcut-label { font: 500 0.7rem var(--lp-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--lp-fg-muted); }
+  .ai-keys { display: flex; justify-content: center; align-items: center; gap: 0.85rem; margin: 1.5rem 0; }
+  .ai-keys kbd { display: grid; place-items: center; min-width: 64px; height: 60px; padding: 0 1rem; border: 1px solid var(--lp-border-strong); border-bottom-width: 4px; background: var(--lp-panel-raised); color: var(--lp-fg); font: 500 1.25rem var(--lp-mono); }
+  .ai-keys > span { color: var(--lp-fg-dim); }
+  .ai-shortcut p { font-size: 0.8rem; color: var(--lp-fg-muted); margin: 0; }
+  .ai-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+  .ai-card { min-width: 0; border: 1px solid var(--lp-border-strong); background: var(--lp-panel); display: flex; flex-direction: column; transition: border-color 180ms ease; }
+  .ai-card:focus-within, .ai-card:hover { border-color: var(--lp-accent); }
+  .ai-artwork { display: grid; place-items: center; position: relative; min-height: 230px; background: #f2f0eb; border-bottom: 1px solid var(--lp-border-strong); color: #4b4646; overflow: hidden; }
+  .ai-card-codex .ai-artwork { background: #fff; }
+  .ai-card-claude .ai-artwork { background: #ede5db; }
+  .ai-card-opencode .ai-artwork { background: #181716; color: #c6c0b8; }
+  .ai-artwork img { display: block; object-fit: contain; width: 112px; height: 112px; }
+  .ai-card-opencode .ai-artwork img { width: 130px; height: 130px; }
+  .ai-card-index { position: absolute; top: 1.2rem; left: 1.3rem; font: 400 0.75rem var(--lp-mono); opacity: 0.7; }
+  .ai-provider { position: absolute; bottom: 1.1rem; font: 500 0.7rem var(--lp-mono); letter-spacing: 0.12em; text-transform: uppercase; }
+  .ai-card-body { padding: 1.6rem; display: flex; flex-direction: column; flex: 1; }
+  .ai-status { display: flex; align-items: center; gap: 0.45rem; font: 400 0.72rem var(--lp-mono); color: var(--lp-fg-muted); }
+  .ai-status > span { width: 5px; height: 5px; background: var(--lp-accent); flex-shrink: 0; }
+  .ai-card-body h3 { margin: 1.1rem 0 0.75rem; font-size: 1.55rem; letter-spacing: -0.025em; color: var(--lp-fg); }
+  .ai-card-body p { font-size: 0.95rem; line-height: 1.7; color: var(--lp-fg-muted); margin: 0 0 1.5rem; }
+  .ai-upstream { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: auto; padding-top: 1.1rem; border-top: 1px solid var(--lp-border); font: 500 0.75rem var(--lp-mono); color: var(--lp-fg); }
+  .ai-upstream:hover { color: var(--lp-accent); }
+  .ai-workflow { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 2.5rem; padding: 2.5rem 0 0; }
+  .ai-workflow h3 { margin: 0 0 0.65rem; font-size: 1.2rem; color: var(--lp-fg); }
+  .ai-workflow p { max-width: 65ch; margin: 0; color: var(--lp-fg-muted); font-size: 0.9rem; line-height: 1.7; }
+  .ai-actions { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+  .ai-actions .btn { white-space: nowrap; }
+  .ai-install-link { display: flex; gap: 0.75rem; font: 500 0.75rem var(--lp-mono); color: var(--lp-fg-muted); }
+  .ai-install-link:hover { color: var(--lp-accent); }
+  .ai-section a:focus-visible { outline: 2px solid var(--lp-accent); outline-offset: 5px; }
+  @media (max-width: 960px) {
+    .ai-heading { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+    .ai-shortcut { justify-self: start; }
+    .ai-workflow { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+    .ai-actions { align-items: start; }
+    .ai-card-body { padding: 1.25rem; }
+  }
+  @media (max-width: 700px) {
+    .ai-grid { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+    .ai-artwork { min-height: 210px; }
+    .ai-shortcut { width: 100%; min-width: 0; }
+    .ai-heading { margin-bottom: 2rem; }
+    .ai-actions { width: 100%; }
+    .ai-actions .btn { white-space: normal; text-align: center; width: 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) { .ai-card { transition: none; } }
+</style>

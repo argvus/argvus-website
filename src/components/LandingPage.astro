@@ -25,6 +25,7 @@ import { resolve } from 'node:path'
 import siteConfig from '../site-config.json'
 import SiteHeader from './SiteHeader.astro'
 import SiteFooter from './SiteFooter.astro'
+import AiAgentsSection from './AiAgentsSection.astro'
 
 const { version } = JSON.parse(
   fs.readFileSync(resolve(process.cwd(), 'version.json'), 'utf8'),
@@ -960,6 +961,8 @@ const ccFirst = ccSteps[0].items[0]
           </div>
         </div>
       </section>
+
+      <AiAgentsSection lang={lang} />
 
       <!-- Themes -->
       <section class="section" id="themes">
