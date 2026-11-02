@@ -135,6 +135,13 @@ export const sidebarConfig = [
             }
           },
           {
+            "slug": "docs/argvus-ai",
+            "label": "AI Agents",
+            "translations": {
+              "pt-BR": "Agentes de IA"
+            }
+          },
+          {
             "slug": "docs/argvus-launcher",
             "label": "Application launcher",
             "translations": {
@@ -853,6 +860,25 @@ export const sidebarConfig = [
     },
     "collapsed": true,
     "items": [
+      {
+        "label": "AI Agents",
+        "collapsed": true,
+        "items": [
+          {
+            "slug": "docs/argvus-ai",
+            "label": "Overview",
+            "translations": {
+              "pt-BR": "Visão geral"
+            }
+          },
+          {
+            "slug": "docs/argvus-ai/installation"
+          },
+          {
+            "slug": "docs/argvus-ai/usage"
+          }
+        ]
+      },
       {
         "label": "Games",
         "collapsed": true,

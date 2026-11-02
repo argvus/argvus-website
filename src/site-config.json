@@ -102,6 +102,12 @@
         "label": "Taskbar"
       },
       {
+        "repository": "argvus-ai",
+        "path": "docs",
+        "branch": "main",
+        "label": "AI Agents"
+      },
+      {
         "repository": "argvus-launcher",
         "path": "docs",
         "branch": "main",

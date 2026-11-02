@@ -103,6 +103,7 @@ export const USER_GUIDE_SECTION: LayoutGroupSpec = {
       collapsed: true,
       items: [
         { slug: 'docs/user-guide/applications', label: 'Overview', translations: OVERVIEW },
+        { slug: 'docs/argvus-ai', label: 'AI Agents', translations: { 'pt-BR': 'Agentes de IA' } },
         { slug: 'docs/argvus-launcher', label: 'Application launcher', translations: { 'pt-BR': 'Lançador de aplicativos' } },
         { slug: 'docs/components/argvus-terminal', label: 'Terminal', translations: { 'pt-BR': 'Terminal' } },
         { slug: 'docs/components/argvus-system-monitor', label: 'System monitor', translations: { 'pt-BR': 'Monitor do sistema' } },
@@ -389,6 +390,7 @@ export const COMPONENT_CATEGORIES: ComponentCategorySpec[] = [
     label: 'Apps & Tools',
     translations: { 'pt-BR': 'Aplicativos e ferramentas' },
     repositories: [
+      'argvus-ai',
       'argvus-games',
     ],
   },
@@ -428,6 +430,7 @@ export const COMPONENT_PAGE_ORDER: Record<string, string[]> = {
   'argvus-appearance': ['wallpapers', 'fonts-and-icons', 'effects'],
   'argvus-session': ['graphical-session', 'tty-session'],
   'argvus-taskbar': ['taskbar', 'widgets'],
+  'argvus-ai': ['index', 'installation', 'usage'],
   'argvus-boot-splash': ['installation', 'usage', 'uki-splash', 'troubleshooting', 'reference', 'uninstallation'],
   'argvus-games': ['snake'],
 }
