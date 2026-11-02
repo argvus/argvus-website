@@ -2920,11 +2920,12 @@ body[data-parallax-enabled='true'] [data-reveal].is-revealed {
   outline-offset: 3px;
 }
 
-.hero-keycaps .keycap.k1 { top: 12%; --zig: 12px; animation-delay: 0s; }
-.hero-keycaps .keycap.k2 { top: 28%; --zig: -12px; animation-delay: -1.2s; }
-.hero-keycaps .keycap.k3 { top: 44%; --zig: 12px; animation-delay: -2.4s; }
-.hero-keycaps .keycap.k4 { top: 60%; --zig: -12px; animation-delay: -3.1s; }
-.hero-keycaps .keycap.k5 { top: 76%; --zig: 12px; animation-delay: -4s; }
+.hero-keycaps .keycap.k1 { top: 10%; --zig: 12px; animation-delay: 0s; }
+.hero-keycaps .keycap.k2 { top: 24%; --zig: -12px; animation-delay: -1.2s; }
+.hero-keycaps .keycap.k3 { top: 38%; --zig: 12px; animation-delay: -2.4s; }
+.hero-keycaps .keycap.k4 { top: 52%; --zig: -12px; animation-delay: -3.1s; }
+.hero-keycaps .keycap.k5 { top: 66%; --zig: 12px; animation-delay: -4s; }
+.hero-keycaps .keycap.k6 { top: 80%; --zig: -12px; animation-delay: -4.8s; }
 
 /* Flutuação sutil: só desloca, sem girar */
 @keyframes keycap-float {

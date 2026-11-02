@@ -110,7 +110,7 @@ const t = isPT
         hyprlock: 'Bloqueador de tela integrado ao ecossistema Hyprland com tema sincronizado.',
         storage: 'Módulo de armazenamento removível escrito em Rust para a barra do Waybar.',
       },
-      keyLabels: ['Prévias', 'Componentes', 'Taskbar', 'Apps', 'Temas'],
+      keyLabels: ['Prévias', 'Componentes', 'Taskbar', 'Apps', 'AI Agents', 'Temas'],
       keysAria: 'Navegação por seções',
       waybarEyebrow: 'Taskbar',
       waybarTitle: 'Barra de status no topo ou na parte inferior',
@@ -323,7 +323,7 @@ const t = isPT
         hyprlock: 'Lock screen integrated with the Hyprland ecosystem and a synchronized theme.',
         storage: 'Rust-powered removable storage module for the Waybar bar.',
       },
-      keyLabels: ['Previews', 'Components', 'Taskbar', 'Apps', 'Themes'],
+      keyLabels: ['Previews', 'Components', 'Taskbar', 'Apps', 'AI Agents', 'Themes'],
       keysAria: 'Section navigation',
       waybarEyebrow: 'Taskbar',
       waybarTitle: 'Status bar at the top or the bottom',
@@ -594,7 +594,7 @@ const heroKeycapsEnabled = homeConfig.effects.hero.keycaps
 const keyboardEasterEggEnabled = homeConfig.effects.keyboardEasterEgg
 const tiltEnabled = homeConfig.effects.tilt
 const keycapsNavEnabled = homeConfig.effects.hero.keycapsNav
-const keycapTargets = ['previews', 'components', 'waybar', 'apps', 'themes']
+const keycapTargets = ['previews', 'components', 'waybar', 'apps', 'ai-agents', 'themes']
 // Com a navegação ativa, o eyebrow das seções vira um espaço reservado para a keycap.
 const keycapSlots = heroKeycapsEnabled && keycapsNavEnabled
 const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
@@ -962,7 +962,7 @@ const ccFirst = ccSteps[0].items[0]
         </div>
       </section>
 
-      <AiAgentsSection lang={lang} />
+      <AiAgentsSection lang={lang} keycapSlots={keycapSlots} />
 
       <!-- Themes -->
       <section class="section" id="themes">
