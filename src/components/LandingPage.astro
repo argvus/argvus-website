@@ -484,15 +484,20 @@ const youtubeIdOf = (value: string) => {
   const match = raw.match(/(?:v=|youtu\.be\/|\/embed\/|\/shorts\/|\/live\/)([\w-]{11})/)
   return match ? match[1] : ''
 }
-const videoId = youtubeIdOf(siteConfig.page_home.video?.youtube ?? '')
+const videoLanguage = isPT ? 'pt-br' : 'en'
+const fallbackVideoLanguage = isPT ? 'en' : 'pt-br'
+const youtubeVideos = siteConfig.page_home.video?.youtube
+const youtubeUrl = (youtubeVideos?.[videoLanguage] || youtubeVideos?.[fallbackVideoLanguage] || '').trim()
+const videoId = youtubeIdOf(youtubeUrl)
 
-// `page_home.video.local` recebe apenas o nome do arquivo em `src/midia/video/` (ex.: `preview.mp4`).
+// `page_home.video.local` recebe o caminho relativo dentro de `src/midia/video/`.
 // Só é usado quando `video.youtube` não tem um ID válido.
-const localVideoFiles = import.meta.glob('../midia/video/*', { eager: true, query: '?url&no-inline', import: 'default' }) as Record<string, string>
-const localVideoName = (siteConfig.page_home.video?.local ?? '').trim()
+const localVideoFiles = import.meta.glob('../midia/video/**/*', { eager: true, query: '?url&no-inline', import: 'default' }) as Record<string, string>
+const localVideos = siteConfig.page_home.video?.local
+const localVideoName = (localVideos?.[videoLanguage] || localVideos?.[fallbackVideoLanguage] || '').trim()
 const localVideoSrc = localVideoName ? (localVideoFiles[`../midia/video/${localVideoName}`] ?? '') : ''
 if (localVideoName && !localVideoSrc) {
-  console.warn(`[site-config] page_home.video.local "${localVideoName}" não encontrado em src/midia/video/`)
+  console.warn(`[site-config] page_home.video.local.${videoLanguage} "${localVideoName}" não encontrado em src/midia/video/`)
 }
 const videoProvider = videoId ? 'youtube' : localVideoSrc ? 'local' : ''
 const videoSource = videoId || localVideoSrc

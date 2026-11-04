@@ -650,6 +650,9 @@ export const sidebarConfig = [
         }
       },
       {
+        "slug": "docs/components/argvus-du"
+      },
+      {
         "slug": "docs/components/argvus-sensors"
       }
     ],

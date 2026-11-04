@@ -11,8 +11,14 @@
       "tilt": true
     },
     "video": {
-      "youtube": "",
-      "local": ""
+      "youtube": {
+        "en": "https://www.youtube.com/watch?v=WzFL1c8BkSg",
+        "pt-br": ""
+      },
+      "local": {
+        "en": "",
+        "pt-br": ""
+      }
     },
     "contributionLinks": {
       "enable": true,
