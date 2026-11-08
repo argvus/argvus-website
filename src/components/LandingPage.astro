@@ -110,7 +110,7 @@ const t = isPT
         hyprlock: 'Bloqueador de tela integrado ao ecossistema Hyprland com tema sincronizado.',
         storage: 'Módulo de armazenamento removível escrito em Rust para a barra do Waybar.',
       },
-      keyLabels: ['Prévias', 'Componentes', 'Taskbar', 'Apps', 'AI Agents', 'Temas'],
+      keyLabels: ['Prévias', 'Componentes', 'Taskbar', 'Window Mode', 'Apps', 'AI Agents', 'Temas'],
       keysAria: 'Navegação por seções',
       waybarEyebrow: 'Taskbar',
       waybarTitle: 'Barra de status no topo ou na parte inferior',
@@ -128,6 +128,13 @@ const t = isPT
         { icon: 'fa-solid fa-table-cells', text: 'Bandeja do sistema (tray) para apps com ícones de status.' },
         { icon: 'fa-solid fa-magnifying-glass', text: 'Busca rápida de aplicativos e comandos direto na barra.' },
       ],
+      windowModeEyebrow: 'Window Mode',
+      windowModeTitle: 'Janelas em mosaico ou flutuantes',
+      windowModeSubtitle: 'Escolha como as janelas de aplicativos ocupam a área de trabalho. O modo é global, persiste entre sessões e pode ser alterado pelo Control Center ou pelo ícone na taskbar.',
+      windowModeTile: 'Window Tile',
+      windowModeFloat: 'Window Float',
+      windowModeTileText: 'As janelas se organizam lado a lado, com espaços consistentes entre elas.',
+      windowModeFloatText: 'As janelas podem se sobrepor e são acompanhadas por uma barra de janelas na borda oposta à taskbar.',
       appsEyebrow: 'Apps',
       appsTitle: 'Ferramentas nativas para o desktop',
       appsSubtitle:
@@ -198,7 +205,7 @@ const t = isPT
       },
       installGuide: 'Guia de instalação',
       installRequirements: 'Requisitos',
-      installRequirementsList: ['Arch Linux x86_64', 'Hyprland 0.56.2 (Wayland)', 'GPU com suporte a Wayland/KMS'],
+      installRequirementsList: ['Arch Linux x86_64', 'Hyprland 0.57.0 (Wayland)', 'GPU com suporte a Wayland/KMS'],
       installVm: 'Máquinas virtuais',
       installChanges:
         'O que muda no sistema: a chave do ARGVUS entra no chaveiro do pacman, /etc/pacman.d/argvus.conf é criado e o pacman.conf ganha uma linha Include. A instalação não grava nada no seu $HOME.',
@@ -323,7 +330,7 @@ const t = isPT
         hyprlock: 'Lock screen integrated with the Hyprland ecosystem and a synchronized theme.',
         storage: 'Rust-powered removable storage module for the Waybar bar.',
       },
-      keyLabels: ['Previews', 'Components', 'Taskbar', 'Apps', 'AI Agents', 'Themes'],
+      keyLabels: ['Previews', 'Components', 'Taskbar', 'Window Mode', 'Apps', 'AI Agents', 'Themes'],
       keysAria: 'Section navigation',
       waybarEyebrow: 'Taskbar',
       waybarTitle: 'Status bar at the top or the bottom',
@@ -341,6 +348,13 @@ const t = isPT
         { icon: 'fa-solid fa-table-cells', text: 'System tray for apps with status icons.' },
         { icon: 'fa-solid fa-magnifying-glass', text: 'Quick app and command search right from the bar.' },
       ],
+      windowModeEyebrow: 'Window Mode',
+      windowModeTitle: 'Tiled or floating windows',
+      windowModeSubtitle: 'Choose how application windows use the desktop. The mode is global, persists across sessions, and can be changed in Control Center or from the taskbar icon.',
+      windowModeTile: 'Window Tile',
+      windowModeFloat: 'Window Float',
+      windowModeTileText: 'Windows arrange side by side with consistent gaps between them.',
+      windowModeFloatText: 'Windows can overlap and are paired with a window bar on the edge opposite the taskbar.',
       appsEyebrow: 'Apps',
       appsTitle: 'Native tools for the desktop',
       appsSubtitle:
@@ -411,7 +425,7 @@ const t = isPT
       },
       installGuide: 'Installation guide',
       installRequirements: 'Requirements',
-      installRequirementsList: ['Arch Linux x86_64', 'Hyprland 0.56.2 (Wayland)', 'A GPU with Wayland/KMS support'],
+      installRequirementsList: ['Arch Linux x86_64', 'Hyprland 0.57.0 (Wayland)', 'A GPU with Wayland/KMS support'],
       installVm: 'Virtual machines',
       installChanges:
         'What changes on your system: the ARGVUS key is added to the pacman keyring, /etc/pacman.d/argvus.conf is created and pacman.conf gets one Include line. Installation writes nothing to your $HOME.',
@@ -599,7 +613,7 @@ const heroKeycapsEnabled = homeConfig.effects.hero.keycaps
 const keyboardEasterEggEnabled = homeConfig.effects.keyboardEasterEgg
 const tiltEnabled = homeConfig.effects.tilt
 const keycapsNavEnabled = homeConfig.effects.hero.keycapsNav
-const keycapTargets = ['previews', 'components', 'waybar', 'apps', 'ai-agents', 'themes']
+const keycapTargets = ['previews', 'components', 'waybar', 'window-mode', 'apps', 'ai-agents', 'themes']
 // Com a navegação ativa, o eyebrow das seções vira um espaço reservado para a keycap.
 const keycapSlots = heroKeycapsEnabled && keycapsNavEnabled
 const heroKeycaps = t.keyLabels.map((label: string, i: number) => ({
@@ -879,6 +893,35 @@ const ccFirst = ccSteps[0].items[0]
                   <li data-reveal><i class={f.icon}></i><span>{f.text}</span></li>
                 ))}
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Window mode -->
+      <section class="section section-alt" id="window-mode">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            {keycapSlots ? <span class="keycap-slot" data-keycap-slot="window-mode" /> : <span class="eyebrow">{t.windowModeEyebrow}</span>}
+            <h2>{t.windowModeTitle}</h2>
+            <p>{t.windowModeSubtitle}</p>
+          </div>
+
+          <div class="window-mode-panel" data-reveal>
+            <div class="window-mode-visual" aria-label={`${t.windowModeTile} / ${t.windowModeFloat}`}>
+              <div class="window-mode-desktop tile-desktop">
+                <span class="window-mode-label">{t.windowModeTile}</span>
+                <div class="tile-window tile-one"></div><div class="tile-window tile-two"></div><div class="tile-window tile-three"></div>
+              </div>
+              <div class="window-mode-desktop float-desktop">
+                <span class="window-mode-label">{t.windowModeFloat}</span>
+                <div class="float-window float-one"></div><div class="float-window float-two"></div><div class="float-window float-three"></div>
+              </div>
+            </div>
+            <div class="window-mode-copy">
+              <article><h3>{t.windowModeTile}</h3><p>{t.windowModeTileText}</p></article>
+              <article><h3>{t.windowModeFloat}</h3><p>{t.windowModeFloatText}</p></article>
+              <p class="window-mode-hint"><kbd>SUPER</kbd> + <kbd>Alt</kbd> + <kbd>Space</kbd> alterna entre os modos Floating Windows e Tile Windows.</p>
             </div>
           </div>
         </div>
