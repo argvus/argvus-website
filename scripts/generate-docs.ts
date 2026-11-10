@@ -12,6 +12,23 @@ function yamlString(value: string): string {
   return JSON.stringify(value)
 }
 
+function normalizeMarkdownBody(body: string): string {
+  return wrapTables(body)
+    .split(/(`+[^`]*`+)/g)
+    .map((part) => {
+      if (part.startsWith('`')) return part
+
+      return part
+        .replace(
+          /(?<!`)blocks set <block> <enabled\|disabled>(?!`)/g,
+          '`blocks set <block> <enabled|disabled>`',
+        )
+        .replace(/(?<!`)\{"action":"toggle"\}(?!`)/g, '`{"action":"toggle"}`')
+        .replace(/<surface>/g, '&lt;surface&gt;')
+    })
+    .join('')
+}
+
 async function generateDocs() {
   try {
     const entries = await loadDocumentation()
@@ -41,12 +58,17 @@ async function generateDocs() {
 
       const title = entry.data.title || 'Untitled'
       const description = entry.data.description || ''
+      // Repair malformed upstream placeholders outside code spans. In
+      // particular, a translated Japanese page has an unquoted pipe example
+      // and some Japanese/Korean pages contain `<surface>` outside code spans.
+      const body = normalizeMarkdownBody(entry.body)
+
       const markdown = `---
 title: ${yamlString(String(title))}
 description: ${yamlString(String(description))}
 ---
 
-${wrapTables(entry.body)}`
+${body}`
 
       writeFileSync(targetPath, markdown, 'utf-8')
       console.log(`Generated: ${entry.slug}`)
