@@ -1,10 +1,13 @@
 ---
-interface Props { lang: 'en' | 'pt' }
+import siteTranslations from '../i18n/site-locales.json'
+
+interface Props { lang: 'en' | 'pt' | 'es' | 'fr' | 'it' | 'zh' | 'ja' | 'de' | 'ru' | 'ko' }
 
 const { lang } = Astro.props
 const isPT = lang === 'pt'
 const base = import.meta.env.BASE_URL
-const link = (path: string) => path.startsWith('/') ? path : base + (isPT && !path.startsWith('packages/') ? 'pt/' : '') + path
+const docsLocalePrefix = lang === 'en' ? '' : lang === 'zh' ? 'zh-cn/' : `${lang}/`
+const link = (path: string) => path.startsWith('/') ? path : base + (path.startsWith('docs/') ? docsLocalePrefix : lang !== 'en' && !path.startsWith('packages/') ? `${lang}/` : '') + path
 const t = isPT
   ? {
       tagline: 'Um ambiente de desktop modular para Wayland e Arch Linux, construído sobre o Hyprland.',
@@ -26,12 +29,15 @@ const t = isPT
       ], community: 'Community', feedback: 'Built for the open source community',
       license: 'Licensed under GPL-3.0', maintainer: 'Maintained by William C. Canin',
     }
+if (lang !== 'en' && lang !== 'pt') Object.assign(t, siteTranslations[lang].footer)
 const channels = isPT
   ? [
       ['Canal oficial', 'https://t.me/argvusdesktop'],
       ['Comunidade global', 'https://t.me/argvuscommunity'],
       ['Comunidade brasileira', 'https://t.me/argvuscommunity_br'],
     ]
+  : lang !== 'en'
+    ? siteTranslations[lang].footer.channels
   : [
       ['Official channel', 'https://t.me/argvusdesktop'],
       ['Global community', 'https://t.me/argvuscommunity'],

@@ -26,6 +26,7 @@ import siteConfig from '../site-config.json'
 import SiteHeader from './SiteHeader.astro'
 import SiteFooter from './SiteFooter.astro'
 import AiAgentsSection from './AiAgentsSection.astro'
+import siteTranslations from '../i18n/site-locales.json'
 
 const { version } = JSON.parse(
   fs.readFileSync(resolve(process.cwd(), 'version.json'), 'utf8'),
@@ -33,12 +34,14 @@ const { version } = JSON.parse(
 const isBeta = version.startsWith('0.')
 
 interface Props {
-  lang: 'en' | 'pt'
+  lang: 'en' | 'pt' | 'es' | 'fr' | 'it' | 'zh' | 'ja' | 'de' | 'ru' | 'ko'
 }
 
 const { lang } = Astro.props
 const base = import.meta.env.BASE_URL
 const isPT = lang === 'pt'
+const langPrefix = lang === 'en' ? '' : `${lang}/`
+const docsLocalePrefix = lang === 'en' ? '' : lang === 'zh' ? 'zh-cn/' : `${lang}/`
 const siteUrl = 'https://argvus.github.io'
 const githubOrgUrl = 'https://github.com/orgs/argvus'
 // Logo servido pelo próprio site (cópia de argvus-logo/svg, em src/public/brand).
@@ -46,7 +49,7 @@ const logotypeUrl = `${import.meta.env.BASE_URL}brand/argvus-logo.svg`
 const argvusWordmarkUrl = `${import.meta.env.BASE_URL}brand/argvus-wordmark.svg`
 
 const link = (path: string) =>
-  base + (isPT && !path.startsWith('packages/') ? 'pt/' : '') + path
+  base + (path.startsWith('docs/') ? docsLocalePrefix : lang !== 'en' && !path.startsWith('packages/') ? langPrefix : '') + path
 
 const t = isPT
   ? {
@@ -66,6 +69,12 @@ const t = isPT
       langAria: 'Alterar idioma',
       langEnglish: 'English',
       langPortuguese: 'Português',
+      themesRepositoryLabel: 'Instalar do repositório',
+      themesRepositoryHint: 'Ou vários temas em um único comando',
+      themesGuideLink: 'Guia de temas →',
+      windowModeHint: 'Use SUPER + Alt + Espaço para alternar entre os modos de janelas flutuantes e em mosaico.',
+      carouselPrevious: 'Anterior', carouselNext: 'Próximo', carouselSlide: 'Slide',
+      supportStarLabel: 'Dar estrela', currencyAria: 'Moeda', currencyUsd: 'Dólar (USD)', currencyBrl: 'Real (BRL)',
       themeAria: 'Alterar tema',
       themeLight: 'Light',
       themeDark: 'Dark',
@@ -164,16 +173,16 @@ const t = isPT
       themesEyebrow: 'Temas',
       themesTitle: 'Vinte e dois temas, dois modos, um só sistema',
       themesSubtitle:
-        'Famílias visuais compartilhadas, cada uma com os modos Sticky e Float. Todos disponíveis como pacotes Arch Linux no repositório oficial do ARGVUS.',
+        'Famílias visuais compartilhadas, cada uma com os modos Fixo e Espaçado. Todos disponíveis como pacotes Arch Linux no repositório oficial do ARGVUS.',
       themesAccentLabel: 'Acento independente',
       themesTabsAria: 'Categoria de temas',
       themesDarkTab: 'Temas Dark',
       themesLightTab: 'Temas Light',
       themesCopyText:
-        'Explore as famílias oficiais e compare suas paletas diretamente nos previews. Cada família possui os modos Sticky e Float, que alteram a geometria e o tratamento das superfícies sem trocar a identidade visual. A cor de destaque continua independente e pode ser escolhida em ARGVUS Control Center → Appearance → Highlight color.',
+        'Explore as famílias oficiais e compare suas paletas diretamente nos previews. Cada família possui os modos Fixo e Espaçado, que alteram a geometria e o tratamento das superfícies sem trocar a identidade visual. A cor de destaque continua independente e pode ser escolhida em ARGVUS Control Center → Appearance → Highlight color.',
       themesDefaultLabel: 'Padrão',
-      themeModeSticky: 'Sticky',
-      themeModeFloat: 'Float',
+      themeModeSticky: 'Fixo',
+      themeModeFloat: 'Espaçado',
       archTitle: 'Cada passo, à vista',
       archSubtitle:
         'O comando do topo da página faz tudo isso sozinho. Se você prefere ver e executar cada comando, siga os três passos abaixo: eles adicionam o repositório assinado do ARGVUS ao pacman e instalam o metapacote argvus. Navegue como no Control Center — setas para escolher, Enter para copiar.',
@@ -269,6 +278,7 @@ const t = isPT
       feedbackLink: 'Repositório de feedback do ARGVUS no GitHub',
       feedbackMade: 'Feito para a comunidade open source',
     }
+
   : {
       htmlLang: 'en',
       title: 'ARGVUS — A modular desktop environment for Wayland and Arch Linux, built on Hyprland.',
@@ -286,6 +296,12 @@ const t = isPT
       langAria: 'Change language',
       langEnglish: 'English',
       langPortuguese: 'Português',
+      themesRepositoryLabel: 'Install from the repository',
+      themesRepositoryHint: 'Or several themes in one command',
+      themesGuideLink: 'Themes guide →',
+      windowModeHint: 'Press SUPER + Alt + Space to switch between floating and tiled window modes.',
+      carouselPrevious: 'Previous', carouselNext: 'Next', carouselSlide: 'Slide',
+      supportStarLabel: 'Star', currencyAria: 'Currency', currencyUsd: 'US dollar (USD)', currencyBrl: 'Brazilian real (BRL)',
       themeAria: 'Change theme',
       themeLight: 'Light',
       themeDark: 'Dark',
@@ -384,16 +400,16 @@ const t = isPT
       themesEyebrow: 'Themes',
       themesTitle: 'Twenty-two themes, two modes, one system',
       themesSubtitle:
-        'Shared visual families, each with Sticky and Float modes. All available as Arch Linux packages from the official ARGVUS repository.',
+        'Shared visual families, each with Sticky and Spaced modes. All available as Arch Linux packages from the official ARGVUS repository.',
       themesAccentLabel: 'Independent accent',
       themesTabsAria: 'Theme category',
       themesDarkTab: 'Dark themes',
       themesLightTab: 'Light themes',
       themesCopyText:
-        'Explore the official families and compare their palettes directly in the previews. Every family has Sticky and Float modes, changing geometry and surface treatment without changing its visual identity. All themes are available in the repository as individual packages. The accent color remains independent and can be chosen at ARGVUS Control Center → Appearance → Highlight color.',
+        'Explore the official families and compare their palettes directly in the previews. Every family has Sticky and Spaced modes, changing geometry and surface treatment without changing its visual identity. All themes are available in the repository as individual packages. The accent color remains independent and can be chosen at ARGVUS Control Center → Appearance → Highlight color.',
       themesDefaultLabel: 'Default',
       themeModeSticky: 'Sticky',
-      themeModeFloat: 'Float',
+      themeModeFloat: 'Spaced',
       archTitle: 'Every step, in plain sight',
       archSubtitle:
         'The command at the top of the page does all of this for you. If you would rather see and run each command yourself, follow the three steps below: they add the signed ARGVUS repository to pacman and install the argvus metapackage. Browse it like the Control Center — arrow keys to choose, Enter to copy.',
@@ -489,6 +505,12 @@ const t = isPT
       feedbackLink: 'ARGVUS feedback repository on GitHub',
       feedbackMade: 'Built for the open source community',
     }
+
+if (lang !== 'en' && lang !== 'pt') Object.assign(t, siteTranslations[lang].landing)
+t.versionBadge = `ARGVUS v${version}`
+const htmlLanguages: Record<string, string> = { en: 'en', pt: 'pt-BR', es: 'es', fr: 'fr', it: 'it', zh: 'zh-CN', ja: 'ja', de: 'de', ru: 'ru', ko: 'ko' }
+t.htmlLang = htmlLanguages[lang]
+const activeStatus: Record<string, string> = { en: 'ACTIVE', pt: 'ATIVO', es: 'ACTIVO', fr: 'ACTIF', it: 'ATTIVO', zh: '运行中', ja: '有効', de: 'AKTIV', ru: 'АКТИВЕН', ko: '활성' }
 
 // Vídeo da seção de prévias: `page_home.video.youtube` aceita a URL (watch, youtu.be, embed,
 // shorts) ou o ID. Sem ID válido, a seção mostra a capa com o aviso de "em breve".
@@ -685,12 +707,12 @@ const ccFirst = ccSteps[0].items[0]
     <meta name="description" content={t.description} />
     <meta name="keywords" content={t.keywords} />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={`${siteUrl}${base}${isPT ? 'pt/' : ''}`} />
+    <link rel="canonical" href={`${siteUrl}${base}${langPrefix}`} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="ARGVUS" />
     <meta property="og:title" content={t.title} />
     <meta property="og:description" content={t.description} />
-    <meta property="og:url" content={`${siteUrl}${base}${isPT ? 'pt/' : ''}`} />
+    <meta property="og:url" content={`${siteUrl}${base}${langPrefix}`} />
     <meta property="og:image" content={new URL(socialImage.src, siteUrl).href} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -921,7 +943,7 @@ const ccFirst = ccSteps[0].items[0]
             <div class="window-mode-copy">
               <article><h3>{t.windowModeTile}</h3><p>{t.windowModeTileText}</p></article>
               <article><h3>{t.windowModeFloat}</h3><p>{t.windowModeFloatText}</p></article>
-              <p class="window-mode-hint"><kbd>SUPER</kbd> + <kbd>Alt</kbd> + <kbd>Space</kbd> alterna entre os modos Floating Windows e Tile Windows.</p>
+              <p class="window-mode-hint">{t.windowModeHint}</p>
             </div>
           </div>
         </div>
@@ -961,11 +983,11 @@ const ccFirst = ccSteps[0].items[0]
                           </span>
                         </div>
                       ))}
-                      <button class="app-carousel-btn prev" data-app-carousel-prev aria-label="Previous">‹</button>
-                      <button class="app-carousel-btn next" data-app-carousel-next aria-label="Next">›</button>
+                      <button class="app-carousel-btn prev" data-app-carousel-prev aria-label={t.carouselPrevious}>‹</button>
+                      <button class="app-carousel-btn next" data-app-carousel-next aria-label={t.carouselNext}>›</button>
                       <div class="app-carousel-dots">
                         {app.carousel.map((_, i) => (
-                          <button class={`app-carousel-dot${i === 0 ? ' active' : ''}`} data-app-carousel-dot={i} aria-label={`Slide ${i + 1}`} />
+                          <button class={`app-carousel-dot${i === 0 ? ' active' : ''}`} data-app-carousel-dot={i} aria-label={`${t.carouselSlide} ${i + 1}`} />
                         ))}
                       </div>
                     </div>
@@ -1069,20 +1091,20 @@ const ccFirst = ccSteps[0].items[0]
             <div class="themes-copy" data-reveal>
               <div class="themes-copy-terminal" aria-hidden="true">
                 <span>&gt; theme.profile</span>
-                <span class="themes-copy-terminal-status">ACTIVE</span>
+                <span class="themes-copy-terminal-status">{activeStatus[lang]}</span>
               </div>
               <p>{t.themesCopyText}</p>
               <div class="themes-copy-modes" aria-hidden="true">
-                <span>Sticky</span>
-                <span>Float</span>
+                <span>{t.themeModeSticky}</span>
+                <span>{t.themeModeFloat}</span>
                 <span>{t.themesAccentLabel}</span>
               </div>
               <div class="themes-install-info">
-                <strong>{isPT ? 'Instalar do repositório' : 'Install from the repository'}</strong>
+                <strong>{t.themesRepositoryLabel}</strong>
                 <code>{isPT ? 'sudo pacman -S argvus-theme-nome' : 'sudo pacman -S argvus-theme-name'}</code>
-                <span>{isPT ? 'Ou vários temas em um único comando' : 'Or several themes in one command'}</span>
+                <span>{t.themesRepositoryHint}</span>
                 <code>sudo pacman -S argvus-theme-dracula argvus-theme-sunset</code>
-                <a class="themes-guide-link" href={link('docs/components/argvus-themes/')}>{isPT ? 'Guia de temas →' : 'Themes guide →'}</a>
+                <a class="themes-guide-link" href={link('docs/components/argvus-themes/')}>{t.themesGuideLink}</a>
               </div>
             </div>
           </div>
@@ -1209,7 +1231,7 @@ const ccFirst = ccSteps[0].items[0]
               rel="noopener noreferrer"
               aria-label={t.supportStarBtn}
             >
-              <i class="fa-solid fa-star"></i><span>Star</span>
+              <i class="fa-solid fa-star"></i><span>{t.supportStarLabel}</span>
             </a>
           </figure>
           {contributionMode === 'stripe' ? (
@@ -1242,20 +1264,20 @@ const ccFirst = ccSteps[0].items[0]
           ) : contributionMode === 'paypal' ? (
             <div class="support-wrap" data-reveal>
               <div class="support-toggle" role="radiogroup" aria-label={t.supportAria}>
-                <span class="support-toggle-label">Dolar (USD)</span>
+                <span class="support-toggle-label">{t.currencyUsd}</span>
                 <button
                   type="button"
                   class="support-toggle-switch"
                   role="switch"
                   aria-checked="false"
-                  aria-label="Currency"
+                  aria-label={t.currencyAria}
                   data-currency-toggle
                   data-usd={contributionConfig.paypal.USD}
                   data-brl={contributionConfig.paypal.BRL}
                 >
                   <span class="support-toggle-thumb" data-currency-symbol aria-hidden="true">$</span>
                 </button>
-                <span class="support-toggle-label">Real (BRL)</span>
+                <span class="support-toggle-label">{t.currencyBrl}</span>
               </div>
               <a
                 class="btn btn-primary support-btn"

@@ -1,0 +1,3642 @@
+{
+  "es": {
+    "landing": {
+      "htmlLang": "es",
+      "title": "ARGVUS: un entorno de escritorio modular para Wayland y Arch Linux, construido sobre Hyprland.",
+      "description": "ARGVUS es un escritorio completo Hyprland y Wayland con dispositivos extraíbles ARGVUS, Waybar, temas integrados y paquetes Arch Linux firmados.",
+      "keywords": "argvus, argvus linux, hyprland, wayland, arch linux, entorno de escritorio, dispositivos extraíbles argvus, waybar, escritorio linux, repositorio pacman",
+      "navAria": "Navegación principal",
+      "navMenu": "Menú",
+      "navDocs": "Documentación",
+      "navArch": "Repositorio",
+      "navArchArch": "Arco Linux",
+      "navDonate": "Donar",
+      "github": "GitHub",
+      "langAria": "Cambiar idioma",
+      "langEnglish": "Inglés",
+      "langPortuguese": "Português",
+      "themesRepositoryLabel": "Instalar desde el repositorio",
+      "themesRepositoryHint": "O varios temas en un solo comando",
+      "themesGuideLink": "Guía de temas →",
+      "windowModeHint": "Presione SUPER + Alt + Espacio para cambiar entre los modos de ventana flotante y en mosaico.",
+      "carouselPrevious": "Anterior",
+      "carouselNext": "Siguiente",
+      "carouselSlide": "Diapositiva",
+      "supportStarLabel": "Estrella",
+      "currencyAria": "Moneda",
+      "currencyUsd": "dólar estadounidense (USD)",
+      "currencyBrl": "Real brasileño (BRL)",
+      "themeAria": "Cambiar tema",
+      "themeLight": "Luz",
+      "themeDark": "Oscuro",
+      "themeSystem": "Sistema",
+      "heroTitle1": "Un entorno de escritorio modular, listo para usar.",
+      "heroAccent": "Centrado en Hyprland.",
+      "heroLead": "Más que archivos de puntos: una sesión supervisada, shell Quickshell, barra de tareas Waybar, configuraciones nativas y temas oficiales: integrados, livianos y empaquetados para Arch Linux. Creado para desarrolladores, sin bloatware.",
+      "versionBadge": "ARGVUS v${version}",
+      "btnInstall": "Instalar ahora",
+      "btnDocs": "Documentación",
+      "heroCopy": "Copiar comando",
+      "heroCopied": "Copiado",
+      "heroInstallHint": "Instalación rápida. ¿Prefieres paso a paso?",
+      "heroInstallLink": "Instalación avanzada",
+      "heroShotAlt": "Escritorio ARGVUS con el tema ARGVUS",
+      "heroStackLabel": "Construido con",
+      "carouselOpen": "Abrir imagen en pantalla completa",
+      "carouselClose": "Cerrar imagen a pantalla completa",
+      "screenshotsEyebrow": "Vistas previas",
+      "screenshotsTitle": "Vea cómo ARGVUS adquiere una nueva atmósfera",
+      "screenshotsSubtitle": "Observe el escritorio en movimiento (temas, modos y aplicaciones nativas trabajando juntos) antes de elegir una apariencia.",
+      "videoPlay": "Ver el vídeo",
+      "videoTitle": "Vídeo de introducción a ARGVUS",
+      "screenshotsSubtitleStatic": "Una captura real de ARGVUS Dark en modo Float, con la barra de tareas, el panel lateral y el launcher abiertos.",
+      "videoPosterAlt": "Logotipo de ARGVUS con el comando argvus --start-desktop",
+      "componentsEyebrow": "Componentes",
+      "componentsTitle": "Creado con software que ya conoce",
+      "componentsSubtitle": "ARGVUS divide la experiencia en paquetes oficiales más pequeños, todos preconfigurados y coordinados por el metapaquete argvus.",
+      "componentDesc": {
+        "hyprland": "El compositor Wayland que da vida a ARGVUS: mosaicos, espacios de trabajo, animaciones fluidas y combinaciones de teclas completas.",
+        "waybar": "Barra de estado con módulos de sistema, medios, red, almacenamiento y accesos directos.",
+        "quickshell": "Barra lateral del sistema QML con clima, red, calendario, brillo, volumen y notificaciones.",
+        "rofi": "Lanzador de aplicaciones, selector de ventanas y menús, todos con temas unificados.",
+        "superfile": "Un administrador de archivos TUI rápido y totalmente configurable con combinaciones de teclas dedicadas.",
+        "btop": "Monitor de sistema con CPU, memoria, red y procesos en tiempo real.",
+        "hyprlock": "Pantalla de bloqueo integrada con el ecosistema Hyprland y un tema sincronizado.",
+        "storage": "Módulo de almacenamiento extraíble de óxido para la barra Waybar."
+      },
+      "keyLabels": [
+        "Vistas previas",
+        "Componentes",
+        "Barra de tareas",
+        "Modo Ventana",
+        "Aplicaciones",
+        "Agentes de IA",
+        "Temas"
+      ],
+      "keysAria": "Navegación de sección",
+      "waybarEyebrow": "Barra de tareas",
+      "waybarTitle": "Barra de estado en la parte superior o inferior",
+      "waybarSubtitle": "La barra principal de ARGVUS combina navegación, medios, estado del sistema y aplicaciones nativas, y puede ubicarse en la parte superior o inferior de la pantalla con un clic o un acceso directo. La posición se recuerda a lo largo de las sesiones.",
+      "waybarIntro": "Construida en Waybar, la barra agrupa los controles cotidianos en un solo lugar, con una apariencia unificada en cada tema:",
+      "waybarFeatures": [
+        {
+          "icon": "fa-solid fa-star",
+          "text": "Top/bottom position via shortcut (SUPER + Alt + ↑/↓) or the sidebar."
+        },
+        {
+          "icon": "fa-solid fa-bars-staggered",
+          "text": "Espacios de trabajo navegables con contexto de ventana enfocada."
+        },
+        {
+          "icon": "fa-solid fa-music",
+          "text": "Control de medios (mpris) con el reproductor activo resaltado."
+        },
+        {
+          "icon": "fa-solid fa-gauge-high",
+          "text": "Estado de red, CPU, memoria, temperatura y perfil de energía."
+        },
+        {
+          "icon": "fa-solid fa-calendar-days",
+          "text": "Calendario de la barra de tareas de ARGVUS al hacer clic en la fecha."
+        },
+        {
+          "icon": "fa-solid fa-bolt",
+          "text": "Dispositivos extraíbles ARGVUS, un módulo de almacenamiento extraíble impulsado por Rust."
+        },
+        {
+          "icon": "fa-solid fa-table-cells",
+          "text": "Bandeja del sistema para aplicaciones con iconos de estado."
+        },
+        {
+          "icon": "fa-solid fa-magnifying-glass",
+          "text": "Búsqueda rápida de aplicaciones y comandos directamente desde la barra."
+        }
+      ],
+      "windowModeEyebrow": "Modo Ventana",
+      "windowModeTitle": "Ventanas de mosaico o flotantes",
+      "windowModeSubtitle": "Elija cómo las ventanas de aplicaciones usan el escritorio. El modo es global, persiste entre sesiones y se puede cambiar en el Centro de control o desde el icono de la barra de tareas.",
+      "windowModeTile": "Azulejo de ventana",
+      "windowModeFloat": "Flotador de ventana",
+      "windowModeTileText": "Las ventanas se colocan una al lado de la otra con espacios consistentes entre ellas.",
+      "windowModeFloatText": "Las ventanas pueden superponerse y están emparejadas con una barra de ventana en el borde opuesto a la barra de tareas.",
+      "appsEyebrow": "Aplicaciones",
+      "appsTitle": "Herramientas nativas para el escritorio",
+      "appsSubtitle": "Más allá de la configuración del entorno, ARGVUS incluye aplicaciones propias para flujos de trabajo que necesitan una integración más estrecha con la barra, el panel y la sesión.",
+      "appStorageText": "ARGVUS Dispositivos extraíbles es la aplicación de almacenamiento extraíble de ARGVUS. Detecta dispositivos, expone acciones rápidas para montar, desmontar y expulsar unidades y potencia el módulo de almacenamiento Waybar con una experiencia consistente.",
+      "appCalendarText": "El calendario de la barra de tareas de ARGVUS es el calendario nativo utilizado por el escritorio. Ofrece una vista mensual rápida, navegación sencilla e integración de eventos para consultar citas sin salir del flujo de Wayland.",
+      "appCalendarEventsText": "La vista de eventos complementa el calendario con una lista compacta de citas, manteniendo las fechas importantes a mano dentro del ecosistema ARGVUS.",
+      "appFocusText": "ARGVUS Focus le ayuda a concentrarse en su tarea con sesiones de concentración y descansos disponibles directamente desde el escritorio.",
+      "appClockText": "ARGVUS Clock reúne un reloj y temporizadores en una herramienta nativa, para que pueda realizar un seguimiento del tiempo sin salir de su flujo de trabajo.",
+      "appDefaultAppsText": "ARGVUS Control Center is the native ARGVUS configuration center. Apps sets the default applications, and Fonts applies typography to GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, the lock screen and official apps.",
+      "controlCenterFeatures": [
+        {
+          "title": "Apariencia",
+          "text": "Themes, Sticky/Float modes, accents, wallpapers, effects, taskbar layout and Control Panel cards."
+        },
+        {
+          "title": "Fuentes",
+          "text": "Configurar tipografía para la barra de tareas, telemetría, Panel de Control, sistema, aplicaciones, terminal y navegador."
+        },
+        {
+          "title": "Aplicaciones predeterminadas",
+          "text": "Elija aplicaciones predeterminadas para los roles reconocidos por ARGVUS."
+        },
+        {
+          "title": "Hardware y entrada",
+          "text": "Ajuste el mouse, el panel táctil, el teclado, los accesos directos y las pantallas cuando las capacidades estén disponibles."
+        },
+        {
+          "title": "Red, audio y Bluetooth",
+          "text": "Acceder a los módulos de conectividad y audio que proporciona la instalación."
+        },
+        {
+          "title": "Sesión y sistema",
+          "text": "Inspeccionar y configurar energía, sesión, servicios, paquetes, almacenamiento y diagnóstico."
+        }
+      ],
+      "aboutMaintainerLink": "Perfil de GitHub de William C. Canin",
+      "aboutSupportPaypal": "Al contribuir a través de PayPal, la cuenta correcta se muestra como",
+      "themesEyebrow": "Temas",
+      "themesTitle": "Veintidós temas, dos modos, un sistema",
+      "themesSubtitle": "Familias visuales compartidas, cada una con modos Fijo y Espaciado. Todos disponibles como paquetes Arch Linux desde el repositorio oficial de ARGVUS.",
+      "themesAccentLabel": "Acento independiente",
+      "themesTabsAria": "Categoría temática",
+      "themesDarkTab": "Temas oscuros",
+      "themesLightTab": "Temas claros",
+      "themesCopyText": "Explora las familias oficiales y compara sus paletas directamente en las vistas previas. Cada familia tiene modos Fijo y Espaciado, cambiando la geometría y el tratamiento de la superficie sin cambiar su identidad visual. Todos los temas están disponibles en el repositorio como paquetes individuales. El color de acento sigue siendo independiente y se puede elegir en el Centro de control ARGVUS → Apariencia → Color de resaltado.",
+      "themesDefaultLabel": "Predeterminado",
+      "themeModeSticky": "Fijo",
+      "themeModeFloat": "Espaciado",
+      "archTitle": "Cada paso, a la vista",
+      "archSubtitle": "El comando en la parte superior de la página hace todo esto por usted. Si prefiere ver y ejecutar cada comando usted mismo, siga los tres pasos a continuación: agregan el repositorio ARGVUS firmado a pacman e instalan el metapaquete argvus. Examínelo como si fuera el Centro de control: teclas de flecha para elegir, Enter para copiar.",
+      "ccTitle": "Instalación avanzada",
+      "ccSubtitle": "Repositorio firmado + metapaquete argvus, paso a paso\ncomando __T008__",
+      "ccRepository": "Repositorio",
+      "ccCommand": "__T009__ Copiar",
+      "ccCopy": "Copiar",
+      "ccCopyAll": "Todos",
+      "ccCopied": "Comando copiado",
+      "ccCopiedAll": "Todos los comandos copiados",
+      "ccNoCommand": "Sin comando: esto sucede en la pantalla de inicio de sesión",
+      "ccHelp": "↑/↓ Items  ←/→ Steps  Enter Copy  c Copy all",
+      "ccGridAria": "Pasos de instalación avanzados",
+      "ccSteps": {
+        "key": {
+          "title": "Clave de firma",
+          "description": "Confía en la clave del empaquetador"
+        },
+        "repo": {
+          "title": "Repositorio",
+          "description": "Habilitar argvus y argvus-extras"
+        },
+        "install": {
+          "title": "Instalar",
+          "description": "Sincronizar e instalar el escritorio"
+        }
+      },
+      "ccItems": {
+        "download": {
+          "label": "Descargar la clave",
+          "note": "Saves the ARGVUS public signing key to /tmp/argvus.gpg."
+        },
+        "import": {
+          "label": "Importar a pacman",
+          "note": "Agrega la clave al llavero de pacman."
+        },
+        "keyId": {
+          "label": "Leer el ID de la clave",
+          "note": "Extrae el ID de clave en la variable ARGVUS_KEY."
+        },
+        "sign": {
+          "label": "Firmarlo localmente",
+          "note": "Marca la clave ARGVUS como confiable en esta máquina."
+        },
+        "conf": {
+          "label": "Instalar argvus.conf",
+          "note": "Downloads the repository definition to /etc/pacman.d/argvus.conf."
+        },
+        "include": {
+          "label": "Incluir en pacman.conf",
+          "note": "Adds the Include line to /etc/pacman.conf. Run it only once."
+        },
+        "pacman": {
+          "label": "Instalar ARGVUS",
+          "note": "Sincroniza las bases de datos e instala el metapaquete argvus; las dependencias provienen del mismo repositorio."
+        },
+        "session": {
+          "label": "Iniciar la sesión",
+          "note": "Cierre sesión en la sesión actual y seleccione la sesión ARGVUS en la pantalla de inicio de sesión."
+        }
+      },
+      "installGuide": "Guía de instalación",
+      "installRequirements": "Requisitos",
+      "installRequirementsList": [
+        "Arco Linux x86_64",
+        "Hyprland 0.57.0 (Wayland)",
+        "A GPU with Wayland/KMS support"
+      ],
+      "installVm": "Máquinas virtuales",
+      "installChanges": "What changes on your system: the ARGVUS key is added to the pacman keyring, /etc/pacman.d/argvus.conf is created and pacman.conf gets one Include line. Installation writes nothing to your $HOME.",
+      "installVerify": "Verificar la clave de firma",
+      "installVerifyHint": "Compárelo con la salida de pacman-key --finger antes de firmarlo localmente.",
+      "installSource": "Código fuente del paquete",
+      "installPrivacy": "Privacidad y seguridad",
+      "installCopyFingerprint": "Copiar huella digital",
+      "installScript": "el script de instalación rápida, para leer antes de ejecutarlo",
+      "installCmd": "sudo pacman -Syu argvus",
+      "supportEyebrow": "Soporte",
+      "supportTitle": "Apoyar el desarrollo de ARGVUS",
+      "supportText": "ARGVUS se mantiene de forma independiente. Las contribuciones ayudan a cubrir la infraestructura, el mantenimiento y la evolución del proyecto, incluido, en el futuro, un dominio dedicado para ARGVUS.",
+      "supportBtn": "Contribuir",
+      "supportAria": "Monto de la contribución",
+      "supportStar": "Una estrella en GitHub ayuda a otras personas a encontrar ARGVUS.",
+      "supportStarBtn": "Estrella en GitHub",
+      "ctaTitle": "Pruebe ARGVUS",
+      "ctaText": "Siga la guía de instalación y tenga un escritorio Wayland completo, hermoso e integrado ejecutándose en minutos.",
+      "ctaPrimary": "Ver guía de instalación",
+      "ctaSecondary": "Explorar el repositorio",
+      "footerTagline": "Un entorno de escritorio modular para Wayland y Arch Linux, construido sobre Hyprland.",
+      "footerDocs": "Documentación",
+      "footerDocsLinks": [
+        {
+          "label": "Introducción",
+          "href": "docs/introduction/"
+        },
+        {
+          "label": "Instalación",
+          "href": "docs/getting-started/installation/install/"
+        },
+        {
+          "label": "Apariencia",
+          "href": "docs/user-guide/appearance/"
+        },
+        {
+          "label": "Sesiones",
+          "href": "docs/user-guide/sessions/"
+        },
+        {
+          "label": "Preguntas frecuentes",
+          "href": "docs/user-guide/faq/"
+        }
+      ],
+      "footerResources": "Recursos",
+      "footerResourcesLinks": [
+        {
+          "label": "Repositorio Arch Linux\nProyecto __T020__",
+          "href": "packages/arch/"
+        }
+      ],
+      "footerProject": "__T021__ Acerca de ARGVUS",
+      "footerAbout": "Acerca de ARGVUS",
+      "footerLicense": "Licencia GPL-3.0",
+      "footerMaintainer": "Mantenido por",
+      "bottomLicense": "Con licencia GPL-3.0",
+      "feedbackEyebrow": "Comentarios",
+      "feedbackTitle": "Tus comentarios ayudan a dar forma a ARGVUS",
+      "feedbackText": "¿Encontró un error, tiene una idea o desea solicitar una función? ARGVUS tiene un depósito de comentarios dedicado donde se rastrean las ideas y los informes junto con la comunidad.",
+      "feedbackBtn": "Enviar comentarios",
+      "communityEyebrow": "Comunidad",
+      "communityTitle": "Conéctate con la comunidad ARGVUS",
+      "communityText": "Sigue los anuncios del proyecto o chatea con otros usuarios en nuestros canales de Telegram.",
+      "communityChannels": [
+        {
+          "title": "Canal oficial",
+          "handle": "@argvusdesktop",
+          "href": "https://t.me/argvusdesktop",
+          "description": "Anuncios y novedades de ARGVUS."
+        },
+        {
+          "title": "Comunidad global",
+          "handle": "@argvuscommunity",
+          "href": "https://t.me/argvuscommunity",
+          "description": "Charla con la comunidad ARGVUS."
+        },
+        {
+          "title": "comunidad brasileña",
+          "handle": "@argvuscommunity_br",
+          "href": "https://t.me/argvuscommunity_br",
+          "description": "Charla con la comunidad ARGVUS en portugués.\nEstado __T012__"
+        }
+      ],
+      "footerCommunity": "Comunidad",
+      "statusTitle": "__T013__ Estado del proyecto",
+      "statusLabel": "Estado del proyecto",
+      "statusText": "Todas las funciones que se muestran en esta página están funcionando. La etiqueta Beta está ahí porque aún pueden aparecer errores que las pruebas no han detectado; si encuentra uno, infórmelo en el repositorio de comentarios.",
+      "feedbackLink": "Repositorio de comentarios de ARGVUS en GitHub",
+      "feedbackMade": "Creado para la comunidad de código abierto"
+    },
+    "about": {
+      "htmlLang": "es",
+      "title": "Acerca de ARGVUS — ARGVUS",
+      "description": "Por qué existe ARGVUS, de dónde viene el nombre y cómo escuchar la pronunciación correcta.",
+      "keywords": "argvus, acerca de argvus, pronunciación de argvus, hyprland, wayland, arch linux",
+      "navAria": "Navegación principal",
+      "navDocs": "Documentación",
+      "github": "GitHub",
+      "langEnglish": "Inglés",
+      "langPortuguese": "Portugués",
+      "back": "Regreso a inicio",
+      "aboutEyebrow": "Acerca de",
+      "aboutIntroTitle": "¿Qué es ARGVUS?",
+      "aboutIntroText": "ARGVUS es un entorno de escritorio modular para Arch Linux, construido sobre Wayland e Hyprland. Reúne la sesión, la barra de tareas, el panel de control, la configuración y las integraciones del sistema como una experiencia coherente. Sus componentes se distribuyen en paquetes que funcionan juntos, mientras que los comandos y aplicaciones de Rust residen en el espacio de trabajo principal. El proyecto se centra en una interacción rápida y predecible, con el teclado en el centro del flujo de trabajo.",
+      "aboutTitle": "¿Por qué ARGVUS?",
+      "aboutArgv": "Vector de argumento",
+      "aboutUs": "Sistema de usuario",
+      "aboutText": "ARGVUS nació de una idea simple: un escritorio de desarrollador no debería requerir que el usuario interrumpa su flujo para buscar controles, navegar por menús o depender constantemente del mouse. El objetivo es crear un entorno donde el teclado sea una forma principal de interacción del sistema, permitiendo acceder a acciones, aplicaciones y herramientas a través de atajos y comandos de una manera rápida y predecible.",
+      "aboutText2": "El nombre representa esta idea. ARGV, de vector de argumentos, se refiere al mundo de los desarrolladores y a cómo se utilizan los argumentos para controlar los programas. US, de User System, representa el objetivo de convertir esta filosofía en un entorno de escritorio centrado en el usuario.",
+      "aboutPronunciationLabel": "Escuchar la pronunciación",
+      "aboutPronunciationHint": "Elija un idioma para escuchar cómo se pronuncia ARGVUS.",
+      "aboutPronunciationLanguage": "Idioma",
+      "aboutPronunciationEnglish": "Inglés",
+      "aboutPronunciationPortuguese": "Portugués",
+      "aboutPronunciationAudio": "Audio de pronunciación ARGVUS",
+      "aboutMaintainer": "Proyecto mantenido por",
+      "aboutMaintainerLink": "Perfil de GitHub de William C. Canin",
+      "footerLicense": "Con licencia GPL-3.0"
+    },
+    "header": {
+      "navAria": "Navegación principal",
+      "navDocs": "Documentación",
+      "navArch": "Repositorio",
+      "navArchArch": "Arco Linux",
+      "github": "GitHub",
+      "navDonate": "Donar",
+      "langAria": "Cambiar idioma",
+      "langEnglish": "Inglés",
+      "langPortuguese": "Português",
+      "themeAria": "Cambiar tema",
+      "themeLight": "Luz",
+      "themeDark": "Oscuro",
+      "themeSystem": "Sistema",
+      "navMenu": "Menú",
+      "beta": "Beta"
+    },
+    "footer": {
+      "tagline": "Un entorno de escritorio modular para Wayland y Arch Linux, construido sobre Hyprland.",
+      "docs": "Documentación",
+      "docsLinks": [
+        [
+          "Introducción",
+          "docs/introduction/"
+        ],
+        [
+          "Instalación",
+          "docs/getting-started/installation/install/"
+        ],
+        [
+          "Apariencia",
+          "docs/user-guide/appearance/"
+        ],
+        [
+          "Sesiones",
+          "docs/user-guide/sessions/"
+        ],
+        [
+          "Preguntas frecuentes",
+          "docs/user-guide/faq/"
+        ]
+      ],
+      "resources": "Recursos",
+      "resourceLinks": [
+        [
+          "Acerca de ARGVUS",
+          "about/"
+        ],
+        [
+          "GitHub",
+          "https://github.com/orgs/argvus"
+        ],
+        [
+          "Repositorio Arch Linux\nProyecto __T020__",
+          "/packages/arch/"
+        ]
+      ],
+      "community": "Comunidad",
+      "feedback": "Creado para la comunidad de código abierto",
+      "license": "Con licencia GPL-3.0",
+      "maintainer": "Mantenido por William C. Canin",
+      "channels": [
+        [
+          "Canal oficial",
+          "https://t.me/argvusdesktop"
+        ],
+        [
+          "Comunidad global",
+          "https://t.me/argvuscommunity"
+        ],
+        [
+          "comunidad brasileña",
+          "https://t.me/argvuscommunity_br"
+        ]
+      ]
+    },
+    "agents": {
+      "eyebrow": "Agentes de IA",
+      "title": "Sus agentes.",
+      "accent": "Un atajo.",
+      "lead": "Desde el primer mensaje hasta el siguiente cambio de código. Abra Codex, Claude Code u OpenCode desde un selector, directamente en su terminal ARGVUS.",
+      "shortcutLabel": "Comenzar en el teclado",
+      "shortcutHint": "Abrir el selector. Elija su agente.",
+      "sectionLabel": "Agentes codificadores integrados con ARGVUS",
+      "codex": "Agente de codificación de OpenAI, disponible desde el iniciador y listo para abrir en la terminal nativa de su escritorio.",
+      "claude": "Agente de codificación de Anthropic, instalado en tu perfil de usuario a través de mise cuando lo abres por primera vez.",
+      "opencode": "El agente de codificación de código abierto, integrado con el mismo flujo de selección y lanzamiento que sus otros agentes.",
+      "packaged": "Instalado con argvus-ai",
+      "onDemand": "Instalado en el primer lanzamiento",
+      "upstream": "Explorar el agente",
+      "workflowTitle": "Elija su herramienta. Mantén tu flujo.",
+      "workflowText": "Atajo de teclado, robot de barra de tareas o lanzador de aplicaciones: cada punto de entrada abre el terminal nativo. El agente es tu elección.",
+      "cta": "Explora la IA de ARGVUS",
+      "install": "Instalación y primer uso",
+      "codexAlt": "Marca OpenAI, los creadores del Codex",
+      "claudeAlt": "Marca Claude",
+      "opencodeAlt": "Marca OpenCode",
+      "openSource": "Código abierto"
+    }
+  },
+  "fr": {
+    "landing": {
+      "htmlLang": "fr",
+      "title": "ARGVUS — Un environnement de bureau modulaire pour Wayland et Arch Linux, construit sur Hyprland.",
+      "description": "ARGVUS est un bureau complet Hyprland et Wayland avec des périphériques amovibles ARGVUS, Waybar, des thèmes intégrés et des packages Arch Linux signés.",
+      "keywords": "argvus, argvus linux, hyprland, wayland, arch linux, environnement de bureau, périphériques amovibles argvus, waybar, bureau Linux, référentiel pacman",
+      "navAria": "Navigation principale",
+      "navMenu": "Menu",
+      "navDocs": "Documentations",
+      "navArch": "Dépôt",
+      "navArchArch": "Arch Linux",
+      "navDonate": "Faire un don",
+      "github": "GitHub",
+      "langAria": "Changer de langue",
+      "langEnglish": "Anglais",
+      "langPortuguese": "Portugais",
+      "themesRepositoryLabel": "Installer à partir du référentiel",
+      "themesRepositoryHint": "Ou plusieurs thèmes en une seule commande",
+      "themesGuideLink": "Guide des thèmes →",
+      "windowModeHint": "Appuyez sur SUPER + Alt + Espace pour basculer entre les modes de fenêtre flottante et carrelée.",
+      "carouselPrevious": "Précédent",
+      "carouselNext": "Suivant",
+      "carouselSlide": "Diapositive",
+      "supportStarLabel": "Étoile",
+      "currencyAria": "Devise",
+      "currencyUsd": "Dollar américain (USD)",
+      "currencyBrl": "Réal brésilien (BRL)",
+      "themeAria": "Changer de thème",
+      "themeLight": "Lumière",
+      "themeDark": "Foncé\nSystème __T028__",
+      "themeSystem": "",
+      "heroTitle1": "Un environnement de bureau modulaire, prêt à l'emploi.",
+      "heroAccent": "Concentré sur Hyprland.",
+      "heroLead": "Plus que des dotfiles : une session supervisée, un shell Quickshell, une barre des tâches Waybar, des paramètres natifs et des thèmes officiels - intégrés, légers et packagés pour Arch Linux. Conçu pour les développeurs, sans bloatware.",
+      "versionBadge": "ARGVUS v${version}",
+      "btnInstall": "Installer maintenant",
+      "btnDocs": "Documentations",
+      "heroCopy": "Copier la commande",
+      "heroCopied": "Copié",
+      "heroInstallHint": "Installation rapide. Vous préférez le pas à pas ?",
+      "heroInstallLink": "Installation avancée",
+      "heroShotAlt": "Bureau ARGVUS avec le thème ARGVUS",
+      "heroStackLabel": "Construit avec",
+      "carouselOpen": "Ouvrir l'image en plein écran",
+      "carouselClose": "Fermer l'image plein écran",
+      "screenshotsEyebrow": "Aperçus",
+      "screenshotsTitle": "Voyez ARGVUS prendre une nouvelle ambiance",
+      "screenshotsSubtitle": "Regardez le bureau en mouvement (thèmes, modes et applications natives travaillant ensemble) avant de choisir une apparence.",
+      "videoPlay": "Regarder la vidéo",
+      "videoTitle": "Vidéo de présentation d'ARGVUS",
+      "screenshotsSubtitleStatic": "Une véritable capture d'ARGVUS Dark en mode Float, avec la barre des tâches, le panneau latéral et le lanceur ouverts.",
+      "videoPosterAlt": "Logo ARGVUS avec la commande argvus --start-desktop",
+      "componentsEyebrow": "Composants",
+      "componentsTitle": "Construit avec un logiciel que vous connaissez déjà",
+      "componentsSubtitle": "ARGVUS divise l'expérience en packages officiels plus petits, tous préconfigurés et coordonnés par le métapaquet argvus.",
+      "componentDesc": {
+        "hyprland": "Le compositeur Wayland qui donne vie à ARGVUS : mosaïque, espaces de travail, animations fluides et raccourcis clavier complets.",
+        "waybar": "Barre d'état avec modules système, média, réseau, stockage et raccourcis.",
+        "quickshell": "Barre latérale du système QML avec météo, réseau, calendrier, luminosité, volume et notifications.",
+        "rofi": "Lanceur d'applications, sélecteur de fenêtres et menus, le tout avec des thèmes unifiés.",
+        "superfile": "Un gestionnaire de fichiers TUI rapide et entièrement configurable avec des raccourcis clavier dédiés.",
+        "btop": "Moniteur système avec CPU, mémoire, réseau et processus en temps réel.",
+        "hyprlock": "Écran de verrouillage intégré à l'écosystème Hyprland et un thème synchronisé.",
+        "storage": "Module de stockage amovible alimenté par rouille pour la barre Waybar."
+      },
+      "keyLabels": [
+        "Aperçus",
+        "Composants",
+        "Barre des tâches",
+        "Mode fenêtre",
+        "Applications",
+        "Agents IA",
+        "Thèmes"
+      ],
+      "keysAria": "Navigation dans les sections",
+      "waybarEyebrow": "Barre des tâches",
+      "waybarTitle": "Barre d'état en haut ou en bas",
+      "waybarSubtitle": "La barre principale d'ARGVUS combine la navigation, les médias, l'état du système et les applications natives - et peut s'afficher en haut ou en bas de l'écran d'un simple clic ou d'un raccourci. La position est mémorisée au fil des sessions.",
+      "waybarIntro": "Construite sur Waybar, la barre regroupe les commandes quotidiennes en un seul endroit, avec une apparence unifiée pour chaque thème :",
+      "waybarFeatures": [
+        {
+          "icon": "fa-solid fa-star",
+          "text": "Top/bottom position via shortcut (SUPER + Alt + ↑/↓) or the sidebar."
+        },
+        {
+          "icon": "fa-solid fa-bars-staggered",
+          "text": "Espaces de travail navigables avec contexte de fenêtre ciblée."
+        },
+        {
+          "icon": "fa-solid fa-music",
+          "text": "Contrôle média (mpris) avec le lecteur actif en surbrillance."
+        },
+        {
+          "icon": "fa-solid fa-gauge-high",
+          "text": "État du réseau, du processeur, de la mémoire, de la température et du profil d'alimentation."
+        },
+        {
+          "icon": "fa-solid fa-calendar-days",
+          "text": "Calendrier de la barre des tâches ARGVUS à la date, cliquez sur."
+        },
+        {
+          "icon": "fa-solid fa-bolt",
+          "text": "ARGVUS Amovible Devices, un module de stockage amovible alimenté par Rust."
+        },
+        {
+          "icon": "fa-solid fa-table-cells",
+          "text": "Barre d'état système pour les applications avec des icônes d'état."
+        },
+        {
+          "icon": "fa-solid fa-magnifying-glass",
+          "text": "Recherche rapide d'applications et de commandes directement depuis la barre."
+        }
+      ],
+      "windowModeEyebrow": "Mode fenêtre",
+      "windowModeTitle": "Fenêtres carrelées ou flottantes",
+      "windowModeSubtitle": "Choisissez la manière dont les fenêtres d'application utilisent le bureau. Le mode est global, persiste d'une session à l'autre et peut être modifié dans le Centre de contrôle ou à partir de l'icône de la barre des tâches.",
+      "windowModeTile": "Tuile de fenêtre",
+      "windowModeFloat": "Flotteur de fenêtre",
+      "windowModeTileText": "Les fenêtres sont disposées côte à côte avec des espaces constants entre elles.",
+      "windowModeFloatText": "Les fenêtres peuvent se chevaucher et sont associées à une barre de fenêtre située sur le bord opposé à la barre des tâches.",
+      "appsEyebrow": "Applications",
+      "appsTitle": "Outils natifs pour le bureau",
+      "appsSubtitle": "Au-delà de la configuration de l'environnement, ARGVUS comprend des applications propriétaires pour les flux de travail qui nécessitent une intégration plus étroite avec la barre, le panneau et la session.",
+      "appStorageText": "ARGVUS Amovible Devices est l'application de stockage amovible ARGVUS. Il détecte les appareils, expose des actions rapides pour monter, démonter et éjecter des disques, et alimente le module de stockage Waybar avec une expérience cohérente.",
+      "appCalendarText": "Le calendrier de la barre des tâches ARGVUS est le calendrier natif utilisé par le bureau. Il offre une vue mensuelle rapide, une navigation simple et une intégration d'événements pour vérifier les rendez-vous sans quitter le flux Wayland.",
+      "appCalendarEventsText": "La vue des événements complète le calendrier avec une liste compacte de rendez-vous, gardant les dates importantes à portée de main au sein de l'écosystème ARGVUS.",
+      "appFocusText": "ARGVUS Focus vous aide à rester concentré sur votre tâche avec des sessions de concentration et des pauses disponibles directement depuis le bureau.",
+      "appClockText": "ARGVUS Clock rassemble une horloge et des minuteries dans un outil natif, afin que vous puissiez suivre le temps sans quitter votre flux de travail.",
+      "appDefaultAppsText": "ARGVUS Control Center is the native ARGVUS configuration center. Apps sets the default applications, and Fonts applies typography to GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, the lock screen and official apps.",
+      "controlCenterFeatures": [
+        {
+          "title": "Apparence",
+          "text": "Themes, Sticky/Float modes, accents, wallpapers, effects, taskbar layout and Control Panel cards."
+        },
+        {
+          "title": "Polices",
+          "text": "Configurer la typographie pour la barre des tâches, la télémétrie, le panneau de configuration, le système, les applications, le terminal et le navigateur."
+        },
+        {
+          "title": "Applications par défaut",
+          "text": "Choisir les applications par défaut pour les rôles reconnus par ARGVUS."
+        },
+        {
+          "title": "Matériel et entrée",
+          "text": "Ajustez la souris, le pavé tactile, le clavier, les raccourcis et les affichages lorsque les fonctionnalités sont disponibles."
+        },
+        {
+          "title": "Réseau, audio et Bluetooth",
+          "text": "Accéder à la connectique et aux modules audio fournis par l'installation."
+        },
+        {
+          "title": "Session et système",
+          "text": "Inspecter et configurer l'alimentation, la session, les services, les packages, le stockage et les diagnostics."
+        }
+      ],
+      "aboutMaintainerLink": "Profil GitHub de William C. Canin",
+      "aboutSupportPaypal": "Lors d'une contribution via PayPal, le compte correct est affiché comme",
+      "themesEyebrow": "Thèmes",
+      "themesTitle": "Vingt-deux thèmes, deux modes, un système",
+      "themesSubtitle": "Familles visuelles partagées, chacune avec les modes Fixe et Espacé. Tous disponibles sous forme de packages Arch Linux à partir du référentiel officiel ARGVUS.",
+      "themesAccentLabel": "Accent indépendant",
+      "themesTabsAria": "Catégorie thématique",
+      "themesDarkTab": "Thèmes sombres",
+      "themesLightTab": "Thèmes lumière",
+      "themesCopyText": "Découvrez les familles officielles et comparez leurs palettes directement dans les avant-premières. Chaque famille dispose des modes Fixe et Espacé, modifiant la géométrie et le traitement de surface sans changer son identité visuelle. Tous les thèmes sont disponibles dans le référentiel sous forme de packages individuels. La couleur d'accent reste indépendante et peut être choisie dans ARGVUS Control Center → Apparence → Couleur de surbrillance.",
+      "themesDefaultLabel": "Par défaut",
+      "themeModeSticky": "Fixe",
+      "themeModeFloat": "Espacé",
+      "archTitle": "Chaque étape, bien en vue",
+      "archSubtitle": "La commande en haut de la page fait tout cela pour vous. Si vous préférez voir et exécuter chaque commande vous-même, suivez les trois étapes ci-dessous : ils ajoutent le référentiel ARGVUS signé à pacman et installent le métapaquet argvus. Parcourez-le comme le Centre de contrôle : touches fléchées pour choisir, Entrée pour copier.",
+      "ccTitle": "Installation avancée",
+      "ccSubtitle": "Dépôt signé + métapaquet argvus, étape par étape\nCommande __T008__",
+      "ccRepository": "Dépôt",
+      "ccCommand": "__T009__ Copie",
+      "ccCopy": "Copie",
+      "ccCopyAll": "Tous",
+      "ccCopied": "Commande copiée",
+      "ccCopiedAll": "Toutes les commandes copiées",
+      "ccNoCommand": "Aucune commande — cela se produit sur l'écran de connexion",
+      "ccHelp": "↑/↓ Items  ←/→ Steps  Enter Copy  c Copy all",
+      "ccGridAria": "Étapes d'installation avancées",
+      "ccSteps": {
+        "key": {
+          "title": "Clé de signature",
+          "description": "Faire confiance à la clé du packager"
+        },
+        "repo": {
+          "title": "Dépôt",
+          "description": "Activer argvus et argvus-extras"
+        },
+        "install": {
+          "title": "Installer",
+          "description": "Synchronisez et installez le bureau"
+        }
+      },
+      "ccItems": {
+        "download": {
+          "label": "Télécharger la clé",
+          "note": "Saves the ARGVUS public signing key to /tmp/argvus.gpg."
+        },
+        "import": {
+          "label": "Importer dans Pacman",
+          "note": "Ajoute la clé au trousseau Pacman."
+        },
+        "keyId": {
+          "label": "Lire l'ID de la clé",
+          "note": "Extrait l'ID de clé dans la variable ARGVUS_KEY."
+        },
+        "sign": {
+          "label": "Signez-le localement",
+          "note": "Marque la clé ARGVUS comme étant fiable sur cette machine."
+        },
+        "conf": {
+          "label": "Installer argvus.conf",
+          "note": "Downloads the repository definition to /etc/pacman.d/argvus.conf."
+        },
+        "include": {
+          "label": "Inclure dans pacman.conf",
+          "note": "Adds the Include line to /etc/pacman.conf. Run it only once."
+        },
+        "pacman": {
+          "label": "Installer ARGVUS",
+          "note": "Synchronise les bases de données et installe le métapaquet argvus ; les dépendances proviennent du même référentiel."
+        },
+        "session": {
+          "label": "Démarrer la session",
+          "note": "Déconnectez-vous de la session en cours et sélectionnez la session ARGVUS sur l'écran de connexion."
+        }
+      },
+      "installGuide": "Guide d'installation",
+      "installRequirements": "Exigences",
+      "installRequirementsList": [
+        "Arch Linux x86_64",
+        "Hyprland 0.57.0 (Wayland)",
+        "A GPU with Wayland/KMS support"
+      ],
+      "installVm": "Machines virtuelles",
+      "installChanges": "What changes on your system: the ARGVUS key is added to the pacman keyring, /etc/pacman.d/argvus.conf is created and pacman.conf gets one Include line. Installation writes nothing to your $HOME.",
+      "installVerify": "Vérifier la clé de signature",
+      "installVerifyHint": "Comparez-le avec la sortie de pacman-key --finger avant de le signer localement.",
+      "installSource": "Code source du package",
+      "installPrivacy": "Confidentialité et sécurité",
+      "installCopyFingerprint": "Copier l'empreinte digitale",
+      "installScript": "le script d'installation rapide, à lire avant de l'exécuter",
+      "installCmd": "sudo pacman -Syu argvus",
+      "supportEyebrow": "Assistance",
+      "supportTitle": "Soutenir le développement d'ARGVUS",
+      "supportText": "ARGVUS est géré de manière indépendante. Les contributions permettent de couvrir l'infrastructure, la maintenance et l'évolution du projet, y compris, à l'avenir, un domaine dédié à ARGVUS.",
+      "supportBtn": "Contribuer",
+      "supportAria": "Montant de la cotisation",
+      "supportStar": "Une étoile sur GitHub aide d'autres personnes à trouver ARGVUS.",
+      "supportStarBtn": "Étoile sur GitHub",
+      "ctaTitle": "Essayez ARGVUS",
+      "ctaText": "Suivez le guide d'installation et disposez d'un bureau Wayland complet, magnifique et intégré fonctionnant en quelques minutes.",
+      "ctaPrimary": "Voir le guide d'installation",
+      "ctaSecondary": "Explorer le référentiel",
+      "footerTagline": "Un environnement de bureau modulaire pour Wayland et Arch Linux, construit sur Hyprland.",
+      "footerDocs": "Documentations",
+      "footerDocsLinks": [
+        {
+          "label": "Introduction",
+          "href": "docs/introduction/"
+        },
+        {
+          "label": "Installation",
+          "href": "docs/getting-started/installation/install/"
+        },
+        {
+          "label": "Apparence",
+          "href": "docs/user-guide/appearance/"
+        },
+        {
+          "label": "Séances",
+          "href": "docs/user-guide/sessions/"
+        },
+        {
+          "label": "FAQ",
+          "href": "docs/user-guide/faq/"
+        }
+      ],
+      "footerResources": "Ressources",
+      "footerResourcesLinks": [
+        {
+          "label": "Dépôt Arch Linux\nProjet __T020__",
+          "href": "packages/arch/"
+        }
+      ],
+      "footerProject": "__T021__ À propos d'ARGVUS",
+      "footerAbout": "À propos d'ARGVUS",
+      "footerLicense": "Licence GPL-3.0",
+      "footerMaintainer": "Maintenu par",
+      "bottomLicense": "Sous licence GPL-3.0",
+      "feedbackEyebrow": "Commentaires",
+      "feedbackTitle": "Vos commentaires contribuent à façonner ARGVUS",
+      "feedbackText": "Vous avez trouvé un bug, vous avez une idée ou souhaitez demander une fonctionnalité ? ARGVUS dispose d'un référentiel de commentaires dédié où les idées et les rapports sont suivis avec la communauté.",
+      "feedbackBtn": "Envoyer des commentaires",
+      "communityEyebrow": "Communauté",
+      "communityTitle": "Connectez-vous avec la communauté ARGVUS",
+      "communityText": "Suivez les annonces de projets ou discutez avec d'autres utilisateurs sur nos chaînes Telegram.",
+      "communityChannels": [
+        {
+          "title": "Chaîne officielle",
+          "handle": "@argvusdesktop",
+          "href": "https://t.me/argvusdesktop",
+          "description": "Annonces et actualités ARGVUS."
+        },
+        {
+          "title": "Communauté mondiale",
+          "handle": "@argvuscommunity",
+          "href": "https://t.me/argvuscommunity",
+          "description": "Discutez avec la communauté ARGVUS."
+        },
+        {
+          "title": "Communauté brésilienne",
+          "handle": "@argvuscommunity_br",
+          "href": "https://t.me/argvuscommunity_br",
+          "description": "Discutez avec la communauté ARGVUS en portugais.\nStatut __T012__"
+        }
+      ],
+      "footerCommunity": "Communauté",
+      "statusTitle": "__T013__ Statut du projet",
+      "statusLabel": "Statut du projet",
+      "statusText": "Toutes les fonctionnalités présentées sur cette page fonctionnent. L'étiquette Bêta est là car des bogues que les tests n'ont pas détectés peuvent quand même apparaître. Si vous en trouvez un, signalez-le dans le référentiel de commentaires.",
+      "feedbackLink": "Dépôt de commentaires ARGVUS sur GitHub",
+      "feedbackMade": "Conçu pour la communauté open source"
+    },
+    "about": {
+      "htmlLang": "fr",
+      "title": "À propos d'ARGVUS — ARGVUS",
+      "description": "Pourquoi ARGVUS existe, d'où vient le nom et comment entendre la prononciation correcte.",
+      "keywords": "argvus, à propos d'argvus, prononciation d'argvus, hyprland, wayland, arch linux",
+      "navAria": "Navigation principale",
+      "navDocs": "Documentations",
+      "github": "GitHub",
+      "langEnglish": "Anglais",
+      "langPortuguese": "Portugais",
+      "back": "Retour à l'accueil",
+      "aboutEyebrow": "À propos",
+      "aboutIntroTitle": "Qu'est-ce qu'ARGVUS ?",
+      "aboutIntroText": "ARGVUS est un environnement de bureau modulaire pour Arch Linux, construit sur Wayland et Hyprland. Il rassemble la session, la barre des tâches, le panneau de configuration, les paramètres et les intégrations système en une seule expérience cohérente. Ses composants sont répartis dans des packages qui fonctionnent ensemble, tandis que les commandes et applications Rust résident dans l'espace de travail principal. Le projet se concentre sur une interaction rapide et prévisible, avec le clavier au centre du flux de travail.",
+      "aboutTitle": "Pourquoi ARGVUS ?",
+      "aboutArgv": "Vecteur d'arguments",
+      "aboutUs": "Système utilisateur",
+      "aboutText": "ARGVUS est né d'une idée simple : un bureau de développeur ne devrait pas obliger l'utilisateur à interrompre son flux pour trouver des commandes, naviguer dans les menus ou dépendre constamment de la souris. L'objectif est de créer un environnement dans lequel le clavier constitue la principale forme d'interaction du système, permettant d'accéder aux actions, aux applications et aux outils via des raccourcis et des commandes de manière rapide et prévisible.",
+      "aboutText2": "Le nom représente cette idée. ARGV, de vecteur d'argument, fait référence au monde des développeurs et à la manière dont les arguments sont utilisés pour contrôler les programmes. US, de User System, représente l'objectif de transformer cette philosophie en un environnement de bureau centré sur l'utilisateur.",
+      "aboutPronunciationLabel": "Écouter la prononciation",
+      "aboutPronunciationHint": "Choisissez une langue pour entendre comment ARGVUS se prononce.",
+      "aboutPronunciationLanguage": "Langue",
+      "aboutPronunciationEnglish": "Anglais",
+      "aboutPronunciationPortuguese": "Portugais",
+      "aboutPronunciationAudio": "Audio de prononciation ARGVUS",
+      "aboutMaintainer": "Projet maintenu par",
+      "aboutMaintainerLink": "Profil GitHub de William C. Canin",
+      "footerLicense": "Sous licence GPL-3.0"
+    },
+    "header": {
+      "navAria": "Navigation principale",
+      "navDocs": "Documentations",
+      "navArch": "Dépôt",
+      "navArchArch": "Arch Linux",
+      "github": "GitHub",
+      "navDonate": "Faire un don",
+      "langAria": "Changer de langue",
+      "langEnglish": "Anglais",
+      "langPortuguese": "Portugais",
+      "themeAria": "Changer de thème",
+      "themeLight": "Lumière",
+      "themeDark": "Foncé\nSystème __T028__",
+      "themeSystem": "",
+      "navMenu": "Menu",
+      "beta": "Bêta"
+    },
+    "footer": {
+      "tagline": "Un environnement de bureau modulaire pour Wayland et Arch Linux, construit sur Hyprland.",
+      "docs": "Documentations",
+      "docsLinks": [
+        [
+          "Introduction",
+          "docs/introduction/"
+        ],
+        [
+          "Installation",
+          "docs/getting-started/installation/install/"
+        ],
+        [
+          "Apparence",
+          "docs/user-guide/appearance/"
+        ],
+        [
+          "Séances",
+          "docs/user-guide/sessions/"
+        ],
+        [
+          "FAQ",
+          "docs/user-guide/faq/"
+        ]
+      ],
+      "resources": "Ressources",
+      "resourceLinks": [
+        [
+          "À propos d'ARGVUS",
+          "about/"
+        ],
+        [
+          "GitHub",
+          "https://github.com/orgs/argvus"
+        ],
+        [
+          "Dépôt Arch Linux\nProjet __T020__",
+          "/packages/arch/"
+        ]
+      ],
+      "community": "Communauté",
+      "feedback": "Conçu pour la communauté open source",
+      "license": "Sous licence GPL-3.0",
+      "maintainer": "Entretenu par William C. Canin",
+      "channels": [
+        [
+          "Chaîne officielle",
+          "https://t.me/argvusdesktop"
+        ],
+        [
+          "Communauté mondiale",
+          "https://t.me/argvuscommunity"
+        ],
+        [
+          "Communauté brésilienne",
+          "https://t.me/argvuscommunity_br"
+        ]
+      ]
+    },
+    "agents": {
+      "eyebrow": "Agents IA",
+      "title": "Vos agents.",
+      "accent": "Un raccourci.",
+      "lead": "De la première invite au prochain changement de code. Ouvrez Codex, Claude Code ou OpenCode à partir d'un seul sélecteur, directement dans votre terminal ARGVUS.",
+      "shortcutLabel": "Commencer au clavier",
+      "shortcutHint": "Ouvrir le sélecteur. Choisissez votre mandataire.",
+      "sectionLabel": "Agents de codage intégrés à ARGVUS",
+      "codex": "L'agent de codage d'OpenAI, disponible depuis le lanceur et prêt à être ouvert dans le terminal natif de votre bureau.",
+      "claude": "L'agent de codage d'Anthropic, installé dans votre profil utilisateur via mise lorsque vous l'ouvrez pour la première fois.",
+      "opencode": "L'agent de codage open source, intégré avec le même flux de sélection et de lancement que vos autres agents.",
+      "packaged": "Installé avec argvus-ai",
+      "onDemand": "Installé au premier lancement",
+      "upstream": "Explorer l'agent",
+      "workflowTitle": "Choisissez votre outil. Gardez votre flux.",
+      "workflowText": "Raccourci clavier, robot barre des tâches ou lanceur d'applications : chaque point d'entrée ouvre le terminal natif. L'agent est votre choix.",
+      "cta": "Explorez ARGVUS AI",
+      "install": "Installation et première utilisation",
+      "codexAlt": "Marque OpenAI, les créateurs du Codex",
+      "claudeAlt": "Marque Claude",
+      "opencodeAlt": "Marque OpenCode",
+      "openSource": "Source ouverte"
+    }
+  },
+  "it": {
+    "landing": {
+      "htmlLang": "it",
+      "title": "ARGVUS — Un ambiente desktop modulare per Wayland e Arch Linux, costruito su Hyprland.",
+      "description": "ARGVUS è un desktop Hyprland e Wayland completo con dispositivi rimovibili ARGVUS, Waybar, temi integrati e pacchetti Arch Linux firmati.",
+      "keywords": "argvus, argvus linux, hyprland, wayland, arch linux, ambiente desktop, dispositivi rimovibili argvus, waybar, desktop linux, repository pacman",
+      "navAria": "Navigazione principale",
+      "navMenu": "Menù",
+      "navDocs": "Documentazione",
+      "navArch": "Archivio",
+      "navArchArch": "ArchLinux",
+      "navDonate": "Dona",
+      "github": "GitHub",
+      "langAria": "Cambia lingua",
+      "langEnglish": "Inglese",
+      "langPortuguese": "Portoghese",
+      "themesRepositoryLabel": "Installa dal repository",
+      "themesRepositoryHint": "O più temi in un unico comando",
+      "themesGuideLink": "Guida ai temi →",
+      "windowModeHint": "Premi SUPER + Alt + Spazio per passare dalla modalità finestra mobile a quella affiancata.",
+      "carouselPrevious": "Precedente",
+      "carouselNext": "Avanti",
+      "carouselSlide": "Scivolo",
+      "supportStarLabel": "Stella",
+      "currencyAria": "Valuta",
+      "currencyUsd": "Dollaro statunitense (USD)",
+      "currencyBrl": "Real brasiliano (BRL)",
+      "themeAria": "Cambia tema",
+      "themeLight": "Luce",
+      "themeDark": "Buio",
+      "themeSystem": "Sistema",
+      "heroTitle1": "Un ambiente desktop modulare, pronto all'uso.",
+      "heroAccent": "Incentrato su Hyprland.",
+      "heroLead": "Molto più che dotfile: sessione supervisionata, shell Quickshell, barra delle applicazioni Waybar, impostazioni native e temi ufficiali: integrati, leggeri e pacchettizzati per Arch Linux. Costruito per gli sviluppatori, senza bloatware.",
+      "versionBadge": "ARGVUS v${version}",
+      "btnInstall": "Installa ora",
+      "btnDocs": "Documentazione",
+      "heroCopy": "Comando di copia",
+      "heroCopied": "Copiato",
+      "heroInstallHint": "Installazione rapida. Preferisci passo dopo passo?",
+      "heroInstallLink": "Installazione avanzata",
+      "heroShotAlt": "Desktop ARGVUS con il tema ARGVUS",
+      "heroStackLabel": "Costruito con",
+      "carouselOpen": "Apri l'immagine a schermo intero",
+      "carouselClose": "Chiudi l'immagine a schermo intero",
+      "screenshotsEyebrow": "Anteprime",
+      "screenshotsTitle": "Guarda ARGVUS assumere una nuova atmosfera",
+      "screenshotsSubtitle": "Guarda il desktop in movimento: temi, modalità e app native che lavorano insieme, prima di scegliere un aspetto.",
+      "videoPlay": "Guarda il video",
+      "videoTitle": "Video introduttivo all'ARGVUS",
+      "screenshotsSubtitleStatic": "Una vera cattura di ARGVUS Dark in modalità Float, con la barra delle applicazioni, il pannello laterale e il launcher aperti.",
+      "videoPosterAlt": "Logo ARGVUS con il comando argvus --start-desktop",
+      "componentsEyebrow": "Componenti",
+      "componentsTitle": "Costruito con software che già conosci",
+      "componentsSubtitle": "ARGVUS suddivide l'esperienza in pacchetti ufficiali più piccoli, tutti preconfigurati e coordinati dal metapacchetto argvus.",
+      "componentDesc": {
+        "hyprland": "Il compositore Wayland che dà vita ad ARGVUS: piastrellatura, spazi di lavoro, animazioni fluide e combinazioni di tasti complete.",
+        "waybar": "Barra di stato con moduli di sistema, multimediali, di rete, di archiviazione e di collegamento.",
+        "quickshell": "Barra laterale del sistema QML con meteo, rete, calendario, luminosità, volume e notifiche.",
+        "rofi": "Lanciatore di applicazioni, commutatore di finestre e menu: il tutto con temi unificati.",
+        "superfile": "Un file manager TUI veloce e completamente configurabile con combinazioni di tasti dedicate.",
+        "btop": "Monitor di sistema con CPU, memoria, rete e processi in tempo reale.",
+        "hyprlock": "Schermata di blocco integrata con l'ecosistema Hyprland e un tema sincronizzato.",
+        "storage": "Modulo portaoggetti rimovibile con trattamento antiruggine per la barra Waybar."
+      },
+      "keyLabels": [
+        "Anteprime",
+        "Componenti",
+        "Barra delle applicazioni",
+        "Modalità finestra",
+        "App",
+        "Agenti IA",
+        "Temi"
+      ],
+      "keysAria": "Navigazione nelle sezioni",
+      "waybarEyebrow": "Barra delle applicazioni",
+      "waybarTitle": "Barra di stato in alto o in basso",
+      "waybarSubtitle": "La barra principale di ARGVUS combina navigazione, contenuti multimediali, stato del sistema e app native e può essere posizionata nella parte superiore o inferiore dello schermo con un clic o una scorciatoia. La posizione viene ricordata durante le sessioni.",
+      "waybarIntro": "Costruita su Waybar, la barra raggruppa i controlli quotidiani in un unico posto, con un aspetto unificato per ogni tema:",
+      "waybarFeatures": [
+        {
+          "icon": "fa-solid fa-star",
+          "text": "Top/bottom position via shortcut (SUPER + Alt + ↑/↓) or the sidebar."
+        },
+        {
+          "icon": "fa-solid fa-bars-staggered",
+          "text": "Aree di lavoro navigabili con contesto di finestra focalizzata."
+        },
+        {
+          "icon": "fa-solid fa-music",
+          "text": "Controllo multimediale (mpris) con il lettore attivo evidenziato."
+        },
+        {
+          "icon": "fa-solid fa-gauge-high",
+          "text": "Stato di rete, CPU, memoria, temperatura e profilo energetico."
+        },
+        {
+          "icon": "fa-solid fa-calendar-days",
+          "text": "Calendario della barra delle applicazioni ARGVUS fare clic sulla data."
+        },
+        {
+          "icon": "fa-solid fa-bolt",
+          "text": "ARGVUS Removal Devices, un modulo di archiviazione rimovibile alimentato da Rust."
+        },
+        {
+          "icon": "fa-solid fa-table-cells",
+          "text": "Barra delle applicazioni per app con icone di stato."
+        },
+        {
+          "icon": "fa-solid fa-magnifying-glass",
+          "text": "Ricerca rapida di app e comandi direttamente dalla barra."
+        }
+      ],
+      "windowModeEyebrow": "Modalità finestra",
+      "windowModeTitle": "Finestre piastrellate o flottanti",
+      "windowModeSubtitle": "Scegli il modo in cui le finestre delle applicazioni utilizzano il desktop. La modalità è globale, persiste tra le sessioni e può essere modificata nel Centro di controllo o dall'icona sulla barra delle applicazioni.",
+      "windowModeTile": "Piastrella per finestra",
+      "windowModeFloat": "Finestra mobile",
+      "windowModeTileText": "Le finestre sono disposte una accanto all'altra con spazi coerenti tra loro.",
+      "windowModeFloatText": "Le finestre possono sovrapporsi e sono accoppiate con una barra della finestra sul bordo opposto alla barra delle applicazioni.",
+      "appsEyebrow": "App",
+      "appsTitle": "Strumenti nativi per desktop",
+      "appsSubtitle": "Oltre alla configurazione dell'ambiente, ARGVUS include app proprietarie per flussi di lavoro che richiedono una più stretta integrazione con la barra, il pannello e la sessione.",
+      "appStorageText": "ARGVUS Removal Devices è l'app di archiviazione rimovibile ARGVUS. Rileva i dispositivi, espone azioni rapide per montare, smontare ed espellere le unità e alimenta il modulo di archiviazione Waybar con un'esperienza coerente.",
+      "appCalendarText": "ARGVUS Taskbar Calendar è il calendario nativo utilizzato dal desktop. Offre una visualizzazione mensile rapida, una navigazione semplice e l'integrazione degli eventi per controllare gli appuntamenti senza uscire dal flusso Wayland.",
+      "appCalendarEventsText": "La vista eventi completa il calendario con un elenco compatto di appuntamenti, mantenendo le date importanti a portata di mano all'interno dell'ecosistema ARGVUS.",
+      "appFocusText": "ARGVUS Focus ti aiuta a rimanere concentrato sull'attività con sessioni di focus e pause disponibili direttamente dal desktop.",
+      "appClockText": "ARGVUS Clock riunisce orologio e timer in uno strumento nativo, così puoi tenere traccia del tempo senza abbandonare il flusso di lavoro.",
+      "appDefaultAppsText": "ARGVUS Control Center is the native ARGVUS configuration center. Apps sets the default applications, and Fonts applies typography to GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, the lock screen and official apps.",
+      "controlCenterFeatures": [
+        {
+          "title": "Aspetto",
+          "text": "Themes, Sticky/Float modes, accents, wallpapers, effects, taskbar layout and Control Panel cards."
+        },
+        {
+          "title": "Caratteri",
+          "text": "Configura la tipografia per barra delle applicazioni, telemetria, pannello di controllo, sistema, applicazioni, terminale e browser."
+        },
+        {
+          "title": "Applicazioni predefinite",
+          "text": "Scegli le applicazioni predefinite per i ruoli riconosciuti da ARGVUS."
+        },
+        {
+          "title": "Hardware e input",
+          "text": "Regola mouse, touchpad, tastiera, scorciatoie e display quando le funzionalità sono disponibili."
+        },
+        {
+          "title": "Rete, audio e Bluetooth",
+          "text": "Accedi ai moduli connettività e audio forniti dall'impianto."
+        },
+        {
+          "title": "Sessione e sistema",
+          "text": "Ispeziona e configura alimentazione, sessione, servizi, pacchetti, archiviazione e diagnostica."
+        }
+      ],
+      "aboutMaintainerLink": "Profilo GitHub di William C. Canin",
+      "aboutSupportPaypal": "Quando si contribuisce tramite PayPal, il conto corretto viene visualizzato come",
+      "themesEyebrow": "Temi",
+      "themesTitle": "Ventidue temi, due modalità, un sistema",
+      "themesSubtitle": "Famiglie visive condivise, ciascuna con modalità Fisso e Spaziato. Tutti disponibili come pacchetti Arch Linux dal repository ufficiale ARGVUS.",
+      "themesAccentLabel": "Accento indipendente",
+      "themesTabsAria": "Categoria tematica",
+      "themesDarkTab": "Temi scuri",
+      "themesLightTab": "Temi chiari",
+      "themesCopyText": "Esplora le famiglie ufficiali e confronta le loro palette direttamente nelle anteprime. Ogni famiglia ha le modalità Fisso e Spaziato, che cambiano la geometria e il trattamento della superficie senza cambiare la propria identità visiva. Tutti i temi sono disponibili nel repository come pacchetti individuali. Il colore principale rimane indipendente e può essere scelto in ARGVUS Control Center → Aspetto → Colore evidenziato.",
+      "themesDefaultLabel": "Predefinito",
+      "themeModeSticky": "Fisso",
+      "themeModeFloat": "Spaziato",
+      "archTitle": "Ogni passo, in bella vista",
+      "archSubtitle": "Il comando nella parte superiore della pagina fa tutto questo per te. Se preferisci vedere ed eseguire tu stesso ogni comando, segui i tre passaggi seguenti: aggiungono il repository ARGVUS firmato a pacman e installano il metapacchetto argvus. Sfoglialo come il Centro di controllo: tasti freccia per scegliere, Invio per copiare.",
+      "ccTitle": "Installazione avanzata",
+      "ccSubtitle": "Repository firmato + metapacchetto argvus, passo dopo passo\ncomando __T008__",
+      "ccRepository": "Archivio",
+      "ccCommand": "__T009__ Copia",
+      "ccCopy": "Copia",
+      "ccCopyAll": "Tutti",
+      "ccCopied": "Comando copiato",
+      "ccCopiedAll": "Tutti i comandi copiati",
+      "ccNoCommand": "Nessun comando: questo avviene nella schermata di accesso",
+      "ccHelp": "↑/↓ Items  ←/→ Steps  Enter Copy  c Copy all",
+      "ccGridAria": "Passaggi di installazione avanzati",
+      "ccSteps": {
+        "key": {
+          "title": "Chiave di firma",
+          "description": "Considera attendibile la chiave del packager"
+        },
+        "repo": {
+          "title": "Archivio",
+          "description": "Abilita argvus e argvus-extras"
+        },
+        "install": {
+          "title": "Installa",
+          "description": "Sincronizza e installa il desktop"
+        }
+      },
+      "ccItems": {
+        "download": {
+          "label": "Scarica la chiave",
+          "note": "Saves the ARGVUS public signing key to /tmp/argvus.gpg."
+        },
+        "import": {
+          "label": "Importa in pacman",
+          "note": "Aggiunge la chiave al portachiavi di pacman."
+        },
+        "keyId": {
+          "label": "Leggi l'ID della chiave",
+          "note": "Estrae l'ID della chiave nella variabile ARGVUS_KEY."
+        },
+        "sign": {
+          "label": "Firmalo localmente",
+          "note": "Contrassegna la chiave ARGVUS come attendibile su questa macchina."
+        },
+        "conf": {
+          "label": "Installa argvus.conf",
+          "note": "Downloads the repository definition to /etc/pacman.d/argvus.conf."
+        },
+        "include": {
+          "label": "Includi in pacman.conf",
+          "note": "Adds the Include line to /etc/pacman.conf. Run it only once."
+        },
+        "pacman": {
+          "label": "Installa ARGVUS",
+          "note": "Sincronizza i database e installa il metapacchetto argvus; le dipendenze provengono dallo stesso repository."
+        },
+        "session": {
+          "label": "Avvia la sessione",
+          "note": "Disconnettersi dalla sessione corrente e selezionare la sessione ARGVUS nella schermata di accesso."
+        }
+      },
+      "installGuide": "Guida all'installazione",
+      "installRequirements": "Requisiti",
+      "installRequirementsList": [
+        "ArchLinux x86_64",
+        "Hyprland 0.57.0 (Wayland)",
+        "A GPU with Wayland/KMS support"
+      ],
+      "installVm": "Macchine virtuali",
+      "installChanges": "What changes on your system: the ARGVUS key is added to the pacman keyring, /etc/pacman.d/argvus.conf is created and pacman.conf gets one Include line. Installation writes nothing to your $HOME.",
+      "installVerify": "Verifica la chiave di firma",
+      "installVerifyHint": "Confrontalo con l'output di pacman-key --finger prima di firmarlo localmente.",
+      "installSource": "Codice sorgente del pacchetto",
+      "installPrivacy": "Privacy e sicurezza",
+      "installCopyFingerprint": "Copia l'impronta digitale",
+      "installScript": "lo script di installazione rapida, da leggere prima di eseguirlo",
+      "installCmd": "sudo pacman -Syu argvus",
+      "supportEyebrow": "Supporto",
+      "supportTitle": "Supporta lo sviluppo ARGVUS",
+      "supportText": "ARGVUS viene mantenuto in modo indipendente. I contributi aiutano a coprire l'infrastruttura, la manutenzione e l'evoluzione del progetto, incluso, in futuro, un dominio dedicato per ARGVUS.",
+      "supportBtn": "Contribuisci",
+      "supportAria": "Importo contributo",
+      "supportStar": "Una stella su GitHub aiuta altre persone a trovare ARGVUS.",
+      "supportStarBtn": "Stella su GitHub",
+      "ctaTitle": "Prova ARGVUS",
+      "ctaText": "Segui la guida all'installazione e avrai un desktop Wayland completo, bello e integrato funzionante in pochi minuti.",
+      "ctaPrimary": "Visualizza la guida all'installazione",
+      "ctaSecondary": "Esplora il repository",
+      "footerTagline": "Un ambiente desktop modulare per Wayland e Arch Linux, basato su Hyprland.",
+      "footerDocs": "Documentazione",
+      "footerDocsLinks": [
+        {
+          "label": "Introduzione",
+          "href": "docs/introduction/"
+        },
+        {
+          "label": "Installazione",
+          "href": "docs/getting-started/installation/install/"
+        },
+        {
+          "label": "Aspetto",
+          "href": "docs/user-guide/appearance/"
+        },
+        {
+          "label": "Sessioni",
+          "href": "docs/user-guide/sessions/"
+        },
+        {
+          "label": "Domande frequenti",
+          "href": "docs/user-guide/faq/"
+        }
+      ],
+      "footerResources": "Risorse",
+      "footerResourcesLinks": [
+        {
+          "label": "Repository di Arch Linux",
+          "href": "packages/arch/"
+        }
+      ],
+      "footerProject": "Progetto",
+      "footerAbout": "Informazioni su ARGVUS",
+      "footerLicense": "Licenza GPL-3.0",
+      "footerMaintainer": "Mantenuto da",
+      "bottomLicense": "Concesso in licenza con GPL-3.0",
+      "feedbackEyebrow": "Feedback",
+      "feedbackTitle": "Il tuo feedback aiuta a dare forma ad ARGVUS",
+      "feedbackText": "Hai trovato un bug, hai un'idea o vuoi richiedere una funzionalità? ARGVUS dispone di un archivio di feedback dedicato in cui idee e rapporti vengono monitorati insieme alla comunità.",
+      "feedbackBtn": "Invia feedback",
+      "communityEyebrow": "Comunità",
+      "communityTitle": "Connettiti con la comunità ARGVUS",
+      "communityText": "Segui gli annunci dei progetti o chatta con altri utenti nei nostri canali Telegram.",
+      "communityChannels": [
+        {
+          "title": "Canale ufficiale",
+          "handle": "@argvusdesktop",
+          "href": "https://t.me/argvusdesktop",
+          "description": "Annunci e novità dell'ARGVUS."
+        },
+        {
+          "title": "Comunità globale",
+          "handle": "@argvuscommunity",
+          "href": "https://t.me/argvuscommunity",
+          "description": "Chatta con la comunità ARGVUS."
+        },
+        {
+          "title": "Comunità brasiliana",
+          "handle": "@argvuscommunity_br",
+          "href": "https://t.me/argvuscommunity_br",
+          "description": "Chatta con la comunità ARGVUS in portoghese."
+        }
+      ],
+      "footerCommunity": "Comunità",
+      "statusTitle": "stato",
+      "statusLabel": "Stato del progetto",
+      "statusText": "Tutte le funzionalità mostrate in questa pagina funzionano. L'etichetta Beta è lì perché i bug che i test non sono stati rilevati potrebbero ancora essere visualizzati: se ne trovi uno, segnalalo nel repository di feedback.",
+      "feedbackLink": "Repository di feedback ARGVUS su GitHub",
+      "feedbackMade": "Costruito per la comunità open source"
+    },
+    "about": {
+      "htmlLang": "it",
+      "title": "Informazioni su ARGVUS — ARGVUS",
+      "description": "Perché esiste ARGVUS, da dove deriva il nome e come ascoltarne la pronuncia corretta.",
+      "keywords": "argvus, informazioni su argvus, pronuncia di argvus, hyprland, wayland, arch linux",
+      "navAria": "Navigazione principale",
+      "navDocs": "Documentazione",
+      "github": "GitHub",
+      "langEnglish": "Inglese",
+      "langPortuguese": "Portoghese",
+      "back": "Ritorno a casa",
+      "aboutEyebrow": "Informazioni",
+      "aboutIntroTitle": "Cos'è l'ARGVUS?",
+      "aboutIntroText": "ARGVUS è un ambiente desktop modulare per Arch Linux, costruito su Wayland e Hyprland. Riunisce la sessione, la barra delle applicazioni, il pannello di controllo, le impostazioni e le integrazioni di sistema in un'unica esperienza coesa. I suoi componenti sono distribuiti in pacchetti che lavorano insieme, mentre i comandi e le applicazioni Rust risiedono nell'area di lavoro principale. Il progetto si concentra su un'interazione veloce e prevedibile, con la tastiera al centro del flusso di lavoro.",
+      "aboutTitle": "Perché ARGVUS?",
+      "aboutArgv": "Vettore di argomento",
+      "aboutUs": "Sistema utente",
+      "aboutText": "ARGVUS è nato da un'idea semplice: un desktop per sviluppatori non dovrebbe richiedere all'utente di interrompere il flusso per trovare controlli, navigare nei menu o dipendere costantemente dal mouse. L’obiettivo è creare un ambiente in cui la tastiera sia una forma primaria di interazione del sistema, consentendo l’accesso ad azioni, applicazioni e strumenti tramite scorciatoie e comandi in modo rapido e prevedibile.",
+      "aboutText2": "Il nome rappresenta questa idea. ARGV, da argomento vettore, si riferisce al mondo degli sviluppatori e al modo in cui gli argomenti vengono utilizzati per controllare i programmi. US, da User System, rappresenta l'obiettivo di trasformare questa filosofia in un ambiente desktop incentrato sull'utente.",
+      "aboutPronunciationLabel": "Ascolta la pronuncia",
+      "aboutPronunciationHint": "Scegli una lingua per sentire come si pronuncia ARGVUS.",
+      "aboutPronunciationLanguage": "Lingua",
+      "aboutPronunciationEnglish": "Inglese",
+      "aboutPronunciationPortuguese": "Portoghese",
+      "aboutPronunciationAudio": "Audio della pronuncia ARGVUS",
+      "aboutMaintainer": "Progetto mantenuto da",
+      "aboutMaintainerLink": "Profilo GitHub di William C. Canin",
+      "footerLicense": "Concesso in licenza con GPL-3.0"
+    },
+    "header": {
+      "navAria": "Navigazione principale",
+      "navDocs": "Documentazione",
+      "navArch": "Archivio",
+      "navArchArch": "ArchLinux",
+      "github": "GitHub",
+      "navDonate": "Dona",
+      "langAria": "Cambia lingua",
+      "langEnglish": "Inglese",
+      "langPortuguese": "Portoghese",
+      "themeAria": "Cambia tema",
+      "themeLight": "Luce",
+      "themeDark": "Buio",
+      "themeSystem": "Sistema",
+      "navMenu": "Menù",
+      "beta": "Beta"
+    },
+    "footer": {
+      "tagline": "Un ambiente desktop modulare per Wayland e Arch Linux, basato su Hyprland.",
+      "docs": "Documentazione",
+      "docsLinks": [
+        [
+          "Introduzione",
+          "docs/introduction/"
+        ],
+        [
+          "Installazione",
+          "docs/getting-started/installation/install/"
+        ],
+        [
+          "Aspetto",
+          "docs/user-guide/appearance/"
+        ],
+        [
+          "Sessioni",
+          "docs/user-guide/sessions/"
+        ],
+        [
+          "Domande frequenti",
+          "docs/user-guide/faq/"
+        ]
+      ],
+      "resources": "Risorse",
+      "resourceLinks": [
+        [
+          "Informazioni su ARGVUS",
+          "about/"
+        ],
+        [
+          "GitHub",
+          "https://github.com/orgs/argvus"
+        ],
+        [
+          "Repository di Arch Linux",
+          "/packages/arch/"
+        ]
+      ],
+      "community": "Comunità",
+      "feedback": "Costruito per la comunità open source",
+      "license": "Concesso in licenza con GPL-3.0",
+      "maintainer": "Mantenuto da William C. Canin",
+      "channels": [
+        [
+          "Canale ufficiale",
+          "https://t.me/argvusdesktop"
+        ],
+        [
+          "Comunità globale",
+          "https://t.me/argvuscommunity"
+        ],
+        [
+          "Comunità brasiliana",
+          "https://t.me/argvuscommunity_br"
+        ]
+      ]
+    },
+    "agents": {
+      "eyebrow": "Agenti IA",
+      "title": "I tuoi agenti.",
+      "accent": "Una scorciatoia.",
+      "lead": "Dal primo prompt al successivo cambio di codice. Apri Codex, Claude Code o OpenCode da un selettore, direttamente nel tuo terminale ARGVUS.",
+      "shortcutLabel": "Inizia dalla tastiera",
+      "shortcutHint": "Aprire il selettore. Scegli il tuo agente.",
+      "sectionLabel": "Agenti di codifica integrati con ARGVUS",
+      "codex": "Agente di codifica di OpenAI, disponibile dal launcher e pronto per essere aperto nel terminale nativo del tuo desktop.",
+      "claude": "Agente di codifica di Anthropic, installato nel tuo profilo utente tramite mise quando lo apri per la prima volta.",
+      "opencode": "L'agente di codifica open source, integrato con lo stesso flusso di selezione e lancio degli altri agenti.",
+      "packaged": "Installato con argvus-ai",
+      "onDemand": "Installato al primo avvio",
+      "upstream": "Esplora l'agente",
+      "workflowTitle": "Scegli il tuo strumento. Mantieni il tuo flusso.",
+      "workflowText": "Scorciatoia da tastiera, robot sulla barra delle applicazioni o launcher di applicazioni: ogni punto di ingresso apre il terminale nativo. L'agente è una tua scelta.",
+      "cta": "Esplora l'IA ARGVUS",
+      "install": "Installazione e primo utilizzo",
+      "codexAlt": "Marchio OpenAI, i creatori di Codex",
+      "claudeAlt": "ClaudeMark",
+      "opencodeAlt": "Marchio OpenCode",
+      "openSource": "Sorgente aperta"
+    }
+  },
+  "zh": {
+    "landing": {
+      "htmlLang": "zh",
+      "title": "ARGVUS — 基于 Hyprland 构建的 Wayland 和 Arch Linux 模块化桌面环境。",
+      "description": "ARGVUS 是一个完整的 Hyprland 和 Wayland 桌面，带有 ARGVUS 可移动设备、Waybar、集成主题和签名的 Arch Linux 软件包。",
+      "keywords": "argvus、argvus linux、hyprland、wayland、arch linux、桌面环境、argvus 可移动设备、waybar、linux 桌面、pacman 存储库",
+      "navAria": "主导航",
+      "navMenu": "菜单",
+      "navDocs": "文档",
+      "navArch": "存储库",
+      "navArchArch": "Arch Linux",
+      "navDonate": "捐赠",
+      "github": "GitHub",
+      "langAria": "更改语言",
+      "langEnglish": "英语",
+      "langPortuguese": "葡萄牙语",
+      "themesRepositoryLabel": "从存储库安装",
+      "themesRepositoryHint": "或一个命令中的多个主题",
+      "themesGuideLink": "主题指南 →",
+      "windowModeHint": "按 SUPER + Alt + Space 在浮动窗口模式和平铺窗口模式之间切换。",
+      "carouselPrevious": "上一页",
+      "carouselNext": "下一页",
+      "carouselSlide": "幻灯片",
+      "supportStarLabel": "星星",
+      "currencyAria": "货币",
+      "currencyUsd": "美元 (USD)",
+      "currencyBrl": "巴西雷亚尔 (BRL)",
+      "themeAria": "更改主题",
+      "themeLight": "光",
+      "themeDark": "深色",
+      "themeSystem": "系统",
+      "heroTitle1": "模块化桌面环境，随时可用。",
+      "heroAccent": "专注于 Hyprland。",
+      "heroLead": "不仅仅是点文件：受监督的会话、Quickshell shell、Waybar 任务栏、本机设置和官方主题 — 为 Arch Linux 集成、轻量级和打包。专为开发人员打造，没有臃肿软件。",
+      "versionBadge": "ARGVUS v${version}",
+      "btnInstall": "立即安装",
+      "btnDocs": "文档",
+      "heroCopy": "复制命令",
+      "heroCopied": "已复制",
+      "heroInstallHint": "快速安装。更喜欢一步一步？",
+      "heroInstallLink": "高级安装",
+      "heroShotAlt": "带有 ARGVUS 主题的 ARGVUS 桌面",
+      "heroStackLabel": "内置",
+      "carouselOpen": "全屏打开图像",
+      "carouselClose": "关闭全屏图像",
+      "screenshotsEyebrow": "预览",
+      "screenshotsTitle": "见证 ARGVUS 焕发新气象",
+      "screenshotsSubtitle": "在选择外观之前，观看动态桌面 - 主题、模式和本机应用程序协同工作。",
+      "videoPlay": "观看视频",
+      "videoTitle": "ARGVUS 介绍视频",
+      "screenshotsSubtitleStatic": "在浮动模式下真实捕获 ARGVUS Dark，任务栏、侧面板和启动器均打开。",
+      "videoPosterAlt": "ARGVUS 徽标与 argvus --start-desktop 命令",
+      "componentsEyebrow": "组件",
+      "componentsTitle": "使用您已知的软件构建",
+      "componentsSubtitle": "ARGVUS 将体验分成较小的官方包，所有包均由 argvus 元包预先配置和协调。",
+      "componentDesc": {
+        "hyprland": "Wayland 合成器让 ARGVUS 栩栩如生：平铺、工作区、流畅的动画和完整的按键绑定。",
+        "waybar": "带有系统、媒体、网络、存储和快捷模块的状态栏。",
+        "quickshell": "QML 系统侧边栏，包含天气、网络、日历、亮度、音量和通知。",
+        "rofi": "应用程序启动器、窗口切换器和菜单 - 全部具有统一的主题。",
+        "superfile": "具有专用键绑定的快速、完全可配置的 TUI 文件管理器。",
+        "btop": "实时CPU、内存、网络和进程的系统监控。",
+        "hyprlock": "锁屏与Hyprland生态系统集成并同步主题。",
+        "storage": "用于 Waybar 栏的 Rust 驱动的可移动存储模块。"
+      },
+      "keyLabels": [
+        "预览",
+        "组件",
+        "任务栏",
+        "窗口模式",
+        "应用程序",
+        "人工智能代理",
+        "主题"
+      ],
+      "keysAria": "章节导航",
+      "waybarEyebrow": "任务栏",
+      "waybarTitle": "状态栏位于顶部或底部",
+      "waybarSubtitle": "ARGVUS 主栏结合了导航、媒体、系统状态和本机应用程序，并且可以通过单击或快捷方式位于屏幕的顶部或底部。该位置在各个会话中都会被记住。",
+      "waybarIntro": "该栏基于 Waybar 构建，将日常控件集中在一个位置，每个主题的外观统一：",
+      "waybarFeatures": [
+        {
+          "icon": "fa-solid fa-star",
+          "text": "Top/bottom position via shortcut (SUPER + Alt + ↑/↓) or the sidebar."
+        },
+        {
+          "icon": "fa-solid fa-bars-staggered",
+          "text": "具有焦点窗口上下文的可导航工作区。"
+        },
+        {
+          "icon": "fa-solid fa-music",
+          "text": "媒体控制 (mpris)，突出显示活动播放器。"
+        },
+        {
+          "icon": "fa-solid fa-gauge-high",
+          "text": "网络、CPU、内存、温度和电源配置文件状态。"
+        },
+        {
+          "icon": "fa-solid fa-calendar-days",
+          "text": "ARGVUS 任务栏日历上的日期单击。"
+        },
+        {
+          "icon": "fa-solid fa-bolt",
+          "text": "ARGVUS 可移动设备，一个 Rust 驱动的可移动存储模块。"
+        },
+        {
+          "icon": "fa-solid fa-table-cells",
+          "text": "带有状态图标的应用程序的系统托盘。"
+        },
+        {
+          "icon": "fa-solid fa-magnifying-glass",
+          "text": "直接从栏中快速应用程序和命令搜索。"
+        }
+      ],
+      "windowModeEyebrow": "窗口模式",
+      "windowModeTitle": "平铺或浮动窗口",
+      "windowModeSubtitle": "选择应用程序窗口如何使用桌面。该模式是全局的，跨会话持续存在，并且可以在控制中心或任务栏图标中进行更改。",
+      "windowModeTile": "窗砖",
+      "windowModeFloat": "窗口浮动",
+      "windowModeTileText": "窗户并排排列，它们之间的间隙一致。",
+      "windowModeFloatText": "窗口可以重叠，并与任务栏对面边缘上的窗口栏配对。",
+      "appsEyebrow": "应用程序",
+      "appsTitle": "桌面本机工具",
+      "appsSubtitle": "除了环境配置之外，ARGVUS 还包括用于需要与栏、面板和会话更紧密集成的工作流程的第一方应用程序。",
+      "appStorageText": "ARGVUS 可移动设备是 ARGVUS 可移动存储应用程序。它可以检测设备，提供安装、卸载和弹出驱动器的快速操作，并为 Waybar 存储模块提供一致的体验。",
+      "appCalendarText": "ARGVUS 任务栏日历是桌面使用的本机日历。它提供快速的月视图、简单的导航和事件集成，以便在不离开 Wayland 流程的情况下检查约会。",
+      "appCalendarEventsText": "事件视图通过紧凑的约会列表补充了日历，使 ARGVUS 生态系统中的重要日期触手可及。",
+      "appFocusText": "ARGVUS Focus 通过直接从桌面提供的焦点会话和休息来帮助您专注于任务。",
+      "appClockText": "ARGVUS Clock 将时钟和计时器集成在本机工具中，因此您可以在不离开工作流程的情况下跟踪时间。",
+      "appDefaultAppsText": "ARGVUS Control Center is the native ARGVUS configuration center. Apps sets the default applications, and Fonts applies typography to GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, the lock screen and official apps.",
+      "controlCenterFeatures": [
+        {
+          "title": "外观",
+          "text": "Themes, Sticky/Float modes, accents, wallpapers, effects, taskbar layout and Control Panel cards."
+        },
+        {
+          "title": "字体",
+          "text": "配置任务栏、遥测、控制面板、系统、应用程序、终端和浏览器的排版。"
+        },
+        {
+          "title": "默认应用程序",
+          "text": "为 ARGVUS 识别的角色选择默认应用程序。"
+        },
+        {
+          "title": "硬件和输入",
+          "text": "在功能可用时调整鼠标、触摸板、键盘、快捷键和显示。"
+        },
+        {
+          "title": "网络、音频和蓝牙",
+          "text": "访问安装提供的连接和音频模块。"
+        },
+        {
+          "title": "会话和系统",
+          "text": "检查和配置电源、会话、服务、包、存储和诊断。"
+        }
+      ],
+      "aboutMaintainerLink": "William C. Canin GitHub 个人资料",
+      "aboutSupportPaypal": "通过 PayPal 捐款时，正确的帐户显示为",
+      "themesEyebrow": "主题",
+      "themesTitle": "二十二主题，两种模式，一套系统",
+      "themesSubtitle": "共享视觉系列，每个视觉系列都有 固定 和 间距 模式。所有这些都可以作为 Arch Linux 软件包从官方 ARGVUS 存储库中获取。",
+      "themesAccentLabel": "独立口音",
+      "themesTabsAria": "主题类别",
+      "themesDarkTab": "黑暗主题",
+      "themesLightTab": "浅色主题",
+      "themesCopyText": "探索官方系列并直接在预览中比较他们的调色板。每个系列都有 固定 和 间距 模式，可以在不改变其视觉识别的情况下改变几何形状和表面处理。所有主题都作为单独的包在存储库中提供。强调色保持独立，可以在 ARGVUS 控制中心 → 外观 → 高亮颜色中选择。",
+      "themesDefaultLabel": "默认",
+      "themeModeSticky": "固定",
+      "themeModeFloat": "间距",
+      "archTitle": "每一步，都一目了然",
+      "archSubtitle": "页面顶部的命令可以为您完成所有这些操作。如果您想自己查看并运行每个命令，请按照以下三个步骤操作：将签名的 ARGVUS 存储库添加到 pacman 并安装 argvus 元包。像控制中心一样浏览它 - 箭头键进行选择，Enter 进行复制。",
+      "ccTitle": "高级安装",
+      "ccSubtitle": "签名存储库 + argvus 元包，一步一步",
+      "ccRepository": "存储库",
+      "ccCommand": "命令",
+      "ccCopy": "副本",
+      "ccCopyAll": "全部",
+      "ccCopied": "命令已复制",
+      "ccCopiedAll": "复制所有命令",
+      "ccNoCommand": "无命令 — 这发生在登录屏幕上",
+      "ccHelp": "↑/↓ Items  ←/→ Steps  Enter Copy  c Copy all",
+      "ccGridAria": "高级安装步骤",
+      "ccSteps": {
+        "key": {
+          "title": "签名密钥",
+          "description": "信任打包程序密钥"
+        },
+        "repo": {
+          "title": "存储库",
+          "description": "启用 argvus 和 argvus-extras"
+        },
+        "install": {
+          "title": "安装",
+          "description": "同步并安装桌面"
+        }
+      },
+      "ccItems": {
+        "download": {
+          "label": "下载密钥",
+          "note": "Saves the ARGVUS public signing key to /tmp/argvus.gpg."
+        },
+        "import": {
+          "label": "导入 pacman",
+          "note": "将密钥添加到 pacman 密钥环。"
+        },
+        "keyId": {
+          "label": "读取钥匙ID",
+          "note": "将密钥 ID 提取到 ARGVUS_KEY 变量中。"
+        },
+        "sign": {
+          "label": "在本地签名",
+          "note": "将 ARGVUS 密钥标记为在此计算机上受信任。"
+        },
+        "conf": {
+          "label": "安装 argvus.conf",
+          "note": "Downloads the repository definition to /etc/pacman.d/argvus.conf."
+        },
+        "include": {
+          "label": "包含在 pacman.conf 中",
+          "note": "Adds the Include line to /etc/pacman.conf. Run it only once."
+        },
+        "pacman": {
+          "label": "安装 ARGVUS",
+          "note": "同步数据库并安装 argvus 元包；依赖项来自同一个存储库。"
+        },
+        "session": {
+          "label": "开始会话",
+          "note": "注销当前会话并在登录屏幕上选择 ARGVUS 会话。"
+        }
+      },
+      "installGuide": "安装指南",
+      "installRequirements": "要求",
+      "installRequirementsList": [
+        "Arch Linux x86_64",
+        "Hyprland 0.57.0（韦兰）",
+        "A GPU with Wayland/KMS support"
+      ],
+      "installVm": "虚拟机",
+      "installChanges": "What changes on your system: the ARGVUS key is added to the pacman keyring, /etc/pacman.d/argvus.conf is created and pacman.conf gets one Include line. Installation writes nothing to your $HOME.",
+      "installVerify": "验证签名密钥",
+      "installVerifyHint": "在本地签名之前将其与 pacman-key --finger 的输出进行比较。",
+      "installSource": "包源码",
+      "installPrivacy": "隐私和安全",
+      "installCopyFingerprint": "复制指纹",
+      "installScript": "快速安装程序脚本，在运行之前阅读",
+      "installCmd": "sudo pacman -Syu argvus",
+      "supportEyebrow": "支持",
+      "supportTitle": "支持ARGVUS开发",
+      "supportText": "ARGVUS 是独立维护的。贡献有助于涵盖基础设施、维护和项目的发展——包括未来 ARGVUS 的专用领域。",
+      "supportBtn": "贡献",
+      "supportAria": "贡献金额",
+      "supportStar": "GitHub 上的明星帮助其他人找到 ARGVUS。",
+      "supportStarBtn": "GitHub 上的星标",
+      "ctaTitle": "尝试 ARGVUS",
+      "ctaText": "按照安装指南操作，几分钟内即可运行完整、美观、集成的 Wayland 桌面。",
+      "ctaPrimary": "查看安装指南",
+      "ctaSecondary": "探索存储库",
+      "footerTagline": "基于 Hyprland 构建的 Wayland 和 Arch Linux 模块化桌面环境。",
+      "footerDocs": "文档",
+      "footerDocsLinks": [
+        {
+          "label": "简介",
+          "href": "docs/introduction/"
+        },
+        {
+          "label": "安装",
+          "href": "docs/getting-started/installation/install/"
+        },
+        {
+          "label": "外观",
+          "href": "docs/user-guide/appearance/"
+        },
+        {
+          "label": "会议",
+          "href": "docs/user-guide/sessions/"
+        },
+        {
+          "label": "常见问题解答",
+          "href": "docs/user-guide/faq/"
+        }
+      ],
+      "footerResources": "资源",
+      "footerResourcesLinks": [
+        {
+          "label": "Arch Linux 存储库",
+          "href": "packages/arch/"
+        }
+      ],
+      "footerProject": "项目",
+      "footerAbout": "关于 ARGVUS",
+      "footerLicense": "GPL-3.0 许可证",
+      "footerMaintainer": "维护者",
+      "bottomLicense": "根据 GPL-3.0 许可",
+      "feedbackEyebrow": "反馈",
+      "feedbackTitle": "您的反馈有助于塑造 ARGVUS",
+      "feedbackText": "发现错误、有想法或想要请求功能？ ARGVUS 有一个专门的反馈存储库，与社区一起跟踪想法和报告。",
+      "feedbackBtn": "发送反馈",
+      "communityEyebrow": "社区",
+      "communityTitle": "与 ARGVUS 社区联系",
+      "communityText": "关注项目公告或在我们的 Telegram 频道中与其他用户聊天。",
+      "communityChannels": [
+        {
+          "title": "官方渠道",
+          "handle": "@argvusdesktop",
+          "href": "https://t.me/argvusdesktop",
+          "description": "ARGVUS 公告和新闻。"
+        },
+        {
+          "title": "全球社区",
+          "handle": "@argvuscommunity",
+          "href": "https://t.me/argvuscommunity",
+          "description": "与 ARGVUS 社区聊天。"
+        },
+        {
+          "title": "巴西社区",
+          "handle": "@argvuscommunity_br",
+          "href": "https://t.me/argvuscommunity_br",
+          "description": "用葡萄牙语与 ARGVUS 社区聊天。"
+        }
+      ],
+      "footerCommunity": "社区",
+      "statusTitle": "状态",
+      "statusLabel": "项目状态",
+      "statusText": "此页面上显示的每个功能都可以正常工作。 Beta 标签之所以存在，是因为测试尚未发现的错误可能仍然会出现 - 如果您发现错误，请在反馈存储库中报告。",
+      "feedbackLink": "GitHub 上的 ARGVUS 反馈存储库",
+      "feedbackMade": "为开源社区构建"
+    },
+    "about": {
+      "htmlLang": "zh",
+      "title": "关于 ARGVUS — ARGVUS",
+      "description": "ARGVUS 为何存在、名称的由来以及如何听到正确的发音。",
+      "keywords": "argvus, 关于 argvus, argvus 发音, hyprland, wayland, arch linux",
+      "navAria": "主导航",
+      "navDocs": "文档",
+      "github": "GitHub",
+      "langEnglish": "英语",
+      "langPortuguese": "葡萄牙语",
+      "back": "回到家",
+      "aboutEyebrow": "关于",
+      "aboutIntroTitle": "ARGVUS 是什么？",
+      "aboutIntroText": "ARGVUS 是 Arch Linux 的模块化桌面环境，构建于 Wayland 和 Hyprland 之上。它将会话、任务栏、控制面板、设置和系统集成结合在一起，形成一种有凝聚力的体验。它的组件分布在协同工作的包中，而 Rust 命令和应用程序则位于主工作区中。该项目专注于快速、可预测的交互，键盘处于工作流程的中心。",
+      "aboutTitle": "为什么是 ARGVUS？",
+      "aboutArgv": "参数向量",
+      "aboutUs": "用户系统",
+      "aboutText": "ARGVUS 诞生于一个简单的想法：开发人员桌面不应要求用户中断流程来查找控件、导航菜单或始终依赖鼠标。目标是构建一个以键盘为主要系统交互形式的环境，允许通过快捷方式和命令以快速且可预测的方式访问操作、应用程序和工具。",
+      "aboutText2": "这个名字就代表了这个想法。 ARGV 源自参数向量，指的是开发人员的世界以及如何使用参数来控制程序。 US，来自User System，代表了将这一理念转变为以用户为中心的桌面环境的目标。",
+      "aboutPronunciationLabel": "听发音",
+      "aboutPronunciationHint": "选择一种语言来听 ARGVUS 的发音。",
+      "aboutPronunciationLanguage": "语言",
+      "aboutPronunciationEnglish": "英语",
+      "aboutPronunciationPortuguese": "葡萄牙语",
+      "aboutPronunciationAudio": "ARGVUS 发音音频",
+      "aboutMaintainer": "项目维护者",
+      "aboutMaintainerLink": "William C. Canin GitHub 个人资料",
+      "footerLicense": "根据 GPL-3.0 许可"
+    },
+    "header": {
+      "navAria": "主导航",
+      "navDocs": "文档",
+      "navArch": "存储库",
+      "navArchArch": "Arch Linux",
+      "github": "GitHub",
+      "navDonate": "捐赠",
+      "langAria": "更改语言",
+      "langEnglish": "英语",
+      "langPortuguese": "葡萄牙语",
+      "themeAria": "更改主题",
+      "themeLight": "光",
+      "themeDark": "深色",
+      "themeSystem": "系统",
+      "navMenu": "菜单",
+      "beta": "测试版"
+    },
+    "footer": {
+      "tagline": "基于 Hyprland 构建的 Wayland 和 Arch Linux 模块化桌面环境。",
+      "docs": "文档",
+      "docsLinks": [
+        [
+          "简介",
+          "docs/introduction/"
+        ],
+        [
+          "安装",
+          "docs/getting-started/installation/install/"
+        ],
+        [
+          "外观",
+          "docs/user-guide/appearance/"
+        ],
+        [
+          "会议",
+          "docs/user-guide/sessions/"
+        ],
+        [
+          "常见问题解答",
+          "docs/user-guide/faq/"
+        ]
+      ],
+      "resources": "资源",
+      "resourceLinks": [
+        [
+          "关于 ARGVUS",
+          "about/"
+        ],
+        [
+          "GitHub",
+          "https://github.com/orgs/argvus"
+        ],
+        [
+          "Arch Linux 存储库",
+          "/packages/arch/"
+        ]
+      ],
+      "community": "社区",
+      "feedback": "为开源社区构建",
+      "license": "根据 GPL-3.0 许可",
+      "maintainer": "由 William C. Canin 维护",
+      "channels": [
+        [
+          "官方渠道",
+          "https://t.me/argvusdesktop"
+        ],
+        [
+          "全球社区",
+          "https://t.me/argvuscommunity"
+        ],
+        [
+          "巴西社区",
+          "https://t.me/argvuscommunity_br"
+        ]
+      ]
+    },
+    "agents": {
+      "eyebrow": "人工智能代理",
+      "title": "您的代理人。",
+      "accent": "一个快捷方式。",
+      "lead": "从第一个提示到下一个代码更改。直接在 ARGVUS 终端中通过一个选择器打开 Codex、Claude Code 或 OpenCode。",
+      "shortcutLabel": "从键盘开始",
+      "shortcutHint": "打开选择器。选择您的代理人。",
+      "sectionLabel": "与 ARGVUS 集成的编码代理",
+      "codex": "OpenAI 的编码代理，可从启动器获取并准备在桌面的本机终端中打开。",
+      "claude": "Anthropic 的编码代理，在您第一次打开时通过 mise 安装在您的用户配置文件中。",
+      "opencode": "开源编码代理，集成了与其他代理相同的选择和启动流程。",
+      "packaged": "与 argvus-ai 一起安装",
+      "onDemand": "首次启动时安装",
+      "upstream": "探索代理",
+      "workflowTitle": "选择您的工具。保持流畅。",
+      "workflowText": "键盘快捷键、任务栏机器人或应用程序启动器：每个入口点都会打开本机终端。代理是你的选择。",
+      "cta": "探索 ARGVUS AI",
+      "install": "安装和首次使用",
+      "codexAlt": "OpenAI 标记，Codex 的创建者",
+      "claudeAlt": "克劳德·马克",
+      "opencodeAlt": "OpenCode 标记",
+      "openSource": "开源"
+    }
+  },
+  "ja": {
+    "landing": {
+      "htmlLang": "ja",
+      "title": "ARGVUS — Hyprland 上に構築された Wayland および Arch Linux 用のモジュラー デスクトップ環境。",
+      "description": "ARGVUS は、ARGVUS リムーバブル デバイス、Waybar、統合テーマ、署名付き Arch Linux パッケージを備えた完全な Hyprland および Wayland デスクトップです。",
+      "keywords": "argvus、argvus linux、hyprland、wayland、arch linux、デスクトップ環境、argvus リムーバブル デバイス、waybar、linux デスクトップ、pacman リポジトリ",
+      "navAria": "メインナビゲーション",
+      "navMenu": "メニュー",
+      "navDocs": "ドキュメント",
+      "navArch": "リポジトリ",
+      "navArchArch": "アーチ Linux",
+      "navDonate": "寄付する",
+      "github": "GitHub",
+      "langAria": "言語を変更する",
+      "langEnglish": "英語",
+      "langPortuguese": "ポルトガル語",
+      "themesRepositoryLabel": "リポジトリからインストールする",
+      "themesRepositoryHint": "または 1 つのコマンドで複数のテーマ",
+      "themesGuideLink": "テーマガイド →",
+      "windowModeHint": "SUPER + Alt + Space を押して、フローティング ウィンドウ モードとタイル ウィンドウ モードを切り替えます。",
+      "carouselPrevious": "前へ",
+      "carouselNext": "次へ",
+      "carouselSlide": "スライド",
+      "supportStarLabel": "スター",
+      "currencyAria": "通貨",
+      "currencyUsd": "米ドル (USD)",
+      "currencyBrl": "ブラジルレアル (BRL)",
+      "themeAria": "テーマの変更",
+      "themeLight": "ライト",
+      "themeDark": "ダーク",
+      "themeSystem": "システム",
+      "heroTitle1": "すぐに使用できるモジュール式デスクトップ環境。",
+      "heroAccent": "ハイプラランドに焦点を当てています。",
+      "heroLead": "単なるドットファイルではありません: 監視付きセッション、クイックシェル シェル、Waybar タスクバー、ネイティブ設定、公式テーマ - Arch Linux 用に統合され、軽量でパッケージ化されています。ブロートウェアを使用せず、開発者向けに構築されています。",
+      "versionBadge": "ARGVUS v${version}",
+      "btnInstall": "今すぐインストール",
+      "btnDocs": "ドキュメント",
+      "heroCopy": "コピーコマンド",
+      "heroCopied": "コピーしました",
+      "heroInstallHint": "クイックインストール。段階的に進めたいですか？",
+      "heroInstallLink": "高度なインストール",
+      "heroShotAlt": "ARGVUS テーマを備えた ARGVUS デスクトップ",
+      "heroStackLabel": "で構築",
+      "carouselOpen": "画像を全画面で開きます",
+      "carouselClose": "全画面画像を閉じる",
+      "screenshotsEyebrow": "プレビュー",
+      "screenshotsTitle": "新しい雰囲気を帯びた ARGVUS をご覧ください",
+      "screenshotsSubtitle": "外観を選択する前に、デスクトップの動作、テーマ、モード、ネイティブ アプリの連携を確認してください。",
+      "videoPlay": "ビデオを見る",
+      "videoTitle": "ARGVUS 紹介ビデオ",
+      "screenshotsSubtitleStatic": "タスクバー、サイドパネル、ランチャーを開いた状態での、フロート モードでの ARGVUS Dark の実際のキャプチャ。",
+      "videoPosterAlt": "argvus --start-desktop コマンドを使用した ARGVUS ロゴ",
+      "componentsEyebrow": "コンポーネント",
+      "componentsTitle": "使い慣れたソフトウェアで構築",
+      "componentsSubtitle": "ARGVUS はエクスペリエンスを小さな公式パッケージに分割し、すべて事前に構成され、argvus メタパッケージによって調整されます。",
+      "componentDesc": {
+        "hyprland": "ARGVUS に命を吹き込む Wayland コンポジター: タイリング、ワークスペース、スムーズなアニメーション、完全なキーバインド。",
+        "waybar": "システム、メディア、ネットワーク、ストレージ、ショートカット モジュールを含むステータス バー。",
+        "quickshell": "天気、ネットワーク、カレンダー、明るさ、音量、通知を備えた QML システム サイドバー。",
+        "rofi": "アプリケーション ランチャー、ウィンドウ スイッチャー、メニュー - すべて統一されたテーマを備えています。",
+        "superfile": "専用のキーバインドを備えた、高速で完全に構成可能な TUI ファイル マネージャー。",
+        "btop": "リアルタイム CPU、メモリ、ネットワーク、プロセスを備えたシステム モニター。",
+        "hyprlock": "Hyprland エコシステムと同期されたテーマと統合されたロック画面。",
+        "storage": "Rust を使用した Waybar バー用のリムーバブル ストレージ モジュール。"
+      },
+      "keyLabels": [
+        "プレビュー",
+        "コンポーネント",
+        "タスクバー",
+        "ウィンドウモード",
+        "アプリ",
+        "AI エージェント",
+        "テーマ"
+      ],
+      "keysAria": "セクションのナビゲーション",
+      "waybarEyebrow": "タスクバー",
+      "waybarTitle": "上部または下部のステータス バー",
+      "waybarSubtitle": "ARGVUS メイン バーは、ナビゲーション、メディア、システム状態、ネイティブ アプリを組み合わせたもので、クリックまたはショートカットで画面の上部または下部に配置できます。位置はセッションをまたいで記憶されます。",
+      "waybarIntro": "Waybar 上に構築されたバーは、毎日のコントロールを 1 か所にグループ化し、すべてのテーマにわたって統一された外観を備えています。",
+      "waybarFeatures": [
+        {
+          "icon": "fa-solid fa-star",
+          "text": "Top/bottom position via shortcut (SUPER + Alt + ↑/↓) or the sidebar."
+        },
+        {
+          "icon": "fa-solid fa-bars-staggered",
+          "text": "フォーカスされたウィンドウ コンテキストを備えたナビゲート可能なワークスペース。"
+        },
+        {
+          "icon": "fa-solid fa-music",
+          "text": "アクティブ プレーヤーが強調表示されたメディア コントロール (mpris)。"
+        },
+        {
+          "icon": "fa-solid fa-gauge-high",
+          "text": "ネットワーク、CPU、メモリ、温度、および電力プロファイルのステータス。"
+        },
+        {
+          "icon": "fa-solid fa-calendar-days",
+          "text": "ARGVUS タスクバー カレンダーの日付をクリックします。"
+        },
+        {
+          "icon": "fa-solid fa-bolt",
+          "text": "ARGVUS リムーバブル デバイス、Rust 搭載のリムーバブル ストレージ モジュール。"
+        },
+        {
+          "icon": "fa-solid fa-table-cells",
+          "text": "ステータス アイコンを備えたアプリ用のシステム トレイ。"
+        },
+        {
+          "icon": "fa-solid fa-magnifying-glass",
+          "text": "バーから直接アプリとコマンドをすばやく検索します。"
+        }
+      ],
+      "windowModeEyebrow": "ウィンドウモード",
+      "windowModeTitle": "タイルまたはフローティング ウィンドウ",
+      "windowModeSubtitle": "アプリケーション ウィンドウがデスクトップを使用する方法を選択します。このモードはグローバルであり、セッション間で持続し、コントロール センターまたはタスクバー アイコンから変更できます。",
+      "windowModeTile": "ウィンドウタイル",
+      "windowModeFloat": "ウィンドウフロート",
+      "windowModeTileText": "窓は一定の間隔をあけて並べて配置されます。",
+      "windowModeFloatText": "ウィンドウは重なることができ、タスク バーの反対側の端にあるウィンドウ バーと組み合わせることができます。",
+      "appsEyebrow": "アプリ",
+      "appsTitle": "デスクトップ用のネイティブ ツール",
+      "appsSubtitle": "ARGVUS には、環境構成以外にも、バー、パネル、セッションとの緊密な統合が必要なワークフロー用のファーストパーティ アプリが含まれています。",
+      "appStorageText": "ARGVUS リムーバブル デバイスは、ARGVUS リムーバブル ストレージ アプリです。デバイスを検出し、ドライブのマウント、アンマウント、イジェクトのための素早いアクションを公開し、一貫したエクスペリエンスで Waybar ストレージ モジュールに電力を供給します。",
+      "appCalendarText": "ARGVUS タスクバー カレンダーは、デスクトップで使用されるネイティブ カレンダーです。 Wayland フローを離れることなく、予定を確認するためのクイック月ビュー、シンプルなナビゲーション、およびイベント統合が提供されます。",
+      "appCalendarEventsText": "イベント ビューは、予定のコンパクトなリストでカレンダーを補完し、ARGVUS エコシステム内で重要な日付をすぐに把握できるようにします。",
+      "appFocusText": "ARGVUS Focus は、デスクトップから直接利用できるフォーカス セッションと休憩により、タスクを継続するのに役立ちます。",
+      "appClockText": "ARGVUS Clock は、クロックとタイマーをネイティブ ツールに統合するため、ワークフローを離れることなく時間を追跡できます。",
+      "appDefaultAppsText": "ARGVUS Control Center is the native ARGVUS configuration center. Apps sets the default applications, and Fonts applies typography to GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, the lock screen and official apps.",
+      "controlCenterFeatures": [
+        {
+          "title": "外観",
+          "text": "Themes, Sticky/Float modes, accents, wallpapers, effects, taskbar layout and Control Panel cards."
+        },
+        {
+          "title": "フォント",
+          "text": "タスクバー、テレメトリ、コントロール パネル、システム、アプリケーション、端末、ブラウザーのタイポグラフィを構成します。"
+        },
+        {
+          "title": "デフォルトのアプリケーション",
+          "text": "ARGVUS によって認識されるロールのデフォルト アプリケーションを選択します。"
+        },
+        {
+          "title": "ハードウェアと入力",
+          "text": "機能が利用可能な場合は、マウス、タッチパッド、キーボード、ショートカット、および表示を調整します。"
+        },
+        {
+          "title": "ネットワーク、オーディオ、Bluetooth",
+          "text": "インストールによって提供される接続モジュールとオーディオ モジュールにアクセスします。"
+        },
+        {
+          "title": "セッションとシステム",
+          "text": "電源、セッション、サービス、パッケージ、ストレージ、診断を検査し、構成します。"
+        }
+      ],
+      "aboutMaintainerLink": "William C. Canin GitHub プロフィール",
+      "aboutSupportPaypal": "PayPal 経由で寄付する場合、正しいアカウントは次のように表示されます。",
+      "themesEyebrow": "テーマ",
+      "themesTitle": "22 のテーマ、2 つのモード、1 つのシステム",
+      "themesSubtitle": "それぞれが固定 モードと スペース モードを備えた共有ビジュアル ファミリ。すべては、公式 ARGVUS リポジトリから Arch Linux パッケージとして入手できます。",
+      "themesAccentLabel": "独立したアクセント",
+      "themesTabsAria": "テーマ カテゴリ",
+      "themesDarkTab": "ダークテーマ",
+      "themesLightTab": "ライトテーマ",
+      "themesCopyText": "公式ファミリを調べて、プレビューでパレットを直接比較してください。すべてのファミリーには固定 モードと スペース モードがあり、見た目のアイデンティティを変えることなくジオメトリと表面処理を変更できます。すべてのテーマは、リポジトリで個別のパッケージとして利用できます。アクセント カラーは独立したままで、ARGVUS コントロール センター → 外観 → ハイライト カラーで選択できます。",
+      "themesDefaultLabel": "デフォルト",
+      "themeModeSticky": "固定",
+      "themeModeFloat": "スペース",
+      "archTitle": "すべてのステップを目に見える形で",
+      "archSubtitle": "ページの上部にあるコマンドは、これらすべてを自動的に実行します。各コマンドを自分で確認して実行したい場合は、以下の 3 つの手順に従ってください。署名された ARGVUS リポジトリが pacman に追加され、argvus メタパッケージがインストールされます。コントロール センターのように参照します。矢印キーで選択し、Enter キーでコピーします。",
+      "ccTitle": "高度なインストール",
+      "ccSubtitle": "署名付きリポジトリ + argvus メタパッケージ、ステップバイステップ",
+      "ccRepository": "リポジトリ",
+      "ccCommand": "コマンド",
+      "ccCopy": "コピー",
+      "ccCopyAll": "すべて",
+      "ccCopied": "コマンドがコピーされました",
+      "ccCopiedAll": "すべてのコマンドがコピーされました",
+      "ccNoCommand": "コマンドはありません - これはログイン画面で発生します",
+      "ccHelp": "↑/↓ Items  ←/→ Steps  Enter Copy  c Copy all",
+      "ccGridAria": "高度なインストール手順",
+      "ccSteps": {
+        "key": {
+          "title": "署名キー",
+          "description": "パッケージャ キーを信頼します"
+        },
+        "repo": {
+          "title": "リポジトリ",
+          "description": "argvus と argvus-extras を有効にする"
+        },
+        "install": {
+          "title": "インストール",
+          "description": "デスクトップを同期してインストールする"
+        }
+      },
+      "ccItems": {
+        "download": {
+          "label": "キーをダウンロードします",
+          "note": "Saves the ARGVUS public signing key to /tmp/argvus.gpg."
+        },
+        "import": {
+          "label": "pacman へのインポート",
+          "note": "pacman キーリングにキーを追加します。"
+        },
+        "keyId": {
+          "label": "キー ID を読み取ります",
+          "note": "キー ID を ARGVUS_KEY 変数に抽出します。"
+        },
+        "sign": {
+          "label": "ローカルで署名する",
+          "note": "ARGVUS キーをこのマシン上で信頼できるものとしてマークします。"
+        },
+        "conf": {
+          "label": "argvus.conf をインストールする",
+          "note": "Downloads the repository definition to /etc/pacman.d/argvus.conf."
+        },
+        "include": {
+          "label": "pacman.conf に含める",
+          "note": "Adds the Include line to /etc/pacman.conf. Run it only once."
+        },
+        "pacman": {
+          "label": "ARGVUS をインストールする",
+          "note": "データベースを同期し、argvus メタパッケージをインストールします。依存関係は同じリポジトリからのものです。"
+        },
+        "session": {
+          "label": "セッションを開始します",
+          "note": "現在のセッションからログアウトし、ログイン画面で ARGVUS セッションを選択します。"
+        }
+      },
+      "installGuide": "インストールガイド",
+      "installRequirements": "要件",
+      "installRequirementsList": [
+        "Arch Linux x86_64",
+        "Hyprland 0.57.0 (ウェイランド)",
+        "A GPU with Wayland/KMS support"
+      ],
+      "installVm": "仮想マシン",
+      "installChanges": "What changes on your system: the ARGVUS key is added to the pacman keyring, /etc/pacman.d/argvus.conf is created and pacman.conf gets one Include line. Installation writes nothing to your $HOME.",
+      "installVerify": "署名キーを検証する",
+      "installVerifyHint": "ローカルで署名する前に、pacman-key --finger の出力と比較してください。",
+      "installSource": "パッケージのソース コード",
+      "installPrivacy": "プライバシーとセキュリティ",
+      "installCopyFingerprint": "指紋をコピーします",
+      "installScript": "クイック インストーラー スクリプト。実行前に読む必要があります。",
+      "installCmd": "sudo pacman -Syu argvus",
+      "supportEyebrow": "サポート",
+      "supportTitle": "ARGVUS 開発のサポート",
+      "supportText": "ARGVUS は独立して維持されます。貢献は、インフラストラクチャ、メンテナンス、プロジェクトの進化をカバーするのに役立ちます。これには、将来的には ARGVUS の専用ドメインも含まれます。",
+      "supportBtn": "貢献する",
+      "supportAria": "寄付額",
+      "supportStar": "GitHub のスターは、他の人が ARGVUS を見つけるのに役立ちます。",
+      "supportStarBtn": "GitHub にスターを付ける",
+      "ctaTitle": "ARGVUS を試してみる",
+      "ctaText": "インストール ガイドに従って、完全で美しい、統合された Wayland デスクトップを数分で実行できます。",
+      "ctaPrimary": "インストールガイドを見る",
+      "ctaSecondary": "リポジトリを探索する",
+      "footerTagline": "Hyprland 上に構築された Wayland および Arch Linux 用のモジュラー デスクトップ環境。",
+      "footerDocs": "ドキュメント",
+      "footerDocsLinks": [
+        {
+          "label": "はじめに",
+          "href": "docs/introduction/"
+        },
+        {
+          "label": "インストール",
+          "href": "docs/getting-started/installation/install/"
+        },
+        {
+          "label": "外観",
+          "href": "docs/user-guide/appearance/"
+        },
+        {
+          "label": "セッション",
+          "href": "docs/user-guide/sessions/"
+        },
+        {
+          "label": "よくある質問",
+          "href": "docs/user-guide/faq/"
+        }
+      ],
+      "footerResources": "リソース",
+      "footerResourcesLinks": [
+        {
+          "label": "Arch Linux リポジトリ",
+          "href": "packages/arch/"
+        }
+      ],
+      "footerProject": "プロジェクト",
+      "footerAbout": "ARGVUS について",
+      "footerLicense": "GPL-3.0 ライセンス",
+      "footerMaintainer": "によって保守されています",
+      "bottomLicense": "GPL-3.0 に基づいてライセンス供与",
+      "feedbackEyebrow": "フィードバック",
+      "feedbackTitle": "あなたのフィードバックは ARGVUS の形成に役立ちます",
+      "feedbackText": "バグを見つけましたか、アイデアがありますか、または機能をリクエストしたいですか? ARGVUS には専用のフィードバック リポジトリがあり、アイデアやレポートがコミュニティとともに追跡されます。",
+      "feedbackBtn": "フィードバックを送信",
+      "communityEyebrow": "コミュニティ",
+      "communityTitle": "ARGVUS コミュニティに接続する",
+      "communityText": "プロジェクトの発表をフォローしたり、Telegram チャンネルで他のユーザーとチャットしたりできます。",
+      "communityChannels": [
+        {
+          "title": "公式チャンネル",
+          "handle": "@argvusdesktop",
+          "href": "https://t.me/argvusdesktop",
+          "description": "ARGVUS のお知らせとニュース。"
+        },
+        {
+          "title": "グローバルコミュニティ",
+          "handle": "@argvuscommunity",
+          "href": "https://t.me/argvuscommunity",
+          "description": "ARGVUS コミュニティとチャットします。"
+        },
+        {
+          "title": "ブラジル人コミュニティ",
+          "handle": "@argvuscommunity_br",
+          "href": "https://t.me/argvuscommunity_br",
+          "description": "ポルトガル語で ARGVUS コミュニティとチャットします。"
+        }
+      ],
+      "footerCommunity": "コミュニティ",
+      "statusTitle": "ステータス",
+      "statusLabel": "プロジェクトのステータス",
+      "statusText": "このページに表示されている機能はすべて動作しています。ベータ版のラベルが付いているのは、テストで捕捉できなかったバグが依然として発生する可能性があるためです。バグを見つけた場合は、フィードバック リポジトリに報告してください。",
+      "feedbackLink": "GitHub 上の ARGVUS フィードバック リポジトリ",
+      "feedbackMade": "オープンソース コミュニティ向けに構築"
+    },
+    "about": {
+      "htmlLang": "ja",
+      "title": "ARGVUS について — ARGVUS",
+      "description": "ARGVUS が存在する理由、名前の由来、正しい発音を聞く方法。",
+      "keywords": "argvus、argvus について、argvus の発音、hyprland、wayland、arch linux",
+      "navAria": "メインナビゲーション",
+      "navDocs": "ドキュメント",
+      "github": "GitHub",
+      "langEnglish": "英語",
+      "langPortuguese": "ポルトガル語",
+      "back": "ホームに戻る",
+      "aboutEyebrow": "について",
+      "aboutIntroTitle": "ARGVUSとは何ですか?",
+      "aboutIntroText": "ARGVUS は、Wayland と Hyprland 上に構築された Arch Linux 用のモジュール式デスクトップ環境です。これにより、セッション、タスクバー、コントロール パネル、設定、システム統合が 1 つのまとまりのあるエクスペリエンスとして統合されます。そのコンポーネントは連携して動作するパッケージ全体に分散されていますが、Rust コマンドとアプリケーションはメイン ワークスペースに存在します。このプロジェクトは、キーボードをワークフローの中心に据えた、高速で予測可能なインタラクションに重点を置いています。",
+      "aboutTitle": "なぜ ARGVUS なのか?",
+      "aboutArgv": "引数ベクトル",
+      "aboutUs": "ユーザー システム",
+      "aboutText": "ARGVUS は、単純なアイデアから生まれました。開発者デスクトップでは、ユーザーがコントロールを見つけたり、メニューに移動したり、マウスに常に依存したりするためにフローを中断する必要があってはなりません。目標は、キーボードがシステム インタラクションの主要な形式となる環境を構築し、ショートカットやコマンドを通じて、迅速かつ予測可能な方法でアクション、アプリケーション、ツールにアクセスできるようにすることです。",
+      "aboutText2": "名前はこの考えを表しています。 ARGV は引数ベクトルに由来し、開発者の世界と引数を使用してプログラムを制御する方法を指します。 US は User System から来ており、この哲学をユーザー中心のデスクトップ環境に変えるという目標を表しています。",
+      "aboutPronunciationLabel": "発音を聞く",
+      "aboutPronunciationHint": "ARGVUS の発音を聞くには言語を選択してください。",
+      "aboutPronunciationLanguage": "言語",
+      "aboutPronunciationEnglish": "英語",
+      "aboutPronunciationPortuguese": "ポルトガル語",
+      "aboutPronunciationAudio": "ARGVUS の発音音声",
+      "aboutMaintainer": "プロジェクトの保守者",
+      "aboutMaintainerLink": "William C. Canin GitHub プロフィール",
+      "footerLicense": "GPL-3.0 に基づいてライセンス供与"
+    },
+    "header": {
+      "navAria": "メインナビゲーション",
+      "navDocs": "ドキュメント",
+      "navArch": "リポジトリ",
+      "navArchArch": "アーチ Linux",
+      "github": "GitHub",
+      "navDonate": "寄付する",
+      "langAria": "言語を変更する",
+      "langEnglish": "英語",
+      "langPortuguese": "ポルトガル語",
+      "themeAria": "テーマの変更",
+      "themeLight": "ライト",
+      "themeDark": "ダーク",
+      "themeSystem": "システム",
+      "navMenu": "メニュー",
+      "beta": "ベータ版"
+    },
+    "footer": {
+      "tagline": "Hyprland 上に構築された Wayland および Arch Linux 用のモジュラー デスクトップ環境。",
+      "docs": "ドキュメント",
+      "docsLinks": [
+        [
+          "はじめに",
+          "docs/introduction/"
+        ],
+        [
+          "インストール",
+          "docs/getting-started/installation/install/"
+        ],
+        [
+          "外観",
+          "docs/user-guide/appearance/"
+        ],
+        [
+          "セッション",
+          "docs/user-guide/sessions/"
+        ],
+        [
+          "よくある質問",
+          "docs/user-guide/faq/"
+        ]
+      ],
+      "resources": "リソース",
+      "resourceLinks": [
+        [
+          "ARGVUS について",
+          "about/"
+        ],
+        [
+          "GitHub",
+          "https://github.com/orgs/argvus"
+        ],
+        [
+          "Arch Linux リポジトリ",
+          "/packages/arch/"
+        ]
+      ],
+      "community": "コミュニティ",
+      "feedback": "オープンソース コミュニティ向けに構築",
+      "license": "GPL-3.0 に基づいてライセンス供与",
+      "maintainer": "William C. Canin によって保守されています",
+      "channels": [
+        [
+          "公式チャンネル",
+          "https://t.me/argvusdesktop"
+        ],
+        [
+          "グローバルコミュニティ",
+          "https://t.me/argvuscommunity"
+        ],
+        [
+          "ブラジル人コミュニティ",
+          "https://t.me/argvuscommunity_br"
+        ]
+      ]
+    },
+    "agents": {
+      "eyebrow": "AI エージェント",
+      "title": "あなたのエージェント。",
+      "accent": "ショートカットが 1 つあります。",
+      "lead": "最初のプロンプトから次のコード変更まで。 ARGVUS ターミナル内で、1 つのセレクターから Codex、Claude Code、または OpenCode を開きます。",
+      "shortcutLabel": "キーボードから始める",
+      "shortcutHint": "セレクターを開きます。エージェントを選択してください。",
+      "sectionLabel": "ARGVUS と統合されたコーディング エージェント",
+      "codex": "OpenAI のコーディング エージェント。ランチャーから入手でき、デスクトップのネイティブ ターミナルですぐに開くことができます。",
+      "claude": "Anthropic のコーディング エージェント。初めてユーザー プロファイルを開いたときに、mise を通じてユーザー プロファイルにインストールされます。",
+      "opencode": "オープンソースのコーディング エージェント。他のエージェントと同じ選択および起動フローが統合されています。",
+      "packaged": "argvus-ai とともにインストールされる",
+      "onDemand": "初回起動時にインストールされる",
+      "upstream": "エージェントを探索する",
+      "workflowTitle": "ツールを選択してください。流れを保ってください。",
+      "workflowText": "キーボード ショートカット、タスクバー ロボット、またはアプリケーション ランチャー: すべてのエントリ ポイントでネイティブ ターミナルが開きます。エージェントはあなたの選択です。",
+      "cta": "ARGVUS AI を探索する",
+      "install": "インストールと最初の使用",
+      "codexAlt": "OpenAI マーク、Codex の作成者",
+      "claudeAlt": "クロード・マーク",
+      "opencodeAlt": "OpenCode マーク",
+      "openSource": "オープンソース"
+    }
+  },
+  "de": {
+    "landing": {
+      "htmlLang": "de",
+      "title": "ARGVUS – Eine modulare Desktop-Umgebung für Wayland und Arch Linux, basierend auf Hyprland.",
+      "description": "ARGVUS ist ein vollständiger Hyprland- und Wayland-Desktop mit ARGVUS-Wechseldatenträgern, Waybar, integrierten Themes und signierten Arch Linux-Paketen.",
+      "keywords": "argvus, argvus linux, hyprland, wayland, arch linux, Desktop-Umgebung, argvus-Wechseldatenträger, Waybar, Linux-Desktop, Pacman-Repository",
+      "navAria": "Hauptnavigation",
+      "navMenu": "Menü",
+      "navDocs": "Dokumentation",
+      "navArch": "Repository",
+      "navArchArch": "Arch Linux",
+      "navDonate": "Spenden",
+      "github": "GitHub",
+      "langAria": "Sprache ändern",
+      "langEnglish": "Englisch",
+      "langPortuguese": "Portugiesisch",
+      "themesRepositoryLabel": "Installation aus dem Repository",
+      "themesRepositoryHint": "Oder mehrere Themen in einem Befehl",
+      "themesGuideLink": "Themenführer →",
+      "windowModeHint": "Drücken Sie SUPER + Alt + Leertaste, um zwischen schwebendem und gekacheltem Fenstermodus zu wechseln.",
+      "carouselPrevious": "Zurück",
+      "carouselNext": "Weiter",
+      "carouselSlide": "Folie",
+      "supportStarLabel": "Stern",
+      "currencyAria": "Währung",
+      "currencyUsd": "US-Dollar (USD)",
+      "currencyBrl": "Brasilianischer Real (BRL)",
+      "themeAria": "Thema ändern",
+      "themeLight": "Licht",
+      "themeDark": "Dunkel",
+      "themeSystem": "System",
+      "heroTitle1": "Eine modulare Desktop-Umgebung, sofort einsatzbereit.",
+      "heroAccent": "Fokussiert auf Hyprland.",
+      "heroLead": "Mehr als Dotfiles: eine überwachte Sitzung, Quickshell-Shell, Waybar-Taskleiste, native Einstellungen und offizielle Themes – integriert, leichtgewichtig und verpackt für Arch Linux. Entwickelt für Entwickler, ohne Bloatware.",
+      "versionBadge": "ARGVUS v${version}",
+      "btnInstall": "Jetzt installieren",
+      "btnDocs": "Dokumentation",
+      "heroCopy": "Kopierbefehl",
+      "heroCopied": "Kopiert",
+      "heroInstallHint": "Schnellinstallation. Lieber Schritt für Schritt?",
+      "heroInstallLink": "Erweiterte Installation",
+      "heroShotAlt": "ARGVUS-Desktop mit dem ARGVUS-Design",
+      "heroStackLabel": "Gebaut mit",
+      "carouselOpen": "Bild im Vollbildmodus öffnen",
+      "carouselClose": "Vollbildbild schließen",
+      "screenshotsEyebrow": "Vorschauen",
+      "screenshotsTitle": "Sehen Sie, wie ARGVUS eine neue Atmosphäre erhält",
+      "screenshotsSubtitle": "Beobachten Sie den Desktop in Bewegung – Themen, Modi und native Apps arbeiten zusammen – bevor Sie ein Erscheinungsbild auswählen.",
+      "videoPlay": "Sehen Sie sich das Video an",
+      "videoTitle": "ARGVUS-Einführungsvideo",
+      "screenshotsSubtitleStatic": "Eine echte Aufnahme von ARGVUS Dark im Float-Modus, mit geöffneter Taskleiste, Seitenleiste und geöffnetem Launcher.",
+      "videoPosterAlt": "ARGVUS-Logo mit dem Befehl argvus --start-desktop",
+      "componentsEyebrow": "Komponenten",
+      "componentsTitle": "Gebaut mit Software, die Sie bereits kennen",
+      "componentsSubtitle": "ARGVUS teilt das Erlebnis in kleinere offizielle Pakete auf, die alle vom argvus-Metapaket vorkonfiguriert und koordiniert werden.",
+      "componentDesc": {
+        "hyprland": "Der Wayland-Compositor, der ARGVUS zum Leben erweckt: Kacheln, Arbeitsbereiche, flüssige Animationen und vollständige Tastenkombinationen.",
+        "waybar": "Statusleiste mit System-, Medien-, Netzwerk-, Speicher- und Verknüpfungsmodulen.",
+        "quickshell": "QML-Systemseitenleiste mit Wetter, Netzwerk, Kalender, Helligkeit, Lautstärke und Benachrichtigungen.",
+        "rofi": "Anwendungsstarter, Fensterumschalter und Menüs – alle mit einheitlichen Themen.",
+        "superfile": "Ein schneller, vollständig konfigurierbarer TUI-Dateimanager mit dedizierten Tastenkombinationen.",
+        "btop": "Systemmonitor mit Echtzeit-CPU, Speicher, Netzwerk und Prozessen.",
+        "hyprlock": "Sperrbildschirm integriert in das Hyprland-Ökosystem und ein synchronisiertes Thema.",
+        "storage": "Rostbetriebenes, herausnehmbares Aufbewahrungsmodul für die Waybar-Leiste."
+      },
+      "keyLabels": [
+        "Vorschauen",
+        "Komponenten",
+        "Taskleiste",
+        "Fenstermodus",
+        "Apps",
+        "KI-Agenten",
+        "Themen"
+      ],
+      "keysAria": "Abschnittsnavigation",
+      "waybarEyebrow": "Taskleiste",
+      "waybarTitle": "Statusleiste oben oder unten",
+      "waybarSubtitle": "Die ARGVUS-Hauptleiste kombiniert Navigation, Medien, Systemstatus und native Apps – und kann mit einem Klick oder einer Verknüpfung am oberen oder unteren Bildschirmrand platziert werden. Die Position wird sitzungsübergreifend gespeichert.",
+      "waybarIntro": "Die auf Waybar basierende Leiste fasst alltägliche Bedienelemente an einem einzigen Ort zusammen und weist für jedes Thema ein einheitliches Erscheinungsbild auf:",
+      "waybarFeatures": [
+        {
+          "icon": "fa-solid fa-star",
+          "text": "Top/bottom position via shortcut (SUPER + Alt + ↑/↓) or the sidebar."
+        },
+        {
+          "icon": "fa-solid fa-bars-staggered",
+          "text": "Navigierbare Arbeitsbereiche mit fokussiertem Fensterkontext."
+        },
+        {
+          "icon": "fa-solid fa-music",
+          "text": "Mediensteuerung (mpris) mit hervorgehobenem aktiven Player."
+        },
+        {
+          "icon": "fa-solid fa-gauge-high",
+          "text": "Netzwerk-, CPU-, Speicher-, Temperatur- und Energieprofilstatus."
+        },
+        {
+          "icon": "fa-solid fa-calendar-days",
+          "text": "ARGVUS Taskleistenkalender beim Klicken auf Datum."
+        },
+        {
+          "icon": "fa-solid fa-bolt",
+          "text": "ARGVUS-Wechselspeichergeräte, ein von Rust betriebenes Wechselspeichermodul."
+        },
+        {
+          "icon": "fa-solid fa-table-cells",
+          "text": "Taskleiste für Apps mit Statussymbolen."
+        },
+        {
+          "icon": "fa-solid fa-magnifying-glass",
+          "text": "Schnelle App- und Befehlssuche direkt in der Leiste."
+        }
+      ],
+      "windowModeEyebrow": "Fenstermodus",
+      "windowModeTitle": "Gekachelte oder schwebende Fenster",
+      "windowModeSubtitle": "Wählen Sie aus, wie Anwendungsfenster den Desktop verwenden. Der Modus ist global, bleibt sitzungsübergreifend bestehen und kann im Control Center oder über das Taskleistensymbol geändert werden.",
+      "windowModeTile": "Fensterkachel",
+      "windowModeFloat": "Fenster schweben",
+      "windowModeTileText": "Fenster sind nebeneinander angeordnet und weisen gleichmäßige Abstände zwischen ihnen auf.",
+      "windowModeFloatText": "Fenster können sich überlappen und sind mit einer Fensterleiste am Rand gegenüber der Taskleiste gekoppelt.",
+      "appsEyebrow": "Apps",
+      "appsTitle": "Native Tools für den Desktop",
+      "appsSubtitle": "Über die Umgebungskonfiguration hinaus umfasst ARGVUS Erstanbieter-Apps für Arbeitsabläufe, die eine engere Integration mit der Leiste, dem Panel und der Sitzung erfordern.",
+      "appStorageText": "ARGVUS-Wechselspeichergeräte ist die ARGVUS-Wechselspeicher-App. Es erkennt Geräte, bietet schnelle Aktionen zum Mounten, Unmounten und Auswerfen von Laufwerken und versorgt das Waybar-Speichermodul mit einem konsistenten Erlebnis.",
+      "appCalendarText": "Der ARGVUS-Taskleistenkalender ist der native Kalender, der vom Desktop verwendet wird. Es bietet eine schnelle Monatsansicht, einfache Navigation und Ereignisintegration zum Überprüfen von Terminen, ohne den Wayland-Ablauf zu verlassen.",
+      "appCalendarEventsText": "Die Ereignisansicht ergänzt den Kalender mit einer kompakten Terminliste und hält wichtige Termine innerhalb des ARGVUS-Ökosystems immer griffbereit.",
+      "appFocusText": "ARGVUS Focus hilft Ihnen, mit Fokussitzungen und Pausen, die direkt vom Desktop aus verfügbar sind, bei der Sache zu bleiben.",
+      "appClockText": "ARGVUS Clock vereint eine Uhr und Timer in einem nativen Tool, sodass Sie die Zeit im Auge behalten können, ohne Ihren Workflow zu verlassen.",
+      "appDefaultAppsText": "ARGVUS Control Center is the native ARGVUS configuration center. Apps sets the default applications, and Fonts applies typography to GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, the lock screen and official apps.",
+      "controlCenterFeatures": [
+        {
+          "title": "Aussehen",
+          "text": "Themes, Sticky/Float modes, accents, wallpapers, effects, taskbar layout and Control Panel cards."
+        },
+        {
+          "title": "Schriftarten",
+          "text": "Konfigurieren Sie Typografie für die Taskleiste, Telemetrie, Systemsteuerung, System, Anwendungen, Terminal und Browser."
+        },
+        {
+          "title": "Standardanwendungen",
+          "text": "Wählen Sie Standardanwendungen für die von ARGVUS erkannten Rollen."
+        },
+        {
+          "title": "Hardware und Eingabe",
+          "text": "Passen Sie Maus, Touchpad, Tastatur, Verknüpfungen und Anzeigen an, wenn die Funktionen verfügbar sind."
+        },
+        {
+          "title": "Netzwerk, Audio und Bluetooth",
+          "text": "Greifen Sie auf die von der Installation bereitgestellten Konnektivitäts- und Audiomodule zu."
+        },
+        {
+          "title": "Sitzung und System",
+          "text": "Überprüfen und konfigurieren Sie Stromversorgung, Sitzung, Dienste, Pakete, Speicher und Diagnose."
+        }
+      ],
+      "aboutMaintainerLink": "William C. Canin GitHub-Profil",
+      "aboutSupportPaypal": "Bei Beiträgen über PayPal wird das richtige Konto als angezeigt",
+      "themesEyebrow": "Themen",
+      "themesTitle": "Zweiundzwanzig Themen, zwei Modi, ein System",
+      "themesSubtitle": "Gemeinsame visuelle Familien, jeweils mit den Modi „Fixiert“ und „Abstand“. Alle als Arch Linux-Pakete im offiziellen ARGVUS-Repository verfügbar.",
+      "themesAccentLabel": "Unabhängiger Akzent",
+      "themesTabsAria": "Themenkategorie",
+      "themesDarkTab": "Dunkle Themen",
+      "themesLightTab": "Leichte Themen",
+      "themesCopyText": "Entdecken Sie die offiziellen Familien und vergleichen Sie ihre Paletten direkt in den Vorschauen. Jede Familie verfügt über die Modi „Fixiert“ und „Abstand“, mit denen sich Geometrie und Oberflächenbehandlung ändern lassen, ohne dass sich die visuelle Identität ändert. Alle Themes sind im Repository als einzelne Pakete verfügbar. Die Akzentfarbe bleibt unabhängig und kann unter ARGVUS Control Center → Aussehen → Hervorhebungsfarbe ausgewählt werden.",
+      "themesDefaultLabel": "Standard",
+      "themeModeSticky": "Fixiert",
+      "themeModeFloat": "Abstand",
+      "archTitle": "Jeder Schritt, deutlich sichtbar",
+      "archSubtitle": "Der Befehl oben auf der Seite erledigt das alles für Sie. Wenn Sie jeden Befehl lieber selbst sehen und ausführen möchten, führen Sie die folgenden drei Schritte aus: Sie fügen das signierte ARGVUS-Repository zu Pacman hinzu und installieren das argvus-Metapaket. Durchsuchen Sie es wie im Kontrollzentrum – Pfeiltasten zum Auswählen, Eingabetaste zum Kopieren.",
+      "ccTitle": "Erweiterte Installation",
+      "ccSubtitle": "Signiertes Repository + argvus-Metapaket, Schritt für Schritt",
+      "ccRepository": "Repository",
+      "ccCommand": "-Befehl",
+      "ccCopy": "Kopie",
+      "ccCopyAll": "Alle",
+      "ccCopied": "Befehl kopiert",
+      "ccCopiedAll": "Alle Befehle kopiert",
+      "ccNoCommand": "Kein Befehl – dies geschieht auf dem Anmeldebildschirm",
+      "ccHelp": "↑/↓ Items  ←/→ Steps  Enter Copy  c Copy all",
+      "ccGridAria": "Erweiterte Installationsschritte",
+      "ccSteps": {
+        "key": {
+          "title": "Signaturschlüssel",
+          "description": "Vertrauen Sie dem Packager-Schlüssel"
+        },
+        "repo": {
+          "title": "Repository",
+          "description": "Aktivieren Sie argvus und argvus-extras"
+        },
+        "install": {
+          "title": "Installieren",
+          "description": "Synchronisieren und installieren Sie den Desktop"
+        }
+      },
+      "ccItems": {
+        "download": {
+          "label": "Laden Sie den Schlüssel herunter",
+          "note": "Saves the ARGVUS public signing key to /tmp/argvus.gpg."
+        },
+        "import": {
+          "label": "In Pacman importieren",
+          "note": "Fügt den Schlüssel zum Pacman-Schlüsselbund hinzu."
+        },
+        "keyId": {
+          "label": "Lesen Sie die Schlüssel-ID",
+          "note": "Extrahiert die Schlüssel-ID in die Variable ARGVUS_KEY."
+        },
+        "sign": {
+          "label": "Lokal signieren",
+          "note": "Markiert den ARGVUS-Schlüssel auf diesem Computer als vertrauenswürdig."
+        },
+        "conf": {
+          "label": "Installieren Sie argvus.conf",
+          "note": "Downloads the repository definition to /etc/pacman.d/argvus.conf."
+        },
+        "include": {
+          "label": "In pacman.conf aufnehmen",
+          "note": "Adds the Include line to /etc/pacman.conf. Run it only once."
+        },
+        "pacman": {
+          "label": "ARGVUS installieren",
+          "note": "Synchronisiert die Datenbanken und installiert das argvus-Metapaket; Abhängigkeiten stammen aus demselben Repository."
+        },
+        "session": {
+          "label": "Starten Sie die Sitzung",
+          "note": "Melden Sie sich von der aktuellen Sitzung ab und wählen Sie die ARGVUS-Sitzung auf dem Anmeldebildschirm aus."
+        }
+      },
+      "installGuide": "Installationsanleitung",
+      "installRequirements": "Anforderungen",
+      "installRequirementsList": [
+        "Arch Linux x86_64",
+        "Hyprland 0,57,0 (Wayland)",
+        "A GPU with Wayland/KMS support"
+      ],
+      "installVm": "Virtuelle Maschinen",
+      "installChanges": "What changes on your system: the ARGVUS key is added to the pacman keyring, /etc/pacman.d/argvus.conf is created and pacman.conf gets one Include line. Installation writes nothing to your $HOME.",
+      "installVerify": "Überprüfen Sie den Signaturschlüssel",
+      "installVerifyHint": "Vergleichen Sie es mit der Ausgabe von pacman-key --finger, bevor Sie es lokal signieren.",
+      "installSource": "Paketquellcode",
+      "installPrivacy": "Datenschutz und Sicherheit",
+      "installCopyFingerprint": "Fingerabdruck kopieren",
+      "installScript": "das Schnellinstallationsskript, das Sie vor der Ausführung lesen müssen",
+      "installCmd": "sudo pacman -Syu argvus",
+      "supportEyebrow": "Unterstützung",
+      "supportTitle": "Unterstützt die ARGVUS-Entwicklung",
+      "supportText": "ARGVUS wird unabhängig gepflegt. Die Beiträge tragen dazu bei, Infrastruktur, Wartung und die Weiterentwicklung des Projekts abzudecken – einschließlich, in Zukunft, einer dedizierten Domäne für ARGVUS.",
+      "supportBtn": "Mitmachen",
+      "supportAria": "Beitragsbetrag",
+      "supportStar": "Ein Stern auf GitHub hilft anderen Menschen, ARGVUS zu finden.",
+      "supportStarBtn": "Stern auf GitHub",
+      "ctaTitle": "Versuchen Sie ARGVUS",
+      "ctaText": "Befolgen Sie die Installationsanleitung und erhalten Sie in wenigen Minuten einen vollständigen, schönen, integrierten Wayland-Desktop.",
+      "ctaPrimary": "Installationsanleitung anzeigen",
+      "ctaSecondary": "Erkunden Sie das Repository",
+      "footerTagline": "Eine modulare Desktop-Umgebung für Wayland und Arch Linux, basierend auf Hyprland.",
+      "footerDocs": "Dokumentation",
+      "footerDocsLinks": [
+        {
+          "label": "Einführung",
+          "href": "docs/introduction/"
+        },
+        {
+          "label": "Installation",
+          "href": "docs/getting-started/installation/install/"
+        },
+        {
+          "label": "Aussehen",
+          "href": "docs/user-guide/appearance/"
+        },
+        {
+          "label": "Sitzungen",
+          "href": "docs/user-guide/sessions/"
+        },
+        {
+          "label": "FAQ",
+          "href": "docs/user-guide/faq/"
+        }
+      ],
+      "footerResources": "Ressourcen",
+      "footerResourcesLinks": [
+        {
+          "label": "Arch Linux-Repository",
+          "href": "packages/arch/"
+        }
+      ],
+      "footerProject": "Projekt",
+      "footerAbout": "Über ARGVUS",
+      "footerLicense": "GPL-3.0-Lizenz",
+      "footerMaintainer": "Verwaltet von",
+      "bottomLicense": "Lizenziert unter GPL-3.0",
+      "feedbackEyebrow": "Feedback",
+      "feedbackTitle": "Ihr Feedback trägt zur Gestaltung von ARGVUS bei",
+      "feedbackText": "Haben Sie einen Fehler gefunden, haben Sie eine Idee oder möchten Sie eine Funktion anfordern? ARGVUS verfügt über ein spezielles Feedback-Repository, in dem Ideen und Berichte gemeinsam mit der Community verfolgt werden.",
+      "feedbackBtn": "Feedback senden",
+      "communityEyebrow": "Gemeinschaft",
+      "communityTitle": "Verbinden Sie sich mit der ARGVUS-Community",
+      "communityText": "Verfolgen Sie Projektankündigungen oder chatten Sie mit anderen Benutzern in unseren Telegram-Kanälen.",
+      "communityChannels": [
+        {
+          "title": "Offizieller Kanal",
+          "handle": "@argvusdesktop",
+          "href": "https://t.me/argvusdesktop",
+          "description": "ARGVUS-Ankündigungen und Neuigkeiten."
+        },
+        {
+          "title": "Globale Gemeinschaft",
+          "handle": "@argvuscommunity",
+          "href": "https://t.me/argvuscommunity",
+          "description": "Chatten Sie mit der ARGVUS-Community."
+        },
+        {
+          "title": "Brasilianische Gemeinschaft",
+          "handle": "@argvuscommunity_br",
+          "href": "https://t.me/argvuscommunity_br",
+          "description": "Chatten Sie mit der ARGVUS-Community auf Portugiesisch."
+        }
+      ],
+      "footerCommunity": "Gemeinschaft",
+      "statusTitle": "-Status",
+      "statusLabel": "Projektstatus",
+      "statusText": "Alle auf dieser Seite gezeigten Funktionen funktionieren. Das Beta-Label gibt es, weil Fehler, die beim Testen nicht entdeckt wurden, immer noch auftauchen können – wenn Sie einen finden, melden Sie ihn im Feedback-Repository.",
+      "feedbackLink": "ARGVUS-Feedback-Repository auf GitHub",
+      "feedbackMade": "Entwickelt für die Open-Source-Community"
+    },
+    "about": {
+      "htmlLang": "de",
+      "title": "Über ARGVUS – ARGVUS",
+      "description": "Warum ARGVUS existiert, woher der Name kommt und wie man die richtige Aussprache hört.",
+      "keywords": "argvus, über argvus, argvus Aussprache, Hyprland, Wayland, Arch Linux",
+      "navAria": "Hauptnavigation",
+      "navDocs": "Dokumentation",
+      "github": "GitHub",
+      "langEnglish": "Englisch",
+      "langPortuguese": "Portugiesisch",
+      "back": "Zurück nach Hause",
+      "aboutEyebrow": "Ungefähr",
+      "aboutIntroTitle": "Was ist ARGVUS?",
+      "aboutIntroText": "ARGVUS ist eine modulare Desktop-Umgebung für Arch Linux, die auf Wayland und Hyprland basiert. Es vereint Sitzung, Taskleiste, Systemsteuerung, Einstellungen und Systemintegrationen zu einem zusammenhängenden Erlebnis. Seine Komponenten sind auf Pakete verteilt, die zusammenarbeiten, während Rust-Befehle und -Anwendungen im Hauptarbeitsbereich gespeichert sind. Das Projekt konzentriert sich auf eine schnelle, vorhersehbare Interaktion, wobei die Tastatur im Mittelpunkt des Arbeitsablaufs steht.",
+      "aboutTitle": "Warum ARGVUS?",
+      "aboutArgv": "Argumentvektor",
+      "aboutUs": "Benutzersystem",
+      "aboutText": "ARGVUS entstand aus einer einfachen Idee: Ein Entwickler-Desktop sollte nicht erfordern, dass der Benutzer seinen Fluss unterbricht, um Steuerelemente zu finden, durch Menüs zu navigieren oder ständig auf die Maus angewiesen ist. Das Ziel besteht darin, eine Umgebung zu schaffen, in der die Tastatur eine primäre Form der Systeminteraktion darstellt – und so den Zugriff auf Aktionen, Anwendungen und Tools über Verknüpfungen und Befehle auf schnelle und vorhersehbare Weise ermöglicht.",
+      "aboutText2": "Der Name steht für diese Idee. ARGV, vom Argumentvektor, bezieht sich auf die Welt der Entwickler und darauf, wie Argumente zur Steuerung von Programmen verwendet werden. US, von User System, steht für das Ziel, diese Philosophie in eine benutzerzentrierte Desktop-Umgebung umzusetzen.",
+      "aboutPronunciationLabel": "Hören Sie die Aussprache",
+      "aboutPronunciationHint": "Wählen Sie eine Sprache, um zu hören, wie ARGVUS ausgesprochen wird.",
+      "aboutPronunciationLanguage": "Sprache",
+      "aboutPronunciationEnglish": "Englisch",
+      "aboutPronunciationPortuguese": "Portugiesisch",
+      "aboutPronunciationAudio": "ARGVUS Aussprache-Audio",
+      "aboutMaintainer": "Projekt gepflegt von",
+      "aboutMaintainerLink": "William C. Canin GitHub-Profil",
+      "footerLicense": "Lizenziert unter GPL-3.0"
+    },
+    "header": {
+      "navAria": "Hauptnavigation",
+      "navDocs": "Dokumentation",
+      "navArch": "Repository",
+      "navArchArch": "Arch Linux",
+      "github": "GitHub",
+      "navDonate": "Spenden",
+      "langAria": "Sprache ändern",
+      "langEnglish": "Englisch",
+      "langPortuguese": "Portugiesisch",
+      "themeAria": "Thema ändern",
+      "themeLight": "Licht",
+      "themeDark": "Dunkel",
+      "themeSystem": "System",
+      "navMenu": "Menü",
+      "beta": "Beta"
+    },
+    "footer": {
+      "tagline": "Eine modulare Desktop-Umgebung für Wayland und Arch Linux, basierend auf Hyprland.",
+      "docs": "Dokumentation",
+      "docsLinks": [
+        [
+          "Einführung",
+          "docs/introduction/"
+        ],
+        [
+          "Installation",
+          "docs/getting-started/installation/install/"
+        ],
+        [
+          "Aussehen",
+          "docs/user-guide/appearance/"
+        ],
+        [
+          "Sitzungen",
+          "docs/user-guide/sessions/"
+        ],
+        [
+          "FAQ",
+          "docs/user-guide/faq/"
+        ]
+      ],
+      "resources": "Ressourcen",
+      "resourceLinks": [
+        [
+          "Über ARGVUS",
+          "about/"
+        ],
+        [
+          "GitHub",
+          "https://github.com/orgs/argvus"
+        ],
+        [
+          "Arch Linux-Repository",
+          "/packages/arch/"
+        ]
+      ],
+      "community": "Gemeinschaft",
+      "feedback": "Entwickelt für die Open-Source-Community",
+      "license": "Lizenziert unter GPL-3.0",
+      "maintainer": "Verwaltet von William C. Canin",
+      "channels": [
+        [
+          "Offizieller Kanal",
+          "https://t.me/argvusdesktop"
+        ],
+        [
+          "Globale Gemeinschaft",
+          "https://t.me/argvuscommunity"
+        ],
+        [
+          "Brasilianische Gemeinschaft",
+          "https://t.me/argvuscommunity_br"
+        ]
+      ]
+    },
+    "agents": {
+      "eyebrow": "KI-Agenten",
+      "title": "Ihre Agenten.",
+      "accent": "Eine Verknüpfung.",
+      "lead": "Von der ersten Eingabeaufforderung bis zur nächsten Codeänderung. Öffnen Sie Codex, Claude Code oder OpenCode über einen Selektor direkt in Ihrem ARGVUS-Terminal.",
+      "shortcutLabel": "Beginnen Sie an der Tastatur",
+      "shortcutHint": "Öffnen Sie den Selektor. Wählen Sie Ihren Agenten.",
+      "sectionLabel": "In ARGVUS integrierte Codierungsagenten",
+      "codex": "Der Coding-Agent von OpenAI, verfügbar im Launcher und bereit zum Öffnen im nativen Terminal Ihres Desktops.",
+      "claude": "Der Coding-Agent von Anthropic, der in Ihrem Benutzerprofil installiert wird, wenn Sie ihn zum ersten Mal öffnen.",
+      "opencode": "Der Open-Source-Coding-Agent, integriert mit demselben Auswahl- und Startablauf wie Ihre anderen Agenten.",
+      "packaged": "Mit argvus-ai installiert",
+      "onDemand": "Wird beim ersten Start installiert",
+      "upstream": "Entdecken Sie den Agenten",
+      "workflowTitle": "Wählen Sie Ihr Werkzeug. Bleiben Sie im Fluss.",
+      "workflowText": "Tastaturkürzel, Taskleistenroboter oder Anwendungsstarter: Jeder Einstiegspunkt öffnet das native Terminal. Der Agent ist Ihre Wahl.",
+      "cta": "Entdecken Sie ARGVUS AI",
+      "install": "Installation und erste Verwendung",
+      "codexAlt": "OpenAI-Marke, die Schöpfer von Codex",
+      "claudeAlt": "Claude Mark",
+      "opencodeAlt": "OpenCode-Markierung",
+      "openSource": "Open Source"
+    }
+  },
+  "ru": {
+    "landing": {
+      "htmlLang": "ru",
+      "title": "ARGVUS — модульная среда рабочего стола для Wayland и Arch Linux, созданная на базе Hyprland.",
+      "description": "ARGVUS — это полноценный рабочий стол Hyprland и Wayland со съемными устройствами ARGVUS, Waybar, интегрированными темами и подписанными пакетами Arch Linux.",
+      "keywords": "argvus, argvus linux, hyprland, wayland, Arch Linux, среда рабочего стола, съемные устройства argvus, waybar, рабочий стол Linux, репозиторий pacman",
+      "navAria": "Основная навигация",
+      "navMenu": "Меню",
+      "navDocs": "Документация",
+      "navArch": "Репозиторий",
+      "navArchArch": "Арх Linux",
+      "navDonate": "Пожертвовать",
+      "github": "Гитхаб",
+      "langAria": "Изменить язык",
+      "langEnglish": "английский",
+      "langPortuguese": "Португальский",
+      "themesRepositoryLabel": "Установить из репозитория",
+      "themesRepositoryHint": "Или несколько тем в одной команде",
+      "themesGuideLink": "Руководство по темам →",
+      "windowModeHint": "Нажмите SUPER + Alt + Пробел, чтобы переключиться между режимами плавающего и мозаичного окна.",
+      "carouselPrevious": "Предыдущий",
+      "carouselNext": "Далее",
+      "carouselSlide": "Слайд",
+      "supportStarLabel": "Звезда",
+      "currencyAria": "Валюта",
+      "currencyUsd": "доллар США (USD)",
+      "currencyBrl": "Бразильский реал (BRL)",
+      "themeAria": "Сменить тему",
+      "themeLight": "Свет",
+      "themeDark": "Темный",
+      "themeSystem": "Система",
+      "heroTitle1": "Модульная среда рабочего стола, готовая к использованию.",
+      "heroAccent": "Ориентирован на Хайпрланд.",
+      "heroLead": "Больше, чем точечные файлы: контролируемый сеанс, оболочка Quickshell, панель задач Waybar, встроенные настройки и официальные темы — интегрированные, облегченные и упакованные для Arch Linux. Создан для разработчиков, без лишнего ПО.",
+      "versionBadge": "ARGVUS v${version}",
+      "btnInstall": "Установить сейчас",
+      "btnDocs": "Документация",
+      "heroCopy": "Команда копирования",
+      "heroCopied": "скопировано",
+      "heroInstallHint": "Быстрая установка. Предпочитаете пошагово?",
+      "heroInstallLink": "Расширенная установка",
+      "heroShotAlt": "Рабочий стол ARGVUS с темой ARGVUS",
+      "heroStackLabel": "Создан с",
+      "carouselOpen": "Открыть изображение в полноэкранном режиме",
+      "carouselClose": "Закрыть полноэкранное изображение",
+      "screenshotsEyebrow": "Превью",
+      "screenshotsTitle": "Посмотрите, как ARGVUS обретает новую атмосферу",
+      "screenshotsSubtitle": "Посмотрите на рабочий стол в движении — темы, режимы и встроенные приложения работают вместе — прежде чем выбирать внешний вид.",
+      "videoPlay": "Посмотреть видео",
+      "videoTitle": "Вводное видео ARGVUS",
+      "screenshotsSubtitleStatic": "Реальный снимок ARGVUS Dark в плавающем режиме, с открытой панелью задач, боковой панелью и лаунчером.",
+      "videoPosterAlt": "Логотип ARGVUS с командой argvus --start-desktop",
+      "componentsEyebrow": "Компоненты",
+      "componentsTitle": "Создан с использованием уже знакомого вам программного обеспечения.",
+      "componentsSubtitle": "ARGVUS разделяет интерфейс на более мелкие официальные пакеты, все из которых предварительно настроены и координируются метапакетом argvus.",
+      "componentDesc": {
+        "hyprland": "Наборщик Wayland, который воплощает в жизнь ARGVUS: мозаику, рабочие пространства, плавную анимацию и полноценные сочетания клавиш.",
+        "waybar": "Строка состояния с модулями системы, мультимедиа, сети, хранилища и ярлыков.",
+        "quickshell": "Боковая панель системы QML с погодой, сетью, календарем, яркостью, громкостью и уведомлениями.",
+        "rofi": "Панель запуска приложений, переключатель окон и меню — все с унифицированными темами.",
+        "superfile": "Быстрый, полностью настраиваемый файловый менеджер TUI со специальными сочетаниями клавиш.",
+        "btop": "Системный монитор с отображением ЦП, памяти, сети и процессов в реальном времени.",
+        "hyprlock": "Экран блокировки интегрирован с экосистемой Hyprland и синхронизированной темой.",
+        "storage": "Съемный модуль хранения данных на базе ржавчины для панели Waybar."
+      },
+      "keyLabels": [
+        "Превью",
+        "Компоненты",
+        "Панель задач",
+        "Оконный режим",
+        "Приложения",
+        "ИИ-агенты",
+        "Темы"
+      ],
+      "keysAria": "Навигация по разделам",
+      "waybarEyebrow": "Панель задач",
+      "waybarTitle": "Строка состояния вверху или внизу",
+      "waybarSubtitle": "Главная панель ARGVUS сочетает в себе навигацию, мультимедиа, состояние системы и встроенные приложения — и может располагаться в верхней или нижней части экрана одним щелчком мыши или ярлыком. Позиция запоминается на протяжении всего сеанса.",
+      "waybarIntro": "Созданная на основе Waybar, панель группирует повседневные элементы управления в одном месте и имеет единый внешний вид для каждой темы:",
+      "waybarFeatures": [
+        {
+          "icon": "fa-solid fa-star",
+          "text": "Top/bottom position via shortcut (SUPER + Alt + ↑/↓) or the sidebar."
+        },
+        {
+          "icon": "fa-solid fa-bars-staggered",
+          "text": "Рабочие пространства с возможностью навигации и контекстом сфокусированного окна."
+        },
+        {
+          "icon": "fa-solid fa-music",
+          "text": "Элемент управления мультимедиа (mpris) с выделенным активным проигрывателем."
+        },
+        {
+          "icon": "fa-solid fa-gauge-high",
+          "text": "Состояние сети, процессора, памяти, температуры и профиля мощности."
+        },
+        {
+          "icon": "fa-solid fa-calendar-days",
+          "text": "Календарь панели задач ARGVUS по щелчку даты."
+        },
+        {
+          "icon": "fa-solid fa-bolt",
+          "text": "Съемные устройства ARGVUS, съемный модуль хранения данных на базе Rust."
+        },
+        {
+          "icon": "fa-solid fa-table-cells",
+          "text": "Панель задач для приложений со значками состояния."
+        },
+        {
+          "icon": "fa-solid fa-magnifying-glass",
+          "text": "Быстрый поиск приложений и команд прямо из панели."
+        }
+      ],
+      "windowModeEyebrow": "Оконный режим",
+      "windowModeTitle": "Плиточные или плавающие окна",
+      "windowModeSubtitle": "Выберите, как окна приложений используют рабочий стол. Этот режим является глобальным, сохраняется во всех сеансах и может быть изменен в Центре управления или с помощью значка на панели задач.",
+      "windowModeTile": "Оконная плитка",
+      "windowModeFloat": "Оконный поплавок",
+      "windowModeTileText": "Окна располагаются рядом с постоянными промежутками между ними.",
+      "windowModeFloatText": "Окна могут перекрываться и сочетаются с панелью окон на краю, противоположном панели задач.",
+      "appsEyebrow": "Приложения",
+      "appsTitle": "Собственные инструменты для рабочего стола",
+      "appsSubtitle": "Помимо настройки среды, ARGVUS включает в себя сторонние приложения для рабочих процессов, требующих более тесной интеграции с панелью, панелью и сеансом.",
+      "appStorageText": "ARGVUS Removable Devices — это приложение для съемных носителей ARGVUS. Он обнаруживает устройства, предоставляет быстрые действия по подключению, отключению и извлечению дисков, а также обеспечивает единообразную работу модуля хранения Waybar.",
+      "appCalendarText": "Календарь панели задач ARGVUS — это собственный календарь, используемый на рабочем столе. Он предлагает быстрый просмотр месяца, простую навигацию и интеграцию событий для проверки встреч, не выходя из потока Wayland.",
+      "appCalendarEventsText": "Просмотр событий дополняет календарь компактным списком встреч, сохраняя важные даты под рукой внутри экосистемы ARGVUS.",
+      "appFocusText": "ARGVUS Focus помогает вам сосредоточиться на задаче благодаря сеансам фокусировки и перерывам, доступным прямо с рабочего стола.",
+      "appClockText": "ARGVUS Clock объединяет часы и таймеры в едином инструменте, поэтому вы можете отслеживать время, не выходя из рабочего процесса.",
+      "appDefaultAppsText": "ARGVUS Control Center is the native ARGVUS configuration center. Apps sets the default applications, and Fonts applies typography to GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, the lock screen and official apps.",
+      "controlCenterFeatures": [
+        {
+          "title": "Внешний вид",
+          "text": "Themes, Sticky/Float modes, accents, wallpapers, effects, taskbar layout and Control Panel cards."
+        },
+        {
+          "title": "Шрифты",
+          "text": "Настройте типографику для панели задач, телеметрии, панели управления, системы, приложений, терминала и браузера."
+        },
+        {
+          "title": "Приложения по умолчанию",
+          "text": "Выберите приложения по умолчанию для ролей, распознаваемых ARGVUS."
+        },
+        {
+          "title": "Аппаратное обеспечение и ввод",
+          "text": "Настройте мышь, сенсорную панель, клавиатуру, ярлыки и дисплеи, если это возможно."
+        },
+        {
+          "title": "Сеть, аудио и Bluetooth",
+          "text": "Получите доступ к возможностям подключения и аудиомодулям, предусмотренным при установке."
+        },
+        {
+          "title": "Сессия и система",
+          "text": "Проверьте и настройте питание, сеанс, службы, пакеты, хранилище и диагностику."
+        }
+      ],
+      "aboutMaintainerLink": "Профиль Уильяма К. Канина на GitHub",
+      "aboutSupportPaypal": "При пополнении через PayPal правильный аккаунт отображается как",
+      "themesEyebrow": "Темы",
+      "themesTitle": "Двадцать две темы, два режима, одна система",
+      "themesSubtitle": "Общие визуальные семейства, каждое из которых имеет режимы «Закреплённый» и «Интервальный». Все они доступны в виде пакетов Arch Linux из официального репозитория ARGVUS.",
+      "themesAccentLabel": "Независимый акцент",
+      "themesTabsAria": "Категория темы",
+      "themesDarkTab": "Темные темы",
+      "themesLightTab": "Светлые темы",
+      "themesCopyText": "Изучите официальные семейства и сравните их палитры прямо в превью. В каждом семействе есть режимы Закреплённый и Интервальный, позволяющие менять геометрию и обработку поверхности без изменения визуальной идентичности. Все темы доступны в репозитории в виде отдельных пакетов. Цвет акцента остается независимым, и его можно выбрать в Центре управления ARGVUS → Внешний вид → Цвет подсветки.",
+      "themesDefaultLabel": "По умолчанию",
+      "themeModeSticky": "Закреплённый",
+      "themeModeFloat": "Интервальный",
+      "archTitle": "Каждый шаг на виду",
+      "archSubtitle": "Команда вверху страницы сделает все это за вас. Если вы предпочитаете просматривать и запускать каждую команду самостоятельно, выполните три следующих шага: добавьте подписанный репозиторий ARGVUS в pacman и установите метапакет argvus. Просматривайте его как Центр управления — клавиши со стрелками для выбора, Enter для копирования.",
+      "ccTitle": "Расширенная установка",
+      "ccSubtitle": "Подписанный репозиторий + метапакет argvus, шаг за шагом",
+      "ccRepository": "Репозиторий",
+      "ccCommand": "команда",
+      "ccCopy": "Копировать",
+      "ccCopyAll": "Все",
+      "ccCopied": "Команда скопирована",
+      "ccCopiedAll": "Все команды скопированы",
+      "ccNoCommand": "Нет команды — это происходит на экране входа в систему.",
+      "ccHelp": "↑/↓ Items  ←/→ Steps  Enter Copy  c Copy all",
+      "ccGridAria": "Дополнительные шаги установки",
+      "ccSteps": {
+        "key": {
+          "title": "Ключ подписи",
+          "description": "Доверять ключу упаковщика"
+        },
+        "repo": {
+          "title": "Репозиторий",
+          "description": "Включить argvus и argvus-extras"
+        },
+        "install": {
+          "title": "Установить",
+          "description": "Синхронизируйте и установите рабочий стол"
+        }
+      },
+      "ccItems": {
+        "download": {
+          "label": "Скачать ключ",
+          "note": "Saves the ARGVUS public signing key to /tmp/argvus.gpg."
+        },
+        "import": {
+          "label": "Импорт в pacman",
+          "note": "Добавляет ключ в связку ключей pacman."
+        },
+        "keyId": {
+          "label": "Прочитайте идентификатор ключа",
+          "note": "Извлекает идентификатор ключа в переменную ARGVUS_KEY."
+        },
+        "sign": {
+          "label": "Подпишите его локально",
+          "note": "Помечает ключ ARGVUS как доверенный на этом компьютере."
+        },
+        "conf": {
+          "label": "Установите argvus.conf",
+          "note": "Downloads the repository definition to /etc/pacman.d/argvus.conf."
+        },
+        "include": {
+          "label": "Включить в pacman.conf",
+          "note": "Adds the Include line to /etc/pacman.conf. Run it only once."
+        },
+        "pacman": {
+          "label": "Установить АРГВУС",
+          "note": "Синхронизирует базы данных и устанавливает метапакет argvus; зависимости берутся из одного и того же репозитория."
+        },
+        "session": {
+          "label": "Начать сеанс",
+          "note": "Выйдите из текущего сеанса и выберите сеанс ARGVUS на экране входа в систему."
+        }
+      },
+      "installGuide": "Руководство по установке",
+      "installRequirements": "Требования",
+      "installRequirementsList": [
+        "Арх Linux x86_64",
+        "Hyprland 0.57.0 (Wayland)",
+        "A GPU with Wayland/KMS support"
+      ],
+      "installVm": "Виртуальные машины",
+      "installChanges": "What changes on your system: the ARGVUS key is added to the pacman keyring, /etc/pacman.d/argvus.conf is created and pacman.conf gets one Include line. Installation writes nothing to your $HOME.",
+      "installVerify": "Проверка ключа подписи",
+      "installVerifyHint": "Сравните его с выводом pacman-key --finger, прежде чем подписывать его локально.",
+      "installSource": "Исходный код пакета",
+      "installPrivacy": "Конфиденциальность и безопасность",
+      "installCopyFingerprint": "Копировать отпечаток пальца",
+      "installScript": "сценарий быстрой установки, который необходимо прочитать перед его запуском.",
+      "installCmd": "sudo pacman -Syu argvus",
+      "supportEyebrow": "Поддержка",
+      "supportTitle": "Поддержка разработки ARGVUS",
+      "supportText": "ARGVUS поддерживается независимо. Взносы помогают покрыть инфраструктуру, обслуживание и развитие проекта, включая в будущем выделенный домен для ARGVUS.",
+      "supportBtn": "Внести свой вклад",
+      "supportAria": "Сумма взноса",
+      "supportStar": "Звезда на GitHub помогает другим людям найти ARGVUS.",
+      "supportStarBtn": "Звезда на GitHub",
+      "ctaTitle": "Попробуйте АРГВУС",
+      "ctaText": "Следуйте инструкциям по установке и получите полноценный, красивый, интегрированный рабочий стол Wayland, работающий за считанные минуты.",
+      "ctaPrimary": "Посмотреть руководство по установке",
+      "ctaSecondary": "Исследуйте репозиторий",
+      "footerTagline": "Модульная среда рабочего стола для Wayland и Arch Linux, созданная на базе Hyprland.",
+      "footerDocs": "Документация",
+      "footerDocsLinks": [
+        {
+          "label": "Введение",
+          "href": "docs/introduction/"
+        },
+        {
+          "label": "Установка",
+          "href": "docs/getting-started/installation/install/"
+        },
+        {
+          "label": "Внешний вид",
+          "href": "docs/user-guide/appearance/"
+        },
+        {
+          "label": "Сеансы",
+          "href": "docs/user-guide/sessions/"
+        },
+        {
+          "label": "Часто задаваемые вопросы",
+          "href": "docs/user-guide/faq/"
+        }
+      ],
+      "footerResources": "Ресурсы",
+      "footerResourcesLinks": [
+        {
+          "label": "Репозиторий Arch Linux",
+          "href": "packages/arch/"
+        }
+      ],
+      "footerProject": "Проект",
+      "footerAbout": "Об АРГВУС",
+      "footerLicense": "Лицензия GPL-3.0",
+      "footerMaintainer": "Поддерживается",
+      "bottomLicense": "Лицензия GPL-3.0.",
+      "feedbackEyebrow": "Обратная связь",
+      "feedbackTitle": "Ваши отзывы помогают формировать ARGVUS",
+      "feedbackText": "Нашли ошибку, у вас есть идея или вы хотите запросить новую функцию? У ARGVUS есть специальный репозиторий отзывов, где идеи и отчеты отслеживаются вместе с сообществом.",
+      "feedbackBtn": "Отправить отзыв",
+      "communityEyebrow": "Сообщество",
+      "communityTitle": "Присоединяйтесь к сообществу ARGVUS",
+      "communityText": "Следите за анонсами проекта или общайтесь с другими пользователями в наших Telegram-каналах.",
+      "communityChannels": [
+        {
+          "title": "Официальный канал",
+          "handle": "@argvusdesktop",
+          "href": "https://t.me/argvusdesktop",
+          "description": "Анонсы и новости АРГВУС."
+        },
+        {
+          "title": "Глобальное сообщество",
+          "handle": "@argvuscommunity",
+          "href": "https://t.me/argvuscommunity",
+          "description": "Общайтесь с сообществом ARGVUS."
+        },
+        {
+          "title": "Бразильское сообщество",
+          "handle": "@argvuscommunity_br",
+          "href": "https://t.me/argvuscommunity_br",
+          "description": "Общайтесь с сообществом ARGVUS на португальском языке."
+        }
+      ],
+      "footerCommunity": "Сообщество",
+      "statusTitle": "статус",
+      "statusLabel": "Статус проекта",
+      "statusText": "Все функции, показанные на этой странице, работают. Метка «Бета» существует, потому что ошибки, которые не были обнаружены при тестировании, все еще могут появиться — если вы их обнаружите, сообщите об этом в хранилище отзывов.",
+      "feedbackLink": "Репозиторий отзывов ARGVUS на GitHub",
+      "feedbackMade": "Создан для сообщества открытого исходного кода."
+    },
+    "about": {
+      "htmlLang": "ru",
+      "title": "Об АРГВУС — АРГВУС",
+      "description": "Зачем существует АРГВУС, откуда название и как услышать правильное произношение.",
+      "keywords": "argvus, об argvus, произношение argvus, hyprland, wayland, Arch Linux",
+      "navAria": "Основная навигация",
+      "navDocs": "Документация",
+      "github": "Гитхаб",
+      "langEnglish": "английский",
+      "langPortuguese": "Португальский",
+      "back": "Вернуться домой",
+      "aboutEyebrow": "О нас",
+      "aboutIntroTitle": "Что такое АРГВУС?",
+      "aboutIntroText": "ARGVUS — это модульная среда рабочего стола для Arch Linux, созданная на основе Wayland и Hyprland. Он объединяет сеанс, панель задач, панель управления, настройки и системную интеграцию в единое целое. Его компоненты распределены по пакетам, которые работают вместе, а команды и приложения Rust находятся в основной рабочей области. Проект ориентирован на быстрое и предсказуемое взаимодействие с клавиатурой в центре рабочего процесса.",
+      "aboutTitle": "Почему АРГВУС?",
+      "aboutArgv": "Вектор аргумента",
+      "aboutUs": "Пользовательская система",
+      "aboutText": "ARGVUS родился из простой идеи: рабочий стол разработчика не должен требовать от пользователя прерывания рабочего процесса для поиска элементов управления, навигации по меню или постоянной зависимости от мыши. Цель состоит в том, чтобы создать среду, в которой клавиатура является основной формой взаимодействия с системой, обеспечивая быстрый и предсказуемый доступ к действиям, приложениям и инструментам с помощью ярлыков и команд.",
+      "aboutText2": "Название отражает эту идею. ARGV, от вектора аргументов, относится к миру разработчиков и к тому, как аргументы используются для управления программами. США от User System представляет собой цель превратить эту философию в среду рабочего стола, ориентированную на пользователя.",
+      "aboutPronunciationLabel": "Послушайте произношение",
+      "aboutPronunciationHint": "Выберите язык, чтобы услышать, как произносится ARGVUS.",
+      "aboutPronunciationLanguage": "Язык",
+      "aboutPronunciationEnglish": "английский",
+      "aboutPronunciationPortuguese": "Португальский",
+      "aboutPronunciationAudio": "Аудио произношение ARGVUS",
+      "aboutMaintainer": "Проект поддерживается",
+      "aboutMaintainerLink": "Профиль Уильяма К. Канина на GitHub",
+      "footerLicense": "Лицензия GPL-3.0."
+    },
+    "header": {
+      "navAria": "Основная навигация",
+      "navDocs": "Документация",
+      "navArch": "Репозиторий",
+      "navArchArch": "Арх Linux",
+      "github": "Гитхаб",
+      "navDonate": "Пожертвовать",
+      "langAria": "Изменить язык",
+      "langEnglish": "английский",
+      "langPortuguese": "Португальский",
+      "themeAria": "Сменить тему",
+      "themeLight": "Свет",
+      "themeDark": "Темный",
+      "themeSystem": "Система",
+      "navMenu": "Меню",
+      "beta": "Бета"
+    },
+    "footer": {
+      "tagline": "Модульная среда рабочего стола для Wayland и Arch Linux, созданная на базе Hyprland.",
+      "docs": "Документация",
+      "docsLinks": [
+        [
+          "Введение",
+          "docs/introduction/"
+        ],
+        [
+          "Установка",
+          "docs/getting-started/installation/install/"
+        ],
+        [
+          "Внешний вид",
+          "docs/user-guide/appearance/"
+        ],
+        [
+          "Сеансы",
+          "docs/user-guide/sessions/"
+        ],
+        [
+          "Часто задаваемые вопросы",
+          "docs/user-guide/faq/"
+        ]
+      ],
+      "resources": "Ресурсы",
+      "resourceLinks": [
+        [
+          "Об АРГВУС",
+          "about/"
+        ],
+        [
+          "Гитхаб",
+          "https://github.com/orgs/argvus"
+        ],
+        [
+          "Репозиторий Arch Linux",
+          "/packages/arch/"
+        ]
+      ],
+      "community": "Сообщество",
+      "feedback": "Создан для сообщества открытого исходного кода.",
+      "license": "Лицензия GPL-3.0.",
+      "maintainer": "Поддерживается Уильямом К. Канином.",
+      "channels": [
+        [
+          "Официальный канал",
+          "https://t.me/argvusdesktop"
+        ],
+        [
+          "Глобальное сообщество",
+          "https://t.me/argvuscommunity"
+        ],
+        [
+          "Бразильское сообщество",
+          "https://t.me/argvuscommunity_br"
+        ]
+      ]
+    },
+    "agents": {
+      "eyebrow": "ИИ-агенты",
+      "title": "Ваши агенты.",
+      "accent": "Один ярлык.",
+      "lead": "От первого запроса до следующего изменения кода. Откройте Codex, Claude Code или OpenCode с помощью одного селектора прямо в терминале ARGVUS.",
+      "shortcutLabel": "Начните с клавиатуры",
+      "shortcutHint": "Откройте селектор. Выберите своего агента.",
+      "sectionLabel": "Агенты кодирования, интегрированные с ARGVUS",
+      "codex": "Агент кодирования OpenAI, доступный из панели запуска и готовый к открытию в собственном терминале вашего рабочего стола.",
+      "claude": "Агент кодирования Anthropic, устанавливаемый в ваш профиль пользователя через Mise при первом его открытии.",
+      "opencode": "Агент кодирования с открытым исходным кодом, интегрированный с тем же процессом выбора и запуска, что и другие ваши агенты.",
+      "packaged": "Устанавливается с помощью argvus-ai",
+      "onDemand": "Устанавливается при первом запуске",
+      "upstream": "Изучите агента",
+      "workflowTitle": "Выберите свой инструмент. Сохраняйте свой поток.",
+      "workflowText": "Сочетание клавиш, робот на панели задач или средство запуска приложений: каждая точка входа открывает собственный терминал. Агент – ваш выбор.",
+      "cta": "Исследуйте ARGVUS AI",
+      "install": "Установка и первое использование",
+      "codexAlt": "Знак OpenAI, создателей Кодекса",
+      "claudeAlt": "Клод Марк",
+      "opencodeAlt": "Знак OpenCode",
+      "openSource": "Открытый исходный код"
+    }
+  },
+  "ko": {
+    "landing": {
+      "htmlLang": "ko",
+      "title": "ARGVUS — Hyprland를 기반으로 구축된 Wayland 및 Arch Linux용 모듈식 데스크탑 환경입니다.",
+      "description": "ARGVUS는 ARGVUS 이동식 장치, Waybar, 통합 테마 및 서명된 Arch Linux 패키지를 갖춘 완전한 Hyprland 및 Wayland 데스크탑입니다.",
+      "keywords": "argvus, argvus linux, hiprland, wayland, arch linux, 데스크탑 환경, argvus 이동식 장치, waybar, linux 데스크탑, pacman 저장소",
+      "navAria": "기본 탐색",
+      "navMenu": "메뉴",
+      "navDocs": "문서",
+      "navArch": "저장소",
+      "navArchArch": "아치 리눅스",
+      "navDonate": "기부",
+      "github": "GitHub",
+      "langAria": "언어 변경",
+      "langEnglish": "영어",
+      "langPortuguese": "포르투갈어",
+      "themesRepositoryLabel": "저장소에서 설치",
+      "themesRepositoryHint": "또는 하나의 명령에 여러 테마",
+      "themesGuideLink": "테마 가이드 →",
+      "windowModeHint": "부동 창 모드와 타일 창 모드 사이를 전환하려면 SUPER + Alt + Space를 누르세요.",
+      "carouselPrevious": "이전",
+      "carouselNext": "다음",
+      "carouselSlide": "슬라이드",
+      "supportStarLabel": "별",
+      "currencyAria": "통화",
+      "currencyUsd": "미국 달러(USD)",
+      "currencyBrl": "브라질 헤알(BRL)",
+      "themeAria": "테마 변경",
+      "themeLight": "빛",
+      "themeDark": "어두움",
+      "themeSystem": "시스템",
+      "heroTitle1": "바로 사용할 수 있는 모듈식 데스크탑 환경입니다.",
+      "heroAccent": "하이프랜드를 중심으로.",
+      "heroLead": "도트파일 그 이상: 관리되는 세션, Quickshell 셸, Waybar 작업 표시줄, 기본 설정 및 공식 테마 — Arch Linux용으로 통합되고 경량이며 패키지되어 있습니다. 블로트웨어 없이 개발자를 위해 제작되었습니다.",
+      "versionBadge": "ARGVUS v${version}",
+      "btnInstall": "지금 설치",
+      "btnDocs": "문서",
+      "heroCopy": "복사 명령",
+      "heroCopied": "복사됨",
+      "heroInstallHint": "빠른 설치. 단계별로 진행하는 것을 선호하시나요?",
+      "heroInstallLink": "고급 설치",
+      "heroShotAlt": "ARGVUS 테마가 포함된 ARGVUS 데스크탑",
+      "heroStackLabel": "내장",
+      "carouselOpen": "전체 화면으로 이미지 열기",
+      "carouselClose": "전체 화면 이미지 닫기",
+      "screenshotsEyebrow": "미리보기",
+      "screenshotsTitle": "ARGVUS가 새로운 분위기를 연출하는 것을 보세요",
+      "screenshotsSubtitle": "모양을 선택하기 전에 데스크탑이 움직이는 모습(테마, 모드, 기본 앱이 함께 작동하는 모습)을 지켜보세요.",
+      "videoPlay": "동영상 보기",
+      "videoTitle": "ARGVUS 소개 영상",
+      "screenshotsSubtitleStatic": "작업 표시줄, 측면 패널 및 실행기가 열려 있는 부동 모드의 ARGVUS Dark의 실제 캡처입니다.",
+      "videoPosterAlt": "argvus --start-desktop 명령을 사용한 ARGVUS 로고",
+      "componentsEyebrow": "구성요소",
+      "componentsTitle": "이미 알고 있는 소프트웨어로 제작됨",
+      "componentsSubtitle": "ARGVUS는 경험을 더 작은 공식 패키지로 분할하며 모두 argvus 메타패키지에 의해 사전 구성되고 조정됩니다.",
+      "componentDesc": {
+        "hyprland": "ARGVUS에 생명을 불어넣는 Wayland 컴포지터: 타일링, 작업 공간, 부드러운 애니메이션 및 전체 키 바인딩.",
+        "waybar": "시스템, 미디어, 네트워크, 스토리지 및 바로가기 모듈이 포함된 상태 표시줄입니다.",
+        "quickshell": "날씨, 네트워크, 달력, 밝기, 볼륨 및 알림이 포함된 QML 시스템 사이드바.",
+        "rofi": "응용프로그램 실행기, 창 전환기 및 메뉴 — 모두 통합된 테마를 사용합니다.",
+        "superfile": "전용 키 바인딩을 갖춘 빠르고 완벽하게 구성 가능한 TUI 파일 관리자입니다.",
+        "btop": "실시간 CPU, 메모리, 네트워크 및 프로세스를 갖춘 시스템 모니터입니다.",
+        "hyprlock": "Hyprland 생태계와 동기화된 테마가 통합된 잠금화면입니다.",
+        "storage": "Waybar 바용 Rust 기반 이동식 저장 모듈입니다."
+      },
+      "keyLabels": [
+        "미리보기",
+        "구성요소",
+        "작업 표시줄",
+        "창 모드",
+        "앱",
+        "AI 에이전트",
+        "테마"
+      ],
+      "keysAria": "섹션 탐색",
+      "waybarEyebrow": "작업 표시줄",
+      "waybarTitle": "상단 또는 하단의 상태 표시줄",
+      "waybarSubtitle": "ARGVUS 메인 바는 탐색, 미디어, 시스템 상태 및 기본 앱을 결합하며 클릭이나 바로가기를 통해 화면 상단이나 하단에 위치할 수 있습니다. 위치는 세션 전반에 걸쳐 기억됩니다.",
+      "waybarIntro": "Waybar를 기반으로 구축된 바는 모든 테마에 걸쳐 통일된 모양으로 일상적인 컨트롤을 한 곳에 그룹화합니다.",
+      "waybarFeatures": [
+        {
+          "icon": "fa-solid fa-star",
+          "text": "Top/bottom position via shortcut (SUPER + Alt + ↑/↓) or the sidebar."
+        },
+        {
+          "icon": "fa-solid fa-bars-staggered",
+          "text": "초점이 맞춰진 창 컨텍스트를 갖춘 탐색 가능한 작업 공간."
+        },
+        {
+          "icon": "fa-solid fa-music",
+          "text": "활성 플레이어가 강조 표시된 미디어 제어(mpris)."
+        },
+        {
+          "icon": "fa-solid fa-gauge-high",
+          "text": "네트워크, CPU, 메모리, 온도 및 전원 프로필 상태."
+        },
+        {
+          "icon": "fa-solid fa-calendar-days",
+          "text": "날짜 클릭 시 ARGVUS 작업 표시줄 달력."
+        },
+        {
+          "icon": "fa-solid fa-bolt",
+          "text": "ARGVUS Removable Devices는 Rust 기반의 이동식 저장 모듈입니다."
+        },
+        {
+          "icon": "fa-solid fa-table-cells",
+          "text": "상태 아이콘이 있는 앱용 시스템 트레이입니다."
+        },
+        {
+          "icon": "fa-solid fa-magnifying-glass",
+          "text": "바에서 바로 빠른 앱 및 명령 검색이 가능합니다."
+        }
+      ],
+      "windowModeEyebrow": "창 모드",
+      "windowModeTitle": "타일식 또는 부동 창",
+      "windowModeSubtitle": "응용 프로그램 창에서 데스크탑을 사용하는 방법을 선택합니다. 모드는 전역적이며 세션 전반에 걸쳐 지속되며 제어 센터 또는 작업 표시줄 아이콘에서 변경할 수 있습니다.",
+      "windowModeTile": "창 타일",
+      "windowModeFloat": "창 부동",
+      "windowModeTileText": "창은 일정한 간격을 두고 나란히 배열됩니다.",
+      "windowModeFloatText": "창은 겹칠 수 있으며 작업 표시줄 반대쪽 가장자리에 있는 창 표시줄과 쌍을 이룹니다.",
+      "appsEyebrow": "앱",
+      "appsTitle": "데스크탑용 기본 도구",
+      "appsSubtitle": "환경 구성 외에도 ARGVUS에는 바, 패널 및 세션과의 긴밀한 통합이 필요한 워크플로를 위한 자사 앱이 포함되어 있습니다.",
+      "appStorageText": "ARGVUS 이동식 장치는 ARGVUS 이동식 저장 앱입니다. 장치를 감지하고 드라이브를 마운트, 마운트 해제 및 꺼내기 위한 빠른 작업을 제공하며 일관된 경험으로 Waybar 스토리지 모듈에 전원을 공급합니다.",
+      "appCalendarText": "ARGVUS 작업 표시줄 달력은 데스크탑에서 사용되는 기본 달력입니다. Wayland 흐름을 벗어나지 않고도 약속을 확인할 수 있는 빠른 월별 보기, 간단한 탐색 및 이벤트 통합을 제공합니다.",
+      "appCalendarEventsText": "이벤트 보기는 간단한 약속 목록으로 달력을 보완하여 ARGVUS 생태계 내에서 중요한 날짜를 가까이에 유지합니다.",
+      "appFocusText": "ARGVUS Focus는 데스크톱에서 직접 사용할 수 있는 집중 세션과 휴식 시간을 통해 작업에 집중할 수 있도록 도와줍니다.",
+      "appClockText": "ARGVUS 시계는 기본 도구에 시계와 타이머를 함께 제공하므로 작업 흐름을 벗어나지 않고도 시간을 추적할 수 있습니다.",
+      "appDefaultAppsText": "ARGVUS Control Center is the native ARGVUS configuration center. Apps sets the default applications, and Fonts applies typography to GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, the lock screen and official apps.",
+      "controlCenterFeatures": [
+        {
+          "title": "외관",
+          "text": "Themes, Sticky/Float modes, accents, wallpapers, effects, taskbar layout and Control Panel cards."
+        },
+        {
+          "title": "글꼴",
+          "text": "작업 표시줄, 원격 측정, 제어판, 시스템, 응용 프로그램, 터미널 및 브라우저에 대한 인쇄 체계를 구성합니다."
+        },
+        {
+          "title": "기본 애플리케이션",
+          "text": "ARGVUS에서 인식하는 역할에 대한 기본 애플리케이션을 선택하세요."
+        },
+        {
+          "title": "하드웨어 및 입력",
+          "text": "기능을 사용할 수 있는 경우 마우스, 터치패드, 키보드, 단축키 및 디스플레이를 조정하십시오."
+        },
+        {
+          "title": "네트워크, 오디오 및 블루투스",
+          "text": "설치 시 제공되는 연결 및 오디오 모듈에 액세스합니다."
+        },
+        {
+          "title": "세션 및 시스템",
+          "text": "전원, 세션, 서비스, 패키지, 저장소 및 진단을 검사하고 구성합니다."
+        }
+      ],
+      "aboutMaintainerLink": "William C. Canin GitHub 프로필",
+      "aboutSupportPaypal": "PayPal을 통해 기부할 때 올바른 계정이 다음과 같이 표시됩니다.",
+      "themesEyebrow": "테마",
+      "themesTitle": "22가지 테마, 2가지 모드, 1가지 시스템",
+      "themesSubtitle": "각각 고정 및 간격 모드가 있는 공유 시각적 계열입니다. 모두 공식 ARGVUS 저장소에서 Arch Linux 패키지로 제공됩니다.",
+      "themesAccentLabel": "독립된 악센트",
+      "themesTabsAria": "테마 카테고리",
+      "themesDarkTab": "어두운 테마",
+      "themesLightTab": "밝은 테마",
+      "themesCopyText": "공식 제품군을 살펴보고 미리보기에서 직접 팔레트를 비교해 보세요. 모든 패밀리에는 시각적 정체성을 변경하지 않고 형상과 표면 처리를 변경하는 고정 및 간격 모드가 있습니다. 모든 테마는 저장소에서 개별 패키지로 사용할 수 있습니다. 강조 색상은 독립적으로 유지되며 ARGVUS 제어 센터 → 모양 → 강조 색상에서 선택할 수 있습니다.",
+      "themesDefaultLabel": "기본값",
+      "themeModeSticky": "고정",
+      "themeModeFloat": "간격",
+      "archTitle": "모든 단계가 눈에 잘 띄게",
+      "archSubtitle": "페이지 상단의 명령이 이 모든 작업을 수행합니다. 각 명령을 직접 보고 실행하려면 아래 세 단계를 따르세요. 서명된 ARGVUS 저장소를 pacman에 추가하고 argvus 메타패키지를 설치합니다. 제어 센터처럼 찾아보세요. 선택하려면 화살표 키를, 복사하려면 Enter 키를 누르세요.",
+      "ccTitle": "고급 설치",
+      "ccSubtitle": "서명된 저장소 + argvus 메타패키지, 단계별",
+      "ccRepository": "저장소",
+      "ccCommand": "명령",
+      "ccCopy": "복사",
+      "ccCopyAll": "모두",
+      "ccCopied": "명령이 복사되었습니다.",
+      "ccCopiedAll": "모든 명령이 복사되었습니다.",
+      "ccNoCommand": "명령 없음 — 로그인 화면에서 발생합니다.",
+      "ccHelp": "↑/↓ Items  ←/→ Steps  Enter Copy  c Copy all",
+      "ccGridAria": "고급 설치 단계",
+      "ccSteps": {
+        "key": {
+          "title": "서명 키",
+          "description": "패키저 키를 신뢰하십시오"
+        },
+        "repo": {
+          "title": "저장소",
+          "description": "argvus 및 argvus-extras 활성화"
+        },
+        "install": {
+          "title": "설치",
+          "description": "데스크탑 동기화 및 설치"
+        }
+      },
+      "ccItems": {
+        "download": {
+          "label": "키 다운로드",
+          "note": "Saves the ARGVUS public signing key to /tmp/argvus.gpg."
+        },
+        "import": {
+          "label": "팩맨으로 가져오기",
+          "note": "팩맨 키링에 키를 추가합니다."
+        },
+        "keyId": {
+          "label": "키 ID 읽기",
+          "note": "키 ID를 ARGVUS_KEY 변수로 추출합니다."
+        },
+        "sign": {
+          "label": "로컬로 서명하세요.",
+          "note": "이 시스템에서 ARGVUS 키를 신뢰할 수 있는 것으로 표시합니다."
+        },
+        "conf": {
+          "label": "argvus.conf 설치",
+          "note": "Downloads the repository definition to /etc/pacman.d/argvus.conf."
+        },
+        "include": {
+          "label": "pacman.conf에 포함",
+          "note": "Adds the Include line to /etc/pacman.conf. Run it only once."
+        },
+        "pacman": {
+          "label": "ARGVUS 설치",
+          "note": "데이터베이스를 동기화하고 argvus 메타패키지를 설치합니다. 종속성은 동일한 저장소에서 나옵니다."
+        },
+        "session": {
+          "label": "세션을 시작하세요",
+          "note": "현재 세션에서 로그아웃하고 로그인 화면에서 ARGVUS 세션을 선택하세요."
+        }
+      },
+      "installGuide": "설치 가이드",
+      "installRequirements": "요구 사항",
+      "installRequirementsList": [
+        "아치 리눅스 x86_64",
+        "하이프랜드 0.57.0 (웨이랜드)",
+        "A GPU with Wayland/KMS support"
+      ],
+      "installVm": "가상 머신",
+      "installChanges": "What changes on your system: the ARGVUS key is added to the pacman keyring, /etc/pacman.d/argvus.conf is created and pacman.conf gets one Include line. Installation writes nothing to your $HOME.",
+      "installVerify": "서명 키를 확인하세요",
+      "installVerifyHint": "로컬로 서명하기 전에 pacman-key --finger의 출력과 비교하십시오.",
+      "installSource": "패키지 소스 코드",
+      "installPrivacy": "개인 정보 보호 및 보안",
+      "installCopyFingerprint": "지문 복사",
+      "installScript": "실행하기 전에 읽어야 할 빠른 설치 프로그램 스크립트",
+      "installCmd": "sudo pacman -Syu argvus",
+      "supportEyebrow": "지원",
+      "supportTitle": "ARGVUS 개발 지원",
+      "supportText": "ARGVUS는 독립적으로 유지 관리됩니다. 기여는 향후 ARGVUS 전용 도메인을 포함하여 인프라, 유지 관리 및 프로젝트 발전을 다루는 데 도움이 됩니다.",
+      "supportBtn": "기여",
+      "supportAria": "기부금액",
+      "supportStar": "GitHub의 스타는 다른 사람들이 ARGVUS를 찾는 데 도움을 줍니다.",
+      "supportStarBtn": "GitHub의 스타",
+      "ctaTitle": "ARGVUS를 사용해 보세요",
+      "ctaText": "설치 가이드에 따라 완벽하고 아름다운 통합 Wayland 데스크탑을 몇 분 만에 실행해 보세요.",
+      "ctaPrimary": "설치 가이드 보기",
+      "ctaSecondary": "저장소 탐색",
+      "footerTagline": "Hyprland를 기반으로 구축된 Wayland 및 Arch Linux용 모듈식 데스크탑 환경입니다.",
+      "footerDocs": "문서",
+      "footerDocsLinks": [
+        {
+          "label": "소개",
+          "href": "docs/introduction/"
+        },
+        {
+          "label": "설치",
+          "href": "docs/getting-started/installation/install/"
+        },
+        {
+          "label": "외관",
+          "href": "docs/user-guide/appearance/"
+        },
+        {
+          "label": "세션",
+          "href": "docs/user-guide/sessions/"
+        },
+        {
+          "label": "FAQ",
+          "href": "docs/user-guide/faq/"
+        }
+      ],
+      "footerResources": "리소스",
+      "footerResourcesLinks": [
+        {
+          "label": "아치 리눅스 리포지토리",
+          "href": "packages/arch/"
+        }
+      ],
+      "footerProject": "프로젝트",
+      "footerAbout": "ARGVUS 소개",
+      "footerLicense": "GPL-3.0 라이센스",
+      "footerMaintainer": "유지관리자",
+      "bottomLicense": "GPL-3.0에 따라 라이선스가 부여됨",
+      "feedbackEyebrow": "피드백",
+      "feedbackTitle": "귀하의 의견은 ARGVUS를 형성하는 데 도움이 됩니다",
+      "feedbackText": "버그를 발견했거나 아이디어가 있거나 기능을 요청하고 싶으십니까? ARGVUS에는 아이디어와 보고서가 커뮤니티와 함께 ​​추적되는 전용 피드백 저장소가 있습니다.",
+      "feedbackBtn": "피드백 보내기",
+      "communityEyebrow": "커뮤니티",
+      "communityTitle": "ARGVUS 커뮤니티와 연결",
+      "communityText": "프로젝트 공지를 따르거나 텔레그램 채널에서 다른 사용자와 채팅하세요.",
+      "communityChannels": [
+        {
+          "title": "공식 채널",
+          "handle": "@argvusdesktop",
+          "href": "https://t.me/argvusdesktop",
+          "description": "ARGVUS 공지사항 및 뉴스."
+        },
+        {
+          "title": "글로벌 커뮤니티",
+          "handle": "@argvuscommunity",
+          "href": "https://t.me/argvuscommunity",
+          "description": "ARGVUS 커뮤니티와 채팅하세요."
+        },
+        {
+          "title": "브라질 커뮤니티",
+          "handle": "@argvuscommunity_br",
+          "href": "https://t.me/argvuscommunity_br",
+          "description": "포르투갈어로 ARGVUS 커뮤니티와 채팅하세요."
+        }
+      ],
+      "footerCommunity": "커뮤니티",
+      "statusTitle": "상태",
+      "statusLabel": "프로젝트 상태",
+      "statusText": "이 페이지에 표시된 모든 기능이 작동합니다. 베타 라벨은 테스트에서 발견하지 못한 버그가 계속 나타날 수 있기 때문에 존재합니다. 버그를 발견하면 피드백 저장소에 보고해 주세요.",
+      "feedbackLink": "GitHub의 ARGVUS 피드백 저장소",
+      "feedbackMade": "오픈 소스 커뮤니티를 위해 구축됨"
+    },
+    "about": {
+      "htmlLang": "ko",
+      "title": "ARGVUS 소개 — ARGVUS",
+      "description": "ARGVUS가 존재하는 이유, 이름의 유래, 정확한 발음을 듣는 방법.",
+      "keywords": "argvus, argvus 정보, argvus 발음, 하이프랜드, 웨이랜드, 아치 리눅스",
+      "navAria": "기본 탐색",
+      "navDocs": "문서",
+      "github": "GitHub",
+      "langEnglish": "영어",
+      "langPortuguese": "포르투갈어",
+      "back": "집으로 돌아가기",
+      "aboutEyebrow": "소개",
+      "aboutIntroTitle": "ARGVUS란 무엇인가요?",
+      "aboutIntroText": "ARGVUS는 Wayland 및 Hyprland를 기반으로 구축된 Arch Linux용 모듈식 데스크탑 환경입니다. 세션, 작업 표시줄, 제어판, 설정 및 시스템 통합을 하나의 응집력 있는 경험으로 통합합니다. 해당 구성 요소는 함께 작동하는 패키지에 분산되어 있으며 Rust 명령과 응용 프로그램은 기본 작업 공간에 있습니다. 이 프로젝트는 워크플로의 중심에 있는 키보드를 사용하여 빠르고 예측 가능한 상호 작용에 중점을 둡니다.",
+      "aboutTitle": "왜 ARGVUS인가요?",
+      "aboutArgv": "인수 벡터",
+      "aboutUs": "사용자 시스템",
+      "aboutText": "ARGVUS는 간단한 아이디어에서 탄생했습니다. 개발자 데스크탑은 사용자가 컨트롤을 찾거나 메뉴를 탐색하거나 지속적으로 마우스에 의존하기 위해 흐름을 중단하도록 요구해서는 안 됩니다. 목표는 키보드가 시스템 상호 작용의 주요 형태인 환경을 구축하여 빠르고 예측 가능한 방식으로 단축키와 명령을 통해 작업, 애플리케이션 및 도구에 액세스할 수 있도록 하는 것입니다.",
+      "aboutText2": "이름은 이러한 아이디어를 나타냅니다. 인수 벡터의 ARGV는 개발자의 세계와 인수가 프로그램을 제어하는 ​​데 사용되는 방식을 나타냅니다. User System의 US는 이러한 철학을 사용자 중심의 데스크탑 환경으로 전환하려는 목표를 나타냅니다.",
+      "aboutPronunciationLabel": "발음을 들어보세요",
+      "aboutPronunciationHint": "ARGVUS의 발음을 들으려면 언어를 선택하세요.",
+      "aboutPronunciationLanguage": "언어",
+      "aboutPronunciationEnglish": "영어",
+      "aboutPronunciationPortuguese": "포르투갈어",
+      "aboutPronunciationAudio": "ARGVUS 발음 오디오",
+      "aboutMaintainer": "프로젝트 유지관리자",
+      "aboutMaintainerLink": "William C. Canin GitHub 프로필",
+      "footerLicense": "GPL-3.0에 따라 라이선스가 부여됨"
+    },
+    "header": {
+      "navAria": "기본 탐색",
+      "navDocs": "문서",
+      "navArch": "저장소",
+      "navArchArch": "아치 리눅스",
+      "github": "GitHub",
+      "navDonate": "기부",
+      "langAria": "언어 변경",
+      "langEnglish": "영어",
+      "langPortuguese": "포르투갈어",
+      "themeAria": "테마 변경",
+      "themeLight": "빛",
+      "themeDark": "어두움",
+      "themeSystem": "시스템",
+      "navMenu": "메뉴",
+      "beta": "베타"
+    },
+    "footer": {
+      "tagline": "Hyprland를 기반으로 구축된 Wayland 및 Arch Linux용 모듈식 데스크탑 환경입니다.",
+      "docs": "문서",
+      "docsLinks": [
+        [
+          "소개",
+          "docs/introduction/"
+        ],
+        [
+          "설치",
+          "docs/getting-started/installation/install/"
+        ],
+        [
+          "외관",
+          "docs/user-guide/appearance/"
+        ],
+        [
+          "세션",
+          "docs/user-guide/sessions/"
+        ],
+        [
+          "FAQ",
+          "docs/user-guide/faq/"
+        ]
+      ],
+      "resources": "리소스",
+      "resourceLinks": [
+        [
+          "ARGVUS 소개",
+          "about/"
+        ],
+        [
+          "GitHub",
+          "https://github.com/orgs/argvus"
+        ],
+        [
+          "아치 리눅스 리포지토리",
+          "/packages/arch/"
+        ]
+      ],
+      "community": "커뮤니티",
+      "feedback": "오픈 소스 커뮤니티를 위해 구축됨",
+      "license": "GPL-3.0에 따라 라이선스가 부여됨",
+      "maintainer": "William C. Canin이 관리함",
+      "channels": [
+        [
+          "공식 채널",
+          "https://t.me/argvusdesktop"
+        ],
+        [
+          "글로벌 커뮤니티",
+          "https://t.me/argvuscommunity"
+        ],
+        [
+          "브라질 커뮤니티",
+          "https://t.me/argvuscommunity_br"
+        ]
+      ]
+    },
+    "agents": {
+      "eyebrow": "AI 에이전트",
+      "title": "귀하의 대리인.",
+      "accent": "하나의 단축키.",
+      "lead": "첫 번째 프롬프트부터 다음 코드 변경까지. ARGVUS 터미널에서 바로 하나의 선택기에서 Codex, Claude Code 또는 OpenCode를 열 수 있습니다.",
+      "shortcutLabel": "키보드에서 시작",
+      "shortcutHint": "선택기를 엽니다. 대리인을 선택하세요.",
+      "sectionLabel": "ARGVUS와 통합된 코딩 에이전트",
+      "codex": "OpenAI의 코딩 에이전트는 런처에서 사용할 수 있으며 데스크톱의 기본 터미널에서 열 수 있습니다.",
+      "claude": "처음 열 때 mise를 통해 사용자 프로필에 설치되는 Anthropic의 코딩 에이전트입니다.",
+      "opencode": "다른 에이전트와 동일한 선택 및 실행 흐름이 통합된 오픈 소스 코딩 에이전트입니다.",
+      "packaged": "argvus-ai와 함께 설치됨",
+      "onDemand": "처음 실행 시 설치됨",
+      "upstream": "에이전트 탐색",
+      "workflowTitle": "도구를 선택하세요. 흐름을 유지하세요.",
+      "workflowText": "키보드 단축키, 작업 표시줄 로봇 또는 응용 프로그램 실행 프로그램: 모든 진입점은 기본 터미널을 엽니다. 대리인은 귀하의 선택입니다.",
+      "cta": "ARGVUS AI 살펴보기",
+      "install": "설치 및 최초 사용",
+      "codexAlt": "OpenAI 마크, Codex의 창시자",
+      "claudeAlt": "클로드 마크",
+      "opencodeAlt": "OpenCode 마크",
+      "openSource": "오픈 소스"
+    }
+  }
+}
