@@ -81,7 +81,7 @@
       "waybarFeatures": [
         {
           "icon": "fa-solid fa-star",
-          "text": "Top/bottom position via shortcut (SUPER + Alt + ↑/↓) or the sidebar."
+          "text": "Posición superior/inferior mediante el atajo (SUPER + Alt + ↑/↓) o la barra lateral."
         },
         {
           "icon": "fa-solid fa-bars-staggered",
@@ -127,11 +127,11 @@
       "appCalendarEventsText": "La vista de eventos complementa el calendario con una lista compacta de citas, manteniendo las fechas importantes a mano dentro del ecosistema ARGVUS.",
       "appFocusText": "ARGVUS Focus le ayuda a concentrarse en su tarea con sesiones de concentración y descansos disponibles directamente desde el escritorio.",
       "appClockText": "ARGVUS Clock reúne un reloj y temporizadores en una herramienta nativa, para que pueda realizar un seguimiento del tiempo sin salir de su flujo de trabajo.",
-      "appDefaultAppsText": "ARGVUS Control Center is the native ARGVUS configuration center. Apps sets the default applications, and Fonts applies typography to GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, the lock screen and official apps.",
+      "appDefaultAppsText": "ARGVUS Control Center es el centro de configuración nativo de ARGVUS. Apps establece las aplicaciones predeterminadas y Fonts aplica la tipografía a GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, la pantalla de bloqueo y las aplicaciones oficiales.",
       "controlCenterFeatures": [
         {
           "title": "Apariencia",
-          "text": "Themes, Sticky/Float modes, accents, wallpapers, effects, taskbar layout and Control Panel cards."
+          "text": "Temas, modos de ventana Fijo/Espaciado, colores de acento, fondos de pantalla, efectos, diseño de la barra de tareas y tarjetas del Panel de Control."
         },
         {
           "title": "Fuentes",
@@ -178,7 +178,7 @@
       "ccCopied": "Comando copiado",
       "ccCopiedAll": "Todos los comandos copiados",
       "ccNoCommand": "Sin comando: esto sucede en la pantalla de inicio de sesión",
-      "ccHelp": "↑/↓ Items  ←/→ Steps  Enter Copy  c Copy all",
+      "ccHelp": "↑/↓ Elementos  ←/→ Pasos  Enter Copiar  c Copiar todo",
       "ccGridAria": "Pasos de instalación avanzados",
       "ccSteps": {
         "key": {
@@ -197,7 +197,7 @@
       "ccItems": {
         "download": {
           "label": "Descargar la clave",
-          "note": "Saves the ARGVUS public signing key to /tmp/argvus.gpg."
+          "note": "Guarda la clave pública de firma de ARGVUS en /tmp/argvus.gpg."
         },
         "import": {
           "label": "Importar a pacman",
@@ -213,11 +213,11 @@
         },
         "conf": {
           "label": "Instalar argvus.conf",
-          "note": "Downloads the repository definition to /etc/pacman.d/argvus.conf."
+          "note": "Descarga la definición del repositorio en /etc/pacman.d/argvus.conf."
         },
         "include": {
           "label": "Incluir en pacman.conf",
-          "note": "Adds the Include line to /etc/pacman.conf. Run it only once."
+          "note": "Añade la línea Include a /etc/pacman.conf. Ejecútalo una sola vez."
         },
         "pacman": {
           "label": "Instalar ARGVUS",
@@ -233,10 +233,10 @@
       "installRequirementsList": [
         "Arco Linux x86_64",
         "Hyprland 0.57.0 (Wayland)",
-        "A GPU with Wayland/KMS support"
+        "Una GPU compatible con Wayland/KMS"
       ],
       "installVm": "Máquinas virtuales",
-      "installChanges": "What changes on your system: the ARGVUS key is added to the pacman keyring, /etc/pacman.d/argvus.conf is created and pacman.conf gets one Include line. Installation writes nothing to your $HOME.",
+      "installChanges": "Qué cambiará en el sistema: se añadirá la clave de ARGVUS al anillo de claves de pacman, se creará /etc/pacman.d/argvus.conf y se añadirá una línea Include a pacman.conf. La instalación no escribe nada en $HOME.",
       "installVerify": "Verificar la clave de firma",
       "installVerifyHint": "Compárelo con la salida de pacman-key --finger antes de firmarlo localmente.",
       "installSource": "Código fuente del paquete",
@@ -536,7 +536,7 @@
       "waybarFeatures": [
         {
           "icon": "fa-solid fa-star",
-          "text": "Top/bottom position via shortcut (SUPER + Alt + ↑/↓) or the sidebar."
+          "text": "Position en haut ou en bas via le raccourci (SUPER + Alt + ↑/↓) ou la barre latérale."
         },
         {
           "icon": "fa-solid fa-bars-staggered",
@@ -582,11 +582,11 @@
       "appCalendarEventsText": "La vue des événements complète le calendrier avec une liste compacte de rendez-vous, gardant les dates importantes à portée de main au sein de l'écosystème ARGVUS.",
       "appFocusText": "ARGVUS Focus vous aide à rester concentré sur votre tâche avec des sessions de concentration et des pauses disponibles directement depuis le bureau.",
       "appClockText": "ARGVUS Clock rassemble une horloge et des minuteries dans un outil natif, afin que vous puissiez suivre le temps sans quitter votre flux de travail.",
-      "appDefaultAppsText": "ARGVUS Control Center is the native ARGVUS configuration center. Apps sets the default applications, and Fonts applies typography to GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, the lock screen and official apps.",
+      "appDefaultAppsText": "ARGVUS Control Center est le centre de configuration natif d’ARGVUS. Apps définit les applications par défaut et Fonts applique la typographie à GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, l’écran de verrouillage et les applications officielles.",
       "controlCenterFeatures": [
         {
           "title": "Apparence",
-          "text": "Themes, Sticky/Float modes, accents, wallpapers, effects, taskbar layout and Control Panel cards."
+          "text": "Thèmes, modes de fenêtre Fixe/Espacé, couleurs d’accentuation, fonds d’écran, effets, disposition de la barre des tâches et cartes du panneau de contrôle."
         },
         {
           "title": "Polices",
@@ -633,7 +633,7 @@
       "ccCopied": "Commande copiée",
       "ccCopiedAll": "Toutes les commandes copiées",
       "ccNoCommand": "Aucune commande — cela se produit sur l'écran de connexion",
-      "ccHelp": "↑/↓ Items  ←/→ Steps  Enter Copy  c Copy all",
+      "ccHelp": "↑/↓ Éléments  ←/→ Étapes  Entrée Copier  c Tout copier",
       "ccGridAria": "Étapes d'installation avancées",
       "ccSteps": {
         "key": {
@@ -652,7 +652,7 @@
       "ccItems": {
         "download": {
           "label": "Télécharger la clé",
-          "note": "Saves the ARGVUS public signing key to /tmp/argvus.gpg."
+          "note": "Enregistre la clé publique de signature ARGVUS dans /tmp/argvus.gpg."
         },
         "import": {
           "label": "Importer dans Pacman",
@@ -668,11 +668,11 @@
         },
         "conf": {
           "label": "Installer argvus.conf",
-          "note": "Downloads the repository definition to /etc/pacman.d/argvus.conf."
+          "note": "Télécharge la définition du dépôt dans /etc/pacman.d/argvus.conf."
         },
         "include": {
           "label": "Inclure dans pacman.conf",
-          "note": "Adds the Include line to /etc/pacman.conf. Run it only once."
+          "note": "Ajoute la ligne Include à /etc/pacman.conf. À exécuter une seule fois."
         },
         "pacman": {
           "label": "Installer ARGVUS",
@@ -688,10 +688,10 @@
       "installRequirementsList": [
         "Arch Linux x86_64",
         "Hyprland 0.57.0 (Wayland)",
-        "A GPU with Wayland/KMS support"
+        "Un GPU compatible avec Wayland/KMS"
       ],
       "installVm": "Machines virtuelles",
-      "installChanges": "What changes on your system: the ARGVUS key is added to the pacman keyring, /etc/pacman.d/argvus.conf is created and pacman.conf gets one Include line. Installation writes nothing to your $HOME.",
+      "installChanges": "Modifications apportées au système : la clé ARGVUS est ajoutée au trousseau de clés de pacman, /etc/pacman.d/argvus.conf est créé et une ligne Include est ajoutée à pacman.conf. L’installation n’écrit rien dans $HOME.",
       "installVerify": "Vérifier la clé de signature",
       "installVerifyHint": "Comparez-le avec la sortie de pacman-key --finger avant de le signer localement.",
       "installSource": "Code source du package",
@@ -991,7 +991,7 @@
       "waybarFeatures": [
         {
           "icon": "fa-solid fa-star",
-          "text": "Top/bottom position via shortcut (SUPER + Alt + ↑/↓) or the sidebar."
+          "text": "Posizione in alto/in basso tramite la scorciatoia (SUPER + Alt + ↑/↓) o la barra laterale."
         },
         {
           "icon": "fa-solid fa-bars-staggered",
@@ -1037,11 +1037,11 @@
       "appCalendarEventsText": "La vista eventi completa il calendario con un elenco compatto di appuntamenti, mantenendo le date importanti a portata di mano all'interno dell'ecosistema ARGVUS.",
       "appFocusText": "ARGVUS Focus ti aiuta a rimanere concentrato sull'attività con sessioni di focus e pause disponibili direttamente dal desktop.",
       "appClockText": "ARGVUS Clock riunisce orologio e timer in uno strumento nativo, così puoi tenere traccia del tempo senza abbandonare il flusso di lavoro.",
-      "appDefaultAppsText": "ARGVUS Control Center is the native ARGVUS configuration center. Apps sets the default applications, and Fonts applies typography to GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, the lock screen and official apps.",
+      "appDefaultAppsText": "ARGVUS Control Center è il centro di configurazione nativo di ARGVUS. Apps imposta le applicazioni predefinite e Fonts applica la tipografia a GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, alla schermata di blocco e alle app ufficiali.",
       "controlCenterFeatures": [
         {
           "title": "Aspetto",
-          "text": "Themes, Sticky/Float modes, accents, wallpapers, effects, taskbar layout and Control Panel cards."
+          "text": "Temi, modalità finestra Fissa/Spaziata, colori di accento, sfondi, effetti, layout della barra delle applicazioni e schede del Pannello di controllo."
         },
         {
           "title": "Caratteri",
@@ -1088,7 +1088,7 @@
       "ccCopied": "Comando copiato",
       "ccCopiedAll": "Tutti i comandi copiati",
       "ccNoCommand": "Nessun comando: questo avviene nella schermata di accesso",
-      "ccHelp": "↑/↓ Items  ←/→ Steps  Enter Copy  c Copy all",
+      "ccHelp": "↑/↓ Elementi  ←/→ Passaggi  Invio Copia  c Copia tutto",
       "ccGridAria": "Passaggi di installazione avanzati",
       "ccSteps": {
         "key": {
@@ -1107,7 +1107,7 @@
       "ccItems": {
         "download": {
           "label": "Scarica la chiave",
-          "note": "Saves the ARGVUS public signing key to /tmp/argvus.gpg."
+          "note": "Salva la chiave pubblica di firma ARGVUS in /tmp/argvus.gpg."
         },
         "import": {
           "label": "Importa in pacman",
@@ -1123,11 +1123,11 @@
         },
         "conf": {
           "label": "Installa argvus.conf",
-          "note": "Downloads the repository definition to /etc/pacman.d/argvus.conf."
+          "note": "Scarica la definizione del repository in /etc/pacman.d/argvus.conf."
         },
         "include": {
           "label": "Includi in pacman.conf",
-          "note": "Adds the Include line to /etc/pacman.conf. Run it only once."
+          "note": "Aggiunge la riga Include a /etc/pacman.conf. Esegui questa operazione una sola volta."
         },
         "pacman": {
           "label": "Installa ARGVUS",
@@ -1143,10 +1143,10 @@
       "installRequirementsList": [
         "ArchLinux x86_64",
         "Hyprland 0.57.0 (Wayland)",
-        "A GPU with Wayland/KMS support"
+        "Una GPU compatibile con Wayland/KMS"
       ],
       "installVm": "Macchine virtuali",
-      "installChanges": "What changes on your system: the ARGVUS key is added to the pacman keyring, /etc/pacman.d/argvus.conf is created and pacman.conf gets one Include line. Installation writes nothing to your $HOME.",
+      "installChanges": "Modifiche al sistema: la chiave ARGVUS viene aggiunta al portachiavi di pacman, viene creato /etc/pacman.d/argvus.conf e viene aggiunta una riga Include a pacman.conf. L’installazione non scrive nulla in $HOME.",
       "installVerify": "Verifica la chiave di firma",
       "installVerifyHint": "Confrontalo con l'output di pacman-key --finger prima di firmarlo localmente.",
       "installSource": "Codice sorgente del pacchetto",
@@ -1446,7 +1446,7 @@
       "waybarFeatures": [
         {
           "icon": "fa-solid fa-star",
-          "text": "Top/bottom position via shortcut (SUPER + Alt + ↑/↓) or the sidebar."
+          "text": "通过快捷键（SUPER + Alt + ↑/↓）或侧边栏将位置切换到顶部/底部。"
         },
         {
           "icon": "fa-solid fa-bars-staggered",
@@ -1492,11 +1492,11 @@
       "appCalendarEventsText": "事件视图通过紧凑的约会列表补充了日历，使 ARGVUS 生态系统中的重要日期触手可及。",
       "appFocusText": "ARGVUS Focus 通过直接从桌面提供的焦点会话和休息来帮助您专注于任务。",
       "appClockText": "ARGVUS Clock 将时钟和计时器集成在本机工具中，因此您可以在不离开工作流程的情况下跟踪时间。",
-      "appDefaultAppsText": "ARGVUS Control Center is the native ARGVUS configuration center. Apps sets the default applications, and Fonts applies typography to GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, the lock screen and official apps.",
+      "appDefaultAppsText": "ARGVUS Control Center 是 ARGVUS 的原生配置中心。Apps 用于设置默认应用，Fonts 则为 GTK/Nautilus、Rofi、Waybar、Quickshell、Hyprland、锁屏和官方应用配置字体。",
       "controlCenterFeatures": [
         {
           "title": "外观",
-          "text": "Themes, Sticky/Float modes, accents, wallpapers, effects, taskbar layout and Control Panel cards."
+          "text": "主题、固定/间距窗口模式、强调色、壁纸、特效、任务栏布局和控制面板卡片。"
         },
         {
           "title": "字体",
@@ -1543,7 +1543,7 @@
       "ccCopied": "命令已复制",
       "ccCopiedAll": "复制所有命令",
       "ccNoCommand": "无命令 — 这发生在登录屏幕上",
-      "ccHelp": "↑/↓ Items  ←/→ Steps  Enter Copy  c Copy all",
+      "ccHelp": "↑/↓ 项目  ←/→ 步骤  Enter 复制  c 全部复制",
       "ccGridAria": "高级安装步骤",
       "ccSteps": {
         "key": {
@@ -1562,7 +1562,7 @@
       "ccItems": {
         "download": {
           "label": "下载密钥",
-          "note": "Saves the ARGVUS public signing key to /tmp/argvus.gpg."
+          "note": "将 ARGVUS 公共签名密钥保存到 /tmp/argvus.gpg。"
         },
         "import": {
           "label": "导入 pacman",
@@ -1578,11 +1578,11 @@
         },
         "conf": {
           "label": "安装 argvus.conf",
-          "note": "Downloads the repository definition to /etc/pacman.d/argvus.conf."
+          "note": "将仓库定义下载到 /etc/pacman.d/argvus.conf。"
         },
         "include": {
           "label": "包含在 pacman.conf 中",
-          "note": "Adds the Include line to /etc/pacman.conf. Run it only once."
+          "note": "在 /etc/pacman.conf 中添加 Include 行。只需执行一次。"
         },
         "pacman": {
           "label": "安装 ARGVUS",
@@ -1598,10 +1598,10 @@
       "installRequirementsList": [
         "Arch Linux x86_64",
         "Hyprland 0.57.0（韦兰）",
-        "A GPU with Wayland/KMS support"
+        "支持 Wayland/KMS 的 GPU"
       ],
       "installVm": "虚拟机",
-      "installChanges": "What changes on your system: the ARGVUS key is added to the pacman keyring, /etc/pacman.d/argvus.conf is created and pacman.conf gets one Include line. Installation writes nothing to your $HOME.",
+      "installChanges": "系统将发生以下更改：ARGVUS 密钥会添加到 pacman 密钥环，/etc/pacman.d/argvus.conf 会被创建，并且 pacman.conf 中会添加一行 Include。安装过程不会写入 $HOME。",
       "installVerify": "验证签名密钥",
       "installVerifyHint": "在本地签名之前将其与 pacman-key --finger 的输出进行比较。",
       "installSource": "包源码",
@@ -1901,7 +1901,7 @@
       "waybarFeatures": [
         {
           "icon": "fa-solid fa-star",
-          "text": "Top/bottom position via shortcut (SUPER + Alt + ↑/↓) or the sidebar."
+          "text": "ショートカット（SUPER + Alt + ↑/↓）またはサイドバーから、上部/下部の位置を切り替えられます。"
         },
         {
           "icon": "fa-solid fa-bars-staggered",
@@ -1947,11 +1947,11 @@
       "appCalendarEventsText": "イベント ビューは、予定のコンパクトなリストでカレンダーを補完し、ARGVUS エコシステム内で重要な日付をすぐに把握できるようにします。",
       "appFocusText": "ARGVUS Focus は、デスクトップから直接利用できるフォーカス セッションと休憩により、タスクを継続するのに役立ちます。",
       "appClockText": "ARGVUS Clock は、クロックとタイマーをネイティブ ツールに統合するため、ワークフローを離れることなく時間を追跡できます。",
-      "appDefaultAppsText": "ARGVUS Control Center is the native ARGVUS configuration center. Apps sets the default applications, and Fonts applies typography to GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, the lock screen and official apps.",
+      "appDefaultAppsText": "ARGVUS Control Center は ARGVUS のネイティブ設定センターです。Apps では既定のアプリを設定し、Fonts では GTK/Nautilus、Rofi、Waybar、Quickshell、Hyprland、ロック画面、公式アプリに適用するフォントを設定します。",
       "controlCenterFeatures": [
         {
           "title": "外観",
-          "text": "Themes, Sticky/Float modes, accents, wallpapers, effects, taskbar layout and Control Panel cards."
+          "text": "テーマ、固定/間隔ウィンドウモード、アクセントカラー、壁紙、エフェクト、タスクバーのレイアウト、コントロールパネルのカード。"
         },
         {
           "title": "フォント",
@@ -1998,7 +1998,7 @@
       "ccCopied": "コマンドがコピーされました",
       "ccCopiedAll": "すべてのコマンドがコピーされました",
       "ccNoCommand": "コマンドはありません - これはログイン画面で発生します",
-      "ccHelp": "↑/↓ Items  ←/→ Steps  Enter Copy  c Copy all",
+      "ccHelp": "↑/↓ 項目  ←/→ 手順  Enter コピー  c すべてコピー",
       "ccGridAria": "高度なインストール手順",
       "ccSteps": {
         "key": {
@@ -2017,7 +2017,7 @@
       "ccItems": {
         "download": {
           "label": "キーをダウンロードします",
-          "note": "Saves the ARGVUS public signing key to /tmp/argvus.gpg."
+          "note": "ARGVUS の公開署名鍵を /tmp/argvus.gpg に保存します。"
         },
         "import": {
           "label": "pacman へのインポート",
@@ -2033,11 +2033,11 @@
         },
         "conf": {
           "label": "argvus.conf をインストールする",
-          "note": "Downloads the repository definition to /etc/pacman.d/argvus.conf."
+          "note": "リポジトリ定義を /etc/pacman.d/argvus.conf にダウンロードします。"
         },
         "include": {
           "label": "pacman.conf に含める",
-          "note": "Adds the Include line to /etc/pacman.conf. Run it only once."
+          "note": "/etc/pacman.conf に Include 行を追加します。この操作は一度だけ実行してください。"
         },
         "pacman": {
           "label": "ARGVUS をインストールする",
@@ -2053,10 +2053,10 @@
       "installRequirementsList": [
         "Arch Linux x86_64",
         "Hyprland 0.57.0 (ウェイランド)",
-        "A GPU with Wayland/KMS support"
+        "Wayland/KMS に対応した GPU"
       ],
       "installVm": "仮想マシン",
-      "installChanges": "What changes on your system: the ARGVUS key is added to the pacman keyring, /etc/pacman.d/argvus.conf is created and pacman.conf gets one Include line. Installation writes nothing to your $HOME.",
+      "installChanges": "システムには次の変更が加わります。ARGVUS の鍵が pacman のキーリングに追加され、/etc/pacman.d/argvus.conf が作成され、pacman.conf に Include 行が追加されます。インストールによって $HOME に書き込まれることはありません。",
       "installVerify": "署名キーを検証する",
       "installVerifyHint": "ローカルで署名する前に、pacman-key --finger の出力と比較してください。",
       "installSource": "パッケージのソース コード",
@@ -2356,7 +2356,7 @@
       "waybarFeatures": [
         {
           "icon": "fa-solid fa-star",
-          "text": "Top/bottom position via shortcut (SUPER + Alt + ↑/↓) or the sidebar."
+          "text": "Position oben/unten per Tastenkürzel (SUPER + Alt + ↑/↓) oder über die Seitenleiste."
         },
         {
           "icon": "fa-solid fa-bars-staggered",
@@ -2402,11 +2402,11 @@
       "appCalendarEventsText": "Die Ereignisansicht ergänzt den Kalender mit einer kompakten Terminliste und hält wichtige Termine innerhalb des ARGVUS-Ökosystems immer griffbereit.",
       "appFocusText": "ARGVUS Focus hilft Ihnen, mit Fokussitzungen und Pausen, die direkt vom Desktop aus verfügbar sind, bei der Sache zu bleiben.",
       "appClockText": "ARGVUS Clock vereint eine Uhr und Timer in einem nativen Tool, sodass Sie die Zeit im Auge behalten können, ohne Ihren Workflow zu verlassen.",
-      "appDefaultAppsText": "ARGVUS Control Center is the native ARGVUS configuration center. Apps sets the default applications, and Fonts applies typography to GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, the lock screen and official apps.",
+      "appDefaultAppsText": "ARGVUS Control Center ist das native Konfigurationszentrum von ARGVUS. Apps legt die Standardanwendungen fest und Fonts wendet Typografie auf GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, den Sperrbildschirm und offizielle Apps an.",
       "controlCenterFeatures": [
         {
           "title": "Aussehen",
-          "text": "Themes, Sticky/Float modes, accents, wallpapers, effects, taskbar layout and Control Panel cards."
+          "text": "Themes, Fenster-Modi Fest/Abstand, Akzentfarben, Hintergrundbilder, Effekte, Taskleistenlayout und Karten im Kontrollzentrum."
         },
         {
           "title": "Schriftarten",
@@ -2453,7 +2453,7 @@
       "ccCopied": "Befehl kopiert",
       "ccCopiedAll": "Alle Befehle kopiert",
       "ccNoCommand": "Kein Befehl – dies geschieht auf dem Anmeldebildschirm",
-      "ccHelp": "↑/↓ Items  ←/→ Steps  Enter Copy  c Copy all",
+      "ccHelp": "↑/↓ Elemente  ←/→ Schritte  Enter Kopieren  c Alles kopieren",
       "ccGridAria": "Erweiterte Installationsschritte",
       "ccSteps": {
         "key": {
@@ -2472,7 +2472,7 @@
       "ccItems": {
         "download": {
           "label": "Laden Sie den Schlüssel herunter",
-          "note": "Saves the ARGVUS public signing key to /tmp/argvus.gpg."
+          "note": "Speichert den öffentlichen ARGVUS-Signierschlüssel unter /tmp/argvus.gpg."
         },
         "import": {
           "label": "In Pacman importieren",
@@ -2488,11 +2488,11 @@
         },
         "conf": {
           "label": "Installieren Sie argvus.conf",
-          "note": "Downloads the repository definition to /etc/pacman.d/argvus.conf."
+          "note": "Lädt die Repository-Definition nach /etc/pacman.d/argvus.conf herunter."
         },
         "include": {
           "label": "In pacman.conf aufnehmen",
-          "note": "Adds the Include line to /etc/pacman.conf. Run it only once."
+          "note": "Fügt die Include-Zeile zu /etc/pacman.conf hinzu. Nur einmal ausführen."
         },
         "pacman": {
           "label": "ARGVUS installieren",
@@ -2508,10 +2508,10 @@
       "installRequirementsList": [
         "Arch Linux x86_64",
         "Hyprland 0,57,0 (Wayland)",
-        "A GPU with Wayland/KMS support"
+        "Eine GPU mit Wayland/KMS-Unterstützung"
       ],
       "installVm": "Virtuelle Maschinen",
-      "installChanges": "What changes on your system: the ARGVUS key is added to the pacman keyring, /etc/pacman.d/argvus.conf is created and pacman.conf gets one Include line. Installation writes nothing to your $HOME.",
+      "installChanges": "Folgendes ändert sich auf dem System: Der ARGVUS-Schlüssel wird dem pacman-Schlüsselbund hinzugefügt, /etc/pacman.d/argvus.conf wird erstellt und pacman.conf erhält eine Include-Zeile. Die Installation schreibt nichts in $HOME.",
       "installVerify": "Überprüfen Sie den Signaturschlüssel",
       "installVerifyHint": "Vergleichen Sie es mit der Ausgabe von pacman-key --finger, bevor Sie es lokal signieren.",
       "installSource": "Paketquellcode",
@@ -2811,7 +2811,7 @@
       "waybarFeatures": [
         {
           "icon": "fa-solid fa-star",
-          "text": "Top/bottom position via shortcut (SUPER + Alt + ↑/↓) or the sidebar."
+          "text": "Переключение верхнего/нижнего положения с помощью сочетания клавиш (SUPER + Alt + ↑/↓) или боковой панели."
         },
         {
           "icon": "fa-solid fa-bars-staggered",
@@ -2857,11 +2857,11 @@
       "appCalendarEventsText": "Просмотр событий дополняет календарь компактным списком встреч, сохраняя важные даты под рукой внутри экосистемы ARGVUS.",
       "appFocusText": "ARGVUS Focus помогает вам сосредоточиться на задаче благодаря сеансам фокусировки и перерывам, доступным прямо с рабочего стола.",
       "appClockText": "ARGVUS Clock объединяет часы и таймеры в едином инструменте, поэтому вы можете отслеживать время, не выходя из рабочего процесса.",
-      "appDefaultAppsText": "ARGVUS Control Center is the native ARGVUS configuration center. Apps sets the default applications, and Fonts applies typography to GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, the lock screen and official apps.",
+      "appDefaultAppsText": "ARGVUS Control Center — встроенный центр настройки ARGVUS. Apps задаёт приложения по умолчанию, а Fonts настраивает шрифты для GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, экрана блокировки и официальных приложений.",
       "controlCenterFeatures": [
         {
           "title": "Внешний вид",
-          "text": "Themes, Sticky/Float modes, accents, wallpapers, effects, taskbar layout and Control Panel cards."
+          "text": "Темы, режимы окон «Фиксированный/Разнесённый», акцентные цвета, обои, эффекты, расположение панели задач и карточки панели управления."
         },
         {
           "title": "Шрифты",
@@ -2908,7 +2908,7 @@
       "ccCopied": "Команда скопирована",
       "ccCopiedAll": "Все команды скопированы",
       "ccNoCommand": "Нет команды — это происходит на экране входа в систему.",
-      "ccHelp": "↑/↓ Items  ←/→ Steps  Enter Copy  c Copy all",
+      "ccHelp": "↑/↓ Элементы  ←/→ Шаги  Enter Копировать  c Копировать всё",
       "ccGridAria": "Дополнительные шаги установки",
       "ccSteps": {
         "key": {
@@ -2927,7 +2927,7 @@
       "ccItems": {
         "download": {
           "label": "Скачать ключ",
-          "note": "Saves the ARGVUS public signing key to /tmp/argvus.gpg."
+          "note": "Сохраняет открытый ключ подписи ARGVUS в /tmp/argvus.gpg."
         },
         "import": {
           "label": "Импорт в pacman",
@@ -2943,11 +2943,11 @@
         },
         "conf": {
           "label": "Установите argvus.conf",
-          "note": "Downloads the repository definition to /etc/pacman.d/argvus.conf."
+          "note": "Загружает описание репозитория в /etc/pacman.d/argvus.conf."
         },
         "include": {
           "label": "Включить в pacman.conf",
-          "note": "Adds the Include line to /etc/pacman.conf. Run it only once."
+          "note": "Добавляет строку Include в /etc/pacman.conf. Выполните это только один раз."
         },
         "pacman": {
           "label": "Установить АРГВУС",
@@ -2963,10 +2963,10 @@
       "installRequirementsList": [
         "Арх Linux x86_64",
         "Hyprland 0.57.0 (Wayland)",
-        "A GPU with Wayland/KMS support"
+        "Графический процессор с поддержкой Wayland/KMS"
       ],
       "installVm": "Виртуальные машины",
-      "installChanges": "What changes on your system: the ARGVUS key is added to the pacman keyring, /etc/pacman.d/argvus.conf is created and pacman.conf gets one Include line. Installation writes nothing to your $HOME.",
+      "installChanges": "В системе произойдут следующие изменения: ключ ARGVUS будет добавлен в связку ключей pacman, будет создан файл /etc/pacman.d/argvus.conf, а в pacman.conf добавится строка Include. Установка ничего не записывает в $HOME.",
       "installVerify": "Проверка ключа подписи",
       "installVerifyHint": "Сравните его с выводом pacman-key --finger, прежде чем подписывать его локально.",
       "installSource": "Исходный код пакета",
@@ -3266,7 +3266,7 @@
       "waybarFeatures": [
         {
           "icon": "fa-solid fa-star",
-          "text": "Top/bottom position via shortcut (SUPER + Alt + ↑/↓) or the sidebar."
+          "text": "단축키(SUPER + Alt + ↑/↓) 또는 사이드바에서 위쪽/아래쪽 위치를 전환합니다."
         },
         {
           "icon": "fa-solid fa-bars-staggered",
@@ -3312,11 +3312,11 @@
       "appCalendarEventsText": "이벤트 보기는 간단한 약속 목록으로 달력을 보완하여 ARGVUS 생태계 내에서 중요한 날짜를 가까이에 유지합니다.",
       "appFocusText": "ARGVUS Focus는 데스크톱에서 직접 사용할 수 있는 집중 세션과 휴식 시간을 통해 작업에 집중할 수 있도록 도와줍니다.",
       "appClockText": "ARGVUS 시계는 기본 도구에 시계와 타이머를 함께 제공하므로 작업 흐름을 벗어나지 않고도 시간을 추적할 수 있습니다.",
-      "appDefaultAppsText": "ARGVUS Control Center is the native ARGVUS configuration center. Apps sets the default applications, and Fonts applies typography to GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, the lock screen and official apps.",
+      "appDefaultAppsText": "ARGVUS Control Center는 ARGVUS의 기본 설정 센터입니다. Apps에서는 기본 애플리케이션을 설정하고, Fonts에서는 GTK/Nautilus, Rofi, Waybar, Quickshell, Hyprland, 잠금 화면 및 공식 앱에 적용할 글꼴을 설정합니다.",
       "controlCenterFeatures": [
         {
           "title": "외관",
-          "text": "Themes, Sticky/Float modes, accents, wallpapers, effects, taskbar layout and Control Panel cards."
+          "text": "테마, 고정/간격 창 모드, 강조 색상, 배경 화면, 효과, 작업 표시줄 레이아웃 및 제어판 카드."
         },
         {
           "title": "글꼴",
@@ -3363,7 +3363,7 @@
       "ccCopied": "명령이 복사되었습니다.",
       "ccCopiedAll": "모든 명령이 복사되었습니다.",
       "ccNoCommand": "명령 없음 — 로그인 화면에서 발생합니다.",
-      "ccHelp": "↑/↓ Items  ←/→ Steps  Enter Copy  c Copy all",
+      "ccHelp": "↑/↓ 항목  ←/→ 단계  Enter 복사  c 모두 복사",
       "ccGridAria": "고급 설치 단계",
       "ccSteps": {
         "key": {
@@ -3382,7 +3382,7 @@
       "ccItems": {
         "download": {
           "label": "키 다운로드",
-          "note": "Saves the ARGVUS public signing key to /tmp/argvus.gpg."
+          "note": "ARGVUS 공개 서명 키를 /tmp/argvus.gpg에 저장합니다."
         },
         "import": {
           "label": "팩맨으로 가져오기",
@@ -3398,11 +3398,11 @@
         },
         "conf": {
           "label": "argvus.conf 설치",
-          "note": "Downloads the repository definition to /etc/pacman.d/argvus.conf."
+          "note": "저장소 정의를 /etc/pacman.d/argvus.conf에 다운로드합니다."
         },
         "include": {
           "label": "pacman.conf에 포함",
-          "note": "Adds the Include line to /etc/pacman.conf. Run it only once."
+          "note": "/etc/pacman.conf에 Include 줄을 추가합니다. 한 번만 실행하세요."
         },
         "pacman": {
           "label": "ARGVUS 설치",
@@ -3418,10 +3418,10 @@
       "installRequirementsList": [
         "아치 리눅스 x86_64",
         "하이프랜드 0.57.0 (웨이랜드)",
-        "A GPU with Wayland/KMS support"
+        "Wayland/KMS를 지원하는 GPU"
       ],
       "installVm": "가상 머신",
-      "installChanges": "What changes on your system: the ARGVUS key is added to the pacman keyring, /etc/pacman.d/argvus.conf is created and pacman.conf gets one Include line. Installation writes nothing to your $HOME.",
+      "installChanges": "시스템에 다음 변경 사항이 적용됩니다. ARGVUS 키가 pacman 키링에 추가되고, /etc/pacman.d/argvus.conf가 생성되며, pacman.conf에 Include 줄이 추가됩니다. 설치 과정은 $HOME에 아무것도 기록하지 않습니다.",
       "installVerify": "서명 키를 확인하세요",
       "installVerifyHint": "로컬로 서명하기 전에 pacman-key --finger의 출력과 비교하십시오.",
       "installSource": "패키지 소스 코드",
