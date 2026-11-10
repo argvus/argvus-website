@@ -53,6 +53,14 @@ export default defineConfig({
       locales: {
         root: { label: 'English', lang: 'en' },
         pt: { label: 'Português', lang: 'pt-BR' },
+        es: { label: 'Español', lang: 'es' },
+        fr: { label: 'Français', lang: 'fr' },
+        it: { label: 'Italiano', lang: 'it' },
+        'zh-cn': { label: '中文', lang: 'zh-CN' },
+        ja: { label: '日本語', lang: 'ja' },
+        de: { label: 'Deutsch', lang: 'de' },
+        ru: { label: 'Русский', lang: 'ru' },
+        ko: { label: '한국어', lang: 'ko' },
       },
       plugins: [
         starlightVersions({

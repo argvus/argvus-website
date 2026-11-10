@@ -4,6 +4,7 @@ import type { DocumentationProvider, FileEntry } from './providers/base.ts'
 import { LocalFileProvider } from './providers/local.ts'
 import { existsSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { documentationLocalePrefix, isDocumentationLocale, type DocumentationLocale } from './locales.ts'
 
 export interface ContentEntry {
   id: string
@@ -14,8 +15,8 @@ export interface ContentEntry {
   project: string
   /** Whether this entry's project is configured as the root (prefix-less) docs project. */
   isRootProject: boolean
-  /** Source locale directory this entry was read from (`en` or `pt-br`). */
-  sourceLocale: 'en' | 'pt-br'
+  /** Source locale directory this entry was read from. */
+  sourceLocale: DocumentationLocale
   data: {
     title?: string
     description?: string
@@ -152,9 +153,9 @@ function generateSlug(
   project: string,
   filePath: string,
   isRoot: boolean,
+  sourceLocale: DocumentationLocale,
 ): string {
   const parts = filePath.split('/')
-  const sourceLocale = parts[1]
   const relPath = parts.slice(2).join('/').replace(/\.md$/, '')
 
   const cleanedRelPath = relPath === 'index' ? '' : relPath.replace(/\/index$/, '')
@@ -167,7 +168,7 @@ function generateSlug(
   }
 
   // Map the source repository locale directory to the Starlight locale key.
-  const localePrefix = sourceLocale === 'pt-br' ? 'pt/' : ''
+  const localePrefix = documentationLocalePrefix(sourceLocale)
 
   return `${localePrefix}docs/${base}`.toLowerCase()
 }
@@ -220,7 +221,7 @@ export async function loadDocumentation(): Promise<ContentEntry[]> {
           const pathParts = filePath.split('/')
           const locale = pathParts[1]
 
-          if (locale !== 'en' && locale !== 'pt-br') {
+          if (!isDocumentationLocale(locale)) {
             console.warn(`Skipping file with unknown locale: ${filePath}`)
             continue
           }
@@ -231,6 +232,7 @@ export async function loadDocumentation(): Promise<ContentEntry[]> {
             projectConfig.repository,
             filePath,
             Boolean(projectConfig.root),
+            locale,
           )
           const id = slug
 
@@ -251,7 +253,7 @@ export async function loadDocumentation(): Promise<ContentEntry[]> {
             filePath: filePath,
             project: projectConfig.repository,
             isRootProject: Boolean(projectConfig.root),
-            sourceLocale: locale as 'en' | 'pt-br',
+            sourceLocale: locale,
             data: {
               title,
               description,
