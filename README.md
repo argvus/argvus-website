@@ -52,6 +52,14 @@ translation files are skipped so manual edits are preserved. New files keep
 the author, date and tags from the English source while translating its title,
 description and body.
 
+Authors use a name and an optional profile link in front matter:
+
+```yaml
+author:
+  name: "William C. Canin"
+  link: "https://example.com"
+```
+
 Delete an English post and all its translations with:
 
 ```sh
@@ -61,59 +69,50 @@ npm run delete:post
 Choose a post from the menu and confirm with `s`. Enter `0` at the menu or any
 other answer at the confirmation prompt to cancel without deleting files.
 
-Choose the translation provider in `src/site-config.json` under
-`posts.translate.mode` (`ollama`, `openai`, `gemini` or `claude-code`). Ollama,
-OpenAI and Gemini use a `BASE_URL` and `MODEL` there; API keys stay out of the
-JSON and are read from the environment using the variable for the selected
-provider:
+Edit an English post using the editor configured in `src/site-config.json`:
 
 ```sh
-# Ollama local
-export POSTS_TRANSLATE_OLLAMA_API_KEY="ollama"
+npm run edit:post
+```
 
-# OpenAI
-export POSTS_TRANSLATE_OPENAI_API_KEY="sua-chave"
+Set `news.editor` to the editor executable, for example `"/usr/bin/vim"` or
+the path to a GUI editor binary. The command lists English posts, opens the
+selected Markdown file, and accepts `0` to cancel.
 
-# Gemini
-export POSTS_TRANSLATE_GEMINI_API_KEY="sua-chave"
+### Translate a news post
 
+Run the command from the project root in an interactive terminal:
+
+```sh
 npm run translate:posts
 ```
 
-For Ollama on Linux, install and start the server, then download the model set
-in `posts.translate.ollama.MODEL`:
+The command guides you through these steps:
 
-```sh
-curl -fsSL https://ollama.com/install.sh | sh
-ollama serve # in another terminal, if Ollama is not already running
-ollama pull qwen3:8b
-```
+1. **Choose the English post.** The menu lists only posts missing at least one translation. Choose a number to translate one post, the final numbered option to translate all listed posts, or `0` to cancel. If every post is translated, the command exits without showing the menus.
+2. **Choose a translation CLI.** The menu offers installed versions of OpenCode, Codex, and Claude Code. Install and sign in to at least one of these tools before running the command. Each CLI handles its own authentication; this project does not call provider APIs directly or store credentials.
+3. **Wait for the translations.** The selected CLI translates each missing language in turn. The command creates files under `src/content/news/<locale>/<slug>.md`. Existing translations are left untouched, so you can edit them manually. If a run stops partway through, run the command again; completed files are skipped and the remaining languages are offered again.
 
-Ollama ignores the placeholder API key. Its default configuration uses
-`http://localhost:11434/v1` and `qwen3:8b`; OpenAI defaults to
-`https://api.openai.com/v1`. Gemini uses Google's OpenAI-compatible endpoint
-and defaults to `gemini-3.6-flash`, currently listed with free API usage in the
-[Gemini pricing page](https://ai.google.dev/gemini-api/docs/pricing). Free-tier
-quotas and model access depend on the Google AI Studio project/account; confirm
-the model is available in your [AI Studio](https://aistudio.google.com/) before
-translating. Google says free-tier content may be used to improve its products,
-so avoid sending private or sensitive drafts through this tier. For Claude
-Code, install and authenticate the CLI;
-the translator calls it in non-interactive mode and does not require an
-Anthropic API key in this project:
+The translated fields are `title`, `description`, and the editorial text. The original author and profile link, date, tags, Markdown structure, links, commands, and technical names are preserved. Supported locale codes are `pt-br`, `pt-pt`, `es`, `fr`, `it`, `zh`, `ja`, `de`, `ru`, `ko`, `hi`, `ar`, `bn`, `id`, `ur`, `vi`, and `tr`.
 
-```sh
-npm install -g @anthropic-ai/claude-code
-claude # sign in once, then select "claude-code" in site-config.json
-```
+Set the model for each CLI under `news.translate` in `src/site-config.json`. The current defaults are:
 
-The `claude-code.MODEL` setting is optional; an empty value uses the CLI's
-configured default model. If Claude Code is missing or not authenticated, the
-command prints setup guidance. API providers also report missing URLs, models
-or keys before making requests.
+- OpenCode (`news.translate.opencode.MODEL`): `opencode/deepseek-v4.1-flash-free`
+- Codex (`news.translate.codex.MODEL`): `gpt-6-luna`
+- Claude Code (`news.translate.claude-code.MODEL`): `haiku`
+
+OpenCode model IDs use the `provider/model` format. DeepSeek V4.1 Flash Free is
+listed as free by OpenCode Console; its availability depends on signing in to
+OpenCode and on the model remaining available there. The configured model must
+be available to the account signed in to the selected CLI. Install and
+authenticate the CLI using its own instructions before choosing it in the menu.
 
 Post URLs use the same locale codes as the site, for example
 `/news/first-post/`, `/news/pt-br/first-post/` and `/news/pt-pt/first-post/`.
 
 The build removes generated version snapshots before and after the Astro build.
 Do not edit generated version directories as if they were the current source.
+
+The build also creates `dist/sitemap.xml` from Astro's sitemap index. Submit
+`https://argvus.github.io/sitemap.xml` to Google Search Console; the index points
+to the generated sitemap files, such as `sitemap-0.xml`.
