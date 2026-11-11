@@ -1,0 +1,39 @@
+---
+import { getCollection, render } from 'astro:content'
+import NewsLayout from '../../components/NewsLayout.astro'
+import { newsMessages } from '../../lib/news/messages'
+import { newsLocales, getPostLocation, getNewsPath } from '../../lib/news/posts'
+import type { NewsLocale } from '../../lib/news/messages'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('news')
+  return posts.map((post) => {
+    const location = getPostLocation(post.id)
+    return { params: { path: location.lang === 'en' ? location.slug : `${location.lang}/${location.slug}` }, props: { post, ...location } }
+  })
+}
+
+const { post, lang: postLang, slug } = Astro.props
+const lang = postLang as NewsLocale
+const locale = newsLocales.find((item) => item.code === lang)!
+const messages = newsMessages[lang as keyof typeof newsMessages]
+const { Content } = await render(post)
+---
+
+<NewsLayout lang={lang} title={post.data.title} description={post.data.description} newsPath={slug}>
+  <main class="news-main news-article-main">
+    <article class="news-article">
+      <a class="news-back" href={getNewsPath(lang)}><span aria-hidden="true">←</span> {messages.back}</a>
+      <header class="news-article-heading">
+        <p class="news-date">{messages.published} <time datetime={post.data.date.toISOString()}>{new Intl.DateTimeFormat(locale.htmlLang, { dateStyle: 'long', timeZone: 'UTC' }).format(post.data.date)}</time></p>
+        <h1>{post.data.title}</h1>
+        <p class="news-description">{post.data.description}</p>
+        <div class="news-byline">
+          {post.data.author && <span>{post.data.author}</span>}
+          {post.data.tags.length > 0 && <ul class="news-tags">{post.data.tags.map((tag: string) => <li>{tag}</li>)}</ul>}
+        </div>
+      </header>
+      <div class="news-prose"><Content /></div>
+    </article>
+  </main>
+</NewsLayout>

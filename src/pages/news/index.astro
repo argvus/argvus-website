@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content'
+import NewsLayout from '../../components/NewsLayout.astro'
+import { newsMessages } from '../../lib/news/messages'
+import { getNewsPath } from '../../lib/news/posts'
+
+const posts = (await getCollection('news'))
+  .filter((post) => !post.id.includes('/'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+const messages = newsMessages.en
+const description = 'The latest news and updates from ARGVUS.'
+---
+
+<NewsLayout lang="en" title="News" description={description}>
+  <main class="news-main">
+    <header class="news-heading">
+      <p class="news-eyebrow">ARGVUS</p>
+      <h1>{messages.heading}</h1>
+      <p>{description}</p>
+    </header>
+    {posts.length ? (
+      <div class="news-list">
+        {posts.map((post) => (
+          <article class="news-item">
+            <p class="news-date">{messages.published} <time datetime={post.data.date.toISOString()}>{new Intl.DateTimeFormat('en', { dateStyle: 'long', timeZone: 'UTC' }).format(post.data.date)}</time></p>
+            <h2><a href={getNewsPath('en', post.id)}>{post.data.title}</a></h2>
+            <p class="news-item-description">{post.data.description}</p>
+          </article>
+        ))}
+      </div>
+    ) : <p class="news-empty">{messages.empty}</p>}
+  </main>
+</NewsLayout>

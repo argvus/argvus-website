@@ -371,7 +371,8 @@
       "navMenu": "Menú",
       "beta": "Beta",
       "langSearch": "Buscar idiomas…",
-      "langNoResults": "No se encontraron idiomas."
+      "langNoResults": "No se encontraron idiomas.",
+      "navNews": "Noticias"
     },
     "footer": {
       "tagline": "Un entorno de escritorio modular para Wayland y Arch Linux, construido sobre Hyprland.",
@@ -828,7 +829,8 @@
       "navMenu": "Menu",
       "beta": "Bêta",
       "langSearch": "Rechercher une langue…",
-      "langNoResults": "Aucune langue trouvée."
+      "langNoResults": "Aucune langue trouvée.",
+      "navNews": "Actualités"
     },
     "footer": {
       "tagline": "Un environnement de bureau modulaire pour Wayland et Arch Linux, construit sur Hyprland.",
@@ -1285,7 +1287,8 @@
       "navMenu": "Menù",
       "beta": "Beta",
       "langSearch": "Cerca lingue…",
-      "langNoResults": "Nessuna lingua trovata."
+      "langNoResults": "Nessuna lingua trovata.",
+      "navNews": "Notizie"
     },
     "footer": {
       "tagline": "Un ambiente desktop modulare per Wayland e Arch Linux, basato su Hyprland.",
@@ -1742,7 +1745,8 @@
       "navMenu": "菜单",
       "beta": "测试版",
       "langSearch": "搜索语言…",
-      "langNoResults": "未找到语言。"
+      "langNoResults": "未找到语言。",
+      "navNews": "新闻"
     },
     "footer": {
       "tagline": "基于 Hyprland 构建的 Wayland 和 Arch Linux 模块化桌面环境。",
@@ -2199,7 +2203,8 @@
       "navMenu": "メニュー",
       "beta": "ベータ版",
       "langSearch": "言語を検索…",
-      "langNoResults": "言語が見つかりません。"
+      "langNoResults": "言語が見つかりません。",
+      "navNews": "ニュース"
     },
     "footer": {
       "tagline": "Hyprland 上に構築された Wayland および Arch Linux 用のモジュラー デスクトップ環境。",
@@ -2656,7 +2661,8 @@
       "navMenu": "Menü",
       "beta": "Beta",
       "langSearch": "Sprachen suchen…",
-      "langNoResults": "Keine Sprachen gefunden."
+      "langNoResults": "Keine Sprachen gefunden.",
+      "navNews": "Neuigkeiten"
     },
     "footer": {
       "tagline": "Eine modulare Desktop-Umgebung für Wayland und Arch Linux, basierend auf Hyprland.",
@@ -3113,7 +3119,8 @@
       "navMenu": "Меню",
       "beta": "Бета",
       "langSearch": "Поиск языков…",
-      "langNoResults": "Языки не найдены."
+      "langNoResults": "Языки не найдены.",
+      "navNews": "Новости"
     },
     "footer": {
       "tagline": "Модульная среда рабочего стола для Wayland и Arch Linux, созданная на базе Hyprland.",
@@ -3570,7 +3577,8 @@
       "navMenu": "메뉴",
       "beta": "베타",
       "langSearch": "언어 검색…",
-      "langNoResults": "언어를 찾을 수 없습니다."
+      "langNoResults": "언어를 찾을 수 없습니다.",
+      "navNews": "뉴스"
     },
     "footer": {
       "tagline": "Hyprland를 기반으로 구축된 Wayland 및 Arch Linux용 모듈식 데스크탑 환경입니다.",
@@ -4027,7 +4035,8 @@
       "navMenu": "मेनू",
       "beta": "बीटा",
       "langSearch": "भाषाएँ खोजें…",
-      "langNoResults": "कोई भाषा नहीं मिली।"
+      "langNoResults": "कोई भाषा नहीं मिली।",
+      "navNews": "समाचार"
     },
     "footer": {
       "tagline": "Wayland और Arch Linux के लिए एक मॉड्यूलर डेस्कटॉप वातावरण, जिसे Hyprland के शीर्ष पर बनाया गया है।",
@@ -4484,7 +4493,8 @@
       "navMenu": "القائمة",
       "beta": "بيتا",
       "langSearch": "ابحث عن لغة…",
-      "langNoResults": "لم يتم العثور على لغات."
+      "langNoResults": "لم يتم العثور على لغات.",
+      "navNews": "الأخبار"
     },
     "footer": {
       "tagline": "بيئة سطح مكتب معيارية لـ Wayland وArch Linux، مبنية على Hyprland.",
@@ -4941,7 +4951,8 @@
       "navMenu": "মেনু",
       "beta": "বেটা",
       "langSearch": "ভাষা খুঁজুন…",
-      "langNoResults": "কোনো ভাষা পাওয়া যায়নি।"
+      "langNoResults": "কোনো ভাষা পাওয়া যায়নি।",
+      "navNews": "সংবাদ"
     },
     "footer": {
       "tagline": "Wayland এবং Arch Linux-এর জন্য একটি মডুলার ডেস্কটপ পরিবেশ, Hyprland-এর উপরে নির্মিত৷",
@@ -5398,7 +5409,8 @@
       "navMenu": "Tidak bisa",
       "beta": "Beta",
       "langSearch": "Cari bahasa…",
-      "langNoResults": "Bahasa tidak ditemukan."
+      "langNoResults": "Bahasa tidak ditemukan.",
+      "navNews": "Berita"
     },
     "footer": {
       "tagline": "Lingkungan desktop modular untuk Wayland dan Arch Linux, dibangun di atas Hyprland.",
@@ -5855,7 +5867,8 @@
       "navMenu": "مینو",
       "beta": "بیٹا",
       "langSearch": "زبان تلاش کریں…",
-      "langNoResults": "کوئی زبان نہیں ملی۔"
+      "langNoResults": "کوئی زبان نہیں ملی۔",
+      "navNews": "خبریں"
     },
     "footer": {
       "tagline": "Wayland اور Arch Linux کے لیے ایک ماڈیولر ڈیسک ٹاپ ماحول، جو Hyprland کے اوپر بنایا گیا ہے۔",
@@ -6312,7 +6325,8 @@
       "navMenu": "Thực đơn",
       "beta": "bản thử nghiệm",
       "langSearch": "Tìm ngôn ngữ…",
-      "langNoResults": "Không tìm thấy ngôn ngữ nào."
+      "langNoResults": "Không tìm thấy ngôn ngữ nào.",
+      "navNews": "Tin tức"
     },
     "footer": {
       "tagline": "Môi trường máy tính để bàn dạng mô-đun dành cho Wayland và Arch Linux, được xây dựng dựa trên Hyprland.",
@@ -6769,7 +6783,8 @@
       "navMenu": "Menü",
       "beta": "beta",
       "langSearch": "Dil ara…",
-      "langNoResults": "Dil bulunamadı."
+      "langNoResults": "Dil bulunamadı.",
+      "navNews": "Haberler"
     },
     "footer": {
       "tagline": "Wayland ve Arch Linux için, Hyprland temel alınarak oluşturulmuş modüler bir masaüstü ortamı.",

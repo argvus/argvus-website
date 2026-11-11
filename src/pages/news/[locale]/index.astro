@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content'
+import NewsLayout from '../../../components/NewsLayout.astro'
+import { newsMessages } from '../../../lib/news/messages'
+import type { NewsLocale } from '../../../lib/news/messages'
+import { newsLocales, getPostLocation, getNewsPath } from '../../../lib/news/posts'
+
+export function getStaticPaths() {
+  return newsLocales.filter(({ code }) => code !== 'en').map(({ code }) => ({ params: { locale: code } }))
+}
+
+const { locale } = Astro.params
+const lang = locale! as NewsLocale
+const localeInfo = newsLocales.find((item) => item.code === lang)!
+const messages = newsMessages[lang as keyof typeof newsMessages]
+const posts = (await getCollection('news'))
+  .filter((post) => getPostLocation(post.id).lang === lang)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+const description = `${messages.heading} — ARGVUS.`
+---
+
+<NewsLayout lang={lang} title={messages.heading} description={description}>
+  <main class="news-main">
+    <header class="news-heading">
+      <p class="news-eyebrow">ARGVUS</p>
+      <h1>{messages.heading}</h1>
+      <p>{description}</p>
+    </header>
+    {posts.length ? (
+      <div class="news-list">
+        {posts.map((post) => (
+          <article class="news-item">
+            <p class="news-date">{messages.published} <time datetime={post.data.date.toISOString()}>{new Intl.DateTimeFormat(localeInfo.htmlLang, { dateStyle: 'long', timeZone: 'UTC' }).format(post.data.date)}</time></p>
+            <h2><a href={getNewsPath(lang, getPostLocation(post.id).slug)}>{post.data.title}</a></h2>
+            <p class="news-item-description">{post.data.description}</p>
+          </article>
+        ))}
+      </div>
+    ) : <p class="news-empty">{messages.empty}</p>}
+  </main>
+</NewsLayout>

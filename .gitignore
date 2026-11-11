@@ -27,4 +27,6 @@ pnpm-debug.log*
 .env
 .env.production
 # starlight-versions generates the archived docs from the current version.
-src/content/
+src/content/*
+!src/content/news/
+!src/content/news/**

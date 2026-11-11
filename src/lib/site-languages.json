@@ -1,0 +1,20 @@
+[
+  { "code": "en", "htmlLang": "en", "label": "English", "name": "English", "native": "English", "flag": "🇬🇧" },
+  { "code": "pt-br", "htmlLang": "pt-BR", "label": "Português (Brasil)", "name": "Portuguese (Brazil)", "native": "Português (Brasil)", "flag": "🇧🇷" },
+  { "code": "pt-pt", "htmlLang": "pt-PT", "label": "Português (Portugal)", "name": "Portuguese (Portugal)", "native": "Português (Portugal)", "flag": "🇵🇹" },
+  { "code": "es", "htmlLang": "es", "label": "Español", "name": "Spanish", "native": "Español", "flag": "🇪🇸" },
+  { "code": "fr", "htmlLang": "fr", "label": "Français", "name": "French", "native": "Français", "flag": "🇫🇷" },
+  { "code": "it", "htmlLang": "it", "label": "Italiano", "name": "Italian", "native": "Italiano", "flag": "🇮🇹" },
+  { "code": "zh", "htmlLang": "zh-CN", "label": "中文", "name": "Chinese", "native": "中文", "flag": "🇨🇳" },
+  { "code": "ja", "htmlLang": "ja", "label": "日本語", "name": "Japanese", "native": "日本語", "flag": "🇯🇵" },
+  { "code": "de", "htmlLang": "de", "label": "Deutsch", "name": "German", "native": "Deutsch", "flag": "🇩🇪" },
+  { "code": "ru", "htmlLang": "ru", "label": "Русский", "name": "Russian", "native": "Русский", "flag": "🇷🇺" },
+  { "code": "ko", "htmlLang": "ko", "label": "한국어", "name": "Korean", "native": "한국어", "flag": "🇰🇷" },
+  { "code": "hi", "htmlLang": "hi-IN", "label": "हिन्दी", "name": "Hindi", "native": "हिन्दी", "flag": "🇮🇳" },
+  { "code": "ar", "htmlLang": "ar", "label": "العربية", "name": "Arabic", "native": "العربية", "flag": "🇸🇦" },
+  { "code": "bn", "htmlLang": "bn-BD", "label": "বাংলা", "name": "Bengali", "native": "বাংলা", "flag": "🇧🇩" },
+  { "code": "id", "htmlLang": "id-ID", "label": "Bahasa Indonesia", "name": "Indonesian", "native": "Bahasa Indonesia", "flag": "🇮🇩" },
+  { "code": "ur", "htmlLang": "ur-PK", "label": "اردو", "name": "Urdu", "native": "اردو", "flag": "🇵🇰" },
+  { "code": "vi", "htmlLang": "vi-VN", "label": "Tiếng Việt", "name": "Vietnamese", "native": "Tiếng Việt", "flag": "🇻🇳" },
+  { "code": "tr", "htmlLang": "tr-TR", "label": "Türkçe", "name": "Turkish", "native": "Türkçe", "flag": "🇹🇷" }
+]
