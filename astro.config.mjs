@@ -28,7 +28,7 @@ export default defineConfig({
   base: '/',
   srcDir: './src',
   publicDir: './src/public',
-  redirects: docsRedirects,
+  redirects: { ...docsRedirects, '/pt/': '/pt-br/' },
   integrations: [
     starlight({
       title: 'ARGVUS',
@@ -48,11 +48,13 @@ export default defineConfig({
       components: {
         SiteTitle: './src/components/DocsSiteTitle.astro',
         Footer: './src/components/DocsFooter.astro',
+        LanguageSelect: './src/components/DocsLanguageSelect.astro',
         Sidebar: './src/components/Sidebar.astro',
       },
       locales: {
         root: { label: 'English', lang: 'en' },
-        pt: { label: 'Português', lang: 'pt-BR' },
+        pt: { label: 'Português (Brasil)', lang: 'pt-BR' },
+        'pt-pt': { label: 'Português (Portugal)', lang: 'pt-PT' },
         es: { label: 'Español', lang: 'es' },
         fr: { label: 'Français', lang: 'fr' },
         it: { label: 'Italiano', lang: 'it' },
@@ -61,6 +63,13 @@ export default defineConfig({
         de: { label: 'Deutsch', lang: 'de' },
         ru: { label: 'Русский', lang: 'ru' },
         ko: { label: '한국어', lang: 'ko' },
+        hi: { label: 'हिन्दी', lang: 'hi-IN' },
+        ar: { label: 'العربية', lang: 'ar' },
+        bn: { label: 'বাংলা', lang: 'bn-BD' },
+        id: { label: 'Bahasa Indonesia', lang: 'id-ID' },
+        ur: { label: 'اردو', lang: 'ur-PK' },
+        vi: { label: 'Tiếng Việt', lang: 'vi-VN' },
+        tr: { label: 'Türkçe', lang: 'tr-TR' },
       },
       plugins: [
         starlightVersions({

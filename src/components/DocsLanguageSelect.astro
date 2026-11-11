@@ -1,0 +1,114 @@
+---
+const languages = [
+  { code: 'ar', name: 'Arabic', native: 'العربية', flag: '🇸🇦' },
+  { code: 'bn', name: 'Bengali', native: 'বাংলা', flag: '🇧🇩' },
+  { code: 'zh-cn', name: 'Chinese', native: '中文', flag: '🇨🇳' },
+  { code: 'root', name: 'English', native: 'English', flag: '🇬🇧' },
+  { code: 'fr', name: 'French', native: 'Français', flag: '🇫🇷' },
+  { code: 'de', name: 'German', native: 'Deutsch', flag: '🇩🇪' },
+  { code: 'hi', name: 'Hindi', native: 'हिन्दी', flag: '🇮🇳' },
+  { code: 'id', name: 'Indonesian', native: 'Bahasa Indonesia', flag: '🇮🇩' },
+  { code: 'it', name: 'Italian', native: 'Italiano', flag: '🇮🇹' },
+  { code: 'ja', name: 'Japanese', native: '日本語', flag: '🇯🇵' },
+  { code: 'ko', name: 'Korean', native: '한국어', flag: '🇰🇷' },
+  { code: 'pt-pt', name: 'Portuguese (Portugal)', native: 'Português (Portugal)', flag: '🇵🇹' },
+  { code: 'pt', name: 'Portuguese (Brazil)', native: 'Português (Brasil)', flag: '🇧🇷' },
+  { code: 'ru', name: 'Russian', native: 'Русский', flag: '🇷🇺' },
+  { code: 'es', name: 'Spanish', native: 'Español', flag: '🇪🇸' },
+  { code: 'tr', name: 'Turkish', native: 'Türkçe', flag: '🇹🇷' },
+  { code: 'ur', name: 'Urdu', native: 'اردو', flag: '🇵🇰' },
+  { code: 'vi', name: 'Vietnamese', native: 'Tiếng Việt', flag: '🇻🇳' },
+].sort((a, b) => a.name.localeCompare(b.name, 'en'))
+const localeLabels = Object.fromEntries(languages.map(({ code, native }) => [code, native]))
+const currentLocale = Astro.locals.starlightRoute.locale ?? 'root'
+const currentLanguage = languages.find(({ code }) => code === currentLocale) ?? languages.find(({ code }) => code === 'root')!
+const configuredLocales = new Set(Object.keys(localeLabels))
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean)
+if (pathSegments[0] && configuredLocales.has(pathSegments[0]) && pathSegments[0] !== 'root') pathSegments.shift()
+const pagePath = pathSegments.join('/')
+const hasTrailingSlash = Astro.url.pathname.endsWith('/')
+const basePath = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`
+const hrefForLocale = (locale: string) => {
+  const localePath = locale === 'root' ? '' : `${locale}/`
+  const page = pagePath ? `${pagePath}${hasTrailingSlash ? '/' : ''}` : ''
+  return `${basePath}${localePath}${page}`
+}
+---
+
+<div class="docs-language-picker">
+  <details class="docs-language-menu">
+    <summary aria-label="Change language" aria-haspopup="listbox">
+      <span class="docs-language-current-flag" aria-hidden="true">{currentLanguage.flag}</span>
+      <span class="docs-language-current-code">{currentLocale === 'root' ? 'EN' : currentLocale.toUpperCase()}</span>
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 6 4.5 4 4.5-4" /></svg>
+    </summary>
+    <div class="docs-language-popover">
+      <label class="docs-language-search">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" /><path d="m13 13 4 4" /></svg>
+        <input type="search" placeholder="Search languages…" aria-label="Search languages" autocomplete="off" data-docs-language-search />
+      </label>
+      <div class="docs-language-options" role="listbox" aria-label="Languages">
+        {languages.map(({ code, name, native, flag }) => (
+          <a
+            class="docs-language-option"
+            href={hrefForLocale(code)}
+            role="option"
+            aria-selected={currentLocale === code ? 'true' : 'false'}
+            aria-current={currentLocale === code ? 'page' : undefined}
+            data-docs-language-option
+            data-search={`${name} ${native} ${code}`}
+          >
+            <span class="docs-language-flag" aria-hidden="true">{flag}</span>
+            <span>{native}</span>
+          </a>
+        ))}
+        <p class="docs-language-empty" data-docs-language-empty hidden>No languages found.</p>
+      </div>
+    </div>
+  </details>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLDetailsElement>('.docs-language-menu').forEach((menu) => {
+    const search = menu.querySelector<HTMLInputElement>('[data-docs-language-search]')
+    const options = Array.from(menu.querySelectorAll<HTMLAnchorElement>('[data-docs-language-option]'))
+    const empty = menu.querySelector<HTMLElement>('[data-docs-language-empty]')
+
+    const resetSearch = () => {
+      if (!search) return
+      search.value = ''
+      options.forEach((option) => { option.hidden = false })
+      if (empty) empty.hidden = true
+    }
+
+    menu.addEventListener('toggle', () => {
+      if (menu.open) {
+        resetSearch()
+        requestAnimationFrame(() => search?.focus())
+      } else {
+        resetSearch()
+      }
+    })
+
+    search?.addEventListener('input', () => {
+      const query = (search.value ?? '').normalize('NFD').replace(/\p{Diacritic}/gu, '').toLocaleLowerCase()
+      let visible = 0
+      options.forEach((option) => {
+        const value = (option.dataset.search ?? '').normalize('NFD').replace(/\p{Diacritic}/gu, '').toLocaleLowerCase()
+        option.hidden = !value.includes(query)
+        if (!option.hidden) visible++
+      })
+      if (empty) empty.hidden = visible > 0
+    })
+
+    document.addEventListener('click', (event) => {
+      if (event.target instanceof Node && !menu.contains(event.target)) menu.open = false
+    })
+    menu.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        menu.open = false
+        menu.querySelector('summary')?.focus()
+      }
+    })
+  })
+</script>
