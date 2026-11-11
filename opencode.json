@@ -11,5 +11,14 @@
       "*": "allow",
       "rm *": "deny"
     }
+  },
+  "agent": {
+    "news-translator": {
+      "description": "Return translation JSON without using repository tools.",
+      "mode": "primary",
+      "permission": [
+        { "action": "*", "resource": "*", "effect": "deny" }
+      ]
+    }
   }
 }

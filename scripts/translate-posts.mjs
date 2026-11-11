@@ -1,4 +1,4 @@
-import { spawn } from 'node:child_process'
+import { spawn, spawnSync } from 'node:child_process'
 import { readdir, readFile, mkdir, writeFile, access } from 'node:fs/promises'
 import path from 'node:path'
 import { createInterface } from 'node:readline/promises'
@@ -8,12 +8,45 @@ import locales from '../src/lib/site-languages.json' with { type: 'json' }
 import siteConfig from '../src/site-config.json' with { type: 'json' }
 
 const postsDirectory = path.resolve('src/content/news')
-const translationConfig = siteConfig.posts?.translate
-const mode = translationConfig?.mode
-const apiKeyVariables = {
-  ollama: 'POSTS_TRANSLATE_OLLAMA_API_KEY',
-  openai: 'POSTS_TRANSLATE_OPENAI_API_KEY',
-  gemini: 'POSTS_TRANSLATE_GEMINI_API_KEY',
+const translationConfig = siteConfig.news?.translate
+const providers = {
+  opencode: {
+    label: 'OpenCode',
+    command: 'opencode',
+    install: 'https://opencode.ai/docs/',
+    modelConfig: 'opencode',
+    args: (prompt, model, sourceFile) => [
+      'run', '--agent', 'news-translator',
+      '--format', 'default', '--file', sourceFile,
+      ...(model ? ['--model', model] : []),
+      prompt,
+    ],
+  },
+  codex: {
+    label: 'Codex',
+    command: 'codex',
+    install: 'https://developers.openai.com/codex/cli/',
+    modelConfig: 'codex',
+    args: (prompt, model) => [
+      'exec', '--sandbox', 'read-only', '--ephemeral',
+      ...(model ? ['--model', model] : []),
+      prompt,
+    ],
+  },
+  'claude-code': {
+    label: 'Claude Code',
+    command: 'claude',
+    install: 'npm install -g @anthropic-ai/claude-code',
+    modelConfig: 'claude-code',
+    args: (prompt, model) => [
+      '-p', prompt,
+      '--output-format', 'json',
+      '--tools', '',
+      '--disallowedTools', 'mcp__*',
+      '--no-session-persistence',
+      ...(model ? ['--model', model] : []),
+    ],
+  },
 }
 
 function splitFrontmatter(source, filePath) {
@@ -48,7 +81,8 @@ function createTranslationPrompt(source, locale) {
     'Return only a JSON object with string fields title, description, and body.',
     'Translate natural language while preserving Markdown structure, links, HTML, inline code, fenced code blocks, commands, product names, and technical identifiers.',
     'Do not add or remove content.',
-    'The source article is provided as a JSON object on standard input.',
+    'Do not use tools, read or write files, run commands, or modify the repository. Only return the translated JSON object.',
+    'The source article is included with this request as JSON or an attached Markdown file.',
   ].join('\n\n')
   const input = JSON.stringify({
     title: source.metadata.title ?? '',
@@ -58,30 +92,30 @@ function createTranslationPrompt(source, locale) {
   return { prompt, input }
 }
 
-function runClaude({ prompt, input }, model, postPath, localeCode) {
-  return new Promise((resolve, reject) => {
-    const args = [
-      '-p',
-      prompt,
-      '--output-format', 'json',
-      '--tools', '',
-      '--disallowedTools', 'mcp__*',
-      '--no-session-persistence',
-    ]
-    if (model) args.push('--model', model)
+function detectAvailableProviders() {
+  return Object.entries(providers).filter(([, config]) => {
+    const result = spawnSync(config.command, ['--version'], {
+      encoding: 'utf8',
+      timeout: 5000,
+      windowsHide: true,
+    })
+    return !result.error && result.status === 0
+  })
+}
 
-    const child = spawn('claude', args, { stdio: ['pipe', 'pipe', 'pipe'] })
+function runCli(provider, { prompt, input }, postPath, localeCode) {
+  const config = providers[provider]
+  const model = translationConfig?.[config.modelConfig]?.MODEL?.trim()
+  const sourceFile = path.relative(process.cwd(), path.join(postsDirectory, postPath))
+  return new Promise((resolve, reject) => {
+    const child = spawn(config.command, config.args(prompt, model, sourceFile), { stdio: ['pipe', 'pipe', 'pipe'] })
     let output = ''
     let errors = ''
     child.stdout.setEncoding('utf8').on('data', (chunk) => { output += chunk })
     child.stderr.setEncoding('utf8').on('data', (chunk) => { errors += chunk })
     child.on('error', (error) => {
       if (error.code === 'ENOENT') {
-        reject(new Error([
-          'Claude Code CLI não encontrado.',
-          'Instale com: npm install -g @anthropic-ai/claude-code',
-          'Depois execute "claude" uma vez para autenticar sua conta e tente novamente.',
-        ].join('\n')))
+        reject(new Error(`${config.label} CLI não encontrado. Instale-o (${config.install}) e autentique a conta no próprio CLI.`))
         return
       }
       reject(error)
@@ -90,84 +124,32 @@ function runClaude({ prompt, input }, model, postPath, localeCode) {
       if (code !== 0) {
         const details = (errors || output).trim().slice(-1200)
         reject(new Error([
-          `Claude Code falhou ao traduzir ${postPath} (${localeCode}).`,
+          `${config.label} falhou ao traduzir ${postPath} (${localeCode}).`,
           ...(details ? [details] : []),
-          'Confirme que o Claude Code está autenticado: execute "claude" no terminal e conclua o login.',
+          `Confirme que ${config.label} está instalado e autenticado no terminal.`,
         ].join('\n')))
         return
       }
       try {
-        const payload = JSON.parse(output)
-        if (typeof payload.result !== 'string') {
-          throw new Error('A saída JSON do Claude Code não contém o campo "result".')
+        let content = output
+        if (provider === 'claude-code') {
+          const payload = JSON.parse(output)
+          if (typeof payload.result !== 'string') {
+            throw new Error('A saída JSON do Claude Code não contém o campo "result".')
+          }
+          content = payload.result
         }
-        resolve(parseJsonResponse(payload.result, postPath, localeCode))
+        resolve(parseJsonResponse(content, postPath, localeCode))
       } catch (error) {
-        reject(new Error(`Resposta inesperada do Claude Code para ${postPath} (${localeCode}): ${error.message}`))
+        reject(new Error(`Resposta inesperada de ${config.label} para ${postPath} (${localeCode}): ${error.message}`))
       }
     })
-    child.stdin.end(input)
+    child.stdin.end(provider === 'opencode' ? undefined : input)
   })
 }
 
-async function translatePost(source, postPath, locale) {
-  if (mode === 'claude-code') {
-    return runClaude(createTranslationPrompt(source, locale), translationConfig['claude-code']?.MODEL?.trim(), postPath, locale.code)
-  }
-
-  const providerConfig = translationConfig[mode]
-  const apiKeyVariable = apiKeyVariables[mode]
-  const baseUrl = providerConfig?.BASE_URL?.trim()
-  const model = providerConfig?.MODEL?.trim()
-  const apiKey = process.env[apiKeyVariable]?.trim()
-  const missingSettings = [
-    !baseUrl && `posts.translate.${mode}.BASE_URL em src/site-config.json`,
-    !model && `posts.translate.${mode}.MODEL em src/site-config.json`,
-    !apiKey && apiKeyVariable,
-  ].filter(Boolean)
-
-  if (missingSettings.length > 0) {
-    throw new Error(`Configuração incompleta para "${mode}". Faltando:\n${missingSettings.map((setting) => `- ${setting}`).join('\n')}`)
-  }
-
-  const endpoint = `${baseUrl.replace(/\/+$/, '')}/chat/completions`
-  const response = await fetch(endpoint, {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-      authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model,
-      temperature: 0.2,
-      messages: [
-        {
-          role: 'system',
-          content: `Translate an ARGVUS website article into ${locale.label}. Return only a JSON object with string fields title, description, and body. Translate natural language while preserving Markdown structure, links, HTML, inline code, fenced code blocks, commands, product names, and technical identifiers. Do not add or remove content.`,
-        },
-        {
-          role: 'user',
-          content: JSON.stringify({
-            title: source.metadata.title ?? '',
-            description: source.metadata.description ?? '',
-            body: source.body,
-          }),
-        },
-      ],
-    }),
-  })
-
-  if (!response.ok) {
-    const details = (await response.text()).slice(0, 500)
-    throw new Error(`Erro da API ${response.status} ao traduzir ${postPath} (${locale.code}): ${details}`)
-  }
-
-  const payload = await response.json()
-  const content = payload?.choices?.[0]?.message?.content
-  if (typeof content !== 'string') {
-    throw new Error(`Resposta inesperada da API ao traduzir ${postPath} (${locale.code}).`)
-  }
-  return parseJsonResponse(content, postPath, locale.code)
+async function translatePost(provider, source, postPath, locale) {
+  return runCli(provider, createTranslationPrompt(source, locale), postPath, locale.code)
 }
 
 async function readSourcePosts() {
@@ -222,9 +204,33 @@ async function choosePosts(posts) {
   }
 }
 
-const supportedModes = ['ollama', 'openai', 'gemini', 'claude-code']
-if (!supportedModes.includes(mode)) {
-  throw new Error(`Modo de tradução inválido em src/site-config.json. Use ${supportedModes.join(', ')}.`)
+async function chooseProvider(availableProviders) {
+  const choices = availableProviders
+  if (!stdin.isTTY || !stdout.isTTY) {
+    throw new Error('A seleção do agente de tradução precisa de um terminal interativo.')
+  }
+
+  const readline = createInterface({ input: stdin, output: stdout })
+  try {
+    console.log('\nAgente local para tradução:')
+    choices.forEach(([, provider], index) => console.log(`${index + 1} - ${provider.label}`))
+    console.log('0 - cancelar')
+
+    while (true) {
+      const answer = (await readline.question('\nEscolha uma opção: ')).trim()
+      if (/^\d+$/.test(answer)) {
+        const choice = Number(answer)
+        if (choice === 0) return null
+        if (choice >= 1 && choice <= choices.length) return choices[choice - 1][0]
+      }
+      console.log(`Opção inválida. Digite um número de 0 a ${choices.length}.`)
+    }
+  } catch (error) {
+    if (error.code === 'ERR_USE_AFTER_CLOSE' || error.name === 'AbortError') return null
+    throw error
+  } finally {
+    readline.close()
+  }
 }
 
 const sourcePosts = await readSourcePosts()
@@ -277,37 +283,29 @@ if (pendingTranslations.length === 0) {
   process.exit(0)
 }
 
-if (mode !== 'claude-code') {
-  const apiKeyVariable = apiKeyVariables[mode]
-  const providerConfig = translationConfig[mode]
-  const missingSettings = [
-    !providerConfig?.BASE_URL?.trim() && `posts.translate.${mode}.BASE_URL em src/site-config.json`,
-    !providerConfig?.MODEL?.trim() && `posts.translate.${mode}.MODEL em src/site-config.json`,
-    !process.env[apiKeyVariable]?.trim() && apiKeyVariable,
-  ].filter(Boolean)
-  if (missingSettings.length > 0) {
-    const setup = mode === 'ollama'
-      ? [
-          'Tutorial rápido: Ollama local',
-          '1. Instale: curl -fsSL https://ollama.com/install.sh | sh',
-          '2. Inicie em outro terminal: ollama serve',
-          `3. Baixe o modelo: ollama pull ${providerConfig.MODEL?.trim() || 'qwen3:8b'}`,
-          '4. Configure posts.translate.ollama.BASE_URL e MODEL em src/site-config.json.',
-          `5. Configure a chave local: export ${apiKeyVariable}="ollama"`,
-        ]
-      : [`Configure sua chave de API: export ${apiKeyVariable}="sua-chave"`]
-    console.error([
-      `Configuração incompleta para "${mode}". Faltando:`,
-      ...missingSettings.map((setting) => `- ${setting}`),
-      '',
-      ...setup,
-    ].join('\n'))
-    process.exit(1)
-  }
+const availableProviders = detectAvailableProviders()
+if (availableProviders.length === 0) {
+  const installInstructions = Object.values(providers)
+    .map(({ label, install }) => `- ${label}: ${install}`)
+    .join('\n')
+  throw new Error(`Nenhum CLI de tradução foi encontrado. Instale e autentique pelo menos um:\n${installInstructions}`)
+}
+console.log(`CLIs disponíveis: ${availableProviders.map(([, provider]) => provider.label).join(', ')}`)
+
+const provider = await chooseProvider(availableProviders)
+if (!provider) {
+  console.log('Tradução cancelada.')
+  process.exit(0)
 }
 
+const configuredModel = translationConfig?.[providers[provider].modelConfig]?.MODEL?.trim()
+if (!configuredModel) {
+  throw new Error(`Defina news.translate.${providers[provider].modelConfig}.MODEL em src/site-config.json.`)
+}
+console.log(`Agente: ${providers[provider].label} (${configuredModel})`)
+
 for (const { filename, source, slug, locale, outputPath } of pendingTranslations) {
-  const translated = await translatePost(source, filename, locale)
+  const translated = await translatePost(provider, source, filename, locale)
   const metadata = {
     ...source.metadata,
     title: translated.title,

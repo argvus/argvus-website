@@ -1,19 +1,13 @@
 {
   "maintenance": false,
-  "posts": {
+  "news": {
+    "editor": "/usr/bin/vim",
     "translate": {
-      "mode": "gemini",
-      "ollama": {
-        "BASE_URL": "http://localhost:11434/v1",
-        "MODEL": "qwen3:8b"
+      "opencode": {
+        "MODEL": "opencode/deepseek-v4.1-flash-free"
       },
-      "openai": {
-        "BASE_URL": "https://api.openai.com/v1",
+      "codex": {
         "MODEL": "gpt-6-luna"
-      },
-      "gemini": {
-        "BASE_URL": "https://generativelanguage.googleapis.com/v1beta/openai/",
-        "MODEL": "gemini-3.6-flash"
       },
       "claude-code": {
         "MODEL": "haiku"
