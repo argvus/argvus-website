@@ -4,11 +4,14 @@ import codexImage from '../images/ai-agents/codex.png'
 import claudeImage from '../images/ai-agents/claude.svg'
 import opencodeImage from '../images/ai-agents/opencode.svg'
 import siteTranslations from '../i18n/site-locales.json'
+import { adaptEuropeanPortuguese } from '../lib/i18n/portuguese.ts'
 
-interface Props { lang: 'en' | 'pt' | 'es' | 'fr' | 'it' | 'zh' | 'ja' | 'de' | 'ru' | 'ko'; keycapSlots?: boolean }
+interface Props { lang: 'en' | 'pt-br' | 'pt-pt' | 'es' | 'fr' | 'it' | 'zh' | 'ja' | 'de' | 'ru' | 'ko' | 'hi' | 'ar' | 'bn' | 'id' | 'ur' | 'vi' | 'tr'; keycapSlots?: boolean }
 const { lang, keycapSlots = false } = Astro.props
-const isPT = lang === 'pt'
-const docsLocalePrefix = lang === 'en' ? '' : lang === 'zh' ? 'zh-cn/' : `${lang}/`
+const isPT = lang.startsWith('pt-')
+const docsLocalePrefix = ['en', 'pt-pt', 'hi', 'ar', 'bn', 'id', 'ur', 'vi', 'tr'].includes(lang)
+  ? ''
+  : lang === 'pt-br' ? 'pt/' : lang === 'zh' ? 'zh-cn/' : `${lang}/`
 const docs = `${import.meta.env.BASE_URL}${docsLocalePrefix}docs/argvus-ai/`
 const copy = isPT ? {
   eyebrow: 'AI Agents',
@@ -53,11 +56,12 @@ const copy = isPT ? {
   claudeAlt: 'Claude mark',
   opencodeAlt: 'OpenCode mark',
 }
-if (lang !== 'en' && lang !== 'pt') Object.assign(copy, siteTranslations[lang].agents)
+if (lang !== 'en' && !lang.startsWith('pt-')) Object.assign(copy, siteTranslations[lang].agents)
+if (lang === 'pt-pt') adaptEuropeanPortuguese(copy)
 const agents = [
   { id: 'codex', name: 'Codex', provider: 'OpenAI', image: codexImage, alt: copy.codexAlt, text: copy.codex, status: copy.packaged, url: 'https://openai.com/codex/' },
   { id: 'claude', name: 'Claude Code', provider: 'Anthropic', image: claudeImage, alt: copy.claudeAlt, text: copy.claude, status: copy.onDemand, url: 'https://code.claude.com/docs/en/overview' },
-  { id: 'opencode', name: 'OpenCode', provider: isPT ? 'Código aberto' : lang !== 'en' && lang !== 'pt' ? siteTranslations[lang].agents.openSource : 'Open source', image: opencodeImage, alt: copy.opencodeAlt, text: copy.opencode, status: copy.packaged, url: 'https://opencode.ai/' },
+  { id: 'opencode', name: 'OpenCode', provider: isPT ? 'Código aberto' : lang !== 'en' && !lang.startsWith('pt-') ? siteTranslations[lang].agents.openSource : 'Open source', image: opencodeImage, alt: copy.opencodeAlt, text: copy.opencode, status: copy.packaged, url: 'https://opencode.ai/' },
 ]
 ---
 

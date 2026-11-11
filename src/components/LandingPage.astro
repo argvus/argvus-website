@@ -27,6 +27,7 @@ import SiteHeader from './SiteHeader.astro'
 import SiteFooter from './SiteFooter.astro'
 import AiAgentsSection from './AiAgentsSection.astro'
 import siteTranslations from '../i18n/site-locales.json'
+import { adaptEuropeanPortuguese } from '../lib/i18n/portuguese.ts'
 
 const { version } = JSON.parse(
   fs.readFileSync(resolve(process.cwd(), 'version.json'), 'utf8'),
@@ -34,14 +35,16 @@ const { version } = JSON.parse(
 const isBeta = version.startsWith('0.')
 
 interface Props {
-  lang: 'en' | 'pt' | 'es' | 'fr' | 'it' | 'zh' | 'ja' | 'de' | 'ru' | 'ko'
+  lang: 'en' | 'pt-br' | 'pt-pt' | 'es' | 'fr' | 'it' | 'zh' | 'ja' | 'de' | 'ru' | 'ko' | 'hi' | 'ar' | 'bn' | 'id' | 'ur' | 'vi' | 'tr'
 }
 
 const { lang } = Astro.props
 const base = import.meta.env.BASE_URL
-const isPT = lang === 'pt'
+const isPT = lang.startsWith('pt-')
 const langPrefix = lang === 'en' ? '' : `${lang}/`
-const docsLocalePrefix = lang === 'en' ? '' : lang === 'zh' ? 'zh-cn/' : `${lang}/`
+const docsLocalePrefix = ['en', 'pt-pt', 'hi', 'ar', 'bn', 'id', 'ur', 'vi', 'tr'].includes(lang)
+  ? ''
+  : lang === 'pt-br' ? 'pt/' : lang === 'zh' ? 'zh-cn/' : `${lang}/`
 const siteUrl = 'https://argvus.github.io'
 const githubOrgUrl = 'https://github.com/orgs/argvus'
 // Logo servido pelo próprio site (cópia de argvus-logo/svg, em src/public/brand).
@@ -506,11 +509,12 @@ const t = isPT
       feedbackMade: 'Built for the open source community',
     }
 
-if (lang !== 'en' && lang !== 'pt') Object.assign(t, siteTranslations[lang].landing)
+if (lang !== 'en' && !lang.startsWith('pt-')) Object.assign(t, siteTranslations[lang].landing)
 t.versionBadge = `ARGVUS v${version}`
-const htmlLanguages: Record<string, string> = { en: 'en', pt: 'pt-BR', es: 'es', fr: 'fr', it: 'it', zh: 'zh-CN', ja: 'ja', de: 'de', ru: 'ru', ko: 'ko' }
+const htmlLanguages: Record<string, string> = { en: 'en', 'pt-br': 'pt-BR', 'pt-pt': 'pt-PT', es: 'es', fr: 'fr', it: 'it', zh: 'zh-CN', ja: 'ja', de: 'de', ru: 'ru', ko: 'ko', hi: 'hi-IN', ar: 'ar', bn: 'bn-BD', id: 'id-ID', ur: 'ur-PK', vi: 'vi-VN', tr: 'tr-TR' }
 t.htmlLang = htmlLanguages[lang]
-const activeStatus: Record<string, string> = { en: 'ACTIVE', pt: 'ATIVO', es: 'ACTIVO', fr: 'ACTIF', it: 'ATTIVO', zh: '运行中', ja: '有効', de: 'AKTIV', ru: 'АКТИВЕН', ko: '활성' }
+if (lang === 'pt-pt') adaptEuropeanPortuguese(t)
+const activeStatus: Record<string, string> = { en: 'ACTIVE', pt: 'ATIVO', es: 'ACTIVO', fr: 'ACTIF', it: 'ATTIVO', zh: '运行中', ja: '有効', de: 'AKTIV', ru: 'АКТИВЕН', ko: '활성', hi: 'सक्रिय', ar: 'نشط', bn: 'সক্রিয়', id: 'AKTIF', ur: 'فعال', vi: 'ĐANG HOẠT ĐỘNG', tr: 'ETKİN' }
 
 // Vídeo da seção de prévias: `page_home.video.youtube` aceita a URL (watch, youtu.be, embed,
 // shorts) ou o ID. Sem ID válido, a seção mostra a capa com o aviso de "em breve".
@@ -699,7 +703,7 @@ const ccFirst = ccSteps[0].items[0]
 ---
 
 <!doctype html>
-<html lang={t.htmlLang} data-theme="dark">
+<html lang={t.htmlLang} dir={lang === 'ar' || lang === 'ur' ? 'rtl' : 'ltr'} data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

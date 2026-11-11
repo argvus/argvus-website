@@ -18,14 +18,15 @@ import fs from 'node:fs'
 import { resolve } from 'node:path'
 import siteConfig from '../site-config.json'
 import siteTranslations from '../i18n/site-locales.json'
+import { adaptEuropeanPortuguese } from '../lib/i18n/portuguese.ts'
 
 interface Props {
-  lang: 'en' | 'pt' | 'es' | 'fr' | 'it' | 'zh' | 'ja' | 'de' | 'ru' | 'ko'
+  lang: 'en' | 'pt-br' | 'pt-pt' | 'es' | 'fr' | 'it' | 'zh' | 'ja' | 'de' | 'ru' | 'ko' | 'hi' | 'ar' | 'bn' | 'id' | 'ur' | 'vi' | 'tr'
 }
 
 const { lang } = Astro.props
 const base = import.meta.env.BASE_URL
-const isPT = lang === 'pt'
+const isPT = lang.startsWith('pt-')
 const langPrefix = lang === 'en' ? '' : `${lang}/`
 const siteUrl = 'https://argvus.github.io'
 const link = (path: string) => base + langPrefix + path
@@ -105,13 +106,14 @@ const t = isPT
       footerLicense: 'Licensed under GPL-3.0',
     }
 
-if (lang !== 'en' && lang !== 'pt') Object.assign(t, siteTranslations[lang].about)
-const htmlLanguages: Record<string, string> = { en: 'en', pt: 'pt-BR', es: 'es', fr: 'fr', it: 'it', zh: 'zh-CN', ja: 'ja', de: 'de', ru: 'ru', ko: 'ko' }
+if (lang !== 'en' && !lang.startsWith('pt-')) Object.assign(t, siteTranslations[lang].about)
+const htmlLanguages: Record<string, string> = { en: 'en', 'pt-br': 'pt-BR', 'pt-pt': 'pt-PT', es: 'es', fr: 'fr', it: 'it', zh: 'zh-CN', ja: 'ja', de: 'de', ru: 'ru', ko: 'ko', hi: 'hi-IN', ar: 'ar', bn: 'bn-BD', id: 'id-ID', ur: 'ur-PK', vi: 'vi-VN', tr: 'tr-TR' }
 t.htmlLang = htmlLanguages[lang]
+if (lang === 'pt-pt') adaptEuropeanPortuguese(t)
 ---
 
 <!doctype html>
-<html lang={t.htmlLang} data-theme="dark">
+<html lang={t.htmlLang} dir={lang === 'ar' || lang === 'ur' ? 'rtl' : 'ltr'} data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

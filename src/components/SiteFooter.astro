@@ -1,12 +1,15 @@
 ---
 import siteTranslations from '../i18n/site-locales.json'
+import { adaptEuropeanPortuguese } from '../lib/i18n/portuguese.ts'
 
-interface Props { lang: 'en' | 'pt' | 'es' | 'fr' | 'it' | 'zh' | 'ja' | 'de' | 'ru' | 'ko' }
+interface Props { lang: 'en' | 'pt-br' | 'pt-pt' | 'es' | 'fr' | 'it' | 'zh' | 'ja' | 'de' | 'ru' | 'ko' | 'hi' | 'ar' | 'bn' | 'id' | 'ur' | 'vi' | 'tr' }
 
 const { lang } = Astro.props
-const isPT = lang === 'pt'
+const isPT = lang.startsWith('pt-')
 const base = import.meta.env.BASE_URL
-const docsLocalePrefix = lang === 'en' ? '' : lang === 'zh' ? 'zh-cn/' : `${lang}/`
+const docsLocalePrefix = ['en', 'pt-pt', 'hi', 'ar', 'bn', 'id', 'ur', 'vi', 'tr'].includes(lang)
+  ? ''
+  : lang === 'pt-br' ? 'pt/' : lang === 'zh' ? 'zh-cn/' : `${lang}/`
 const link = (path: string) => path.startsWith('/') ? path : base + (path.startsWith('docs/') ? docsLocalePrefix : lang !== 'en' && !path.startsWith('packages/') ? `${lang}/` : '') + path
 const t = isPT
   ? {
@@ -29,7 +32,8 @@ const t = isPT
       ], community: 'Community', feedback: 'Built for the open source community',
       license: 'Licensed under GPL-3.0', maintainer: 'Maintained by William C. Canin',
     }
-if (lang !== 'en' && lang !== 'pt') Object.assign(t, siteTranslations[lang].footer)
+if (lang !== 'en' && !lang.startsWith('pt-')) Object.assign(t, siteTranslations[lang].footer)
+if (lang === 'pt-pt') adaptEuropeanPortuguese(t)
 const channels = isPT
   ? [
       ['Canal oficial', 'https://t.me/argvusdesktop'],
@@ -43,6 +47,7 @@ const channels = isPT
       ['Global community', 'https://t.me/argvuscommunity'],
       ['Brazilian community', 'https://t.me/argvuscommunity_br'],
     ]
+if (lang === 'pt-pt') adaptEuropeanPortuguese(channels)
 const logoUrl = `${base}brand/argvus-logo.svg`
 const wordmarkUrl = `${base}brand/argvus-wordmark.svg`
 ---
