@@ -27,6 +27,7 @@ import SiteHeader from './SiteHeader.astro'
 import SiteFooter from './SiteFooter.astro'
 import AiAgentsSection from './AiAgentsSection.astro'
 import siteTranslations from '../i18n/site-locales.json'
+import siteLanguages from '../lib/site-languages.json'
 import { adaptEuropeanPortuguese } from '../lib/i18n/portuguese.ts'
 
 const { version } = JSON.parse(
@@ -57,7 +58,7 @@ const link = (path: string) =>
 const t = isPT
   ? {
       htmlLang: 'pt-BR',
-      title: 'ARGVUS — Desktop completo para Hyprland, empacotado para Arch Linux',
+      title: lang === 'pt-pt' ? 'ARGVUS — Ambiente de trabalho modular Wayland para Arch Linux' : 'ARGVUS — Desktop Wayland modular para Arch Linux',
       description:
         'ARGVUS é um ambiente de desktop modular para Hyprland e Wayland, com ARGVUS Removable Devices, Waybar, temas integrados e pacotes assinados para Arch Linux.',
       keywords:
@@ -284,7 +285,7 @@ const t = isPT
 
   : {
       htmlLang: 'en',
-      title: 'ARGVUS — A modular desktop environment for Wayland and Arch Linux, built on Hyprland.',
+      title: 'ARGVUS — Modular Wayland desktop for Arch Linux',
       description:
         'ARGVUS is a complete Hyprland and Wayland desktop with ARGVUS Removable Devices, Waybar, integrated themes and signed Arch Linux packages.',
       keywords:
@@ -514,6 +515,15 @@ t.versionBadge = `ARGVUS v${version}`
 const htmlLanguages: Record<string, string> = { en: 'en', 'pt-br': 'pt-BR', 'pt-pt': 'pt-PT', es: 'es', fr: 'fr', it: 'it', zh: 'zh-CN', ja: 'ja', de: 'de', ru: 'ru', ko: 'ko', hi: 'hi-IN', ar: 'ar', bn: 'bn-BD', id: 'id-ID', ur: 'ur-PK', vi: 'vi-VN', tr: 'tr-TR' }
 t.htmlLang = htmlLanguages[lang]
 if (lang === 'pt-pt') adaptEuropeanPortuguese(t)
+const canonicalUrl = `${siteUrl}${base}${langPrefix}`
+const organizationId = `${siteUrl}/#organization`
+const websiteId = `${siteUrl}/#website`
+const softwareId = `${siteUrl}/#software`
+const repositoryUrl = 'https://github.com/argvus/argvus'
+const languageAlternates = siteLanguages.map(({ code, htmlLang }) => ({
+  code: htmlLang,
+  url: `${siteUrl}${base}${code === 'en' ? '' : `${code}/`}`,
+}))
 const activeStatus: Record<string, string> = { en: 'ACTIVE', pt: 'ATIVO', es: 'ACTIVO', fr: 'ACTIF', it: 'ATTIVO', zh: '运行中', ja: '有効', de: 'AKTIV', ru: 'АКТИВЕН', ko: '활성', hi: 'सक्रिय', ar: 'نشط', bn: 'সক্রিয়', id: 'AKTIF', ur: 'فعال', vi: 'ĐANG HOẠT ĐỘNG', tr: 'ETKİN' }
 
 // Vídeo da seção de prévias: `page_home.video.youtube` aceita a URL (watch, youtu.be, embed,
@@ -711,12 +721,15 @@ const ccFirst = ccSteps[0].items[0]
     <meta name="description" content={t.description} />
     <meta name="keywords" content={t.keywords} />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={`${siteUrl}${base}${langPrefix}`} />
+    <link rel="canonical" href={canonicalUrl} />
+    {languageAlternates.map(({ code, url }) => <link rel="alternate" hreflang={code} href={url} />)}
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}${base}`} />
+    <link rel="alternate" type="application/rss+xml" title={`ARGVUS RSS — ${t.htmlLang}`} href={`${siteUrl}${base}news/${lang === 'en' ? '' : `${lang}/`}feed.xml`} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="ARGVUS" />
     <meta property="og:title" content={t.title} />
     <meta property="og:description" content={t.description} />
-    <meta property="og:url" content={`${siteUrl}${base}${langPrefix}`} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={new URL(socialImage.src, siteUrl).href} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -728,14 +741,35 @@ const ccFirst = ccSteps[0].items[0]
     <link rel="icon" type="image/png" href={base + 'favicon.png'} />
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
-      '@type': 'SoftwareApplication',
-      name: 'ARGVUS',
-      applicationCategory: 'DesktopApplication',
-      operatingSystem: 'Arch Linux',
-      url: siteUrl,
-      codeRepository: githubOrgUrl,
-      description: t.description,
-      keywords: t.keywords,
+      '@graph': [
+        {
+          '@type': 'WebSite',
+          '@id': websiteId,
+          name: 'ARGVUS',
+          url: siteUrl,
+          publisher: { '@id': organizationId },
+        },
+        {
+          '@type': 'Organization',
+          '@id': organizationId,
+          name: 'ARGVUS',
+          url: siteUrl,
+          logo: `${siteUrl}${base}favicon.png`,
+          sameAs: [githubOrgUrl],
+        },
+        {
+          '@type': 'SoftwareApplication',
+          '@id': softwareId,
+          name: 'ARGVUS',
+          applicationCategory: 'DesktopEnhancementApplication',
+          operatingSystem: 'Arch Linux',
+          url: siteUrl,
+          codeRepository: repositoryUrl,
+          description: t.description,
+          keywords: t.keywords,
+          publisher: { '@id': organizationId },
+        },
+      ],
     })} />
     <script is:inline>
       // Aplica o tema antes do primeiro paint, sincronizado com a docs (chave do Starlight).

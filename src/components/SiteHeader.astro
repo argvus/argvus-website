@@ -29,6 +29,7 @@ const languageHref = (code: string) => page === 'news'
 const t = isPT
   ? {
       navAria: 'Navegação principal', navDocs: 'Documentação', navNews: 'Notícias', navArch: 'Repositório', navArchArch: 'Arch Linux',
+      navFeed: 'Feed RSS',
       github: 'GitHub', navDonate: 'Apoiar', langAria: 'Alterar idioma', langEnglish: 'English', langPortuguese: 'Português',
       langSearch: 'Pesquisar idioma…', langNoResults: 'Nenhum idioma encontrado.',
       themeAria: 'Alterar tema', themeLight: 'Light', themeDark: 'Dark', themeSystem: 'System', navMenu: 'Menu',
@@ -36,6 +37,7 @@ const t = isPT
     }
   : {
       navAria: 'Main navigation', navDocs: 'Documentation', navNews: 'News', navArch: 'Repository', navArchArch: 'Arch Linux',
+      navFeed: 'RSS feed',
       github: 'GitHub', navDonate: 'Donate', langAria: 'Change language', langEnglish: 'English', langPortuguese: 'Português',
       langSearch: 'Search languages…', langNoResults: 'No languages found.',
       themeAria: 'Change theme', themeLight: 'Light', themeDark: 'Dark', themeSystem: 'System', navMenu: 'Menu',
@@ -46,6 +48,7 @@ if (lang === 'pt-pt') adaptEuropeanPortuguese(t)
 const logoUrl = `${base}brand/argvus-logo.svg`
 const wordmarkUrl = `${base}brand/argvus-wordmark.svg`
 const githubOrgUrl = 'https://github.com/orgs/argvus'
+const rssHref = lang === 'en' ? `${base}news/feed.xml` : `${base}news/${lang}/feed.xml`
 ---
 
 <header class="site-header">
@@ -59,6 +62,7 @@ const githubOrgUrl = 'https://github.com/orgs/argvus'
       <div class="nav-links" id="site-nav-links">
         <a class="nav-link" href={link('docs/introduction/')}><i class="fa-solid fa-book-open"></i>{t.navDocs}</a>
         <a class="nav-link" href={newsBase}><i class="fa-regular fa-newspaper"></i>{t.navNews}</a>
+        <a class="nav-link nav-link-feed" href={rssHref} aria-label={t.navFeed} title={t.navFeed}><i class="fa-solid fa-rss" aria-hidden="true"></i><span>RSS</span></a>
         <div class="nav-dropdown" data-nav-dropdown>
           <button class="nav-link nav-dropdown-trigger" type="button" data-nav-dropdown-trigger>
             <i class="fa-solid fa-cube"></i>{t.navArch}

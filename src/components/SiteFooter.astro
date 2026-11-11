@@ -1,6 +1,7 @@
 ---
 import siteTranslations from '../i18n/site-locales.json'
 import { adaptEuropeanPortuguese } from '../lib/i18n/portuguese.ts'
+import siteLanguages from '../lib/site-languages.json'
 
 interface Props { lang: 'en' | 'pt-br' | 'pt-pt' | 'es' | 'fr' | 'it' | 'zh' | 'ja' | 'de' | 'ru' | 'ko' | 'hi' | 'ar' | 'bn' | 'id' | 'ur' | 'vi' | 'tr' }
 
@@ -34,6 +35,11 @@ const t = isPT
     }
 if (lang !== 'en' && !lang.startsWith('pt-')) Object.assign(t, siteTranslations[lang].footer)
 if (lang === 'pt-pt') adaptEuropeanPortuguese(t)
+const newsTitle = isPT ? 'Notícias' : lang === 'en' ? 'News' : siteTranslations[lang].header.navNews
+const newsLinks = siteLanguages.map(({ code, native }) => ({
+  label: native,
+  href: `${base}news/${code === 'en' ? '' : `${code}/`}`,
+}))
 const channels = isPT
   ? [
       ['Canal oficial', 'https://t.me/argvusdesktop'],
@@ -71,6 +77,12 @@ const wordmarkUrl = `${base}brand/argvus-wordmark.svg`
         <ul>{t.resourceLinks.map(([label, href]) => (
           <li><a href={href.startsWith('http') ? href : link(href)}>{label}</a></li>
         ))}</ul>
+      </div>
+      <div class="footer-col">
+        <h4>{newsTitle}</h4>
+        <ul class="footer-news-links" aria-label={newsTitle}>
+          {newsLinks.map(({ label, href }) => <li><a href={href}>{label}</a></li>)}
+        </ul>
       </div>
       <div class="footer-col">
         <h4>{t.community}</h4>

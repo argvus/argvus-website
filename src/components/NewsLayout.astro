@@ -29,6 +29,7 @@ const isBeta = versionInfo.version.startsWith('0.')
 const contributionEnabled = siteConfig.page_home.contributionLinks.enable
 const base = import.meta.env.BASE_URL
 const canonical = `https://argvus.github.io${base}${getCanonicalPath(lang, newsPath)}`
+const rssUrl = `https://argvus.github.io${base}news/${lang === 'en' ? '' : `${lang}/`}feed.xml`
 function getCanonicalPath(currentLang: string, path: string) {
   return `news/${currentLang === 'en' ? '' : `${currentLang}/`}${path ? `${path}/` : ''}`
 }
@@ -43,6 +44,7 @@ function getCanonicalPath(currentLang: string, path: string) {
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="application/rss+xml" title={`ARGVUS RSS — ${locale.htmlLang}`} href={rssUrl} />
     <link rel="icon" type="image/png" href={`${base}favicon.png`} />
     <title>{title} — ARGVUS</title>
     <meta property="og:type" content={newsPath ? 'article' : 'website'} />

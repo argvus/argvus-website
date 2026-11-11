@@ -32,6 +32,7 @@ const siteUrl = 'https://argvus.github.io'
 const link = (path: string) => base + langPrefix + path
 const pagePath = `${langPrefix}about/`
 const pageUrl = `${siteUrl}${base}${pagePath}`
+const rssUrl = `${siteUrl}${base}news/${lang === 'en' ? '' : `${lang}/`}feed.xml`
 const initialPronunciation = isPT ? argvusPronunciationPt : argvusPronunciationEn
 const version = JSON.parse(fs.readFileSync(resolve(process.cwd(), 'version.json'), 'utf8')).version
 const isBeta = version.startsWith('0.')
@@ -122,6 +123,7 @@ if (lang === 'pt-pt') adaptEuropeanPortuguese(t)
     <meta name="keywords" content={t.keywords} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={pageUrl} />
+    <link rel="alternate" type="application/rss+xml" title={`ARGVUS RSS — ${t.htmlLang}`} href={rssUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="ARGVUS" />
     <meta property="og:title" content={t.title} />

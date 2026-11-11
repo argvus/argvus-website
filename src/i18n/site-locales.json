@@ -2,7 +2,7 @@
   "es": {
     "landing": {
       "htmlLang": "es",
-      "title": "ARGVUS: un entorno de escritorio modular para Wayland y Arch Linux, construido sobre Hyprland.",
+      "title": "ARGVUS — Escritorio Wayland modular para Arch Linux",
       "description": "ARGVUS es un escritorio completo Hyprland y Wayland con dispositivos extraíbles ARGVUS, Waybar, temas integrados y paquetes Arch Linux firmados.",
       "keywords": "argvus, argvus linux, hyprland, wayland, arch linux, entorno de escritorio, dispositivos extraíbles argvus, waybar, escritorio linux, repositorio pacman",
       "navAria": "Navegación principal",
@@ -372,7 +372,8 @@
       "beta": "Beta",
       "langSearch": "Buscar idiomas…",
       "langNoResults": "No se encontraron idiomas.",
-      "navNews": "Noticias"
+      "navNews": "Noticias",
+      "navFeed": "Feed RSS"
     },
     "footer": {
       "tagline": "Un entorno de escritorio modular para Wayland y Arch Linux, construido sobre Hyprland.",
@@ -460,7 +461,7 @@
   "fr": {
     "landing": {
       "htmlLang": "fr",
-      "title": "ARGVUS — Un environnement de bureau modulaire pour Wayland et Arch Linux, construit sur Hyprland.",
+      "title": "ARGVUS — Bureau Wayland modulaire pour Arch Linux",
       "description": "ARGVUS est un bureau complet Hyprland et Wayland avec des périphériques amovibles ARGVUS, Waybar, des thèmes intégrés et des packages Arch Linux signés.",
       "keywords": "argvus, argvus linux, hyprland, wayland, arch linux, environnement de bureau, périphériques amovibles argvus, waybar, bureau Linux, référentiel pacman",
       "navAria": "Navigation principale",
@@ -830,7 +831,8 @@
       "beta": "Bêta",
       "langSearch": "Rechercher une langue…",
       "langNoResults": "Aucune langue trouvée.",
-      "navNews": "Actualités"
+      "navNews": "Actualités",
+      "navFeed": "Flux RSS"
     },
     "footer": {
       "tagline": "Un environnement de bureau modulaire pour Wayland et Arch Linux, construit sur Hyprland.",
@@ -918,7 +920,7 @@
   "it": {
     "landing": {
       "htmlLang": "it",
-      "title": "ARGVUS — Un ambiente desktop modulare per Wayland e Arch Linux, costruito su Hyprland.",
+      "title": "ARGVUS — Desktop Wayland modulare per Arch Linux",
       "description": "ARGVUS è un desktop Hyprland e Wayland completo con dispositivi rimovibili ARGVUS, Waybar, temi integrati e pacchetti Arch Linux firmati.",
       "keywords": "argvus, argvus linux, hyprland, wayland, arch linux, ambiente desktop, dispositivi rimovibili argvus, waybar, desktop linux, repository pacman",
       "navAria": "Navigazione principale",
@@ -1288,7 +1290,8 @@
       "beta": "Beta",
       "langSearch": "Cerca lingue…",
       "langNoResults": "Nessuna lingua trovata.",
-      "navNews": "Notizie"
+      "navNews": "Notizie",
+      "navFeed": "Feed RSS"
     },
     "footer": {
       "tagline": "Un ambiente desktop modulare per Wayland e Arch Linux, basato su Hyprland.",
@@ -1376,7 +1379,7 @@
   "zh": {
     "landing": {
       "htmlLang": "zh",
-      "title": "ARGVUS — 基于 Hyprland 构建的 Wayland 和 Arch Linux 模块化桌面环境。",
+      "title": "ARGVUS — 面向 Arch Linux 的 Wayland 模块化桌面",
       "description": "ARGVUS 是一个完整的 Hyprland 和 Wayland 桌面，带有 ARGVUS 可移动设备、Waybar、集成主题和签名的 Arch Linux 软件包。",
       "keywords": "argvus、argvus linux、hyprland、wayland、arch linux、桌面环境、argvus 可移动设备、waybar、linux 桌面、pacman 存储库",
       "navAria": "主导航",
@@ -1746,7 +1749,8 @@
       "beta": "测试版",
       "langSearch": "搜索语言…",
       "langNoResults": "未找到语言。",
-      "navNews": "新闻"
+      "navNews": "新闻",
+      "navFeed": "RSS 订阅"
     },
     "footer": {
       "tagline": "基于 Hyprland 构建的 Wayland 和 Arch Linux 模块化桌面环境。",
@@ -1834,7 +1838,7 @@
   "ja": {
     "landing": {
       "htmlLang": "ja",
-      "title": "ARGVUS — Hyprland 上に構築された Wayland および Arch Linux 用のモジュラー デスクトップ環境。",
+      "title": "ARGVUS — Arch Linux 向け Wayland モジュール型デスクトップ",
       "description": "ARGVUS は、ARGVUS リムーバブル デバイス、Waybar、統合テーマ、署名付き Arch Linux パッケージを備えた完全な Hyprland および Wayland デスクトップです。",
       "keywords": "argvus、argvus linux、hyprland、wayland、arch linux、デスクトップ環境、argvus リムーバブル デバイス、waybar、linux デスクトップ、pacman リポジトリ",
       "navAria": "メインナビゲーション",
@@ -2204,7 +2208,8 @@
       "beta": "ベータ版",
       "langSearch": "言語を検索…",
       "langNoResults": "言語が見つかりません。",
-      "navNews": "ニュース"
+      "navNews": "ニュース",
+      "navFeed": "RSSフィード"
     },
     "footer": {
       "tagline": "Hyprland 上に構築された Wayland および Arch Linux 用のモジュラー デスクトップ環境。",
@@ -2292,7 +2297,7 @@
   "de": {
     "landing": {
       "htmlLang": "de",
-      "title": "ARGVUS – Eine modulare Desktop-Umgebung für Wayland und Arch Linux, basierend auf Hyprland.",
+      "title": "ARGVUS — Modulare Wayland-Desktopumgebung für Arch Linux",
       "description": "ARGVUS ist ein vollständiger Hyprland- und Wayland-Desktop mit ARGVUS-Wechseldatenträgern, Waybar, integrierten Themes und signierten Arch Linux-Paketen.",
       "keywords": "argvus, argvus linux, hyprland, wayland, arch linux, Desktop-Umgebung, argvus-Wechseldatenträger, Waybar, Linux-Desktop, Pacman-Repository",
       "navAria": "Hauptnavigation",
@@ -2662,7 +2667,8 @@
       "beta": "Beta",
       "langSearch": "Sprachen suchen…",
       "langNoResults": "Keine Sprachen gefunden.",
-      "navNews": "Neuigkeiten"
+      "navNews": "Neuigkeiten",
+      "navFeed": "RSS-Feed"
     },
     "footer": {
       "tagline": "Eine modulare Desktop-Umgebung für Wayland und Arch Linux, basierend auf Hyprland.",
@@ -2750,7 +2756,7 @@
   "ru": {
     "landing": {
       "htmlLang": "ru",
-      "title": "ARGVUS — модульная среда рабочего стола для Wayland и Arch Linux, созданная на базе Hyprland.",
+      "title": "ARGVUS — модульный рабочий стол Wayland для Arch Linux",
       "description": "ARGVUS — это полноценный рабочий стол Hyprland и Wayland со съемными устройствами ARGVUS, Waybar, интегрированными темами и подписанными пакетами Arch Linux.",
       "keywords": "argvus, argvus linux, hyprland, wayland, Arch Linux, среда рабочего стола, съемные устройства argvus, waybar, рабочий стол Linux, репозиторий pacman",
       "navAria": "Основная навигация",
@@ -3120,7 +3126,8 @@
       "beta": "Бета",
       "langSearch": "Поиск языков…",
       "langNoResults": "Языки не найдены.",
-      "navNews": "Новости"
+      "navNews": "Новости",
+      "navFeed": "RSS-лента"
     },
     "footer": {
       "tagline": "Модульная среда рабочего стола для Wayland и Arch Linux, созданная на базе Hyprland.",
@@ -3208,7 +3215,7 @@
   "ko": {
     "landing": {
       "htmlLang": "ko",
-      "title": "ARGVUS — Hyprland를 기반으로 구축된 Wayland 및 Arch Linux용 모듈식 데스크탑 환경입니다.",
+      "title": "ARGVUS — Arch Linux용 모듈형 Wayland 데스크톱",
       "description": "ARGVUS는 ARGVUS 이동식 장치, Waybar, 통합 테마 및 서명된 Arch Linux 패키지를 갖춘 완전한 Hyprland 및 Wayland 데스크탑입니다.",
       "keywords": "argvus, argvus linux, hiprland, wayland, arch linux, 데스크탑 환경, argvus 이동식 장치, waybar, linux 데스크탑, pacman 저장소",
       "navAria": "기본 탐색",
@@ -3578,7 +3585,8 @@
       "beta": "베타",
       "langSearch": "언어 검색…",
       "langNoResults": "언어를 찾을 수 없습니다.",
-      "navNews": "뉴스"
+      "navNews": "뉴스",
+      "navFeed": "RSS 피드"
     },
     "footer": {
       "tagline": "Hyprland를 기반으로 구축된 Wayland 및 Arch Linux용 모듈식 데스크탑 환경입니다.",
@@ -3666,7 +3674,7 @@
   "hi": {
     "landing": {
       "htmlLang": "hi-IN",
-      "title": "ARGVUS - Wayland और Arch Linux के लिए एक मॉड्यूलर डेस्कटॉप वातावरण, जो Hyprland के शीर्ष पर बनाया गया है।",
+      "title": "ARGVUS — Arch Linux के लिए मॉड्यूलर Wayland डेस्कटॉप",
       "description": "ARGVUS एक पूर्ण Hyprland और Wayland डेस्कटॉप है जिसमें रिमूवेबल डिवाइस ARGVUS, Waybar, बिल्ट-इन थीम और हस्ताक्षरित Arch Linux पैकेज हैं।",
       "keywords": "argvus, argvus लिनक्स, hyprland, wayland, arch linux, डेस्कटॉप वातावरण, हटाने योग्य डिवाइस argvus, waybar, लिनक्स डेस्कटॉप, रिपॉजिटरी pacman",
       "navAria": "मुख्य नेविगेशन",
@@ -4036,7 +4044,8 @@
       "beta": "बीटा",
       "langSearch": "भाषाएँ खोजें…",
       "langNoResults": "कोई भाषा नहीं मिली।",
-      "navNews": "समाचार"
+      "navNews": "समाचार",
+      "navFeed": "RSS फ़ीड"
     },
     "footer": {
       "tagline": "Wayland और Arch Linux के लिए एक मॉड्यूलर डेस्कटॉप वातावरण, जिसे Hyprland के शीर्ष पर बनाया गया है।",
@@ -4124,7 +4133,7 @@
   "ar": {
     "landing": {
       "htmlLang": "ar",
-      "title": "ARGVUS - بيئة سطح مكتب معيارية لـ Wayland وArch Linux، مبنية على Hyprland.",
+      "title": "ARGVUS - سطح مكتب Wayland معياري لـ Arch Linux",
       "description": "ARGVUS عبارة عن سطح مكتب كامل Hyprland وWayland مزود بأجهزة قابلة للإزالة ARGVUS وWaybar وسمات مدمجة وحزم Arch Linux موقعة.",
       "keywords": "argvus، argvus لينكس، hyprland، wayland، arch linux، بيئة سطح المكتب، الأجهزة القابلة للإزالة argvus، waybar، سطح مكتب لينكس، المستودع pacman",
       "navAria": "الملاحة الرئيسية",
@@ -4494,7 +4503,8 @@
       "beta": "بيتا",
       "langSearch": "ابحث عن لغة…",
       "langNoResults": "لم يتم العثور على لغات.",
-      "navNews": "الأخبار"
+      "navNews": "الأخبار",
+      "navFeed": "خلاصة RSS"
     },
     "footer": {
       "tagline": "بيئة سطح مكتب معيارية لـ Wayland وArch Linux، مبنية على Hyprland.",
@@ -4582,7 +4592,7 @@
   "bn": {
     "landing": {
       "htmlLang": "bn-BD",
-      "title": "ARGVUS - Wayland এবং Arch Linux-এর জন্য একটি মডুলার ডেস্কটপ পরিবেশ, Hyprland-এর উপরে নির্মিত৷",
+      "title": "ARGVUS — Arch Linux-এর জন্য মডুলার Wayland ডেস্কটপ",
       "description": "ARGVUS হল একটি সম্পূর্ণ Hyprland এবং Wayland অপসারণযোগ্য ডিভাইস সহ ARGVUS, Waybar, অন্তর্নির্মিত থিম এবং স্বাক্ষরিত Arch Linux প্যাকেজ।",
       "keywords": "argvus, argvus linux, hyprland, wayland, arch linux, entorno de escritorio, dispositivos extraíbles argvus, waybar, escritorio linux, repositorio pacman",
       "navAria": "প্রধান নেভিগেশন",
@@ -4952,7 +4962,8 @@
       "beta": "বেটা",
       "langSearch": "ভাষা খুঁজুন…",
       "langNoResults": "কোনো ভাষা পাওয়া যায়নি।",
-      "navNews": "সংবাদ"
+      "navNews": "সংবাদ",
+      "navFeed": "RSS ফিড"
     },
     "footer": {
       "tagline": "Wayland এবং Arch Linux-এর জন্য একটি মডুলার ডেস্কটপ পরিবেশ, Hyprland-এর উপরে নির্মিত৷",
@@ -5040,7 +5051,7 @@
   "id": {
     "landing": {
       "htmlLang": "id-ID",
-      "title": "ARGVUS - Lingkungan desktop modular untuk Wayland dan Arch Linux, dibangun di atas Hyprland.",
+      "title": "ARGVUS — Desktop Wayland modular untuk Arch Linux",
       "description": "ARGVUS adalah desktop Hyprland dan Wayland lengkap dengan perangkat yang dapat dilepas ARGVUS, Waybar, tema bawaan, dan paket Arch Linux yang ditandatangani.",
       "keywords": "argvus, argvus linux, hyprland, wayland, arch linux, lingkungan desktop, perangkat yang dapat dilepas argvus, waybar, desktop linux, repositori pacman",
       "navAria": "Navigasi utama",
@@ -5410,7 +5421,8 @@
       "beta": "Beta",
       "langSearch": "Cari bahasa…",
       "langNoResults": "Bahasa tidak ditemukan.",
-      "navNews": "Berita"
+      "navNews": "Berita",
+      "navFeed": "Feed RSS"
     },
     "footer": {
       "tagline": "Lingkungan desktop modular untuk Wayland dan Arch Linux, dibangun di atas Hyprland.",
@@ -5498,7 +5510,7 @@
   "ur": {
     "landing": {
       "htmlLang": "ur-PK",
-      "title": "ARGVUS - Wayland اور Arch Linux کے لیے ایک ماڈیولر ڈیسک ٹاپ ماحول، جو Hyprland کے اوپر بنایا گیا ہے۔",
+      "title": "ARGVUS - Arch Linux کے لیے ماڈیولر Wayland ڈیسک ٹاپ",
       "description": "ARGVUS ایک مکمل Hyprland اور Wayland ڈیسک ٹاپ ہے جس میں ہٹائی جانے والی ڈیوائسز ARGVUS، Waybar، بلٹ ان تھیمز اور دستخط شدہ Arch Linux پیکیجز ہیں۔",
       "keywords": "argvus, argvus linux, hyprland, wayland, arch linux, entorno de escritorio, dispositivos extraíbles argvus, waybar, escritorio linux, repositorio pacman",
       "navAria": "مین نیویگیشن",
@@ -5868,7 +5880,8 @@
       "beta": "بیٹا",
       "langSearch": "زبان تلاش کریں…",
       "langNoResults": "کوئی زبان نہیں ملی۔",
-      "navNews": "خبریں"
+      "navNews": "خبریں",
+      "navFeed": "RSS فیڈ"
     },
     "footer": {
       "tagline": "Wayland اور Arch Linux کے لیے ایک ماڈیولر ڈیسک ٹاپ ماحول، جو Hyprland کے اوپر بنایا گیا ہے۔",
@@ -5956,7 +5969,7 @@
   "vi": {
     "landing": {
       "htmlLang": "vi-VN",
-      "title": "ARGVUS - Môi trường máy tính để bàn dạng mô-đun dành cho Wayland và Arch Linux, được xây dựng dựa trên Hyprland.",
+      "title": "ARGVUS — Desktop Wayland mô-đun cho Arch Linux",
       "description": "ARGVUS là máy tính để bàn Hyprland và Wayland đầy đủ với các thiết bị di động ARGVUS, Waybar, các chủ đề tích hợp sẵn và các gói Arch Linux đã ký.",
       "keywords": "argvus, argvus linux, hyprland, wayland, arch linux, môi trường máy tính để bàn, thiết bị di động argvus, waybar, máy tính để bàn linux, kho lưu trữ pacman",
       "navAria": "Điều hướng chính",
@@ -6326,7 +6339,8 @@
       "beta": "bản thử nghiệm",
       "langSearch": "Tìm ngôn ngữ…",
       "langNoResults": "Không tìm thấy ngôn ngữ nào.",
-      "navNews": "Tin tức"
+      "navNews": "Tin tức",
+      "navFeed": "Nguồn RSS"
     },
     "footer": {
       "tagline": "Môi trường máy tính để bàn dạng mô-đun dành cho Wayland và Arch Linux, được xây dựng dựa trên Hyprland.",
@@ -6414,7 +6428,7 @@
   "tr": {
     "landing": {
       "htmlLang": "tr-TR",
-      "title": "ARGVUS - Wayland ve Arch Linux için, Hyprland temel alınarak oluşturulmuş modüler bir masaüstü ortamı.",
+      "title": "ARGVUS — Arch Linux için modüler Wayland masaüstü",
       "description": "ARGVUS, çıkarılabilir cihazlara ARGVUS, Waybar, yerleşik temalara ve imzalı Arch Linux paketlere sahip tam bir Hyprland ve Wayland masaüstü bilgisayardır.",
       "keywords": "argvus, argvus linux, hyprland, wayland, arch linux, masaüstü ortamı, çıkarılabilir cihazlar argvus, waybar, linux masaüstü, veri havuzu pacman",
       "navAria": "Ana gezinme",
@@ -6784,7 +6798,8 @@
       "beta": "beta",
       "langSearch": "Dil ara…",
       "langNoResults": "Dil bulunamadı.",
-      "navNews": "Haberler"
+      "navNews": "Haberler",
+      "navFeed": "RSS akışı"
     },
     "footer": {
       "tagline": "Wayland ve Arch Linux için, Hyprland temel alınarak oluşturulmuş modüler bir masaüstü ortamı.",
