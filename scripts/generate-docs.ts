@@ -6,6 +6,13 @@ import { wrapTables } from '../src/lib/documentation/table-scroll.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const projectRoot = resolve(__dirname, '..')
+const supportedHtmlTags = new Set([
+  'a', 'abbr', 'b', 'bdi', 'bdo', 'blockquote', 'br', 'caption', 'cite', 'code', 'dd',
+  'del', 'details', 'div', 'dl', 'dt', 'em', 'figcaption', 'figure', 'h1', 'h2', 'h3',
+  'h4', 'h5', 'h6', 'hr', 'i', 'img', 'ins', 'kbd', 'li', 'ol', 'p', 'pre', 'q', 'rp',
+  'rt', 'ruby', 's', 'samp', 'small', 'span', 'strong', 'sub', 'summary', 'sup', 'table',
+  'tbody', 'td', 'tfoot', 'th', 'thead', 'tr', 'u', 'ul', 'var',
+])
 
 /** Quotes a YAML scalar value so frontmatter stays valid regardless of its content. */
 function yamlString(value: string): string {
@@ -13,20 +20,25 @@ function yamlString(value: string): string {
 }
 
 function normalizeMarkdownBody(body: string): string {
-  return wrapTables(body)
-    .split(/(`+[^`]*`+)/g)
-    .map((part) => {
-      if (part.startsWith('`')) return part
+  const codeSegments: string[] = []
+  const preserveCode = (segment: string) => {
+    const index = codeSegments.push(segment) - 1
+    return `\u0000CODE${index}\u0000`
+  }
 
-      return part
-        .replace(
-          /(?<!`)blocks set <block> <enabled\|disabled>(?!`)/g,
-          '`blocks set <block> <enabled|disabled>`',
-        )
-        .replace(/(?<!`)\{"action":"toggle"\}(?!`)/g, '`{"action":"toggle"}`')
-        .replace(/<surface>/g, '&lt;surface&gt;')
-    })
-    .join('')
+  const markdown = wrapTables(body)
+    .replace(/^([ \t]*)(`{3,}|~{3,})[^\n]*\n[\s\S]*?^[ \t]*\2[ \t]*$/gm, preserveCode)
+    .replace(/(`+)(?!`)[^\n]*?\1(?!`)/g, preserveCode)
+    .replace(/(?<!`)blocks set <block> <enabled\|disabled>(?!`)/g, '`blocks set <block> <enabled|disabled>`')
+    .replace(/(?<!`)\{"action":"toggle"\}(?!`)/g, '`{"action":"toggle"}`')
+    .replace(/\$\{([^}]*)\}/g, (_match, expression: string) => '$&#123;' + expression + '&#125;')
+    .replace(/<(\/?)([A-Za-z][A-Za-z0-9_-]*)([^>]*)>/g, (match, _slash, tag: string) =>
+      supportedHtmlTags.has(tag.toLowerCase())
+        ? match
+        : match.replace('<', '&lt;').replace(/>$/, '&gt;'),
+    )
+
+  return markdown.replace(/\u0000CODE(\d+)\u0000/g, (_match, index: string) => codeSegments[Number(index)] ?? '')
 }
 
 async function generateDocs() {
