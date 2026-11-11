@@ -29,7 +29,9 @@ const { Content } = await render(post)
         <h1>{post.data.title}</h1>
         <p class="news-description">{post.data.description}</p>
         <div class="news-byline">
-          {post.data.author && <span>{post.data.author}</span>}
+          {post.data.author.name && (post.data.author.link
+            ? <a href={post.data.author.link}>{post.data.author.name}</a>
+            : <span>{post.data.author.name}</span>)}
           {post.data.tags.length > 0 && <ul class="news-tags">{post.data.tags.map((tag: string) => <li>{tag}</li>)}</ul>}
         </div>
       </header>

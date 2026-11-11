@@ -9,6 +9,7 @@
     "create:post": "node ./scripts/create-post.mjs",
     "translate:posts": "node ./scripts/translate-posts.mjs",
     "delete:post": "node ./scripts/delete-post.mjs",
+    "edit:post": "node ./scripts/edit-post.mjs",
     "generate:docs": "npx tsx scripts/generate-docs.ts",
     "generate:sidebar": "npx tsx scripts/generate-sidebar-config.ts",
     "generate": "npm run generate:docs && npm run generate:sidebar",
@@ -16,7 +17,7 @@
     "stop": "astro dev stop",
     "check:links": "npx tsx scripts/check-doc-links.ts",
     "test:links": "npx tsx --test scripts/check-doc-links.test.ts",
-    "build": "npm run generate && npm run check:links && npm run clean:versions && astro build && npm run clean:versions",
+    "build": "npm run generate && npm run check:links && npm run clean:versions && astro build && node ./scripts/create-sitemap-alias.mjs && npm run clean:versions",
     "preview": "astro preview",
     "astro": "astro"
   },

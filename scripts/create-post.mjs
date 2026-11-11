@@ -48,7 +48,7 @@ try {
   if (error.code !== 'ENOENT') throw error
 }
 
-const frontmatter = stringify({ author: '', title, description: '', date: localDate(), tags: [] }).trimEnd()
+const frontmatter = stringify({ author: { name: '', link: '' }, title, description: '', date: localDate(), tags: [] }).trimEnd()
 const content = `---\n${frontmatter}\n---\n\n`
 await writeFile(filePath, content, { flag: 'wx' })
 console.log(`Post criado em ${path.relative(process.cwd(), filePath)}`)
