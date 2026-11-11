@@ -232,7 +232,26 @@ if (sourcePosts.length === 0) {
   throw new Error(`Nenhum post em inglês encontrado em ${path.relative(process.cwd(), postsDirectory)}.`)
 }
 
-const selectedPosts = await choosePosts(sourcePosts)
+const postsNeedingTranslation = []
+for (const post of sourcePosts) {
+  for (const locale of locales) {
+    if (locale.code === 'en') continue
+    try {
+      await access(path.join(postsDirectory, locale.code, post.filename))
+    } catch (error) {
+      if (error.code !== 'ENOENT') throw error
+      postsNeedingTranslation.push(post)
+      break
+    }
+  }
+}
+
+if (postsNeedingTranslation.length === 0) {
+  console.log('Todos os posts já têm tradução em todos os idiomas suportados.')
+  process.exit(0)
+}
+
+const selectedPosts = await choosePosts(postsNeedingTranslation)
 if (selectedPosts.length === 0) {
   console.log('Tradução cancelada.')
   process.exit(0)

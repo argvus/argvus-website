@@ -4,9 +4,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "help": "node ./scripts/help.mjs",
     "clean:versions": "node ./scripts/clean-generated-versions.mjs",
     "create:post": "node ./scripts/create-post.mjs",
     "translate:posts": "node ./scripts/translate-posts.mjs",
+    "delete:post": "node ./scripts/delete-post.mjs",
     "generate:docs": "npx tsx scripts/generate-docs.ts",
     "generate:sidebar": "npx tsx scripts/generate-sidebar-config.ts",
     "generate": "npm run generate:docs && npm run generate:sidebar",

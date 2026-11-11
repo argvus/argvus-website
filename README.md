@@ -15,6 +15,16 @@ with documentation, update the documentation from the implementation.
 
 ## Commands
 
+Show the complete list of project commands and their descriptions with:
+
+```sh
+npm run help
+```
+
+The help output is generated from the scripts in `package.json`, so it includes
+the site, documentation, post-management and utility commands available through
+`npm run`.
+
 ```sh
 npm run dev
 npm run build
@@ -36,9 +46,20 @@ front matter and creates a URL-safe slug from it: lowercase, without accents,
 and with spaces and punctuation converted to hyphens. Run
 `npm run translate:posts` to choose one English post from an interactive menu,
 translate all posts, or cancel. Each selected post is translated to the site's
-other 17 locales. Existing translation files are skipped so manual edits are
-preserved. New files keep the author, date and tags from the English source
-while translating its title, description and body.
+other 17 locales. The menu only lists posts with at least one missing locale;
+posts already translated into every supported language are omitted. Existing
+translation files are skipped so manual edits are preserved. New files keep
+the author, date and tags from the English source while translating its title,
+description and body.
+
+Delete an English post and all its translations with:
+
+```sh
+npm run delete:post
+```
+
+Choose a post from the menu and confirm with `s`. Enter `0` at the menu or any
+other answer at the confirmation prompt to cancel without deleting files.
 
 Choose the translation provider in `src/site-config.json` under
 `posts.translate.mode` (`ollama`, `openai`, `gemini` or `claude-code`). Ollama,
