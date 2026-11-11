@@ -31,6 +31,8 @@ const languages = [
   { code: 'vi', name: 'Vietnamese', native: 'Tiếng Việt', flag: '🇻🇳' },
   { code: 'tr', name: 'Turkish', native: 'Türkçe', flag: '🇹🇷' },
 ].sort((a, b) => a.name.localeCompare(b.name, 'en'))
+const currentLanguage = languages.find(({ code }) => code === lang)
+  ?? languages.find(({ code }) => code === 'en')!
 const base = import.meta.env.BASE_URL
 const docsLocalePrefix = ['en', 'pt-pt', 'hi', 'ar', 'bn', 'id', 'ur', 'vi', 'tr'].includes(lang)
   ? ''
@@ -83,7 +85,7 @@ const githubOrgUrl = 'https://github.com/orgs/argvus'
       </div>
       <div class="lang-toggle" data-lang-toggle>
         <button class="lang-toggle-btn" type="button" data-lang-current aria-label={t.langAria} aria-haspopup="menu">
-          <span>{lang.toUpperCase()}</span>
+          <span class="lang-flag" aria-hidden="true">{currentLanguage.flag}</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
         </button>
         <div class="lang-toggle-menu" data-lang-menu hidden>
