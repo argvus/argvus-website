@@ -1,5 +1,7 @@
 import { loadDocumentation, type ContentEntry } from './documentation/loader.ts'
+import { documentationLocalePrefix, type DocumentationLocale } from './documentation/locales.ts'
 import { getDocumentationConfig, type ProjectConfig } from './documentation/config.ts'
+import { sidebarLabelTranslations } from './sidebar-translations.ts'
 import {
   GETTING_STARTED_SECTION,
   USER_GUIDE_SECTION,
@@ -31,6 +33,78 @@ interface SidebarGroup {
 }
 
 type SidebarItem = SidebarLink | SidebarGroup
+
+const localeLanguageTags: Record<DocumentationLocale, string> = {
+  en: 'en',
+  'pt-br': 'pt-BR',
+  'pt-pt': 'pt-PT',
+  ar: 'ar',
+  'bn-BD': 'bn-BD',
+  es: 'es',
+  fr: 'fr',
+  'hi-IN': 'hi-IN',
+  'id-ID': 'id-ID',
+  it: 'it',
+  'zh-cn': 'zh-CN',
+  ja: 'ja',
+  de: 'de',
+  ru: 'ru',
+  ko: 'ko',
+  'tr-TR': 'tr-TR',
+  'ur-PK': 'ur-PK',
+  'vi-VN': 'vi-VN',
+}
+
+function collectLocalizedPageTitles(entries: ContentEntry[]): Map<string, Record<string, string>> {
+  const titlesBySlug = new Map<string, Record<string, string>>()
+
+  for (const entry of entries) {
+    if (entry.sourceLocale === 'en' || typeof entry.data.title !== 'string' || !entry.data.title) continue
+
+    const prefix = documentationLocalePrefix(entry.sourceLocale)
+    const slug = prefix && entry.slug.startsWith(prefix) ? entry.slug.slice(prefix.length) : entry.slug
+    const translations = titlesBySlug.get(slug) ?? {}
+    translations[localeLanguageTags[entry.sourceLocale]] = entry.data.title
+    titlesBySlug.set(slug, translations)
+  }
+
+  return titlesBySlug
+}
+
+function collectEnglishPageTitles(entries: ContentEntry[]): Map<string, string> {
+  return new Map(
+    entries
+      .filter((entry) => entry.sourceLocale === 'en' && typeof entry.data.title === 'string')
+      .map((entry) => [entry.slug, entry.data.title as string]),
+  )
+}
+
+function applySidebarTranslations(
+  items: SidebarItem[],
+  localizedPageTitles: Map<string, Record<string, string>>,
+  englishPageTitles: Map<string, string>,
+): SidebarItem[] {
+  return items.map((item) => {
+    if ('items' in item) {
+      return {
+        ...item,
+        translations: { ...sidebarLabelTranslations(item.label), ...item.translations },
+        items: applySidebarTranslations(item.items, localizedPageTitles, englishPageTitles),
+      }
+    }
+
+    const label = item.label ?? englishPageTitles.get(item.slug)
+    if (!label) return item
+    return {
+      ...item,
+      translations: {
+        ...localizedPageTitles.get(item.slug),
+        ...sidebarLabelTranslations(label),
+        ...item.translations,
+      },
+    }
+  })
+}
 
 function humanize(segment: string): string {
   return segment
@@ -301,6 +375,8 @@ function buildComponentCategories(
 export async function generateStarlightSidebar(): Promise<SidebarItem[]> {
   const config = getDocumentationConfig()
   const entries = await loadDocumentation()
+  const localizedPageTitles = collectLocalizedPageTitles(entries)
+  const englishPageTitles = collectEnglishPageTitles(entries)
 
   const enEntries = entries.filter((entry) => entry.sourceLocale === 'en')
 
@@ -385,7 +461,7 @@ export async function generateStarlightSidebar(): Promise<SidebarItem[]> {
     topLevelGroups.push(buildComponentItem(projectConfig, projectEntries))
   }
 
-  return [
+  const sidebar = [
     ...topLinks,
     gettingStartedGroup,
     userGuideGroup,
@@ -398,4 +474,6 @@ export async function generateStarlightSidebar(): Promise<SidebarItem[]> {
     ...strayItems,
     ...licenseItem,
   ]
+
+  return applySidebarTranslations(sidebar, localizedPageTitles, englishPageTitles)
 }

@@ -1,9 +1,47 @@
 export const sidebarConfig = [
   {
-    "slug": "docs/introduction"
+    "slug": "docs/introduction",
+    "translations": {
+      "ar": "Introduction",
+      "bn-BD": "ভূমিকা",
+      "de": "Einführung",
+      "es": "Introducción",
+      "fr": "Introduction",
+      "hi-IN": "परिचय",
+      "id-ID": "Pendahuluan",
+      "it": "Introduzione",
+      "ja": "はじめに",
+      "ko": "소개",
+      "pt-BR": "Introdução",
+      "pt-PT": "Introdução",
+      "ru": "Введение",
+      "tr-TR": "Giriş",
+      "ur-PK": "تعارف",
+      "vi-VN": "Introduction",
+      "zh-CN": "介绍"
+    }
   },
   {
-    "slug": "docs/quick-start"
+    "slug": "docs/quick-start",
+    "translations": {
+      "ar": "البداية السريعة",
+      "bn-BD": "দ্রুত শুরু",
+      "de": "Schnellstart",
+      "es": "Inicio Rápido",
+      "fr": "Démarrage rapide",
+      "hi-IN": "त्वरित प्रारंभ",
+      "id-ID": "Mulai Cepat",
+      "it": "Avvio rapido",
+      "ja": "クイックスタート",
+      "ko": "빠른 시작",
+      "pt-BR": "Início Rápido",
+      "pt-PT": "Início Rápido",
+      "ru": "Быстрый старт",
+      "tr-TR": "Hızlı Başlangıç",
+      "ur-PK": "فوری آغاز",
+      "vi-VN": "Bắt đầu nhanh",
+      "zh-CN": "快速开始"
+    }
   },
   {
     "label": "Getting Started",
@@ -12,32 +50,156 @@ export const sidebarConfig = [
         "slug": "docs/getting-started",
         "label": "Overview",
         "translations": {
-          "pt-BR": "Visão geral"
+          "ar": "نظرة عامة",
+          "bn-BD": "সংক্ষিপ্ত বিবরণ",
+          "de": "Übersicht",
+          "es": "Resumen",
+          "fr": "Présentation",
+          "hi-IN": "अवलोकन",
+          "id-ID": "Ringkasan",
+          "it": "Panoramica",
+          "ja": "概要",
+          "ko": "개요",
+          "pt-BR": "Visão geral",
+          "pt-PT": "Visão geral",
+          "ru": "Обзор",
+          "tr-TR": "Genel bakış",
+          "ur-PK": "جائزہ",
+          "vi-VN": "Tổng quan",
+          "zh-CN": "概览"
         }
       },
       {
         "slug": "docs/getting-started/installation",
         "label": "Installation overview",
         "translations": {
-          "pt-BR": "Visão geral da instalação"
+          "ar": "Installation",
+          "bn-BD": "ইনস্টলেশন",
+          "de": "Installation",
+          "es": "Instalación",
+          "fr": "Installation",
+          "hi-IN": "इंस्टालेशन",
+          "id-ID": "Installation",
+          "it": "Installazione",
+          "ja": "インストール",
+          "ko": "설치",
+          "pt-BR": "Visão geral da instalação",
+          "pt-PT": "Instalação",
+          "ru": "Установка",
+          "tr-TR": "Kurulumu",
+          "ur-PK": "انسٹالیشن",
+          "vi-VN": "Installation",
+          "zh-CN": "安装"
         }
       },
       {
-        "slug": "docs/getting-started/installation/requirements"
+        "slug": "docs/getting-started/installation/requirements",
+        "translations": {
+          "ar": "Requirements",
+          "bn-BD": "প্রয়োজনীয়তা",
+          "de": "Anforderungen",
+          "es": "Requisitos",
+          "fr": "Exigences",
+          "hi-IN": "आवश्यकताएँ",
+          "id-ID": "Requirements",
+          "it": "Requisiti",
+          "ja": "要件",
+          "ko": "요구 사항",
+          "pt-BR": "Requisitos",
+          "pt-PT": "Requisitos",
+          "ru": "Требования",
+          "tr-TR": "Gereksinimleri",
+          "ur-PK": "کے تقاضے",
+          "vi-VN": "Requirements",
+          "zh-CN": "要求"
+        }
       },
       {
-        "slug": "docs/getting-started/installation/install"
+        "slug": "docs/getting-started/installation/install",
+        "translations": {
+          "ar": "قم بتثبيت ARGVUS",
+          "bn-BD": "ARGVUS ইনস্টল করুন",
+          "de": "Installiere ARGVUS",
+          "es": "Instalar ARGVUS",
+          "fr": "Installer ARGVUS",
+          "hi-IN": "ARGVUS स्थापित करें",
+          "id-ID": "Instal ARGVUS",
+          "it": "Installa ARGVUS",
+          "ja": "ARGVUSをインストールする",
+          "ko": "ARGVUS 설치",
+          "pt-BR": "Instalar o ARGVUS",
+          "pt-PT": "Instalar o ARGVUS",
+          "ru": "Установите ARGVUS",
+          "tr-TR": "ARGVUS'u yükleyin",
+          "ur-PK": "ARGVUS انسٹال کریں۔",
+          "vi-VN": "Cài đặt ARGVUS",
+          "zh-CN": "安装 ARGVUS"
+        }
       },
       {
-        "slug": "docs/getting-started/installation/first-session"
+        "slug": "docs/getting-started/installation/first-session",
+        "translations": {
+          "ar": "الجلسة الأولى",
+          "bn-BD": "প্রথম সেশন",
+          "de": "Erste Sitzung",
+          "es": "Primera sesión",
+          "fr": "Première séance",
+          "hi-IN": "पहला सत्र",
+          "id-ID": "Sesi pertama",
+          "it": "Prima sessione",
+          "ja": "最初のセッション",
+          "ko": "첫 번째 세션",
+          "pt-BR": "Primeira sessão",
+          "pt-PT": "Primeira sessão",
+          "ru": "Первая сессия",
+          "tr-TR": "İlk oturum",
+          "ur-PK": "پہلا سیشن",
+          "vi-VN": "Phiên đầu tiên",
+          "zh-CN": "第一次会议"
+        }
       },
       {
-        "slug": "docs/user-guide/getting-started"
+        "slug": "docs/user-guide/getting-started",
+        "translations": {
+          "ar": "التكوين الأول",
+          "bn-BD": "প্রথম কনফিগারেশন",
+          "de": "Erste Konfiguration",
+          "es": "Primera configuración",
+          "fr": "Première configuration",
+          "hi-IN": "पहला कॉन्फ़िगरेशन",
+          "id-ID": "Konfigurasi pertama",
+          "it": "Prima configurazione",
+          "ja": "最初の設定",
+          "ko": "첫 번째 구성",
+          "pt-BR": "Primeira configuração",
+          "pt-PT": "Primeira configuração",
+          "ru": "Первая конфигурация",
+          "tr-TR": "İlk yapılandırma",
+          "ur-PK": "پہلی ترتیب",
+          "vi-VN": "Cấu hình đầu tiên",
+          "zh-CN": "第一次配置"
+        }
       }
     ],
     "collapsed": false,
     "translations": {
-      "pt-BR": "Primeiros passos"
+      "pt-BR": "Primeiros passos",
+      "pt-PT": "Primeiros passos",
+      "es": "Primeros pasos",
+      "fr": "Prise en main",
+      "it": "Per iniziare",
+      "zh-CN": "入门",
+      "ja": "はじめに",
+      "de": "Erste Schritte",
+      "ru": "Начало работы",
+      "ko": "시작하기",
+      "hi-IN": "शुरू करें",
+      "ar": "البدء",
+      "bn-BD": "শুরু করা",
+      "id-ID": "Memulai",
+      "ur-PK": "آغاز",
+      "vi-VN": "Bắt đầu",
+      "tr-TR": "Başlangıç"
     }
   },
   {
@@ -47,7 +209,23 @@ export const sidebarConfig = [
         "slug": "docs/user-guide",
         "label": "Overview",
         "translations": {
-          "pt-BR": "Visão geral"
+          "ar": "نظرة عامة",
+          "bn-BD": "সংক্ষিপ্ত বিবরণ",
+          "de": "Übersicht",
+          "es": "Resumen",
+          "fr": "Présentation",
+          "hi-IN": "अवलोकन",
+          "id-ID": "Ringkasan",
+          "it": "Panoramica",
+          "ja": "概要",
+          "ko": "개요",
+          "pt-BR": "Visão geral",
+          "pt-PT": "Visão geral",
+          "ru": "Обзор",
+          "tr-TR": "Genel bakış",
+          "ur-PK": "جائزہ",
+          "vi-VN": "Tổng quan",
+          "zh-CN": "概览"
         }
       },
       {
@@ -57,41 +235,137 @@ export const sidebarConfig = [
             "slug": "docs/user-guide/desktop",
             "label": "Desktop overview",
             "translations": {
-              "pt-BR": "Visão geral"
+              "ar": "سطح المكتب",
+              "bn-BD": "ডেস্কটপ",
+              "de": "Desktop",
+              "es": "Escritorio",
+              "fr": "Bureau",
+              "hi-IN": "डेस्कटॉप",
+              "id-ID": "Desktop",
+              "it": "Scrivania",
+              "ja": "デスクトップ",
+              "ko": "데스크탑",
+              "pt-BR": "Visão geral",
+              "pt-PT": "Desktop",
+              "ru": "Рабочий стол",
+              "tr-TR": "Masaüstü",
+              "ur-PK": "ڈیسک ٹاپ",
+              "vi-VN": "Desktop",
+              "zh-CN": "桌面"
             }
           },
           {
             "slug": "docs/argvus-taskbar/taskbar",
             "label": "Taskbar",
             "translations": {
-              "pt-BR": "Barra de tarefas"
+              "ar": "شريط المهام",
+              "bn-BD": "টাস্কবার",
+              "de": "Taskleiste",
+              "es": "Barra de tareas",
+              "fr": "Barre des tâches",
+              "hi-IN": "टास्कबार",
+              "id-ID": "Bilah tugas",
+              "it": "Barra delle applicazioni",
+              "ja": "タスクバー",
+              "ko": "작업 표시줄",
+              "pt-BR": "Barra de tarefas",
+              "pt-PT": "Barra de tarefas",
+              "ru": "Панель задач",
+              "tr-TR": "Görev çubuğu",
+              "ur-PK": "ٹاسک بار",
+              "vi-VN": "Thanh tác vụ",
+              "zh-CN": "任务栏"
             }
           },
           {
             "slug": "docs/argvus-taskbar/widgets",
             "label": "Taskbar widgets",
             "translations": {
-              "pt-BR": "Widgets da barra de tarefas"
+              "ar": "Widgets",
+              "bn-BD": "Widgets",
+              "de": "Widgets",
+              "es": "Widgets",
+              "fr": "Widgets",
+              "hi-IN": "Widgets",
+              "id-ID": "Widgets",
+              "it": "Widget",
+              "ja": "ウィジェット",
+              "ko": "위젯",
+              "pt-BR": "Widgets da barra de tarefas",
+              "pt-PT": "Widgets",
+              "ru": "Виджеты",
+              "tr-TR": "Widgets",
+              "ur-PK": "Widgets",
+              "vi-VN": "Widgets",
+              "zh-CN": "小工具"
             }
           },
           {
             "slug": "docs/components/argvus-taskbar-calendar",
             "label": "Calendar",
             "translations": {
-              "pt-BR": "Calendário"
+              "ar": "التقويم",
+              "bn-BD": "ক্যালেন্ডার",
+              "de": "Kalender",
+              "es": "Calendario",
+              "fr": "Calendrier",
+              "hi-IN": "कैलेंडर",
+              "id-ID": "Kalender",
+              "it": "Calendario",
+              "ja": "カレンダー",
+              "ko": "달력",
+              "pt-BR": "Calendário",
+              "pt-PT": "Calendário",
+              "ru": "Календарь",
+              "tr-TR": "Takvim",
+              "ur-PK": "کیلنڈر",
+              "vi-VN": "Lịch",
+              "zh-CN": "日历"
             }
           },
           {
             "slug": "docs/argvus-notifications",
             "label": "Notifications",
             "translations": {
-              "pt-BR": "Notificações"
+              "ar": "الإشعارات",
+              "bn-BD": "বিজ্ঞপ্তি",
+              "de": "Benachrichtigungen",
+              "es": "Notificaciones",
+              "fr": "Notifications",
+              "hi-IN": "सूचनाएँ",
+              "id-ID": "Notifikasi",
+              "it": "Notifiche",
+              "ja": "通知",
+              "ko": "알림",
+              "pt-BR": "Notificações",
+              "pt-PT": "Notificações",
+              "ru": "Уведомления",
+              "tr-TR": "Bildirimler",
+              "ur-PK": "اطلاعات",
+              "vi-VN": "Thông báo",
+              "zh-CN": "通知"
             }
           }
         ],
         "collapsed": true,
         "translations": {
-          "pt-BR": "Área de trabalho"
+          "pt-BR": "Área de trabalho",
+          "pt-PT": "Ambiente de trabalho",
+          "es": "Escritorio",
+          "fr": "Bureau",
+          "it": "Desktop",
+          "zh-CN": "桌面",
+          "ja": "デスクトップ",
+          "de": "Desktop",
+          "ru": "Рабочий стол",
+          "ko": "데스크톱",
+          "hi-IN": "डेस्कटॉप",
+          "ar": "سطح المكتب",
+          "bn-BD": "ডেস্কটপ",
+          "id-ID": "Desktop",
+          "ur-PK": "ڈیسک ٹاپ",
+          "vi-VN": "Máy tính",
+          "tr-TR": "Masaüstü"
         }
       },
       {
@@ -101,27 +375,91 @@ export const sidebarConfig = [
             "slug": "docs/argvus-hyprland/keyboard-shortcuts",
             "label": "Keyboard shortcuts",
             "translations": {
-              "pt-BR": "Atalhos de teclado"
+              "ar": "اختصارات لوحة المفاتيح",
+              "bn-BD": "কীবোর্ড শর্টকাট",
+              "de": "Tastenkombinationen",
+              "es": "Atajos de teclado",
+              "fr": "Raccourcis clavier",
+              "hi-IN": "कीबोर्ड शॉर्टकट",
+              "id-ID": "Pintasan papan ketik",
+              "it": "Scorciatoie da tastiera",
+              "ja": "キーボードショートカット",
+              "ko": "키보드 단축키",
+              "pt-BR": "Atalhos de teclado",
+              "pt-PT": "Atalhos de teclado",
+              "ru": "Сочетания клавиш",
+              "tr-TR": "Klavye kısayolları",
+              "ur-PK": "کی بورڈ شارٹ کٹس",
+              "vi-VN": "Phím tắt",
+              "zh-CN": "键盘快捷键"
             }
           },
           {
             "slug": "docs/argvus-hyprland/windows-and-layout",
             "label": "Windows and layout",
             "translations": {
-              "pt-BR": "Janelas e layout"
+              "ar": "النوافذ والتخطيط",
+              "bn-BD": "উইন্ডো ও বিন্যাস",
+              "de": "Fenster und Layout",
+              "es": "Ventanas y distribución",
+              "fr": "Fenêtres et disposition",
+              "hi-IN": "विंडो और लेआउट",
+              "id-ID": "Jendela dan tata letak",
+              "it": "Finestre e layout",
+              "ja": "ウィンドウとレイアウト",
+              "ko": "창 및 레이아웃",
+              "pt-BR": "Janelas e layout",
+              "pt-PT": "Janelas e disposição",
+              "ru": "Окна и раскладка",
+              "tr-TR": "Pencereler ve düzen",
+              "ur-PK": "ونڈوز اور لے آؤٹ",
+              "vi-VN": "Cửa sổ và bố cục",
+              "zh-CN": "窗口与布局"
             }
           },
           {
             "slug": "docs/argvus-hyprland/input",
             "label": "Mouse and touchpad",
             "translations": {
-              "pt-BR": "Mouse e touchpad"
+              "ar": "الفأرة ولوحة اللمس",
+              "bn-BD": "মাউস ও টাচপ্যাড",
+              "de": "Maus und Touchpad",
+              "es": "Ratón y panel táctil",
+              "fr": "Souris et pavé tactile",
+              "hi-IN": "माउस और टचपैड",
+              "id-ID": "Mouse dan touchpad",
+              "it": "Mouse e touchpad",
+              "ja": "マウスとタッチパッド",
+              "ko": "마우스 및 터치패드",
+              "pt-BR": "Mouse e touchpad",
+              "pt-PT": "Rato e touchpad",
+              "ru": "Мышь и тачпад",
+              "tr-TR": "Fare ve dokunmatik yüzey",
+              "ur-PK": "ماؤس اور ٹچ پیڈ",
+              "vi-VN": "Chuột và bàn di",
+              "zh-CN": "鼠标与触摸板"
             }
           }
         ],
         "collapsed": true,
         "translations": {
-          "pt-BR": "Entrada e janelas"
+          "pt-BR": "Entrada e janelas",
+          "pt-PT": "Entrada e janelas",
+          "es": "Entrada y ventanas",
+          "fr": "Saisie et fenêtres",
+          "it": "Input e finestre",
+          "zh-CN": "输入与窗口",
+          "ja": "入力とウィンドウ",
+          "de": "Eingabe und Fenster",
+          "ru": "Ввод и окна",
+          "ko": "입력 및 창",
+          "hi-IN": "इनपुट और विंडो",
+          "ar": "الإدخال والنوافذ",
+          "bn-BD": "ইনপুট ও উইন্ডো",
+          "id-ID": "Input dan jendela",
+          "ur-PK": "ان پٹ اور ونڈوز",
+          "vi-VN": "Đầu vào và cửa sổ",
+          "tr-TR": "Giriş ve pencereler"
         }
       },
       {
@@ -131,62 +469,206 @@ export const sidebarConfig = [
             "slug": "docs/user-guide/applications",
             "label": "Overview",
             "translations": {
-              "pt-BR": "Visão geral"
+              "ar": "نظرة عامة",
+              "bn-BD": "সংক্ষিপ্ত বিবরণ",
+              "de": "Übersicht",
+              "es": "Resumen",
+              "fr": "Présentation",
+              "hi-IN": "अवलोकन",
+              "id-ID": "Ringkasan",
+              "it": "Panoramica",
+              "ja": "概要",
+              "ko": "개요",
+              "pt-BR": "Visão geral",
+              "pt-PT": "Visão geral",
+              "ru": "Обзор",
+              "tr-TR": "Genel bakış",
+              "ur-PK": "جائزہ",
+              "vi-VN": "Tổng quan",
+              "zh-CN": "概览"
             }
           },
           {
             "slug": "docs/argvus-ai",
             "label": "AI Agents",
             "translations": {
-              "pt-BR": "Agentes de IA"
+              "ar": "وكلاء الذكاء الاصطناعي",
+              "bn-BD": "AI এজেন্ট",
+              "de": "KI-Agenten",
+              "es": "Agentes de IA",
+              "fr": "Agents IA",
+              "hi-IN": "AI एजेंट",
+              "id-ID": "Agen AI",
+              "it": "Agenti IA",
+              "ja": "AI エージェント",
+              "ko": "AI 에이전트",
+              "pt-BR": "Agentes de IA",
+              "pt-PT": "Agentes de IA",
+              "ru": "ИИ-агенты",
+              "tr-TR": "Yapay zekâ ajanları",
+              "ur-PK": "اے آئی ایجنٹس",
+              "vi-VN": "Tác nhân AI",
+              "zh-CN": "AI 代理"
             }
           },
           {
             "slug": "docs/argvus-launcher",
             "label": "Application launcher",
             "translations": {
-              "pt-BR": "Lançador de aplicativos"
+              "ar": "مشغل التطبيقات",
+              "bn-BD": "অ্যাপ লঞ্চার",
+              "de": "Anwendungsstarter",
+              "es": "Lanzador de aplicaciones",
+              "fr": "Lanceur d’applications",
+              "hi-IN": "ऐप लॉन्चर",
+              "id-ID": "Peluncur aplikasi",
+              "it": "Avvio applicazioni",
+              "ja": "アプリケーションランチャー",
+              "ko": "앱 실행기",
+              "pt-BR": "Lançador de aplicativos",
+              "pt-PT": "Lançador de aplicações",
+              "ru": "Запуск приложений",
+              "tr-TR": "Uygulama başlatıcı",
+              "ur-PK": "ایپ لانچر",
+              "vi-VN": "Trình khởi chạy ứng dụng",
+              "zh-CN": "应用启动器"
             }
           },
           {
             "slug": "docs/components/argvus-terminal",
             "label": "Terminal",
             "translations": {
-              "pt-BR": "Terminal"
+              "ar": "الطرفية",
+              "bn-BD": "টার্মিনাল",
+              "de": "Terminal",
+              "es": "Terminal",
+              "fr": "Terminal",
+              "hi-IN": "टर्मिनल",
+              "id-ID": "Terminal",
+              "it": "Terminale",
+              "ja": "ターミナル",
+              "ko": "터미널",
+              "pt-BR": "Terminal",
+              "pt-PT": "Terminal",
+              "ru": "Терминал",
+              "tr-TR": "Terminal",
+              "ur-PK": "ٹرمینل",
+              "vi-VN": "Thiết bị đầu cuối",
+              "zh-CN": "终端"
             }
           },
           {
             "slug": "docs/components/argvus-system-monitor",
             "label": "System monitor",
             "translations": {
-              "pt-BR": "Monitor do sistema"
+              "ar": "مراقب النظام",
+              "bn-BD": "সিস্টেম মনিটর",
+              "de": "Systemmonitor",
+              "es": "Monitor del sistema",
+              "fr": "Moniteur système",
+              "hi-IN": "सिस्टम मॉनिटर",
+              "id-ID": "Monitor sistem",
+              "it": "Monitor di sistema",
+              "ja": "システムモニター",
+              "ko": "시스템 모니터",
+              "pt-BR": "Monitor do sistema",
+              "pt-PT": "Monitor do sistema",
+              "ru": "Системный монитор",
+              "tr-TR": "Sistem monitörü",
+              "ur-PK": "سسٹم مانیٹر",
+              "vi-VN": "Màn hình hệ thống",
+              "zh-CN": "系统监视器"
             }
           },
           {
             "slug": "docs/components/argvus-focus",
             "label": "ARGVUS Focus",
             "translations": {
-              "pt-BR": "ARGVUS Focus"
+              "ar": "ARGVUS التركيز",
+              "bn-BD": "ARGVUS ফোকাস",
+              "de": "ARGVUS Fokus",
+              "es": "Enfoque ARGVUS",
+              "fr": "Focus ARGVUS",
+              "hi-IN": "ARGVUS फोकस",
+              "id-ID": "ARGVUS Fokus",
+              "it": "Focus ARGVUS",
+              "ja": "ARGVUSフォーカス",
+              "ko": "아르거버스 포커스",
+              "pt-BR": "ARGVUS Focus",
+              "pt-PT": "ARGVUS Focus",
+              "ru": "ARGVUS Фокус",
+              "tr-TR": "ARGVUS Odak",
+              "ur-PK": "ARGVUS فوکس",
+              "vi-VN": "ARGVUS Focus",
+              "zh-CN": "ARGVUS 焦点"
             }
           },
           {
             "slug": "docs/components/argvus-clock",
             "label": "ARGVUS Clock",
             "translations": {
-              "pt-BR": "ARGVUS Clock"
+              "ar": "ساعة ARGVUS",
+              "bn-BD": "ARGVUS ঘড়ি",
+              "de": "ARGVUS Uhr",
+              "es": "Reloj ARGVUS",
+              "fr": "Horloge ARGVUS",
+              "hi-IN": "ARGVUS घड़ी",
+              "id-ID": "ARGVUS Jam",
+              "it": "Orologio ARGVUS",
+              "ja": "アルグヴス時計",
+              "ko": "아르거버스 시계",
+              "pt-BR": "ARGVUS Clock",
+              "pt-PT": "ARGVUS Clock",
+              "ru": "Часы ARGVUS",
+              "tr-TR": "ARGVUS Saati",
+              "ur-PK": "ARGVUS گھڑی",
+              "vi-VN": "ARGVUS Clock",
+              "zh-CN": "ARGVUS 时钟"
             }
           },
           {
             "slug": "docs/argvus-games",
             "label": "Games",
             "translations": {
-              "pt-BR": "Jogos"
+              "ar": "الألعاب",
+              "bn-BD": "গেম",
+              "de": "Spiele",
+              "es": "Juegos",
+              "fr": "Jeux",
+              "hi-IN": "गेम",
+              "id-ID": "Game",
+              "it": "Giochi",
+              "ja": "ゲーム",
+              "ko": "게임",
+              "pt-BR": "Jogos",
+              "pt-PT": "Jogos",
+              "ru": "Игры",
+              "tr-TR": "Oyunlar",
+              "ur-PK": "گیمز",
+              "vi-VN": "Trò chơi",
+              "zh-CN": "游戏"
             }
           }
         ],
         "collapsed": true,
         "translations": {
-          "pt-BR": "Aplicativos"
+          "pt-BR": "Aplicativos",
+          "pt-PT": "Aplicações",
+          "es": "Aplicaciones",
+          "fr": "Applications",
+          "it": "Applicazioni",
+          "zh-CN": "应用程序",
+          "ja": "アプリケーション",
+          "de": "Anwendungen",
+          "ru": "Приложения",
+          "ko": "애플리케이션",
+          "hi-IN": "अनुप्रयोग",
+          "ar": "التطبيقات",
+          "bn-BD": "অ্যাপ্লিকেশন",
+          "id-ID": "Aplikasi",
+          "ur-PK": "ایپلیکیشنز",
+          "vi-VN": "Ứng dụng",
+          "tr-TR": "Uygulamalar"
         }
       },
       {
@@ -196,41 +678,137 @@ export const sidebarConfig = [
             "slug": "docs/user-guide/sessions",
             "label": "Sessions",
             "translations": {
-              "pt-BR": "Sessões"
+              "ar": "الجلسات",
+              "bn-BD": "সেশন",
+              "de": "Sitzungen",
+              "es": "Sesiones",
+              "fr": "Sessions",
+              "hi-IN": "सत्र",
+              "id-ID": "Sesi",
+              "it": "Sessioni",
+              "ja": "セッション",
+              "ko": "세션",
+              "pt-BR": "Sessões",
+              "pt-PT": "Sessões",
+              "ru": "Сеансы",
+              "tr-TR": "Oturumlar",
+              "ur-PK": "سیشنز",
+              "vi-VN": "Phiên",
+              "zh-CN": "会话"
             }
           },
           {
             "slug": "docs/components/argvus-greeter",
             "label": "Greeter",
             "translations": {
-              "pt-BR": "Tela de login"
+              "ar": "واجهة الترحيب",
+              "bn-BD": "স্বাগতম পর্দা",
+              "de": "Anmeldebildschirm",
+              "es": "Pantalla de bienvenida",
+              "fr": "Écran d’accueil",
+              "hi-IN": "लॉगिन स्वागत स्क्रीन",
+              "id-ID": "Layar sambutan",
+              "it": "Schermata di benvenuto",
+              "ja": "ログイン画面",
+              "ko": "로그인 인사 화면",
+              "pt-BR": "Tela de login",
+              "pt-PT": "Ecrã de boas-vindas",
+              "ru": "Экран приветствия",
+              "tr-TR": "Karşılama ekranı",
+              "ur-PK": "خوش آمدیدی اسکرین",
+              "vi-VN": "Màn hình chào mừng",
+              "zh-CN": "登录欢迎界面"
             }
           },
           {
             "slug": "docs/argvus-lock",
             "label": "Lock screen",
             "translations": {
-              "pt-BR": "Tela de bloqueio"
+              "ar": "شاشة القفل",
+              "bn-BD": "লক স্ক্রিন",
+              "de": "Sperrbildschirm",
+              "es": "Pantalla de bloqueo",
+              "fr": "Écran de verrouillage",
+              "hi-IN": "लॉक स्क्रीन",
+              "id-ID": "Layar kunci",
+              "it": "Schermata di blocco",
+              "ja": "ロック画面",
+              "ko": "잠금 화면",
+              "pt-BR": "Tela de bloqueio",
+              "pt-PT": "Ecrã de bloqueio",
+              "ru": "Экран блокировки",
+              "tr-TR": "Kilit ekranı",
+              "ur-PK": "لاک اسکرین",
+              "vi-VN": "Màn hình khóa",
+              "zh-CN": "锁屏"
             }
           },
           {
             "slug": "docs/argvus-session/graphical-session",
             "label": "Graphical session",
             "translations": {
-              "pt-BR": "Sessão gráfica"
+              "ar": "الجلسة الرسومية",
+              "bn-BD": "গ্রাফিক্যাল সেশন",
+              "de": "Grafische Sitzung",
+              "es": "Sesión gráfica",
+              "fr": "Session graphique",
+              "hi-IN": "ग्राफ़िकल सत्र",
+              "id-ID": "Sesi grafis",
+              "it": "Sessione grafica",
+              "ja": "グラフィカルセッション",
+              "ko": "그래픽 세션",
+              "pt-BR": "Sessão gráfica",
+              "pt-PT": "Sessão gráfica",
+              "ru": "Графический сеанс",
+              "tr-TR": "Grafik oturumu",
+              "ur-PK": "گرافیکل سیشن",
+              "vi-VN": "Phiên đồ họa",
+              "zh-CN": "图形会话"
             }
           },
           {
             "slug": "docs/argvus-session/tty-session",
             "label": "TTY session",
             "translations": {
-              "pt-BR": "Sessão TTY"
+              "ar": "جلسة TTY",
+              "bn-BD": "TTY সেশন",
+              "de": "TTY-Sitzung",
+              "es": "Sesión TTY",
+              "fr": "Session TTY",
+              "hi-IN": "TTY सत्र",
+              "id-ID": "Sesi TTY",
+              "it": "Sessione TTY",
+              "ja": "TTY セッション",
+              "ko": "TTY 세션",
+              "pt-BR": "Sessão TTY",
+              "pt-PT": "Sessão TTY",
+              "ru": "Сеанс TTY",
+              "tr-TR": "TTY oturumu",
+              "ur-PK": "TTY سیشن",
+              "vi-VN": "Phiên TTY",
+              "zh-CN": "TTY 会话"
             }
           }
         ],
         "collapsed": true,
         "translations": {
-          "pt-BR": "Sessões e login"
+          "pt-BR": "Sessões e login",
+          "pt-PT": "Sessões e início de sessão",
+          "es": "Sesiones e inicio de sesión",
+          "fr": "Sessions et connexion",
+          "it": "Sessioni e accesso",
+          "zh-CN": "会话与登录",
+          "ja": "セッションとログイン",
+          "de": "Sitzungen und Anmeldung",
+          "ru": "Сеансы и вход",
+          "ko": "세션 및 로그인",
+          "hi-IN": "सत्र और लॉगिन",
+          "ar": "الجلسات وتسجيل الدخول",
+          "bn-BD": "সেশন ও লগইন",
+          "id-ID": "Sesi dan masuk",
+          "ur-PK": "سیشن اور لاگ اِن",
+          "vi-VN": "Phiên và đăng nhập",
+          "tr-TR": "Oturumlar ve giriş"
         }
       },
       {
@@ -240,7 +818,23 @@ export const sidebarConfig = [
             "slug": "docs/user-guide/appearance",
             "label": "Overview",
             "translations": {
-              "pt-BR": "Visão geral"
+              "ar": "نظرة عامة",
+              "bn-BD": "সংক্ষিপ্ত বিবরণ",
+              "de": "Übersicht",
+              "es": "Resumen",
+              "fr": "Présentation",
+              "hi-IN": "अवलोकन",
+              "id-ID": "Ringkasan",
+              "it": "Panoramica",
+              "ja": "概要",
+              "ko": "개요",
+              "pt-BR": "Visão geral",
+              "pt-PT": "Visão geral",
+              "ru": "Обзор",
+              "tr-TR": "Genel bakış",
+              "ur-PK": "جائزہ",
+              "vi-VN": "Tổng quan",
+              "zh-CN": "概览"
             }
           },
           {
@@ -250,68 +844,228 @@ export const sidebarConfig = [
                 "slug": "docs/components/argvus-themes",
                 "label": "Overview",
                 "translations": {
-                  "pt-BR": "Visão geral"
+                  "ar": "نظرة عامة",
+                  "bn-BD": "সংক্ষিপ্ত বিবরণ",
+                  "de": "Übersicht",
+                  "es": "Resumen",
+                  "fr": "Présentation",
+                  "hi-IN": "अवलोकन",
+                  "id-ID": "Ringkasan",
+                  "it": "Panoramica",
+                  "ja": "概要",
+                  "ko": "개요",
+                  "pt-BR": "Visão geral",
+                  "pt-PT": "Visão geral",
+                  "ru": "Обзор",
+                  "tr-TR": "Genel bakış",
+                  "ur-PK": "جائزہ",
+                  "vi-VN": "Tổng quan",
+                  "zh-CN": "概览"
                 }
               },
               {
                 "slug": "docs/components/argvus-themes/installing-themes",
                 "label": "Installing themes",
                 "translations": {
-                  "pt-BR": "Instalando temas"
+                  "ar": "تثبيت السمات",
+                  "bn-BD": "থিম ইনস্টল করা হচ্ছে",
+                  "de": "Themes installieren",
+                  "es": "Instalando temas",
+                  "fr": "Installation de thèmes",
+                  "hi-IN": "थीम इंस्टॉल करना",
+                  "id-ID": "Menginstal tema",
+                  "it": "Installazione dei temi",
+                  "ja": "テーマのインストール",
+                  "ko": "테마 설치",
+                  "pt-BR": "Instalando temas",
+                  "pt-PT": "Instalando temas",
+                  "ru": "Установка тем",
+                  "tr-TR": "Temaları yükleme",
+                  "ur-PK": "تھیمز انسٹال کرنا",
+                  "vi-VN": "Cài đặt chủ đề",
+                  "zh-CN": "安装主题"
                 }
               },
               {
                 "slug": "docs/components/argvus-themes/official-themes",
                 "label": "Official themes",
                 "translations": {
-                  "pt-BR": "Temas oficiais"
+                  "ar": "المواضيع الرسمية",
+                  "bn-BD": "অফিসিয়াল থিম",
+                  "de": "Offizielle Themen",
+                  "es": "Temas oficiales",
+                  "fr": "Thèmes officiels",
+                  "hi-IN": "आधिकारिक थीम",
+                  "id-ID": "Tema resmi",
+                  "it": "Temi ufficiali",
+                  "ja": "公式テーマ",
+                  "ko": "공식 테마",
+                  "pt-BR": "Temas oficiais",
+                  "pt-PT": "Temas oficiais",
+                  "ru": "Официальные темы",
+                  "tr-TR": "Resmi temalar",
+                  "ur-PK": "آفیشل تھیمز",
+                  "vi-VN": "Chủ đề chính thức",
+                  "zh-CN": "官方主题"
                 }
               },
               {
                 "slug": "docs/components/argvus-themes/highlight-color",
                 "label": "Highlight color",
                 "translations": {
-                  "pt-BR": "Cor de destaque"
+                  "ar": "تخصيص لون التمييز",
+                  "bn-BD": "হাইলাইট রঙ কাস্টমাইজ করা",
+                  "de": "Anpassen der Hervorhebungsfarbe",
+                  "es": "Personalizando el color de resaltado",
+                  "fr": "Personnalisation de la couleur de surbrillance",
+                  "hi-IN": "हाइलाइट रंग को अनुकूलित करना",
+                  "id-ID": "Menyesuaikan warna highlight",
+                  "it": "Personalizzare il colore di evidenziazione",
+                  "ja": "ハイライトの色をカスタマイズする",
+                  "ko": "하이라이트 색상 사용자 지정",
+                  "pt-BR": "Cor de destaque",
+                  "pt-PT": "Personalizando a cor de destaque",
+                  "ru": "Настройка цвета выделения",
+                  "tr-TR": "Vurgu rengini özelleştirme",
+                  "ur-PK": "نمایاں رنگ کو حسب ضرورت بنانا",
+                  "vi-VN": "Tùy chỉnh màu đánh dấu",
+                  "zh-CN": "自定义高亮颜色"
                 }
               },
               {
                 "slug": "docs/components/argvus-themes/import-and-export",
                 "label": "Import and export",
                 "translations": {
-                  "pt-BR": "Importar e exportar"
+                  "ar": "استيراد وتصدير المواضيع",
+                  "bn-BD": "থিম আমদানি ও রপ্তানি",
+                  "de": "Importieren und Exportieren von Designs",
+                  "es": "Importar y exportar temas",
+                  "fr": "Importer et exporter des thèmes",
+                  "hi-IN": "थीम आयात और निर्यात करना",
+                  "id-ID": "Mengimpor dan mengekspor tema",
+                  "it": "Importazione ed esportazione di temi",
+                  "ja": "テーマのインポートとエクスポート",
+                  "ko": "테마 가져오기 및 내보내기",
+                  "pt-BR": "Importar e exportar",
+                  "pt-PT": "Importando e exportando temas",
+                  "ru": "Импорт и экспорт тем",
+                  "tr-TR": "Temaları içe ve dışa aktarma",
+                  "ur-PK": "تھیمز کی درآمد اور برآمد",
+                  "vi-VN": "Nhập và xuất chủ đề",
+                  "zh-CN": "导入和导出主题"
                 }
               }
             ],
             "collapsed": true,
             "translations": {
-              "pt-BR": "Temas"
+              "pt-BR": "Temas",
+              "pt-PT": "Temas",
+              "es": "Temas",
+              "fr": "Thèmes",
+              "it": "Temi",
+              "zh-CN": "主题",
+              "ja": "テーマ",
+              "de": "Designs",
+              "ru": "Темы",
+              "ko": "테마",
+              "hi-IN": "थीम",
+              "ar": "السمات",
+              "bn-BD": "থিম",
+              "id-ID": "Tema",
+              "ur-PK": "تھیمز",
+              "vi-VN": "Chủ đề",
+              "tr-TR": "Temalar"
             }
           },
           {
             "slug": "docs/argvus-appearance/wallpapers",
             "label": "Wallpapers",
             "translations": {
-              "pt-BR": "Papéis de parede"
+              "ar": "الخلفيات",
+              "bn-BD": "ওয়ালপেপার",
+              "de": "Hintergrundbilder",
+              "es": "Fondos de pantalla",
+              "fr": "Fonds d’écran",
+              "hi-IN": "वॉलपेपर",
+              "id-ID": "Wallpaper",
+              "it": "Sfondi",
+              "ja": "壁紙",
+              "ko": "배경 화면",
+              "pt-BR": "Papéis de parede",
+              "pt-PT": "Papéis de parede",
+              "ru": "Обои",
+              "tr-TR": "Duvar kâğıtları",
+              "ur-PK": "وال پیپر",
+              "vi-VN": "Hình nền",
+              "zh-CN": "壁纸"
             }
           },
           {
             "slug": "docs/argvus-appearance/fonts-and-icons",
             "label": "Fonts and icons",
             "translations": {
-              "pt-BR": "Fontes e ícones"
+              "ar": "الخطوط والأيقونات",
+              "bn-BD": "ফন্ট ও আইকন",
+              "de": "Schriften und Symbole",
+              "es": "Fuentes e iconos",
+              "fr": "Polices et icônes",
+              "hi-IN": "फ़ॉन्ट और आइकन",
+              "id-ID": "Font dan ikon",
+              "it": "Font e icone",
+              "ja": "フォントとアイコン",
+              "ko": "글꼴 및 아이콘",
+              "pt-BR": "Fontes e ícones",
+              "pt-PT": "Tipos de letra e ícones",
+              "ru": "Шрифты и значки",
+              "tr-TR": "Yazı tipleri ve simgeler",
+              "ur-PK": "فونٹس اور آئیکنز",
+              "vi-VN": "Phông chữ và biểu tượng",
+              "zh-CN": "字体与图标"
             }
           },
           {
             "slug": "docs/argvus-appearance/effects",
             "label": "Effects",
             "translations": {
-              "pt-BR": "Efeitos"
+              "ar": "التأثيرات",
+              "bn-BD": "প্রভাব",
+              "de": "Effekte",
+              "es": "Efectos",
+              "fr": "Effets",
+              "hi-IN": "प्रभाव",
+              "id-ID": "Efek",
+              "it": "Effetti",
+              "ja": "エフェクト",
+              "ko": "효과",
+              "pt-BR": "Efeitos",
+              "pt-PT": "Efeitos",
+              "ru": "Эффекты",
+              "tr-TR": "Efektler",
+              "ur-PK": "اثرات",
+              "vi-VN": "Hiệu ứng",
+              "zh-CN": "效果"
             }
           }
         ],
         "collapsed": true,
         "translations": {
-          "pt-BR": "Aparência"
+          "pt-BR": "Aparência",
+          "pt-PT": "Aspeto",
+          "es": "Apariencia",
+          "fr": "Apparence",
+          "it": "Aspetto",
+          "zh-CN": "外观",
+          "ja": "外観",
+          "de": "Erscheinungsbild",
+          "ru": "Внешний вид",
+          "ko": "모양",
+          "hi-IN": "रूप-रंग",
+          "ar": "المظهر",
+          "bn-BD": "চেহারা",
+          "id-ID": "Tampilan",
+          "ur-PK": "ظاہری شکل",
+          "vi-VN": "Giao diện",
+          "tr-TR": "Görünüm"
         }
       },
       {
@@ -321,48 +1075,160 @@ export const sidebarConfig = [
             "slug": "docs/user-guide/hardware",
             "label": "Hardware",
             "translations": {
-              "pt-BR": "Hardware"
+              "ar": "الأجهزة",
+              "bn-BD": "হার্ডওয়্যার",
+              "de": "Hardware",
+              "es": "Hardware",
+              "fr": "Matériel",
+              "hi-IN": "हार्डवेयर",
+              "id-ID": "Perangkat keras",
+              "it": "Hardware",
+              "ja": "ハードウェア",
+              "ko": "하드웨어",
+              "pt-BR": "Hardware",
+              "pt-PT": "Hardware",
+              "ru": "Оборудование",
+              "tr-TR": "Donanım",
+              "ur-PK": "ہارڈویئر",
+              "vi-VN": "Phần cứng",
+              "zh-CN": "硬件"
             }
           },
           {
             "slug": "docs/argvus-display",
             "label": "Displays",
             "translations": {
-              "pt-BR": "Telas"
+              "ar": "الشاشات",
+              "bn-BD": "ডিসপ্লে",
+              "de": "Anzeigen",
+              "es": "Pantallas",
+              "fr": "Écrans",
+              "hi-IN": "डिस्प्ले",
+              "id-ID": "Layar",
+              "it": "Schermi",
+              "ja": "ディスプレイ",
+              "ko": "디스플레이",
+              "pt-BR": "Telas",
+              "pt-PT": "Ecrãs",
+              "ru": "Дисплеи",
+              "tr-TR": "Ekranlar",
+              "ur-PK": "ڈسپلے",
+              "vi-VN": "Màn hình",
+              "zh-CN": "显示器"
             }
           },
           {
             "slug": "docs/components/argvus-network",
             "label": "Networking and Bluetooth",
             "translations": {
-              "pt-BR": "Rede e Bluetooth"
+              "ar": "الشبكات والبلوتوث",
+              "bn-BD": "নেটওয়ার্কিং এবং ব্লুটুথ",
+              "de": "Netzwerk und Bluetooth",
+              "es": "Redes y Bluetooth",
+              "fr": "Réseautage et Bluetooth",
+              "hi-IN": "नेटवर्किंग और ब्लूटूथ",
+              "id-ID": "Jaringan dan Bluetooth",
+              "it": "Reti e Bluetooth",
+              "ja": "ネットワーキングとBluetooth",
+              "ko": "네트워킹 및 블루투스",
+              "pt-BR": "Rede e Bluetooth",
+              "pt-PT": "Rede e Bluetooth",
+              "ru": "Сетевые технологии и Bluetooth",
+              "tr-TR": "Ağ ve Bluetooth",
+              "ur-PK": "نیٹ ورکنگ اور بلوٹوتھ",
+              "vi-VN": "Mạng và Bluetooth",
+              "zh-CN": "网络与蓝牙"
             }
           },
           {
             "slug": "docs/argvus-power",
             "label": "Power",
             "translations": {
-              "pt-BR": "Energia"
+              "ar": "الطاقة",
+              "bn-BD": "পাওয়ার",
+              "de": "Energie",
+              "es": "Energía",
+              "fr": "Alimentation",
+              "hi-IN": "पावर",
+              "id-ID": "Daya",
+              "it": "Alimentazione",
+              "ja": "電源",
+              "ko": "전원",
+              "pt-BR": "Energia",
+              "pt-PT": "Energia",
+              "ru": "Питание",
+              "tr-TR": "Güç",
+              "ur-PK": "پاور",
+              "vi-VN": "Nguồn điện",
+              "zh-CN": "电源"
             }
           },
           {
             "slug": "docs/components/argvus-removable-devices",
             "label": "Removable devices",
             "translations": {
-              "pt-BR": "Dispositivos removíveis"
+              "ar": "الأجهزة القابلة للإزالة",
+              "bn-BD": "অপসারণযোগ্য ডিভাইস",
+              "de": "Abnehmbare Geräte",
+              "es": "Dispositivos extraíbles",
+              "fr": "Dispositifs amovibles",
+              "hi-IN": "हटाने योग्य उपकरण",
+              "id-ID": "Perangkat yang dapat dilepas",
+              "it": "Dispositivi rimovibili",
+              "ja": "取り外し可能なデバイス",
+              "ko": "이동식 장치",
+              "pt-BR": "Dispositivos removíveis",
+              "pt-PT": "Dispositivos removíveis",
+              "ru": "Съёмные устройства",
+              "tr-TR": "Çıkarılabilir cihazlar",
+              "ur-PK": "ہٹنے کے قابل آلات",
+              "vi-VN": "Thiết bị có thể tháo rời",
+              "zh-CN": "可移动设备"
             }
           },
           {
             "slug": "docs/user-guide/virtual-machines",
             "label": "Virtual machines",
             "translations": {
-              "pt-BR": "Máquinas virtuais"
+              "ar": "الأجهزة الافتراضية",
+              "bn-BD": "ভার্চুয়াল মেশিন",
+              "de": "Virtuelle Maschinen",
+              "es": "Máquinas virtuales",
+              "fr": "Machines virtuelles",
+              "hi-IN": "वर्चुअल मशीनें",
+              "id-ID": "Mesin virtual",
+              "it": "Macchine virtuali",
+              "ja": "仮想マシン",
+              "ko": "가상 머신",
+              "pt-BR": "Máquinas virtuais",
+              "pt-PT": "Máquinas virtuais",
+              "ru": "Виртуальные машины",
+              "tr-TR": "Sanal makineler",
+              "ur-PK": "ورچوئل مشینیں۔",
+              "vi-VN": "Máy ảo",
+              "zh-CN": "虚拟机"
             }
           }
         ],
         "collapsed": true,
         "translations": {
-          "pt-BR": "Hardware e rede"
+          "pt-BR": "Hardware e rede",
+          "pt-PT": "Hardware e rede",
+          "es": "Hardware y red",
+          "fr": "Matériel et réseau",
+          "it": "Hardware e rete",
+          "zh-CN": "硬件与网络",
+          "ja": "ハードウェアとネットワーク",
+          "de": "Hardware und Netzwerk",
+          "ru": "Оборудование и сеть",
+          "ko": "하드웨어 및 네트워크",
+          "hi-IN": "हार्डवेयर और नेटवर्क",
+          "ar": "الأجهزة والشبكة",
+          "bn-BD": "হার্ডওয়্যার ও নেটওয়ার্ক",
+          "id-ID": "Perangkat keras dan jaringan",
+          "ur-PK": "ہارڈویئر اور نیٹ ورک",
+          "vi-VN": "Phần cứng và mạng",
+          "tr-TR": "Donanım ve ağ"
         }
       },
       {
@@ -372,85 +1238,299 @@ export const sidebarConfig = [
             "slug": "docs/components/argvus-control-center",
             "label": "Control Center",
             "translations": {
-              "pt-BR": "Control Center"
+              "ar": "مركز التحكم",
+              "bn-BD": "কন্ট্রোল সেন্টার",
+              "de": "Kontrollzentrum",
+              "es": "Centro de control",
+              "fr": "Centre de contrôle",
+              "hi-IN": "कंट्रोल सेंटर",
+              "id-ID": "Pusat kontrol",
+              "it": "Centro di controllo",
+              "ja": "コントロールセンター",
+              "ko": "제어 센터",
+              "pt-BR": "Control Center",
+              "pt-PT": "Centro de controlo",
+              "ru": "Центр управления",
+              "tr-TR": "Kontrol merkezi",
+              "ur-PK": "کنٹرول سینٹر",
+              "vi-VN": "Trung tâm điều khiển",
+              "zh-CN": "控制中心"
             }
           },
           {
             "slug": "docs/components/argvus-focus",
             "label": "ARGVUS Focus",
             "translations": {
-              "pt-BR": "ARGVUS Focus"
+              "ar": "ARGVUS التركيز",
+              "bn-BD": "ARGVUS ফোকাস",
+              "de": "ARGVUS Fokus",
+              "es": "Enfoque ARGVUS",
+              "fr": "Focus ARGVUS",
+              "hi-IN": "ARGVUS फोकस",
+              "id-ID": "ARGVUS Fokus",
+              "it": "Focus ARGVUS",
+              "ja": "ARGVUSフォーカス",
+              "ko": "아르거버스 포커스",
+              "pt-BR": "ARGVUS Focus",
+              "pt-PT": "ARGVUS Focus",
+              "ru": "ARGVUS Фокус",
+              "tr-TR": "ARGVUS Odak",
+              "ur-PK": "ARGVUS فوکس",
+              "vi-VN": "ARGVUS Focus",
+              "zh-CN": "ARGVUS 焦点"
             }
           },
           {
             "slug": "docs/argvus-control-panel",
             "label": "Control Panel",
             "translations": {
-              "pt-BR": "Control Panel"
+              "ar": "لوحة التحكم",
+              "bn-BD": "কন্ট্রোল প্যানেল",
+              "de": "Systemsteuerung",
+              "es": "Panel de control",
+              "fr": "Panneau de contrôle",
+              "hi-IN": "कंट्रोल पैनल",
+              "id-ID": "Panel kontrol",
+              "it": "Pannello di controllo",
+              "ja": "コントロールパネル",
+              "ko": "제어판",
+              "pt-BR": "Control Panel",
+              "pt-PT": "Painel de controlo",
+              "ru": "Панель управления",
+              "tr-TR": "Kontrol paneli",
+              "ur-PK": "کنٹرول پینل",
+              "vi-VN": "Bảng điều khiển",
+              "zh-CN": "控制面板"
             }
           },
           {
             "slug": "docs/user-guide/localization",
             "label": "Localization",
             "translations": {
-              "pt-BR": "Idioma e região"
+              "ar": "اللغة والمنطقة",
+              "bn-BD": "ভাষা ও অঞ্চল",
+              "de": "Sprache und Region",
+              "es": "Idioma y región",
+              "fr": "Langue et région",
+              "hi-IN": "भाषा और क्षेत्र",
+              "id-ID": "Bahasa dan wilayah",
+              "it": "Lingua e regione",
+              "ja": "言語と地域",
+              "ko": "언어 및 지역",
+              "pt-BR": "Idioma e região",
+              "pt-PT": "Idioma e região",
+              "ru": "Язык и регион",
+              "tr-TR": "Dil ve bölge",
+              "ur-PK": "زبان اور علاقہ",
+              "vi-VN": "Ngôn ngữ và khu vực",
+              "zh-CN": "语言与区域"
             }
           },
           {
             "slug": "docs/components/argvus-accounts",
             "label": "User accounts",
             "translations": {
-              "pt-BR": "Contas de usuário"
+              "ar": "Accounts",
+              "bn-BD": "অ্যাকাউন্ট",
+              "de": "Konten",
+              "es": "Cuentas",
+              "fr": "Comptes",
+              "hi-IN": "खाते",
+              "id-ID": "Accounts",
+              "it": "Conti",
+              "ja": "アカウント",
+              "ko": "계정",
+              "pt-BR": "Contas de usuário",
+              "pt-PT": "Contas",
+              "ru": "Счета",
+              "tr-TR": "Hesapları",
+              "ur-PK": "اکاؤنٹس",
+              "vi-VN": "Accounts",
+              "zh-CN": "账户"
             }
           },
           {
             "slug": "docs/components/argvus-clock",
             "label": "ARGVUS Clock",
             "translations": {
-              "pt-BR": "ARGVUS Clock"
+              "ar": "ساعة ARGVUS",
+              "bn-BD": "ARGVUS ঘড়ি",
+              "de": "ARGVUS Uhr",
+              "es": "Reloj ARGVUS",
+              "fr": "Horloge ARGVUS",
+              "hi-IN": "ARGVUS घड़ी",
+              "id-ID": "ARGVUS Jam",
+              "it": "Orologio ARGVUS",
+              "ja": "アルグヴス時計",
+              "ko": "아르거버스 시계",
+              "pt-BR": "ARGVUS Clock",
+              "pt-PT": "ARGVUS Clock",
+              "ru": "Часы ARGVUS",
+              "tr-TR": "ARGVUS Saati",
+              "ur-PK": "ARGVUS گھڑی",
+              "vi-VN": "ARGVUS Clock",
+              "zh-CN": "ARGVUS 时钟"
             }
           },
           {
             "slug": "docs/user-guide/privacy-and-security",
             "label": "Privacy and security",
             "translations": {
-              "pt-BR": "Privacidade e segurança"
+              "ar": "الخصوصية والأمان",
+              "bn-BD": "গোপনীয়তা এবং নিরাপত্তা",
+              "de": "Privatsphäre und Sicherheit",
+              "es": "Privacidad y seguridad",
+              "fr": "Confidentialité et sécurité",
+              "hi-IN": "गोपनीयता और सुरक्षा",
+              "id-ID": "Privasi dan keamanan",
+              "it": "Privacy e sicurezza",
+              "ja": "プライバシーとセキュリティ",
+              "ko": "개인정보 보호 및 보안",
+              "pt-BR": "Privacidade e segurança",
+              "pt-PT": "Privacidade e segurança",
+              "ru": "Конфиденциальность и безопасность",
+              "tr-TR": "Gizlilik ve güvenlik",
+              "ur-PK": "رازداری اور سیکیورٹی",
+              "vi-VN": "Quyền riêng tư và bảo mật",
+              "zh-CN": "隐私与安全"
             }
           },
           {
             "slug": "docs/argvus-firewall",
             "label": "Firewall",
             "translations": {
-              "pt-BR": "Firewall"
+              "ar": "جدار الحماية",
+              "bn-BD": "ফায়ারওয়াল",
+              "de": "Firewall",
+              "es": "Cortafuegos",
+              "fr": "Pare-feu",
+              "hi-IN": "फ़ायरवॉल",
+              "id-ID": "Firewall",
+              "it": "Firewall",
+              "ja": "ファイアウォール",
+              "ko": "방화벽",
+              "pt-BR": "Firewall",
+              "pt-PT": "Firewall",
+              "ru": "Брандмауэр",
+              "tr-TR": "Güvenlik duvarı",
+              "ur-PK": "فائر وال",
+              "vi-VN": "Tường lửa",
+              "zh-CN": "防火墙"
             }
           }
         ],
         "collapsed": true,
         "translations": {
-          "pt-BR": "Sistema e privacidade"
+          "pt-BR": "Sistema e privacidade",
+          "pt-PT": "Sistema e privacidade",
+          "es": "Sistema y privacidad",
+          "fr": "Système et confidentialité",
+          "it": "Sistema e privacy",
+          "zh-CN": "系统与隐私",
+          "ja": "システムとプライバシー",
+          "de": "System und Datenschutz",
+          "ru": "Система и конфиденциальность",
+          "ko": "시스템 및 개인정보 보호",
+          "hi-IN": "सिस्टम और गोपनीयता",
+          "ar": "النظام والخصوصية",
+          "bn-BD": "সিস্টেম ও গোপনীয়তা",
+          "id-ID": "Sistem dan privasi",
+          "ur-PK": "سسٹم اور رازداری",
+          "vi-VN": "Hệ thống và quyền riêng tư",
+          "tr-TR": "Sistem ve gizlilik"
         }
       },
       {
         "slug": "docs/user-guide/where-to-configure",
         "label": "Where to configure things",
         "translations": {
-          "pt-BR": "Onde configurar"
+          "ar": "أين يتم تكوين الأشياء",
+          "bn-BD": "কোথায় জিনিসগুলি কনফিগার করতে হবে",
+          "de": "Wo man Dinge konfigurieren kann",
+          "es": "Dónde configurar cosas",
+          "fr": "Où configurer les choses",
+          "hi-IN": "चीजों को कहां कॉन्फ़िगर करें",
+          "id-ID": "Tempat mengonfigurasi berbagai hal",
+          "it": "Dove configurare le cose",
+          "ja": "設定する場所",
+          "ko": "설정을 어디서 할지",
+          "pt-BR": "Onde configurar",
+          "pt-PT": "Onde configurar as coisas",
+          "ru": "Где настроить вещи",
+          "tr-TR": "Öğelerin nerede yapılandırılacağı",
+          "ur-PK": "چیزوں کو کہاں ترتیب دینا ہے۔",
+          "vi-VN": "Nơi định cấu hình mọi thứ",
+          "zh-CN": "在哪里配置设置"
         }
       },
       {
-        "slug": "docs/user-guide/night-light"
+        "slug": "docs/user-guide/night-light",
+        "translations": {
+          "ar": "ضوء الليل",
+          "bn-BD": "রাতের আলো",
+          "de": "Nachtlicht",
+          "es": "Luz nocturna",
+          "fr": "Veilleuse",
+          "hi-IN": "नाइट लाइट",
+          "id-ID": "Lampu Malam",
+          "it": "Luce notturna",
+          "ja": "ナイトライト",
+          "ko": "야간 조명",
+          "pt-BR": "Luz noturna",
+          "pt-PT": "Luz noturna",
+          "ru": "Ночной свет",
+          "tr-TR": "Gece Lambası",
+          "ur-PK": "نائٹ لائٹ",
+          "vi-VN": "Night Light",
+          "zh-CN": "夜灯"
+        }
       }
     ],
     "collapsed": false,
     "translations": {
-      "pt-BR": "Guia do usuário"
+      "pt-BR": "Guia do usuário",
+      "pt-PT": "Guia do utilizador",
+      "es": "Guía del usuario",
+      "fr": "Guide utilisateur",
+      "it": "Guida utente",
+      "zh-CN": "用户指南",
+      "ja": "ユーザーガイド",
+      "de": "Benutzerhandbuch",
+      "ru": "Руководство пользователя",
+      "ko": "사용자 안내서",
+      "hi-IN": "उपयोगकर्ता मार्गदर्शिका",
+      "ar": "دليل المستخدم",
+      "bn-BD": "ব্যবহারকারী নির্দেশিকা",
+      "id-ID": "Panduan pengguna",
+      "ur-PK": "صارف کی رہنما کتاب",
+      "vi-VN": "Hướng dẫn sử dụng",
+      "tr-TR": "Kullanıcı kılavuzu"
     }
   },
   {
     "label": "Help",
     "items": [
       {
-        "slug": "docs/user-guide/faq"
+        "slug": "docs/user-guide/faq",
+        "translations": {
+          "ar": "الأسئلة المتداولة",
+          "bn-BD": "প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী",
+          "de": "Häufig gestellte Fragen",
+          "es": "Preguntas frecuentes",
+          "fr": "Questions fréquemment posées",
+          "hi-IN": "अक्सर पूछे जाने वाले प्रश्न",
+          "id-ID": "Pertanyaan yang sering diajukan",
+          "it": "Domande frequenti",
+          "ja": "よくある質問",
+          "ko": "자주 묻는 질문",
+          "pt-BR": "Perguntas frequentes",
+          "pt-PT": "Perguntas frequentes",
+          "ru": "Часто задаваемые вопросы",
+          "tr-TR": "Sıkça sorulan sorular",
+          "ur-PK": "اکثر پوچھے گئے سوالات",
+          "vi-VN": "Các câu hỏi thường gặp",
+          "zh-CN": "常见问题"
+        }
       },
       {
         "label": "Troubleshooting",
@@ -459,49 +1539,180 @@ export const sidebarConfig = [
             "slug": "docs/user-guide/troubleshooting",
             "label": "Overview",
             "translations": {
-              "pt-BR": "Visão geral"
+              "ar": "نظرة عامة",
+              "bn-BD": "সংক্ষিপ্ত বিবরণ",
+              "de": "Übersicht",
+              "es": "Resumen",
+              "fr": "Présentation",
+              "hi-IN": "अवलोकन",
+              "id-ID": "Ringkasan",
+              "it": "Panoramica",
+              "ja": "概要",
+              "ko": "개요",
+              "pt-BR": "Visão geral",
+              "pt-PT": "Visão geral",
+              "ru": "Обзор",
+              "tr-TR": "Genel bakış",
+              "ur-PK": "جائزہ",
+              "vi-VN": "Tổng quan",
+              "zh-CN": "概览"
             }
           },
           {
             "slug": "docs/user-guide/troubleshooting/installation",
             "label": "Installation",
             "translations": {
-              "pt-BR": "Instalação"
+              "ar": "استكشاف أخطاء التثبيت وإصلاحها",
+              "bn-BD": "ইনস্টলেশন সমস্যা সমাধান",
+              "de": "Installationsfehlerbehebung",
+              "es": "Solución de problemas de instalación",
+              "fr": "Dépannage de l'installation",
+              "hi-IN": "इंस्टालेशन समस्या निवारण",
+              "id-ID": "Installation troubleshooting",
+              "it": "Risoluzione dei problemi di installazione",
+              "ja": "インストールのトラブルシューティング",
+              "ko": "설치 문제 해결",
+              "pt-BR": "Instalação",
+              "pt-PT": "Problemas de instalação",
+              "ru": "Устранение неполадок при установке",
+              "tr-TR": "Kurulum sorunlarını giderme",
+              "ur-PK": "انسٹالیشن کی خرابیوں کا سراغ لگانا",
+              "vi-VN": "Khắc phục sự cố cài đặt",
+              "zh-CN": "安装故障排除"
             }
           },
           {
             "slug": "docs/user-guide/troubleshooting/session-startup",
             "label": "Session startup",
             "translations": {
-              "pt-BR": "Início da sessão"
+              "ar": "استكشاف أخطاء بدء تشغيل الجلسة وإصلاحها",
+              "bn-BD": "সেশন স্টার্টআপ সমস্যা সমাধান",
+              "de": "Fehlerbehebung beim Sitzungsstart",
+              "es": "Solución de problemas de inicio de sesión",
+              "fr": "Dépannage du démarrage de session",
+              "hi-IN": "सत्र स्टार्टअप समस्या निवारण",
+              "id-ID": "Pemecahan masalah permulaan sesi",
+              "it": "Risoluzione dei problemi di avvio della sessione",
+              "ja": "セッション起動トラブルシューティング",
+              "ko": "세션 시작 문제 해결",
+              "pt-BR": "Início da sessão",
+              "pt-PT": "Problemas ao iniciar a sessão",
+              "ru": "Устранение неполадок при запуске сеанса",
+              "tr-TR": "Oturum başlatma sorunlarını giderme",
+              "ur-PK": "سیشن اسٹارٹ اپ ٹربل شوٹنگ",
+              "vi-VN": "Khắc phục sự cố khởi động phiên",
+              "zh-CN": "会话启动故障排除"
             }
           },
           {
             "slug": "docs/user-guide/troubleshooting/display-and-hyprland",
             "label": "Display and Hyprland",
             "translations": {
-              "pt-BR": "Display e Hyprland"
+              "ar": "استكشاف أخطاء العرض وHyprland وإصلاحها",
+              "bn-BD": "ডিসপ্লে এবং হাইপ্রল্যান্ড সমস্যা সমাধান",
+              "de": "Anzeige- und Hyprland-Fehlerbehebung",
+              "es": "Resolución de problemas de pantalla y Hyprland",
+              "fr": "Affichage et dépannage Hyprland",
+              "hi-IN": "डिस्प्ले और हाइप्रलैंड समस्या निवारण",
+              "id-ID": "Pemecahan masalah tampilan dan Hyprland",
+              "it": "Visualizzazione e risoluzione dei problemi di Hyprland",
+              "ja": "ディスプレイとHyprlandのトラブルシューティング",
+              "ko": "디스플레이 및 Hyprland 문제 해결",
+              "pt-BR": "Display e Hyprland",
+              "pt-PT": "Problemas de display e Hyprland",
+              "ru": "Отображение и устранение неполадок Hyprland",
+              "tr-TR": "Ekran ve Hyprland sorunlarını giderme",
+              "ur-PK": "ڈسپلے اور ہائپرلینڈ ٹربل شوٹنگ",
+              "vi-VN": "Display and Hyprland troubleshooting",
+              "zh-CN": "显示和 Hyprland 故障排除"
             }
           },
           {
-            "slug": "docs/user-guide/troubleshooting/graphics-and-virtual-machines"
+            "slug": "docs/user-guide/troubleshooting/graphics-and-virtual-machines",
+            "translations": {
+              "ar": "الرسومات والأجهزة الافتراضية",
+              "bn-BD": "গ্রাফিক্স এবং ভার্চুয়াল মেশিন",
+              "de": "Grafiken und virtuelle Maschinen",
+              "es": "Gráficos y máquinas virtuales",
+              "fr": "Graphiques et machines virtuelles",
+              "hi-IN": "ग्राफ़िक्स और वर्चुअल मशीनें",
+              "id-ID": "Grafik dan mesin virtual",
+              "it": "Grafica e macchine virtuali",
+              "ja": "グラフィックスと仮想マシン",
+              "ko": "그래픽 및 가상 머신",
+              "pt-BR": "Gráficos e máquinas virtuais",
+              "pt-PT": "Gráficos e máquinas virtuais",
+              "ru": "Графика и виртуальные машины",
+              "tr-TR": "Grafikler ve sanal makineler",
+              "ur-PK": "گرافکس اور ورچوئل مشینیں۔",
+              "vi-VN": "Đồ họa và máy ảo",
+              "zh-CN": "图形和虚拟机"
+            }
           },
           {
             "slug": "docs/user-guide/troubleshooting/theme-and-wallpaper",
             "label": "Theme and wallpaper",
             "translations": {
-              "pt-BR": "Tema e wallpaper"
+              "ar": "استكشاف أخطاء السمات وخلفية الشاشة وإصلاحها",
+              "bn-BD": "থিম এবং ওয়ালপেপার সমস্যা সমাধান",
+              "de": "Problembehebung bei Designs und Hintergrundbildern",
+              "es": "Solución de problemas de temas y fondos de pantalla",
+              "fr": "Dépannage des thèmes et des fonds d'écran",
+              "hi-IN": "थीम और वॉलपेपर समस्या निवारण",
+              "id-ID": "Pemecahan masalah tema dan wallpaper",
+              "it": "Risoluzione dei problemi di temi e sfondi",
+              "ja": "テーマと壁紙のトラブルシューティング",
+              "ko": "테마 및 배경화면 문제 해결",
+              "pt-BR": "Tema e wallpaper",
+              "pt-PT": "Problemas de tema e wallpaper",
+              "ru": "Устранение неполадок с темой и обоями",
+              "tr-TR": "Tema ve duvar kağıdı sorunlarını giderme",
+              "ur-PK": "تھیم اور وال پیپر کی خرابیوں کا سراغ لگانا",
+              "vi-VN": "Khắc phục sự cố về chủ đề và hình nền",
+              "zh-CN": "主题和壁纸故障排除"
             }
           }
         ],
         "translations": {
-          "pt-BR": "Solução de problemas"
+          "pt-BR": "Solução de problemas",
+          "pt-PT": "Resolução de problemas",
+          "es": "Solución de problemas",
+          "fr": "Dépannage",
+          "it": "Risoluzione dei problemi",
+          "zh-CN": "故障排除",
+          "ja": "トラブルシューティング",
+          "de": "Fehlerbehebung",
+          "ru": "Устранение неполадок",
+          "ko": "문제 해결",
+          "hi-IN": "समस्या निवारण",
+          "ar": "استكشاف الأخطاء وإصلاحها",
+          "bn-BD": "সমস্যা সমাধান",
+          "id-ID": "Pemecahan masalah",
+          "ur-PK": "خرابی کا حل",
+          "vi-VN": "Khắc phục sự cố",
+          "tr-TR": "Sorun giderme"
         }
       }
     ],
     "collapsed": true,
     "translations": {
-      "pt-BR": "Ajuda"
+      "pt-BR": "Ajuda",
+      "pt-PT": "Ajuda",
+      "es": "Ayuda",
+      "fr": "Aide",
+      "it": "Aiuto",
+      "zh-CN": "帮助",
+      "ja": "ヘルプ",
+      "de": "Hilfe",
+      "ru": "Помощь",
+      "ko": "도움말",
+      "hi-IN": "सहायता",
+      "ar": "المساعدة",
+      "bn-BD": "সহায়তা",
+      "id-ID": "Bantuan",
+      "ur-PK": "مدد",
+      "vi-VN": "Trợ giúp",
+      "tr-TR": "Yardım"
     }
   },
   {
@@ -511,98 +1722,322 @@ export const sidebarConfig = [
         "slug": "docs/components",
         "label": "Overview",
         "translations": {
-          "pt-BR": "Visão geral"
+          "ar": "نظرة عامة",
+          "bn-BD": "সংক্ষিপ্ত বিবরণ",
+          "de": "Übersicht",
+          "es": "Resumen",
+          "fr": "Présentation",
+          "hi-IN": "अवलोकन",
+          "id-ID": "Ringkasan",
+          "it": "Panoramica",
+          "ja": "概要",
+          "ko": "개요",
+          "pt-BR": "Visão geral",
+          "pt-PT": "Visão geral",
+          "ru": "Обзор",
+          "tr-TR": "Genel bakış",
+          "ur-PK": "جائزہ",
+          "vi-VN": "Tổng quan",
+          "zh-CN": "概览"
         }
       },
       {
         "slug": "docs/components/argvus-accounts",
         "label": "User accounts",
         "translations": {
-          "pt-BR": "Contas de usuário"
+          "ar": "Accounts",
+          "bn-BD": "অ্যাকাউন্ট",
+          "de": "Konten",
+          "es": "Cuentas",
+          "fr": "Comptes",
+          "hi-IN": "खाते",
+          "id-ID": "Accounts",
+          "it": "Conti",
+          "ja": "アカウント",
+          "ko": "계정",
+          "pt-BR": "Contas de usuário",
+          "pt-PT": "Contas",
+          "ru": "Счета",
+          "tr-TR": "Hesapları",
+          "ur-PK": "اکاؤنٹس",
+          "vi-VN": "Accounts",
+          "zh-CN": "账户"
         }
       },
       {
         "slug": "docs/components/argvus-control-center",
         "label": "Control Center",
         "translations": {
-          "pt-BR": "Control Center"
+          "ar": "مركز التحكم",
+          "bn-BD": "কন্ট্রোল সেন্টার",
+          "de": "Kontrollzentrum",
+          "es": "Centro de control",
+          "fr": "Centre de contrôle",
+          "hi-IN": "कंट्रोल सेंटर",
+          "id-ID": "Pusat kontrol",
+          "it": "Centro di controllo",
+          "ja": "コントロールセンター",
+          "ko": "제어 센터",
+          "pt-BR": "Control Center",
+          "pt-PT": "Centro de controlo",
+          "ru": "Центр управления",
+          "tr-TR": "Kontrol merkezi",
+          "ur-PK": "کنٹرول سینٹر",
+          "vi-VN": "Trung tâm điều khiển",
+          "zh-CN": "控制中心"
         }
       },
       {
         "slug": "docs/components/argvus-greeter",
         "label": "Greeter",
         "translations": {
-          "pt-BR": "Tela de login"
+          "ar": "واجهة الترحيب",
+          "bn-BD": "স্বাগতম পর্দা",
+          "de": "Anmeldebildschirm",
+          "es": "Pantalla de bienvenida",
+          "fr": "Écran d’accueil",
+          "hi-IN": "लॉगिन स्वागत स्क्रीन",
+          "id-ID": "Layar sambutan",
+          "it": "Schermata di benvenuto",
+          "ja": "ログイン画面",
+          "ko": "로그인 인사 화면",
+          "pt-BR": "Tela de login",
+          "pt-PT": "Ecrã de boas-vindas",
+          "ru": "Экран приветствия",
+          "tr-TR": "Karşılama ekranı",
+          "ur-PK": "خوش آمدیدی اسکرین",
+          "vi-VN": "Màn hình chào mừng",
+          "zh-CN": "登录欢迎界面"
         }
       },
       {
         "slug": "docs/components/argvus-i18n",
         "label": "Internationalization",
         "translations": {
-          "pt-BR": "Internacionalização"
+          "ar": "تدويل ARGVUS",
+          "bn-BD": "ARGVUS আন্তর্জাতিকীকরণ",
+          "de": "ARGVUS Internationalisierung",
+          "es": "Internacionalización ARGVUS",
+          "fr": "Internationalisation ARGVUS",
+          "hi-IN": "ARGVUS अंतर्राष्ट्रीयकरण",
+          "id-ID": "Internasionalisasi ARGVUS",
+          "it": "Internazionalizzazione ARGVUS",
+          "ja": "ARGVUS 国際化",
+          "ko": "아르부스 국제화",
+          "pt-BR": "Internacionalização",
+          "pt-PT": "Internacionalização ARGVUS",
+          "ru": "Интернационализация ARGVUS",
+          "tr-TR": "ARGVUS Uluslararasılaştırma",
+          "ur-PK": "ARGVUS انٹرنیشنلائزیشن",
+          "vi-VN": "ARGVUS Quốc tế hóa",
+          "zh-CN": "ARGVUS 国际化"
         }
       },
       {
         "slug": "docs/components/argvus-keys",
         "label": "Keys",
         "translations": {
-          "pt-BR": "Chaves"
+          "ar": "المفاتيح",
+          "bn-BD": "কি",
+          "de": "Tasten",
+          "es": "Teclas",
+          "fr": "Touches",
+          "hi-IN": "कीज़",
+          "id-ID": "Tombol",
+          "it": "Tasti",
+          "ja": "キー",
+          "ko": "키",
+          "pt-BR": "Chaves",
+          "pt-PT": "Teclas",
+          "ru": "Клавиши",
+          "tr-TR": "Tuşlar",
+          "ur-PK": "کلیدیں",
+          "vi-VN": "Phím",
+          "zh-CN": "按键"
         }
       },
       {
         "slug": "docs/components/argvus-loading-theme",
         "label": "Loading overlay",
         "translations": {
-          "pt-BR": "Tela de carregamento"
+          "ar": "جارٍ تحميل التراكب",
+          "bn-BD": "ওভারলে লোড হচ্ছে",
+          "de": "Ladeüberlagerung",
+          "es": "Capa de carga",
+          "fr": "Superposition de chargement",
+          "hi-IN": "ओवरले लोड हो रहा है",
+          "id-ID": "Memuat hamparan",
+          "it": "Sovrapposizione di caricamento",
+          "ja": "読み込みオーバーレイ",
+          "ko": "로딩 오버레이",
+          "pt-BR": "Tela de carregamento",
+          "pt-PT": "Overlay de carregamento",
+          "ru": "Наложение загрузки",
+          "tr-TR": "Yer paylaşımı yükleniyor",
+          "ur-PK": "اوورلے لوڈ ہو رہا ہے۔",
+          "vi-VN": "Đang tải lớp phủ",
+          "zh-CN": "加载覆盖层"
         }
       },
       {
         "slug": "docs/components/argvus-network",
         "label": "Networking and Bluetooth",
         "translations": {
-          "pt-BR": "Rede e Bluetooth"
+          "ar": "الشبكات والبلوتوث",
+          "bn-BD": "নেটওয়ার্কিং এবং ব্লুটুথ",
+          "de": "Netzwerk und Bluetooth",
+          "es": "Redes y Bluetooth",
+          "fr": "Réseautage et Bluetooth",
+          "hi-IN": "नेटवर्किंग और ब्लूटूथ",
+          "id-ID": "Jaringan dan Bluetooth",
+          "it": "Reti e Bluetooth",
+          "ja": "ネットワーキングとBluetooth",
+          "ko": "네트워킹 및 블루투스",
+          "pt-BR": "Rede e Bluetooth",
+          "pt-PT": "Rede e Bluetooth",
+          "ru": "Сетевые технологии и Bluetooth",
+          "tr-TR": "Ağ ve Bluetooth",
+          "ur-PK": "نیٹ ورکنگ اور بلوٹوتھ",
+          "vi-VN": "Mạng và Bluetooth",
+          "zh-CN": "网络与蓝牙"
         }
       },
       {
         "slug": "docs/components/argvus-projects",
         "label": "Projects",
         "translations": {
-          "pt-BR": "Projetos"
+          "ar": "المشاريع",
+          "bn-BD": "প্রকল্প",
+          "de": "Projekte",
+          "es": "Proyectos",
+          "fr": "Projets",
+          "hi-IN": "प्रोजेक्ट",
+          "id-ID": "Proyek",
+          "it": "Progetti",
+          "ja": "プロジェクト",
+          "ko": "프로젝트",
+          "pt-BR": "Projetos",
+          "pt-PT": "Projetos",
+          "ru": "Проекты",
+          "tr-TR": "Projeler",
+          "ur-PK": "منصوبے",
+          "vi-VN": "Dự án",
+          "zh-CN": "项目"
         }
       },
       {
         "slug": "docs/components/argvus-removable-devices",
         "label": "Removable devices",
         "translations": {
-          "pt-BR": "Dispositivos removíveis"
+          "ar": "الأجهزة القابلة للإزالة",
+          "bn-BD": "অপসারণযোগ্য ডিভাইস",
+          "de": "Abnehmbare Geräte",
+          "es": "Dispositivos extraíbles",
+          "fr": "Dispositifs amovibles",
+          "hi-IN": "हटाने योग्य उपकरण",
+          "id-ID": "Perangkat yang dapat dilepas",
+          "it": "Dispositivi rimovibili",
+          "ja": "取り外し可能なデバイス",
+          "ko": "이동식 장치",
+          "pt-BR": "Dispositivos removíveis",
+          "pt-PT": "Dispositivos removíveis",
+          "ru": "Съёмные устройства",
+          "tr-TR": "Çıkarılabilir cihazlar",
+          "ur-PK": "ہٹنے کے قابل آلات",
+          "vi-VN": "Thiết bị có thể tháo rời",
+          "zh-CN": "可移动设备"
         }
       },
       {
         "slug": "docs/components/argvus-system-monitor",
         "label": "System monitor",
         "translations": {
-          "pt-BR": "Monitor do sistema"
+          "ar": "مراقب النظام",
+          "bn-BD": "সিস্টেম মনিটর",
+          "de": "Systemmonitor",
+          "es": "Monitor del sistema",
+          "fr": "Moniteur système",
+          "hi-IN": "सिस्टम मॉनिटर",
+          "id-ID": "Monitor sistem",
+          "it": "Monitor di sistema",
+          "ja": "システムモニター",
+          "ko": "시스템 모니터",
+          "pt-BR": "Monitor do sistema",
+          "pt-PT": "Monitor do sistema",
+          "ru": "Системный монитор",
+          "tr-TR": "Sistem monitörü",
+          "ur-PK": "سسٹم مانیٹر",
+          "vi-VN": "Màn hình hệ thống",
+          "zh-CN": "系统监视器"
         }
       },
       {
         "slug": "docs/components/argvus-taskbar-calendar",
         "label": "Calendar",
         "translations": {
-          "pt-BR": "Calendário"
+          "ar": "التقويم",
+          "bn-BD": "ক্যালেন্ডার",
+          "de": "Kalender",
+          "es": "Calendario",
+          "fr": "Calendrier",
+          "hi-IN": "कैलेंडर",
+          "id-ID": "Kalender",
+          "it": "Calendario",
+          "ja": "カレンダー",
+          "ko": "달력",
+          "pt-BR": "Calendário",
+          "pt-PT": "Calendário",
+          "ru": "Календарь",
+          "tr-TR": "Takvim",
+          "ur-PK": "کیلنڈر",
+          "vi-VN": "Lịch",
+          "zh-CN": "日历"
         }
       },
       {
         "slug": "docs/components/argvus-terminal",
         "label": "Terminal",
         "translations": {
-          "pt-BR": "Terminal"
+          "ar": "الطرفية",
+          "bn-BD": "টার্মিনাল",
+          "de": "Terminal",
+          "es": "Terminal",
+          "fr": "Terminal",
+          "hi-IN": "टर्मिनल",
+          "id-ID": "Terminal",
+          "it": "Terminale",
+          "ja": "ターミナル",
+          "ko": "터미널",
+          "pt-BR": "Terminal",
+          "pt-PT": "Terminal",
+          "ru": "Терминал",
+          "tr-TR": "Terminal",
+          "ur-PK": "ٹرمینل",
+          "vi-VN": "Thiết bị đầu cuối",
+          "zh-CN": "终端"
         }
       },
       {
         "slug": "docs/components/argvus-widget-telemetry",
         "label": "Widget telemetry",
         "translations": {
-          "pt-BR": "Telemetria de widgets"
+          "ar": "قياس بيانات عناصر الواجهة",
+          "bn-BD": "উইজেট টেলিমেট্রি",
+          "de": "Widget-Telemetrie",
+          "es": "Telemetría de widgets",
+          "fr": "Télémétrie des widgets",
+          "hi-IN": "विजेट टेलीमेट्री",
+          "id-ID": "Telemetri widget",
+          "it": "Telemetria dei widget",
+          "ja": "ウィジェットのテレメトリー",
+          "ko": "위젯 텔레메트리",
+          "pt-BR": "Telemetria de widgets",
+          "pt-PT": "Telemetria de widgets",
+          "ru": "Телеметрия виджетов",
+          "tr-TR": "Widget telemetrisi",
+          "ur-PK": "ویجٹ ٹیلی میٹری",
+          "vi-VN": "Đo từ xa tiện ích",
+          "zh-CN": "小组件遥测"
         }
       },
       {
@@ -612,77 +2047,319 @@ export const sidebarConfig = [
             "slug": "docs/components/argvus-themes",
             "label": "Overview",
             "translations": {
-              "pt-BR": "Visão geral"
+              "ar": "نظرة عامة",
+              "bn-BD": "সংক্ষিপ্ত বিবরণ",
+              "de": "Übersicht",
+              "es": "Resumen",
+              "fr": "Présentation",
+              "hi-IN": "अवलोकन",
+              "id-ID": "Ringkasan",
+              "it": "Panoramica",
+              "ja": "概要",
+              "ko": "개요",
+              "pt-BR": "Visão geral",
+              "pt-PT": "Visão geral",
+              "ru": "Обзор",
+              "tr-TR": "Genel bakış",
+              "ur-PK": "جائزہ",
+              "vi-VN": "Tổng quan",
+              "zh-CN": "概览"
             }
           },
           {
             "slug": "docs/components/argvus-themes/installing-themes",
             "label": "Installing themes",
             "translations": {
-              "pt-BR": "Instalando temas"
+              "ar": "تثبيت السمات",
+              "bn-BD": "থিম ইনস্টল করা হচ্ছে",
+              "de": "Themes installieren",
+              "es": "Instalando temas",
+              "fr": "Installation de thèmes",
+              "hi-IN": "थीम इंस्टॉल करना",
+              "id-ID": "Menginstal tema",
+              "it": "Installazione dei temi",
+              "ja": "テーマのインストール",
+              "ko": "테마 설치",
+              "pt-BR": "Instalando temas",
+              "pt-PT": "Instalando temas",
+              "ru": "Установка тем",
+              "tr-TR": "Temaları yükleme",
+              "ur-PK": "تھیمز انسٹال کرنا",
+              "vi-VN": "Cài đặt chủ đề",
+              "zh-CN": "安装主题"
             }
           },
           {
             "slug": "docs/components/argvus-themes/official-themes",
             "label": "Official themes",
             "translations": {
-              "pt-BR": "Temas oficiais"
+              "ar": "المواضيع الرسمية",
+              "bn-BD": "অফিসিয়াল থিম",
+              "de": "Offizielle Themen",
+              "es": "Temas oficiales",
+              "fr": "Thèmes officiels",
+              "hi-IN": "आधिकारिक थीम",
+              "id-ID": "Tema resmi",
+              "it": "Temi ufficiali",
+              "ja": "公式テーマ",
+              "ko": "공식 테마",
+              "pt-BR": "Temas oficiais",
+              "pt-PT": "Temas oficiais",
+              "ru": "Официальные темы",
+              "tr-TR": "Resmi temalar",
+              "ur-PK": "آفیشل تھیمز",
+              "vi-VN": "Chủ đề chính thức",
+              "zh-CN": "官方主题"
             }
           },
           {
             "slug": "docs/components/argvus-themes/highlight-color",
             "label": "Highlight color",
             "translations": {
-              "pt-BR": "Cor de destaque"
+              "ar": "تخصيص لون التمييز",
+              "bn-BD": "হাইলাইট রঙ কাস্টমাইজ করা",
+              "de": "Anpassen der Hervorhebungsfarbe",
+              "es": "Personalizando el color de resaltado",
+              "fr": "Personnalisation de la couleur de surbrillance",
+              "hi-IN": "हाइलाइट रंग को अनुकूलित करना",
+              "id-ID": "Menyesuaikan warna highlight",
+              "it": "Personalizzare il colore di evidenziazione",
+              "ja": "ハイライトの色をカスタマイズする",
+              "ko": "하이라이트 색상 사용자 지정",
+              "pt-BR": "Cor de destaque",
+              "pt-PT": "Personalizando a cor de destaque",
+              "ru": "Настройка цвета выделения",
+              "tr-TR": "Vurgu rengini özelleştirme",
+              "ur-PK": "نمایاں رنگ کو حسب ضرورت بنانا",
+              "vi-VN": "Tùy chỉnh màu đánh dấu",
+              "zh-CN": "自定义高亮颜色"
             }
           },
           {
             "slug": "docs/components/argvus-themes/import-and-export",
             "label": "Import and export",
             "translations": {
-              "pt-BR": "Importar e exportar"
+              "ar": "استيراد وتصدير المواضيع",
+              "bn-BD": "থিম আমদানি ও রপ্তানি",
+              "de": "Importieren und Exportieren von Designs",
+              "es": "Importar y exportar temas",
+              "fr": "Importer et exporter des thèmes",
+              "hi-IN": "थीम आयात और निर्यात करना",
+              "id-ID": "Mengimpor dan mengekspor tema",
+              "it": "Importazione ed esportazione di temi",
+              "ja": "テーマのインポートとエクスポート",
+              "ko": "테마 가져오기 및 내보내기",
+              "pt-BR": "Importar e exportar",
+              "pt-PT": "Importando e exportando temas",
+              "ru": "Импорт и экспорт тем",
+              "tr-TR": "Temaları içe ve dışa aktarma",
+              "ur-PK": "تھیمز کی درآمد اور برآمد",
+              "vi-VN": "Nhập và xuất chủ đề",
+              "zh-CN": "导入和导出主题"
             }
           }
         ],
         "collapsed": true,
         "translations": {
-          "pt-BR": "Temas"
+          "pt-BR": "Temas",
+          "pt-PT": "Temas",
+          "es": "Temas",
+          "fr": "Thèmes",
+          "it": "Temi",
+          "zh-CN": "主题",
+          "ja": "テーマ",
+          "de": "Designs",
+          "ru": "Темы",
+          "ko": "테마",
+          "hi-IN": "थीम",
+          "ar": "السمات",
+          "bn-BD": "থিম",
+          "id-ID": "Tema",
+          "ur-PK": "تھیمز",
+          "vi-VN": "Chủ đề",
+          "tr-TR": "Temalar"
         }
       },
       {
-        "slug": "docs/components/argvus-du"
+        "slug": "docs/components/argvus-du",
+        "translations": {
+          "ar": "ARGVUS محلل استخدام القرص",
+          "bn-BD": "ARGVUS ডিস্ক ব্যবহার বিশ্লেষক",
+          "de": "ARGVUS Festplattennutzungs-Analyzer",
+          "es": "Analizador de Uso de Disco ARGVUS",
+          "fr": "Analyseur d'utilisation de disque ARGVUS",
+          "hi-IN": "ARGVUS डिस्क उपयोग विश्लेषक",
+          "id-ID": "ARGVUS Penganalisis Penggunaan Disk",
+          "it": "ARGVUS Analizzatore dell'Uso del Disco",
+          "ja": "ARGVUS ディスク使用量解析ツール",
+          "ko": "ARGVUS 디스크 사용량 분석기",
+          "pt-BR": "ARGVUS Disk Usage Analyzer",
+          "pt-PT": "ARGVUS Disk Usage Analyzer",
+          "ru": "Анализатор использования диска ARGVUS",
+          "tr-TR": "ARGVUS Disk Kullanımı Analizörü",
+          "ur-PK": "ARGVUS ڈسک کے استعمال کا تجزیہ کار",
+          "vi-VN": "ARGVUS Disk Usage Analyzer",
+          "zh-CN": "ARGVUS 磁盘使用分析器"
+        }
       },
       {
-        "slug": "docs/components/argvus-sensors"
+        "slug": "docs/components/argvus-sensors",
+        "translations": {
+          "ar": "أجهزة استشعار درجة الحرارة",
+          "bn-BD": "তাপমাত্রা সেন্সর",
+          "de": "Temperatursensoren",
+          "es": "Sensores de temperatura",
+          "fr": "Capteurs de température",
+          "hi-IN": "तापमान सेंसर",
+          "id-ID": "Sensor suhu",
+          "it": "Sensori di temperatura",
+          "ja": "温度センサー",
+          "ko": "온도 센서",
+          "pt-BR": "Sensores de temperatura",
+          "pt-PT": "Sensores de temperatura",
+          "ru": "Датчики температуры",
+          "tr-TR": "Sıcaklık sensörleri",
+          "ur-PK": "درجہ حرارت کے سینسر",
+          "vi-VN": "Temperature sensors",
+          "zh-CN": "温度传感器"
+        }
       }
     ],
     "collapsed": true,
     "translations": {
-      "pt-BR": "Componentes"
+      "pt-BR": "Componentes",
+      "pt-PT": "Componentes",
+      "es": "Componentes",
+      "fr": "Composants",
+      "it": "Componenti",
+      "zh-CN": "组件",
+      "ja": "コンポーネント",
+      "de": "Komponenten",
+      "ru": "Компоненты",
+      "ko": "구성 요소",
+      "hi-IN": "घटक",
+      "ar": "المكونات",
+      "bn-BD": "উপাদান",
+      "id-ID": "Komponen",
+      "ur-PK": "اجزاء",
+      "vi-VN": "Thành phần",
+      "tr-TR": "Bileşenler"
     }
   },
   {
     "label": "Session & Login",
     "translations": {
-      "pt-BR": "Sessão e login"
+      "pt-BR": "Sessão e login",
+      "pt-PT": "Sessão e início de sessão",
+      "es": "Sesión e inicio de sesión",
+      "fr": "Session et connexion",
+      "it": "Sessione e accesso",
+      "zh-CN": "会话与登录",
+      "ja": "セッションとログイン",
+      "de": "Sitzung und Anmeldung",
+      "ru": "Сеанс и вход",
+      "ko": "세션 및 로그인",
+      "hi-IN": "सत्र और लॉगिन",
+      "ar": "الجلسات وتسجيل الدخول",
+      "bn-BD": "সেশন ও লগইন",
+      "id-ID": "Sesi dan masuk",
+      "ur-PK": "سیشن اور لاگ اِن",
+      "vi-VN": "Phiên và đăng nhập",
+      "tr-TR": "Oturum ve giriş"
     },
     "collapsed": true,
     "items": [
       {
         "slug": "docs/argvus-lock",
-        "label": "Lock Screen"
+        "label": "Lock Screen",
+        "translations": {
+          "ar": "Lock screen",
+          "bn-BD": "Lock screen",
+          "de": "Sperrbildschirm",
+          "es": "Pantalla de bloqueo",
+          "fr": "Écran de verrouillage",
+          "hi-IN": "Lock screen",
+          "id-ID": "Lock screen",
+          "it": "Blocca schermo",
+          "ja": "ロック画面",
+          "ko": "잠금 화면",
+          "pt-BR": "Lock screen",
+          "pt-PT": "Lock screen",
+          "ru": "Экран блокировки",
+          "tr-TR": "Lock screen",
+          "ur-PK": "Lock screen",
+          "vi-VN": "Lock screen",
+          "zh-CN": "锁屏"
+        }
       },
       {
         "label": "Session",
         "collapsed": true,
         "items": [
           {
-            "slug": "docs/argvus-session/graphical-session"
+            "slug": "docs/argvus-session/graphical-session",
+            "translations": {
+              "ar": "الجلسة الرسومية",
+              "bn-BD": "গ্রাফিক্যাল সেশন",
+              "de": "Grafische Sitzung",
+              "es": "Sesión gráfica",
+              "fr": "Session graphique",
+              "hi-IN": "ग्राफ़िकल सत्र",
+              "id-ID": "Sesi grafis",
+              "it": "Sessione grafica",
+              "ja": "グラフィカルセッション",
+              "ko": "그래픽 세션",
+              "pt-BR": "Sessão gráfica",
+              "pt-PT": "Sessão gráfica",
+              "ru": "Графический сеанс",
+              "tr-TR": "Grafik oturumu",
+              "ur-PK": "گرافیکل سیشن",
+              "vi-VN": "Phiên đồ họa",
+              "zh-CN": "图形会话"
+            }
           },
           {
-            "slug": "docs/argvus-session/tty-session"
+            "slug": "docs/argvus-session/tty-session",
+            "translations": {
+              "ar": "جلسة TTY",
+              "bn-BD": "TTY সেশন",
+              "de": "TTY-Sitzung",
+              "es": "Sesión TTY",
+              "fr": "Session TTY",
+              "hi-IN": "TTY सत्र",
+              "id-ID": "Sesi TTY",
+              "it": "Sessione TTY",
+              "ja": "TTY セッション",
+              "ko": "TTY 세션",
+              "pt-BR": "Sessão TTY",
+              "pt-PT": "Sessão TTY",
+              "ru": "Сеанс TTY",
+              "tr-TR": "TTY oturumu",
+              "ur-PK": "TTY سیشن",
+              "vi-VN": "Phiên TTY",
+              "zh-CN": "TTY 会话"
+            }
           }
-        ]
+        ],
+        "translations": {
+          "pt-BR": "Sessão",
+          "pt-PT": "Sessão",
+          "es": "Sesión",
+          "fr": "Session",
+          "it": "Sessione",
+          "zh-CN": "会话",
+          "ja": "セッション",
+          "de": "Sitzung",
+          "ru": "Сеанс",
+          "ko": "세션",
+          "hi-IN": "सत्र",
+          "ar": "جلسة",
+          "bn-BD": "সেশন",
+          "id-ID": "Sesi",
+          "ur-PK": "سیشن",
+          "vi-VN": "Phiên",
+          "tr-TR": "Oturum"
+        }
       },
       {
         "label": "Boot Splash",
@@ -692,58 +2369,334 @@ export const sidebarConfig = [
             "slug": "docs/argvus-boot-splash",
             "label": "Overview",
             "translations": {
-              "pt-BR": "Visão geral"
+              "ar": "نظرة عامة",
+              "bn-BD": "সংক্ষিপ্ত বিবরণ",
+              "de": "Übersicht",
+              "es": "Resumen",
+              "fr": "Présentation",
+              "hi-IN": "अवलोकन",
+              "id-ID": "Ringkasan",
+              "it": "Panoramica",
+              "ja": "概要",
+              "ko": "개요",
+              "pt-BR": "Visão geral",
+              "pt-PT": "Visão geral",
+              "ru": "Обзор",
+              "tr-TR": "Genel bakış",
+              "ur-PK": "جائزہ",
+              "vi-VN": "Tổng quan",
+              "zh-CN": "概览"
             }
           },
           {
-            "slug": "docs/argvus-boot-splash/installation"
+            "slug": "docs/argvus-boot-splash/installation",
+            "translations": {
+              "ar": "Installation",
+              "bn-BD": "Installation",
+              "de": "Installation",
+              "es": "Instalación",
+              "fr": "Installation",
+              "hi-IN": "Installation",
+              "id-ID": "Installation",
+              "it": "Installazione",
+              "ja": "インストール",
+              "ko": "설치",
+              "pt-BR": "Instalação",
+              "pt-PT": "Instalação",
+              "ru": "Установка",
+              "tr-TR": "Installation",
+              "ur-PK": "Installation",
+              "vi-VN": "Installation",
+              "zh-CN": "安装"
+            }
           },
           {
-            "slug": "docs/argvus-boot-splash/usage"
+            "slug": "docs/argvus-boot-splash/usage",
+            "translations": {
+              "ar": "Usage",
+              "bn-BD": "Usage",
+              "de": "Verwendung",
+              "es": "Uso",
+              "fr": "Utilisation",
+              "hi-IN": "Usage",
+              "id-ID": "Usage",
+              "it": "Uso",
+              "ja": "使用法",
+              "ko": "사용법",
+              "pt-BR": "Uso",
+              "pt-PT": "Uso",
+              "ru": "Использование",
+              "tr-TR": "Usage",
+              "ur-PK": "Usage",
+              "vi-VN": "Usage",
+              "zh-CN": "使用"
+            }
           },
           {
-            "slug": "docs/argvus-boot-splash/uki-splash"
+            "slug": "docs/argvus-boot-splash/uki-splash",
+            "translations": {
+              "ar": "UKI ﻭ systemd-boot ﺔﻳﺍﺪﺒﻟﺍ ﺔﺷﺎﺷ",
+              "bn-BD": "ইউকেআই এবং সিস্টেমড-বুট স্প্ল্যাশ",
+              "de": "UKI- und systemd-boot-Splash",
+              "es": "UKI y pantalla de arranque de systemd-boot",
+              "fr": "UKI et démarrage systemd-boot",
+              "hi-IN": "UKI और systemd-boot स्प्लैश",
+              "id-ID": "UKI dan systemd-boot Splash",
+              "it": "UKI e schermata di avvio di systemd-boot",
+              "ja": "UKI と systemd-boot スプラッシュ",
+              "ko": "UKI 및 systemd-boot 스플래시",
+              "pt-BR": "Splash em UKI e systemd-boot",
+              "pt-PT": "Splash em UKI e systemd-boot",
+              "ru": "UKI и загрузочный экран systemd-boot",
+              "tr-TR": "UKI ve systemd-boot Splash",
+              "ur-PK": "UKI ﺭﻭﺍ systemd-boot ﺶﻠﭙﺳﺍ",
+              "vi-VN": "UKI và systemd-boot Splash",
+              "zh-CN": "UKI 和 systemd-boot 启动画面"
+            }
           },
           {
-            "slug": "docs/argvus-boot-splash/troubleshooting"
+            "slug": "docs/argvus-boot-splash/troubleshooting",
+            "translations": {
+              "ar": "استكشاف الأخطاء وإصلاحها",
+              "bn-BD": "সমস্যা সমাধান",
+              "de": "Fehlerbehebung",
+              "es": "Solución de problemas",
+              "fr": "Dépannage",
+              "hi-IN": "समस्या निवारण",
+              "id-ID": "Pemecahan masalah",
+              "it": "Risoluzione dei problemi",
+              "ja": "トラブルシューティング",
+              "ko": "문제 해결",
+              "pt-BR": "Solução de problemas",
+              "pt-PT": "Resolução de problemas",
+              "ru": "Устранение неполадок",
+              "tr-TR": "Sorun giderme",
+              "ur-PK": "خرابی کا حل",
+              "vi-VN": "Khắc phục sự cố",
+              "zh-CN": "故障排除"
+            }
           },
           {
-            "slug": "docs/argvus-boot-splash/reference"
+            "slug": "docs/argvus-boot-splash/reference",
+            "translations": {
+              "ar": "المرجع",
+              "bn-BD": "রেফারেন্স",
+              "de": "Referenz",
+              "es": "Referencia",
+              "fr": "Référence",
+              "hi-IN": "संदर्भ",
+              "id-ID": "Referensi",
+              "it": "Riferimento",
+              "ja": "リファレンス",
+              "ko": "참조",
+              "pt-BR": "Referência",
+              "pt-PT": "Referência",
+              "ru": "Справочник",
+              "tr-TR": "Başvuru",
+              "ur-PK": "حوالہ",
+              "vi-VN": "Tham khảo",
+              "zh-CN": "参考"
+            }
           },
           {
-            "slug": "docs/argvus-boot-splash/uninstallation"
+            "slug": "docs/argvus-boot-splash/uninstallation",
+            "translations": {
+              "ar": "Uninstallation",
+              "bn-BD": "Uninstallation",
+              "de": "Deinstallation",
+              "es": "Desinstalación",
+              "fr": "Désinstallation",
+              "hi-IN": "Uninstallation",
+              "id-ID": "Uninstallation",
+              "it": "Disinstallazione",
+              "ja": "アンインストール",
+              "ko": "제거",
+              "pt-BR": "Desinstalação",
+              "pt-PT": "Desinstalação",
+              "ru": "Удаление",
+              "tr-TR": "Uninstallation",
+              "ur-PK": "Uninstallation",
+              "vi-VN": "Uninstallation",
+              "zh-CN": "卸载"
+            }
           },
           {
             "label": "Developer notes",
             "translations": {
-              "pt-BR": "Notas de desenvolvimento"
+              "pt-BR": "Notas de desenvolvimento",
+              "pt-PT": "Notas de desenvolvimento",
+              "es": "Notas de desarrollo",
+              "fr": "Notes de développement",
+              "it": "Note di sviluppo",
+              "zh-CN": "开发者备注",
+              "ja": "開発者向けメモ",
+              "de": "Entwicklernotizen",
+              "ru": "Заметки разработчика",
+              "ko": "개발자 노트",
+              "hi-IN": "डेवलपर नोट्स",
+              "ar": "ملاحظات المطور",
+              "bn-BD": "ডেভেলপার নোট",
+              "id-ID": "Catatan pengembang",
+              "ur-PK": "ڈیولپر کے نوٹس",
+              "vi-VN": "Ghi chú nhà phát triển",
+              "tr-TR": "Geliştirici notları"
             },
             "items": [
               {
-                "slug": "docs/argvus-boot-splash/developer-guide"
+                "slug": "docs/argvus-boot-splash/developer-guide",
+                "translations": {
+                  "ar": "دليل المطور",
+                  "bn-BD": "ডেভেলপার নির্দেশিকা",
+                  "de": "Entwicklerhandbuch",
+                  "es": "Guía del desarrollador",
+                  "fr": "Guide du développeur",
+                  "hi-IN": "डेवलपर मार्गदर्शिका",
+                  "id-ID": "Panduan pengembang",
+                  "it": "Guida per sviluppatori",
+                  "ja": "開発者ガイド",
+                  "ko": "개발자 안내서",
+                  "pt-BR": "Guia do desenvolvedor",
+                  "pt-PT": "Guia do programador",
+                  "ru": "Руководство разработчика",
+                  "tr-TR": "Geliştirici kılavuzu",
+                  "ur-PK": "ڈیولپر کی رہنما کتاب",
+                  "vi-VN": "Hướng dẫn nhà phát triển",
+                  "zh-CN": "开发者指南"
+                }
               },
               {
-                "slug": "docs/argvus-boot-splash/developer-guide/theme"
+                "slug": "docs/argvus-boot-splash/developer-guide/theme",
+                "translations": {
+                  "ar": "Theme Architecture",
+                  "bn-BD": "Theme Architecture",
+                  "de": "Themenarchitektur",
+                  "es": "Arquitectura del tema",
+                  "fr": "Thème Architecture",
+                  "hi-IN": "Theme Architecture",
+                  "id-ID": "Theme Architecture",
+                  "it": "Tema Architettura",
+                  "ja": "テーマ建築",
+                  "ko": "테마 건축",
+                  "pt-BR": "Arquitetura do Tema",
+                  "pt-PT": "Arquitetura do Tema",
+                  "ru": "Тема: Архитектура",
+                  "tr-TR": "Theme Architecture",
+                  "ur-PK": "Theme Architecture",
+                  "vi-VN": "Theme Architecture",
+                  "zh-CN": "主题架构"
+                }
               },
               {
-                "slug": "docs/argvus-boot-splash/developer-guide/packaging"
+                "slug": "docs/argvus-boot-splash/developer-guide/packaging",
+                "translations": {
+                  "ar": "Packaging",
+                  "bn-BD": "Packaging",
+                  "de": "Verpackung",
+                  "es": "Empaque",
+                  "fr": "Emballage",
+                  "hi-IN": "Packaging",
+                  "id-ID": "Packaging",
+                  "it": "Confezionamento",
+                  "ja": "包装",
+                  "ko": "포장",
+                  "pt-BR": "Empacotamento",
+                  "pt-PT": "Empacotamento",
+                  "ru": "Упаковка",
+                  "tr-TR": "Packaging",
+                  "ur-PK": "Packaging",
+                  "vi-VN": "Packaging",
+                  "zh-CN": "包装"
+                }
               },
               {
-                "slug": "docs/argvus-boot-splash/developer-guide/ci-releases"
+                "slug": "docs/argvus-boot-splash/developer-guide/ci-releases",
+                "translations": {
+                  "ar": "CI and Releases",
+                  "bn-BD": "CI and Releases",
+                  "de": "CI und Releases",
+                  "es": "CI y Lanzamientos",
+                  "fr": "CI et Versions",
+                  "hi-IN": "CI and Releases",
+                  "id-ID": "CI and Releases",
+                  "it": "CI e Rilasci",
+                  "ja": "CIとリリース",
+                  "ko": "CI와 릴리즈",
+                  "pt-BR": "CI e Lançamentos",
+                  "pt-PT": "CI e Lançamentos",
+                  "ru": "CI и релизы",
+                  "tr-TR": "CI and Releases",
+                  "ur-PK": "CI and Releases",
+                  "vi-VN": "CI and Releases",
+                  "zh-CN": "持续集成和发布"
+                }
               },
               {
-                "slug": "docs/argvus-boot-splash/developer-guide/workflow"
+                "slug": "docs/argvus-boot-splash/developer-guide/workflow",
+                "translations": {
+                  "ar": "ﺔﻓﻭﺮﻌﻤﻟﺍ ﺕﺍﻮﺠﻔﻟﺍﻭ ﺕﺎﻴﻗﺎﻔﺗﻻ﻿ﺍ",
+                  "bn-BD": "রীতিনীতি এবং পরিচিত ফাঁকসমূহ",
+                  "de": "Konventionen und bekannte Lücken",
+                  "es": "Convenciones y brechas conocidas",
+                  "fr": "Conventions et lacunes connues",
+                  "hi-IN": "सम्मेलन और ज्ञात अंतर",
+                  "id-ID": "Konvensi dan Kesenjangan yang Dikenal",
+                  "it": "Convenzioni e Lacune Note",
+                  "ja": "慣例と既知のギャップ",
+                  "ko": "관습과 알려진 격차",
+                  "pt-BR": "Convenções e Lacunas Conhecidas",
+                  "pt-PT": "Convenções e Lacunas Conhecidas",
+                  "ru": "Конвенции и известные пробелы",
+                  "tr-TR": "Konvansiyonlar ve Bilinen Boşluklar",
+                  "ur-PK": "ءﻼ﻿ﺧ ﻑﻭﺮﻌﻣ ﺭﻭﺍ ﺝﺍﻭﺭ",
+                  "vi-VN": "Quy ước và Lỗ hổng đã biết",
+                  "zh-CN": "惯例和已知缺口"
+                }
               }
             ]
           }
-        ]
+        ],
+        "translations": {
+          "pt-BR": "Tela de inicialização",
+          "pt-PT": "Ecrã de arranque",
+          "es": "Pantalla de inicio",
+          "fr": "Écran de démarrage",
+          "it": "Schermata di avvio",
+          "zh-CN": "启动画面",
+          "ja": "起動画面",
+          "de": "Startbildschirm",
+          "ru": "Заставка загрузки",
+          "ko": "부팅 화면",
+          "hi-IN": "बूट स्प्लैश",
+          "ar": "شاشة الإقلاع",
+          "bn-BD": "বুট স্প্ল্যাশ",
+          "id-ID": "Layar boot",
+          "ur-PK": "بوٹ اسپلش",
+          "vi-VN": "Màn hình khởi động",
+          "tr-TR": "Açılış ekranı"
+        }
       }
     ]
   },
   {
     "label": "Desktop Shell",
     "translations": {
-      "pt-BR": "Shell do desktop"
+      "pt-BR": "Shell do desktop",
+      "pt-PT": "Shell do ambiente de trabalho",
+      "es": "Shell de escritorio",
+      "fr": "Shell du bureau",
+      "it": "Shell desktop",
+      "zh-CN": "桌面 Shell",
+      "ja": "デスクトップシェル",
+      "de": "Desktop-Shell",
+      "ru": "Оболочка рабочего стола",
+      "ko": "데스크톱 셸",
+      "hi-IN": "डेस्कटॉप शेल",
+      "ar": "واجهة سطح المكتب",
+      "bn-BD": "ডেস্কটপ শেল",
+      "id-ID": "Shell desktop",
+      "ur-PK": "ڈیسک ٹاپ شیل",
+      "vi-VN": "Giao diện desktop",
+      "tr-TR": "Masaüstü kabuğu"
     },
     "collapsed": true,
     "items": [
@@ -752,78 +2705,414 @@ export const sidebarConfig = [
         "collapsed": true,
         "items": [
           {
-            "slug": "docs/argvus-hyprland/keyboard-shortcuts"
+            "slug": "docs/argvus-hyprland/keyboard-shortcuts",
+            "translations": {
+              "ar": "اختصارات لوحة المفاتيح",
+              "bn-BD": "কীবোর্ড শর্টকাট",
+              "de": "Tastenkombinationen",
+              "es": "Atajos de teclado",
+              "fr": "Raccourcis clavier",
+              "hi-IN": "कीबोर्ड शॉर्टकट",
+              "id-ID": "Pintasan papan ketik",
+              "it": "Scorciatoie da tastiera",
+              "ja": "キーボードショートカット",
+              "ko": "키보드 단축키",
+              "pt-BR": "Atalhos de teclado",
+              "pt-PT": "Atalhos de teclado",
+              "ru": "Сочетания клавиш",
+              "tr-TR": "Klavye kısayolları",
+              "ur-PK": "کی بورڈ شارٹ کٹس",
+              "vi-VN": "Phím tắt",
+              "zh-CN": "键盘快捷键"
+            }
           },
           {
-            "slug": "docs/argvus-hyprland/input"
+            "slug": "docs/argvus-hyprland/input",
+            "translations": {
+              "ar": "الفأرة ولوحة اللمس",
+              "bn-BD": "মাউস ও টাচপ্যাড",
+              "de": "Maus und Touchpad",
+              "es": "Ratón y panel táctil",
+              "fr": "Souris et pavé tactile",
+              "hi-IN": "माउस और टचपैड",
+              "id-ID": "Mouse dan touchpad",
+              "it": "Mouse e touchpad",
+              "ja": "マウスとタッチパッド",
+              "ko": "마우스 및 터치패드",
+              "pt-BR": "Mouse e touchpad",
+              "pt-PT": "Rato e touchpad",
+              "ru": "Мышь и тачпад",
+              "tr-TR": "Fare ve dokunmatik yüzey",
+              "ur-PK": "ماؤس اور ٹچ پیڈ",
+              "vi-VN": "Chuột và bàn di",
+              "zh-CN": "鼠标与触摸板"
+            }
           },
           {
-            "slug": "docs/argvus-hyprland/windows-and-layout"
+            "slug": "docs/argvus-hyprland/windows-and-layout",
+            "translations": {
+              "ar": "النوافذ والتخطيط",
+              "bn-BD": "উইন্ডো ও বিন্যাস",
+              "de": "Fenster und Layout",
+              "es": "Ventanas y distribución",
+              "fr": "Fenêtres et disposition",
+              "hi-IN": "विंडो और लेआउट",
+              "id-ID": "Jendela dan tata letak",
+              "it": "Finestre e layout",
+              "ja": "ウィンドウとレイアウト",
+              "ko": "창 및 레이아웃",
+              "pt-BR": "Janelas e layout",
+              "pt-PT": "Janelas e disposição",
+              "ru": "Окна и раскладка",
+              "tr-TR": "Pencereler ve düzen",
+              "ur-PK": "ونڈوز اور لے آؤٹ",
+              "vi-VN": "Cửa sổ và bố cục",
+              "zh-CN": "窗口与布局"
+            }
           },
           {
-            "slug": "docs/argvus-hyprland/hyprland-overrides"
+            "slug": "docs/argvus-hyprland/hyprland-overrides",
+            "translations": {
+              "ar": "Hyprland overrides",
+              "bn-BD": "Hyprland overrides",
+              "de": "Hyprland überschreibt",
+              "es": "Sobrescrituras de Hyprland",
+              "fr": "Remplacements Hyprland",
+              "hi-IN": "Hyprland overrides",
+              "id-ID": "Hyprland overrides",
+              "it": "Sovrascritture di Hyprland",
+              "ja": "Hyprland のオーバーライド",
+              "ko": "Hyprland 오버라이드",
+              "pt-BR": "Overrides do Hyprland",
+              "pt-PT": "Overrides do Hyprland",
+              "ru": "Переопределения Hyprland",
+              "tr-TR": "Hyprland overrides",
+              "ur-PK": "Hyprland overrides",
+              "vi-VN": "Hyprland overrides",
+              "zh-CN": "Hyprland 覆盖"
+            }
           }
-        ]
+        ],
+        "translations": {
+          "pt-BR": "Hyprland",
+          "pt-PT": "Hyprland",
+          "es": "Hyprland",
+          "fr": "Hyprland",
+          "it": "Hyprland",
+          "zh-CN": "Hyprland",
+          "ja": "Hyprland",
+          "de": "Hyprland",
+          "ru": "Hyprland",
+          "ko": "Hyprland",
+          "hi-IN": "Hyprland",
+          "ar": "Hyprland",
+          "bn-BD": "Hyprland",
+          "id-ID": "Hyprland",
+          "ur-PK": "Hyprland",
+          "vi-VN": "Hyprland",
+          "tr-TR": "Hyprland"
+        }
       },
       {
         "label": "Taskbar",
         "collapsed": true,
         "items": [
           {
-            "slug": "docs/argvus-taskbar/taskbar"
+            "slug": "docs/argvus-taskbar/taskbar",
+            "translations": {
+              "ar": "شريط المهام",
+              "bn-BD": "টাস্কবার",
+              "de": "Taskleiste",
+              "es": "Barra de tareas",
+              "fr": "Barre des tâches",
+              "hi-IN": "टास्कबार",
+              "id-ID": "Bilah tugas",
+              "it": "Barra delle applicazioni",
+              "ja": "タスクバー",
+              "ko": "작업 표시줄",
+              "pt-BR": "Barra de tarefas",
+              "pt-PT": "Barra de tarefas",
+              "ru": "Панель задач",
+              "tr-TR": "Görev çubuğu",
+              "ur-PK": "ٹاسک بار",
+              "vi-VN": "Thanh tác vụ",
+              "zh-CN": "任务栏"
+            }
           },
           {
-            "slug": "docs/argvus-taskbar/widgets"
+            "slug": "docs/argvus-taskbar/widgets",
+            "translations": {
+              "ar": "Widgets",
+              "bn-BD": "Widgets",
+              "de": "Widgets",
+              "es": "Widgets",
+              "fr": "Widgets",
+              "hi-IN": "Widgets",
+              "id-ID": "Widgets",
+              "it": "Widget",
+              "ja": "ウィジェット",
+              "ko": "위젯",
+              "pt-BR": "Widgets",
+              "pt-PT": "Widgets",
+              "ru": "Виджеты",
+              "tr-TR": "Widgets",
+              "ur-PK": "Widgets",
+              "vi-VN": "Widgets",
+              "zh-CN": "小工具"
+            }
           }
-        ]
+        ],
+        "translations": {
+          "pt-BR": "Barra de tarefas",
+          "pt-PT": "Barra de tarefas",
+          "es": "Barra de tareas",
+          "fr": "Barre des tâches",
+          "it": "Barra delle applicazioni",
+          "zh-CN": "任务栏",
+          "ja": "タスクバー",
+          "de": "Taskleiste",
+          "ru": "Панель задач",
+          "ko": "작업 표시줄",
+          "hi-IN": "टास्कबार",
+          "ar": "شريط المهام",
+          "bn-BD": "টাস্কবার",
+          "id-ID": "Bilah tugas",
+          "ur-PK": "ٹاسک بار",
+          "vi-VN": "Thanh tác vụ",
+          "tr-TR": "Görev çubuğu"
+        }
       },
       {
         "slug": "docs/argvus-launcher",
-        "label": "Launcher"
+        "label": "Launcher",
+        "translations": {
+          "ar": "المشغل",
+          "bn-BD": "লঞ্চার",
+          "de": "Starter",
+          "es": "Lanzador",
+          "fr": "Lanceur",
+          "hi-IN": "लॉन्चर",
+          "id-ID": "Peluncur",
+          "it": "Avvio applicazioni",
+          "ja": "ランチャー",
+          "ko": "실행기",
+          "pt-BR": "Lançador",
+          "pt-PT": "Lançador",
+          "ru": "Запуск",
+          "tr-TR": "Başlatıcı",
+          "ur-PK": "لانچر",
+          "vi-VN": "Trình khởi chạy",
+          "zh-CN": "启动器"
+        }
       },
       {
         "slug": "docs/argvus-notifications",
-        "label": "Notifications"
+        "label": "Notifications",
+        "translations": {
+          "ar": "الإشعارات",
+          "bn-BD": "বিজ্ঞপ্তি",
+          "de": "Benachrichtigungen",
+          "es": "Notificaciones",
+          "fr": "Notifications",
+          "hi-IN": "सूचनाएँ",
+          "id-ID": "Notifikasi",
+          "it": "Notifiche",
+          "ja": "通知",
+          "ko": "알림",
+          "pt-BR": "Notificações",
+          "pt-PT": "Notificações",
+          "ru": "Уведомления",
+          "tr-TR": "Bildirimler",
+          "ur-PK": "اطلاعات",
+          "vi-VN": "Thông báo",
+          "zh-CN": "通知"
+        }
       },
       {
         "slug": "docs/argvus-waybar",
-        "label": "Waybar"
+        "label": "Waybar",
+        "translations": {
+          "ar": "ﻡﺎﻬﻤﻟﺍ ﻂﻳﺮﺷﻭ Waybar ﺕﺍﺯﻭﺎﺠﺗ",
+          "bn-BD": "ওয়েবার এবং টাস্কবার  ওভাররাইড করে",
+          "de": "Waybar- und Taskleiste-Overrides",
+          "es": "Sobrescrituras de Waybar y de la barra de tareas",
+          "fr": "Substitutions de Waybar et de la barre des tâches",
+          "hi-IN": "वेबारी और टास्कबार ओवरराइड्स",
+          "id-ID": "Override Waybar dan taskbar",
+          "it": "Sovrascritture di Waybar e della barra delle applicazioni",
+          "ja": "Waybarとタスクバーのオーバーライド",
+          "ko": "Waybar 및 작업 표시줄 덮어쓰기",
+          "pt-BR": "Overrides da Waybar e da taskbar",
+          "pt-PT": "Overrides da Waybar e da taskbar",
+          "ru": "Переопределения Waybar и панели задач",
+          "tr-TR": "Waybar ve görev çubuğu geçersiz kılmaları",
+          "ur-PK": "ﺯﮉﯿﺋﺍﺭ ﺭﻭﻭﺍ ﺭﺎﺑ ﮏﺳﺎﭨ ﺭﻭﺍ ﺭﺎﺑ ﮮﻭ",
+          "vi-VN": "Ghi đè Waybar và taskbar",
+          "zh-CN": "Waybar 和任务栏覆盖"
+        }
       },
       {
         "slug": "docs/argvus-portal",
-        "label": "Portal"
+        "label": "Portal",
+        "translations": {
+          "ar": "Portals",
+          "bn-BD": "Portals",
+          "de": "Portale",
+          "es": "Portales",
+          "fr": "Portails",
+          "hi-IN": "Portals",
+          "id-ID": "Portals",
+          "it": "Portali",
+          "ja": "ポータル",
+          "ko": "포털",
+          "pt-BR": "Portais",
+          "pt-PT": "Portais",
+          "ru": "Порталы",
+          "tr-TR": "Portals",
+          "ur-PK": "Portals",
+          "vi-VN": "Portals",
+          "zh-CN": "门户"
+        }
       }
     ]
   },
   {
     "label": "System & Settings",
     "translations": {
-      "pt-BR": "Sistema e configurações"
+      "pt-BR": "Sistema e configurações",
+      "pt-PT": "Sistema e definições",
+      "es": "Sistema y ajustes",
+      "fr": "Système et paramètres",
+      "it": "Sistema e impostazioni",
+      "zh-CN": "系统与设置",
+      "ja": "システムと設定",
+      "de": "System und Einstellungen",
+      "ru": "Система и настройки",
+      "ko": "시스템 및 설정",
+      "hi-IN": "सिस्टम और सेटिंग्स",
+      "ar": "النظام والإعدادات",
+      "bn-BD": "সিস্টেম ও সেটিংস",
+      "id-ID": "Sistem dan pengaturan",
+      "ur-PK": "سسٹم اور ترتیبات",
+      "vi-VN": "Hệ thống và cài đặt",
+      "tr-TR": "Sistem ve ayarlar"
     },
     "collapsed": true,
     "items": [
       {
         "slug": "docs/argvus-control-panel",
-        "label": "Control Panel"
+        "label": "Control Panel",
+        "translations": {
+          "ar": "لوحة التحكم",
+          "bn-BD": "কন্ট্রোল প্যানেল",
+          "de": "Systemsteuerung",
+          "es": "Panel de control",
+          "fr": "Panneau de contrôle",
+          "hi-IN": "कंट्रोल पैनल",
+          "id-ID": "Panel kontrol",
+          "it": "Pannello di controllo",
+          "ja": "コントロールパネル",
+          "ko": "제어판",
+          "pt-BR": "Painel de controle",
+          "pt-PT": "Painel de controlo",
+          "ru": "Панель управления",
+          "tr-TR": "Kontrol paneli",
+          "ur-PK": "کنٹرول پینل",
+          "vi-VN": "Bảng điều khiển",
+          "zh-CN": "控制面板"
+        }
       },
       {
         "slug": "docs/argvus-display",
-        "label": "Display"
+        "label": "Display",
+        "translations": {
+          "ar": "Displays",
+          "bn-BD": "Displays",
+          "de": "Anzeigen",
+          "es": "Pantallas",
+          "fr": "Affiche",
+          "hi-IN": "Displays",
+          "id-ID": "Displays",
+          "it": "Schermi",
+          "ja": "ディスプレイ",
+          "ko": "디스플레이",
+          "pt-BR": "Displays",
+          "pt-PT": "Displays",
+          "ru": "Дисплеи",
+          "tr-TR": "Displays",
+          "ur-PK": "Displays",
+          "vi-VN": "Displays",
+          "zh-CN": "显示器"
+        }
       },
       {
         "slug": "docs/argvus-power",
-        "label": "Power"
+        "label": "Power",
+        "translations": {
+          "ar": "الطاقة",
+          "bn-BD": "পাওয়ার",
+          "de": "Energie",
+          "es": "Energía",
+          "fr": "Alimentation",
+          "hi-IN": "पावर",
+          "id-ID": "Daya",
+          "it": "Alimentazione",
+          "ja": "電源",
+          "ko": "전원",
+          "pt-BR": "Energia",
+          "pt-PT": "Energia",
+          "ru": "Питание",
+          "tr-TR": "Güç",
+          "ur-PK": "پاور",
+          "vi-VN": "Nguồn điện",
+          "zh-CN": "电源"
+        }
       },
       {
         "slug": "docs/argvus-firewall",
-        "label": "Firewall"
+        "label": "Firewall",
+        "translations": {
+          "ar": "جدار الحماية",
+          "bn-BD": "ফায়ারওয়াল",
+          "de": "Firewall",
+          "es": "Cortafuegos",
+          "fr": "Pare-feu",
+          "hi-IN": "फ़ायरवॉल",
+          "id-ID": "Firewall",
+          "it": "Firewall",
+          "ja": "ファイアウォール",
+          "ko": "방화벽",
+          "pt-BR": "Firewall",
+          "pt-PT": "Firewall",
+          "ru": "Брандмауэр",
+          "tr-TR": "Güvenlik duvarı",
+          "ur-PK": "فائر وال",
+          "vi-VN": "Tường lửa",
+          "zh-CN": "防火墙"
+        }
       }
     ]
   },
   {
     "label": "Appearance & Assets",
     "translations": {
-      "pt-BR": "Aparência e recursos visuais"
+      "pt-BR": "Aparência e recursos visuais",
+      "pt-PT": "Aspeto e recursos visuais",
+      "es": "Apariencia y recursos",
+      "fr": "Apparence et ressources",
+      "it": "Aspetto e risorse",
+      "zh-CN": "外观与资源",
+      "ja": "外観とアセット",
+      "de": "Erscheinungsbild und Ressourcen",
+      "ru": "Внешний вид и ресурсы",
+      "ko": "모양 및 리소스",
+      "hi-IN": "रूप-रंग और संसाधन",
+      "ar": "المظهر والموارد",
+      "bn-BD": "চেহারা ও সম্পদ",
+      "id-ID": "Tampilan dan aset",
+      "ur-PK": "ظاہری شکل اور وسائل",
+      "vi-VN": "Giao diện và tài nguyên",
+      "tr-TR": "Görünüm ve varlıklar"
     },
     "collapsed": true,
     "items": [
@@ -832,37 +3121,205 @@ export const sidebarConfig = [
         "collapsed": true,
         "items": [
           {
-            "slug": "docs/argvus-appearance/wallpapers"
+            "slug": "docs/argvus-appearance/wallpapers",
+            "translations": {
+              "ar": "الخلفيات",
+              "bn-BD": "ওয়ালপেপার",
+              "de": "Hintergrundbilder",
+              "es": "Fondos de pantalla",
+              "fr": "Fonds d’écran",
+              "hi-IN": "वॉलपेपर",
+              "id-ID": "Wallpaper",
+              "it": "Sfondi",
+              "ja": "壁紙",
+              "ko": "배경 화면",
+              "pt-BR": "Papéis de parede",
+              "pt-PT": "Papéis de parede",
+              "ru": "Обои",
+              "tr-TR": "Duvar kâğıtları",
+              "ur-PK": "وال پیپر",
+              "vi-VN": "Hình nền",
+              "zh-CN": "壁纸"
+            }
           },
           {
-            "slug": "docs/argvus-appearance/fonts-and-icons"
+            "slug": "docs/argvus-appearance/fonts-and-icons",
+            "translations": {
+              "ar": "الخطوط والأيقونات",
+              "bn-BD": "ফন্ট ও আইকন",
+              "de": "Schriften und Symbole",
+              "es": "Fuentes e iconos",
+              "fr": "Polices et icônes",
+              "hi-IN": "फ़ॉन्ट और आइकन",
+              "id-ID": "Font dan ikon",
+              "it": "Font e icone",
+              "ja": "フォントとアイコン",
+              "ko": "글꼴 및 아이콘",
+              "pt-BR": "Fontes e ícones",
+              "pt-PT": "Tipos de letra e ícones",
+              "ru": "Шрифты и значки",
+              "tr-TR": "Yazı tipleri ve simgeler",
+              "ur-PK": "فونٹس اور آئیکنز",
+              "vi-VN": "Phông chữ và biểu tượng",
+              "zh-CN": "字体与图标"
+            }
           },
           {
-            "slug": "docs/argvus-appearance/effects"
+            "slug": "docs/argvus-appearance/effects",
+            "translations": {
+              "ar": "التأثيرات",
+              "bn-BD": "প্রভাব",
+              "de": "Effekte",
+              "es": "Efectos",
+              "fr": "Effets",
+              "hi-IN": "प्रभाव",
+              "id-ID": "Efek",
+              "it": "Effetti",
+              "ja": "エフェクト",
+              "ko": "효과",
+              "pt-BR": "Efeitos",
+              "pt-PT": "Efeitos",
+              "ru": "Эффекты",
+              "tr-TR": "Efektler",
+              "ur-PK": "اثرات",
+              "vi-VN": "Hiệu ứng",
+              "zh-CN": "效果"
+            }
           },
           {
-            "slug": "docs/argvus-appearance/layout-modes"
+            "slug": "docs/argvus-appearance/layout-modes",
+            "translations": {
+              "ar": "Layout modes",
+              "bn-BD": "Layout modes",
+              "de": "Layout-Modi",
+              "es": "Modos de diseño",
+              "fr": "Modes de mise en page",
+              "hi-IN": "Layout modes",
+              "id-ID": "Layout modes",
+              "it": "Modalità di layout",
+              "ja": "レイアウトモード",
+              "ko": "레이아웃 모드",
+              "pt-BR": "Modos de layout",
+              "pt-PT": "Modos de layout",
+              "ru": "Режимы компоновки",
+              "tr-TR": "Layout modes",
+              "ur-PK": "Layout modes",
+              "vi-VN": "Layout modes",
+              "zh-CN": "布局模式"
+            }
           }
-        ]
+        ],
+        "translations": {
+          "pt-BR": "Aparência",
+          "pt-PT": "Aspeto",
+          "es": "Apariencia",
+          "fr": "Apparence",
+          "it": "Aspetto",
+          "zh-CN": "外观",
+          "ja": "外観",
+          "de": "Erscheinungsbild",
+          "ru": "Внешний вид",
+          "ko": "모양",
+          "hi-IN": "रूप-रंग",
+          "ar": "المظهر",
+          "bn-BD": "চেহারা",
+          "id-ID": "Tampilan",
+          "ur-PK": "ظاہری شکل",
+          "vi-VN": "Giao diện",
+          "tr-TR": "Görünüm"
+        }
       },
       {
         "slug": "docs/argvus-icons",
-        "label": "Icons"
+        "label": "Icons",
+        "translations": {
+          "ar": "ARGVUS Icons",
+          "bn-BD": "ARGVUS Icons",
+          "de": "ARGVUS Symbole",
+          "es": "Iconos ARGVUS",
+          "fr": "Icônes ARGVUS",
+          "hi-IN": "ARGVUS Icons",
+          "id-ID": "ARGVUS Icons",
+          "it": "Icone ARGVUS",
+          "ja": "ARGVUSアイコン",
+          "ko": "아르브거스 아이콘",
+          "pt-BR": "ARGVUS Icons",
+          "pt-PT": "ARGVUS Icons",
+          "ru": "ИКОНКИ ARGVUS",
+          "tr-TR": "ARGVUS Icons",
+          "ur-PK": "ARGVUS Icons",
+          "vi-VN": "ARGVUS Icons",
+          "zh-CN": "ARGVUS 图标"
+        }
       },
       {
         "slug": "docs/argvus-fonts",
-        "label": "Fonts"
+        "label": "Fonts",
+        "translations": {
+          "ar": "ARGVUS Fonts",
+          "bn-BD": "ARGVUS Fonts",
+          "de": "ARGVUS Schriften",
+          "es": "Fuentes ARGVUS",
+          "fr": "Polices ARGVUS",
+          "hi-IN": "ARGVUS Fonts",
+          "id-ID": "ARGVUS Fonts",
+          "it": "Caratteri ARGVUS",
+          "ja": "ARGVUS フォント",
+          "ko": "ARGVUS 글꼴",
+          "pt-BR": "ARGVUS Fonts",
+          "pt-PT": "ARGVUS Fonts",
+          "ru": "Шрифты ARGVUS",
+          "tr-TR": "ARGVUS Fonts",
+          "ur-PK": "ARGVUS Fonts",
+          "vi-VN": "ARGVUS Fonts",
+          "zh-CN": "ARGVUS 字体"
+        }
       },
       {
         "slug": "docs/argvus-wallpapers",
-        "label": "Wallpapers"
+        "label": "Wallpapers",
+        "translations": {
+          "ar": "الخلفيات",
+          "bn-BD": "ওয়ালপেপার",
+          "de": "Hintergrundbilder",
+          "es": "Fondos de pantalla",
+          "fr": "Fonds d’écran",
+          "hi-IN": "वॉलपेपर",
+          "id-ID": "Wallpaper",
+          "it": "Sfondi",
+          "ja": "壁紙",
+          "ko": "배경 화면",
+          "pt-BR": "Papéis de parede",
+          "pt-PT": "Papéis de parede",
+          "ru": "Обои",
+          "tr-TR": "Duvar kâğıtları",
+          "ur-PK": "وال پیپر",
+          "vi-VN": "Hình nền",
+          "zh-CN": "壁纸"
+        }
       }
     ]
   },
   {
     "label": "Apps & Tools",
     "translations": {
-      "pt-BR": "Aplicativos e ferramentas"
+      "pt-BR": "Aplicativos e ferramentas",
+      "pt-PT": "Aplicações e ferramentas",
+      "es": "Aplicaciones y herramientas",
+      "fr": "Applications et outils",
+      "it": "App e strumenti",
+      "zh-CN": "应用与工具",
+      "ja": "アプリとツール",
+      "de": "Apps und Werkzeuge",
+      "ru": "Приложения и инструменты",
+      "ko": "앱 및 도구",
+      "hi-IN": "ऐप और टूल",
+      "ar": "التطبيقات والأدوات",
+      "bn-BD": "অ্যাপ ও টুল",
+      "id-ID": "Aplikasi dan alat",
+      "ur-PK": "ایپس اور ٹولز",
+      "vi-VN": "Ứng dụng và công cụ",
+      "tr-TR": "Uygulamalar ve araçlar"
     },
     "collapsed": true,
     "items": [
@@ -874,16 +3331,89 @@ export const sidebarConfig = [
             "slug": "docs/argvus-ai",
             "label": "Overview",
             "translations": {
-              "pt-BR": "Visão geral"
+              "ar": "نظرة عامة",
+              "bn-BD": "সংক্ষিপ্ত বিবরণ",
+              "de": "Übersicht",
+              "es": "Resumen",
+              "fr": "Présentation",
+              "hi-IN": "अवलोकन",
+              "id-ID": "Ringkasan",
+              "it": "Panoramica",
+              "ja": "概要",
+              "ko": "개요",
+              "pt-BR": "Visão geral",
+              "pt-PT": "Visão geral",
+              "ru": "Обзор",
+              "tr-TR": "Genel bakış",
+              "ur-PK": "جائزہ",
+              "vi-VN": "Tổng quan",
+              "zh-CN": "概览"
             }
           },
           {
-            "slug": "docs/argvus-ai/installation"
+            "slug": "docs/argvus-ai/installation",
+            "translations": {
+              "ar": "Installation",
+              "bn-BD": "Installation",
+              "de": "Installation",
+              "es": "Instalación",
+              "fr": "Installation",
+              "hi-IN": "Installation",
+              "id-ID": "Installation",
+              "it": "Installazione",
+              "ja": "インストール",
+              "ko": "설치",
+              "pt-BR": "Instalação",
+              "pt-PT": "Instalação",
+              "ru": "Установка",
+              "tr-TR": "Kurulumu",
+              "ur-PK": "Installation",
+              "vi-VN": "Installation",
+              "zh-CN": "安装"
+            }
           },
           {
-            "slug": "docs/argvus-ai/usage"
+            "slug": "docs/argvus-ai/usage",
+            "translations": {
+              "ar": "الاستخدام واستكشاف الأخطاء وإصلاحها",
+              "bn-BD": "ব্যবহার এবং সমস্যা সমাধান",
+              "de": "Verwendung und Fehlerbehebung",
+              "es": "Uso y solución de problemas",
+              "fr": "Utilisation et dépannage",
+              "hi-IN": "Usage and troubleshooting",
+              "id-ID": "Usage and troubleshooting",
+              "it": "Uso e risoluzione dei problemi",
+              "ja": "使用方法とトラブルシューティング",
+              "ko": "사용법 및 문제 해결",
+              "pt-BR": "Uso e solução de problemas",
+              "pt-PT": "Uso e solução de problemas",
+              "ru": "Использование и устранение неполадок",
+              "tr-TR": "Kullanım ve sorun giderme",
+              "ur-PK": "استعمال اور خرابیوں کا سراغ لگانا",
+              "vi-VN": "Usage and troubleshooting",
+              "zh-CN": "使用与故障排除"
+            }
           }
-        ]
+        ],
+        "translations": {
+          "pt-BR": "Agentes de IA",
+          "pt-PT": "Agentes de IA",
+          "es": "Agentes de IA",
+          "fr": "Agents IA",
+          "it": "Agenti IA",
+          "zh-CN": "AI 代理",
+          "ja": "AI エージェント",
+          "de": "KI-Agenten",
+          "ru": "ИИ-агенты",
+          "ko": "AI 에이전트",
+          "hi-IN": "AI एजेंट",
+          "ar": "وكلاء الذكاء الاصطناعي",
+          "bn-BD": "AI এজেন্ট",
+          "id-ID": "Agen AI",
+          "ur-PK": "اے آئی ایجنٹس",
+          "vi-VN": "Tác nhân AI",
+          "tr-TR": "Yapay zekâ ajanları"
+        }
       },
       {
         "label": "Games",
@@ -893,13 +3423,67 @@ export const sidebarConfig = [
             "slug": "docs/argvus-games",
             "label": "Overview",
             "translations": {
-              "pt-BR": "Visão geral"
+              "ar": "نظرة عامة",
+              "bn-BD": "সংক্ষিপ্ত বিবরণ",
+              "de": "Übersicht",
+              "es": "Resumen",
+              "fr": "Présentation",
+              "hi-IN": "अवलोकन",
+              "id-ID": "Ringkasan",
+              "it": "Panoramica",
+              "ja": "概要",
+              "ko": "개요",
+              "pt-BR": "Visão geral",
+              "pt-PT": "Visão geral",
+              "ru": "Обзор",
+              "tr-TR": "Genel bakış",
+              "ur-PK": "جائزہ",
+              "vi-VN": "Tổng quan",
+              "zh-CN": "概览"
             }
           },
           {
-            "slug": "docs/argvus-games/snake"
+            "slug": "docs/argvus-games/snake",
+            "translations": {
+              "ar": "Snake",
+              "bn-BD": "Snake",
+              "de": "Schlange",
+              "es": "Serpiente",
+              "fr": "Serpent",
+              "hi-IN": "Snake",
+              "id-ID": "Snake",
+              "it": "Serpente",
+              "ja": "ヘビ",
+              "ko": "뱀",
+              "pt-BR": "Snake",
+              "pt-PT": "Snake",
+              "ru": "Змея",
+              "tr-TR": "Snake",
+              "ur-PK": "Snake",
+              "vi-VN": "Snake",
+              "zh-CN": "蛇"
+            }
           }
-        ]
+        ],
+        "translations": {
+          "pt-BR": "Jogos",
+          "pt-PT": "Jogos",
+          "es": "Juegos",
+          "fr": "Jeux",
+          "it": "Giochi",
+          "zh-CN": "游戏",
+          "ja": "ゲーム",
+          "de": "Spiele",
+          "ru": "Игры",
+          "ko": "게임",
+          "hi-IN": "गेम",
+          "ar": "الألعاب",
+          "bn-BD": "গেম",
+          "id-ID": "Game",
+          "ur-PK": "گیمز",
+          "vi-VN": "Trò chơi",
+          "tr-TR": "Oyunlar"
+        }
       }
     ]
   },
@@ -910,37 +3494,221 @@ export const sidebarConfig = [
         "slug": "docs/reference",
         "label": "Overview",
         "translations": {
-          "pt-BR": "Visão geral"
+          "ar": "نظرة عامة",
+          "bn-BD": "সংক্ষিপ্ত বিবরণ",
+          "de": "Übersicht",
+          "es": "Resumen",
+          "fr": "Présentation",
+          "hi-IN": "अवलोकन",
+          "id-ID": "Ringkasan",
+          "it": "Panoramica",
+          "ja": "概要",
+          "ko": "개요",
+          "pt-BR": "Visão geral",
+          "pt-PT": "Visão geral",
+          "ru": "Обзор",
+          "tr-TR": "Genel bakış",
+          "ur-PK": "جائزہ",
+          "vi-VN": "Tổng quan",
+          "zh-CN": "概览"
         }
       },
       {
-        "slug": "docs/reference/argvus-config"
+        "slug": "docs/reference/argvus-config",
+        "translations": {
+          "ar": "ARGVUS Configuration",
+          "bn-BD": "ARGVUS কনফিগারেশন",
+          "de": "ARGVUS-Konfiguration",
+          "es": "Configuración de ARGVUS",
+          "fr": "Configuration ARGVUS",
+          "hi-IN": "ARGVUS कॉन्फ़िगरेशन",
+          "id-ID": "ARGVUS Configuration",
+          "it": "Configurazione ARGVUS",
+          "ja": "ARGVUS設定",
+          "ko": "ARGVUS 구성",
+          "pt-BR": "Configuração do ARGVUS",
+          "pt-PT": "Configuração do ARGVUS",
+          "ru": "Конфигурация ARGVUS",
+          "tr-TR": "ARGVUS Yapılandırması",
+          "ur-PK": "ARGVUS کنفیگریشن",
+          "vi-VN": "ARGVUS Configuration",
+          "zh-CN": "ARGVUS 配置"
+        }
       },
       {
-        "slug": "docs/reference/configuration-files"
+        "slug": "docs/reference/configuration-files",
+        "translations": {
+          "ar": "ملفات التكوين",
+          "bn-BD": "কনফিগারেশন ফাইল",
+          "de": "Konfigurationsdateien",
+          "es": "Archivos de configuración",
+          "fr": "Fichiers de configuration",
+          "hi-IN": "कॉन्फ़िगरेशन फ़ाइलें",
+          "id-ID": "Configuration files",
+          "it": "File di configurazione",
+          "ja": "設定ファイル",
+          "ko": "설정 파일",
+          "pt-BR": "Arquivos de configuração",
+          "pt-PT": "Ficheiros de configuração",
+          "ru": "Конфигурационные файлы",
+          "tr-TR": "Yapılandırma dosyaları",
+          "ur-PK": "کنفیگریشن فائلیں۔",
+          "vi-VN": "Configuration files",
+          "zh-CN": "配置文件"
+        }
       },
       {
-        "slug": "docs/reference/file-locations"
+        "slug": "docs/reference/file-locations",
+        "translations": {
+          "ar": "مواقع الملفات",
+          "bn-BD": "ফাইলের অবস্থান",
+          "de": "Dateispeicherorte",
+          "es": "Ubicaciones de archivos",
+          "fr": "Emplacements des fichiers",
+          "hi-IN": "फ़ाइल स्थान",
+          "id-ID": "Lokasi file",
+          "it": "Posizioni dei file",
+          "ja": "ファイルの場所",
+          "ko": "파일 위치",
+          "pt-BR": "Localizações de arquivos",
+          "pt-PT": "Localizações de ficheiros",
+          "ru": "Расположения файлов",
+          "tr-TR": "Dosya konumları",
+          "ur-PK": "فائل کے مقامات",
+          "vi-VN": "File locations",
+          "zh-CN": "文件位置"
+        }
       },
       {
-        "slug": "docs/reference/environment-variables"
+        "slug": "docs/reference/environment-variables",
+        "translations": {
+          "ar": "متغيرات البيئة",
+          "bn-BD": "এনভায়রনমেন্ট ভেরিয়েবল",
+          "de": "Umgebungsvariablen",
+          "es": "Variables de entorno",
+          "fr": "Variables d'environnement",
+          "hi-IN": "पर्यावरण चर",
+          "id-ID": "Variabel lingkungan",
+          "it": "Variabili d'ambiente",
+          "ja": "環境変数",
+          "ko": "환경 변수",
+          "pt-BR": "Variáveis de ambiente",
+          "pt-PT": "Variáveis de ambiente",
+          "ru": "Переменные окружения",
+          "tr-TR": "Ortam değişkenleri",
+          "ur-PK": "ماحولیاتی متغیرات",
+          "vi-VN": "Biến môi trường",
+          "zh-CN": "环境变量"
+        }
       },
       {
-        "slug": "docs/reference/command-line"
+        "slug": "docs/reference/command-line",
+        "translations": {
+          "ar": "سطر الأوامر",
+          "bn-BD": "কমান্ড লাইন",
+          "de": "Befehlszeile",
+          "es": "Línea de comandos",
+          "fr": "Ligne de commande",
+          "hi-IN": "कमांड लाइन",
+          "id-ID": "Baris perintah",
+          "it": "Linea di comando",
+          "ja": "コマンドライン",
+          "ko": "명령 줄",
+          "pt-BR": "Linha de comando",
+          "pt-PT": "Linha de comando",
+          "ru": "Командная строка",
+          "tr-TR": "Komut satırı",
+          "ur-PK": "کمانڈ لائن",
+          "vi-VN": "Dòng lệnh",
+          "zh-CN": "命令行"
+        }
       },
       {
-        "slug": "docs/reference/services"
+        "slug": "docs/reference/services",
+        "translations": {
+          "ar": "Services",
+          "bn-BD": "পরিষেবা",
+          "de": "Dienstleistungen",
+          "es": "Servicios",
+          "fr": "Services",
+          "hi-IN": "सेवाएँ",
+          "id-ID": "Services",
+          "it": "Servizi",
+          "ja": "サービス",
+          "ko": "서비스",
+          "pt-BR": "Serviços",
+          "pt-PT": "Serviços",
+          "ru": "Услуги",
+          "tr-TR": "Hizmetler",
+          "ur-PK": "سروسز",
+          "vi-VN": "Services",
+          "zh-CN": "服务"
+        }
       },
       {
-        "slug": "docs/reference/dbus-interfaces"
+        "slug": "docs/reference/dbus-interfaces",
+        "translations": {
+          "ar": "D-Bus interfaces",
+          "bn-BD": "D-বাস ইন্টারফেস",
+          "de": "D-Bus-Schnittstellen",
+          "es": "Interfaces D-Bus",
+          "fr": "Interfaces D-Bus",
+          "hi-IN": "डी-बस इंटरफेस",
+          "id-ID": "D-Bus interfaces",
+          "it": "Interfacce D-Bus",
+          "ja": "D-Busインターフェース",
+          "ko": "D-Bus 인터페이스",
+          "pt-BR": "Interfaces D-Bus",
+          "pt-PT": "Interfaces D-Bus",
+          "ru": "Интерфейсы D-Bus",
+          "tr-TR": "D-Bus arayüzleri",
+          "ur-PK": "D-Bus انٹرفیس",
+          "vi-VN": "D-Bus interfaces",
+          "zh-CN": "D-Bus 接口"
+        }
       },
       {
-        "slug": "docs/reference/package-matrix"
+        "slug": "docs/reference/package-matrix",
+        "translations": {
+          "ar": "مصفوفة الحزمة",
+          "bn-BD": "প্যাকেজ ম্যাট্রিক্স",
+          "de": "Paketmatrix",
+          "es": "Matriz de paquetes",
+          "fr": "Matrice de paquet",
+          "hi-IN": "पैकेज मैट्रिक्स",
+          "id-ID": "Package matrix",
+          "it": "Matrice del pacchetto",
+          "ja": "パッケージマトリックス",
+          "ko": "패키지 매트릭스",
+          "pt-BR": "Matriz de pacotes",
+          "pt-PT": "Matriz de pacotes",
+          "ru": "Пакет matrix",
+          "tr-TR": "Paket matrisi",
+          "ur-PK": "پیکیج میٹرکس",
+          "vi-VN": "Package matrix",
+          "zh-CN": "软件包矩阵"
+        }
       }
     ],
     "collapsed": true,
     "translations": {
-      "pt-BR": "Referência"
+      "pt-BR": "Referência",
+      "pt-PT": "Referência",
+      "es": "Referencia",
+      "fr": "Référence",
+      "it": "Riferimento",
+      "zh-CN": "参考",
+      "ja": "リファレンス",
+      "de": "Referenz",
+      "ru": "Справочник",
+      "ko": "참조",
+      "hi-IN": "संदर्भ",
+      "ar": "المرجع",
+      "bn-BD": "রেফারেন্স",
+      "id-ID": "Referensi",
+      "ur-PK": "حوالہ",
+      "vi-VN": "Tham khảo",
+      "tr-TR": "Başvuru"
     }
   },
   {
@@ -950,108 +3718,603 @@ export const sidebarConfig = [
         "slug": "docs/developer-guide",
         "label": "Overview",
         "translations": {
-          "pt-BR": "Visão geral"
+          "ar": "نظرة عامة",
+          "bn-BD": "সংক্ষিপ্ত বিবরণ",
+          "de": "Übersicht",
+          "es": "Resumen",
+          "fr": "Présentation",
+          "hi-IN": "अवलोकन",
+          "id-ID": "Ringkasan",
+          "it": "Panoramica",
+          "ja": "概要",
+          "ko": "개요",
+          "pt-BR": "Visão geral",
+          "pt-PT": "Visão geral",
+          "ru": "Обзор",
+          "tr-TR": "Genel bakış",
+          "ur-PK": "جائزہ",
+          "vi-VN": "Tổng quan",
+          "zh-CN": "概览"
         }
       },
       {
         "label": "Architecture",
         "items": [
           {
-            "slug": "docs/developer-guide/architecture/overview"
+            "slug": "docs/developer-guide/architecture/overview",
+            "translations": {
+              "ar": "Architecture overview",
+              "bn-BD": "আর্কিটেকচার ওভারভিউ",
+              "de": "Architekturübersicht",
+              "es": "Visión general de la arquitectura",
+              "fr": "Aperçu de l'architecture",
+              "hi-IN": "आर्किटेक्चर सिंहावलोकन",
+              "id-ID": "Architecture overview",
+              "it": "Panoramica dell'architettura",
+              "ja": "アーキテクチャの概要",
+              "ko": "아키텍처 개요",
+              "pt-BR": "Visão geral da arquitetura",
+              "pt-PT": "Visão geral da arquitetura",
+              "ru": "Обзор архитектуры",
+              "tr-TR": "Mimariye genel bakış",
+              "ur-PK": "فن تعمیر کا جائزہ",
+              "vi-VN": "Architecture overview",
+              "zh-CN": "架构概述"
+            }
           },
           {
-            "slug": "docs/developer-guide/architecture/repository-roles"
+            "slug": "docs/developer-guide/architecture/repository-roles",
+            "translations": {
+              "ar": "أدوار المستودع",
+              "bn-BD": "সংগ্রহস্থলের ভূমিকা",
+              "de": "Repository-Rollen",
+              "es": "Roles del repositorio",
+              "fr": "Rôles du dépôt",
+              "hi-IN": "रिपॉजिटरी भूमिकाएँ",
+              "id-ID": "Peran repositori",
+              "it": "Ruoli del repository",
+              "ja": "リポジトリの役割",
+              "ko": "저장소 역할",
+              "pt-BR": "Papéis dos repositórios",
+              "pt-PT": "Papéis dos repositórios",
+              "ru": "Роли репозитория",
+              "tr-TR": "Depo rolleri",
+              "ur-PK": "ریپوزٹری کے کردار",
+              "vi-VN": "Repository roles",
+              "zh-CN": "仓库角色"
+            }
           },
           {
-            "slug": "docs/developer-guide/architecture/integration-map"
+            "slug": "docs/developer-guide/architecture/integration-map",
+            "translations": {
+              "ar": "خريطة التكامل",
+              "bn-BD": "ইন্টিগ্রেশন মানচিত্র",
+              "de": "Integrationskarte",
+              "es": "Mapa de integración",
+              "fr": "Carte d'intégration",
+              "hi-IN": "एकीकरण मानचित्र",
+              "id-ID": "Integration map",
+              "it": "Mappa di integrazione",
+              "ja": "統合マップ",
+              "ko": "통합 지도",
+              "pt-BR": "Mapa de integração",
+              "pt-PT": "Mapa de integração",
+              "ru": "Карта интеграции",
+              "tr-TR": "Entegrasyon haritası",
+              "ur-PK": "انٹیگریشن کا نقشہ",
+              "vi-VN": "Integration map",
+              "zh-CN": "集成图"
+            }
           },
           {
-            "slug": "docs/developer-guide/architecture/runtime-lifecycle"
+            "slug": "docs/developer-guide/architecture/runtime-lifecycle",
+            "translations": {
+              "ar": "دورة حياة وقت التشغيل",
+              "bn-BD": "রানটাইম জীবনচক্র",
+              "de": "Laufzeit-Lebenszyklus",
+              "es": "Ciclo de vida de ejecución",
+              "fr": "Cycle de vie d'exécution",
+              "hi-IN": "रनटाइम जीवनचक्र",
+              "id-ID": "Runtime lifecycle",
+              "it": "Ciclo di vita del runtime",
+              "ja": "ランタイムのライフサイクル",
+              "ko": "런타임 라이프사이클",
+              "pt-BR": "Ciclo de vida do runtime",
+              "pt-PT": "Ciclo de vida do runtime",
+              "ru": "Жизненный цикл выполнения",
+              "tr-TR": "Çalışma zamanı yaşam döngüsü",
+              "ur-PK": "رن ٹائم لائف سائیکل",
+              "vi-VN": "Vòng đời thời gian chạy",
+              "zh-CN": "运行时生命周期"
+            }
           },
           {
-            "slug": "docs/developer-guide/architecture/configuration-and-state"
+            "slug": "docs/developer-guide/architecture/configuration-and-state",
+            "translations": {
+              "ar": "التكوين والحالة",
+              "bn-BD": "কনফিগারেশন এবং অবস্থা",
+              "de": "Konfiguration und Zustand",
+              "es": "Configuración y estado",
+              "fr": "Configuration et état",
+              "hi-IN": "कॉन्फ़िगरेशन और स्थिति",
+              "id-ID": "Konfigurasi dan status",
+              "it": "Configurazione e stato",
+              "ja": "構成と状態",
+              "ko": "구성 및 상태",
+              "pt-BR": "Configuração e estado",
+              "pt-PT": "Configuração e estado",
+              "ru": "Конфигурация и состояние",
+              "tr-TR": "Yapılandırması ve durumu",
+              "ur-PK": "کنفیگریشن اور ریاست",
+              "vi-VN": "Configuration and state",
+              "zh-CN": "配置与状态"
+            }
           }
         ],
         "translations": {
-          "pt-BR": "Arquitetura"
+          "pt-BR": "Arquitetura",
+          "pt-PT": "Arquitetura",
+          "es": "Arquitectura",
+          "fr": "Architecture",
+          "it": "Architettura",
+          "zh-CN": "架构",
+          "ja": "アーキテクチャ",
+          "de": "Architektur",
+          "ru": "Архитектура",
+          "ko": "아키텍처",
+          "hi-IN": "आर्किटेक्चर",
+          "ar": "البنية",
+          "bn-BD": "স্থাপত্য",
+          "id-ID": "Arsitektur",
+          "ur-PK": "ساخت",
+          "vi-VN": "Kiến trúc",
+          "tr-TR": "Mimari"
         }
       },
       {
         "label": "Subsystems",
         "items": [
           {
-            "slug": "docs/developer-guide/subsystems/session-and-systemd"
+            "slug": "docs/developer-guide/subsystems/session-and-systemd",
+            "translations": {
+              "ar": "الجلسة والنظام",
+              "bn-BD": "সেশন এবং সিস্টেমড",
+              "de": "Sitzung und systemd",
+              "es": "Sesión y systemd",
+              "fr": "Session et systemd",
+              "hi-IN": "सत्र और सिस्टमडी",
+              "id-ID": "Sesi dan systemd",
+              "it": "Sessione e systemd",
+              "ja": "セッションとsystemd",
+              "ko": "세션 및 systemd",
+              "pt-BR": "Sessão e systemd",
+              "pt-PT": "Sessão e systemd",
+              "ru": "Сессия и systemd",
+              "tr-TR": "Oturum ve sistemd",
+              "ur-PK": "سیشن اور سسٹمڈ",
+              "vi-VN": "Phiên và hệ thống",
+              "zh-CN": "会话和 systemd"
+            }
           },
           {
-            "slug": "docs/developer-guide/subsystems/hyprland"
+            "slug": "docs/developer-guide/subsystems/hyprland",
+            "translations": {
+              "ar": "تكامل Hyprland",
+              "bn-BD": "হাইপ্রল্যান্ড ইন্টিগ্রেশন",
+              "de": "Hyprland-Integration",
+              "es": "Integración de Hyprland",
+              "fr": "Intégration Hyprland",
+              "hi-IN": "हाइप्रलैंड एकीकरण",
+              "id-ID": "Integrasi Hyprland",
+              "it": "Integrazione di Hyprland",
+              "ja": "Hyprland の統合",
+              "ko": "Hyprland 통합",
+              "pt-BR": "Integração Hyprland",
+              "pt-PT": "Integração Hyprland",
+              "ru": "Интеграция Hyprland",
+              "tr-TR": "Hyprland entegrasyonu",
+              "ur-PK": "ہائپرلینڈ انضمام",
+              "vi-VN": "Hyprland integration",
+              "zh-CN": "Hyprland 集成"
+            }
           },
           {
-            "slug": "docs/developer-guide/subsystems/shell-surfaces"
+            "slug": "docs/developer-guide/subsystems/shell-surfaces",
+            "translations": {
+              "ar": "أسطح الغلاف",
+              "bn-BD": "শেল সারফেস",
+              "de": "Schalenoberflächen",
+              "es": "Superficies de la cáscara",
+              "fr": "Surfaces de coquille",
+              "hi-IN": "शैल सतहें",
+              "id-ID": "Permukaan cangkang",
+              "it": "Superfici della conchiglia",
+              "ja": "貝殻の表面",
+              "ko": "조개 껍데기 표면",
+              "pt-BR": "Superfícies do shell",
+              "pt-PT": "Superfícies do shell",
+              "ru": "Поверхности оболочки",
+              "tr-TR": "Kabuk yüzeyleri",
+              "ur-PK": "شیل سطحیں۔",
+              "vi-VN": "Bề mặt vỏ",
+              "zh-CN": "贝壳表面"
+            }
           },
           {
-            "slug": "docs/developer-guide/subsystems/appearance-and-themes"
+            "slug": "docs/developer-guide/subsystems/appearance-and-themes",
+            "translations": {
+              "ar": "المظهر والموضوعات",
+              "bn-BD": "চেহারা এবং থিম",
+              "de": "Erscheinung und Themen",
+              "es": "Apariencia y temas",
+              "fr": "Apparence et thèmes",
+              "hi-IN": "उपस्थिति और थीम",
+              "id-ID": "Penampilan dan tema",
+              "it": "Aspetto e temi",
+              "ja": "外見とテーマ",
+              "ko": "외관과 주제",
+              "pt-BR": "Aparência e temas",
+              "pt-PT": "Aparência e temas",
+              "ru": "Внешний вид и темы",
+              "tr-TR": "Görünüm ve temalar",
+              "ur-PK": "ظاہری شکل اور تھیمز",
+              "vi-VN": "Giao diện và chủ đề",
+              "zh-CN": "外观与主题"
+            }
           },
           {
-            "slug": "docs/developer-guide/subsystems/greeter-lock-and-splash"
+            "slug": "docs/developer-guide/subsystems/greeter-lock-and-splash",
+            "translations": {
+              "ar": "تحية، قفل ورذاذ",
+              "bn-BD": "গ্রিটার, লক এবং স্প্ল্যাশ",
+              "de": "Begrüßer, Schloss und Spritzer",
+              "es": "Saludador, cerradura y salpicadura",
+              "fr": "Accueil, verrou et éclaboussure",
+              "hi-IN": "अभिवादन, ताला और छींटाकशी",
+              "id-ID": "Menyambut, mengunci, dan memercik",
+              "it": "Salutatore, serratura e spruzzo",
+              "ja": "グリーター、ロック、スプラッシュ",
+              "ko": "인사자, 잠금 및 스플래시",
+              "pt-BR": "Greeter, lock e splash",
+              "pt-PT": "Greeter, lock e splash",
+              "ru": "Приветствие, замок и всплеск",
+              "tr-TR": "Karşılama, kilitleme ve sıçrama",
+              "ur-PK": "گریٹر، لاک اور سپلیش",
+              "vi-VN": "Lời chào, khóa và giật gân",
+              "zh-CN": "问候者、锁和飞溅"
+            }
           },
           {
-            "slug": "docs/developer-guide/subsystems/providers-and-services"
+            "slug": "docs/developer-guide/subsystems/providers-and-services",
+            "translations": {
+              "ar": "مقدمو الخدمات والخدمات",
+              "bn-BD": "প্রদানকারী এবং পরিষেবা",
+              "de": "Anbieter und Dienstleistungen",
+              "es": "Proveedores y servicios",
+              "fr": "Fournisseurs et services",
+              "hi-IN": "प्रदाता और सेवाएँ",
+              "id-ID": "Penyedia dan layanan",
+              "it": "Fornitori e servizi",
+              "ja": "プロバイダーとサービス",
+              "ko": "제공자 및 서비스",
+              "pt-BR": "Provedores e serviços",
+              "pt-PT": "Provedores e serviços",
+              "ru": "Поставщики и услуги",
+              "tr-TR": "Sağlayıcılar ve hizmetler",
+              "ur-PK": "فراہم کنندگان اور خدمات",
+              "vi-VN": "Nhà cung cấp và dịch vụ",
+              "zh-CN": "供应商和服务"
+            }
           }
         ],
         "translations": {
-          "pt-BR": "Subsistemas"
+          "pt-BR": "Subsistemas",
+          "pt-PT": "Subsistemas",
+          "es": "Subsistemas",
+          "fr": "Sous-systèmes",
+          "it": "Sottosistemi",
+          "zh-CN": "子系统",
+          "ja": "サブシステム",
+          "de": "Subsysteme",
+          "ru": "Подсистемы",
+          "ko": "하위 시스템",
+          "hi-IN": "उपप्रणालियाँ",
+          "ar": "الأنظمة الفرعية",
+          "bn-BD": "উপ-সিস্টেম",
+          "id-ID": "Subsistem",
+          "ur-PK": "ذیلی نظام",
+          "vi-VN": "Hệ thống con",
+          "tr-TR": "Alt sistemler"
         }
       },
       {
         "label": "Component Reference",
         "items": [
           {
-            "slug": "docs/developer-guide/component-reference/core-and-dispatcher"
+            "slug": "docs/developer-guide/component-reference/core-and-dispatcher",
+            "translations": {
+              "ar": "النواة والمرسل",
+              "bn-BD": "কোর এবং প্রেরণকারী",
+              "de": "Kern und Dispatcher",
+              "es": "Núcleo y despachador",
+              "fr": "Noyau et répartiteur",
+              "hi-IN": "कोर और डिस्पैचर",
+              "id-ID": "Inti dan operator",
+              "it": "Nucleo e dispatcher",
+              "ja": "コアとディスパッチャ",
+              "ko": "코어 및 디스패처",
+              "pt-BR": "Núcleo e dispatcher",
+              "pt-PT": "Núcleo e dispatcher",
+              "ru": "Ядро и диспетчер",
+              "tr-TR": "Çekirdek ve dağıtıcı",
+              "ur-PK": "کور اور ڈسپیچر",
+              "vi-VN": "Lõi và bộ điều phối",
+              "zh-CN": "核心与调度器"
+            }
           },
           {
-            "slug": "docs/developer-guide/component-reference/providers-and-services"
+            "slug": "docs/developer-guide/component-reference/providers-and-services",
+            "translations": {
+              "ar": "مقدمو الخدمات والخدمات",
+              "bn-BD": "প্রদানকারী এবং পরিষেবা",
+              "de": "Anbieter und Dienstleistungen",
+              "es": "Proveedores y servicios",
+              "fr": "Fournisseurs et services",
+              "hi-IN": "प्रदाता और सेवाएँ",
+              "id-ID": "Penyedia dan layanan",
+              "it": "Fornitori e servizi",
+              "ja": "プロバイダーとサービス",
+              "ko": "제공자 및 서비스",
+              "pt-BR": "Provedores e serviços",
+              "pt-PT": "Provedores e serviços",
+              "ru": "Поставщики и услуги",
+              "tr-TR": "Sağlayıcılar ve hizmetler",
+              "ur-PK": "فراہم کنندگان اور خدمات",
+              "vi-VN": "Nhà cung cấp và dịch vụ",
+              "zh-CN": "供应商和服务"
+            }
           },
           {
-            "slug": "docs/developer-guide/component-reference/ui-components"
+            "slug": "docs/developer-guide/component-reference/ui-components",
+            "translations": {
+              "ar": "UI components",
+              "bn-BD": "UI উপাদান",
+              "de": "UI-Komponenten",
+              "es": "Componentes de la interfaz de usuario",
+              "fr": "Composants d'interface utilisateur",
+              "hi-IN": "यूआई घटक",
+              "id-ID": "UI components",
+              "it": "Componenti dell'interfaccia utente",
+              "ja": "UIコンポーネント",
+              "ko": "UI 구성 요소",
+              "pt-BR": "Componentes de UI",
+              "pt-PT": "Componentes de UI",
+              "ru": "Компоненты пользовательского интерфейса",
+              "tr-TR": "Kullanıcı arayüzü bileşenleri",
+              "ur-PK": "UI اجزاء",
+              "vi-VN": "UI components",
+              "zh-CN": "用户界面组件"
+            }
           },
           {
-            "slug": "docs/developer-guide/component-reference/integrations"
+            "slug": "docs/developer-guide/component-reference/integrations",
+            "translations": {
+              "ar": "Integrations",
+              "bn-BD": "ইন্টিগ্রেশন",
+              "de": "Integrationen",
+              "es": "Integraciones",
+              "fr": "Intégrations",
+              "hi-IN": "एकीकरण",
+              "id-ID": "Integrations",
+              "it": "Integrazioni",
+              "ja": "統合",
+              "ko": "통합",
+              "pt-BR": "Integrações",
+              "pt-PT": "Integrações",
+              "ru": "Интеграции",
+              "tr-TR": "Entegrasyonları",
+              "ur-PK": "انضمام",
+              "vi-VN": "Integrations",
+              "zh-CN": "集成"
+            }
           },
           {
-            "slug": "docs/developer-guide/component-reference/assets-and-packages"
+            "slug": "docs/developer-guide/component-reference/assets-and-packages",
+            "translations": {
+              "ar": "الأصول والحزم",
+              "bn-BD": "সম্পদ এবং প্যাকেজ",
+              "de": "Vermögenswerte und Pakete",
+              "es": "Activos y paquetes",
+              "fr": "Actifs et packages",
+              "hi-IN": "संपत्ति और पैकेज",
+              "id-ID": "Aset dan paket",
+              "it": "Attività e pacchetti",
+              "ja": "アセットとパッケージ",
+              "ko": "자산 및 패키지",
+              "pt-BR": "Assets e pacotes",
+              "pt-PT": "Assets e pacotes",
+              "ru": "Активы и пакеты",
+              "tr-TR": "Varlıklar ve paketler",
+              "ur-PK": "اثاثے اور پیکجز",
+              "vi-VN": "Tài sản và gói",
+              "zh-CN": "资产和包"
+            }
           }
         ],
         "translations": {
-          "pt-BR": "Referência de componentes"
+          "pt-BR": "Referência de componentes",
+          "pt-PT": "Referência de componentes",
+          "es": "Referencia de componentes",
+          "fr": "Référence des composants",
+          "it": "Riferimento dei componenti",
+          "zh-CN": "组件参考",
+          "ja": "コンポーネントリファレンス",
+          "de": "Komponentenreferenz",
+          "ru": "Справочник компонентов",
+          "ko": "구성 요소 참조",
+          "hi-IN": "घटक संदर्भ",
+          "ar": "مرجع المكونات",
+          "bn-BD": "উপাদান রেফারেন্স",
+          "id-ID": "Referensi komponen",
+          "ur-PK": "اجزاء کا حوالہ",
+          "vi-VN": "Tham khảo thành phần",
+          "tr-TR": "Bileşen referansı"
         }
       },
       {
         "label": "Development",
         "items": [
           {
-            "slug": "docs/developer-guide/development/environment"
+            "slug": "docs/developer-guide/development/environment",
+            "translations": {
+              "ar": "Development environment",
+              "bn-BD": "উন্নয়ন পরিবেশ",
+              "de": "Entwicklungsumgebung",
+              "es": "Entorno de desarrollo",
+              "fr": "Environnement de développement",
+              "hi-IN": "विकास वातावरण",
+              "id-ID": "Lingkungan pengembangan",
+              "it": "Ambiente di sviluppo",
+              "ja": "開発環境",
+              "ko": "개발 환경",
+              "pt-BR": "Ambiente de desenvolvimento",
+              "pt-PT": "Ambiente de desenvolvimento",
+              "ru": "Среда разработки",
+              "tr-TR": "Geliştirme ortamı",
+              "ur-PK": "ترقیاتی ماحول",
+              "vi-VN": "Môi trường phát triển",
+              "zh-CN": "开发环境"
+            }
           },
           {
-            "slug": "docs/developer-guide/development/contributing"
+            "slug": "docs/developer-guide/development/contributing",
+            "translations": {
+              "ar": "المساهمة",
+              "bn-BD": "অবদান",
+              "de": "Beitragend",
+              "es": "Contribuyendo",
+              "fr": "Contribuer",
+              "hi-IN": "योगदान दे रहा है",
+              "id-ID": "Berkontribusi",
+              "it": "Contribuendo",
+              "ja": "貢献する",
+              "ko": "기여하는",
+              "pt-BR": "Contribuição",
+              "pt-PT": "Contribuição",
+              "ru": "Вклад",
+              "tr-TR": "Katkıda Bulunmak",
+              "ur-PK": "تعاون کر رہا ہے۔",
+              "vi-VN": "Contributing",
+              "zh-CN": "贡献"
+            }
           },
           {
-            "slug": "docs/developer-guide/development/translations"
+            "slug": "docs/developer-guide/development/translations",
+            "translations": {
+              "ar": "Translations",
+              "bn-BD": "অনুবাদ",
+              "de": "Übersetzungen",
+              "es": "Traducciones",
+              "fr": "Traductions",
+              "hi-IN": "अनुवाद",
+              "id-ID": "Translations",
+              "it": "Traduzioni",
+              "ja": "翻訳",
+              "ko": "번역",
+              "pt-BR": "Traduções",
+              "pt-PT": "Traduções",
+              "ru": "Переводы",
+              "tr-TR": "Çevirileri",
+              "ur-PK": "ترجمہ",
+              "vi-VN": "Translations",
+              "zh-CN": "翻译"
+            }
           },
           {
-            "slug": "docs/developer-guide/development/packaging"
+            "slug": "docs/developer-guide/development/packaging",
+            "translations": {
+              "ar": "التعبئة والتغليف",
+              "bn-BD": "প্যাকেজিং",
+              "de": "Verpackung",
+              "es": "Empaque",
+              "fr": "Emballage",
+              "hi-IN": "पैकेजिंग",
+              "id-ID": "Packaging",
+              "it": "Confezionamento",
+              "ja": "包装",
+              "ko": "포장",
+              "pt-BR": "Empacotamento",
+              "pt-PT": "Empacotamento",
+              "ru": "Упаковка",
+              "tr-TR": "Paketleme",
+              "ur-PK": "پیکیجنگ",
+              "vi-VN": "Packaging",
+              "zh-CN": "包装"
+            }
           }
         ],
         "translations": {
-          "pt-BR": "Desenvolvimento"
+          "pt-BR": "Desenvolvimento",
+          "pt-PT": "Desenvolvimento",
+          "es": "Desarrollo",
+          "fr": "Développement",
+          "it": "Sviluppo",
+          "zh-CN": "开发",
+          "ja": "開発",
+          "de": "Entwicklung",
+          "ru": "Разработка",
+          "ko": "개발",
+          "hi-IN": "विकास",
+          "ar": "التطوير",
+          "bn-BD": "উন্নয়ন",
+          "id-ID": "Pengembangan",
+          "ur-PK": "ترقی",
+          "vi-VN": "Phát triển",
+          "tr-TR": "Geliştirme"
         }
       }
     ],
     "collapsed": true,
     "translations": {
-      "pt-BR": "Guia do desenvolvedor"
+      "pt-BR": "Guia do desenvolvedor",
+      "pt-PT": "Guia do programador",
+      "es": "Guía del desarrollador",
+      "fr": "Guide du développeur",
+      "it": "Guida per sviluppatori",
+      "zh-CN": "开发者指南",
+      "ja": "開発者ガイド",
+      "de": "Entwicklerhandbuch",
+      "ru": "Руководство разработчика",
+      "ko": "개발자 안내서",
+      "hi-IN": "डेवलपर मार्गदर्शिका",
+      "ar": "دليل المطور",
+      "bn-BD": "ডেভেলপার নির্দেশিকা",
+      "id-ID": "Panduan pengembang",
+      "ur-PK": "ڈیولپر کی رہنما کتاب",
+      "vi-VN": "Hướng dẫn nhà phát triển",
+      "tr-TR": "Geliştirici kılavuzu"
     }
   },
   {
-    "slug": "docs/license"
+    "slug": "docs/license",
+    "translations": {
+      "ar": "License",
+      "bn-BD": "লাইসেন্স",
+      "de": "Lizenz",
+      "es": "Licencia",
+      "fr": "Licence",
+      "hi-IN": "लाइसेंस",
+      "id-ID": "License",
+      "it": "Licenza",
+      "ja": "ライセンス",
+      "ko": "라이선스",
+      "pt-BR": "Licença",
+      "pt-PT": "Licença",
+      "ru": "Лицензия",
+      "tr-TR": "Lisansı",
+      "ur-PK": "لائسنس",
+      "vi-VN": "License",
+      "zh-CN": "许可证"
+    }
   }
 ]
