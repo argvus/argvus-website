@@ -244,10 +244,8 @@ body::before {
   width: min(15rem, calc(100vw - 2rem));
   overflow: hidden;
   border: 1px solid var(--sl-color-hairline-light);
-  background: var(--sl-color-bg-nav);
+  background: var(--sl-color-bg);
   box-shadow: var(--sl-shadow-lg);
-  backdrop-filter: blur(18px) saturate(135%);
-  -webkit-backdrop-filter: blur(18px) saturate(135%);
 }
 
 .docs-language-search {
@@ -420,6 +418,15 @@ site-search input:focus,
 
 .sidebar-content {
   scrollbar-color: var(--argvus-accent) transparent;
+}
+
+@media (max-width: 50rem) {
+  /* The sidebar is an overlay on mobile, so its surface must be fully opaque. */
+  .sidebar-pane {
+    background: var(--sl-color-bg) !important;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.35);
+    isolation: isolate;
+  }
 }
 
 /* Collapse/expand-all toggle above the sidebar groups (src/components/Sidebar.astro). */
@@ -1103,5 +1110,184 @@ header.header starlight-lang-select .caret {
     width: 2.5rem !important;
     padding-inline: 1.3rem !important;
     color: transparent;
+  }
+}
+
+/* Compact mobile docs navbar: keep search and the main display controls reachable. */
+@media (max-width: 50rem) {
+  header.header > .header {
+    justify-content: flex-start;
+    gap: 0.35rem;
+  }
+
+  header.header .title-wrapper {
+    width: 2.5rem;
+    flex: 0 0 2.5rem;
+  }
+
+  header.header .argvus-docs-brand {
+    width: 2.5rem;
+    justify-content: center;
+    gap: 0;
+    padding: 0;
+  }
+
+  header.header .argvus-docs-brand .brand-logotype {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  header.header > .header > .sl-flex.print\:hidden:not(.right-group) {
+    width: 2.5rem;
+    flex: 0 0 2.5rem;
+    justify-content: center;
+  }
+
+  header.header site-search {
+    width: 2.5rem;
+  }
+
+  header.header site-search > button {
+    width: 2.5rem;
+    min-height: 2.5rem;
+    justify-content: center;
+    padding: 0;
+  }
+
+  header.header site-search > button > span,
+  header.header site-search > button > kbd {
+    display: none !important;
+  }
+
+  header.header > .header > .right-group {
+    display: flex !important;
+    flex: 0 0 auto;
+    gap: 0.25rem;
+    min-width: 0;
+    margin-inline-start: auto;
+  }
+
+  header.header .social-icons {
+    display: none;
+  }
+
+  header.header .right-group starlight-version-select,
+  header.header .right-group starlight-theme-select,
+  header.header .right-group .docs-language-picker {
+    width: 2.5rem;
+    flex: 0 0 2.5rem;
+  }
+
+  header.header starlight-version-select label,
+  header.header starlight-theme-select label {
+    width: 2.5rem;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    justify-content: center;
+    padding: 0;
+  }
+
+  header.header starlight-version-select select,
+  header.header starlight-theme-select select {
+    width: 2.5rem !important;
+    padding-inline: 1.25rem !important;
+  }
+
+  header.header starlight-version-select .caret-icon,
+  header.header starlight-theme-select .caret {
+    display: none;
+  }
+
+  header.header starlight-version-select .label-icon,
+  header.header starlight-theme-select .label-icon {
+    inset-inline-start: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  header.header .docs-language-menu > summary {
+    width: 2.5rem;
+    height: 2.5rem;
+    min-height: 2.5rem;
+    gap: 0;
+    padding: 0;
+  }
+
+  header.header .docs-language-menu > summary svg {
+    display: none;
+  }
+
+  header.header .docs-language-popover {
+    width: min(
+      16rem,
+      calc(100vw - var(--sl-menu-button-size) - var(--sl-nav-pad-x) - var(--sl-nav-pad-x) - var(--sl-nav-pad-x))
+    );
+    max-height: calc(100dvh - var(--sl-nav-height) - 1rem);
+    display: flex;
+    flex-direction: column;
+  }
+
+  header.header .docs-language-options {
+    min-height: 0;
+    max-height: none;
+    flex: 1 1 auto;
+    overflow-y: auto;
+  }
+
+  nav.sidebar > .sl-menu-button {
+    border: 1px solid var(--sl-color-hairline-light);
+    border-radius: 3px;
+    background: var(--argvus-panel-raised);
+    color: var(--argvus-accent-high);
+    box-shadow: var(--sl-shadow-md);
+  }
+
+  nav.sidebar > .sl-menu-button:hover,
+  nav.sidebar > .sl-menu-button:focus-visible {
+    border-color: var(--argvus-accent);
+    background: var(--argvus-accent-soft);
+    color: var(--sl-color-text-accent);
+  }
+
+  nav.sidebar > .sl-menu-button:focus-visible {
+    outline: 2px solid var(--argvus-accent);
+    outline-offset: 2px;
+  }
+}
+
+@media (max-width: 22rem) {
+  header.header > .header {
+    gap: 0.2rem;
+  }
+
+  header.header .title-wrapper,
+  header.header .argvus-docs-brand,
+  header.header > .header > .sl-flex.print\:hidden:not(.right-group),
+  header.header site-search,
+  header.header site-search > button,
+  header.header .right-group starlight-version-select,
+  header.header .right-group starlight-theme-select,
+  header.header .right-group .docs-language-picker,
+  header.header starlight-version-select label,
+  header.header starlight-theme-select label,
+  header.header starlight-version-select select,
+  header.header starlight-theme-select select {
+    width: 2.25rem !important;
+    min-width: 2.25rem;
+    flex-basis: 2.25rem;
+  }
+
+  header.header .argvus-docs-brand .brand-logotype {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  header.header .right-group {
+    gap: 0.15rem !important;
+  }
+}
+
+@media (max-width: 20rem) {
+  header.header > .header > .sl-flex.print\:hidden:not(.right-group) {
+    display: none;
   }
 }

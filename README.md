@@ -113,6 +113,7 @@ Post URLs use the same locale codes as the site, for example
 The build removes generated version snapshots before and after the Astro build.
 Do not edit generated version directories as if they were the current source.
 
-The build also creates `dist/sitemap.xml` from Astro's sitemap index. Submit
-`https://argvus.github.io/sitemap.xml` to Google Search Console; the index points
-to the generated sitemap files, such as `sitemap-0.xml`.
+The build publishes a single `dist/sitemap.xml` containing the site's URLs.
+Submit `https://argvus.github.io/sitemap.xml` to Google Search Console. If the
+site ever grows beyond the sitemap protocol's 50,000-URL limit, the build will
+use `sitemap.xml` as an index for the required sitemap files.
