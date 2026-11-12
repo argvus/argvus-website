@@ -137,6 +137,25 @@
   font-size: 1.15rem;
 }
 
+.news-author {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3em;
+  margin: -4px 0 22px;
+  color: var(--lp-fg-muted);
+  font-size: 0.9rem;
+}
+
+.news-author a {
+  color: var(--lp-accent-high);
+  text-underline-offset: 0.15em;
+}
+
+.news-author a:hover,
+.news-author a:focus-visible {
+  color: var(--lp-accent-solid);
+}
+
 .news-byline {
   display: flex;
   flex-wrap: wrap;
