@@ -8,8 +8,6 @@ date: 2026-11-11
 tags: ["welcome", "ARGVUS", "release", "0.1.0"]
 ---
 
-# Welcome to ARGVUS
-
 Today, we are introducing **ARGVUS**: a modular desktop environment for **Arch Linux**, built for **Wayland** and powered by **Hyprland**.
 
 ARGVUS brings the parts of a Linux desktop together: login and session startup, windows and workspaces, a taskbar and quick-control panel, settings, themes, notifications, displays, power, networking and everyday applications. These parts are organized as focused packages that share a common configuration model, so the desktop feels like one system without being one monolithic program.

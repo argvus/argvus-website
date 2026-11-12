@@ -12,7 +12,6 @@ tags:
   - 0.1.0
 ---
 
-# ARGVUS'a Hoş Geldiniz
 
 Bugün **ARGVUS**'u tanıtıyoruz: **Arch Linux** için tasarlanmış, **Wayland** üzerinde çalışan ve **Hyprland** tarafından desteklenen modüler bir masaüstü ortamı.
 

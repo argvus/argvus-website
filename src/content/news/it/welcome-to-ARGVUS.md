@@ -12,7 +12,6 @@ tags:
   - 0.1.0
 ---
 
-# Benvenuti in ARGVUS
 
 Oggi presentiamo **ARGVUS**: un ambiente desktop modulare per **Arch Linux**, progettato per **Wayland** e basato su **Hyprland**.
 

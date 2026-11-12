@@ -12,7 +12,6 @@ tags:
   - 0.1.0
 ---
 
-# ARGVUSへようこそ
 
 本日、**ARGVUS**をご紹介します。**Arch Linux**向けに、**Wayland**上で**Hyprland**を採用したモジュール型デスクトップ環境です。
 

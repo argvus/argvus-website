@@ -12,7 +12,6 @@ tags:
   - 0.1.0
 ---
 
-# ARGVUS를 소개합니다
 
 오늘 **ARGVUS**를 소개합니다. **Arch Linux**를 위한 모듈형 데스크톱 환경으로, **Wayland**용으로 만들어지고 **Hyprland**를 기반으로 합니다.
 

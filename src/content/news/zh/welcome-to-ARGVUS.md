@@ -12,7 +12,6 @@ tags:
   - 0.1.0
 ---
 
-# 欢迎使用 ARGVUS
 
 今天，我们向大家介绍 **ARGVUS**：一款面向 **Arch Linux**、为 **Wayland** 打造并由 **Hyprland** 驱动的模块化桌面环境。
 

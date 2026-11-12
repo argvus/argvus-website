@@ -12,7 +12,6 @@ tags:
   - 0.1.0
 ---
 
-# Chào mừng đến với ARGVUS
 
 Hôm nay, chúng tôi giới thiệu **ARGVUS**: một môi trường desktop mô-đun dành cho **Arch Linux**, được xây dựng cho **Wayland** và vận hành bằng **Hyprland**.
 

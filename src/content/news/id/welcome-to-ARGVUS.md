@@ -12,7 +12,6 @@ tags:
   - 0.1.0
 ---
 
-# Selamat Datang di ARGVUS
 
 Hari ini kami memperkenalkan **ARGVUS**: lingkungan desktop modular untuk **Arch Linux**, dirancang untuk **Wayland** dan didukung oleh **Hyprland**.
 
