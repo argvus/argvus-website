@@ -3,6 +3,11 @@ import { Image } from 'astro:assets'
 import codexImage from '../images/ai-agents/codex.png'
 import claudeImage from '../images/ai-agents/claude.svg'
 import opencodeImage from '../images/ai-agents/opencode.svg'
+import antigravityImage from '../images/ai-agents/antigravity.svg'
+import qwenImage from '../images/ai-agents/qwen.svg'
+import hermesImage from '../images/ai-agents/hermes.svg'
+import cursorImage from '../images/ai-agents/cursor.svg'
+import kimiImage from '../images/ai-agents/kimi.svg'
 import siteTranslations from '../i18n/site-locales.json'
 import { adaptEuropeanPortuguese } from '../lib/i18n/portuguese.ts'
 
@@ -24,6 +29,9 @@ const copy = isPT ? {
   codex: 'O agente de programação da OpenAI, acessível pelo lançador e pronto para abrir no terminal do seu desktop.',
   claude: 'O agente da Anthropic, com instalação no seu usuário pelo mise quando você o abrir pela primeira vez.',
   opencode: 'O agente de código aberto, integrado ao mesmo fluxo de seleção e abertura dos demais agentes.',
+  antigravity: 'O ambiente de desenvolvimento agentivo do Google, com agentes que planejam e executam tarefas de desenvolvimento.',
+  qwen: 'Agente de programação de código aberto da Qwen, disponível no terminal e compatível com diferentes provedores e modelos.',
+  hermes: 'Agente de IA de código aberto da Nous Research, projetado para uso no terminal.', cursor: 'Agente de programação da Cursor para trabalhar com código pelo terminal.', kimi: 'Agente de programação da Kimi para desenvolvimento assistido no terminal.',
   packaged: 'Instalado com argvus-ai',
   onDemand: 'Instalação no primeiro uso',
   upstream: 'Conheça o agente',
@@ -34,6 +42,8 @@ const copy = isPT ? {
   codexAlt: 'Marca da OpenAI, criadora do Codex',
   claudeAlt: 'Marca do Claude',
   opencodeAlt: 'Marca do OpenCode',
+  antigravityAlt: 'Marca do Google Antigravity',
+  qwenAlt: 'Marca da Qwen', hermesAlt: 'Marca do Hermes', cursorAlt: 'Marca da Cursor', kimiAlt: 'Marca da Kimi',
 } : {
   eyebrow: 'AI Agents',
   title: 'Your agents.',
@@ -45,6 +55,9 @@ const copy = isPT ? {
   codex: 'OpenAI’s coding agent, available from the launcher and ready to open in your desktop’s native terminal.',
   claude: 'Anthropic’s coding agent, installed in your user profile through mise when you open it for the first time.',
   opencode: 'The open-source coding agent, integrated with the same selection and launch flow as your other agents.',
+  antigravity: 'Google’s agent-first development environment, where agents plan and carry out software tasks.',
+  qwen: 'Qwen’s open-source coding agent for the terminal, compatible with multiple providers and models.',
+  hermes: 'Nous Research’s open-source AI agent, designed for terminal use.', cursor: 'Cursor’s coding agent for working with code from the terminal.', kimi: 'Kimi’s coding agent for AI-assisted development in the terminal.',
   packaged: 'Installed with argvus-ai',
   onDemand: 'Installed on first launch',
   upstream: 'Explore the agent',
@@ -55,12 +68,19 @@ const copy = isPT ? {
   codexAlt: 'OpenAI mark, the creators of Codex',
   claudeAlt: 'Claude mark',
   opencodeAlt: 'OpenCode mark',
+  antigravityAlt: 'Google Antigravity mark',
+  qwenAlt: 'Qwen mark', hermesAlt: 'Hermes mark', cursorAlt: 'Cursor mark', kimiAlt: 'Kimi mark',
 }
 if (lang !== 'en' && !lang.startsWith('pt-')) Object.assign(copy, siteTranslations[lang].agents)
 if (lang === 'pt-pt') adaptEuropeanPortuguese(copy)
 const agents = [
   { id: 'codex', name: 'Codex', provider: 'OpenAI', image: codexImage, alt: copy.codexAlt, text: copy.codex, status: copy.packaged, url: 'https://openai.com/codex/' },
   { id: 'claude', name: 'Claude Code', provider: 'Anthropic', image: claudeImage, alt: copy.claudeAlt, text: copy.claude, status: copy.onDemand, url: 'https://code.claude.com/docs/en/overview' },
+  { id: 'antigravity', name: 'Google Antigravity', provider: 'Google', image: antigravityImage, alt: copy.antigravityAlt, text: copy.antigravity, status: copy.upstream, url: 'https://antigravity.google/' },
+  { id: 'qwen', name: 'Qwen Code', provider: 'Qwen', image: qwenImage, alt: copy.qwenAlt, text: copy.qwen, status: copy.packaged, url: 'https://qwen.ai/qwencode' },
+  { id: 'hermes', name: 'Hermes', provider: 'Nous Research', image: hermesImage, alt: copy.hermesAlt, text: copy.hermes, url: 'https://hermes-agent.nousresearch.com/' },
+  { id: 'cursor', name: 'Cursor CLI', provider: 'Cursor', image: cursorImage, alt: copy.cursorAlt, text: copy.cursor, url: 'https://cursor.com/cli' },
+  { id: 'kimi', name: 'Kimi Code', provider: 'Kimi', image: kimiImage, alt: copy.kimiAlt, text: copy.kimi, url: 'https://code.kimi.com/' },
   { id: 'opencode', name: 'OpenCode', provider: isPT ? 'Código aberto' : lang !== 'en' && !lang.startsWith('pt-') ? siteTranslations[lang].agents.openSource : 'Open source', image: opencodeImage, alt: copy.opencodeAlt, text: copy.opencode, status: copy.packaged, url: 'https://opencode.ai/' },
 ]
 ---
@@ -124,7 +144,7 @@ const agents = [
   .ai-keys kbd { display: grid; place-items: center; min-width: 64px; height: 60px; padding: 0 1rem; border: 1px solid var(--lp-border-strong); border-bottom-width: 4px; background: var(--lp-panel-raised); color: var(--lp-fg); font: 500 1.25rem var(--lp-mono); }
   .ai-keys > span { color: var(--lp-fg-dim); }
   .ai-shortcut p { font-size: 0.8rem; color: var(--lp-fg-muted); margin: 0; }
-  .ai-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+  .ai-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 1.25rem; }
   .ai-card { min-width: 0; border: 1px solid var(--lp-border-strong); background: var(--lp-panel); display: flex; flex-direction: column; transition: border-color 180ms ease; }
   .ai-card:focus-within, .ai-card:hover { border-color: var(--lp-accent); }
   .ai-artwork { display: grid; place-items: center; position: relative; min-height: 230px; background: #f2f0eb; border-bottom: 1px solid var(--lp-border-strong); color: #4b4646; overflow: hidden; }
