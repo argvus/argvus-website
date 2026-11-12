@@ -260,7 +260,7 @@
       "footerDocsLinks": [
         {
           "label": "Introducción",
-          "href": "docs/introduction/"
+          "href": "docs/"
         },
         {
           "label": "Instalación",
@@ -381,7 +381,7 @@
       "docsLinks": [
         [
           "Introducción",
-          "docs/introduction/"
+          "docs/"
         ],
         [
           "Instalación",
@@ -719,7 +719,7 @@
       "footerDocsLinks": [
         {
           "label": "Introduction",
-          "href": "docs/introduction/"
+          "href": "docs/"
         },
         {
           "label": "Installation",
@@ -840,7 +840,7 @@
       "docsLinks": [
         [
           "Introduction",
-          "docs/introduction/"
+          "docs/"
         ],
         [
           "Installation",
@@ -1178,7 +1178,7 @@
       "footerDocsLinks": [
         {
           "label": "Introduzione",
-          "href": "docs/introduction/"
+          "href": "docs/"
         },
         {
           "label": "Installazione",
@@ -1299,7 +1299,7 @@
       "docsLinks": [
         [
           "Introduzione",
-          "docs/introduction/"
+          "docs/"
         ],
         [
           "Installazione",
@@ -1637,7 +1637,7 @@
       "footerDocsLinks": [
         {
           "label": "简介",
-          "href": "docs/introduction/"
+          "href": "docs/"
         },
         {
           "label": "安装",
@@ -1758,7 +1758,7 @@
       "docsLinks": [
         [
           "简介",
-          "docs/introduction/"
+          "docs/"
         ],
         [
           "安装",
@@ -2096,7 +2096,7 @@
       "footerDocsLinks": [
         {
           "label": "はじめに",
-          "href": "docs/introduction/"
+          "href": "docs/"
         },
         {
           "label": "インストール",
@@ -2217,7 +2217,7 @@
       "docsLinks": [
         [
           "はじめに",
-          "docs/introduction/"
+          "docs/"
         ],
         [
           "インストール",
@@ -2555,7 +2555,7 @@
       "footerDocsLinks": [
         {
           "label": "Einführung",
-          "href": "docs/introduction/"
+          "href": "docs/"
         },
         {
           "label": "Installation",
@@ -2676,7 +2676,7 @@
       "docsLinks": [
         [
           "Einführung",
-          "docs/introduction/"
+          "docs/"
         ],
         [
           "Installation",
@@ -3014,7 +3014,7 @@
       "footerDocsLinks": [
         {
           "label": "Введение",
-          "href": "docs/introduction/"
+          "href": "docs/"
         },
         {
           "label": "Установка",
@@ -3135,7 +3135,7 @@
       "docsLinks": [
         [
           "Введение",
-          "docs/introduction/"
+          "docs/"
         ],
         [
           "Установка",
@@ -3473,7 +3473,7 @@
       "footerDocsLinks": [
         {
           "label": "소개",
-          "href": "docs/introduction/"
+          "href": "docs/"
         },
         {
           "label": "설치",
@@ -3594,7 +3594,7 @@
       "docsLinks": [
         [
           "소개",
-          "docs/introduction/"
+          "docs/"
         ],
         [
           "설치",
@@ -3932,7 +3932,7 @@
       "footerDocsLinks": [
         {
           "label": "परिचय",
-          "href": "docs/introduction/"
+          "href": "docs/"
         },
         {
           "label": "स्थापना",
@@ -4053,7 +4053,7 @@
       "docsLinks": [
         [
           "परिचय",
-          "docs/introduction/"
+          "docs/"
         ],
         [
           "स्थापना",
@@ -4391,7 +4391,7 @@
       "footerDocsLinks": [
         {
           "label": "مقدمة",
-          "href": "docs/introduction/"
+          "href": "docs/"
         },
         {
           "label": "التثبيت",
@@ -4512,7 +4512,7 @@
       "docsLinks": [
         [
           "مقدمة",
-          "docs/introduction/"
+          "docs/"
         ],
         [
           "التثبيت",
@@ -4850,7 +4850,7 @@
       "footerDocsLinks": [
         {
           "label": "ভূমিকা",
-          "href": "docs/introduction/"
+          "href": "docs/"
         },
         {
           "label": "ইনস্টলেশন",
@@ -4971,7 +4971,7 @@
       "docsLinks": [
         [
           "ভূমিকা",
-          "docs/introduction/"
+          "docs/"
         ],
         [
           "ইনস্টলেশন",
@@ -5309,7 +5309,7 @@
       "footerDocsLinks": [
         {
           "label": "Pendahuluan",
-          "href": "docs/introduction/"
+          "href": "docs/"
         },
         {
           "label": "Instalasi",
@@ -5430,7 +5430,7 @@
       "docsLinks": [
         [
           "Pendahuluan",
-          "docs/introduction/"
+          "docs/"
         ],
         [
           "Instalasi",
@@ -5768,7 +5768,7 @@
       "footerDocsLinks": [
         {
           "label": "تعارف",
-          "href": "docs/introduction/"
+          "href": "docs/"
         },
         {
           "label": "تنصیب",
@@ -5889,7 +5889,7 @@
       "docsLinks": [
         [
           "تعارف",
-          "docs/introduction/"
+          "docs/"
         ],
         [
           "تنصیب",
@@ -6227,7 +6227,7 @@
       "footerDocsLinks": [
         {
           "label": "Giới thiệu",
-          "href": "docs/introduction/"
+          "href": "docs/"
         },
         {
           "label": "Cài đặt",
@@ -6348,7 +6348,7 @@
       "docsLinks": [
         [
           "Giới thiệu",
-          "docs/introduction/"
+          "docs/"
         ],
         [
           "Cài đặt",
@@ -6686,7 +6686,7 @@
       "footerDocsLinks": [
         {
           "label": "Giriş",
-          "href": "docs/introduction/"
+          "href": "docs/"
         },
         {
           "label": "Kurulum",
@@ -6807,7 +6807,7 @@
       "docsLinks": [
         [
           "Giriş",
-          "docs/introduction/"
+          "docs/"
         ],
         [
           "Kurulum",

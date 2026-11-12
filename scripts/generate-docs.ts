@@ -84,6 +84,14 @@ ${body}`
 
       writeFileSync(targetPath, markdown, 'utf-8')
       console.log(`Generated: ${entry.slug}`)
+
+      // Keep the introduction content available at the documentation root.
+      // The copied entry retains its locale prefix (for example `pt/docs`).
+      if (entry.slug.endsWith('/docs/introduction') || entry.slug === 'docs/introduction') {
+        const homePath = resolve(docsDir, `${entry.slug.replace(/introduction$/, 'index')}.md`)
+        writeFileSync(homePath, markdown, 'utf-8')
+        console.log(`Generated: ${entry.slug.replace(/introduction$/, 'index')}`)
+      }
     }
 
     console.log(`\n✓ Generated ${entries.length} documentation files`)
