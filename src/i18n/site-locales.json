@@ -455,7 +455,9 @@
       "codexAlt": "Marca OpenAI, los creadores del Codex",
       "claudeAlt": "Marca Claude",
       "opencodeAlt": "Marca OpenCode",
-      "openSource": "Código abierto"
+      "openSource": "Código abierto",
+      "gemini": "Agente de código abierto de Google que lleva Gemini al terminal.",
+      "geminiAlt": "Logotipo de Gemini CLI"
     }
   },
   "fr": {
@@ -914,7 +916,9 @@
       "codexAlt": "Marque OpenAI, les créateurs du Codex",
       "claudeAlt": "Marque Claude",
       "opencodeAlt": "Marque OpenCode",
-      "openSource": "Source ouverte"
+      "openSource": "Source ouverte",
+      "gemini": "Agent open source de Google qui apporte Gemini dans le terminal.",
+      "geminiAlt": "Logo de Gemini CLI"
     }
   },
   "it": {
@@ -1373,7 +1377,9 @@
       "codexAlt": "Marchio OpenAI, i creatori di Codex",
       "claudeAlt": "ClaudeMark",
       "opencodeAlt": "Marchio OpenCode",
-      "openSource": "Sorgente aperta"
+      "openSource": "Sorgente aperta",
+      "gemini": "Agente open source di Google che porta Gemini nel terminale.",
+      "geminiAlt": "Logo di Gemini CLI"
     }
   },
   "zh": {
@@ -1832,7 +1838,9 @@
       "codexAlt": "OpenAI 标记，Codex 的创建者",
       "claudeAlt": "克劳德·马克",
       "opencodeAlt": "OpenCode 标记",
-      "openSource": "开源"
+      "openSource": "开源",
+      "gemini": "Google 推出的开源代理，可在终端中使用 Gemini。",
+      "geminiAlt": "Gemini CLI 标志"
     }
   },
   "ja": {
@@ -2291,7 +2299,9 @@
       "codexAlt": "OpenAI マーク、Codex の作成者",
       "claudeAlt": "クロード・マーク",
       "opencodeAlt": "OpenCode マーク",
-      "openSource": "オープンソース"
+      "openSource": "オープンソース",
+      "gemini": "Gemini をターミナルで利用できる Google のオープンソースエージェントです。",
+      "geminiAlt": "Gemini CLI のロゴ"
     }
   },
   "de": {
@@ -2750,7 +2760,9 @@
       "codexAlt": "OpenAI-Marke, die Schöpfer von Codex",
       "claudeAlt": "Claude Mark",
       "opencodeAlt": "OpenCode-Markierung",
-      "openSource": "Open Source"
+      "openSource": "Open Source",
+      "gemini": "Googles Open-Source-Agent bringt Gemini direkt ins Terminal.",
+      "geminiAlt": "Gemini-CLI-Logo"
     }
   },
   "ru": {
@@ -3209,7 +3221,9 @@
       "codexAlt": "Знак OpenAI, создателей Кодекса",
       "claudeAlt": "Клод Марк",
       "opencodeAlt": "Знак OpenCode",
-      "openSource": "Открытый исходный код"
+      "openSource": "Открытый исходный код",
+      "gemini": "Открытый агент Google, который переносит Gemini прямо в терминал.",
+      "geminiAlt": "Логотип Gemini CLI"
     }
   },
   "ko": {
@@ -3668,7 +3682,9 @@
       "codexAlt": "OpenAI 마크, Codex의 창시자",
       "claudeAlt": "클로드 마크",
       "opencodeAlt": "OpenCode 마크",
-      "openSource": "오픈 소스"
+      "openSource": "오픈 소스",
+      "gemini": "터미널에서 Gemini를 사용할 수 있는 Google의 오픈소스 에이전트입니다.",
+      "geminiAlt": "Gemini CLI 로고"
     }
   },
   "hi": {
@@ -4127,7 +4143,9 @@
       "codexAlt": "ब्रांड OpenAI, Codex के निर्माता",
       "claudeAlt": "क्लाउड ब्रांड",
       "opencodeAlt": "ब्रांड OpenCode",
-      "openSource": "खुला स्रोत"
+      "openSource": "खुला स्रोत",
+      "gemini": "Google का ओपन-सोर्स एजेंट, जो Gemini को सीधे टर्मिनल में लाता है।",
+      "geminiAlt": "Gemini CLI लोगो"
     }
   },
   "ar": {
@@ -4586,7 +4604,9 @@
       "codexAlt": "العلامة التجارية OpenAI، منشئو Codex",
       "claudeAlt": "كلود براند",
       "opencodeAlt": "العلامة التجارية OpenCode",
-      "openSource": "مفتوح المصدر"
+      "openSource": "مفتوح المصدر",
+      "gemini": "وكيل Google مفتوح المصدر يتيح استخدام Gemini مباشرةً في الطرفية.",
+      "geminiAlt": "شعار Gemini CLI"
     }
   },
   "bn": {
@@ -5045,7 +5065,9 @@
       "codexAlt": "ব্র্যান্ড OpenAI, Codex-এর নির্মাতা",
       "claudeAlt": "ক্লদ ব্র্যান্ড",
       "opencodeAlt": "ব্র্যান্ড OpenCode",
-      "openSource": "ওপেন সোর্স"
+      "openSource": "ওপেন সোর্স",
+      "gemini": "Google-এর ওপেন-সোর্স এজেন্ট, যা Gemini-কে সরাসরি টার্মিনালে নিয়ে আসে।",
+      "geminiAlt": "Gemini CLI লোগো"
     }
   },
   "id": {
@@ -5504,7 +5526,9 @@
       "codexAlt": "Merek OpenAI, pencipta Codex",
       "claudeAlt": "Merek Claude",
       "opencodeAlt": "Merek OpenCode",
-      "openSource": "Sumber terbuka"
+      "openSource": "Sumber terbuka",
+      "gemini": "Agen sumber terbuka Google yang menghadirkan Gemini langsung ke terminal.",
+      "geminiAlt": "Logo Gemini CLI"
     }
   },
   "ur": {
@@ -5963,7 +5987,9 @@
       "codexAlt": "برانڈ OpenAI، Codex کے تخلیق کار",
       "claudeAlt": "کلاڈ برانڈ",
       "opencodeAlt": "برانڈ OpenCode",
-      "openSource": "اوپن سورس"
+      "openSource": "اوپن سورس",
+      "gemini": "گوگل کا اوپن سورس ایجنٹ جو Gemini کو براہ راست ٹرمینل میں لاتا ہے۔",
+      "geminiAlt": "Gemini CLI لوگو"
     }
   },
   "vi": {
@@ -6422,7 +6448,9 @@
       "codexAlt": "Thương hiệu OpenAI, người tạo ra Codex",
       "claudeAlt": "Thương hiệu Claude",
       "opencodeAlt": "Thương hiệu OpenCode",
-      "openSource": "Nguồn mở"
+      "openSource": "Nguồn mở",
+      "gemini": "Tác nhân mã nguồn mở của Google, đưa Gemini trực tiếp vào terminal.",
+      "geminiAlt": "Biểu trưng Gemini CLI"
     }
   },
   "tr": {
@@ -6881,7 +6909,9 @@
       "codexAlt": "Codex'nin yaratıcısı OpenAI markası",
       "claudeAlt": "Claude Markası",
       "opencodeAlt": "Marka OpenCode",
-      "openSource": "Açık kaynak"
+      "openSource": "Açık kaynak",
+      "gemini": "Gemini’yi doğrudan terminale getiren Google açık kaynaklı ajanı.",
+      "geminiAlt": "Gemini CLI logosu"
     }
   }
 }

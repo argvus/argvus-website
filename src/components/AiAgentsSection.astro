@@ -5,6 +5,7 @@ import claudeImage from '../images/ai-agents/claude.svg'
 import opencodeImage from '../images/ai-agents/opencode.svg'
 import antigravityImage from '../images/ai-agents/antigravity.svg'
 import qwenImage from '../images/ai-agents/qwen.svg'
+import geminiImage from '../images/ai-agents/gemini.svg'
 import hermesImage from '../images/ai-agents/hermes.svg'
 import cursorImage from '../images/ai-agents/cursor.svg'
 import kimiImage from '../images/ai-agents/kimi.svg'
@@ -31,6 +32,7 @@ const copy = isPT ? {
   opencode: 'O agente de código aberto, integrado ao mesmo fluxo de seleção e abertura dos demais agentes.',
   antigravity: 'O ambiente de desenvolvimento agentivo do Google, com agentes que planejam e executam tarefas de desenvolvimento.',
   qwen: 'Agente de programação de código aberto da Qwen, disponível no terminal e compatível com diferentes provedores e modelos.',
+  gemini: 'Agente de código aberto do Google que leva o Gemini diretamente ao terminal.', geminiAlt: 'Logotipo do Gemini CLI',
   hermes: 'Agente de IA de código aberto da Nous Research, projetado para uso no terminal.', cursor: 'Agente de programação da Cursor para trabalhar com código pelo terminal.', kimi: 'Agente de programação da Kimi para desenvolvimento assistido no terminal.',
   packaged: 'Instalado com argvus-ai',
   onDemand: 'Instalação no primeiro uso',
@@ -57,6 +59,7 @@ const copy = isPT ? {
   opencode: 'The open-source coding agent, integrated with the same selection and launch flow as your other agents.',
   antigravity: 'Google’s agent-first development environment, where agents plan and carry out software tasks.',
   qwen: 'Qwen’s open-source coding agent for the terminal, compatible with multiple providers and models.',
+  gemini: 'Google’s open-source agent that brings Gemini directly to the terminal.', geminiAlt: 'Gemini CLI logo',
   hermes: 'Nous Research’s open-source AI agent, designed for terminal use.', cursor: 'Cursor’s coding agent for working with code from the terminal.', kimi: 'Kimi’s coding agent for AI-assisted development in the terminal.',
   packaged: 'Installed with argvus-ai',
   onDemand: 'Installed on first launch',
@@ -78,6 +81,7 @@ const agents = [
   { id: 'claude', name: 'Claude Code', provider: 'Anthropic', image: claudeImage, alt: copy.claudeAlt, text: copy.claude, status: copy.onDemand, url: 'https://code.claude.com/docs/en/overview' },
   { id: 'antigravity', name: 'Google Antigravity', provider: 'Google', image: antigravityImage, alt: copy.antigravityAlt, text: copy.antigravity, status: copy.upstream, url: 'https://antigravity.google/' },
   { id: 'qwen', name: 'Qwen Code', provider: 'Qwen', image: qwenImage, alt: copy.qwenAlt, text: copy.qwen, status: copy.packaged, url: 'https://qwen.ai/qwencode' },
+  { id: 'gemini', name: 'Gemini CLI', provider: 'Google', image: geminiImage, alt: copy.geminiAlt, text: copy.gemini, status: copy.packaged, url: 'https://github.com/google-gemini/gemini-cli' },
   { id: 'hermes', name: 'Hermes', provider: 'Nous Research', image: hermesImage, alt: copy.hermesAlt, text: copy.hermes, url: 'https://hermes-agent.nousresearch.com/' },
   { id: 'cursor', name: 'Cursor CLI', provider: 'Cursor', image: cursorImage, alt: copy.cursorAlt, text: copy.cursor, url: 'https://cursor.com/cli' },
   { id: 'kimi', name: 'Kimi Code', provider: 'Kimi', image: kimiImage, alt: copy.kimiAlt, text: copy.kimi, url: 'https://code.kimi.com/' },
