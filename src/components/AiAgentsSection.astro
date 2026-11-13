@@ -148,8 +148,8 @@ const agents = [
   .ai-keys kbd { display: grid; place-items: center; min-width: 64px; height: 60px; padding: 0 1rem; border: 1px solid var(--lp-border-strong); border-bottom-width: 4px; background: var(--lp-panel-raised); color: var(--lp-fg); font: 500 1.25rem var(--lp-mono); }
   .ai-keys > span { color: var(--lp-fg-dim); }
   .ai-shortcut p { font-size: 0.8rem; color: var(--lp-fg-muted); margin: 0; }
-  .ai-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 1.25rem; }
-  .ai-card { min-width: 0; border: 1px solid var(--lp-border-strong); background: var(--lp-panel); display: flex; flex-direction: column; transition: border-color 180ms ease; }
+  .ai-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.25rem; }
+  .ai-card { flex: 0 1 calc((100% - 3.75rem) / 4); min-width: min(100%, 260px); border: 1px solid var(--lp-border-strong); background: var(--lp-panel); display: flex; flex-direction: column; transition: border-color 180ms ease; }
   .ai-card:focus-within, .ai-card:hover { border-color: var(--lp-accent); }
   .ai-artwork { display: grid; place-items: center; position: relative; min-height: 230px; background: #f2f0eb; border-bottom: 1px solid var(--lp-border-strong); color: #4b4646; overflow: hidden; }
   .ai-card-codex .ai-artwork { background: #fff; }
@@ -182,7 +182,8 @@ const agents = [
     .ai-card-body { padding: 1.25rem; }
   }
   @media (max-width: 700px) {
-    .ai-grid { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+    .ai-grid { gap: 1.5rem; }
+    .ai-card { flex-basis: 100%; }
     .ai-artwork { min-height: 210px; }
     .ai-shortcut { width: 100%; min-width: 0; }
     .ai-heading { margin-bottom: 2rem; }
