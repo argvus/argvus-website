@@ -2,7 +2,7 @@ export const sidebarConfig = [
   {
     "slug": "docs/introduction",
     "translations": {
-      "ar": "Introduction",
+      "ar": "مقدمة",
       "bn-BD": "ভূমিকা",
       "de": "Einführung",
       "es": "Introducción",
@@ -17,7 +17,7 @@ export const sidebarConfig = [
       "ru": "Введение",
       "tr-TR": "Giriş",
       "ur-PK": "تعارف",
-      "vi-VN": "Introduction",
+      "vi-VN": "Giới thiệu",
       "zh-CN": "介绍"
     }
   },
@@ -73,13 +73,13 @@ export const sidebarConfig = [
         "slug": "docs/getting-started/installation",
         "label": "Installation overview",
         "translations": {
-          "ar": "Installation",
+          "ar": "التثبيت",
           "bn-BD": "ইনস্টলেশন",
           "de": "Installation",
           "es": "Instalación",
           "fr": "Installation",
           "hi-IN": "इंस्टालेशन",
-          "id-ID": "Installation",
+          "id-ID": "Instalasi",
           "it": "Installazione",
           "ja": "インストール",
           "ko": "설치",
@@ -88,20 +88,20 @@ export const sidebarConfig = [
           "ru": "Установка",
           "tr-TR": "Kurulumu",
           "ur-PK": "انسٹالیشن",
-          "vi-VN": "Installation",
+          "vi-VN": "Cài đặt",
           "zh-CN": "安装"
         }
       },
       {
         "slug": "docs/getting-started/installation/requirements",
         "translations": {
-          "ar": "Requirements",
+          "ar": "المتطلبات",
           "bn-BD": "প্রয়োজনীয়তা",
           "de": "Anforderungen",
           "es": "Requisitos",
           "fr": "Exigences",
           "hi-IN": "आवश्यकताएँ",
-          "id-ID": "Requirements",
+          "id-ID": "Persyaratan",
           "it": "Requisiti",
           "ja": "要件",
           "ko": "요구 사항",
@@ -110,7 +110,7 @@ export const sidebarConfig = [
           "ru": "Требования",
           "tr-TR": "Gereksinimleri",
           "ur-PK": "کے تقاضے",
-          "vi-VN": "Requirements",
+          "vi-VN": "Yêu cầu",
           "zh-CN": "要求"
         }
       },
@@ -246,11 +246,11 @@ export const sidebarConfig = [
               "ja": "デスクトップ",
               "ko": "데스크탑",
               "pt-BR": "Visão geral",
-              "pt-PT": "Desktop",
+              "pt-PT": "Ambiente de trabalho",
               "ru": "Рабочий стол",
               "tr-TR": "Masaüstü",
               "ur-PK": "ڈیسک ٹاپ",
-              "vi-VN": "Desktop",
+              "vi-VN": "Máy tính để bàn",
               "zh-CN": "桌面"
             }
           },
@@ -281,22 +281,22 @@ export const sidebarConfig = [
             "slug": "docs/argvus-taskbar/widgets",
             "label": "Taskbar widgets",
             "translations": {
-              "ar": "Widgets",
-              "bn-BD": "Widgets",
+              "ar": "الحاجيات",
+              "bn-BD": "উইজেট",
               "de": "Widgets",
-              "es": "Widgets",
+              "es": "widgets",
               "fr": "Widgets",
-              "hi-IN": "Widgets",
-              "id-ID": "Widgets",
+              "hi-IN": "विजेट",
+              "id-ID": "Widget",
               "it": "Widget",
               "ja": "ウィジェット",
               "ko": "위젯",
               "pt-BR": "Widgets da barra de tarefas",
               "pt-PT": "Widgets",
               "ru": "Виджеты",
-              "tr-TR": "Widgets",
-              "ur-PK": "Widgets",
-              "vi-VN": "Widgets",
+              "tr-TR": "Widget'lar",
+              "ur-PK": "وجیٹس",
+              "vi-VN": "Widget",
               "zh-CN": "小工具"
             }
           },
@@ -541,20 +541,20 @@ export const sidebarConfig = [
               "ar": "الطرفية",
               "bn-BD": "টার্মিনাল",
               "de": "Terminal",
-              "es": "Terminal",
               "fr": "Terminal",
               "hi-IN": "टर्मिनल",
-              "id-ID": "Terminal",
               "it": "Terminale",
               "ja": "ターミナル",
               "ko": "터미널",
-              "pt-BR": "Terminal",
-              "pt-PT": "Terminal",
               "ru": "Терминал",
               "tr-TR": "Terminal",
               "ur-PK": "ٹرمینل",
               "vi-VN": "Thiết bị đầu cuối",
-              "zh-CN": "终端"
+              "zh-CN": "终端",
+              "pt-BR": "Terminal",
+              "pt-PT": "Terminal",
+              "es": "Terminal",
+              "id-ID": "Terminal"
             }
           },
           {
@@ -595,11 +595,11 @@ export const sidebarConfig = [
               "ja": "ARGVUSフォーカス",
               "ko": "아르거버스 포커스",
               "pt-BR": "ARGVUS Focus",
-              "pt-PT": "ARGVUS Focus",
+              "pt-PT": "ARGVUS Foco",
               "ru": "ARGVUS Фокус",
               "tr-TR": "ARGVUS Odak",
               "ur-PK": "ARGVUS فوکس",
-              "vi-VN": "ARGVUS Focus",
+              "vi-VN": "ARGVUS",
               "zh-CN": "ARGVUS 焦点"
             }
           },
@@ -618,11 +618,11 @@ export const sidebarConfig = [
               "ja": "アルグヴス時計",
               "ko": "아르거버스 시계",
               "pt-BR": "ARGVUS Clock",
-              "pt-PT": "ARGVUS Clock",
+              "pt-PT": "Relógio ARGVUS",
               "ru": "Часы ARGVUS",
               "tr-TR": "ARGVUS Saati",
               "ur-PK": "ARGVUS گھڑی",
-              "vi-VN": "ARGVUS Clock",
+              "vi-VN": "Đồng hồ ARGVUS",
               "zh-CN": "ARGVUS 时钟"
             }
           },
@@ -1272,11 +1272,11 @@ export const sidebarConfig = [
               "ja": "ARGVUSフォーカス",
               "ko": "아르거버스 포커스",
               "pt-BR": "ARGVUS Focus",
-              "pt-PT": "ARGVUS Focus",
+              "pt-PT": "ARGVUS Foco",
               "ru": "ARGVUS Фокус",
               "tr-TR": "ARGVUS Odak",
               "ur-PK": "ARGVUS فوکس",
-              "vi-VN": "ARGVUS Focus",
+              "vi-VN": "ARGVUS",
               "zh-CN": "ARGVUS 焦点"
             }
           },
@@ -1330,13 +1330,13 @@ export const sidebarConfig = [
             "slug": "docs/components/argvus-accounts",
             "label": "User accounts",
             "translations": {
-              "ar": "Accounts",
+              "ar": "الحسابات",
               "bn-BD": "অ্যাকাউন্ট",
               "de": "Konten",
               "es": "Cuentas",
               "fr": "Comptes",
               "hi-IN": "खाते",
-              "id-ID": "Accounts",
+              "id-ID": "Akun",
               "it": "Conti",
               "ja": "アカウント",
               "ko": "계정",
@@ -1345,7 +1345,7 @@ export const sidebarConfig = [
               "ru": "Счета",
               "tr-TR": "Hesapları",
               "ur-PK": "اکاؤنٹس",
-              "vi-VN": "Accounts",
+              "vi-VN": "Tài khoản",
               "zh-CN": "账户"
             }
           },
@@ -1364,11 +1364,11 @@ export const sidebarConfig = [
               "ja": "アルグヴス時計",
               "ko": "아르거버스 시계",
               "pt-BR": "ARGVUS Clock",
-              "pt-PT": "ARGVUS Clock",
+              "pt-PT": "Relógio ARGVUS",
               "ru": "Часы ARGVUS",
               "tr-TR": "ARGVUS Saati",
               "ur-PK": "ARGVUS گھڑی",
-              "vi-VN": "ARGVUS Clock",
+              "vi-VN": "Đồng hồ ARGVUS",
               "zh-CN": "ARGVUS 时钟"
             }
           },
@@ -1481,7 +1481,7 @@ export const sidebarConfig = [
           "ru": "Ночной свет",
           "tr-TR": "Gece Lambası",
           "ur-PK": "نائٹ لائٹ",
-          "vi-VN": "Night Light",
+          "vi-VN": "Ánh sáng ban đêm",
           "zh-CN": "夜灯"
         }
       }
@@ -1568,7 +1568,7 @@ export const sidebarConfig = [
               "es": "Solución de problemas de instalación",
               "fr": "Dépannage de l'installation",
               "hi-IN": "इंस्टालेशन समस्या निवारण",
-              "id-ID": "Installation troubleshooting",
+              "id-ID": "Pemecahan masalah instalasi",
               "it": "Risoluzione dei problemi di installazione",
               "ja": "インストールのトラブルシューティング",
               "ko": "설치 문제 해결",
@@ -1623,7 +1623,7 @@ export const sidebarConfig = [
               "ru": "Отображение и устранение неполадок Hyprland",
               "tr-TR": "Ekran ve Hyprland sorunlarını giderme",
               "ur-PK": "ڈسپلے اور ہائپرلینڈ ٹربل شوٹنگ",
-              "vi-VN": "Display and Hyprland troubleshooting",
+              "vi-VN": "Khắc phục sự cố hiển thị và Hyprland",
               "zh-CN": "显示和 Hyprland 故障排除"
             }
           },
@@ -1745,13 +1745,13 @@ export const sidebarConfig = [
         "slug": "docs/components/argvus-accounts",
         "label": "User accounts",
         "translations": {
-          "ar": "Accounts",
+          "ar": "الحسابات",
           "bn-BD": "অ্যাকাউন্ট",
           "de": "Konten",
           "es": "Cuentas",
           "fr": "Comptes",
           "hi-IN": "खाते",
-          "id-ID": "Accounts",
+          "id-ID": "Akun",
           "it": "Conti",
           "ja": "アカウント",
           "ko": "계정",
@@ -1760,7 +1760,7 @@ export const sidebarConfig = [
           "ru": "Счета",
           "tr-TR": "Hesapları",
           "ur-PK": "اکاؤنٹس",
-          "vi-VN": "Accounts",
+          "vi-VN": "Tài khoản",
           "zh-CN": "账户"
         }
       },
@@ -2001,20 +2001,20 @@ export const sidebarConfig = [
           "ar": "الطرفية",
           "bn-BD": "টার্মিনাল",
           "de": "Terminal",
-          "es": "Terminal",
           "fr": "Terminal",
           "hi-IN": "टर्मिनल",
-          "id-ID": "Terminal",
           "it": "Terminale",
           "ja": "ターミナル",
           "ko": "터미널",
-          "pt-BR": "Terminal",
-          "pt-PT": "Terminal",
           "ru": "Терминал",
           "tr-TR": "Terminal",
           "ur-PK": "ٹرمینل",
           "vi-VN": "Thiết bị đầu cuối",
-          "zh-CN": "终端"
+          "zh-CN": "终端",
+          "pt-BR": "Terminal",
+          "pt-PT": "Terminal",
+          "es": "Terminal",
+          "id-ID": "Terminal"
         }
       },
       {
@@ -2193,12 +2193,12 @@ export const sidebarConfig = [
           "it": "ARGVUS Analizzatore dell'Uso del Disco",
           "ja": "ARGVUS ディスク使用量解析ツール",
           "ko": "ARGVUS 디스크 사용량 분석기",
-          "pt-BR": "ARGVUS Disk Usage Analyzer",
-          "pt-PT": "ARGVUS Disk Usage Analyzer",
+          "pt-BR": "Analisador de uso de disco ARGVUS",
+          "pt-PT": "Analisador de utilização de disco ARGVUS",
           "ru": "Анализатор использования диска ARGVUS",
           "tr-TR": "ARGVUS Disk Kullanımı Analizörü",
           "ur-PK": "ARGVUS ڈسک کے استعمال کا تجزیہ کار",
-          "vi-VN": "ARGVUS Disk Usage Analyzer",
+          "vi-VN": "Trình phân tích sử dụng đĩa ARGVUS",
           "zh-CN": "ARGVUS 磁盘使用分析器"
         }
       },
@@ -2220,7 +2220,7 @@ export const sidebarConfig = [
           "ru": "Датчики температуры",
           "tr-TR": "Sıcaklık sensörleri",
           "ur-PK": "درجہ حرارت کے سینسر",
-          "vi-VN": "Temperature sensors",
+          "vi-VN": "Cảm biến nhiệt độ",
           "zh-CN": "温度传感器"
         }
       }
@@ -2273,22 +2273,22 @@ export const sidebarConfig = [
         "slug": "docs/argvus-lock",
         "label": "Lock Screen",
         "translations": {
-          "ar": "Lock screen",
-          "bn-BD": "Lock screen",
+          "ar": "قفل الشاشة",
+          "bn-BD": "লক স্ক্রিন",
           "de": "Sperrbildschirm",
           "es": "Pantalla de bloqueo",
           "fr": "Écran de verrouillage",
-          "hi-IN": "Lock screen",
-          "id-ID": "Lock screen",
+          "hi-IN": "लॉक स्क्रीन",
+          "id-ID": "Layar kunci",
           "it": "Blocca schermo",
           "ja": "ロック画面",
           "ko": "잠금 화면",
-          "pt-BR": "Lock screen",
-          "pt-PT": "Lock screen",
+          "pt-BR": "Tela de bloqueio",
+          "pt-PT": "Ecrã de bloqueio",
           "ru": "Экран блокировки",
-          "tr-TR": "Lock screen",
-          "ur-PK": "Lock screen",
-          "vi-VN": "Lock screen",
+          "tr-TR": "Kilit ekranı",
+          "ur-PK": "لاک اسکرین",
+          "vi-VN": "Màn hình khóa",
           "zh-CN": "锁屏"
         }
       },
@@ -2391,44 +2391,44 @@ export const sidebarConfig = [
           {
             "slug": "docs/argvus-boot-splash/installation",
             "translations": {
-              "ar": "Installation",
-              "bn-BD": "Installation",
+              "ar": "التثبيت",
+              "bn-BD": "ইনস্টলেশন",
               "de": "Installation",
               "es": "Instalación",
               "fr": "Installation",
-              "hi-IN": "Installation",
-              "id-ID": "Installation",
+              "hi-IN": "स्थापना",
+              "id-ID": "Instalasi",
               "it": "Installazione",
               "ja": "インストール",
               "ko": "설치",
               "pt-BR": "Instalação",
               "pt-PT": "Instalação",
               "ru": "Установка",
-              "tr-TR": "Installation",
-              "ur-PK": "Installation",
-              "vi-VN": "Installation",
+              "tr-TR": "Kurulum",
+              "ur-PK": "تنصیب",
+              "vi-VN": "Cài đặt",
               "zh-CN": "安装"
             }
           },
           {
             "slug": "docs/argvus-boot-splash/usage",
             "translations": {
-              "ar": "Usage",
-              "bn-BD": "Usage",
+              "ar": "الاستخدام",
+              "bn-BD": "ব্যবহার",
               "de": "Verwendung",
               "es": "Uso",
               "fr": "Utilisation",
-              "hi-IN": "Usage",
-              "id-ID": "Usage",
+              "hi-IN": "उपयोग",
+              "id-ID": "Penggunaan",
               "it": "Uso",
               "ja": "使用法",
               "ko": "사용법",
               "pt-BR": "Uso",
               "pt-PT": "Uso",
               "ru": "Использование",
-              "tr-TR": "Usage",
-              "ur-PK": "Usage",
-              "vi-VN": "Usage",
+              "tr-TR": "Kullanım",
+              "ur-PK": "استعمال",
+              "vi-VN": "Cách sử dụng",
               "zh-CN": "使用"
             }
           },
@@ -2501,22 +2501,22 @@ export const sidebarConfig = [
           {
             "slug": "docs/argvus-boot-splash/uninstallation",
             "translations": {
-              "ar": "Uninstallation",
-              "bn-BD": "Uninstallation",
+              "ar": "إلغاء التثبيت",
+              "bn-BD": "আনইনস্টলেশন",
               "de": "Deinstallation",
               "es": "Desinstalación",
               "fr": "Désinstallation",
-              "hi-IN": "Uninstallation",
-              "id-ID": "Uninstallation",
+              "hi-IN": "स्थापना रद्द करना",
+              "id-ID": "Uninstall",
               "it": "Disinstallazione",
               "ja": "アンインストール",
               "ko": "제거",
               "pt-BR": "Desinstalação",
               "pt-PT": "Desinstalação",
               "ru": "Удаление",
-              "tr-TR": "Uninstallation",
-              "ur-PK": "Uninstallation",
-              "vi-VN": "Uninstallation",
+              "tr-TR": "Kaldırma",
+              "ur-PK": "ان انسٹالیشن",
+              "vi-VN": "Gỡ cài đặt",
               "zh-CN": "卸载"
             }
           },
@@ -2567,66 +2567,66 @@ export const sidebarConfig = [
               {
                 "slug": "docs/argvus-boot-splash/developer-guide/theme",
                 "translations": {
-                  "ar": "Theme Architecture",
-                  "bn-BD": "Theme Architecture",
+                  "ar": "موضوع العمارة",
+                  "bn-BD": "থিম আর্কিটেকচার",
                   "de": "Themenarchitektur",
                   "es": "Arquitectura del tema",
                   "fr": "Thème Architecture",
-                  "hi-IN": "Theme Architecture",
-                  "id-ID": "Theme Architecture",
+                  "hi-IN": "थीम आर्किटेक्चर",
+                  "id-ID": "Tema Arsitektur",
                   "it": "Tema Architettura",
                   "ja": "テーマ建築",
                   "ko": "테마 건축",
                   "pt-BR": "Arquitetura do Tema",
                   "pt-PT": "Arquitetura do Tema",
                   "ru": "Тема: Архитектура",
-                  "tr-TR": "Theme Architecture",
-                  "ur-PK": "Theme Architecture",
-                  "vi-VN": "Theme Architecture",
+                  "tr-TR": "Tema Mimarisi",
+                  "ur-PK": "تھیم آرکیٹیکچر",
+                  "vi-VN": "Kiến trúc chủ đề",
                   "zh-CN": "主题架构"
                 }
               },
               {
                 "slug": "docs/argvus-boot-splash/developer-guide/packaging",
                 "translations": {
-                  "ar": "Packaging",
-                  "bn-BD": "Packaging",
+                  "ar": "التعبئة والتغليف",
+                  "bn-BD": "প্যাকেজিং",
                   "de": "Verpackung",
                   "es": "Empaque",
                   "fr": "Emballage",
-                  "hi-IN": "Packaging",
-                  "id-ID": "Packaging",
+                  "hi-IN": "पैकेजिंग",
+                  "id-ID": "Kemasan",
                   "it": "Confezionamento",
                   "ja": "包装",
                   "ko": "포장",
                   "pt-BR": "Empacotamento",
                   "pt-PT": "Empacotamento",
                   "ru": "Упаковка",
-                  "tr-TR": "Packaging",
-                  "ur-PK": "Packaging",
-                  "vi-VN": "Packaging",
+                  "tr-TR": "Ambalaj",
+                  "ur-PK": "پیکیجنگ",
+                  "vi-VN": "Bao bì",
                   "zh-CN": "包装"
                 }
               },
               {
                 "slug": "docs/argvus-boot-splash/developer-guide/ci-releases",
                 "translations": {
-                  "ar": "CI and Releases",
-                  "bn-BD": "CI and Releases",
+                  "ar": "CI والإصدارات",
+                  "bn-BD": "CI এবং রিলিজ",
                   "de": "CI und Releases",
                   "es": "CI y Lanzamientos",
                   "fr": "CI et Versions",
-                  "hi-IN": "CI and Releases",
-                  "id-ID": "CI and Releases",
+                  "hi-IN": "सीआई और रिलीज़",
+                  "id-ID": "CI dan Rilis",
                   "it": "CI e Rilasci",
                   "ja": "CIとリリース",
                   "ko": "CI와 릴리즈",
                   "pt-BR": "CI e Lançamentos",
                   "pt-PT": "CI e Lançamentos",
                   "ru": "CI и релизы",
-                  "tr-TR": "CI and Releases",
-                  "ur-PK": "CI and Releases",
-                  "vi-VN": "CI and Releases",
+                  "tr-TR": "CI ve Sürümler",
+                  "ur-PK": "CI اور ریلیز",
+                  "vi-VN": "CI và các bản phát hành",
                   "zh-CN": "持续集成和发布"
                 }
               },
@@ -2773,22 +2773,22 @@ export const sidebarConfig = [
           {
             "slug": "docs/argvus-hyprland/hyprland-overrides",
             "translations": {
-              "ar": "Hyprland overrides",
-              "bn-BD": "Hyprland overrides",
+              "ar": "تجاوزات هايبرلاند",
+              "bn-BD": "Hyprland ওভাররাইড",
               "de": "Hyprland überschreibt",
               "es": "Sobrescrituras de Hyprland",
               "fr": "Remplacements Hyprland",
-              "hi-IN": "Hyprland overrides",
-              "id-ID": "Hyprland overrides",
+              "hi-IN": "Hyprland ओवरराइड करता है",
+              "id-ID": "Hyprland menimpa",
               "it": "Sovrascritture di Hyprland",
               "ja": "Hyprland のオーバーライド",
               "ko": "Hyprland 오버라이드",
               "pt-BR": "Overrides do Hyprland",
               "pt-PT": "Overrides do Hyprland",
               "ru": "Переопределения Hyprland",
-              "tr-TR": "Hyprland overrides",
-              "ur-PK": "Hyprland overrides",
-              "vi-VN": "Hyprland overrides",
+              "tr-TR": "Hyprland geçersiz kılmalar",
+              "ur-PK": "ہائپرلینڈ اوور رائیڈز",
+              "vi-VN": "Hyprland ghi đè",
               "zh-CN": "Hyprland 覆盖"
             }
           }
@@ -2842,22 +2842,22 @@ export const sidebarConfig = [
           {
             "slug": "docs/argvus-taskbar/widgets",
             "translations": {
-              "ar": "Widgets",
-              "bn-BD": "Widgets",
+              "ar": "الحاجيات",
+              "bn-BD": "উইজেট",
               "de": "Widgets",
-              "es": "Widgets",
+              "es": "widgets",
               "fr": "Widgets",
-              "hi-IN": "Widgets",
-              "id-ID": "Widgets",
+              "hi-IN": "विजेट",
+              "id-ID": "Widget",
               "it": "Widget",
               "ja": "ウィジェット",
               "ko": "위젯",
               "pt-BR": "Widgets",
               "pt-PT": "Widgets",
               "ru": "Виджеты",
-              "tr-TR": "Widgets",
-              "ur-PK": "Widgets",
-              "vi-VN": "Widgets",
+              "tr-TR": "Widget'lar",
+              "ur-PK": "وجیٹس",
+              "vi-VN": "Widget",
               "zh-CN": "小工具"
             }
           }
@@ -2955,22 +2955,22 @@ export const sidebarConfig = [
         "slug": "docs/argvus-portal",
         "label": "Portal",
         "translations": {
-          "ar": "Portals",
-          "bn-BD": "Portals",
+          "ar": "البوابات",
+          "bn-BD": "পোর্টাল",
           "de": "Portale",
           "es": "Portales",
           "fr": "Portails",
-          "hi-IN": "Portals",
-          "id-ID": "Portals",
+          "hi-IN": "पोर्टल",
+          "id-ID": "Portal",
           "it": "Portali",
           "ja": "ポータル",
           "ko": "포털",
           "pt-BR": "Portais",
           "pt-PT": "Portais",
           "ru": "Порталы",
-          "tr-TR": "Portals",
-          "ur-PK": "Portals",
-          "vi-VN": "Portals",
+          "tr-TR": "Portallar",
+          "ur-PK": "پورٹلز",
+          "vi-VN": "Cổng thông tin",
           "zh-CN": "门户"
         }
       }
@@ -3026,22 +3026,22 @@ export const sidebarConfig = [
         "slug": "docs/argvus-display",
         "label": "Display",
         "translations": {
-          "ar": "Displays",
-          "bn-BD": "Displays",
+          "ar": "يعرض",
+          "bn-BD": "প্রদর্শন",
           "de": "Anzeigen",
           "es": "Pantallas",
           "fr": "Affiche",
-          "hi-IN": "Displays",
-          "id-ID": "Displays",
+          "hi-IN": "प्रदर्शित करता है",
+          "id-ID": "Menampilkan",
           "it": "Schermi",
           "ja": "ディスプレイ",
           "ko": "디스플레이",
-          "pt-BR": "Displays",
-          "pt-PT": "Displays",
+          "pt-BR": "Exibições",
+          "pt-PT": "Exibições",
           "ru": "Дисплеи",
-          "tr-TR": "Displays",
-          "ur-PK": "Displays",
-          "vi-VN": "Displays",
+          "tr-TR": "Ekranlar",
+          "ur-PK": "دکھاتا ہے۔",
+          "vi-VN": "Hiển thị",
           "zh-CN": "显示器"
         }
       },
@@ -3189,22 +3189,22 @@ export const sidebarConfig = [
           {
             "slug": "docs/argvus-appearance/layout-modes",
             "translations": {
-              "ar": "Layout modes",
-              "bn-BD": "Layout modes",
+              "ar": "أوضاع التخطيط",
+              "bn-BD": "লেআউট মোড",
               "de": "Layout-Modi",
               "es": "Modos de diseño",
               "fr": "Modes de mise en page",
-              "hi-IN": "Layout modes",
-              "id-ID": "Layout modes",
+              "hi-IN": "लेआउट मोड",
+              "id-ID": "Mode tata letak",
               "it": "Modalità di layout",
               "ja": "レイアウトモード",
               "ko": "레이아웃 모드",
               "pt-BR": "Modos de layout",
               "pt-PT": "Modos de layout",
               "ru": "Режимы компоновки",
-              "tr-TR": "Layout modes",
-              "ur-PK": "Layout modes",
-              "vi-VN": "Layout modes",
+              "tr-TR": "Düzen modları",
+              "ur-PK": "لے آؤٹ موڈز",
+              "vi-VN": "Các chế độ bố cục",
               "zh-CN": "布局模式"
             }
           }
@@ -3233,22 +3233,22 @@ export const sidebarConfig = [
         "slug": "docs/argvus-icons",
         "label": "Icons",
         "translations": {
-          "ar": "ARGVUS Icons",
-          "bn-BD": "ARGVUS Icons",
+          "ar": "أيقونات ARGVUS",
+          "bn-BD": "ARGVUS আইকন",
           "de": "ARGVUS Symbole",
           "es": "Iconos ARGVUS",
           "fr": "Icônes ARGVUS",
-          "hi-IN": "ARGVUS Icons",
-          "id-ID": "ARGVUS Icons",
+          "hi-IN": "ARGVUS प्रतीक",
+          "id-ID": "Ikon ARGVUS",
           "it": "Icone ARGVUS",
           "ja": "ARGVUSアイコン",
           "ko": "아르브거스 아이콘",
-          "pt-BR": "ARGVUS Icons",
-          "pt-PT": "ARGVUS Icons",
+          "pt-BR": "Ícones ARGVUS",
+          "pt-PT": "Ícones ARGVUS",
           "ru": "ИКОНКИ ARGVUS",
-          "tr-TR": "ARGVUS Icons",
-          "ur-PK": "ARGVUS Icons",
-          "vi-VN": "ARGVUS Icons",
+          "tr-TR": "ARGVUS Simgeler",
+          "ur-PK": "ARGVUS شبیہیں",
+          "vi-VN": "Biểu tượng ARGVUS",
           "zh-CN": "ARGVUS 图标"
         }
       },
@@ -3256,22 +3256,22 @@ export const sidebarConfig = [
         "slug": "docs/argvus-fonts",
         "label": "Fonts",
         "translations": {
-          "ar": "ARGVUS Fonts",
-          "bn-BD": "ARGVUS Fonts",
+          "ar": "الخطوط ARGVUS",
+          "bn-BD": "ARGVUS হরফ",
           "de": "ARGVUS Schriften",
           "es": "Fuentes ARGVUS",
           "fr": "Polices ARGVUS",
-          "hi-IN": "ARGVUS Fonts",
-          "id-ID": "ARGVUS Fonts",
+          "hi-IN": "ARGVUS फ़ॉन्ट्स",
+          "id-ID": "Font ARGVUS",
           "it": "Caratteri ARGVUS",
           "ja": "ARGVUS フォント",
           "ko": "ARGVUS 글꼴",
-          "pt-BR": "ARGVUS Fonts",
-          "pt-PT": "ARGVUS Fonts",
+          "pt-BR": "Fontes ARGVUS",
+          "pt-PT": "Fontes ARGVUS",
           "ru": "Шрифты ARGVUS",
-          "tr-TR": "ARGVUS Fonts",
-          "ur-PK": "ARGVUS Fonts",
-          "vi-VN": "ARGVUS Fonts",
+          "tr-TR": "ARGVUS Yazı Tipleri",
+          "ur-PK": "ARGVUS فونٹس",
+          "vi-VN": "Phông chữ ARGVUS",
           "zh-CN": "ARGVUS 字体"
         }
       },
@@ -3353,13 +3353,13 @@ export const sidebarConfig = [
           {
             "slug": "docs/argvus-ai/installation",
             "translations": {
-              "ar": "Installation",
-              "bn-BD": "Installation",
+              "ar": "التثبيت",
+              "bn-BD": "ইনস্টলেশন",
               "de": "Installation",
               "es": "Instalación",
               "fr": "Installation",
-              "hi-IN": "Installation",
-              "id-ID": "Installation",
+              "hi-IN": "स्थापना",
+              "id-ID": "Instalasi",
               "it": "Installazione",
               "ja": "インストール",
               "ko": "설치",
@@ -3367,8 +3367,8 @@ export const sidebarConfig = [
               "pt-PT": "Instalação",
               "ru": "Установка",
               "tr-TR": "Kurulumu",
-              "ur-PK": "Installation",
-              "vi-VN": "Installation",
+              "ur-PK": "تنصیب",
+              "vi-VN": "Cài đặt",
               "zh-CN": "安装"
             }
           },
@@ -3380,8 +3380,8 @@ export const sidebarConfig = [
               "de": "Verwendung und Fehlerbehebung",
               "es": "Uso y solución de problemas",
               "fr": "Utilisation et dépannage",
-              "hi-IN": "Usage and troubleshooting",
-              "id-ID": "Usage and troubleshooting",
+              "hi-IN": "उपयोग और समस्या निवारण",
+              "id-ID": "Penggunaan dan pemecahan masalah",
               "it": "Uso e risoluzione dei problemi",
               "ja": "使用方法とトラブルシューティング",
               "ko": "사용법 및 문제 해결",
@@ -3390,7 +3390,7 @@ export const sidebarConfig = [
               "ru": "Использование и устранение неполадок",
               "tr-TR": "Kullanım ve sorun giderme",
               "ur-PK": "استعمال اور خرابیوں کا سراغ لگانا",
-              "vi-VN": "Usage and troubleshooting",
+              "vi-VN": "Cách sử dụng và khắc phục sự cố",
               "zh-CN": "使用与故障排除"
             }
           }
@@ -3445,22 +3445,22 @@ export const sidebarConfig = [
           {
             "slug": "docs/argvus-games/snake",
             "translations": {
-              "ar": "Snake",
-              "bn-BD": "Snake",
+              "ar": "الثعبان",
+              "bn-BD": "সাপ",
               "de": "Schlange",
               "es": "Serpiente",
               "fr": "Serpent",
-              "hi-IN": "Snake",
-              "id-ID": "Snake",
+              "hi-IN": "साँप",
+              "id-ID": "Ular",
               "it": "Serpente",
               "ja": "ヘビ",
               "ko": "뱀",
-              "pt-BR": "Snake",
-              "pt-PT": "Snake",
+              "pt-BR": "Cobra",
+              "pt-PT": "Cobra",
               "ru": "Змея",
-              "tr-TR": "Snake",
-              "ur-PK": "Snake",
-              "vi-VN": "Snake",
+              "tr-TR": "Yılan",
+              "ur-PK": "سانپ",
+              "vi-VN": "Con rắn",
               "zh-CN": "蛇"
             }
           }
@@ -3516,13 +3516,13 @@ export const sidebarConfig = [
       {
         "slug": "docs/reference/argvus-config",
         "translations": {
-          "ar": "ARGVUS Configuration",
+          "ar": "تكوين ARGVUS",
           "bn-BD": "ARGVUS কনফিগারেশন",
           "de": "ARGVUS-Konfiguration",
           "es": "Configuración de ARGVUS",
           "fr": "Configuration ARGVUS",
           "hi-IN": "ARGVUS कॉन्फ़िगरेशन",
-          "id-ID": "ARGVUS Configuration",
+          "id-ID": "Konfigurasi ARGVUS",
           "it": "Configurazione ARGVUS",
           "ja": "ARGVUS設定",
           "ko": "ARGVUS 구성",
@@ -3531,7 +3531,7 @@ export const sidebarConfig = [
           "ru": "Конфигурация ARGVUS",
           "tr-TR": "ARGVUS Yapılandırması",
           "ur-PK": "ARGVUS کنفیگریشن",
-          "vi-VN": "ARGVUS Configuration",
+          "vi-VN": "Cấu hình ARGVUS",
           "zh-CN": "ARGVUS 配置"
         }
       },
@@ -3544,7 +3544,7 @@ export const sidebarConfig = [
           "es": "Archivos de configuración",
           "fr": "Fichiers de configuration",
           "hi-IN": "कॉन्फ़िगरेशन फ़ाइलें",
-          "id-ID": "Configuration files",
+          "id-ID": "File konfigurasi",
           "it": "File di configurazione",
           "ja": "設定ファイル",
           "ko": "설정 파일",
@@ -3553,7 +3553,7 @@ export const sidebarConfig = [
           "ru": "Конфигурационные файлы",
           "tr-TR": "Yapılandırma dosyaları",
           "ur-PK": "کنفیگریشن فائلیں۔",
-          "vi-VN": "Configuration files",
+          "vi-VN": "File cấu hình",
           "zh-CN": "配置文件"
         }
       },
@@ -3575,7 +3575,7 @@ export const sidebarConfig = [
           "ru": "Расположения файлов",
           "tr-TR": "Dosya konumları",
           "ur-PK": "فائل کے مقامات",
-          "vi-VN": "File locations",
+          "vi-VN": "Vị trí tập tin",
           "zh-CN": "文件位置"
         }
       },
@@ -3626,13 +3626,13 @@ export const sidebarConfig = [
       {
         "slug": "docs/reference/services",
         "translations": {
-          "ar": "Services",
+          "ar": "الخدمات",
           "bn-BD": "পরিষেবা",
           "de": "Dienstleistungen",
           "es": "Servicios",
           "fr": "Services",
           "hi-IN": "सेवाएँ",
-          "id-ID": "Services",
+          "id-ID": "Layanan",
           "it": "Servizi",
           "ja": "サービス",
           "ko": "서비스",
@@ -3641,20 +3641,20 @@ export const sidebarConfig = [
           "ru": "Услуги",
           "tr-TR": "Hizmetler",
           "ur-PK": "سروسز",
-          "vi-VN": "Services",
+          "vi-VN": "Dịch vụ",
           "zh-CN": "服务"
         }
       },
       {
         "slug": "docs/reference/dbus-interfaces",
         "translations": {
-          "ar": "D-Bus interfaces",
+          "ar": "واجهات D-Bus",
           "bn-BD": "D-বাস ইন্টারফেস",
           "de": "D-Bus-Schnittstellen",
           "es": "Interfaces D-Bus",
           "fr": "Interfaces D-Bus",
           "hi-IN": "डी-बस इंटरफेस",
-          "id-ID": "D-Bus interfaces",
+          "id-ID": "antarmuka D-Bus",
           "it": "Interfacce D-Bus",
           "ja": "D-Busインターフェース",
           "ko": "D-Bus 인터페이스",
@@ -3663,7 +3663,7 @@ export const sidebarConfig = [
           "ru": "Интерфейсы D-Bus",
           "tr-TR": "D-Bus arayüzleri",
           "ur-PK": "D-Bus انٹرفیس",
-          "vi-VN": "D-Bus interfaces",
+          "vi-VN": "Giao diện D-Bus",
           "zh-CN": "D-Bus 接口"
         }
       },
@@ -3676,7 +3676,7 @@ export const sidebarConfig = [
           "es": "Matriz de paquetes",
           "fr": "Matrice de paquet",
           "hi-IN": "पैकेज मैट्रिक्स",
-          "id-ID": "Package matrix",
+          "id-ID": "Matriks paket",
           "it": "Matrice del pacchetto",
           "ja": "パッケージマトリックス",
           "ko": "패키지 매트릭스",
@@ -3685,7 +3685,7 @@ export const sidebarConfig = [
           "ru": "Пакет matrix",
           "tr-TR": "Paket matrisi",
           "ur-PK": "پیکیج میٹرکس",
-          "vi-VN": "Package matrix",
+          "vi-VN": "Ma trận gói",
           "zh-CN": "软件包矩阵"
         }
       }
@@ -3743,13 +3743,13 @@ export const sidebarConfig = [
           {
             "slug": "docs/developer-guide/architecture/overview",
             "translations": {
-              "ar": "Architecture overview",
+              "ar": "نظرة عامة على الهندسة المعمارية",
               "bn-BD": "আর্কিটেকচার ওভারভিউ",
               "de": "Architekturübersicht",
               "es": "Visión general de la arquitectura",
               "fr": "Aperçu de l'architecture",
               "hi-IN": "आर्किटेक्चर सिंहावलोकन",
-              "id-ID": "Architecture overview",
+              "id-ID": "Tinjauan Arsitektur",
               "it": "Panoramica dell'architettura",
               "ja": "アーキテクチャの概要",
               "ko": "아키텍처 개요",
@@ -3758,7 +3758,7 @@ export const sidebarConfig = [
               "ru": "Обзор архитектуры",
               "tr-TR": "Mimariye genel bakış",
               "ur-PK": "فن تعمیر کا جائزہ",
-              "vi-VN": "Architecture overview",
+              "vi-VN": "Tổng quan về kiến trúc",
               "zh-CN": "架构概述"
             }
           },
@@ -3780,7 +3780,7 @@ export const sidebarConfig = [
               "ru": "Роли репозитория",
               "tr-TR": "Depo rolleri",
               "ur-PK": "ریپوزٹری کے کردار",
-              "vi-VN": "Repository roles",
+              "vi-VN": "Vai trò kho lưu trữ",
               "zh-CN": "仓库角色"
             }
           },
@@ -3793,7 +3793,7 @@ export const sidebarConfig = [
               "es": "Mapa de integración",
               "fr": "Carte d'intégration",
               "hi-IN": "एकीकरण मानचित्र",
-              "id-ID": "Integration map",
+              "id-ID": "Peta Integrasi",
               "it": "Mappa di integrazione",
               "ja": "統合マップ",
               "ko": "통합 지도",
@@ -3802,7 +3802,7 @@ export const sidebarConfig = [
               "ru": "Карта интеграции",
               "tr-TR": "Entegrasyon haritası",
               "ur-PK": "انٹیگریشن کا نقشہ",
-              "vi-VN": "Integration map",
+              "vi-VN": "Bản đồ hội nhập",
               "zh-CN": "集成图"
             }
           },
@@ -3815,7 +3815,7 @@ export const sidebarConfig = [
               "es": "Ciclo de vida de ejecución",
               "fr": "Cycle de vie d'exécution",
               "hi-IN": "रनटाइम जीवनचक्र",
-              "id-ID": "Runtime lifecycle",
+              "id-ID": "Siklus hidup runtime",
               "it": "Ciclo di vita del runtime",
               "ja": "ランタイムのライフサイクル",
               "ko": "런타임 라이프사이클",
@@ -3846,7 +3846,7 @@ export const sidebarConfig = [
               "ru": "Конфигурация и состояние",
               "tr-TR": "Yapılandırması ve durumu",
               "ur-PK": "کنفیگریشن اور ریاست",
-              "vi-VN": "Configuration and state",
+              "vi-VN": "Cấu hình và trạng thái",
               "zh-CN": "配置与状态"
             }
           }
@@ -3914,7 +3914,7 @@ export const sidebarConfig = [
               "ru": "Интеграция Hyprland",
               "tr-TR": "Hyprland entegrasyonu",
               "ur-PK": "ہائپرلینڈ انضمام",
-              "vi-VN": "Hyprland integration",
+              "vi-VN": "Tích hợp Hyprland",
               "zh-CN": "Hyprland 集成"
             }
           },
@@ -4077,13 +4077,13 @@ export const sidebarConfig = [
           {
             "slug": "docs/developer-guide/component-reference/ui-components",
             "translations": {
-              "ar": "UI components",
+              "ar": "مكونات واجهة المستخدم",
               "bn-BD": "UI উপাদান",
               "de": "UI-Komponenten",
               "es": "Componentes de la interfaz de usuario",
               "fr": "Composants d'interface utilisateur",
               "hi-IN": "यूआई घटक",
-              "id-ID": "UI components",
+              "id-ID": "komponen UI",
               "it": "Componenti dell'interfaccia utente",
               "ja": "UIコンポーネント",
               "ko": "UI 구성 요소",
@@ -4092,20 +4092,20 @@ export const sidebarConfig = [
               "ru": "Компоненты пользовательского интерфейса",
               "tr-TR": "Kullanıcı arayüzü bileşenleri",
               "ur-PK": "UI اجزاء",
-              "vi-VN": "UI components",
+              "vi-VN": "Thành phần giao diện người dùng",
               "zh-CN": "用户界面组件"
             }
           },
           {
             "slug": "docs/developer-guide/component-reference/integrations",
             "translations": {
-              "ar": "Integrations",
+              "ar": "التكامل",
               "bn-BD": "ইন্টিগ্রেশন",
               "de": "Integrationen",
               "es": "Integraciones",
               "fr": "Intégrations",
               "hi-IN": "एकीकरण",
-              "id-ID": "Integrations",
+              "id-ID": "Integrasi",
               "it": "Integrazioni",
               "ja": "統合",
               "ko": "통합",
@@ -4114,7 +4114,7 @@ export const sidebarConfig = [
               "ru": "Интеграции",
               "tr-TR": "Entegrasyonları",
               "ur-PK": "انضمام",
-              "vi-VN": "Integrations",
+              "vi-VN": "Tích hợp",
               "zh-CN": "集成"
             }
           },
@@ -4167,7 +4167,7 @@ export const sidebarConfig = [
           {
             "slug": "docs/developer-guide/development/environment",
             "translations": {
-              "ar": "Development environment",
+              "ar": "بيئة التطوير",
               "bn-BD": "উন্নয়ন পরিবেশ",
               "de": "Entwicklungsumgebung",
               "es": "Entorno de desarrollo",
@@ -4204,20 +4204,20 @@ export const sidebarConfig = [
               "ru": "Вклад",
               "tr-TR": "Katkıda Bulunmak",
               "ur-PK": "تعاون کر رہا ہے۔",
-              "vi-VN": "Contributing",
+              "vi-VN": "Đóng góp",
               "zh-CN": "贡献"
             }
           },
           {
             "slug": "docs/developer-guide/development/translations",
             "translations": {
-              "ar": "Translations",
+              "ar": "الترجمات",
               "bn-BD": "অনুবাদ",
               "de": "Übersetzungen",
               "es": "Traducciones",
               "fr": "Traductions",
               "hi-IN": "अनुवाद",
-              "id-ID": "Translations",
+              "id-ID": "Terjemahan",
               "it": "Traduzioni",
               "ja": "翻訳",
               "ko": "번역",
@@ -4226,7 +4226,7 @@ export const sidebarConfig = [
               "ru": "Переводы",
               "tr-TR": "Çevirileri",
               "ur-PK": "ترجمہ",
-              "vi-VN": "Translations",
+              "vi-VN": "Bản dịch",
               "zh-CN": "翻译"
             }
           },
@@ -4239,7 +4239,7 @@ export const sidebarConfig = [
               "es": "Empaque",
               "fr": "Emballage",
               "hi-IN": "पैकेजिंग",
-              "id-ID": "Packaging",
+              "id-ID": "Kemasan",
               "it": "Confezionamento",
               "ja": "包装",
               "ko": "포장",
@@ -4248,7 +4248,7 @@ export const sidebarConfig = [
               "ru": "Упаковка",
               "tr-TR": "Paketleme",
               "ur-PK": "پیکیجنگ",
-              "vi-VN": "Packaging",
+              "vi-VN": "Bao bì",
               "zh-CN": "包装"
             }
           }
@@ -4298,13 +4298,13 @@ export const sidebarConfig = [
   {
     "slug": "docs/license",
     "translations": {
-      "ar": "License",
+      "ar": "الترخيص",
       "bn-BD": "লাইসেন্স",
       "de": "Lizenz",
       "es": "Licencia",
       "fr": "Licence",
       "hi-IN": "लाइसेंस",
-      "id-ID": "License",
+      "id-ID": "Lisensi",
       "it": "Licenza",
       "ja": "ライセンス",
       "ko": "라이선스",
@@ -4313,7 +4313,7 @@ export const sidebarConfig = [
       "ru": "Лицензия",
       "tr-TR": "Lisansı",
       "ur-PK": "لائسنس",
-      "vi-VN": "License",
+      "vi-VN": "Giấy phép",
       "zh-CN": "许可证"
     }
   }

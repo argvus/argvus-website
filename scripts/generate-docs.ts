@@ -31,8 +31,9 @@ function normalizeMarkdownBody(body: string): string {
     .replace(/(`+)(?!`)[^\n]*?\1(?!`)/g, preserveCode)
     .replace(/(?<!`)blocks set <block> <enabled\|disabled>(?!`)/g, '`blocks set <block> <enabled|disabled>`')
     .replace(/(?<!`)\{"action":"toggle"\}(?!`)/g, '`{"action":"toggle"}`')
+    .replace(/(?<!`)\{"action":toggle"\}(?!`)/g, '`{"action":"toggle"}`')
     .replace(/\$\{([^}]*)\}/g, (_match, expression: string) => '$&#123;' + expression + '&#125;')
-    .replace(/<(\/?)([A-Za-z][A-Za-z0-9_-]*)([^>]*)>/g, (match, _slash, tag: string) =>
+    .replace(/<(\/?)([\p{L}][\p{L}\p{N}_-]*)([^>]*)>/gu, (match, _slash, tag: string) =>
       supportedHtmlTags.has(tag.toLowerCase())
         ? match
         : match.replace('<', '&lt;').replace(/>$/, '&gt;'),
