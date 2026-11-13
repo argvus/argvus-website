@@ -20,4 +20,4 @@ The OpenAI organization mark is sourced from its official GitHub organization an
 - `hermes.svg`: official Hermes Agent mascot mark from https://github.com/NousResearch/hermes-agent/blob/main/assets/nous-girl-black.svg.
 - `kimi.svg`: official KIMI color symbol only (without wordmark): https://moonshotai.github.io/Branding-Guide/scenarios/04-k-only/k-only-light.svg.
 
-- `gemini.svg`: https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/googlegemini.svg (Google Gemini brand icon from Simple Icons; Gemini CLI upstream: https://github.com/google-gemini/gemini-cli).
+- `gemini.svg`: https://commons.wikimedia.org/wiki/File:Google_Gemini_icon_2025.svg (multicolor Google Gemini icon extracted from Google’s About Gemini page; Gemini CLI upstream: https://github.com/google-gemini/gemini-cli).
