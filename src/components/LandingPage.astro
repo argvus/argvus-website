@@ -55,6 +55,22 @@ const argvusWordmarkUrl = `${import.meta.env.BASE_URL}brand/argvus-wordmark.svg`
 const link = (path: string) =>
   base + (path.startsWith('docs/') ? docsLocalePrefix : lang !== 'en' && !path.startsWith('packages/') ? langPrefix : '') + path
 
+// Fragments follow the generated IDs of the documentation locale selected by link().
+const themeGuideAnchors: Record<string, [string, string]> = {
+  en: ['create-a-theme-with-the-skeleton', 'install-a-community-theme-from-git'],
+  pt: ['criar-um-tema-com-o-skeleton', 'instalar-temas-da-comunidade-por-git'],
+  es: ['crear-un-tema-con-el-skeleton', 'instalar-temas-desde-git'],
+  fr: ['créer-un-thème-avec-le-skeleton', 'installer-des-thèmes-depuis-git'],
+  it: ['creare-un-tema-con-lo-skeleton', 'installare-temi-da-git'],
+  'zh-cn': ['使用-skeleton-创建主题', '从-git-安装主题'],
+  ja: ['skeleton-でテーマを作成', 'git-からテーマをインストール'],
+  de: ['ein-design-mit-dem-skeleton-erstellen', 'designs-aus-git-installieren'],
+  ru: ['создание-темы-с-помощью-skeleton', 'установка-тем-из-git'],
+  ko: ['skeleton으로-테마-만들기', 'git에서-테마-설치'],
+}
+const [createThemeAnchor, installThemeAnchor] = themeGuideAnchors[docsLocalePrefix.replace(/\/$/, '') || 'en']
+const themeGuideUrl = link('docs/components/argvus-themes/installing-themes/')
+
 const t = isPT
   ? {
       htmlLang: 'pt-BR',
@@ -73,6 +89,10 @@ const t = isPT
       langAria: 'Alterar idioma',
       langEnglish: 'English',
       langPortuguese: 'Português',
+      themesCustomTitle: 'Crie e instale seus próprios temas',
+      themesCustomText: 'Crie seu tema com o skeleton, publique-o em um servidor Git e instale-o no ARGVUS. Seus temas aparecem em Custom themes no Control Center.',
+      themesCustomSkeleton: 'Criar um tema →',
+      themesCustomGuide: 'Como instalar temas →',
       themesRepositoryLabel: 'Instalar do repositório',
       themesRepositoryHint: 'Ou vários temas em um único comando',
       themesGuideLink: 'Guia de temas →',
@@ -300,6 +320,10 @@ const t = isPT
       langAria: 'Change language',
       langEnglish: 'English',
       langPortuguese: 'Português',
+      themesCustomTitle: 'Create and install your own themes',
+      themesCustomText: 'Create a theme with the skeleton, publish it on a Git server and install it in ARGVUS. Your themes appear in Custom themes in the Control Center.',
+      themesCustomSkeleton: 'Create a theme →',
+      themesCustomGuide: 'How to install themes →',
       themesRepositoryLabel: 'Install from the repository',
       themesRepositoryHint: 'Or several themes in one command',
       themesGuideLink: 'Themes guide →',
@@ -1143,6 +1167,13 @@ const ccFirst = ccSteps[0].items[0]
                 <span>{t.themesRepositoryHint}</span>
                 <code>sudo pacman -S argvus-theme-dracula argvus-theme-sunset</code>
                 <a class="themes-guide-link" href={link('docs/components/argvus-themes/')}>{t.themesGuideLink}</a>
+              </div>
+              <div class="themes-install-info themes-custom-info">
+                <strong>{t.themesCustomTitle}</strong>
+                <span>{t.themesCustomText}</span>
+                <code>argvus theme install https://github.com/USER/argvus-theme-NAME.git</code>
+                <a class="themes-guide-link" href={`${themeGuideUrl}#${createThemeAnchor}`}>{t.themesCustomSkeleton}</a>
+                <a class="themes-guide-link" href={`${themeGuideUrl}#${installThemeAnchor}`}>{t.themesCustomGuide}</a>
               </div>
             </div>
           </div>

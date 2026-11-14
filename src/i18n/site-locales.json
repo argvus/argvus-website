@@ -323,7 +323,11 @@
       "statusLabel": "Estado del proyecto",
       "statusText": "Todas las funciones que se muestran en esta página están funcionando. La etiqueta Beta está ahí porque aún pueden aparecer errores que las pruebas no han detectado; si encuentra uno, infórmelo en el repositorio de comentarios.",
       "feedbackLink": "Repositorio de comentarios de ARGVUS en GitHub",
-      "feedbackMade": "Creado para la comunidad de código abierto"
+      "feedbackMade": "Creado para la comunidad de código abierto",
+      "themesCustomTitle": "Crea e instala tus propios temas",
+      "themesCustomText": "Crea un tema con el skeleton, publícalo en un servidor Git e instálalo en ARGVUS. Tus temas aparecen en Custom themes en el Centro de control.",
+      "themesCustomSkeleton": "Crear un tema →",
+      "themesCustomGuide": "Cómo instalar temas →"
     },
     "about": {
       "htmlLang": "es",
@@ -784,7 +788,11 @@
       "statusLabel": "Statut du projet",
       "statusText": "Toutes les fonctionnalités présentées sur cette page fonctionnent. L'étiquette Bêta est là car des bogues que les tests n'ont pas détectés peuvent quand même apparaître. Si vous en trouvez un, signalez-le dans le référentiel de commentaires.",
       "feedbackLink": "Dépôt de commentaires ARGVUS sur GitHub",
-      "feedbackMade": "Conçu pour la communauté open source"
+      "feedbackMade": "Conçu pour la communauté open source",
+      "themesCustomTitle": "Créez et installez vos propres thèmes",
+      "themesCustomText": "Créez un thème avec le skeleton, publiez-le sur un serveur Git et installez-le dans ARGVUS. Vos thèmes apparaissent dans Custom themes du Centre de contrôle.",
+      "themesCustomSkeleton": "Créer un thème →",
+      "themesCustomGuide": "Installer des thèmes →"
     },
     "about": {
       "htmlLang": "fr",
@@ -1245,7 +1253,11 @@
       "statusLabel": "Stato del progetto",
       "statusText": "Tutte le funzionalità mostrate in questa pagina funzionano. L'etichetta Beta è lì perché i bug che i test non sono stati rilevati potrebbero ancora essere visualizzati: se ne trovi uno, segnalalo nel repository di feedback.",
       "feedbackLink": "Repository di feedback ARGVUS su GitHub",
-      "feedbackMade": "Costruito per la comunità open source"
+      "feedbackMade": "Costruito per la comunità open source",
+      "themesCustomTitle": "Crea e installa i tuoi temi",
+      "themesCustomText": "Crea un tema con lo skeleton, pubblicalo su un server Git e installalo in ARGVUS. I tuoi temi appaiono in Custom themes nel Centro di controllo.",
+      "themesCustomSkeleton": "Crea un tema →",
+      "themesCustomGuide": "Come installare i temi →"
     },
     "about": {
       "htmlLang": "it",
@@ -1706,7 +1718,11 @@
       "statusLabel": "项目状态",
       "statusText": "此页面上显示的每个功能都可以正常工作。 Beta 标签之所以存在，是因为测试尚未发现的错误可能仍然会出现 - 如果您发现错误，请在反馈存储库中报告。",
       "feedbackLink": "GitHub 上的 ARGVUS 反馈存储库",
-      "feedbackMade": "为开源社区构建"
+      "feedbackMade": "为开源社区构建",
+      "themesCustomTitle": "创建并安装自己的主题",
+      "themesCustomText": "使用 skeleton 创建主题，将其发布到 Git 服务器并安装到 ARGVUS。主题会显示在控制中心的 Custom themes 中。",
+      "themesCustomSkeleton": "创建主题 →",
+      "themesCustomGuide": "如何安装主题 →"
     },
     "about": {
       "htmlLang": "zh",
@@ -2167,7 +2183,11 @@
       "statusLabel": "プロジェクトのステータス",
       "statusText": "このページに表示されている機能はすべて動作しています。ベータ版のラベルが付いているのは、テストで捕捉できなかったバグが依然として発生する可能性があるためです。バグを見つけた場合は、フィードバック リポジトリに報告してください。",
       "feedbackLink": "GitHub 上の ARGVUS フィードバック リポジトリ",
-      "feedbackMade": "オープンソース コミュニティ向けに構築"
+      "feedbackMade": "オープンソース コミュニティ向けに構築",
+      "themesCustomTitle": "自分のテーマを作成してインストール",
+      "themesCustomText": "skeleton でテーマを作成し、Git サーバーに公開して ARGVUS にインストールできます。テーマはコントロールセンターの Custom themes に表示されます。",
+      "themesCustomSkeleton": "テーマを作成 →",
+      "themesCustomGuide": "テーマのインストール方法 →"
     },
     "about": {
       "htmlLang": "ja",
@@ -2628,7 +2648,11 @@
       "statusLabel": "Projektstatus",
       "statusText": "Alle auf dieser Seite gezeigten Funktionen funktionieren. Das Beta-Label gibt es, weil Fehler, die beim Testen nicht entdeckt wurden, immer noch auftauchen können – wenn Sie einen finden, melden Sie ihn im Feedback-Repository.",
       "feedbackLink": "ARGVUS-Feedback-Repository auf GitHub",
-      "feedbackMade": "Entwickelt für die Open-Source-Community"
+      "feedbackMade": "Entwickelt für die Open-Source-Community",
+      "themesCustomTitle": "Eigene Designs erstellen und installieren",
+      "themesCustomText": "Erstellen Sie ein Design mit dem Skeleton, veröffentlichen Sie es auf einem Git-Server und installieren Sie es in ARGVUS. Ihre Designs erscheinen im Kontrollzentrum unter Custom themes.",
+      "themesCustomSkeleton": "Design erstellen →",
+      "themesCustomGuide": "Designs installieren →"
     },
     "about": {
       "htmlLang": "de",
@@ -3089,7 +3113,11 @@
       "statusLabel": "Статус проекта",
       "statusText": "Все функции, показанные на этой странице, работают. Метка «Бета» существует, потому что ошибки, которые не были обнаружены при тестировании, все еще могут появиться — если вы их обнаружите, сообщите об этом в хранилище отзывов.",
       "feedbackLink": "Репозиторий отзывов ARGVUS на GitHub",
-      "feedbackMade": "Создан для сообщества открытого исходного кода."
+      "feedbackMade": "Создан для сообщества открытого исходного кода.",
+      "themesCustomTitle": "Создавайте и устанавливайте свои темы",
+      "themesCustomText": "Создайте тему с помощью skeleton, опубликуйте её на Git-сервере и установите в ARGVUS. Ваши темы появятся в разделе Custom themes Центра управления.",
+      "themesCustomSkeleton": "Создать тему →",
+      "themesCustomGuide": "Как установить тему →"
     },
     "about": {
       "htmlLang": "ru",
@@ -3550,7 +3578,11 @@
       "statusLabel": "프로젝트 상태",
       "statusText": "이 페이지에 표시된 모든 기능이 작동합니다. 베타 라벨은 테스트에서 발견하지 못한 버그가 계속 나타날 수 있기 때문에 존재합니다. 버그를 발견하면 피드백 저장소에 보고해 주세요.",
       "feedbackLink": "GitHub의 ARGVUS 피드백 저장소",
-      "feedbackMade": "오픈 소스 커뮤니티를 위해 구축됨"
+      "feedbackMade": "오픈 소스 커뮤니티를 위해 구축됨",
+      "themesCustomTitle": "나만의 테마 만들고 설치하기",
+      "themesCustomText": "skeleton으로 테마를 만들고 Git 서버에 게시한 뒤 ARGVUS에 설치하세요. 테마는 제어 센터의 Custom themes에 표시됩니다.",
+      "themesCustomSkeleton": "테마 만들기 →",
+      "themesCustomGuide": "테마 설치 방법 →"
     },
     "about": {
       "htmlLang": "ko",
@@ -4011,7 +4043,11 @@
       "statusLabel": "परियोजना की स्थिति",
       "statusText": "इस पृष्ठ पर दिखाई गई सभी सुविधाएँ काम कर रही हैं। बीटा लेबल इसलिए है क्योंकि बग अभी भी दिखाई दे सकते हैं जो परीक्षण में पकड़ में नहीं आए हैं; यदि आपको कोई मिलता है, तो कृपया टिप्पणी भंडार में इसकी रिपोर्ट करें।",
       "feedbackLink": "ARGVUS फीडबैक भंडार GitHub पर",
-      "feedbackMade": "मुक्त स्रोत समुदाय के लिए निर्मित"
+      "feedbackMade": "मुक्त स्रोत समुदाय के लिए निर्मित",
+      "themesCustomTitle": "अपनी थीम बनाएँ और इंस्टॉल करें",
+      "themesCustomText": "skeleton से थीम बनाएँ, उसे Git सर्वर पर प्रकाशित करें और ARGVUS में इंस्टॉल करें। आपकी थीम नियंत्रण केंद्र के Custom themes में दिखाई देंगी।",
+      "themesCustomSkeleton": "थीम बनाएँ →",
+      "themesCustomGuide": "थीम इंस्टॉल करने का तरीका →"
     },
     "about": {
       "htmlLang": "hi-IN",
@@ -4472,7 +4508,11 @@
       "statusLabel": "حالة المشروع",
       "statusText": "جميع الميزات المعروضة في هذه الصفحة تعمل. توجد علامة Beta لأنه لا يزال من الممكن ظهور أخطاء لم يكتشفها الاختبار؛ إذا وجدت واحدة، يرجى الإبلاغ عنها في مستودع التعليقات.",
       "feedbackLink": "مستودع التعليقات ARGVUS في GitHub",
-      "feedbackMade": "بنيت لمجتمع مفتوح المصدر"
+      "feedbackMade": "بنيت لمجتمع مفتوح المصدر",
+      "themesCustomTitle": "أنشئ سماتك الخاصة وثبّتها",
+      "themesCustomText": "أنشئ سمة باستخدام skeleton وانشرها على خادم Git ثم ثبّتها في ARGVUS. تظهر سماتك في Custom themes داخل مركز التحكم.",
+      "themesCustomSkeleton": "إنشاء سمة →",
+      "themesCustomGuide": "كيفية تثبيت السمات →"
     },
     "about": {
       "htmlLang": "ar",
@@ -4933,7 +4973,11 @@
       "statusLabel": "প্রকল্পের অবস্থা",
       "statusText": "এই পৃষ্ঠায় দেখানো সমস্ত বৈশিষ্ট্য কাজ করছে। বিটা লেবেল আছে কারণ বাগগুলি এখনও প্রদর্শিত হতে পারে যে পরীক্ষায় ধরা পড়েনি; আপনি যদি একটি খুঁজে পান, অনুগ্রহ করে মন্তব্য সংগ্রহস্থলে প্রতিবেদন করুন।",
       "feedbackLink": "GitHub এ ARGVUS প্রতিক্রিয়া সংগ্রহস্থল",
-      "feedbackMade": "ওপেন সোর্স সম্প্রদায়ের জন্য নির্মিত"
+      "feedbackMade": "ওপেন সোর্স সম্প্রদায়ের জন্য নির্মিত",
+      "themesCustomTitle": "নিজের থিম তৈরি ও ইনস্টল করুন",
+      "themesCustomText": "skeleton দিয়ে থিম তৈরি করে Git সার্ভারে প্রকাশ করুন এবং ARGVUS-এ ইনস্টল করুন। থিমগুলো কন্ট্রোল সেন্টারের Custom themes-এ দেখা যাবে।",
+      "themesCustomSkeleton": "থিম তৈরি করুন →",
+      "themesCustomGuide": "থিম ইনস্টল করার উপায় →"
     },
     "about": {
       "htmlLang": "bn-BD",
@@ -5394,7 +5438,11 @@
       "statusLabel": "Status proyek",
       "statusText": "Semua fitur yang ditampilkan di halaman ini berfungsi. Label Beta ada karena bug masih dapat muncul yang belum terdeteksi oleh pengujian; Jika Anda menemukannya, silakan laporkan di gudang komentar.",
       "feedbackLink": "ARGVUS gudang umpan balik di GitHub",
-      "feedbackMade": "Dibangun untuk komunitas open source"
+      "feedbackMade": "Dibangun untuk komunitas open source",
+      "themesCustomTitle": "Buat dan instal tema Anda sendiri",
+      "themesCustomText": "Buat tema dengan skeleton, terbitkan di server Git, lalu instal di ARGVUS. Tema Anda muncul di Custom themes di Control Center.",
+      "themesCustomSkeleton": "Buat tema →",
+      "themesCustomGuide": "Cara memasang tema →"
     },
     "about": {
       "htmlLang": "id-ID",
@@ -5855,7 +5903,11 @@
       "statusLabel": "پروجیکٹ کی حیثیت",
       "statusText": "اس صفحہ پر دکھائے گئے تمام فیچرز کام کر رہے ہیں۔ بیٹا لیبل موجود ہے کیونکہ کیڑے اب بھی ظاہر ہو سکتے ہیں کہ ٹیسٹنگ نے پکڑا نہیں ہے۔ اگر آپ کو کوئی مل جاتا ہے تو براہ کرم تبصرے کے ذخیرے میں اس کی اطلاع دیں۔",
       "feedbackLink": "ARGVUS تاثرات کا ذخیرہ GitHub پر",
-      "feedbackMade": "اوپن سورس کمیونٹی کے لیے بنایا گیا ہے۔"
+      "feedbackMade": "اوپن سورس کمیونٹی کے لیے بنایا گیا ہے۔",
+      "themesCustomTitle": "اپنے تھیم بنائیں اور انسٹال کریں",
+      "themesCustomText": "skeleton سے تھیم بنائیں، اسے Git سرور پر شائع کریں اور ARGVUS میں انسٹال کریں۔ آپ کے تھیم کنٹرول سینٹر کے Custom themes میں نظر آئیں گے۔",
+      "themesCustomSkeleton": "تھیم بنائیں →",
+      "themesCustomGuide": "تھیم انسٹال کرنے کا طریقہ →"
     },
     "about": {
       "htmlLang": "ur-PK",
@@ -6316,7 +6368,11 @@
       "statusLabel": "Tình trạng dự án",
       "statusText": "Tất cả các tính năng hiển thị trên trang này đang hoạt động. Nhãn Beta ở đó vì các lỗi vẫn có thể xuất hiện mà quá trình kiểm tra chưa phát hiện được; Nếu bạn tìm thấy, vui lòng báo cáo nó trong kho nhận xét.",
       "feedbackLink": "Kho phản hồi ARGVUS tại GitHub",
-      "feedbackMade": "Được xây dựng cho cộng đồng nguồn mở"
+      "feedbackMade": "Được xây dựng cho cộng đồng nguồn mở",
+      "themesCustomTitle": "Tạo và cài đặt giao diện của riêng bạn",
+      "themesCustomText": "Tạo giao diện bằng skeleton, công bố trên máy chủ Git và cài vào ARGVUS. Giao diện của bạn xuất hiện trong Custom themes của Control Center.",
+      "themesCustomSkeleton": "Tạo giao diện →",
+      "themesCustomGuide": "Cách cài giao diện →"
     },
     "about": {
       "htmlLang": "vi-VN",
@@ -6777,7 +6833,11 @@
       "statusLabel": "Proje durumu",
       "statusText": "Bu sayfada gösterilen tüm özellikler çalışıyor. Beta etiketi orada çünkü testlerin yakalayamadığı hatalar hâlâ ortaya çıkabiliyor; Bir tane bulursanız, lütfen yorum havuzunda bildirin.",
       "feedbackLink": "GitHub adresindeki ARGVUS geri bildirim deposu",
-      "feedbackMade": "Açık kaynak topluluğu için tasarlandı"
+      "feedbackMade": "Açık kaynak topluluğu için tasarlandı",
+      "themesCustomTitle": "Kendi temalarınızı oluşturun ve yükleyin",
+      "themesCustomText": "Skeleton ile bir tema oluşturun, Git sunucusunda yayınlayın ve ARGVUS’a yükleyin. Temalarınız Kontrol Merkezi’nde Custom themes altında görünür.",
+      "themesCustomSkeleton": "Tema oluştur →",
+      "themesCustomGuide": "Tema yükleme rehberi →"
     },
     "about": {
       "htmlLang": "tr-TR",
