@@ -195,13 +195,17 @@ const t = isPT
       aboutMaintainerLink: 'Perfil de William C. Canin no GitHub',
       aboutSupportPaypal: 'Ao contribuir via PayPal, a conta correta é exibida como',
       themesEyebrow: 'Temas',
-      themesTitle: 'Vinte e dois temas, dois modos, um só sistema',
+      themesTitle: '25 temas, dois modos, um só sistema',
       themesSubtitle:
         'Famílias visuais compartilhadas, cada uma com os modos Fixo e Espaçado. Todos disponíveis como pacotes Arch Linux no repositório oficial do ARGVUS.',
       themesAccentLabel: 'Acento independente',
       themesTabsAria: 'Categoria de temas',
       themesDarkTab: 'Temas Dark',
       themesLightTab: 'Temas Light',
+      themesAllTab: 'Todos',
+      themesPreviewLabel: 'Prévia do tema',
+      themesActiveLabel: 'Tema selecionado',
+      themesModeAria: 'Modo da prévia',
       themesCopyText:
         'Explore as famílias oficiais e compare suas paletas diretamente nos previews. Cada família possui os modos Fixo e Espaçado, que alteram a geometria e o tratamento das superfícies sem trocar a identidade visual. A cor de destaque continua independente e pode ser escolhida em ARGVUS Control Center → Appearance → Highlight color.',
       themesDefaultLabel: 'Padrão',
@@ -426,13 +430,17 @@ const t = isPT
       aboutMaintainerLink: 'William C. Canin GitHub profile',
       aboutSupportPaypal: 'When contributing via PayPal, the correct account is shown as',
       themesEyebrow: 'Themes',
-      themesTitle: 'Twenty-two themes, two modes, one system',
+      themesTitle: '25 themes, two modes, one system',
       themesSubtitle:
         'Shared visual families, each with Sticky and Spaced modes. All available as Arch Linux packages from the official ARGVUS repository.',
       themesAccentLabel: 'Independent accent',
       themesTabsAria: 'Theme category',
       themesDarkTab: 'Dark themes',
       themesLightTab: 'Light themes',
+      themesAllTab: 'All',
+      themesPreviewLabel: 'Theme preview',
+      themesActiveLabel: 'Selected theme',
+      themesModeAria: 'Preview mode',
       themesCopyText:
         'Explore the official families and compare their palettes directly in the previews. Every family has Sticky and Spaced modes, changing geometry and surface treatment without changing its visual identity. All themes are available in the repository as individual packages. The accent color remains independent and can be chosen at ARGVUS Control Center → Appearance → Highlight color.',
       themesDefaultLabel: 'Default',
@@ -588,7 +596,8 @@ const components = [
 ]
 
 const themes = [
-  { name: 'Dracula', shortName: 'Dracula', id: 'dracula', category: 'dark', foreground: '#BD93F9', background: '#282A36', default: true },
+  { name: 'ARGVUS Dark', shortName: 'ARGVUS Dark', id: 'argvus-dark', category: 'dark', foreground: '#DFE5EA', background: '#111316', default: true },
+  { name: 'Dracula', shortName: 'Dracula', id: 'dracula', category: 'dark', foreground: '#BD93F9', background: '#282A36' },
   { name: 'Gruvbox Dark', shortName: 'Gruvbox Dark', id: 'gruvbox-dark', category: 'dark', foreground: '#D4BE98', background: '#282828' },
   { name: 'Gruvbox High Dark', shortName: 'Gruvbox High Dark', id: 'gruvbox-high-dark', category: 'dark', foreground: '#D4BE98', background: '#282828' },
   { name: 'Lady Mist', shortName: 'Lady Mist', id: 'lady-mist', category: 'dark', foreground: '#354B78', background: '#131313' },
@@ -602,6 +611,7 @@ const themes = [
   { name: 'Sunset', shortName: 'Sunset', id: 'sunset', category: 'dark', foreground: '#E2BE8A', background: '#0F0F0F' },
   { name: 'Tokyo Night', shortName: 'Tokyo Night', id: 'tokyo-night', category: 'dark', foreground: '#7AA2F7', background: '#1A1B26' },
   { name: 'Universe', shortName: 'Universe', id: 'universe', category: 'dark', foreground: '#EEEEEE', background: '#000000' },
+  { name: 'ARGVUS Light', shortName: 'ARGVUS Light', id: 'argvus-light', category: 'light', foreground: '#181818', background: '#F7F7F7', default: true },
   { name: 'Catppuccin Latte', shortName: 'Catppuccin Latte', id: 'catppuccin-latte', category: 'light', foreground: '#1E66F5', background: '#EFF1F5' },
   { name: 'Everforest Light', shortName: 'Everforest Light', id: 'everforest-light', category: 'light', foreground: '#3A94C5', background: '#FDF6E3' },
   { name: 'GitHub Light', shortName: 'GitHub Light', id: 'github-light', category: 'light', foreground: '#0969DA', background: '#FFFFFF' },
@@ -612,9 +622,6 @@ const themes = [
   { name: 'Solarized Light', shortName: 'Solarized Light', id: 'solarized-light', category: 'light', foreground: '#268BD2', background: '#FDF6E3' },
   { name: 'Watercolor', shortName: 'Watercolor', id: 'watercolor', category: 'light', foreground: '#1A639C', background: '#E9E3D3' },
 ]
-
-const darkThemes = themes.filter((theme) => theme.category === 'dark')
-const lightThemes = themes.filter((theme) => theme.category === 'light')
 
 const apps = [
   {
@@ -1107,46 +1114,30 @@ const ccFirst = ccSteps[0].items[0]
 
           <div class="themes-wrap" data-panel-title="themes">
             <div class="theme-tabs" data-theme-tabs>
-              <div class="theme-tab-list" role="tablist" aria-label={t.themesTabsAria} data-reveal>
-                <button class="theme-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="themes-dark-panel" id="themes-dark-tab" data-theme-tab="dark">
-                  {t.themesDarkTab}
-                </button>
-                <button class="theme-tab" type="button" role="tab" aria-selected="false" aria-controls="themes-light-panel" id="themes-light-tab" data-theme-tab="light" tabindex="-1">
-                  {t.themesLightTab}
-                </button>
+              <div class="theme-preview" data-theme-preview style={`--theme-foreground:${themes[0].foreground};--theme-background:${themes[0].background}`} aria-label={t.themesPreviewLabel}>
+                <div class="theme-preview-top"><span></span><span></span><span></span><b>ARGVUS</b></div>
+                <div class="theme-preview-window"><i></i><i></i><i></i><i></i></div>
+                <div class="theme-preview-caption"><span>{t.themesActiveLabel}</span><strong data-theme-preview-name>{themes[0].name}</strong></div>
               </div>
-              <div class="theme-tab-panel is-active" role="tabpanel" id="themes-dark-panel" aria-labelledby="themes-dark-tab" data-theme-panel="dark">
-                <div class="theme-families">
-                  {darkThemes.map((th) => (
-                    <article class="theme-chip" data-theme-id={th.id} data-reveal style={`--theme-foreground:${th.foreground};--theme-background:${th.background}`}>
-                      <div class="theme-swatch" role="img" aria-label={`${th.name}: foreground ${th.foreground}, background ${th.background}`}>
-                        <span class="theme-swatch-fg" aria-hidden="true"></span>
-                      </div>
-                      <span class="theme-name">{th.shortName}</span>
-                      <span class="theme-modes" aria-label={`${th.shortName} modes`}>
-                        <span class="theme-mode theme-mode-sticky"><svg viewBox="0 0 12 12" aria-hidden="true"><rect x="0" y="0" width="5" height="5"></rect><rect x="7" y="0" width="5" height="5"></rect><rect x="0" y="7" width="5" height="5"></rect><rect x="7" y="7" width="5" height="5"></rect></svg>{t.themeModeSticky}</span>
-                        <span class="theme-mode theme-mode-float"><svg viewBox="0 0 12 12" aria-hidden="true"><rect x="0" y="0" width="8" height="6"></rect></svg>{t.themeModeFloat}</span>
-                      </span>
-                      {th.default && <span class="theme-status">{t.themesDefaultLabel}</span>}
-                    </article>
-                  ))}
+              <div class="theme-selector-controls" data-reveal>
+                <div class="theme-tab-list" role="group" aria-label={t.themesTabsAria}>
+                  <button class="theme-tab is-active" type="button" aria-pressed="true" data-theme-filter="all">{t.themesAllTab}</button>
+                  <button class="theme-tab" type="button" aria-pressed="false" data-theme-filter="dark">{t.themesDarkTab}</button>
+                  <button class="theme-tab" type="button" aria-pressed="false" data-theme-filter="light">{t.themesLightTab}</button>
+                </div>
+                <div class="theme-mode-toggle" role="group" aria-label={t.themesModeAria}>
+                  <button class="theme-tab is-active" type="button" aria-pressed="true" data-theme-mode="sticky">{t.themeModeSticky}</button>
+                  <button class="theme-tab" type="button" aria-pressed="false" data-theme-mode="spaced">{t.themeModeFloat}</button>
                 </div>
               </div>
-              <div class="theme-tab-panel" role="tabpanel" id="themes-light-panel" aria-labelledby="themes-light-tab" data-theme-panel="light" data-theme-panel-hidden hidden>
-                <div class="theme-families">
-                  {lightThemes.map((th) => (
-                    <article class="theme-chip" data-theme-id={th.id} data-reveal style={`--theme-foreground:${th.foreground};--theme-background:${th.background}`}>
-                      <div class="theme-swatch" role="img" aria-label={`${th.name}: foreground ${th.foreground}, background ${th.background}`}>
-                        <span class="theme-swatch-fg" aria-hidden="true"></span>
-                      </div>
-                      <span class="theme-name">{th.shortName}</span>
-                      <span class="theme-modes" aria-label={`${th.shortName} modes`}>
-                        <span class="theme-mode theme-mode-sticky"><svg viewBox="0 0 12 12" aria-hidden="true"><rect x="0" y="0" width="5" height="5"></rect><rect x="7" y="0" width="5" height="5"></rect><rect x="0" y="7" width="5" height="5"></rect><rect x="7" y="7" width="5" height="5"></rect></svg>{t.themeModeSticky}</span>
-                        <span class="theme-mode theme-mode-float"><svg viewBox="0 0 12 12" aria-hidden="true"><rect x="0" y="0" width="8" height="6"></rect></svg>{t.themeModeFloat}</span>
-                      </span>
-                    </article>
-                  ))}
-                </div>
+              <div class="theme-families" data-theme-families>
+                {themes.map((th) => (
+                  <button class={`theme-chip${th.id === 'argvus-dark' ? ' is-selected' : ''}`} type="button" aria-pressed={th.id === 'argvus-dark' ? 'true' : 'false'} data-theme-id={th.id} data-theme-category={th.category} data-reveal style={`--theme-foreground:${th.foreground};--theme-background:${th.background}`}>
+                    <span class="theme-swatch" aria-hidden="true"><span class="theme-swatch-fg"></span></span>
+                    <span class="theme-name">{th.shortName}</span>
+                    {th.default && <span class="theme-status">{t.themesDefaultLabel}</span>}
+                  </button>
+                ))}
               </div>
             </div>
 
@@ -1616,35 +1607,64 @@ const ccFirst = ccSteps[0].items[0]
         }
       }
 
-      // ── Abas de temas (Dark/Light) ─────────────────────────────────────────
+      // ── Seletor de temas da landing page ───────────────────────────────────
       document.querySelectorAll('[data-theme-tabs]').forEach((tabs) => {
-        const buttons = Array.from(tabs.querySelectorAll('[data-theme-tab]'))
-        const panels = Array.from(tabs.querySelectorAll('[data-theme-panel]'))
+        const categoryButtons = Array.from(tabs.querySelectorAll('[data-theme-filter]'))
+        const modeButtons = Array.from(tabs.querySelectorAll('[data-theme-mode]'))
+        const preview = tabs.querySelector('[data-theme-preview]')
+        const previewName = tabs.querySelector('[data-theme-preview-name]')
+        const cards = Array.from(tabs.querySelectorAll('[data-theme-id]'))
+        let category = 'all'
 
-        const activate = (category) => {
-          buttons.forEach((button) => {
-            const active = button.dataset.themeTab === category
-            button.classList.toggle('is-active', active)
-            button.setAttribute('aria-selected', String(active))
-            button.tabIndex = active ? 0 : -1
-          })
-          panels.forEach((panel) => {
-            panel.hidden = panel.dataset.themePanel !== category
-            panel.classList.toggle('is-active', !panel.hidden)
+        const visibleCards = () => cards.filter((card) => !card.hidden)
+        const filterCards = () => {
+          cards.forEach((card) => {
+            card.hidden = (category !== 'all' && card.dataset.themeCategory !== category)
           })
         }
-
-        buttons.forEach((button, index) => {
-          button.addEventListener('click', () => activate(button.dataset.themeTab))
-          button.addEventListener('keydown', (event) => {
-            if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return
-            event.preventDefault()
-            const offset = event.key === 'ArrowRight' ? 1 : -1
-            const next = buttons[(index + offset + buttons.length) % buttons.length]
-            activate(next.dataset.themeTab)
-            next.focus()
+        const selectCard = (card) => {
+          cards.forEach((item) => {
+            const selected = item === card
+            item.classList.toggle('is-selected', selected)
+            item.setAttribute('aria-pressed', String(selected))
           })
+          preview.style.setProperty('--theme-foreground', card.style.getPropertyValue('--theme-foreground'))
+          preview.style.setProperty('--theme-background', card.style.getPropertyValue('--theme-background'))
+          previewName.textContent = card.querySelector('.theme-name').textContent
+        }
+
+        categoryButtons.forEach((button) => button.addEventListener('click', () => {
+          category = button.dataset.themeFilter
+          categoryButtons.forEach((item) => {
+            const active = item === button
+            item.classList.toggle('is-active', active)
+            item.setAttribute('aria-pressed', String(active))
+          })
+          filterCards()
+          const selected = visibleCards().find((card) => card.classList.contains('is-selected'))
+          if (!selected && visibleCards()[0]) selectCard(visibleCards()[0])
+        }))
+        cards.forEach((card) => card.addEventListener('click', () => selectCard(card)))
+        tabs.querySelector('[data-theme-families]').addEventListener('keydown', (event) => {
+          if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return
+          const visible = visibleCards()
+          const index = visible.indexOf(document.activeElement)
+          if (index < 0 || visible.length < 2) return
+          event.preventDefault()
+          const offset = event.key === 'ArrowRight' ? 1 : -1
+          const next = visible[(index + offset + visible.length) % visible.length]
+          selectCard(next)
+          next.focus()
         })
+        modeButtons.forEach((button) => button.addEventListener('click', () => {
+          const spaced = button.dataset.themeMode === 'spaced'
+          preview.classList.toggle('is-spaced', spaced)
+          modeButtons.forEach((item) => {
+            const active = item === button
+            item.classList.toggle('is-active', active)
+            item.setAttribute('aria-pressed', String(active))
+          })
+        }))
       })
 
       // ── Vídeo: troca a capa pelo player no clique (YouTube via youtube-nocookie, ou arquivo local) ──

@@ -3207,6 +3207,28 @@ export const sidebarConfig = [
               "vi-VN": "Các chế độ bố cục",
               "zh-CN": "布局模式"
             }
+          },
+          {
+            "slug": "docs/argvus-appearance/theme-selector",
+            "translations": {
+              "ar": "اختيار السمات المرئي",
+              "bn-BD": "দৃশ্যমান থিম নির্বাচক",
+              "de": "Visuelle Theme-Auswahl",
+              "es": "Selector visual de temas",
+              "fr": "Sélecteur visuel de thèmes",
+              "hi-IN": "दृश्य थीम चयनकर्ता",
+              "id-ID": "Pemilih tema visual",
+              "it": "Selettore visivo dei temi",
+              "ja": "テーマのビジュアル選択",
+              "ko": "시각적 테마 선택기",
+              "pt-BR": "Seletor visual de temas",
+              "pt-PT": "Seletor visual de temas",
+              "ru": "Визуальный выбор темы",
+              "tr-TR": "Görsel tema seçici",
+              "ur-PK": "بصری تھیم منتخب کنندہ",
+              "vi-VN": "Bộ chọn chủ đề trực quan",
+              "zh-CN": "可视化主题选择器"
+            }
           }
         ],
         "translations": {
