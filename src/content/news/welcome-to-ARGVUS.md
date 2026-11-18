@@ -58,7 +58,7 @@ The visual system includes **23 theme families**, each available in both styles,
 
 ARGVUS includes or integrates a range of small conveniences so that common tasks are close at hand:
 
-- **Application launcher:** press `SUPER + D` to find installed graphical applications. Additional keyboard menus can open projects, SSH hosts, snippets, emoji, a calculator and cheatsheets.
+- **Application launcher:** press `SUPER + D` to find installed graphical applications. Additional keyboard menus can open projects, SSH hosts, snippets, emoji and a calculator. Press `SUPER + Shift + ?` to search desktop shortcuts in ARGVUS Keybindings.
 - **Display controls:** inspect monitors and adjust settings such as resolution, refresh rate, scale, position and orientation when the active compositor and hardware support them.
 - **Power and session actions:** use the Control Panel for immediate actions such as locking, suspending, logging out or shutting down. Configure persistent idle and display behavior in the Control Center.
 - **Do Not Disturb:** control notification delivery from the Control Panel; notifications received while it is active are kept for later.

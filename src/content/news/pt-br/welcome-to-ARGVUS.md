@@ -65,7 +65,7 @@ O sistema visual inclui **23 famílias de temas**, cada uma disponível em ambos
 
 O ARGVUS inclui ou integra uma variedade de pequenas conveniências para que tarefas comuns estejam sempre à mão:
 
-- **Lançador de aplicativos:** pressione `SUPER + D` para encontrar aplicativos gráficos instalados. Menus de teclado adicionais podem abrir projetos, hosts SSH, snippets, emojis, uma calculadora e folhas de cola (cheatsheets).
+- **Lançador de aplicativos:** pressione `SUPER + D` para encontrar aplicativos gráficos instalados. Menus de teclado adicionais podem abrir projetos, hosts SSH, snippets, emojis, uma calculadora e folhas de cola (ARGVUS Keybindings).
 - **Controles de tela:** inspecione monitores e ajuste configurações como resolução, taxa de atualização, escala, posição e orientação quando o compositor ativo e o hardware oferecerem suporte.
 - **Ações de energia e sessão:** use o Painel de Controle para ações imediatas, como bloquear, suspender, encerrar a sessão ou desligar. Configure comportamentos persistentes de inatividade e tela na Central de Controle.
 - **Não Perturbe:** controle a entrega de notificações a partir do Painel de Controle; as notificações recebidas enquanto ele estiver ativo serão guardadas para mais tarde.
