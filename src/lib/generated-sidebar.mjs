@@ -2181,6 +2181,28 @@ export const sidebarConfig = [
         }
       },
       {
+        "slug": "docs/components/argvus-calculator",
+        "translations": {
+          "ar": "حاسبة ARGVUS",
+          "bn-BD": "ARGVUS ক্যালকুলেটর",
+          "de": "ARGVUS Rechner",
+          "es": "Calculadora ARGVUS",
+          "fr": "Calculatrice ARGVUS",
+          "hi-IN": "ARGVUS कैलकुलेटर",
+          "id-ID": "Kalkulator ARGVUS",
+          "it": "Calcolatrice ARGVUS",
+          "ja": "ARGVUS 電卓",
+          "ko": "ARGVUS 계산기",
+          "pt-BR": "Calculadora ARGVUS",
+          "pt-PT": "Calculadora ARGVUS",
+          "ru": "Калькулятор ARGVUS",
+          "tr-TR": "ARGVUS Hesap Makinesi",
+          "ur-PK": "ARGVUS کیلکولیٹر",
+          "vi-VN": "Máy tính ARGVUS",
+          "zh-CN": "ARGVUS 计算器"
+        }
+      },
+      {
         "slug": "docs/components/argvus-du",
         "translations": {
           "ar": "ARGVUS محلل استخدام القرص",
