@@ -27,6 +27,7 @@ import SiteHeader from './SiteHeader.astro'
 import SiteFooter from './SiteFooter.astro'
 import AiAgentsSection from './AiAgentsSection.astro'
 import siteTranslations from '../i18n/site-locales.json'
+import nativeToolDescriptions from '../i18n/native-tools.json'
 import siteLanguages from '../lib/site-languages.json'
 import { adaptEuropeanPortuguese } from '../lib/i18n/portuguese.ts'
 
@@ -584,11 +585,16 @@ if (localVideoName && !localVideoSrc) {
 const videoProvider = videoId ? 'youtube' : localVideoSrc ? 'local' : ''
 const videoSource = videoId || localVideoSrc
 
+const nativeToolGroups = [
+  { icon: 'fa-keyboard', apps: ['Keybindings', 'Emoji', 'Clipboard'] },
+  { icon: 'fa-terminal', apps: ['Projects', 'SSH', 'Snippets'] },
+  { icon: 'fa-sliders', apps: ['Brightness', 'Accent Color', 'Lock Timeout', 'Weather'] },
+]
+
 const components = [
   { key: 'hyprland', name: 'Hyprland' },
   { key: 'waybar', name: 'Waybar' },
   { key: 'quickshell', name: 'Quickshell' },
-  { key: 'rofi', name: 'Rofi' },
   { key: 'superfile', name: 'superfile' },
   { key: 'btop', name: 'btop' },
   { key: 'hyprlock', name: 'hyprlock' },
@@ -1030,6 +1036,18 @@ const ccFirst = ccSteps[0].items[0]
             {keycapSlots ? <span class="keycap-slot" data-keycap-slot="apps" /> : <span class="eyebrow">{t.appsEyebrow}</span>}
             <h2>{t.appsTitle}</h2>
             <p>{t.appsSubtitle}</p>
+          </div>
+
+          <div class="app-features native-tool-groups">
+            {nativeToolGroups.map(({ icon, apps }, index) => (
+              <article class="app-feature">
+                <i class={`fa-solid ${icon}`} aria-hidden="true"></i>
+                <ul>
+                  {apps.map((name) => <li><strong>ARGVUS {name}</strong></li>)}
+                </ul>
+                <p>{nativeToolDescriptions[lang][index]}</p>
+              </article>
+            ))}
           </div>
 
           <div class="app-showcase">
