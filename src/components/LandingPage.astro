@@ -196,7 +196,7 @@ const t = isPT
       aboutMaintainerLink: 'Perfil de William C. Canin no GitHub',
       aboutSupportPaypal: 'Ao contribuir via PayPal, a conta correta é exibida como',
       themesEyebrow: 'Temas',
-      themesTitle: '30 temas, dois modos, um só sistema',
+      themesTitle: '31 temas, dois modos, um só sistema',
       themesSubtitle:
         'Famílias visuais compartilhadas, cada uma com os modos Fixo e Espaçado. Todos disponíveis como pacotes Arch Linux no repositório oficial do ARGVUS.',
       themesAccentLabel: 'Acento independente',
@@ -431,7 +431,7 @@ const t = isPT
       aboutMaintainerLink: 'William C. Canin GitHub profile',
       aboutSupportPaypal: 'When contributing via PayPal, the correct account is shown as',
       themesEyebrow: 'Themes',
-      themesTitle: '30 themes, two modes, one system',
+      themesTitle: '31 themes, two modes, one system',
       themesSubtitle:
         'Shared visual families, each with Sticky and Spaced modes. All available as Arch Linux packages from the official ARGVUS repository.',
       themesAccentLabel: 'Independent accent',
@@ -618,6 +618,7 @@ const themes = [
   { name: 'Tokyo Night', shortName: 'Tokyo Night', id: 'tokyo-night', category: 'dark', foreground: '#7AA2F7', background: '#1A1B26' },
   { name: 'Universe', shortName: 'Universe', id: 'universe', category: 'dark', foreground: '#EEEEEE', background: '#000000' },
   { name: 'ARGVUS Light', shortName: 'ARGVUS Light', id: 'argvus-light', category: 'light', foreground: '#181818', background: '#F7F7F7', default: true },
+  { name: 'Amélie Light', shortName: 'Amélie Light', id: 'amelie-light', category: 'light', foreground: '#FAA2CA', background: '#FFFCE5', text: '#382731' },
   { name: 'Catppuccin Latte', shortName: 'Catppuccin Latte', id: 'catppuccin-latte', category: 'light', foreground: '#1E66F5', background: '#EFF1F5' },
   { name: 'Celadon Light', shortName: 'Celadon Light', id: 'celadon-light', category: 'light', foreground: '#286347', background: '#EDF8EE' },
   { name: 'Everforest Light', shortName: 'Everforest Light', id: 'everforest-light', category: 'light', foreground: '#3A94C5', background: '#FDF6E3' },
@@ -1155,7 +1156,7 @@ const ccFirst = ccSteps[0].items[0]
               </div>
               <div class="theme-families" data-theme-families>
                 {themes.map((th) => (
-                  <button class={`theme-chip${th.id === 'argvus-dark' ? ' is-selected' : ''}`} type="button" aria-pressed={th.id === 'argvus-dark' ? 'true' : 'false'} data-theme-id={th.id} data-theme-category={th.category} data-reveal style={`--theme-foreground:${th.foreground};--theme-background:${th.background}`}>
+                  <button class={`theme-chip${th.id === 'argvus-dark' ? ' is-selected' : ''}`} type="button" aria-pressed={th.id === 'argvus-dark' ? 'true' : 'false'} data-theme-id={th.id} data-theme-category={th.category} data-reveal style={`--theme-foreground:${th.foreground};--theme-background:${th.background};--theme-text:${"text" in th ? th.text : th.foreground}`}>
                     <span class="theme-swatch" aria-hidden="true"><span class="theme-swatch-fg"></span></span>
                     <span class="theme-name">{th.shortName}</span>
                     {th.default && <span class="theme-status">{t.themesDefaultLabel}</span>}
@@ -1653,6 +1654,7 @@ const ccFirst = ccSteps[0].items[0]
           })
           preview.style.setProperty('--theme-foreground', card.style.getPropertyValue('--theme-foreground'))
           preview.style.setProperty('--theme-background', card.style.getPropertyValue('--theme-background'))
+          preview.style.setProperty('--theme-text', card.style.getPropertyValue('--theme-text'))
           previewName.textContent = card.querySelector('.theme-name').textContent
         }
 

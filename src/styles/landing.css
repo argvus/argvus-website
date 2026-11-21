@@ -2047,7 +2047,7 @@ body[data-parallax-enabled='true'] [data-reveal].is-revealed {
   border: 2px solid var(--theme-foreground);
   border-radius: 0;
   background: var(--theme-background);
-  color: var(--theme-foreground);
+  color: var(--theme-text, var(--theme-foreground));
   transition: border-radius 0.2s ease, background-color 0.2s ease;
 }
 
