@@ -3578,3 +3578,17 @@ body[data-parallax-enabled='true'] [data-reveal].is-revealed {
 .native-tool-groups p {
   margin: 0;
 }
+.morphing-tooltip-demo {
+  margin: 1.25rem 0;
+}
+
+.morphing-tooltip-demo img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-top: 0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .morphing-tooltip-demo img { display: none; }
+}

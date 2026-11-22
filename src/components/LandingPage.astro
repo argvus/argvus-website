@@ -8,6 +8,7 @@ import argvusControlCenterImage from '../images/apps/argvus-control-center.png'
 import argvusFocusImage from '../images/apps/argvus-focus.png'
 import argvusClockImage from '../images/apps/argvus-clock.png'
 import previewThemeArgvusDarkImage from '../images/desktop/preview-theme-argvus-dark.png'
+import morphingTooltipsImage from '../images/desktop/morphing-tooltips.gif'
 import videoThumbImage from '../images/video/video-thumb.png'
 import previewThemeArgvusLightImage from '../images/desktop/preview-theme-argvus-light.png'
 import '@fontsource/ibm-plex-sans/400.css'
@@ -151,7 +152,7 @@ const t = isPT
       waybarSubtitle:
         'A barra principal do ARGVUS combina navegação, mídia, sistema e apps nativos — e pode ficar no topo ou na parte inferior da tela com um clique ou atalho. Posição lembrada entre sessões.',
       waybarIntro:
-        'Construída sobre o Waybar, a barra agrupa os controles do dia a dia em um só lugar, com um visual unificado por todos os temas:',
+        'Construída com Quickshell, a barra agrupa os controles do dia a dia em um só lugar, com um visual unificado por todos os temas:',
       waybarFeatures: [
         { icon: 'fa-solid fa-star', text: 'Posição topo/inferior por atalho (SUPER + Alt + ↑/↓) ou pela sidebar.' },
         { icon: 'fa-solid fa-bars-staggered', text: 'Workspaces navegáveis e contexto da janela em foco.' },
@@ -386,7 +387,7 @@ const t = isPT
       waybarSubtitle:
         'The ARGVUS main bar combines navigation, media, system state and native apps — and can sit at the top or the bottom of the screen with a click or a shortcut. The position is remembered across sessions.',
       waybarIntro:
-        'Built on Waybar, the bar groups everyday controls in a single place, with a look unified across every theme:',
+        'Built with Quickshell, the bar groups everyday controls in a single place, with a look unified across every theme:',
       waybarFeatures: [
         { icon: 'fa-solid fa-star', text: 'Top/bottom position via shortcut (SUPER + Alt + ↑/↓) or the sidebar.' },
         { icon: 'fa-solid fa-bars-staggered', text: 'Navigable workspaces with focused-window context.' },
@@ -992,6 +993,11 @@ const ccFirst = ccSteps[0].items[0]
 
             <div class="waybar-copy">
               <p class="waybar-lead">{t.waybarIntro}</p>
+              <div class="morphing-tooltip-demo">
+                <strong>Morphing Tooltips</strong>
+                <p>{isPT ? 'Passe o cursor sobre a barra para revelar informações contextuais em uma extensão animada. Os cliques mantêm suas ações habituais.' : 'Hover over the bar to reveal contextual information in an animated extension. Clicks keep their usual actions.'}</p>
+                <img src={morphingTooltipsImage.src} alt={isPT ? 'Demonstração dos tooltips animados na taskbar' : 'Animated taskbar tooltips demonstration'} loading="lazy" />
+              </div>
               <ul class="waybar-features">
                 {t.waybarFeatures.map((f) => (
                   <li data-reveal><i class={f.icon}></i><span>{f.text}</span></li>
