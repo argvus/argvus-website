@@ -80,12 +80,6 @@
         "label": "Appearance"
       },
       {
-        "repository": "argvus-control-panel",
-        "path": "docs",
-        "branch": "main",
-        "label": "Control Panel"
-      },
-      {
         "repository": "argvus-firewall",
         "path": "docs",
         "branch": "main",
@@ -116,10 +110,10 @@
         "label": "Session"
       },
       {
-        "repository": "argvus-taskbar",
+        "repository": "argvus-panels",
         "path": "docs",
         "branch": "main",
-        "label": "Taskbar"
+        "label": "Panels"
       },
       {
         "repository": "argvus-ai",

@@ -2951,29 +2951,6 @@ export const sidebarConfig = [
         }
       },
       {
-        "slug": "docs/argvus-waybar",
-        "label": "Waybar",
-        "translations": {
-          "ar": "ﻡﺎﻬﻤﻟﺍ ﻂﻳﺮﺷﻭ Waybar ﺕﺍﺯﻭﺎﺠﺗ",
-          "bn-BD": "ওয়েবার এবং টাস্কবার  ওভাররাইড করে",
-          "de": "Waybar- und Taskleiste-Overrides",
-          "es": "Sobrescrituras de Waybar y de la barra de tareas",
-          "fr": "Substitutions de Waybar et de la barre des tâches",
-          "hi-IN": "वेबारी और टास्कबार ओवरराइड्स",
-          "id-ID": "Override Waybar dan taskbar",
-          "it": "Sovrascritture di Waybar e della barra delle applicazioni",
-          "ja": "Waybarとタスクバーのオーバーライド",
-          "ko": "Waybar 및 작업 표시줄 덮어쓰기",
-          "pt-BR": "Overrides da Waybar e da taskbar",
-          "pt-PT": "Overrides da Waybar e da taskbar",
-          "ru": "Переопределения Waybar и панели задач",
-          "tr-TR": "Waybar ve görev çubuğu geçersiz kılmaları",
-          "ur-PK": "ﺯﮉﯿﺋﺍﺭ ﺭﻭﻭﺍ ﺭﺎﺑ ﮏﺳﺎﭨ ﺭﻭﺍ ﺭﺎﺑ ﮮﻭ",
-          "vi-VN": "Ghi đè Waybar và taskbar",
-          "zh-CN": "Waybar 和任务栏覆盖"
-        }
-      },
-      {
         "slug": "docs/argvus-portal",
         "label": "Portal",
         "translations": {
