@@ -110,10 +110,10 @@
         "label": "Session"
       },
       {
-        "repository": "argvus-panels",
+        "repository": "argvus-shell",
         "path": "docs",
         "branch": "main",
-        "label": "Panels"
+        "label": "ARGVUS Shell"
       },
       {
         "repository": "argvus-ai",

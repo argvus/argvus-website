@@ -255,52 +255,6 @@ export const sidebarConfig = [
             }
           },
           {
-            "slug": "docs/argvus-taskbar/taskbar",
-            "label": "Taskbar",
-            "translations": {
-              "ar": "شريط المهام",
-              "bn-BD": "টাস্কবার",
-              "de": "Taskleiste",
-              "es": "Barra de tareas",
-              "fr": "Barre des tâches",
-              "hi-IN": "टास्कबार",
-              "id-ID": "Bilah tugas",
-              "it": "Barra delle applicazioni",
-              "ja": "タスクバー",
-              "ko": "작업 표시줄",
-              "pt-BR": "Barra de tarefas",
-              "pt-PT": "Barra de tarefas",
-              "ru": "Панель задач",
-              "tr-TR": "Görev çubuğu",
-              "ur-PK": "ٹاسک بار",
-              "vi-VN": "Thanh tác vụ",
-              "zh-CN": "任务栏"
-            }
-          },
-          {
-            "slug": "docs/argvus-taskbar/widgets",
-            "label": "Taskbar widgets",
-            "translations": {
-              "ar": "الحاجيات",
-              "bn-BD": "উইজেট",
-              "de": "Widgets",
-              "es": "widgets",
-              "fr": "Widgets",
-              "hi-IN": "विजेट",
-              "id-ID": "Widget",
-              "it": "Widget",
-              "ja": "ウィジェット",
-              "ko": "위젯",
-              "pt-BR": "Widgets da barra de tarefas",
-              "pt-PT": "Widgets",
-              "ru": "Виджеты",
-              "tr-TR": "Widget'lar",
-              "ur-PK": "وجیٹس",
-              "vi-VN": "Widget",
-              "zh-CN": "小工具"
-            }
-          },
-          {
             "slug": "docs/components/argvus-taskbar-calendar",
             "label": "Calendar",
             "translations": {
@@ -1278,29 +1232,6 @@ export const sidebarConfig = [
               "ur-PK": "ARGVUS فوکس",
               "vi-VN": "ARGVUS",
               "zh-CN": "ARGVUS 焦点"
-            }
-          },
-          {
-            "slug": "docs/argvus-control-panel",
-            "label": "Control Panel",
-            "translations": {
-              "ar": "لوحة التحكم",
-              "bn-BD": "কন্ট্রোল প্যানেল",
-              "de": "Systemsteuerung",
-              "es": "Panel de control",
-              "fr": "Panneau de contrôle",
-              "hi-IN": "कंट्रोल पैनल",
-              "id-ID": "Panel kontrol",
-              "it": "Pannello di controllo",
-              "ja": "コントロールパネル",
-              "ko": "제어판",
-              "pt-BR": "Control Panel",
-              "pt-PT": "Painel de controlo",
-              "ru": "Панель управления",
-              "tr-TR": "Kontrol paneli",
-              "ur-PK": "کنٹرول پینل",
-              "vi-VN": "Bảng điều khiển",
-              "zh-CN": "控制面板"
             }
           },
           {
@@ -2836,75 +2767,6 @@ export const sidebarConfig = [
         }
       },
       {
-        "label": "Taskbar",
-        "collapsed": true,
-        "items": [
-          {
-            "slug": "docs/argvus-taskbar/taskbar",
-            "translations": {
-              "ar": "شريط المهام",
-              "bn-BD": "টাস্কবার",
-              "de": "Taskleiste",
-              "es": "Barra de tareas",
-              "fr": "Barre des tâches",
-              "hi-IN": "टास्कबार",
-              "id-ID": "Bilah tugas",
-              "it": "Barra delle applicazioni",
-              "ja": "タスクバー",
-              "ko": "작업 표시줄",
-              "pt-BR": "Barra de tarefas",
-              "pt-PT": "Barra de tarefas",
-              "ru": "Панель задач",
-              "tr-TR": "Görev çubuğu",
-              "ur-PK": "ٹاسک بار",
-              "vi-VN": "Thanh tác vụ",
-              "zh-CN": "任务栏"
-            }
-          },
-          {
-            "slug": "docs/argvus-taskbar/widgets",
-            "translations": {
-              "ar": "الحاجيات",
-              "bn-BD": "উইজেট",
-              "de": "Widgets",
-              "es": "widgets",
-              "fr": "Widgets",
-              "hi-IN": "विजेट",
-              "id-ID": "Widget",
-              "it": "Widget",
-              "ja": "ウィジェット",
-              "ko": "위젯",
-              "pt-BR": "Widgets",
-              "pt-PT": "Widgets",
-              "ru": "Виджеты",
-              "tr-TR": "Widget'lar",
-              "ur-PK": "وجیٹس",
-              "vi-VN": "Widget",
-              "zh-CN": "小工具"
-            }
-          }
-        ],
-        "translations": {
-          "pt-BR": "Barra de tarefas",
-          "pt-PT": "Barra de tarefas",
-          "es": "Barra de tareas",
-          "fr": "Barre des tâches",
-          "it": "Barra delle applicazioni",
-          "zh-CN": "任务栏",
-          "ja": "タスクバー",
-          "de": "Taskleiste",
-          "ru": "Панель задач",
-          "ko": "작업 표시줄",
-          "hi-IN": "टास्कबार",
-          "ar": "شريط المهام",
-          "bn-BD": "টাস্কবার",
-          "id-ID": "Bilah tugas",
-          "ur-PK": "ٹاسک بار",
-          "vi-VN": "Thanh tác vụ",
-          "tr-TR": "Görev çubuğu"
-        }
-      },
-      {
         "slug": "docs/argvus-launcher",
         "label": "Launcher",
         "translations": {
@@ -2998,29 +2860,6 @@ export const sidebarConfig = [
     },
     "collapsed": true,
     "items": [
-      {
-        "slug": "docs/argvus-control-panel",
-        "label": "Control Panel",
-        "translations": {
-          "ar": "لوحة التحكم",
-          "bn-BD": "কন্ট্রোল প্যানেল",
-          "de": "Systemsteuerung",
-          "es": "Panel de control",
-          "fr": "Panneau de contrôle",
-          "hi-IN": "कंट्रोल पैनल",
-          "id-ID": "Panel kontrol",
-          "it": "Pannello di controllo",
-          "ja": "コントロールパネル",
-          "ko": "제어판",
-          "pt-BR": "Painel de controle",
-          "pt-PT": "Painel de controlo",
-          "ru": "Панель управления",
-          "tr-TR": "Kontrol paneli",
-          "ur-PK": "کنٹرول پینل",
-          "vi-VN": "Bảng điều khiển",
-          "zh-CN": "控制面板"
-        }
-      },
       {
         "slug": "docs/argvus-display",
         "label": "Display",
@@ -3505,6 +3344,105 @@ export const sidebarConfig = [
           "vi-VN": "Trò chơi",
           "tr-TR": "Oyunlar"
         }
+      }
+    ]
+  },
+  {
+    "label": "Other components",
+    "translations": {
+      "pt-BR": "Outros componentes",
+      "pt-PT": "Outros componentes",
+      "es": "Otros componentes",
+      "fr": "Autres composants",
+      "it": "Altri componenti",
+      "zh-CN": "其他组件",
+      "ja": "その他のコンポーネント",
+      "de": "Weitere Komponenten",
+      "ru": "Другие компоненты",
+      "ko": "기타 구성 요소",
+      "hi-IN": "अन्य घटक",
+      "ar": "مكونات أخرى",
+      "bn-BD": "অন্যান্য উপাদান",
+      "id-ID": "Komponen lainnya",
+      "ur-PK": "دیگر اجزاء",
+      "vi-VN": "Thành phần khác",
+      "tr-TR": "Diğer bileşenler"
+    },
+    "collapsed": true,
+    "items": [
+      {
+        "label": "ARGVUS Shell",
+        "collapsed": true,
+        "items": [
+          {
+            "slug": "docs/argvus-shell",
+            "label": "Overview",
+            "translations": {
+              "ar": "نظرة عامة",
+              "bn-BD": "সংক্ষিপ্ত বিবরণ",
+              "de": "Übersicht",
+              "es": "Resumen",
+              "fr": "Présentation",
+              "hi-IN": "अवलोकन",
+              "id-ID": "Ringkasan",
+              "it": "Panoramica",
+              "ja": "概要",
+              "ko": "개요",
+              "pt-BR": "Visão geral",
+              "pt-PT": "Visão geral",
+              "ru": "Обзор",
+              "tr-TR": "Genel bakış",
+              "ur-PK": "جائزہ",
+              "vi-VN": "Tổng quan",
+              "zh-CN": "概览"
+            }
+          },
+          {
+            "slug": "docs/argvus-shell/taskbar",
+            "translations": {
+              "ar": "شريط المهام",
+              "bn-BD": "টাস্কবার",
+              "de": "Taskleiste",
+              "es": "Barra de tareas",
+              "fr": "Barre des tâches",
+              "hi-IN": "टास्कबार",
+              "id-ID": "Bilah tugas",
+              "it": "Barra delle applicazioni",
+              "ja": "タスクバー",
+              "ko": "작업 표시줄",
+              "pt-BR": "Barra de tarefas",
+              "pt-PT": "Barra de tarefas",
+              "ru": "Панель задач",
+              "tr-TR": "Görev çubuğu",
+              "ur-PK": "ٹاسک بار",
+              "vi-VN": "Thanh tác vụ",
+              "zh-CN": "任务栏"
+            }
+          },
+          {
+            "slug": "docs/argvus-shell/widgets",
+            "translations": {
+              "ar": "الحاجيات",
+              "bn-BD": "উইজেট",
+              "de": "Widgets",
+              "es": "widgets",
+              "fr": "Widgets",
+              "hi-IN": "विजेट",
+              "id-ID": "Widget",
+              "it": "Widget",
+              "ja": "ウィジェット",
+              "ko": "위젯",
+              "pt-BR": "Widgets",
+              "pt-PT": "Widgets",
+              "ru": "Виджеты",
+              "tr-TR": "Widget'lar",
+              "ur-PK": "وجیٹس",
+              "vi-VN": "Widget",
+              "zh-CN": "小工具"
+            }
+          }
+        ],
+        "translations": {}
       }
     ]
   },
